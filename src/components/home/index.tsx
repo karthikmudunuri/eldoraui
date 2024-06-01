@@ -1,5 +1,5 @@
 
-import { CTA } from './cta';
+
 import { Hero } from './hero';
 
 
@@ -9,7 +9,7 @@ export function Home(): JSX.Element {
       <Hero />
      
      
-      <CTA />
+    
     </main>
   );
 }
