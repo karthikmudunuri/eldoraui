@@ -1,4 +1,4 @@
-name: Publish Eldora UI
+name: Publish Eldora UI Package
 
 on:
   push:
@@ -6,17 +6,18 @@ on:
       - main
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 18.x  # Specify the Node.js version
+          node-version: '18.17.1'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm install
@@ -24,9 +25,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to hosting platform
-        # Add steps to deploy to your hosting platform (e.g., Vercel, Netlify)
-        # Example:
-        # run: npx vercel --prod
-
-      # Add any additional steps or integrations as needed
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
