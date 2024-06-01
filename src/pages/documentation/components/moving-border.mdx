@@ -1,0 +1,305 @@
+
+import { Tabs } from 'nextra/components'
+import { Steps } from 'nextra/components'
+import Experience from '../../../components/experience';
+
+## Moving Border
+A border that moves around the container.Making your card appearance to next level.
+
+import { Callout } from 'nextra/components'
+ 
+<Callout type="info" emoji="ℹ️">
+ We are working on bringing more components on this. Stay tuned!
+</Callout>
+
+
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+
+  <Experience />
+  
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+  ```js copy 
+  import React from "react";
+
+import { workExperience } from "../data/index";
+import { Button } from "../components/ui/moving-border";
+
+const Experience = () => {
+  return (
+    <div className="py-20 px-5 w-full">
+      <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+        My work experience
+      </h1>
+
+      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
+        {workExperience.map((card) => (
+          <Button
+            key={card.id}
+           
+            duration={Math.floor(Math.random() * 10000) + 10000}
+            borderRadius="1.75rem"
+            style={{
+            
+              background: "rgb(4,7,29)",
+              backgroundColor:
+                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+              
+              borderRadius: `calc(1.75rem* 0.96)`,
+            }}
+            
+            className="flex-1 text-white border-slate-800"
+          >
+            <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
+              <img
+                src={card.thumbnail}
+                alt={card.thumbnail}
+                className="lg:w-32 md:w-20 w-16"
+              />
+              <div className="lg:ms-5">
+                <h1 className="text-start text-xl md:text-2xl font-bold">
+                  {card.title}
+                </h1>
+                
+              </div>
+            </div>
+          </Button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Experience;
+```
+
+
+
+  
+  </Tabs.Tab>
+ 
+</Tabs>
+
+## Installation
+
+
+<Steps>
+### Install `dependencies`
+ 
+```js copy
+npm i framer-motion clsx tailwind-merge
+```
+ 
+### Add util file
+
+`lib/utils`
+
+```ts copy 
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+### update `tailwind.config.js` file
+
+```js copy {16,20-30} 
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{ts,tsx}"],
+  darkMode: "class",
+  theme: {
+    // rest of the code
+  },
+  plugins: [
+    // rest of the code
+    addVariablesForColors,
+  ],
+};
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+```
+
+### Copy the source code
+`components/ui/moving-border.tsx`
+```tsx copy 
+//ui/moving-border.tsx
+
+"use client";
+import React from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
+import { cn } from "../../../lib/utils";
+
+export function Button({
+  borderRadius = "1.75rem",
+  children,
+  as: Component = "button",
+  containerClassName,
+  borderClassName,
+  duration,
+  className,
+  ...otherProps
+}: {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: any;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  [key: string]: any;
+}) {
+  return (
+    <Component
+      className={cn(
+        // remove h-16 w-40, add  md:col-span-2
+        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
+        containerClassName
+      )}
+      style={{
+        borderRadius: borderRadius,
+      }}
+      {...otherProps}
+    >
+      <div
+        className="absolute inset-0 rounde-[1.75rem]"
+        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
+      >
+        <MovingBorder duration={duration} rx="30%" ry="30%">
+          <div
+            className={cn(
+              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]",
+              borderClassName
+            )}
+          />
+        </MovingBorder>
+      </div>
+
+      <div
+        className={cn(
+          "relative bg-slate-900/[0.] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          className
+        )}
+        style={{
+          borderRadius: `calc(${borderRadius} * 0.96)`,
+        }}
+      >
+        {children}
+      </div>
+    </Component>
+  );
+}
+
+export const MovingBorder = ({
+  children,
+  duration = 2000,
+  rx,
+  ry,
+  ...otherProps
+}: {
+  children: React.ReactNode;
+  duration?: number;
+  rx?: string;
+  ry?: string;
+  [key: string]: any;
+}) => {
+  const pathRef = useRef<any>();
+  const progress = useMotionValue<number>(0);
+
+  useAnimationFrame((time) => {
+    const length = pathRef.current?.getTotalLength();
+    if (length) {
+      const pxPerMillisecond = length / duration;
+      progress.set((time * pxPerMillisecond) % length);
+    }
+  });
+
+  const x = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).x
+  );
+  const y = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).y
+  );
+
+  const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
+
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        className="absolute h-full w-full"
+        width="100%"
+        height="100%"
+        {...otherProps}
+      >
+        <rect
+          fill="none"
+          width="100%"
+          height="100%"
+          rx={rx}
+          ry={ry}
+          ref={pathRef}
+        />
+      </svg>
+      <motion.div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          display: "inline-block",
+          transform,
+        }}
+      >
+        {children}
+      </motion.div>
+    </>
+  );
+};
+```
+</Steps>
+
+
+## props
+
+| Prop              | Type             | Description                                                                                  |
+|-------------------|------------------|----------------------------------------------------------------------------------------------|
+| `borderRadius`    | `string`         | Optional. Defines the border radius of the button. Default value is `"1.75rem"`.             |
+| `children`        | `React.ReactNode`| Required. The content to be displayed inside the button.                                     |
+| `as`              | `any`            | Optional. Defines the HTML element or React component that will be used for the button. Default is `"button"`. |
+| `containerClassName` | `string`      | Optional. Additional CSS classes to be applied to the button container.                      |
+| `borderClassName` | `string`         | Optional. Additional CSS classes to be applied to the button border.                         |
+| `duration`        | `number`         | Optional. Duration for the moving border animation in milliseconds. Default is `2000`.       |
+| `className`       | `string`         | Optional. Additional CSS classes to be applied to the button.                                |
+| `[key: string]`   | `any`            | Optional. Any other props that should be passed to the button.                               |
+
