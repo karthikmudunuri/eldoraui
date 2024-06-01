@@ -1,0 +1,32 @@
+name: Publish Eldora UI Package
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch. Change this if your main branch has a different name.
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest  # Use the latest version of Ubuntu as the environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout the repository content to the GitHub runner
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Set up Node.js environment
+        with:
+          node-version: '16'  # Specify the Node.js version
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install  # Install npm dependencies
+
+      - name: Build the project
+        run: npm run build  # Add this step if you have a build process
+        # If you don't have a build step, you can remove this
+
+      - name: Publish to npm
+        run: npm publish  # Publish the package to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Use the npm token stored in GitHub Secrets
