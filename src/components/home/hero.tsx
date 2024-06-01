@@ -10,7 +10,7 @@ import MetamaskLogo from '../../../public/metamask.svg';
 import { RetroGrid } from '../retro-grid';
 import { translations } from '@/data';
 import { Container } from './container';
-import { ShimmerButton } from './shimmer-button';
+
 import { track } from '@vercel/analytics';
 
 const CountUp = dynamic(() => import('react-countup'), {
