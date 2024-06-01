@@ -1,0 +1,10 @@
+
+
+# Exclude build artifacts
+build/
+dist/
+
+# Exclude configuration files
+config.js
+.env
+.mdx
