@@ -8,6 +8,21 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthikmudunuri/eldoraui.git"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/karthikmudunuri/eldoraui.git"
+  },
+  "author": {
+    "name": "Mudunuri Bhaskara Karthikeya Varma"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karthikmudunuri/eldoraui/issues"
+  },
+  "homepage": "https://github.com/karthikmudunuri/eldoraui/blob/main/README.md",
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -58,4 +73,5 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
+  
 }
