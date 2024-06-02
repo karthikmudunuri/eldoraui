@@ -1,34 +1,41 @@
-name: Publish Eldora UI Package
+name: Release
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, v3]
 
 jobs:
-  publish:
+  release:
+    if: github.repository == 'karthikmudunuri/eldoraui'
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2.4.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.17.1'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 18
+          cache: 'npm'
 
-      - name: Configure .npmrc for GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.THUB_TOKEN }}" > ~/.npmrc
-
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build the project
-        run: npm run build
+      
 
-      - name: Publish to GitHub Packages
-        run: npm publish
+      - name: Build
+        run: npm build
+
+     
+
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: npm release
+          version: npm run version # should be `pnpm run`
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.THUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
