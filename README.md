@@ -1,4 +1,4 @@
-## `Eldora UI`
+## Eldora UI
 UI library for Developers
 
 Create Animated landing pages with components that you can copy and paste into your apps.
