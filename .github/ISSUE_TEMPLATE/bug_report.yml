@@ -1,0 +1,64 @@
+name: "Bug report"
+description: Report an issue
+title: '[bug] '
+labels: ["bug"]
+body: 
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is. If you intend to submit a PR for this issue, tell us how in the description.
+      placeholder: Bug description
+    validations:
+      required: true
+
+  - type: input
+    id: components-affected
+    attributes:
+      label: Affected component/components
+      description: Which dotUI components are affected?
+      placeholder: ex. Button, Checkbox...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to reproduce
+      description:  A step-by-step description of how to reproduce the bug.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. See error
+    validations:
+      required: true
+
+  - type: input
+    id: codesandbox
+    attributes:
+      label: Codesandbox link
+      description: | 
+        A link to a CodeSandbox that includes a minimal reproduction of the problem. [CodeSandbox Template](https://codesandbox.io/s/ymgwf5)
+    validations:
+      required: false
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Info
+      description: Information about browsers, system or binaries that's relevant.
+      render: bash
+      placeholder: System, Binaries, Browsers
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Before submitting
+      description: By submitting this issue, you agree to follow our [Contributing Guidelines](https://github.com/mehdibha/dotUI/blob/main/CONTRIBUTING.md).
+      options:
+        - label: I've made research efforts and searched the documentation
+          required: true
+        - label: I've searched for existing issues
+          required: true

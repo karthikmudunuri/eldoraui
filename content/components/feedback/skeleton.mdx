@@ -1,0 +1,65 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+thumbnail:
+  image: /previews/components/core/skeleton.jpeg
+  video: /previews/components/core/skeleton.mp4
+---
+
+<ComponentPreview
+  name="demos/components/core/skeleton/card"
+  preview={`<Skeleton className="h-44 w-64" />
+<div>
+  <Skeleton className="size-10 rounded-full" />
+  <div>
+    <Skeleton className="h-4 w-44" />
+    <Skeleton className="h-4 w-36" />
+  </div>
+</div>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/skeleton" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use the `Skeleton` component to show a placeholder while content is loading.
+
+## Options
+
+## Children
+
+If you do not pass a fixed size, skeleton will take the size of the children.
+
+<ComponentPreview name="demos/components/core/skeleton/children" />
+
+## Show
+
+Use the `show` prop to show/hide the skeleton.
+
+<ComponentPreview name="demos/components/core/skeleton/show" />
+
+## Examples
+
+### Loading data from an API
+
+<ComponentPreview name="demos/components/core/skeleton/api-simulation" />
+
+### Wrapping children with fixed size
+
+If you do not pass a fixed size, it will be calculated automatically.
+
+<ComponentPreview name="demos/components/core/skeleton/fixed-size-children" />
+
+## API Reference
+
+`Skeleton` accepts all HTML `div` element props and the following:
+
+| Prop   | Type      | Default | Description                                |
+| ------ | --------- | ------- | ------------------------------------------ |
+| `show` | `boolean` | `true`  | Weather the visual style should be filled. |

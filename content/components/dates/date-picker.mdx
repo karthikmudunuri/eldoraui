@@ -1,0 +1,300 @@
+---
+title: Date Picker
+description: DatePicker combine a DateField and a Calendar overlay to allow users to enter or select a date and time value.
+thumbnail:
+  image: /previews/components/core/date-picker.jpeg
+  video: /previews/components/core/date-picker.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/DatePicker.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/DatePicker.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/dates/date-picker.mdx?plain=1
+---
+
+<ComponentPreview name="demos/components/core/date-picker/default" preview={`<DatePicker />`} />
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource
+    name={[
+      "components/core/default/date-picker",
+      "components/core/default/dialog",
+      "components/core/default/field",
+      "components/core/default/date-input",
+      "components/core/default/input",
+    ]}
+  />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use a `DatePicker` to allow users to enter and edit time values.
+
+## Options
+
+### Label
+
+A visual label can be provided for the `DatePicker` using the label prop or a hidden `label` using `aria-label` prop.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/label"
+  preview={`<DatePicker label="Meeting date" />
+<DatePicker aria-label="Meeting date" />`}
+/>
+
+### Size
+
+Use the `size` prop to control the size of the `DatePicker`.<br/>
+The default variant is `"md"`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/sizes"
+  preview={`<DatePicker size="sm" />
+<DatePicker size="md" />
+<DatePicker size="lg" />`}
+/>
+
+### Prefix
+
+To add additional context for the `DatePicker`, use the `prefix` prop.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/prefix"
+  preview={`<DatePicker prefix={<UsersIcon />} />`}
+/>
+
+### Description
+
+A description can be supplied to `DatePicker` via the `description` prop. The description is always visible unless the `isInvalid` prop is `true` and an error message is provided.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/description"
+  preview={`<DatePicker label="Appointment" description="Please select a date." />`}
+/>
+
+### Contextual help
+
+A `ContextualHelp` element may be placed next to the label to provide additional information or help about a `DatePicker`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/contextual-help"
+  preview={`<DatePicker label="Appointment" contextualHelp={<ContextualHelp />} />`}
+/>
+
+### Error message
+
+An `errorMessage` can be supplied to a `DatePicker`, which will be displayed when the `isInvalid` prop is set to `true`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/error-message"
+  preview={`<DatePicker
+  label="Meeting"
+  isInvalid
+  errorMessage="Meetings can't be scheduled in the past."
+/>`}
+/>
+
+### Time zones
+
+`DatePicker` is time zone aware when a ZonedDateTime object is provided as the value.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/time-zones"
+  preview={`<DatePicker defaultValue={parseAbsoluteToLocal("2021-11-07T07:45:00Z")} />`}
+/>
+
+### Granularity
+
+The `granularity` prop allows you to control the smallest unit that is displayed by DatePicker.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/granularity"
+  preview={`<DatePicker
+  label="Hour"
+  granularity="hour"
+  defaultValue={parseAbsoluteToLocal("2021-04-07T18:45:22Z")}
+/>
+<DatePicker
+  label="Minute"
+  granularity="minute"
+  defaultValue={parseAbsoluteToLocal("2021-04-07T18:45:22Z")}
+/>
+<DatePicker
+  label="Second"
+  granularity="second"
+  defaultValue={parseAbsoluteToLocal("2021-04-07T18:45:22Z")}
+/>`}
+/>
+
+### Placeholder value
+
+Use the `placeholderValue` prop to control the default values of each segment. The default value is midnight.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/placeholder"
+  preview={`<DatePicker label="Meeting date" placeholderValue={new CalendarDate(1980, 1, 1)} />`}
+/>
+
+### Hide time zone
+
+Use the `hideTimeZone` prop to hide the time zone abbreviation.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/hide-time-zone"
+  preview={`<DatePicker
+  label="Appointment time"
+  granularity="minute"
+  defaultValue={parseZonedDateTime("2022-11-07T10:45[America/Los_Angeles]")}
+  hideTimeZone
+/>`}
+/>
+
+### Hour cycle
+
+Use the `hourCycle` prop to control the hour cycle of the `DatePicker`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/hour-cycle"
+  preview={`<DatePicker aria-label="Appointment date" granularity="minute" hourCycle={24} />`}
+/>
+
+### Loading
+
+Use the `isLoading` prop to control the loading state of the `DatePicker`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/loading"
+  preview={`<DatePicker aria-label="Meeting date" isLoading />`}
+/>
+
+### Disabled
+
+Use the `isDisabled` prop to disable the `DatePicker`.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/disabled"
+  preview={`<DatePicker label="Event date" isDisabled />`}
+/>
+
+### ReadOnly
+
+The isReadOnly boolean prop makes the `DatePicker`'s text content immutable. Unlike isDisabled, the `DatePicker` remains focusable and the contents can still be copied.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/read-only"
+  preview={`<DatePicker label="Event date" value={new CalendarDate(1980, 1, 1)} isReadOnly />`}
+/>
+
+### Required
+
+Use the `isRequired` prop to mark the `DatePicker` as required.
+Use the `necessityIndicator` prop to control the visual style of the required state.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/required"
+  preview={`<DatePicker label="Event date" isRequired />
+<DatePicker label="Event date" isRequired necessityIndicator="icon" />
+<DatePicker label="Event date" isRequired necessityIndicator="label" />
+<DatePicker label="Event date" necessityIndicator="label" />`}
+/>
+
+## Uncontrolled
+
+An initial, uncontrolled value can be provided to the `DatePicker` using the `defaultValue` prop.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/uncontrolled"
+  preview={`<DatePicker defaultValue={parseDate("2020-02-03")} />`}
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props to control the value of the input.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/controlled"
+  preview={`const [value, setValue] = React.useState(parseDate("2020-02-03"));
+  return <DatePicker label="Controlled" value={value} onChange={setValue} />`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/date-picker/composition"
+  preview={`<DatePickerRoot>
+  <Label>Meeting date</Label>
+  <InputRoot suffix={<Button><CalendarIcon /></Button>}>
+    <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+  </InputRoot>
+  <Description>Please select a date.</Description>
+  <FieldError />
+  <Overlay type="popover">
+    <DialogContent>
+      <Calendar />
+    </DialogContent>
+  </Overlay>
+</DatePickerRoot>`}
+/>
+
+## API Reference
+
+| Prop                      | Type                                                                                                         | Default     | Description                                                                                                                                                                                                                           |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pageBehavior`            | `'single' \| 'visible'`                                                                                      | `'visible'` | Controls the behavior of paging. Pagination either works by advancing the visible page by visibleDuration (default) or one unit of visibleDuration.                                                                                   |
+| `minValue`                | `DateValue`                                                                                                  | -           | The minimum allowed date that a user may select.                                                                                                                                                                                      |
+| `maxValue`                | `DateValue`                                                                                                  | -           | The maximum allowed date that a user may select.                                                                                                                                                                                      |
+| `isDateUnavailable`       | `(date: DateValue) => boolean`                                                                               | -           | Callback that is called for each date of the calendar. If it returns true, then the date is unavailable.                                                                                                                              |
+| `placeholderValue`        | `DateValue`                                                                                                  | -           | A placeholder date that influences the format of the placeholder shown when no value is selected. Defaults to 12:00 AM or 00:00 depending on the hour cycle.                                                                          |
+| `hourCycle`               | `12 \| 24`                                                                                                   | -           | Whether to display the time in 12 or 24 hour format. By default, this is determined by the user's locale.                                                                                                                             |
+| `granularity`             | `'hour' \| 'minute' \| 'second'`                                                                             | -           | Determines the smallest unit that is displayed in the date picker. By default, this is "day" for dates, and "minute" for times.                                                                                                       |
+| `hideTimeZone`            | `boolean`                                                                                                    | `false`     | Whether to hide the time zone abbreviation.                                                                                                                                                                                           |
+| `shouldForceLeadingZeros` | `boolean`                                                                                                    | -           | Whether to always show leading zeros in the hour field. By default, this is determined by the user's locale.                                                                                                                          |
+| `isDisabled`              | `boolean`                                                                                                    | -           | Whether the input is disabled.                                                                                                                                                                                                        |
+| `isReadOnly`              | `boolean`                                                                                                    | -           | Whether the input can be selected but not changed by the user.                                                                                                                                                                        |
+| `isRequired`              | `boolean`                                                                                                    | -           | Whether user input is required on the input before form submission.                                                                                                                                                                   |
+| `isInvalid`               | `boolean`                                                                                                    | -           | Whether the input value is invalid.                                                                                                                                                                                                   |
+| `validate`                | `(value: MappedDateValue<DateValue>) => ValidationError  \| true  \| null  \| undefined`                     | -           | A function that returns an error message if a given value is invalid. Validation errors are displayed to the user when the form is submitted if validationBehavior="native". For realtime validation, use the isInvalid prop instead. |
+| `autoFocus`               | `boolean`                                                                                                    | -           | Whether the element should receive focus on render.                                                                                                                                                                                   |
+| `isOpen`                  | `boolean`                                                                                                    | -           | Whether the overlay is open by default (controlled).                                                                                                                                                                                  |
+| `defaultOpen`             | `boolean`                                                                                                    | -           | Whether the overlay is open by default (uncontrolled).                                                                                                                                                                                |
+| `value`                   | `DateValue \| null`                                                                                          | -           | The current value (controlled).                                                                                                                                                                                                       |
+| `defaultValue`            | `DateValue \| null`                                                                                          | -           | The default value (uncontrolled).                                                                                                                                                                                                     |
+| `name`                    | `string`                                                                                                     | -           | The name of the input element, used when submitting an HTML form.                                                                                                                                                                     |
+| `shouldCloseOnSelect`     | `boolean \| () => boolean`                                                                                   | `true`      | Determines whether the date picker popover should close automatically when a date is selected.                                                                                                                                        |
+| `validationBehavior`      | `'native' \| 'aria'`                                                                                         | `'aria'`    | Whether to use native HTML form validation to prevent form submission when the value is missing or invalid, or mark the field as required or invalid via ARIA.                                                                        |
+| `children`                | `ReactNode \| (values: DateRangePickerRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -           | The children of the component. A function may be provided to alter the children based on component state.                                                                                                                             |
+| `className`               | `string`                                                                                                     | -           | The CSS className for the element.                                                                                                                                                                                                    |
+| `style`                   | `CSSProperties \| (values: DateRangePickerRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -           | The inline style for the element. A function may be provided to compute the style based on component state.                                                                                                                           |
+
+| Event           | Type                                                      | Description                                                     |
+| --------------- | --------------------------------------------------------- | --------------------------------------------------------------- |
+| `onFocus`       | `(e: FocusEvent<Target>) => void`                         | Handler that is called when the element receives focus.         |
+| `onBlur`        | `(e: FocusEvent<Target>) => void`                         | Handler that is called when the element loses focus.            |
+| `onFocusChange` | `(isFocused: boolean) => void`                            | Handler that is called when the element's focus status changes. |
+| `onKeyDown`     | `(e: KeyboardEvent) => void`                              | Handler that is called when a key is pressed.                   |
+| `onKeyUp`       | `(e: KeyboardEvent) => void`                              | Handler that is called when a key is released.                  |
+| `onOpenChange`  | `(isOpen: boolean) => void`                               | Handler that is called when the overlay's open state changes.   |
+| `onChange`      | `(value: RangeValue<MappedDateValue<DateValue>>) => void` | Handler that is called when the value changes.                  |
+
+| Data attribute         | Description                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| `[data-focus-within]`  | Whether an element within the date picker is focused, either via a mouse or keyboard. |
+| `[data-focus-visible]` | Whether an element within the date picker is keyboard focused.                        |
+| `[data-disabled]`      | Whether the date picker is disabled.                                                  |
+| `[data-invalid]`       | Whether the date picker is invalid.                                                   |
+| `[data-open]`          | Whether the date picker is open.                                                      |

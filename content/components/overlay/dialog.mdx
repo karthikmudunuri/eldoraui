@@ -1,0 +1,293 @@
+---
+title: Dialog
+description: A dialog is an overlay shown above other content in an application.
+thumbnail:
+  image: /previews/components/core/dialog.jpeg
+  video: /previews/components/core/dialog.mp4
+links:
+  - label: Aria dialog docs
+    href: https://react-spectrum.adobe.com/react-aria/Dialog.html
+  - label: Aria dialog docs
+    href: https://react-spectrum.adobe.com/react-aria/Dialog.html
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/overlay/dialog.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/dialog/basic"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit Profile</Button>
+  <Dialog title="Edit profile" description="Make changes to your profile.">
+    {({ close }) => (
+      <>
+        <div>
+          <TextField autoFocus label="Name" defaultValue="Mehdi" />
+          <TextField label="Username" defaultValue="@mehdibha_" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Cancel
+          </Button>
+          <Button variant="primary" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </>
+    )}
+  </Dialog>
+</DialogRoot>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource
+    name={[
+      "components/core/default/dialog",
+      "components/core/default/heading",
+      "components/core/default/overlay",
+      "components/core/default/text",
+    ]}
+  />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `Dialog` to display contextual information, tasks, or workflows that appear over the user interface. Depending on the kind of dialog, further interactions may be blocked until the dialog is acknowledged.
+
+## Options
+
+### Title
+
+Dialog is labeled with a title to provide context to the user. Use the `title` prop to provide a title for the dialog.<br />
+If a dialog does not have a visible heading element, an `aria-label` or `aria-labelledby` prop must be passed instead to identify the element to assistive technology.
+
+<ComponentPreview
+  name="demos/components/core/dialog/title"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit username</Button>
+  <Dialog title="Edit username">
+    <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+  </Dialog>
+</DialogRoot>`}
+/>
+
+### Description
+
+A description can be supplied to the dialog via the `description` prop.
+
+<ComponentPreview
+  name="demos/components/core/dialog/description"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit username</Button>
+  <Dialog title="Edit username" description="Make changes to your username.">
+    <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+  </Dialog>
+</DialogRoot>`}
+/>
+
+### Type
+
+Dialogs can be rendered as modals, popovers, or drawers using the `type` prop.
+By default, dialogs are displayed as drawers on mobile. You can override this behavior by setting the `mobileType` prop.
+
+<ComponentPreview
+  name="demos/components/core/dialog/types"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit username</Button>
+  <Dialog title="Edit username">
+    {({ close }) => (
+      <>
+        <div className="space-y-4">
+          <TextField autoFocus label="Name" defaultValue="Mehdi" className="w-full" />
+          <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Cancel
+          </Button>
+          <Button variant="primary" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </>
+    )}
+  </Dialog>
+</DialogRoot>`}
+/>
+
+### Dismissable
+
+By default, dialogs are dismissable allowing users to click outside to close the dialog. You can disable this behavior by setting the `isDismissable` prop.
+
+<ComponentPreview
+  name="demos/components/core/dialog/dismissable"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit Profile</Button>
+  <Dialog
+    title="Edit profile"
+    description="Make changes to your profile."
+    isDismissable={false}
+  >
+    {({ close }) => (
+      <>
+        <div className="space-y-4">
+          <TextField autoFocus label="Name" defaultValue="Mehdi" className="w-full" />
+          <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Cancel
+          </Button>
+          <Button variant="primary" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </>
+    )}
+  </Dialog>
+</DialogRoot>`}
+/>
+
+### Dismiss button
+
+By default, dialogs have a dismiss button when they're dismissable. You can disable this behavior by setting `showDismissButton` prop.
+
+<ComponentPreview
+  name="demos/components/core/dialog/dismiss-button"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit Profile</Button>
+  <Dialog
+    title="Edit profile"
+    description="Make changes to your profile."
+    showDismissButton={false}
+  >
+    {({ close }) => (
+      <>
+        <div className="space-y-4">
+          <TextField autoFocus label="Name" defaultValue="Mehdi" className="w-full" />
+          <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Cancel
+          </Button>
+          <Button variant="primary" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </>
+    )}
+  </Dialog>
+</DialogRoot>`}
+/>
+
+### Inset content
+
+Use the `<DialogInset>` component to add inset content to the dialog.
+
+<ComponentPreview
+  name="demos/components/core/dialog/inset-content"
+  preview={`<DialogRoot>
+  <Button variant="outline">Edit Profile</Button>
+  <Dialog title="Edit profile" description="Make changes to your profile.">
+    {({ close }) => (
+      <>
+        <DialogInset className="mb-4 bg-bg-muted border-y">Content within the inset.</DialogInset>
+        <div className="space-y-4">
+          <TextField autoFocus label="Name" defaultValue="Mehdi" className="w-full" />
+          <TextField label="Username" defaultValue="@mehdibha_" className="w-full" />
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Cancel
+          </Button>
+          <Button variant="primary" size={{ initial: "lg", sm: "md" }} onPress={close}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </>
+    )}
+  </Dialog>
+</DialogRoot>`}
+/>
+
+## Popover
+
+Use the `type="popover"` prop on the `<Dialog>` element to make a popover dialog.
+
+<ComponentPreview name="demos/components/core/dialog/popover" preview={``} />
+
+## Drawer
+
+Use the `type="drawer"` prop on the `<Dialog>` element to make a drawer dialog.
+
+<ComponentPreview name="demos/components/core/dialog/drawer" preview={``} />
+
+## Alert Dialog
+
+Use the `role="alertdialog"` prop on the `<Dialog>` element to make an alert dialog.
+If the `isDismissable` prop is not explicitly set, the dialog will be not dismissable.
+
+<ComponentPreview name="demos/components/core/dialog/alert-dialog" preview={``} />
+
+## Controlled
+
+Use the `isOpen` and `onOpenChange` props to control the dialog's open state.
+
+<ComponentPreview name="demos/components/core/dialog/controlled" preview={``} />
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview name="demos/components/core/dialog/composition" preview={``} />
+
+## Examples
+
+### Async form submission
+
+<ComponentPreview name="demos/components/core/dialog/async-form-submission" preview={``} />
+
+### Nested dialog
+
+Dialogs support nesting, allowing you to open a dialog from within another dialog.
+
+<ComponentPreview name="demos/components/core/dialog/nested" preview={``} />
+
+## API Reference
+
+### DialogRoot
+
+| Prop          | Type        | Default | Description                                            |
+| ------------- | ----------- | ------- | ------------------------------------------------------ |
+| `children*`   | `ReactNode` | -       |                                                        |
+| `isOpen`      | `boolean`   | -       | Whether the overlay is open by default (controlled).   |
+| `defaultOpen` | `boolean`   | -       | Whether the overlay is open by default (uncontrolled). |
+
+| Event          | Type                        | Description                                                   |
+| -------------- | --------------------------- | ------------------------------------------------------------- |
+| `onOpenChange` | `(isOpen: boolean) => void` | Handler that is called when the overlay's open state changes. |
+
+### Dialog
+
+| Prop        | Type                                                  | Default | Description                                                                                  |
+| ----------- | ----------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------- |
+| `children`  | `ReactNode \| (opts: DialogRenderProps) => ReactNode` | -       | Children of the dialog. A function may be provided to access a function to close the dialog. |
+| `className` | `string`                                              | -       | The CSS className for the element.                                                           |
+| `style`     | `CSSProperties`                                       | -       | The inline style for the element.                                                            |
+
+## Accessibility
+
+### Keyboard interactions
+
+| Key             | Description                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Space` `Enter` | When focus is on the trigger, opens the dialog.                                                                                                      |
+| `Tab`           | Moves focus to the next button inside the dialog (last becomes first). If none of the buttons are selected, the focus is set on the first button.    |
+| `Shift+Tab`     | Moves focus to the previous button inside the dialog (first becomes last). If none of the buttons are selected, the focus is set on the last button. |
+| `Esc`           | Dismisses the dialog and moves focus to the trigger.                                                                                                 |

@@ -1,0 +1,79 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+thumbnail:
+  image: /previews/components/core/avatar.jpeg
+  video: /previews/components/core/avatar.mp4
+links:
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/data-display/avatar.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/avatar/default"
+  preview={`<Avatar src="https://github.com/mehdibha.png" alt="@mehdibha" fallback="M" />`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/avatar" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `Avatar` to represent a user or an organization.
+
+## Options
+
+### Shape
+
+`Avatar` can be either a circle or a square using the `shape` prop.
+
+<ComponentPreview
+  name="demos/components/core/avatar/shape"
+  preview={`<Avatar shape="square" />
+<Avatar shape="circle" />`}
+/>
+
+### Size
+
+Use the `size` prop to control the size of the `Avatar`. The default variant is `md`.
+
+<ComponentPreview
+  name="demos/components/core/avatar/sizes"
+  preview={`<Avatar size="sm" />
+<Avatar size="md" />
+<Avatar size="lg" />`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/avatar/composition"
+  preview={`<AvatarRoot>
+  <AvatarImage src="https://github.com/mehdibha.png" alt="@mehdibha" />
+  <AvatarFallback>M</AvatarFallback>
+  <AvatarPlaceholder>
+    <UserIcon className="size-5" />
+  </AvatarPlaceholder>
+</AvatarRoot>`}
+/>
+
+## API Reference
+
+`Avatar` accepts all image attributes.
+
+| Prop       | Type                   | Default    | Description                                                                                 |
+| ---------- | ---------------------- | ---------- | ------------------------------------------------------------------------------------------- |
+| `src*`     | `string`               | -          | Specifies the path to the image                                                             |
+| `alt`      | `string`               | -          | Specifies an alternate text for the image, if the image for some reason cannot be displayed |
+| `shape`    | `'circle' \| 'square'` | `'circle'` | The shape of the avatar.                                                                    |
+| `size`     | `'sm' \| 'md' \| 'lg'` | `'md'`     | The size of the avatar.                                                                     |
+| `fallback` | `ReactNode`            | -          | The fallback element to render when an image is not available.                              |

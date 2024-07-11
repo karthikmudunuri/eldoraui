@@ -1,0 +1,80 @@
+---
+title: Separator
+description: Visually or semantically separates content.
+thumbnail:
+  image: /previews/components/core/separator.jpeg
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/Separator.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/Separator.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/data-display/separator.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/separator/card"
+  preview={`<div className="space-y-2 rounded-md border p-4">
+  <div>
+    <h3 className="font-bold">dotUI</h3>
+    <p className="text-sm text-fg-muted">Tools for building high-quality, accessible UI.</p>
+  </div>
+  <Separator className="my-4" />
+  <div className="flex h-5 items-center space-x-4 text-sm">
+    <div>Docs</div>
+    <Separator orientation="vertical" />
+    <div>Components</div>
+    <Separator orientation="vertical" />
+    <div>Hooks</div>
+    <Separator orientation="vertical" />
+    <div>Themes</div>
+  </div>
+</div>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/separator" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Options
+
+### Orientation
+
+Use the `orientation` prop to change the direction of the separator.
+
+<ComponentPreview
+  name="demos/components/core/separator/orientation"
+  preview={`<div className="flex items-center gap-10">
+  <div className="flex h-5 items-center gap-2 text-sm">
+    <div>Components</div>
+    <Separator orientation="vertical" />
+    <div>Hooks</div>
+  </div>
+  <div className="flex flex-col items-center gap-2 text-sm">
+    <div>Components</div>
+    <Separator orientation="horizontal" />
+    <div>Hooks</div>
+  </div>
+</div>`}
+/>
+
+### API Reference
+
+| Prop          | Type                         | Default        | Description                        |
+| ------------- | ---------------------------- | -------------- | ---------------------------------- |
+| `elementType` | `string`                     | -              | The HTML element type to render.   |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | The orientation of the separator.  |
+| `className`   | `string`                     | -              | The CSS className for the element. |
+| `style`       | `CSSProperties`              | -              | The inline style for the element.  |

@@ -1,0 +1,365 @@
+---
+title: Select
+description: Select displays a collapsible list of options and allows a user to select one of them.
+thumbnail:
+  image: /previews/components/core/select.jpeg
+  video: /previews/components/core/select.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/Select.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/Select.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/menus-and-selection/select.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/select/basic"
+  preview={`<Select>
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource
+    name={[
+      "components/core/default/select",
+      "components/core/default/list-box",
+      "components/core/default/button",
+      "components/core/default/field",
+      "components/core/default/overlay",
+    ]}
+  />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `Select` to allow users to choose a single option from a collapsible list of options when space is limited.
+
+## Options
+
+### Placeholder
+
+Use the `placeholder` prop to provide a temporary text that occupies the text input when it is empty.
+
+<ComponentPreview
+  name="demos/components/core/select/placeholder"
+  preview={`<Select placeholder="Select a provider">
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Label
+
+A visual label can be provided for the `Select` using the `label` prop, or a hidden label using `aria-label` prop.
+
+<ComponentPreview
+  name="demos/components/core/select/label"
+  preview={`<Select label="Provider">
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Description
+
+A description can be supplied to a Select via the `description` prop. The description is always visible unless the `isInvalid` prop is `true` and an error message is provided.
+
+<ComponentPreview
+  name="demos/components/core/select/description"
+  preview={`<Select label="Provider" description="Please select a provider.">
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Contextual help
+
+A `ContextualHelp` element may be placed next to the label to provide additional information or help about a `Select`.
+
+<ComponentPreview
+  name="demos/components/core/select/contextual-help"
+  preview={`<Select
+  label="Provider"
+  contextualHelp={<ContextualHelp />}
+>
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Validation
+
+An `errorMessage` can be supplied to `Select`, which will be displayed when the `isInvalid` prop is set to `true`.
+
+<ComponentPreview
+  name="demos/components/core/select/validation"
+  preview={`<Select label="Provider" isInvalid errorMessage="Please select an item in the list.">
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Sections
+
+Select supports sections in order to group options. Sections can be used by wrapping groups of items in a `Section` element.<br />
+Sections without a `title` must provide an `aria-label` for accessibility.
+
+<ComponentPreview
+  name="demos/components/core/select/sections"
+  preview={`<Select label="Model">
+  <Section title="OpenAI">
+    <Item>GPT-4o</Item>
+    <Item>GPT-4 Turbo</Item>
+    <Item>GPT-4</Item>
+    <Item>GPT-3.5 Turbo</Item>
+  </Section>
+  <Section title="Google">
+    <Item>Gemini 1.5 Flash</Item>
+    <Item>Gemini 1.5 Pro</Item>
+    <Item>Gemini 1.0 Pro</Item>
+  </Section>
+  <Section title="Meta">
+    <Item>Llama 3 (70B)</Item>
+    <Item>Llama 3 (8B)</Item>
+    <Item>Code Llama (70B)</Item>
+  </Section>
+  <Section title="Mistral AI">
+    <Item>Mixtral 8x22B</Item>
+    <Item>Mistral Large</Item>
+    <Item>Mistral 7B</Item>
+  </Section>
+</Select>`}
+/>
+
+### Links
+
+Items may be links to another page or website. This can be achieved by passing the `href` prop to the `Item` component.
+
+<ComponentPreview
+  name="demos/components/core/select/links"
+  preview={`<Select label="Project">
+  <Item href="/create-project">Create new...</Item>
+  <Item>DotUI</Item>
+  <Item>Palettify</Item>
+  <Item>Notionfolio</Item>
+</Select>`}
+/>
+
+### Disabled
+
+The `isDisabled` prop can be used to disable the Select.
+
+<ComponentPreview
+  name="demos/components/core/select/disabled"
+  preview={`<Select isDisabled>
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Loading
+
+Use the `isLoading` prop to indicate that the list is loading.
+
+<ComponentPreview
+  name="demos/components/core/select/loading"
+  preview={`<Select isLoading>
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+### Required
+
+Use the `isRequired` prop to mark the TextField as required.
+Use the `necessityIndicator` prop to control the visual style of the required state.
+
+<ComponentPreview
+  name="demos/components/core/select/required"
+  preview={`<Select label="Provider" isRequired necessityIndicator="icon">
+  <Item>Perplexity</Item>
+  <Item>Replicate</Item>
+  <Item>Together AI</Item>
+  <Item>ElevenLabs</Item>
+</Select>`}
+/>
+
+## Uncontrolled
+
+Use `defaultSelectedKey` to provide a default set of selected item.
+
+<ComponentPreview
+  name="demos/components/core/select/uncontrolled"
+  preview={`<Select defaultSelectedKey="eleven-labs">
+  <Item id="perplexity">Perplexity</Item>
+  <Item id="replicate">Replicate</Item>
+  <Item id="together-ai">Together AI</Item>
+  <Item id="eleven-labs">ElevenLabs</Item>
+</Select>`}
+/>
+
+## Controlled
+
+Use `selectedKey` to control the selected item.
+
+<ComponentPreview
+  name="demos/components/core/select/controlled"
+  preview={`const [provider, setProvider] = React.useState<Key>("eleven-labs");
+return (
+  <Select selectedKey={provider} onSelectionChange={setProvider}>
+    <Item id="perplexity">Perplexity</Item>
+    <Item id="replicate">Replicate</Item>
+    <Item id="together-ai">Together AI</Item>
+    <Item id="eleven-labs">ElevenLabs</Item>
+  </Select>
+)`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/select/composition"
+  preview={`<SelectRoot>
+  <Button variant="outline" suffix={<ChevronsUpDownIcon className="text-fg-muted" />}>
+    <SelectValue />
+  </Button>
+  <Overlay type="popover">
+    <ListBox>
+      <Item>Perplexity</Item>
+      <Item>Replicate</Item>
+      <Item>Together AI</Item>
+      <Item>ElevenLabs</Item>
+    </ListBox>
+  </Overlay>
+</SelectRoot>`}
+/>
+
+## Examples
+
+### Asynchronous laoding
+
+{/* prettier-ignore-start */}
+
+<ComponentPreview 
+  name="demos/components/core/select/async-loading" 
+  preview={`const list = useAsyncList<Character>({
+  async load({ signal }) {
+    const res = await fetch(\`https://pokeapi.co/api/v2/pokemon\`, { signal });
+    const json = (await res.json()) as { results: Character[] };
+
+    return {
+      items: json.results,
+    };
+  },
+});
+return (
+  <Select isLoading={list.isLoading} items={list.items}>
+    {(item) => <Item id={item.name}>{item.name}</Item>}
+  </Select>
+);`} 
+/>
+
+{/* prettier-ignore-end */}
+
+## API Reference
+
+### Select
+
+| Prop                 | Type                                                                                            | Default    | Description                                                                                                                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `autoComplete`       | `string`                                                                                        | -          | Describes the type of autocomplete functionality the input should provide if any.                                                                                                                                                     |
+| `name`               | `string`                                                                                        | -          | The name of the input, used when submitting an HTML form.                                                                                                                                                                             |
+| `isOpen`             | `boolean`                                                                                       | -          | Sets the open state of the menu.                                                                                                                                                                                                      |
+| `defaultOpen`        | `boolean`                                                                                       | -          | Sets the default open state of the menu.                                                                                                                                                                                              |
+| `disabledKeys`       | `Iterable<Key>`                                                                                 | -          | The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.                                                                                                                               |
+| `isDisabled`         | `boolean`                                                                                       | -          | Whether the input is disabled.                                                                                                                                                                                                        |
+| `isRequired`         | `boolean`                                                                                       | -          | Whether user input is required on the input before form submission.                                                                                                                                                                   |
+| `isInvalid`          | `boolean`                                                                                       | -          | Whether the input value is invalid.                                                                                                                                                                                                   |
+| `validate`           | `(value: Key) => ValidationError \| true \| null \| undefined`                                  | -          | A function that returns an error message if a given value is invalid. Validation errors are displayed to the user when the form is submitted if validationBehavior="native". For realtime validation, use the isInvalid prop instead. |
+| `placeholder`        | `string`                                                                                        | -          | Temporary text that occupies the text input when it is empty.                                                                                                                                                                         |
+| `selectedKey`        | `Key \| null`                                                                                   | -          | The currently selected key in the collection (controlled).                                                                                                                                                                            |
+| `defaultSelectedKey` | `Key`                                                                                           | -          | The initial selected key in the collection (uncontrolled).                                                                                                                                                                            |
+| `autoFocus`          | `boolean`                                                                                       | -          | Whether the element should receive focus on render.                                                                                                                                                                                   |
+| `validationBehavior` | `'native' \| 'aria'`                                                                            | `'native'` | Whether to use native HTML form validation to prevent form submission when the value is missing or invalid, or mark the field as required or invalid via ARIA.                                                                        |
+| `children`           | `ReactNode \| (item: object) => ReactNode`                                                      | -          | The contents of the collection.                                                                                                                                                                                                       |
+| `dependencies`       | `any[]`                                                                                         | -          | Values that should invalidate the item cache when using dynamic collections.                                                                                                                                                          |
+| `className`          | `string \| (values: SelectRenderProps & {defaultClassName: string \| undefined}) => string`     | -          | The CSS className for the element. A function may be provided to compute the class based on component state.                                                                                                                          |
+| `style`              | `CSSProperties \| (values: SelectRenderProps & {defaultStyle: CSSProperties}) => CSSProperties` | -          | The inline style for the element. A function may be provided to compute the style based on component state.                                                                                                                           |
+
+| Event               | Type                              | Description                                                     |
+| ------------------- | --------------------------------- | --------------------------------------------------------------- |
+| `onOpenChange`      | `(isOpen: boolean) => void`       | Method that is called when the open state of the menu changes.  |
+| `onSelectionChange` | `(key: Key) => void`              | Handler that is called when the selection changes.              |
+| `onFocus`           | `(e: FocusEvent<Target>) => void` | Handler that is called when the element receives focus.         |
+| `onBlur`            | `(e: FocusEvent<Target>) => void` | Handler that is called when the element loses focus.            |
+| `onFocusChange`     | `(isFocused: boolean) => void`    | Handler that is called when the element's focus status changes. |
+| `onKeyDown`         | `(e: KeyboardEvent) => void`      | Handler that is called when a key is pressed.                   |
+| `onKeyUp`           | `(e: KeyboardEvent) => void`      | Handler that is called when a key is released.                  |
+
+| Data attribute         | Description                                                    |
+| ---------------------- | -------------------------------------------------------------- |
+| `[data-focused]`       | Whether the select is focused, either via a mouse or keyboard. |
+| `[data-focus-visible]` | Whether the select is keyboard focused.                        |
+| `[data-disabled]`      | Whether the select is disabled.                                |
+| `[data-open]`          | Whether the select is currently open.                          |
+| `[data-invalid]`       | Whether the select is invalid.                                 |
+| `[data-required]`      | Whether the select is required.                                |
+
+### SelectValue
+
+| Prop        | Type                                                                                                             | Default | Description                                                                                                  |
+| ----------- | ---------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
+| `children`  | `ReactNode \| (values: SelectValueRenderProps<object> & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -       | The children of the component. A function may be provided to alter the children based on component state.    |
+| `className` | `string \| (values: SelectValueRenderProps<object> & {defaultClassName: string \| undefined}) => string`         | -       | The CSS className for the element. A function may be provided to compute the class based on component state. |
+| `style`     | `CSSProperties \| (values: SelectValueRenderProps<object> & {defaultStyle: CSSProperties}) => CSSProperties`     | -       | The inline style for the element. A function may be provided to compute the style based on component state.  |
+
+## Accessibility
+
+### Keyboard interactions
+
+When the popover is closed:
+
+| Key                 | Description                                                         |
+| ------------------- | ------------------------------------------------------------------- |
+| `Space` `ArrowDown` | Opens the popover menu. The focus is set on the menu item selected. |
+
+When the popover menu is open:
+
+| Key                   | Description                                                                                                          |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `Space`               | Selects the menu item in focus, closes the popover menu and moves focus to the field button.                         |
+| `ArrowDown` `ArrowUp` | Moves focus to previous or next menu item in the popover. Does not loop when the last or first menu item is reached. |
+| `Esc`                 | Closes the popover menu and moves focus to the field button.                                                         |

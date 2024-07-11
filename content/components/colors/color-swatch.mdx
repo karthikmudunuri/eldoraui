@@ -1,0 +1,39 @@
+---
+title: Color Swatch
+description: A ColorSwatch displays a preview of a selected color.
+thumbnail:
+  image: /previews/components/core/color-swatch.jpeg
+---
+
+<ComponentPreview
+  name="demos/components/core/color-swatch/default"
+  preview={`<ColorSwatch color="#f00" />`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+  <ComponentSource name={"components/core/default/color-swatch"} />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use a `ColorSwatch` to display a preview of a selected color.
+
+## API Reference
+
+| Prop        | Type                                                                                                     | Default | Description                                                                                                 |
+| ----------- | -------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| `color*`    | `string \| Color \| null`                                                                                | -       | The color value to display in the swatch.                                                                   |
+| `children`  | `ReactNode \| (values: ColorSwatchRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -       | The children of the component. A function may be provided to alter the children based on component state.   |
+| `className` | `string`                                                                                                 | -       | The CSS className for the element.                                                                          |
+| `style`     | `CSSProperties \| (values: ColorSwatchRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -       | The inline style for the element. A function may be provided to compute the style based on component state. |

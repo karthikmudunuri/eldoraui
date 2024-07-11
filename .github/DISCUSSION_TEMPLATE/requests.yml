@@ -1,0 +1,25 @@
+title: "[category]: "
+labels: ["Request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for taking the time to create a request! Please search open/closed requests before submitting.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us about your request
+      placeholder: "A dashboard for an e-commerce website showing sales, orders, and customers..."
+    validations:
+      required: true
+
+  - type: input
+    id: example-url
+    attributes:
+      label: Example
+      description: Link to an example of the peace of work you are requesting
+      placeholder: ex. https://example.com
+    validations:
+      required: false

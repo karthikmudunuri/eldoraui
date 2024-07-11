@@ -1,0 +1,373 @@
+---
+title: Combobox
+description: Combobox combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+thumbnail:
+  image: /previews/components/core/combobox.jpeg
+  video: /previews/components/core/combobox.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/Combobox.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/Combobox.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/menus-and-selection/combobox.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/combobox/basic"
+  preview={`<Combobox>
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource 
+    name={[
+      "components/core/default/combobox",
+      "components/core/default/list-box",
+      "components/core/default/button",
+      "components/core/default/field",
+      "components/core/default/overlay",
+    ]} 
+  />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `Combobox` to allow users to filter a list of options to items matching a query and select an item from the list.
+
+## Options
+
+### Label
+
+A visual label can be provided for the combobox using the `label` prop, or a hidden label using `aria-label` prop.
+
+<ComponentPreview
+  name="demos/components/core/combobox/label"
+  preview={`<Combobox label="Country">
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+### Description
+
+A description can be supplied to the combobox via the `description` prop. The description is always visible unless the `validationState` is `“invalid”` and an error message is provided.
+
+<ComponentPreview
+  name="demos/components/core/combobox/description"
+  preview={`<Combobox label="Country" description="Please select a country.">
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+### Contextual help
+
+A `ContextualHelp` element may be placed next to the label to provide additional information or help about the `Combobox`
+
+<ComponentPreview
+  name="demos/components/core/combobox/contextual-help"
+  preview={`<Combobox
+  label="Country"
+  contextualHelp={<ContextualHelp />}
+>
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+### Validation
+
+An `errorMessage` can be supplied to a `Combobox`, which will be displayed when the `isInvalid` prop is set to `true`.
+
+<ComponentPreview
+  name="demos/components/core/combobox/validation"
+  preview={`<Combobox isInvalid errorMessage="Please select a country in the list.">
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+### Custom value
+
+By default, `Combobox` doesn't allow users to specify a value that doesn't exist in the list of options and will revert the input value to the current selected value on blur. By specifying `allowsCustomValue`, this behavior is suppressed.
+
+<ComponentPreview
+  name="demos/components/core/combobox/custom-value"
+  preview={`<Combobox allowsCustomValue>
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+### Disabled
+
+The `isDisabled` prop can be used to disable the combobox.
+
+<ComponentPreview
+  name="demos/components/core/combobox/disabled"
+  preview={`<Combobox label="Favorite animal" isDisabled>
+  <Item>Red Panda</Item>
+  <Item>Cat</Item>
+  <Item>Dog</Item>
+  <Item>Aardvark</Item>
+  <Item>Kangaroo</Item>
+  <Item>Snake</Item>
+</Combobox>`}
+/>
+
+### Loading
+
+Use the `isLoading` prop to indicate that the list is loading.
+
+<ComponentPreview
+  name="demos/components/core/combobox/loading"
+  preview={`<Combobox label="Favorite Animal" isLoading>
+  <Item>Red Panda</Item>
+  <Item>Cat</Item>
+  <Item>Dog</Item>
+  <Item>Aardvark</Item>
+  <Item>Kangaroo</Item>
+  <Item>Snake</Item>
+</Combobox>`}
+/>
+
+### Required
+
+Use the `isRequired` prop to mark the combobox as required.
+Use the `necessityIndicator` prop to control the visual style of the required state.
+
+<ComponentPreview
+  name="demos/components/core/combobox/required"
+  preview={`<Combobox label="Country" isRequired necessityIndicator="icon">
+  <Item>Canada</Item>
+  <Item>France</Item>
+  <Item>Germany</Item>
+  <Item>Spain</Item>
+  <Item>Tunisia</Item>
+  <Item>United states</Item>
+  <Item>United Kingdom</Item>
+</Combobox>`}
+/>
+
+## Sections
+
+Combobox supports sections in order to group options. Sections can be used by wrapping groups of items in a Section element.<br />
+Sections without a `title` must provide an aria-label for accessibility.
+
+<ComponentPreview
+  name="demos/components/core/combobox/sections"
+  preview={`<Combobox>
+  <Section title="Africa">
+    <Item>Tunisia</Item>
+    <Item>Algeria</Item>
+    <Item>Morocco</Item>
+  </Section>
+  <Section title="America">
+    <Item>Canada</Item>
+    <Item>United states</Item>
+  </Section>
+  <Section title="Asia">
+    <Item>India</Item>
+    <Item>Japan</Item>
+    <Item>Korea</Item>
+  </Section>
+  <Section title="Europe">
+    <Item>France</Item>
+    <Item>Germany</Item>
+    <Item>Spain</Item>
+    <Item>United Kingdom</Item>
+  </Section>
+</Combobox>`}
+/>
+
+## Item options
+
+See [Item options](/components/menus-and-selection/list-box#item-options) for more information on the available options.
+
+## Uncontrolled
+
+Use `defaultSelectedKey` to provide a default set of selected item.
+
+<ComponentPreview
+  name="demos/components/core/combobox/uncontrolled"
+  preview={`<Combobox aria-label="country" defaultSelectedKey="tn">
+  <Item id="ca">Canada</Item>
+  <Item id="fr">France</Item>
+  <Item id="de">Germany</Item>
+  <Item id="es">Spain</Item>
+  <Item id="tn">Tunisia</Item>
+  <Item id="us">United States</Item>
+  <Item id="uk">United Kingdom</Item>
+</Combobox>`}
+/>
+
+## Controlled
+
+Use `selectedKey` to control the selected item.
+
+<ComponentPreview
+  name="demos/components/core/combobox/controlled"
+  preview={`const [country, setCountry] = React.useState<Key | null>("tn");
+return (
+  <Combobox selectedKey={country} onSelectionChange={setCountry}>
+    <Item id="ca">Canada</Item>
+    <Item id="fr">France</Item>
+    <Item id="de">Germany</Item>
+    <Item id="es">Spain</Item>
+    <Item id="tn">Tunisia</Item>
+    <Item id="us">United States</Item>
+    <Item id="uk">United Kingdom</Item>
+  </Combobox>
+)`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/combobox/composition"
+  preview={`<ComboboxRoot>
+  <Label>Framework</Label>
+  <ComboboxTrigger />
+  <Description>Please choose a framework.</Description>
+  <FieldError />
+  <Overlay type="popover">
+    <ListBox>
+      <Item>Next.js</Item>
+      <Item>Remix</Item>
+      <Item>Gatsby</Item>
+      <Item></Item>
+    </ListBox>
+  </Overlay>
+</ComboboxRoot>`}
+/>
+
+## Examples
+
+### Asynchronous loading
+
+{/* prettier-ignore-start */}
+
+<ComponentPreview 
+  name="demos/components/core/combobox/async-loading" 
+  preview={`const list = useAsyncList<Character>({
+  async load({ signal }) {
+    const res = await fetch(\`https://pokeapi.co/api/v2/pokemon\`, { signal });
+    const json = (await res.json()) as { results: Character[] };
+    return {
+      items: json.results,
+    };
+  },
+});
+
+return (
+  <Combobox label="Pokemon" items={list.items} isLoading={list.isLoading}>
+    {(item) => <Item id={item.name}>{item.name}</Item>}
+  </Combobox>
+);`} 
+/>
+
+{/* prettier-ignore-end */}
+
+## API Reference
+
+| Prop                    | Type                                                                                                  | Default    | Description                                                                                                                                                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `defaultFilter`         | `(textValue: string, inputValue: string) => boolean`                                                  | -          | The filter function used to determine if a option should be included in the combo box list.                                                                                                                                           |
+| `formValue`             | `'text' \| 'key'`                                                                                     | -          | Whether the text or key of the selected item is submitted as part of an HTML form. When allowsCustomValue is true, this option does not apply and the text is always submitted.                                                       |
+| `allowsEmptyCollection` | `boolean`                                                                                             | -          | Whether the combo box allows the menu to be open when the collection is empty.                                                                                                                                                        |
+| `shouldFocusWrap`       | `boolean`                                                                                             | -          | Whether keyboard navigation is circular.                                                                                                                                                                                              |
+| `defaultItems`          | `Iterable<T>`                                                                                         | -          | The list of ComboBox items (uncontrolled).                                                                                                                                                                                            |
+| `items`                 | `Iterable<T>`                                                                                         | -          | The list of ComboBox items (controlled).                                                                                                                                                                                              |
+| `inputValue`            | `string`                                                                                              | -          | The value of the ComboBox input (controlled).                                                                                                                                                                                         |
+| `defaultInputValue`     | `string`                                                                                              | -          | The default value of the ComboBox input (uncontrolled).                                                                                                                                                                               |
+| `allowsCustomValue`     | `boolean`                                                                                             | -          | Whether the ComboBox allows a non-item matching input value to be set.                                                                                                                                                                |
+| `menuTrigger`           | `'focus' \| 'input' \| 'manual'`                                                                      | `'input'`  | The interaction required to display the ComboBox menu.                                                                                                                                                                                |
+| `disabledKeys`          | `Iterable<Key>`                                                                                       | -          | The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.                                                                                                                               |
+| `selectedKey`           | `Key \| null`                                                                                         | -          | The currently selected key in the collection (controlled).                                                                                                                                                                            |
+| `defaultSelectedKey`    | `Key`                                                                                                 | -          | The initial selected key in the collection (uncontrolled).                                                                                                                                                                            |
+| `isDisabled`            | `boolean`                                                                                             | -          | Whether the input is disabled.                                                                                                                                                                                                        |
+| `isReadOnly`            | `boolean`                                                                                             | -          | Whether the input can be selected but not changed by the user.                                                                                                                                                                        |
+| `isRequired`            | `boolean`                                                                                             | -          | Whether user input is required on the input before form submission.                                                                                                                                                                   |
+| `isInvalid`             | `boolean`                                                                                             | -          | Whether the input value is invalid.                                                                                                                                                                                                   |
+| `validate`              | `(value: ComboBoxValidationValue) => ValidationError \| true \| null \| undefined`                    | -          | A function that returns an error message if a given value is invalid. Validation errors are displayed to the user when the form is submitted if validationBehavior="native". For realtime validation, use the isInvalid prop instead. |
+| `autoFocus`             | `boolean`                                                                                             | -          | Whether the element should receive focus on render.                                                                                                                                                                                   |
+| `name`                  | `string`                                                                                              | -          | The name of the input element, used when submitting an HTML form.                                                                                                                                                                     |
+| `validationBehavior`    | `'native' \| 'aria'`                                                                                  | `'native'` | Whether to use native HTML form validation to prevent form submission when the value is missing or invalid, or mark the field as required or invalid via ARIA.                                                                        |
+| `children`              | `ReactNode \| (values: ComboBoxRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -          | The children of the component. A function may be provided to alter the children based on component state.                                                                                                                             |
+| `className`             | `string`                                                                                              | -          | The CSS className for the element.                                                                                                                                                                                                    |
+| `style`                 | `CSSProperties \| (values: ComboBoxRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -          | The inline style for the element. A function may be provided to compute the style based on component state.                                                                                                                           |
+
+| Event               | Type                              | Description                                                     |
+| ------------------- | --------------------------------- | --------------------------------------------------------------- |
+| `onOpenChange`      | `(isOpen: boolean) => void`       | Method that is called when the open state of the menu changes.  |
+| `onSelectionChange` | `(key: Key) => void`              | Handler that is called when the selection changes.              |
+| `onInputChange`     | `(value: string) => void`         | Handler that is called when the ComboBox input value changes.   |
+| `onFocus`           | `(e: FocusEvent<Target>) => void` | Handler that is called when the element receives focus.         |
+| `onBlur`            | `(e: FocusEvent<Target>) => void` | Handler that is called when the element loses focus.            |
+| `onFocusChange`     | `(isFocused: boolean) => void`    | Handler that is called when the element's focus status changes. |
+| `onKeyDown`         | `(e: KeyboardEvent) => void`      | Handler that is called when a key is pressed.                   |
+| `onKeyUp`           | `(e: KeyboardEvent) => void`      | Handler that is called when a key is released.                  |
+
+| Data attribute    | Description                             |
+| ----------------- | --------------------------------------- |
+| `[data-open]`     | Whether the combobox is currently open. |
+| `[data-disabled]` | Whether the combobox is disabled.       |
+| `[data-invalid]`  | Whether the combobox is invalid.        |
+| `[data-required]` | Whether the combobox is required.       |
+
+## Accessibility
+
+### Keyboard interactions
+
+| Key                   | Description                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| `Typing`              | Initiates autocomplete or popover (unless suppressed).                                      |
+| `ArrowDown` `ArrowUp` | If the popover is unsuppressed and not already open, the down arrow opens the popover menu. |
+| `Esc`                 | If the popover is open, close the popover.                                                  |

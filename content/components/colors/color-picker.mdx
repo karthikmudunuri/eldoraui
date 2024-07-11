@@ -1,0 +1,114 @@
+---
+title: Color Picker
+description: A ColorPicker combines a swatch with a customizable popover for editing a color.
+thumbnail:
+  image: /previews/components/core/color-picker.jpeg
+  video: /previews/components/core/color-picker.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/ColorPicker.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/ColorPicker.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/inputs/text-field.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/color-picker/default"
+  preview={`<ColorPicker defaultValue="#5100FF" />`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+  <ComponentSource  
+    name={[
+      "components/core/default/color-picker",
+      "components/core/default/button",
+      "components/core/default/color-area",
+      "components/core/default/color-field",
+      "components/core/default/color-swatch",
+      "components/core/default/dialog",
+      "components/core/default/overlay",
+      "components/core/default/select",
+      "components/core/default/list-box",
+    ]}
+  />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use a `ColorPicker` to allow users to select and edit a color in an overlay.
+
+## Options
+
+`ColorPicker` accepts all [button options](/components/buttons/button#options).
+
+<ComponentPreview
+  name="demos/components/core/color-picker/options"
+  preview={`<ColorPicker size="sm" shape="rectangle">
+  Fill color
+</ColorPicker>`}
+/>
+
+## Unontrolled
+
+An initial, uncontrolled value can be provided to the `ColorPicker` using the `defaultValue` prop.
+
+<ComponentPreview
+  name="demos/components/core/color-picker/uncontrolled"
+  preview={`<ColorPicker defaultValue="#5100FF" />`}
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props to control the color picker.
+
+<ComponentPreview
+  name="demos/components/core/color-picker/controlled"
+  preview={`const [value, setValue] = React.useState(parseColor("hsl(25, 100%, 50%)"));
+return <ColorPicker value={value as Color & string} onChange={setValue} />;`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/color-picker/composition"
+  preview={`<ColorPickerRoot defaultValue="#5100FF">
+  <DialogRoot>
+    <Button>
+      <ColorSwatch />
+    </Button>
+    <Dialog>
+      <ColorEditor />
+    </Dialog>
+  </DialogRoot>
+</ColorPickerRoot>`}
+/>
+
+## API Reference
+
+`ColorPicker` extends and merges the props of the [Button](/components/buttons/button#api-reference) component.
+
+| Prop           | Type                                                                                | Default | Description                                                                                               |
+| -------------- | ----------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| `value`        | `string \| Color \| null`                                                           | -       | The current value (controlled).                                                                           |
+| `defaultValue` | `string \| Color \| null`                                                           | -       | The default value (uncontrolled).                                                                         |
+| `children`     | `ReactNode \| (values: T & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -       | The children of the component. A function may be provided to alter the children based on component state. |
+
+| Event      | Type                     | Description                                    |
+| ---------- | ------------------------ | ---------------------------------------------- |
+| `onChange` | `(value: Color) => void` | Handler that is called when the value changes. |

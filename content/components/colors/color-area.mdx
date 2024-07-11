@@ -1,0 +1,118 @@
+---
+title: Color Area
+description: ColorArea allows users to adjust two channels of an RGB, HSL or HSB color value against a two-dimensional gradient background.
+thumbnail:
+  image: /previews/components/core/color-area.jpeg
+  video: /previews/components/core/color-area.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/ColorArea.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/ColorArea.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/colors/color-area.mdx?plain=1
+---
+
+<ComponentPreview name="demos/components/core/color-area/default" preview={`<ColorArea />`} />
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+  <ComponentSource name={["components/core/default/color-area","components/core/default/color-thumb"]} />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `ColorArea` to allow users to adjust two channels of an RGB, HSL or HSB color value against a two-dimensional gradient background.
+
+## Options
+
+### Channels
+
+`xChannel` and `yChannel` props may be provided to specify which color channels the color area should display
+
+<ComponentPreview
+  name="demos/components/core/color-area/channels"
+  preview={`<ColorArea xChannel="red" yChannel="blue" />`}
+/>
+
+### Disabled
+
+Use the `isDisabled` prop to disable the color area.
+
+<ComponentPreview
+  name="demos/components/core/color-area/disabled"
+  preview={`<ColorArea isDisabled />`}
+/>
+
+## Unontrolled
+
+An initial, uncontrolled value can be provided to the `ColorArea` using the `defaultValue` prop.
+
+<ComponentPreview
+  name="demos/components/core/color-area/uncontrolled"
+  preview={`<ColorArea defaultValue="hsl(30, 100%, 50%)" />`}
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props to control the value of the slider.
+
+<ComponentPreview
+  name="demos/components/core/color-area/controlled"
+  preview={`const [value, setValue] = React.useState(parseColor("hsl(0, 100%, 50%)"))
+return <ColorArea value={value} onChange={setValue} xChannel="saturation" yChannel="lightness" />`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/color-area/composition"
+  preview={`<ColorAreaRoot>
+  <ColorThumb />
+</ColorAreaRoot>`}
+/>
+
+## API Reference
+
+| Prop           | Type                                                                                                   | Default | Description                                                                                                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `xName`        | `string`                                                                                               | -       | The name of the y channel input element, used when submitting an HTML form.                                                                                                                   |
+| `yName`        | `string`                                                                                               | -       | The name of the y channel input element, used when submitting an HTML form.                                                                                                                   |
+| `colorSpace`   | `'rgb' \| 'hsl' \| 'hsb'`                                                                              | -       | The color space that the color area operates in. The xChannel and yChannel must be in this color space. If not provided, this defaults to the color space of the color or defaultColor value. |
+| `xChannel`     | `'hue' \| 'saturation' \| 'brightness' \| 'lightness' \| 'red' \| 'green' \| 'blue' \| 'alpha'`        | -       | Color channel for the horizontal axis.                                                                                                                                                        |
+| `yChannel`     | `'hue' \| 'saturation' \| 'brightness' \| 'lightness' \| 'red' \| 'green' \| 'blue' \| 'alpha'`        | -       | Color channel for the vertical axis.                                                                                                                                                          |
+| `isDisabled`   | `boolean`                                                                                              | -       | Whether the ColorArea is disabled.                                                                                                                                                            |
+| `value`        | `T`                                                                                                    | -       | The current value (controlled).                                                                                                                                                               |
+| `defaultValue` | `T`                                                                                                    | -       | The default value (uncontrolled).                                                                                                                                                             |
+| `children`     | `ReactNode \| (values: ColorAreaRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -       | The children of the component. A function may be provided to alter the children based on component state.                                                                                     |
+| `className`    | `string`                                                                                               | -       | The CSS className for the element.                                                                                                                                                            |
+| `style`        | `CSSProperties \| (values: ColorAreaRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -       | The inline style for the element. A function may be provided to compute the style based on component state.                                                                                   |
+
+| Event         | Type                     | Description                                                       |
+| ------------- | ------------------------ | ----------------------------------------------------------------- |
+| `onChange`    | `(value: Color) => void` | Handler that is called when the value changes, as the user drags. |
+| `onChangeEnd` | `(value: Color) => void` | Handler that is called when the user stops dragging.              |
+
+## Accessibility
+
+### Keyboard interactions
+
+| Key                                            | Description                                                                                                              |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `Tab`                                          | Places focus on the handle. If the handle is already in focus, moves focus to the next element in the page tab sequence. |
+| `Shift+Tab`                                    | Places focus on the previous element in the page tab sequence.                                                           |
+| `ArrowRight` `ArrowLeft` `ArrowDown` `ArrowUp` | Moves the handle up/down/left/right.                                                                                     |

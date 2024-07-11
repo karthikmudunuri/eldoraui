@@ -1,0 +1,451 @@
+---
+title: Menu
+description: A menu displays a list of actions or options that a user can choose.
+thumbnail:
+  image: /previews/components/core/menu.jpeg
+  video: /previews/components/core/menu.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/Menu.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/Menu.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/menus-and-selection/menu.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/menu/basic"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem>Create team</MenuItem>
+    <MenuItem>Command menu</MenuItem>
+    <MenuItem>Log out</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name={["components/core/default/menu","components/core/default/overlay","components/core/default/kbd","components/core/default/text"]} />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `Menu` to display a list of actions or options that a user can choose.
+
+## Menu options
+
+### Overlay type
+
+Use the `type` prop to set the overlay type. The default is `"popover"`. You can also set the mobile type using the `mobileType` prop (`"drawer"` by default).
+
+<ComponentPreview
+  name="demos/components/core/menu/overlay-type"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu type={type} mobileType={mobileType}>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem>Create team</MenuItem>
+    <MenuItem>Command menu</MenuItem>
+    <MenuItem>Log out</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Position
+
+Use the `placement` prop to set the position of the menu relative to the trigger button.
+
+<ComponentPreview
+  name="demos/components/core/menu/placement"
+  preview={`<MenuRoot>
+  <Button>
+    <MenuIcon />
+  </Button>
+  <Menu placement={placement}>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem>Create team</MenuItem>
+    <MenuItem>Log out</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Selection mode
+
+#### Single selection
+
+Set the `selectionMode` prop to `single` for single selection.
+
+<ComponentPreview
+  name="demos/components/core/menu/single-selection"
+  preview={`const [selected, setSelected] = React.useState<Selection>(new Set(["center"]));
+return (
+  <MenuRoot>
+    <Button>Align</Button>
+    <Menu selectionMode="single" selectedKeys={selected} onSelectionChange={setSelected}>
+      <MenuItem id="start">Start</MenuItem>
+      <MenuItem id="center">Center</MenuItem>
+      <MenuItem id="end">End</MenuItem>
+    </Menu>
+  </MenuRoot>
+);`}
+/>
+
+#### Multiple selection
+
+Set the `selectionMode` prop to `multiple` for multiple selection.
+
+<ComponentPreview
+  name="demos/components/core/menu/multiple-selection"
+  preview={`<MenuRoot>
+  <Button>Panels</Button>
+  <Menu selectionMode="multiple" defaultSelectedKeys={["sidebar", "searchbar", "console"]}>
+    <MenuItem id="sidebar">Sidebar</MenuItem>
+    <MenuItem id="searchbar">Searchbar</MenuItem>
+    <MenuItem id="tools">Tools</MenuItem>
+    <MenuItem id="console">Console</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## MenuItem options
+
+### Variant
+
+Use the `variant` prop to set the visual style of the menu item.
+
+<ComponentPreview
+  name="demos/components/core/menu/item-variant"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem>Create team</MenuItem>
+    <MenuItem>Command menu</MenuItem>
+    <MenuItem variant="danger">Delete</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Label and description
+
+MenuItems also support the `"label"` and `"description"` slots to separate primary and secondary content. You can also use the `Text` component to do the same behaviour.
+
+<ComponentPreview
+  name="demos/components/core/menu/label-and-description"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem label="New file" description="Create a new file" />
+    <MenuItem label="Copy link" description="Copy the file link" />
+    <MenuItem label="Edit file" description="Allows you to edit the file" />
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Prefix and suffix
+
+To add additional context for the menu item, such as icons, use the `prefix` and `suffix` props.
+
+<ComponentPreview
+  name="demos/components/core/menu/prefix-and-suffix"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem label="New file" description="Create a new file" prefix={<PlusSquareIcon />} />
+    <MenuItem label="Copy link" description="Copy the file link" prefix={<CopyIcon />} />
+    <MenuItem label="Edit file" description="Allows you to edit the file" prefix={<SquarePenIcon />} />
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Keyboard shortcut
+
+Use the `shortcut` prop to add a keyboard shortcut to a menu item, or use the `Keyboard` component.
+
+<ComponentPreview
+  name="demos/components/core/menu/shortcut"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem shortcut="⌘N">New file</MenuItem>
+    <MenuItem shortcut="⌘C">Copy link</MenuItem>
+    <MenuItem shortcut="⌘⇧E">Edit file</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Link
+
+Alternatively, items may be links to another page or website. This can be achieved by passing the href prop to the `<MenuItem>` component. Link items in a menu are not selectable.
+
+<ComponentPreview
+  name="demos/components/core/menu/link-items"
+  preview={`<MenuRoot>
+  <Button>Social</Button>
+  <Menu>
+    <MenuItem prefix={<GitHubIcon />} href="https://github.com/mehdibha/dotUI">
+      Github
+    </MenuItem>
+    <MenuItem prefix={<TwitterIcon />} href="https://x.com/mehdibha_">
+      X
+    </MenuItem>
+    <MenuItem prefix={<DiscordIcon />} href="https://discord.com/invite/DXpj5V2fU8">
+      Discord
+    </MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+### Disabled
+
+A MenuItem can be disabled with the `isDisabled` prop.
+
+<ComponentPreview
+  name="demos/components/core/menu/disabled-items"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem prefix={<PlusSquareIcon />} isDisabled>
+      Create team
+    </MenuItem>
+    <MenuItem>Log out</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## MenuRoot options
+
+### Long press
+
+By default, Menu opens by pressing the trigger element or activating it via the Space or Enter keys. This behavior can be changed by providing `"longPress"` to the `trigger` prop.
+
+<ComponentPreview
+  name="demos/components/core/menu/long-press"
+  preview={`<MenuRoot trigger="longPress">
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>Account settings</MenuItem>
+    <MenuItem>Create team</MenuItem>
+    <MenuItem>Log out</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## Sections
+
+Menu supports sections with headings in order to group items. Sections can be used by wrapping groups of MenuItems in a `Section` component.<br />
+A `Header` element may also be included to label the section or using the `title` prop on the `Section` component.
+
+<ComponentPreview
+  name="demos/components/core/menu/section"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <Section title="Notifications">
+      <MenuItem>Push notifications</MenuItem>
+      <MenuItem>Badges</MenuItem>
+    </Section>
+    <Separator />
+    <Section title="Panels">
+      <MenuItem id="console">Console</MenuItem>
+      <MenuItem>Search</MenuItem>
+    </Section>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## Separator
+
+Separators may be added between menu items or sections in order to create non-labeled groupings.
+
+<ComponentPreview
+  name="demos/components/core/menu/separator"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>New...</MenuItem>
+    <MenuItem>Badges</MenuItem>
+    <Separator />
+    <MenuItem>Save</MenuItem>
+    <MenuItem>Save as...</MenuItem>
+    <MenuItem>Rename...</MenuItem>
+    <Separator />
+    <MenuItem>Page setup…</MenuItem>
+    <MenuItem>Print…</MenuItem>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## Submenus
+
+Submenus can be created by wrapping a `MenuItem` and a `Menu` in a `MenuSub`.
+
+<ComponentPreview
+  name="demos/components/core/menu/submenus"
+  preview={`<MenuRoot>
+  <Button><MenuIcon /></Button>
+  <Menu>
+    <MenuItem>Account settings</MenuItem>
+    <MenuSub>
+      <MenuItem>Invite users</MenuItem>
+      <Menu>
+        <MenuItem>SMS</MenuItem>
+        <MenuItem>Twitter</MenuItem>
+        <MenuSub>
+          <MenuItem>Email</MenuItem>
+          <Menu>
+            <MenuItem>Work</MenuItem>
+            <MenuItem>Personal</MenuItem>
+          </Menu>
+        </MenuSub>
+      </Menu>
+    </MenuSub>
+  </Menu>
+</MenuRoot>`}
+/>
+
+## Controlled
+
+The open state can be controlled via `isOpen` and `onOpenChange` props.
+
+<ComponentPreview
+  name="demos/components/core/menu/controlled"
+  preview={`const [isOpen, setOpen] = React.useState(false);
+return (
+  <MenuRoot isOpen={isOpen} onOpenChange={setOpen}>
+    <Button><MenuIcon /></Button>
+    <Menu>
+      <MenuItem>Account settings</MenuItem>
+      <MenuItem>Create team</MenuItem>
+      <MenuItem>Log out</MenuItem>
+    </Menu>
+  </MenuRoot>
+)`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/menu/composition"
+  preview={`<MenuRoot>
+  <Button>
+    <MenuIcon />
+  </Button>
+  <Overlay type="popover" mobileType="drawer">
+    <MenuContent>
+      <MenuItem>Account settings</MenuItem>
+      <MenuItem>Create team</MenuItem>
+      <MenuItem>Command menu</MenuItem>
+      <MenuItem>Log out</MenuItem>
+    </MenuContent>
+  </Overlay>
+</MenuRoot>`}
+/>
+
+## API Reference
+
+### MenuRoot
+
+| Prop          | Type                     | Default   | Description                                            |
+| ------------- | ------------------------ | --------- | ------------------------------------------------------ |
+| `children*`   | `React.ReactNode`        | -         |                                                        |
+| `trigger`     | `'press' \| 'longPress'` | `'press'` | How the menu is triggered.                             |
+| `isOpen`      | `boolean`                | -         | Whether the overlay is open by default (controlled).   |
+| `defaultOpen` | `boolean`                | -         | Whether the overlay is open by default (uncontrolled). |
+
+| Event          | Type                        | Description                                                   |
+| -------------- | --------------------------- | ------------------------------------------------------------- |
+| `onOpenChange` | `(isOpen: boolean) => void` | Handler that is called when the overlay's open state changes. |
+
+### Menu
+
+| Prop                     | Type                                       | Default                | Description                                                                                             |
+| ------------------------ | ------------------------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| `type`                   | `"popover" \| "modal" \| "drawer"`         | -                      | The overlay type.                                                                                       |
+| `mobileType`             | `"popover" \| "modal" \| "drawer"`         | -                      | The overlay type for mobile screens.                                                                    |
+| `mediaQuery`             | `string`                                   | `"(max-width: 640px)"` | The media query that determines when the mobile type is used.                                           |
+| `placement`              | `Placement`                                | -                      | The position of the menu relative to the trigger button.                                                |
+| `autoFocus`              | `boolean \| 'first' \| 'last'`             | -                      | Where the focus should be set.                                                                          |
+| `shouldFocusWrap`        | `boolean`                                  | -                      | Whether keyboard navigation is circular.                                                                |
+| `items`                  | `Iterable<T>`                              | -                      | Item objects in the collection.                                                                         |
+| `disabledKeys`           | `Iterable<Key>`                            | -                      | The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with. |
+| `selectionMode`          | `'none' \| 'single' \| 'multiple'`         | `'none'`               | The type of selection that is allowed in the collection.                                                |
+| `disallowEmptySelection` | `boolean`                                  | -                      | Whether the collection allows empty selection.                                                          |
+| `selectedKeys`           | `'all' \| Iterable<Key>`                   | -                      | The currently selected keys in the collection (controlled).                                             |
+| `defaultSelectedKeys`    | `'all' \| Iterable<Key>`                   | -                      | The initial selected keys in the collection (uncontrolled).                                             |
+| `dependencies`           | `any[]`                                    | -                      | Values that should invalidate the item cache when using dynamic collections.                            |
+| `children`               | `ReactNode \| (item: object) => ReactNode` | -                      | The contents of the collection.                                                                         |
+| `className`              | `string`                                   | -                      | The CSS className for the element.                                                                      |
+| `style`                  | `CSSProperties`                            | -                      | The inline style for the element.                                                                       |
+
+| Event               | Type                            | Description                                                                |
+| ------------------- | ------------------------------- | -------------------------------------------------------------------------- |
+| `onAction`          | `(key: Key) => void`            | Handler that is called when an item is selected.                           |
+| `onClose`           | `() => void`                    | Handler that is called when the menu should close after selecting an item. |
+| `onSelectionChange` | `(keys: Selection) => void`     | Handler that is called when the selection changes.                         |
+| `onScroll`          | `(e: UIEvent<Element>) => void` | Handler that is called when a user scrolls.                                |
+
+### MenuItem
+
+| Prop             | Type                                                                                                  | Default     | Description                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
+| `id`             | `Key`                                                                                                 | -           | The unique id of the item.                                                                                  |
+| `variant`        | `'default' \| 'success' \| 'warning' \| 'danger' \| 'accent'`                                         | `"default"` | The visual style of the menu item.                                                                          |
+| `value`          | `object`                                                                                              | -           | The object value that this item represents. When using dynamic collections, this is set automatically.      |
+| `textValue`      | `string`                                                                                              | -           | A string representation of the item's contents, used for features like typeahead.                           |
+| `isDisabled`     | `boolean`                                                                                             | -           | Whether the item is disabled.                                                                               |
+| `children`       | `ReactNode \| (values: MenuItemRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -           | The children of the component. A function may be provided to alter the children based on component state.   |
+| `className`      | `string`                                                                                              | -           | The CSS className for the element.                                                                          |
+| `style`          | `CSSProperties \| (values: MenuItemRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -           | The inline style for the element. A function may be provided to compute the style based on component state. |
+| `href`           | `Href`                                                                                                | -           | A URL to link to.                                                                                           |
+| `hrefLang`       | `string`                                                                                              | -           | Hints at the human language of the linked URL.                                                              |
+| `target`         | `HTMLAttributeAnchorTarget`                                                                           | -           | The target window for the link.                                                                             |
+| `rel`            | `string`                                                                                              | -           | The relationship between the linked resource and the current page.                                          |
+| `download`       | `boolean \| string`                                                                                   | -           | Causes the browser to download the linked URL. A string may be provided to suggest a file name.             |
+| `ping`           | `string`                                                                                              | -           | A space-separated list of URLs to ping when the link is followed.                                           |
+| `referrerPolicy` | `HTMLAttributeReferrerPolicy`                                                                         | -           | How much of the referrer to send when following the link.                                                   |
+| `routerOptions`  | `RouterOptions`                                                                                       | -           | Options for the configured client side router.                                                              |
+
+| Event           | Type                            | Description                                             |
+| --------------- | ------------------------------- | ------------------------------------------------------- |
+| `onAction`      | `() => void`                    | Handler that is called when the item is selected.       |
+| `onHoverStart`  | `(e: HoverEvent) => void`       | Handler that is called when a hover interaction starts. |
+| `onHoverEnd`    | `(e: HoverEvent) => void`       | Handler that is called when a hover interaction ends.   |
+| `onHoverChange` | `(isHovering: boolean) => void` | Handler that is called when the hover state changes.    |
+
+### MenuSub
+
+| Prop        | Type              | Default | Description                                                                                                                                       |
+| ----------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children*` | `React.Element[]` | -       | The contents of the SubmenuTrigger. The first child should be an Item (the trigger) and the second child should be the Popover (for the submenu). |
+| `delay`     | `number`          | `200`   | The delay time in milliseconds for the submenu to appear after hovering over the trigger.                                                         |
+
+## Accessibility
+
+### Keyboard interactions
+
+| Key             | Description                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `Space` `Enter` | When focus is on the Trigger, opens the menu and focuses the first item. When focus is on an item, activates the focused item. |
+| `ArrowDown`     | When focus is on the trigger, opens the menu. When focus is on an item, moves focus to the next item.                          |
+| `ArrowUp`       | When focus is on the trigger, opens the menu. When focus is on an item, moves focus to the previous item.                      |
+| `ArrowRight`    | When focus is on submenu trigger, opens the submenu.                                                                           |
+| `ArrowLeft`     | When focus is on submenu trigger, closes the submenu.                                                                          |
+| `Esc`           | When menu is open, closes the menu and moves focus to the Trigger button.                                                      |

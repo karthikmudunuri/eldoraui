@@ -1,0 +1,266 @@
+---
+title: Checkbox Group
+description: A checkbox group allows a user to select multiple items from a list of options.
+thumbnail:
+  image: /previews/components/core/checkbox-group.jpeg
+  video: /previews/components/core/checkbox-group.mp4
+links:
+  - label: Aria docs
+    href: https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
+  - label: Aria API Reference
+    href: https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#props
+  - label: Report an issue
+    href: https://github.com/mehdibha/dotUI/issues/new/choose
+  - label: Edit this page
+    href: https://github.com/mehdibha/dotUI/tree/main/content/components/inputs/checkbox-group.mdx?plain=1
+---
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/default"
+  preview={`<CheckboxGroup label="React frameworks" defaultValue={["nextjs"]}>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+## Installation
+
+<Steps>
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-aria-components
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name={["components/core/default/checkbox-group","components/core/default/field"]} />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Usage
+
+Use `CheckboxGroup` to allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+### Best practices
+
+- If users are only allowed to select a single option, consider using a radio group instead.
+- Each checkbox's state should be independent from other checkboxes in the group. For example: checking one checkbox should not check or disable any other checkboxes.
+
+## Options
+
+### Variant
+
+Use the `variant` prop to control the visual style of the `CheckBoxGroup`.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/cards"
+  preview={`<CheckboxGroup label="React frameworks" defaultValue={["nextjs"]} variant="card">
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Label
+
+A visual label can be provided for the `CheckboxGroup` using the `label` prop or a hidden label using `aria-label` prop.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/label"
+  preview={`<CheckboxGroup label="React frameworks" defaultValue={["nextjs"]}>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>
+<CheckboxGroup aria-label="React frameworks" defaultValue={["nextjs"]}>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Description
+
+A description can be supplied to a `CheckboxGroup` via the `description` prop. The description is always visible unless the `isInvalid` prop is `true` and an error message is provided.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/description"
+  preview={`<CheckboxGroup
+  label="React frameworks"
+  defaultValue={["nextjs"]}
+  description="You can pick any frameworks."
+>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Contextual help
+
+A `ContextualHelp` element may be placed next to the label to provide additional information or help about a CheckboxGroup.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/contextual-help"
+  preview={`<CheckboxGroup
+  label="React frameworks"
+  defaultValue={["nextjs"]}
+  contextualHelp={<ContextualHelp />}
+>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Error message
+
+An error message can be supplied to a CheckboxGroup, which will be displayed when the `validationState` is `“invalid”`.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/error-message"
+  preview={`<CheckboxGroup label="React frameworks" isInvalid errorMessage="Please select a framework.">
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Disabled
+
+Use the `isDisabled` prop to disable the CheckboxGroup.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/disabled"
+  preview={`<CheckboxGroup label="React frameworks" isDisabled>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### ReadOnly
+
+The `isReadOnly` boolean prop makes the CheckboxGroup's text content immutable. Unlike isDisabled, the CheckboxGroup remains focusable and the contents can still be copied.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/read-only"
+  preview={`<CheckboxGroup label="React frameworks" isReadOnly>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+### Required
+
+Use the `isRequired` prop to mark the CheckboxGroup as required.
+Use the `necessityIndicator` prop to control the visual style of the required state.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/required"
+  preview={`<CheckboxGroup label="React frameworks" isRequired>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>
+<CheckboxGroup label="React frameworks" isRequired necessityIndicator="icon">
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>
+<CheckboxGroup label="React frameworks" isRequired necessityIndicator="label">
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>
+<CheckboxGroup label="React frameworks" necessityIndicator="label">
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+</CheckboxGroup>`}
+/>
+
+## Uncontrolled
+
+The `defaultValue` prop can be used to set the default state.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/uncontrolled"
+  preview={`<CheckboxGroup label="React frameworks" defaultValue={["nextjs"]}>
+  <Checkbox value="nextjs">Next.js</Checkbox>
+  <Checkbox value="remix">Remix</Checkbox>
+  <Checkbox value="gatsby">Gatsby</Checkbox>
+</CheckboxGroup>`}
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props to control the value of the input.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/controlled"
+  preview={`const [frameworks, setFrameworks] = React.useState(["nextjs"]);
+return (
+  <CheckboxGroup label="React frameworks" defaultValue={["nextjs"]}>
+    <Checkbox value="nextjs">Next.js</Checkbox>
+    <Checkbox value="remix">Remix</Checkbox>
+    <Checkbox value="gatsby">Gatsby</Checkbox>
+  </CheckboxGroup>
+);`}
+/>
+
+## Composition
+
+If you need to customize things further, you can drop down to the composition level.
+
+<ComponentPreview
+  name="demos/components/core/checkbox-group/composition"
+  preview={`<CheckboxGroupRoot defaultValue={["nextjs"]}>
+  <Label>React frameworks</Label>
+  <Description>You can pick any frameworks.</Description>
+  <div className="flex items-center gap-4">
+    <Checkbox value="nextjs">Next.js</Checkbox>
+    <Checkbox value="remix">Remix</Checkbox>
+    <Checkbox value="gatsby">Gatsby</Checkbox>
+  </div>
+  <FieldError />
+</CheckboxGroupRoot>`}
+/>
+
+## API Reference
+
+| Prop                 | Type                                                                                                       | Default     | Description                                                                                                                                                                                                                           |
+| -------------------- | ---------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `variant`            | `"default" \| "card"`                                                                                      | `"default"` | The visual style of the checkbox group.                                                                                                                                                                                               |
+| `value`              | `string[]`                                                                                                 | -           | The current value (controlled).                                                                                                                                                                                                       |
+| `defaultValue`       | `string[]`                                                                                                 | -           | The default value (uncontrolled).                                                                                                                                                                                                     |
+| `isDisabled`         | `boolean`                                                                                                  | -           | Whether the input is disabled.                                                                                                                                                                                                        |
+| `isReadOnly`         | `boolean`                                                                                                  | -           | Whether the input can be selected but not changed by the user.                                                                                                                                                                        |
+| `name`               | `string`                                                                                                   | -           | The name of the input element, used when submitting an HTML form.                                                                                                                                                                     |
+| `isRequired`         | `boolean`                                                                                                  | -           | Whether user input is required on the input before form submission.                                                                                                                                                                   |
+| `isInvalid`          | `boolean`                                                                                                  | -           | Whether the input value is invalid.                                                                                                                                                                                                   |
+| `validate`           | `(value: string[]) => ValidationError\| true\| null\| undefined`                                           | -           | A function that returns an error message if a given value is invalid. Validation errors are displayed to the user when the form is submitted if validationBehavior="native". For realtime validation, use the isInvalid prop instead. |
+| `validationBehavior` | `'native' \| 'aria'`                                                                                       | `'native'`  | Whether to use native HTML form validation to prevent form submission when the value is missing or invalid, or mark the field as required or invalid via ARIA.                                                                        |
+| `children`           | `ReactNode \| (values: CheckboxGroupRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -           | The children of the component. A function may be provided to alter the children based on component state.                                                                                                                             |
+| `className`          | `string`                                                                                                   | -           | The CSS className for the element.                                                                                                                                                                                                    |
+| `style`              | `CSSProperties \| (values: CheckboxGroupRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -           | The inline style for the element. A function may be provided to compute the style based on component state.                                                                                                                           |
+
+| Event           | Type                              | Description                                                     |
+| --------------- | --------------------------------- | --------------------------------------------------------------- |
+| `onChange`      | `(value: T) => void`              | Handler that is called when the value changes.                  |
+| `onFocus`       | `(e: FocusEvent<Target>) => void` | Handler that is called when the element receives focus.         |
+| `onBlur`        | `(e: FocusEvent<Target>) => void` | Handler that is called when the element loses focus.            |
+| `onFocusChange` | `(isFocused: boolean) => void`    | Handler that is called when the element's focus status changes. |
+
+| Data attribute    | Description                              |
+| ----------------- | ---------------------------------------- |
+| `[data-disabled]` | Whether the checkbox group is disabled.  |
+| `[data-readonly]` | Whether the checkbox group is read only. |
+| `[data-required]` | Whether the checkbox group is required.  |
+| `[data-invalid]`  | Whether the checkbox group invalid.      |
+
+## Accessibility
+
+### Keyboard interactions
+
+| Key         | Description                                        |
+| ----------- | -------------------------------------------------- |
+| `Tab`       | Moves focus to the next checkbox in the group.     |
+| `Shift+Tab` | Moves focus to the previous checkbox in the group. |
+| `Space`     | Checks/unchecks the focused checkbox.              |
