@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/karthikmudunuri/eldoraui">
-    <img src="https://dotui.org/images/logo.png" alt="Logo" width="60" height="60">
+    <img src="/images/logo.png" alt="Logo" width="60" height="60">
   </a>
   <h1 align="center">Eldora UI</h1>
   <p align="center">
