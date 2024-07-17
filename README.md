@@ -22,14 +22,6 @@
 <!-- ABOUT THE PROJECT -->
 
 
-
-
-<video autoplay controls width="600">
-  <source src="https://github.com/user-attachments/assets/ea983729-19ef-498f-96fc-d098c56441c0" type="video/mov" />
-  
-</video>
-
-
 ## Explore components
 
 Visit [https://www.eldoraui.site/components](https://www.eldoraui.site/components) to view the documentation.
@@ -43,4 +35,8 @@ If you want to join this journey, <a href="https://discord.gg/">join our discord
 
 ## License
 
-Licensed under the [MIT license.]([https://www.eldoraui.site/components](https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE))
+Licensed under the [MIT license.](https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE)
+
+## Contributing
+
+visit this [Documentation](https://github.com/karthikmudunuri/eldoraui/blob/main/CONTRIBUTING.md)
