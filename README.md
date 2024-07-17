@@ -20,7 +20,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-<video src="https://github.com/user-attachments/assets/ea983729-19ef-498f-96fc-d098c56441c0" controls autoplay />
+<video  controls autoplay src="https://github.com/user-attachments/assets/ea983729-19ef-498f-96fc-d098c56441c0" alt="Eldora UI" />
 
 
 
