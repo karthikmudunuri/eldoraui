@@ -1,0 +1,50 @@
+---
+title: Form
+description: A customizable form built on top of shadcn's input and label
+thumbnail:
+  image: /previews/components/core/multiform.png
+  video: /previews/components/core/multiform.mov
+links:
+  - label: Reference
+    href: https://www.youtube.com/watch?v=lW_0InDuejU&t=783s
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<ComponentPreview
+  name="demos/components/core/forms/multistepformdemo"
+  preview={`<Form/>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion zod @hookform/resolvers/zod react-hook-form
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/multistepform" />
+
+  <Step>Add this schema in `lib/schema`.</Step>
+  ```ts
+  import { z } from 'zod'
+
+export const FormDataSchema = z.object({
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
+  email: z.string().min(1, 'Email is required').email('Invalid email address'),
+  country: z.string().min(1, 'Country is required'),
+  street: z.string().min(1, 'Street is required'),
+  city: z.string().min(1, 'City is required'),
+  state: z.string().min(1, 'State is required'),
+  zip: z.string().min(1, 'Zip is required')
+})
+```
+
+  
+
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>

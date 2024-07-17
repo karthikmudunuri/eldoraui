@@ -4,6 +4,7 @@ import * as React from "react";
 import { useMounted } from "@/lib/hooks/use-mounted";
 import { cn } from "@/lib/utils/classes";
 
+
 interface Item {
   title: string;
   url: string;
@@ -41,6 +42,8 @@ export function TableOfContents({ toc }: TocProps) {
     <div className="space-y-2">
       <p className="font-medium">On This Page</p>
       <Tree tree={toc} activeItem={activeHeading ?? undefined} />
+      
+
     </div>
   );
 }

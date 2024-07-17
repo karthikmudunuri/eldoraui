@@ -9,6 +9,7 @@ import { JosephinFont, fontDisplay, geistMono, geistSans } from "@/styles/fonts"
 import "@/styles/globals.css";
 import { siteConfig } from "@/config";
 import { Providers } from "./providers";
+import { SiteBanner } from "@/components/marketing/site-banner";
 
 const config = siteConfig.global;
 
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
   authors: config.authors,
   creator: config.creator,
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
   },
   manifest: "/site.webmanifest",
   openGraph: {
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <Analytics />
         <Providers>
+          <SiteBanner/>
           <Header />
           <main>{children}</main>
           <Footer />

@@ -3,26 +3,23 @@ import { cn } from "@/lib/utils/classes";
 
 export const Explore = ({ className }: { className: string }) => {
   const categories = [
-    { title: "Inputs", slug: "components/inputs", href: "/components/inputs" },
+   
     {
-      title: "Menus and selection",
-      slug: "components/menus-and-selection",
-      href: "/components/menus-and-selection",
+      title: "Special Animations",
+      slug: "components/special-animations",
+      href: "/components/special-animations",
     },
     {
-      title: "Dates",
-      slug: "components/dates",
-      href: "/components/dates",
+      title: "Sections",
+      slug: "components/sections",
+      href: "/components/sections",
     },
-    {
-      title: "Colors",
-      slug: "components/colors",
-      href: "/components/colors",
-    },
+   
   ];
   return (
     <div className={className}>
       <h2 className="text-3xl font-semibold">Explore</h2>
+     
       <div className="mt-6 -space-y-2">
         {categories.map((category, index) => (
           <div key={index}>

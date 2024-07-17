@@ -1,33 +1,34 @@
 export const siteConfig = {
   global: {
-    url: "https://dotui.org",
-    name: "dotUI",
-    logo: "/images/logo.png",
-    title: "dotUI",
+    url: "https://www.eldoraui.site/",
+    name: "Eldora UI",
+    logo: "/images/logo.svg",
+    title: "EldoraUI",
     description: "Accessible, mobile friendly, modern UI components.",
     keywords: [],
     authors: [
       {
-        name: "mehdibha",
+        name: "karthikmudunuri",
         url: "https://www.mehdibha.com",
       },
     ],
-    creator: "mehdibha",
+    creator: "karthikmudunuri",
     thumbnail: "/images/thumbnail.png",
     twitter: {
-      creator: "@mehdibha_",
+      creator: "@karthikmudunuri_",
     },
   },
   links: {
-    github: "https://github.com/mehdibha/dotui",
-    twitter: "https://x.com/mehdibha_",
-    discord: "https://discord.gg/DXpj5V2fU8",
+    github: "https://github.com/karthikmudunuri/eldoraui",
+    twitter: "https://x.com/",
+    discord: "https://discord.gg",
   },
   header: {
     nav: {
       links: [
         { href: "/docs/installation", label: "Docs" },
         { href: "/components", label: "Components" },
+        // { href: "/templates", label: "Templates" },
       ],
     },
   },

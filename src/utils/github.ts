@@ -1,6 +1,6 @@
 export async function getGitHubStars(): Promise<string | null> {
   try {
-    const response = await fetch("https://api.github.com/repos/mehdibha/dotUI", {
+    const response = await fetch("https://api.github.com/repos/karthikmudunuri/eldoraui", {
       headers: {
         Accept: "application/vnd.github+json",
       },

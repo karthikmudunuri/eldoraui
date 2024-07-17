@@ -3,12 +3,14 @@ import NavLink from "next/link";
 import { InfoIcon } from "lucide-react";
 import { type MDXRemote } from "next-mdx-remote/rsc";
 import { ComponentPreview, type ComponentPreviewProps } from "@/components/component-preview";
+
 import { ComponentSource } from "@/components/component-source";
 import { DocsList, type DocsListProps } from "@/components/docs/docs-list";
 import { slugify } from "@/utils/string";
 import { Alert } from "@/lib/components/core/default/alert";
 import { cn } from "@/lib/utils/classes";
 import { Code } from "../code";
+import { ComponentSourcej } from "../component-sourcejs";
 
 export const Link = ({
   className,
@@ -133,9 +135,13 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
   ComponentSource: ({ name, ...rest }: { name: string }) => (
     <ComponentSource name={name} className="w-full [&:not(:first-child)]:mt-4" {...rest} />
   ),
+  ComponentSourcej: ({ name, ...rest }: { name: string }) => (
+    <ComponentSourcej name={name} className="w-full [&:not(:first-child)]:mt-4" {...rest} />
+  ),
   ComponentPreview: (props: ComponentPreviewProps) => (
     <ComponentPreview containerClassName="[&:not(:first-child)]:mt-4" {...props} />
   ),
+
   DocsList: (props: DocsListProps) => (
     <DocsList {...props} className="mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" />
   ),

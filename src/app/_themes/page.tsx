@@ -205,9 +205,7 @@ const ColorScalesPopover = ({
       >
         <Slider label="Lightness" value={lightness} onChange={handleChangeLightness} />
         <Slider label="Saturation" value={saturation} onChange={handleChangeSaturation} />
-        <Switch isSelected={smooth} onChange={handleChangeSmooth}>
-          Smooth
-        </Switch>
+        
         <div className="flex items-center justify-between gap-4">
           <p>Key colors</p>
           <Tooltip content="Add key color">

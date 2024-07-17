@@ -1,0 +1,70 @@
+---
+title: Calendar
+description: A component for entering and editing a single date or a range of dates extending shadcn.
+thumbnail:
+  image: /previews/components/core/calendar.png
+  video: /previews/components/core/calendar.mov
+links:
+  - label: Reference
+    href: https://ui.shadcn.com/docs/components/calendar
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<ComponentPreview
+  name="demos/components/core/input/calendar"
+  preview={`<CalendarHero/>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-day-picker date-fns @remixicon/react
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/calendarnew" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+###  With year navigation
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendaryear"
+  preview={`<CalendarYearNavigationExample/>`}
+/>
+
+###  With disabled navigation
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendardisabled"
+  preview={`<CalendarDisableNavigationExample/>`}
+/>
+
+###  With range and two months
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendarmonths"
+  preview={`<CalendarRangeExample/>`}
+/>
+
+
+###  With Locate
+
+<ComponentPreview
+  name="demos/components/core/input/calendarlocate"
+  preview={`<CalendarLocaleExample/>`}
+/>
+
+### With No dates
+
+<ComponentPreview
+  name="demos/components/core/input/calendernodates"
+  preview={`<CalendarToTodayExample/>`}
+/>

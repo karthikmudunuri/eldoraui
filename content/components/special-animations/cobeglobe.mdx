@@ -1,0 +1,86 @@
+---
+title: Cobeglobe
+description: A globe animation which is Interactive and customizable.
+thumbnail:
+  image: /previews/components/core/cobeglobe-preview.png
+  video: /previews/components/core/cobeglobe.mov
+links:
+  - label: Reference
+    href: https://cobe.vercel.app/
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+ 
+---
+
+<ComponentPreview
+  name="demos/components/core/cobeglobe/default"
+  preview={`<Cobe />`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+  npm install cobe
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSourcej name="components/core/default/cobeglobe" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Variants
+
+### Draggable 
+
+<ComponentPreview
+  name="demos/components/core/cobeglobe/draggable"
+  preview={`<Cobe />`}
+/>
+
+### Draggable & Auto Rotate
+
+<ComponentPreview
+  name="demos/components/core/cobeglobe/dragauto"
+  preview={`<Cobe />`}
+/>
+
+### Rotate to Location
+
+<ComponentPreview
+  name="demos/components/core/cobeglobe/rotate"
+  preview={`<Cobe />`}
+/>
+
+### Scaled
+
+<ComponentPreview
+  name="demos/components/core/cobeglobe/scaled"
+  preview={`<Cobe />`}
+/>
+
+
+## props
+
+| Property            | Description                                               | Required |
+|---------------------|-----------------------------------------------------------|----------|
+| `devicePixelRatio`  | The “`DPR`”, defaults to 1                                   |          |
+| `width`             | The `width` of the canvas                                    | Required |
+| `height`            | The `heigh`t of the canvas                                   | Required |
+| `phi`               | The `φ` angle, 0 ≤ phi ≤ 2π                                  | Required |
+| `theta`             | The `θ` angle, -π ≤ theta ≤ π                                | Required |
+| `dark`              | Display the globe in dark or light mode, 0 ≤ `dark` ≤ 1      | Required |
+| `diffuse`           | Control the `diffuse` lighting, 0 ≤ diffuse                  | Required |
+| `mapSamples`        | Number of dots displayed, 0 ≤ `mapSamples` ≤ 100000          | Required |
+| `mapBrightness`     | Brightness of the dots, 0 ≤ `mapBrightness`                  | Required |
+| `mapBaseBrightness` | Brightness of samples that are not on the map, 0 ≤ `mapBaseBrightness` |          |
+| `baseColor`         | [r, g, b] of the base color, `0 ≤ r, g, b ≤ 1`             |          |
+| `markerColor`       | [r, g, b] of the markers’ color, `0 ≤ r, g, b ≤ 1`           |          |
+| `glowColor`         | [r, g, b] of the glow color, `0 ≤ r, g, b ≤ 1`               |          |
+| `scale`             | Scales the globe, 0 ≤ `scale`                                |          |
+| `offset`            | `[offsetX, offsetY]`, offset of the globe in pixel           |          |
+| `markers`           | An array of `markers` displayed                              |          |
+| `opacity`           | The `transparency` of the globe texture                      |          |
+| `onRender`          | A callback function called when a new frame is `rendered`    | Required |

@@ -50,7 +50,7 @@ export const Header = () => {
                 height={24}
                 className="size-6 rounded-sm"
               />
-              <div className="mt-1 font-josephin font-bold leading-normal tracking-tighter">
+              <div className="mt-1 font-josephin whitespace-nowrap font-bold leading-normal tracking-tighter">
                 {siteConfig.global.name}
               </div>
               <Badge size="sm" variant="neutral" className="border">
@@ -133,9 +133,7 @@ export const Header = () => {
             <div className="mt-1 font-josephin font-bold leading-normal tracking-tighter">
               {siteConfig.global.name}
             </div>
-            <Badge variant="neutral" className="border">
-              beta
-            </Badge>
+            
           </Link>
           <SearchDocs className="flex-1" size="sm">
             <span className="mr-4 flex-1 text-left">Search...</span>

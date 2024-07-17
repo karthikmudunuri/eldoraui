@@ -31,7 +31,7 @@
     "src/hooks/use-mounted.ts",
     "content/components/core/feedback/alert.mdx",
     "content/components/core/data-display/accordion.mdx",
-    "content/components/utils/client-only.mdx",
+    "content/components/utils/client-only.mdx", "src/components/marketing/idcard.jsx", "src/lib/components/core/default/scaledcobe.jsx", "src/lib/components/core/default/rotatecobe.jsx", "content/components/input/calendar.mdx",
   ],
   "exclude": ["node_modules"],
 }

@@ -57,15 +57,15 @@ const links = [
     links: [
       {
         label: "Open an issue",
-        href: "https://github.com/mehdibha/dotUI/issues/new",
+        href: "https://github.com/karthikmudunuri/eldoraui/issues/new",
       },
       {
         label: "Request a feature",
-        href: "https://github.com/mehdibha/dotUI/discussions/new?category=ideas",
+        href: "https://github.com/karthikmudunuri/eldoraui/discussions/new?category=ideas",
       },
       {
         label: "Request an element",
-        href: "https://github.com/mehdibha/dotUI/discussions/new?category=requests",
+        href: "https://github.com/karthikmudunuri/eldoraui/discussions/new?category=requests",
       },
     ],
   },
@@ -137,11 +137,12 @@ export const Footer = () => {
         <Separator className="mb-4 mt-12" />
         <p className="text-sm text-fg-muted">
           Built by{" "}
-          <Link href="https://github.com/mehdibha" target="_blank" className="underline">
-            mehdibha
+          <Link href="https://github.com/karthikmudunuri" target="_blank" className="underline">
+          
+          karthikmudunuri
           </Link>
           . The source code is available on{" "}
-          <Link href="https://github.com/mehdibha" target="_blank" className="underline">
+          <Link href="https://github.com/karthikmudunuri" target="_blank" className="underline">
             GitHub.
           </Link>
         </p>

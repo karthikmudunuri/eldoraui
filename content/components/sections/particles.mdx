@@ -1,0 +1,58 @@
+---
+title: Particles
+description: Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.
+thumbnail:
+  image: /previews/components/core/particle.png
+  video: /previews/components/core/particle.mov
+links:
+  - label: Reference
+    href: https://cruip.com/demos/stellar/
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<ComponentPreview
+  name="demos/components/core/sections/particles"
+  preview={`<Particlesdemo/>`}
+/>
+
+## Installation
+
+<Steps>
+  
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/particles" />
+
+
+  <Step>Add this utils file `utils/mouse-position.ts`.</Step>
+  ```ts
+  import { useState, useEffect } from 'react';
+
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
+export default function useMousePosition(): MousePosition {
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    }
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, []);
+
+  return mousePosition;
+}
+```
+
+
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
