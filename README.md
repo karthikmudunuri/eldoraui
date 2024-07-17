@@ -20,6 +20,14 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
+<video src="https://github.com/user-attachments/assets/ea983729-19ef-498f-96fc-d098c56441c0" controls autoplay />
+
+
+
+
+## Explore components
+
+Visit [https://www.eldoraui.site/components](https://www.eldoraui.site/components) to view the documentation.
 
 ## About The Project
 
@@ -28,3 +36,6 @@
 
 If you want to join this journey, <a href="https://discord.gg/">join our discord community</a>
 
+## License
+
+Licensed under the [MIT license.]([https://www.eldoraui.site/components](https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE))
