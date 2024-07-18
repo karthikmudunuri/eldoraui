@@ -18,7 +18,7 @@ export const Explore = ({ className }: { className: string }) => {
   ];
   return (
     <div className={className}>
-      <h2 className="text-3xl font-semibold">Explore</h2>
+      
      
       <div className="mt-6 -space-y-2">
         {categories.map((category, index) => (
