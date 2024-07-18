@@ -47,6 +47,7 @@ const config = {
           DEFAULT: "hsl(var(--color-bg))",
           inverse: "hsl(var(--color-bg-inverse))",
           surface: "hsl(var(--color-bg-surface))",
+          
           muted: "hsl(var(--color-bg-muted))",
           disabled: "hsl(var(--color-bg-disabled))",
           overlay: "hsl(var(--color-bg-overlay))",

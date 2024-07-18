@@ -6,7 +6,11 @@ import React from "react";
 export const previews = {
     "demos/components/core/globeanime/default": {
       component: React.lazy<React.FC>(() => import("@/lib/demos/components/core/globeanime/default")),
-      code : [{"title":"default.tsx", "code": "\"use client\";\nimport React from \"react\";\nimport { motion } from \"framer-motion\";\nimport Globeanime from \"@/lib/components/core/default/globeanime\";\n\nexport default function GlobeAnimedemo() {\n  return (\n    <div className=\"flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full\">\n      <div className=\"max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[30rem] px-4\">\n        <motion.div\n          initial={{\n            opacity: 0,\n            y: 20,\n          }}\n          animate={{\n            opacity: 1,\n            y: 0,\n          }}\n          transition={{\n            duration: 1,\n          }}\n          className=\"div\"\n        >\n         \n        </motion.div>\n        <div className=\"absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40\" />\n        <div className=\"absolute w-full -bottom-20 h-72 md:h-full z-10\">\n          <Globeanime/>\n        </div>\n      </div>\n    </div>\n  );\n}\n"}]
+      code : [{
+        "title": "default.tsx",
+        "code": "\"use client\";\nimport React from \"react\";\nimport Globeanime from \"@/lib/components/core/default/globeanime\";\n\nexport default function Globeanimedemo() {\n  return (\n    <div className=\"items-center justify-center relative mt-24 dark:bg-black bg-white w-full h-[550px]\">\n      <Globeanime/>\n    </div>\n  );\n}"
+      }
+      ]
     },
     
    

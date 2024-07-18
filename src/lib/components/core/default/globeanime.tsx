@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import anime from 'animejs';
@@ -9,6 +10,7 @@ const Globeanime = () => {
   const ref = useRef(null);
   const typerRef = useRef(null);
   const [copied, setCopied] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); // State to manage dark mode
 
   const handleCopy = () => {
     setCopied(true);
@@ -135,15 +137,13 @@ const Globeanime = () => {
     svgs.forEach((s) => {
       tl.add(
         {
-          loop: false,
-          autoplay: true,
           targets: `#functions-hero #${s.id} linearGradient`,
           y2: s.y2config.frames,
-          easing: s?.easing,
-          duration: s?.duration,
-          delay: s?.delay,
+          easing: s.easing,
+          duration: s.duration,
+          delay: s.delay,
         },
-        s?.offset
+        s.offset
       );
     });
 
@@ -163,6 +163,11 @@ const Globeanime = () => {
     return () => {
       typed.destroy();
     };
+  };
+
+  // Function to toggle dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   return (
@@ -234,15 +239,16 @@ const Globeanime = () => {
           <defs>
             <linearGradient
               id={`lg-${s.id}`}
-              x1={s?.x1}
-              x2={s?.x2}
-              y1={s?.y1}
-              y2={s?.y2}
+              x1={s.x1}
+              x2={s.x2}
+              y1={s.y1}
+              y2={s.y2}
               gradientUnits="userSpaceOnUse"
             >
-               <stop offset="0" className="dark:stop-white stop-black" stopOpacity="0" />
-              <stop offset="0.5" className="dark:stop-white stop-black" stopOpacity="0.6" />
-              <stop offset="1" className="dark:stop-white stop-black" stopOpacity="0" />
+              {/* Define colors for both light and dark modes */}
+              <stop offset="0" stopColor={darkMode ? '#000000' : '#FFFFFF'} stopOpacity="0" />
+              <stop offset="0.5" stopColor={darkMode ? '#000000' : '#FFFFFF'} stopOpacity="0.6" />
+              <stop offset="1" stopColor={darkMode ? '#000000' : '#FFFFFF'} stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -256,8 +262,8 @@ const Globeanime = () => {
           style={{ left: dot.left, top: dot.top }}
           className="absolute origin-center w-[2.5%] h-[3.6%] flex items-center justify-center opacity-0 transition-opacity animate-fade-in delay-75"
         >
-          <span className="absolute inset-0 w-full h-full rounded-full bg-foreground bg-opacity-20" />
-          <span className="absolute w-4/5 h-4/5 rounded-full bg-foreground bg-opacity-90" />
+          <span className="absolute inset-0 w-full h-full rounded-full bg-black dark:bg-white bg-opacity-20" />
+          <span className="absolute w-4/5 h-4/5 rounded-full bg-black dark:bg-white bg-opacity-90" />
         </div>
       ))}
       <div className="absolute left-[51.15%] top-[10%] w-px h-[20%] overflow-hidden">
@@ -269,7 +275,7 @@ const Globeanime = () => {
         alt="globe wireframe"
         width={400}
         height={400}
-        className="w-full h-full dark:hidden block"
+        className={`w-full h-full ${darkMode ? 'hidden' : 'block'}`} // Hide/show based on dark mode
         quality={100}
         priority
       />
@@ -278,7 +284,7 @@ const Globeanime = () => {
         alt="globe wireframe"
         width={400}
         height={400}
-        className="w-full h-full hidden dark:block"
+        className={`w-full h-full ${darkMode ? 'block' : 'hidden'}`} // Hide/show based on dark mode
         quality={100}
         priority
       />

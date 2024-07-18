@@ -3,7 +3,6 @@
 import TechStack from "../techstack";
 import { buttonVariants } from "../button";
 import { cn } from "@/lib/utils/classes";
-
 import { motion, useInView } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -152,6 +151,8 @@ export default function Hero() {
                 </svg>
               </span>
             </motion.span>
+
+            
            
            
 
