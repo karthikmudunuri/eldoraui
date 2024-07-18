@@ -146,7 +146,7 @@ import {
         <TooltipProvider key={tech}>
           <Tooltip key={tech}>
             <TooltipTrigger>{techComponents[tech].icon}</TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-bg">
               <p>{techComponents[tech].name}</p>
             </TooltipContent>
           </Tooltip>

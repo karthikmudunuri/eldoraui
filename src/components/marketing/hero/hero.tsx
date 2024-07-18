@@ -28,7 +28,7 @@ export default function Hero() {
 
   return (
     <section >
-      <div className="relative h-full overflow-hidden py-10">
+      <div className="relative h-full py-10">
         <div className="container z-10 flex flex-col">
           
        
