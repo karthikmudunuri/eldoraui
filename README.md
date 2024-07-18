@@ -1,6 +1,8 @@
 <div align="center">
   <a href="https://github.com/karthikmudunuri/eldoraui">
-    <img src="https://dotui.org/images/logo.png" alt="Logo" width="60" height="60">
+
+
+ <img src="https://github.com/user-attachments/assets/02d84173-c513-4180-936f-35c24ec38209" alt="Logo" width="60" height="60">
   </a>
   <h1 align="center">Eldora UI</h1>
   <p align="center">
@@ -19,6 +21,11 @@
 
 <!-- ABOUT THE PROJECT -->
 
+
+## Explore components
+
+Visit [https://www.eldoraui.site/components](https://www.eldoraui.site/components) to view the documentation.
+
 ## About The Project
 
  open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion.
@@ -26,3 +33,10 @@
 
 If you want to join this journey, <a href="https://discord.gg/">join our discord community</a>
 
+## License
+
+Licensed under the [MIT license.](https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE)
+
+## Contributing
+
+visit this [Documentation](https://github.com/karthikmudunuri/eldoraui/blob/main/CONTRIBUTING.md)
