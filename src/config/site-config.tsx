@@ -4,7 +4,7 @@ export const siteConfig = {
     name: "Eldora UI",
     logo: "/images/logo.svg",
     title: "EldoraUI",
-    description: "Accessible, mobile friendly, modern UI components.",
+    description: "Collection Animated and re-usable components.",
     keywords: [],
     authors: [
       {

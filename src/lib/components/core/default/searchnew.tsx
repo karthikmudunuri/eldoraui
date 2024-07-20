@@ -96,7 +96,7 @@ export default function SearchModal() {
               </svg>
               <input
                 id="search-modal"
-                className="[&::-webkit-search-decoration]:none [&::-webkit-search-results-button]:none [&::-webkit-search-results-decoration]:none w-full appearance-none border-0 bg-white py-3 pl-2 pr-4 text-sm placeholder-slate-400 focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+                className="[&::-webkit-search-decoration]:none [&::-webkit-search-results-button]:none [&::-webkit-search-results-decoration]:none [&::-webkit-search-cancel-button]:hidden w-full appearance-none border-0 bg-white py-3 pl-2 pr-4 text-sm placeholder-slate-400 text-black focus:outline-none"
                 type="search"
                 placeholder="Search"
               />
