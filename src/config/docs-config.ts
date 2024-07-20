@@ -67,14 +67,14 @@ export const docsConfig: DocsConfig = {
        
       ]
     },
-    // {
-    //     title: "Templates",
-    //     slug: "docs",
-    //     items: [
-    //       { title: "Introduction", href: "/docs/introduction" },
-    //       { title: "Installation", href: "/docs/installation" },
+    {
+        title: "Templates",
+        slug: "templates",
+        items: [
+          { title: "portfolio", href: "/templates/portfolio" },
          
-    //     ]
-    //   },
+         
+        ]
+      },
   ]
 };

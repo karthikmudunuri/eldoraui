@@ -3,7 +3,6 @@ import NavLink from "next/link";
 import { InfoIcon } from "lucide-react";
 import { type MDXRemote } from "next-mdx-remote/rsc";
 import { ComponentPreview, type ComponentPreviewProps } from "@/components/component-preview";
-
 import { ComponentSource } from "@/components/component-source";
 import { DocsList, type DocsListProps } from "@/components/docs/docs-list";
 import { slugify } from "@/utils/string";
@@ -11,6 +10,8 @@ import { Alert } from "@/lib/components/core/default/alert";
 import { cn } from "@/lib/utils/classes";
 import { Code } from "../code";
 import { ComponentSourcej } from "../component-sourcejs";
+import Repodownload from "../repo-download";
+import Linkpreview from "../link-preview";
 
 export const Link = ({
   className,
@@ -57,6 +58,8 @@ function createHeading(level: number, className?: string) {
 }
 
 export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["components"] = {
+ 
+  
   h1: createHeading(1, "font-heading mt-2 scroll-m-20 text-4xl font-bold"),
   h2: createHeading(
     2,
@@ -132,6 +135,14 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
       <div className="flex flex-wrap items-center gap-2">{children}</div>
     </td>
   ),
+  Linkpreview :(props: { href: string; children: React.ReactNode }) =>(
+    <Linkpreview {...props}  />
+  ),
+  
+  Repodownload : (props: { href: string; children: React.ReactNode }) =>(
+    <Repodownload {...props}  />
+  ),
+  
   ComponentSource: ({ name, ...rest }: { name: string }) => (
     <ComponentSource name={name} className="w-full [&:not(:first-child)]:mt-4" {...rest} />
   ),
@@ -141,6 +152,8 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
   ComponentPreview: (props: ComponentPreviewProps) => (
     <ComponentPreview containerClassName="[&:not(:first-child)]:mt-4" {...props} />
   ),
+
+ 
 
   DocsList: (props: DocsListProps) => (
     <DocsList {...props} className="mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" />
@@ -156,4 +169,5 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
     </div>
   ),
   Alert,
+  
 };

@@ -185,6 +185,14 @@ const config = {
         "18": "repeat(18, minmax(0, 1fr))",
       },
       keyframes: {
+        shimmer: {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shimmer-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
         'fade-in': {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
@@ -245,6 +253,7 @@ const config = {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        shimmer: "shimmer 8s infinite",
         'fade-in': 'fade-in 1s ease-in-out forwards',
         'slide-in': 'slide-in 1s ease-in-out forwards',
         "accordion-down": "accordion-down 0.2s ease-out",

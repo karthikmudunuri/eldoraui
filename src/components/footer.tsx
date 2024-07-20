@@ -21,22 +21,10 @@ const links = [
         label: "Components",
         href: "/components",
       },
-      // {
-      //   label: "Hooks",
-      //   href: "/hooks",
-      // },
-      // {
-      //   label: "Icons",
-      //   href: "/icons",
-      // },
-      // {
-      //   label: "Blocks",
-      //   href: "/blocks",
-      // },
-      // {
-      //   label: "Templates",
-      //   href: "/templates",
-      // },
+      {
+        label: "Templates",
+        href: "/templates",
+      },
     ],
   },
   {

@@ -28,7 +28,7 @@ export const siteConfig = {
       links: [
         { href: "/docs/installation", label: "Docs" },
         { href: "/components", label: "Components" },
-        // { href: "/templates", label: "Templates" },
+        { href: "/templates", label: "Templates" },
       ],
     },
   },

@@ -14,6 +14,11 @@ export const Explore = ({ className }: { className: string }) => {
       slug: "components/sections",
       href: "/components/sections",
     },
+    {
+      title: "Templates",
+      slug: "templates",
+      href: "/templates",
+    },
    
   ];
   return (

@@ -182,6 +182,18 @@ const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Templates",
+      slug: "templates",
+      items: [
+        {
+          title: "Portfolio",
+          href: "/templates/portfolio",
+        },
+       
+
+      ],
+    },
   ],
 };
 
