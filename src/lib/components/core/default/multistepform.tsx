@@ -134,7 +134,7 @@ export default function Form() {
                     id='firstName'
                     {...register('firstName')}
                     autoComplete='given-name'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.firstName?.message && (
                     <p className='mt-2 text-sm text-red-400'>
@@ -157,7 +157,7 @@ export default function Form() {
                     id='lastName'
                     {...register('lastName')}
                     autoComplete='family-name'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.lastName?.message && (
                     <p className='mt-2 text-sm text-red-400'>
@@ -180,7 +180,7 @@ export default function Form() {
                     type='email'
                     {...register('email')}
                     autoComplete='email'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.email?.message && (
                     <p className='mt-2 text-sm text-red-400'>
@@ -246,7 +246,7 @@ export default function Form() {
                     id='street'
                     {...register('street')}
                     autoComplete='street-address'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.street?.message && (
                     <p className='mt-2 text-sm text-red-400'>
@@ -269,7 +269,7 @@ export default function Form() {
                     id='city'
                     {...register('city')}
                     autoComplete='address-level2'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.city?.message && (
                     <p className='mt-2 text-sm text-red-400'>
@@ -292,7 +292,7 @@ export default function Form() {
                     id='state'
                     {...register('state')}
                     autoComplete='address-level1'
-                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
+                    className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6'
                   />
                   {errors.state?.message && (
                     <p className='mt-2 text-sm text-red-400'>
