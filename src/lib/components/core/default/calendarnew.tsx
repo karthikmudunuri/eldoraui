@@ -7,7 +7,7 @@ import {
   RiArrowRightDoubleLine,
   RiArrowRightSLine,
 } from "@remixicon/react"
-import { addYears, format, isSameMonth } from "date-fns"
+import { addYears, format, isSameMonth, getMonth, getYear, setMonth, setYear, } from "date-fns"
 import {
   DayPicker,
   useDayPicker,
@@ -98,8 +98,9 @@ const Calendar = ({
   locale,
   className,
   classNames,
+  captionLayout = "buttons",
   ...props
-}: CalendarProps & { enableYearNavigation?: boolean }) => {
+}: CalendarProps & { enableYearNavigation?: boolean, captionLayout?: "buttons" | "dropdown-buttons" }) => {
   return (
     <DayPicker
       mode={mode}
@@ -159,7 +160,7 @@ const Calendar = ({
             currentMonth,
             displayMonths,
           } = useNavigation()
-          const { numberOfMonths, fromDate, toDate } = useDayPicker()
+          const { numberOfMonths, fromDate, toDate,fromYear,fromMonth,toMonth,toYear } = useDayPicker()
 
           const displayIndex = displayMonths.findIndex((month) =>
             isSameMonth(props.displayMonth, month),
@@ -190,64 +191,173 @@ const Calendar = ({
             }
           }
 
+          const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+            const newYear = parseInt(event.target.value, 10)
+            const updatedMonth = setYear(currentMonth, newYear)
+            goToMonth(updatedMonth)
+          }
+
+          const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+            const newMonth = parseInt(event.target.value, 10)
+            const updatedMonth = setMonth(currentMonth, newMonth)
+            goToMonth(updatedMonth)
+          }
+
+          const monthsList = Array.from({ length: 12 }, (_, i) => ({
+            value:i,
+            label:format(setMonth(new Date(),i),"MMM")
+          }))
+
+          const yearFrom = fromYear || fromMonth?.getFullYear() || fromDate?.getFullYear()
+          const lastYear = toYear || toMonth?.getFullYear() || toDate?.getFullYear()
+
+          let selectedItems : {label:string;value:string}[] = []
+
+          if(yearFrom && lastYear){
+            const yearLength = lastYear-yearFrom+1
+            selectedItems = Array.from({length: yearLength},(_, i) =>({
+              label:(yearFrom+i).toString(),
+              value:(yearFrom+i).toString()
+            }))
+          }
+
           return (
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1">
-                {enableYearNavigation && !hidePreviousButton && (
-                  <NavigationButton
-                    disabled={
-                      disableNavigation ||
-                      !previousMonth ||
-                      (fromDate &&
-                        addYears(currentMonth, -1).getTime() <
-                          fromDate.getTime())
-                    }
-                    aria-label="Go to previous year"
-                    onClick={goToPreviousYear}
-                    icon={RiArrowLeftDoubleLine}
-                  />
-                )}
-                {!hidePreviousButton && (
-                  <NavigationButton
-                    disabled={disableNavigation || !previousMonth}
-                    aria-label="Go to previous month"
-                    onClick={() => previousMonth && goToMonth(previousMonth)}
-                    icon={RiArrowLeftSLine}
-                  />
-                )}
-              </div>
+              {captionLayout === "dropdown-buttons" ? (
+                <>
+                  <div className="flex items-center gap-1">
+                    {enableYearNavigation && !hidePreviousButton && (
+                      <NavigationButton
+                        disabled={
+                          disableNavigation ||
+                          !previousMonth ||
+                          (fromDate &&
+                            addYears(currentMonth, -1).getTime() <
+                              fromDate.getTime())
+                        }
+                        aria-label="Go to previous year"
+                        onClick={goToPreviousYear}
+                        icon={RiArrowLeftDoubleLine}
+                      />
+                    )}
+                    {!hidePreviousButton && (
+                      <NavigationButton
+                        disabled={disableNavigation || !previousMonth}
+                        aria-label="Go to previous month"
+                        onClick={() => previousMonth && goToMonth(previousMonth)}
+                        icon={RiArrowLeftSLine}
+                      />
+                    )}
+                  </div>
 
-              <div
-                role="presentation"
-                aria-live="polite"
-                className="text-sm font-medium capitalize tabular-nums text-gray-900 dark:text-gray-50"
-              >
-                {format(props.displayMonth, "LLLL yyy", { locale })}
-              </div>
+                  <div className="m-2 flex items-center gap-2">
+                    <select
+                      value={getMonth(currentMonth)}
+                      onChange={handleMonthChange}
+                      className="border rounded px-2 py-1 text-sm"
+                    >
+                      {monthsList.map((month) => (
+                        <option key={month.value} value={month.value}>
+                          {format(setMonth(new Date(), month.value), "MMMM", { locale })}
+                        </option>
+                      ))}
+                    </select>
 
-              <div className="flex items-center gap-1">
-                {!hideNextButton && (
-                  <NavigationButton
-                    disabled={disableNavigation || !nextMonth}
-                    aria-label="Go to next month"
-                    onClick={() => nextMonth && goToMonth(nextMonth)}
-                    icon={RiArrowRightSLine}
-                  />
-                )}
-                {enableYearNavigation && !hideNextButton && (
-                  <NavigationButton
-                    disabled={
-                      disableNavigation ||
-                      !nextMonth ||
-                      (toDate &&
-                        addYears(currentMonth, 1).getTime() > toDate.getTime())
-                    }
-                    aria-label="Go to next year"
-                    onClick={goToNextYear}
-                    icon={RiArrowRightDoubleLine}
-                  />
-                )}
-              </div>
+                    <select
+                      value={getYear(currentMonth)}
+                      onChange={handleYearChange}
+                      className="border rounded px-2 py-1 text-sm"
+                    >
+                      {selectedItems.map((year) => (
+                        <option key={year.value} value={year.value}>{year.label}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    {!hideNextButton && (
+                      <NavigationButton
+                        disabled={disableNavigation || !nextMonth}
+                        aria-label="Go to next month"
+                        onClick={() => nextMonth && goToMonth(nextMonth)}
+                        icon={RiArrowRightSLine}
+                      />
+                    )}
+                    {enableYearNavigation && !hideNextButton && (
+                      <NavigationButton
+                        disabled={
+                          disableNavigation ||
+                          !nextMonth ||
+                          (toDate &&
+                            addYears(currentMonth, 1).getTime() > toDate.getTime())
+                        }
+                        aria-label="Go to next year"
+                        onClick={goToNextYear}
+                        icon={RiArrowRightDoubleLine}
+                      />
+                    )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center gap-1">
+                    {enableYearNavigation && !hidePreviousButton && (
+                      <NavigationButton
+                        disabled={
+                          disableNavigation ||
+                          !previousMonth ||
+                          (fromDate &&
+                            addYears(currentMonth, -1).getTime() <
+                              fromDate.getTime())
+                        }
+                        aria-label="Go to previous year"
+                        onClick={goToPreviousYear}
+                        icon={RiArrowLeftDoubleLine}
+                      />
+                    )}
+                    {!hidePreviousButton && (
+                      <NavigationButton
+                        disabled={disableNavigation || !previousMonth}
+                        aria-label="Go to previous month"
+                        onClick={() => previousMonth && goToMonth(previousMonth)}
+                        icon={RiArrowLeftSLine}
+                      />
+                    )}
+                  </div>
+
+                  <div
+                    role="presentation"
+                    aria-live="polite"
+                    className="text-sm font-medium capitalize tabular-nums text-gray-900 dark:text-gray-50"
+                  >
+                    {format(props.displayMonth, "LLLL yyy", { locale })}
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    {!hideNextButton && (
+                      <NavigationButton
+                        disabled={disableNavigation || !nextMonth}
+                        aria-label="Go to next month"
+                        onClick={() => nextMonth && goToMonth(nextMonth)}
+                        icon={RiArrowRightSLine}
+                      />
+                    )}
+                    {enableYearNavigation && !hideNextButton && (
+                      <NavigationButton
+                        disabled={
+                          disableNavigation ||
+                          !nextMonth ||
+                          (toDate &&
+                            addYears(currentMonth, 1).getTime() > toDate.getTime())
+                        }
+                        aria-label="Go to next year"
+                        onClick={goToNextYear}
+                        icon={RiArrowRightDoubleLine}
+                      />
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           )
         },
