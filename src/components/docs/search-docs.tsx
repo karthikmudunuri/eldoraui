@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { useRouter } from "next/navigation";
+import React, { useMemo } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { FileIcon, SearchIcon } from "lucide-react";
 import { Button, type ButtonProps } from "@/lib/components/core/default/button";
 import {
@@ -19,8 +19,16 @@ import { docsConfig } from "@/config/docs-config";
 export const SearchDocs = (props: ButtonProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const router = useRouter();
+  const pathName = usePathname();
+
+  const isSearchModalComponent = useMemo(
+    () => pathName.split("/").pop() === "searchmodal",
+    [pathName]
+  );
 
   React.useEffect(() => {
+    if (isSearchModalComponent) return;
+
     const down = (e: KeyboardEvent) => {
       if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
         if (
@@ -39,7 +47,7 @@ export const SearchDocs = (props: ButtonProps) => {
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [pathName]);
 
   const runCommand = React.useCallback((command: () => unknown) => {
     setIsOpen(false);
@@ -52,9 +60,11 @@ export const SearchDocs = (props: ButtonProps) => {
         variant="outline"
         prefix={<SearchIcon />}
         suffix={
-          <span className="hidden rounded-md bg-bg-muted px-1 py-0.5 text-xs md:inline">
-            Ctrl K
-          </span>
+          !isSearchModalComponent && (
+            <span className="hidden rounded-md bg-bg-muted px-1 py-0.5 text-xs md:inline">
+              Ctrl K
+            </span>
+          )
         }
         {...props}
         className={cn("w-full px-2 text-sm text-fg-muted", props.className)}
