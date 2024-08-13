@@ -246,6 +246,14 @@ const config = {
             "mask-position": "0% center",
           },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
@@ -254,6 +262,8 @@ const config = {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         shimmer: "shimmer 8s infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         'fade-in': 'fade-in 1s ease-in-out forwards',
         'slide-in': 'slide-in 1s ease-in-out forwards',
         "accordion-down": "accordion-down 0.2s ease-out",

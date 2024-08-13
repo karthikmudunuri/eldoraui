@@ -49,6 +49,25 @@ export const docsConfig: DocsConfig = {
 
           ]
         },
+        {
+          title: "Text Animations",
+          items: [
+            { title: "Blurin", href: "/components/text/blurin" },
+            { title: "Fadedown", href: "/components/text/fadedown" },
+            { title: "Fadein", href: "/components/text/fadein" },
+            { title: "Fadeup", href: "/components/text/fadeup" },
+            { title: "Gradual spacing", href: "/components/text/gradualspacing" },
+            { title: "Letter pull up", href: "/components/text/letterpullup" },
+            { title: "Multi direction slide", href: "/components/text/multidirection" },
+            { title: "Scroll based velocity", href: "/components/text/scrollbasedvelocity" },
+            { title: "Seperate away", href: "/components/text/seperateaway" },
+            { title: "Slight Flip", href: "/components/text/slightflip" },
+            { title: "Typing Effect", href: "/components/text/typingeffect" },
+            { title: "Wavy text", href: "/components/text/wavytext" },
+            { title: "Word pull up", href: "/components/text/wordpullup" },
+
+          ]
+        },
        
         {
           title: "Forms",

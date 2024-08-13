@@ -38,6 +38,123 @@ export const previews = {
   
   ]
 },
+"demos/components/core/text/fadein": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/fadein")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport StaggeredFade from \"@/lib/components/core/default/fadein\";\n\nexport default function FadeIndemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <StaggeredFade/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/blurin": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/blurin")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { BlurIn } from \"@/lib/components/core/default/blurin\";\n\nexport default function Blurindemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <BlurIn/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/fadedown": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/fadedown")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { FadeDown } from \"@/lib/components/core/default/fadedown\";\n\nexport default function Fadedowndemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <FadeDown/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/fadeup": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/fadeup")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { FadeUpStagger } from \"@/lib/components/core/default/fadeup\";\n\nexport default function Fadeupdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <FadeUpStagger/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/flip": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/flip")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { SlightFlip } from \"@/lib/components/core/default/slightflip\";\n\nexport default function Flipdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <SlightFlip/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/letterpullup": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/letterpullup")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { LetterPullUp } from \"@/lib/components/core/default/pullup\";\n\nexport default function LetterPullUpdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <LetterPullUp/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/multidirection": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/Multidirection")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { MultiDirectionSlide } from \"@/lib/components/core/default/multidirection\";\n\nexport default function Multidirectiondemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <MultiDirectionSlide/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/scroll": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/scroll")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "import { VelocityScroll } from \"@/lib/components/core/default/scrollbasedtext\";\n\nexport default function ScrollBasedVelocityDemo() {\n  return (\n    <VelocityScroll\n      text=\"Eldora UI\"\n      default_velocity={5}\n      className=\"font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]\"\n    />\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/seperateaway": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/seperateaway")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { SeparateAway } from \"@/lib/components/core/default/seperateaway\";\n\nexport default function SeparateAwaydemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <SeparateAway/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/spacing": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/spacing")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { GradualSpacing } from \"@/lib/components/core/default/spacing\";\n\nexport default function Gradualspacingdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <GradualSpacing/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/typingeffect": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/typingeffect")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { TypingEffect } from \"@/lib/components/core/default/typinngeffect\";\n\nexport default function TypingEffectdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <TypingEffect/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/wavytext": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/wavytext")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { WavyText } from \"@/lib/components/core/default/wavytext\";\n\nexport default function Wavytextdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <WavyText/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/text/wordpullup": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/wordpullup")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport { WordPullUp } from \"@/lib/components/core/default/wordpullup\";\n\nexport default function WordPullUpdemo() {\n  return (\n    <div className=\"items-center justify-center dark:bg-black bg-white relative w-full \">\n      <WordPullUp/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
 
     "demos/components/core/input/calendar": {
       component: React.lazy<React.FC>(() => import("@/lib/demos/components/core/input/calendar")),
