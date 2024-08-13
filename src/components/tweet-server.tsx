@@ -211,10 +211,10 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => (
     )}
     {!tweet.video &&
       !tweet.photos &&
-      // @ts-ignore
+      // @ts-expect-error: The type of `card.binding_values.thumbnail_image_large` might be undefined.
       tweet?.card?.binding_values?.thumbnail_image_large?.image_value.url && (
         <img
-          // @ts-ignore
+          // @ts-expect-error: Accessing potentially undefined property on tweet.card.
           src={tweet.card.binding_values.thumbnail_image_large.image_value.url}
           className="h-64 rounded-xl border object-cover shadow-sm"
         />
@@ -222,7 +222,7 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => (
   </div>
 );
 
-export const MagicTweet = ({
+export const EldoraTweet = ({
   tweet,
   components,
   className,
@@ -277,7 +277,7 @@ export const TweetCard = async ({
 
   return (
     <Suspense fallback={fallback}>
-      <MagicTweet tweet={tweet} {...props} />
+      <EldoraTweet tweet={tweet} {...props} />
     </Suspense>
   );
 };

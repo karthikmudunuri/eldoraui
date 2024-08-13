@@ -3,7 +3,7 @@
 import { TweetProps, useTweet } from "react-tweet";
 
 import {
-  MagicTweet,
+  EldoraTweet,
   TweetNotFound,
   TweetSkeleton,
 } from "./tweet-server";
@@ -25,7 +25,7 @@ const ClientTweetCard = ({
     return <NotFound error={onError ? onError(error) : error} />;
   }
 
-  return <MagicTweet tweet={data} components={components} {...props} />;
+  return <EldoraTweet tweet={data} components={components} {...props} />;
 };
 
 export default ClientTweetCard;

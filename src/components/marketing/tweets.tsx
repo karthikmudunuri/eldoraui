@@ -28,7 +28,7 @@ export default async function Testimonials() {
         What People Are Saying
       </h2>
       <h3 className="mx-auto mb-8 max-w-lg text-balance text-center text-lg font-medium tracking-tight text-foreground/80">
-        Don't just take our word for it. Here's what{" "}
+        Don&apos;t just take our word for it. Here&apos;s what{" "}
         <span className="bg-gradient bg-clip-text text-transparent">real people</span> are saying about <span className="text-purple-600 from-fg-onAccent">Eldora UI</span> on Twitter.
       </h3>
       <div className="relative flex flex-col">
