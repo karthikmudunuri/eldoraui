@@ -13,6 +13,7 @@ const config = {
   rules: {
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "prefer-const": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/ban-ts-comment": "off",
