@@ -21,6 +21,20 @@ export const docsConfig: DocsConfig = {
           title: "Overview",
           href: "/components"
         },
+
+        {
+          title: "Sections",
+          items:[
+            {title:"Bentogrid", href:"/components/sections/bentogrid"},
+            { title:"companies", href:"/components/sections/companies"},
+            {title:"Particles", href:"/components/sections/particles"},
+            { title:"Pricing", href:"/components/sections/pricing"},
+            {title:"Progress slider", href:"/components/sections/progressslider"},
+            { title:"Timeline", href:"/components/sections/timeline"}
+
+
+          ]
+        },
        
        
         {
@@ -36,19 +50,20 @@ export const docsConfig: DocsConfig = {
             ]
           },
 
-        {
-          title: "Sections",
-          items:[
-            {title:"Bentogrid", href:"/components/sections/bentogrid"},
-            { title:"companies", href:"/components/sections/companies"},
-            {title:"Particles", href:"/components/sections/particles"},
-            { title:"Pricing", href:"/components/sections/pricing"},
-            {title:"Progress slider", href:"/components/sections/progressslider"},
-            { title:"Timeline", href:"/components/sections/timeline"}
+          {
+            title: "Background Animations",
+            items: [
+              { title: "Swirl", href: "/components/backgrounds/aswirl" },
+              { title: "Hacker", href: "/components/backgrounds/bghacker" },
+              { title: "Dots", href: "/components/backgrounds/dot" },
+              { title: "Grid", href: "/components/backgrounds/grid" },
+              { title: "No signal", href: "/components/backgrounds/nosignal" },
+  
+              
+            ]
+          },
 
-
-          ]
-        },
+        
         {
           title: "Text Animations",
           items: [

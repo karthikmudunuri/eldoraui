@@ -17,6 +17,42 @@ export const previews = {
     }
   ]
 },
+"demos/components/core/backgrounds/gridbg": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/backgrounds/gridbg")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport BackgroundGrid from \"@/lib/components/core/default/gridbg\";\n\nexport default function Gridbgdemo() {\n  return (\n    <div className=\"h-[550px] w-screen overflow-hidden\">\n      <BackgroundGrid/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/backgrounds/dotbg": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/backgrounds/dotbg")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport BackgroundDots from \"@/lib/components/core/default/dotbg\";\n\nexport default function Dotbgdemo() {\n  return (\n    <div className=\"h-[550px] w-screen overflow-hidden\">\n      <BackgroundDots/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/backgrounds/hackerbg": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/backgrounds/hackerbg")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport HackerBackground from \"@/lib/components/core/default/hackerbg\";\n\nexport default function Hackerbgdemo() {\n  return (\n    <div className=\"h-[600px] w-screen overflow-hidden\">\n      <HackerBackground/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
+"demos/components/core/backgrounds/nosignal": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/backgrounds/nosignal")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react \";\nimport NoSignalScreen from \"@/lib/components/core/default/Nosignalbg\";\n\nexport default function Nosignaldemo() {\n  return (\n    <div className=\"h-[550px] w-screen overflow-hidden\">\n      <NoSignalScreen/>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
 "demos/components/core/text/fadein": {
   "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/fadein")),
   "code": [
