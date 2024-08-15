@@ -31,6 +31,10 @@ Visit [https://www.eldoraui.site/components](https://www.eldoraui.site/component
  open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion.
 100% open-source, and customizable.
 
+## Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/35271c3244e24efbae34731d1ee21d0988f8fc0e.svg "Repobeats analytics image")
+
 If you want to join this journey, <a href="https://discord.gg/">join our discord community</a>
 
 ## License
