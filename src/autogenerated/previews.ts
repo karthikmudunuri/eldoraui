@@ -8,6 +8,15 @@ export const previews = {
       component: React.lazy<React.FC>(() => import("@/lib/demos/components/core/forms/multistepformdemo")),
       code : [{"title":"multistepformdemo.tsx","code":"import Form from '@/lib/components/core/default/multistepform'\r\n\r\nexport default function Formdemo() {\r\n  return (\r\n    <section className='h-[700px]'>\r\n      <div >\r\n        <Form />\r\n      </div>\r\n    </section>\r\n  )\r\n}"}]
     },
+  "demos/components/core/backgrounds/swirlbg": {
+  "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/backgrounds/swirlbg")),
+  "code": [
+    {
+      "title": "default.tsx",
+      "code": "\"use client\";\nimport React from \"react\";\nimport Swirl from \"@/lib/components/core/default/swirl\";\n\nexport default function SwirlEfffectdemo() {\n  return (\n    <div className=\\\"h-screen w-screen overflow-hidden\\\">\n      <Swirl\n        particleCount={500}\n        baseTTL={150}\n        rangeTTL={300}\n        baseSpeed={0.5}\n        rangeSpeed={1.5}\n        baseSize={3}\n        rangeSize={8}\n        baseHue={120}\n        rangeHue={90}\n        backgroundColor=\\\"black\\\"\n        className=\\\"absolute top-0 left-0\\\"\n        containerClassName=\\\"relative h-full w-full\\\"\n      >\n        <h1 className=\\\"absolute top-1/2 left-1/2 text-white text-4xl font-bold transform -translate-x-1/2 -translate-y-1/2\\\">\n          Dynamic Swirl Effect\n        </h1>\n      </Swirl>\n    </div>\n  );\n}\n"
+    }
+  ]
+},
 "demos/components/core/text/fadein": {
   "component": React.lazy<React.FC>(() => import("@/lib/demos/components/core/text/fadein")),
   "code": [

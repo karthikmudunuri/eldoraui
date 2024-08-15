@@ -56,3 +56,14 @@ export default function useMousePosition(): MousePosition {
 
   <Step>Update the import paths to match your project setup.</Step>
 </Steps>
+
+## Props
+
+The `Particles` component accepts the following props:
+
+| Name       | Type     | Default | Description                                                                                  |
+|------------|----------|---------|----------------------------------------------------------------------------------------------|
+| `className` | `string` | `''`    | Optional class name to be applied to the container `div`.                                    |
+| `quantity`  | `number` | `30`    | Number of particles to be rendered.                                                          |
+| `staticity` | `number` | `50`    | The distance over which the particles will be attracted to the mouse position.               |
+| `ease`      | `number` | `50`    | The easing factor for the particles' movement towards the mouse position.                     |

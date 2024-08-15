@@ -23,5 +23,28 @@ links:
 
   <Step>Copy and paste the following code into your project.</Step>
   <ComponentSource name="components/core/default/companies" />
-  <Step>Update the import paths to match your project setup.</Step>
+  <Step>Update Your tailwind.config with these.</Step>
+```ts 
+  const config: Config = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      animation: {
+        'infinite-scroll': 'scroll 20s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+<Step>Update the import paths to match your project setup.</Step>
 </Steps>

@@ -25,3 +25,19 @@ links:
   <ComponentSource name="components/core/default/progressslider" />
   <Step>Update the import paths to match your project setup.</Step>
 </Steps>
+
+## Props
+
+The `ProgressSlider` component accepts the following props:
+
+| Name  | Type        | Default | Description                                                                                               |
+|-------|-------------|---------|-----------------------------------------------------------------------------------------------------------|
+| `items` | `Item[]`    | N/A     | An array of items to be displayed in the slider. Each item should have an `img`, `desc`, and `buttonIcon`. |
+
+The `Item` interface used in the `items` array has the following properties:
+
+| Name        | Type                | Default | Description                                         |
+|-------------|---------------------|---------|-----------------------------------------------------|
+| `img`       | `StaticImageData`   | N/A     | The image to be displayed in the slider.           |
+| `desc`      | `string`            | N/A     | A description for the item, displayed below the button. |
+| `buttonIcon`| `StaticImageData`   | N/A     | The icon for the button used to navigate to this item. |

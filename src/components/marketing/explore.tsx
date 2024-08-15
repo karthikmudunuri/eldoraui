@@ -20,6 +20,11 @@ export const Explore = ({ className }: { className: string }) => {
       href: "/components/text",
     },
     {
+      title: "Background animations",
+      slug: "components/backgrounds",
+      href: "/components/backgrounds",
+    },
+    {
       title: "Templates",
       slug: "templates",
       href: "/templates",
