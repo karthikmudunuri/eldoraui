@@ -19,10 +19,12 @@
     ·
     <a href="https://github.com/karthikmudunuri/eldoraui/issues">Request Feature</a>
   </p>
+
+  <img src="https://github.com/user-attachments/assets/f0aacc0a-5c5e-476c-9419-bff399092310" alt="preview">
 </div>
 
 <!-- ABOUT THE PROJECT -->
- <img src="https://github.com/user-attachments/assets/f0aacc0a-5c5e-476c-9419-bff399092310" alt="preview">
+ 
 
 ## Explore components
 
