@@ -3,6 +3,8 @@
 
 
  <img src="https://github.com/user-attachments/assets/d00f15e8-cc1a-47a6-b99f-885156a55fc3" alt="Logo" width="60" height="60">
+
+  
   </a>
   <h1 align="center">Eldora UI</h1>
   <p align="center">
@@ -20,7 +22,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-
+ <img src="https://github.com/user-attachments/assets/f0aacc0a-5c5e-476c-9419-bff399092310" alt="preview">
 
 ## Explore components
 
