@@ -107,7 +107,7 @@ export default function Form() {
       </nav>
 
       {/* Form */}
-      <form className='mt-12 py-12' onSubmit={handleSubmit(processForm)}>
+      <form className='mt-12' onSubmit={handleSubmit(processForm)}>
         {currentStep === 0 && (
           <motion.div
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
