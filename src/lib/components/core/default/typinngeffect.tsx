@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -22,7 +23,12 @@ export function TypingEffect() {
   }, [i]);
 
   return (
-    <h1 className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
+    <h1 className={clsx(
+            "text-center font-display font-bold drop-shadow-sm",
+            "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "tracking-[-0.02em]",
+            "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+          )}>
       {displayedText ? displayedText : "Typing Effect"}
     </h1>
   );
