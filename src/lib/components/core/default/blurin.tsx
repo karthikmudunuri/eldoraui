@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export function BlurIn() {
@@ -11,7 +12,12 @@ export function BlurIn() {
       animate="visible"
       transition={{ duration: 1 }}
       variants={variants1}
-      className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      className={clsx(
+        "text-center font-display font-bold drop-shadow-sm",
+        "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+        "tracking-[-0.02em]",
+        "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+      )}
     >
       Blur In
     </motion.h1>

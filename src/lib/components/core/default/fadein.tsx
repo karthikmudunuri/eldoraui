@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 export default function StaggeredFade() {
   const sentence = "Staggered Fade In";
@@ -12,7 +13,12 @@ export default function StaggeredFade() {
     <motion.h1
       initial="hidden"
       animate="visible"
-      className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      className={clsx(
+            "text-center font-display font-bold drop-shadow-sm",
+            "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "tracking-[-0.02em]",
+            "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+          )}
     >
       {words.map((word, i) => (
         <motion.span key={word} variants={wordVariants} custom={i}>
