@@ -105,6 +105,7 @@ export const docsConfig: DocsConfig = {
         title: "Templates",
         slug: "templates",
         items: [
+          { title: "Developer portfolio", href: "/templates/dev-portfolio" },
           { title: "portfolio", href: "/templates/portfolio" },
           { title: "Saas Landing", href: "/templates/saas-landing" },
          
