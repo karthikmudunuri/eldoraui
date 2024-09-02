@@ -9,7 +9,7 @@ export const siteConfig = {
     authors: [
       {
         name: "karthikmudunuri",
-        url: "https://www.mehdibha.com",
+        url: "https://www.karthikmudunuri.site",
       },
     ],
     creator: "karthikmudunuri",
