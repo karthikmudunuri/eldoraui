@@ -10,7 +10,7 @@
   export default function SpotlightPage() {
     return (
       <>
-        <main className="relative h-[550px] flex flex-col justify-center bg-slate-900 overflow-hidden">
+        <main className="relative h-[550px] flex flex-col justify-start bg-slate-900 lg:overflow-hidden overflow-auto">
           <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
   
             <Spotlight className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group">
