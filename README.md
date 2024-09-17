@@ -8,7 +8,7 @@
   </a>
   <h1 align="center">Eldora UI</h1>
   <p align="center">
-   open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion.
+   open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion
 100% open-source, and customizable.
   </p>
   <p>
