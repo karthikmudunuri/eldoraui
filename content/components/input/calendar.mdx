@@ -1,0 +1,116 @@
+---
+title: Calendar
+description: A component for entering and editing a single date or a range of dates extending shadcn.
+thumbnail:
+  image: /previews/components/core/calendar.png
+  video: /previews/components/core/calendar.mov
+links:
+  - label: Reference
+    href: https://ui.shadcn.com/docs/components/calendar
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<ComponentPreview
+  name="demos/components/core/input/calendar"
+  preview={`<CalendarHero/>`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-day-picker date-fns @remixicon/react
+```
+
+<Step>Update the utils helper.</Step>
+```ts
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+
+export const focusInput = [
+  // base
+  "focus:ring-2",
+  // ring color
+  "focus:ring-blue-200 focus:dark:ring-blue-700/30",
+  // border color
+  "focus:border-blue-500 focus:dark:border-blue-700",
+]
+
+
+export const focusRing = [
+  // base
+  "outline outline-offset-2 outline-0 focus-visible:outline-2",
+  // outline color
+  "outline-blue-500 dark:outline-blue-500",
+]
+
+
+
+export const hasErrorInput = [
+  // base
+  "ring-2",
+  // border color
+  "border-red-500 dark:border-red-700",
+  // ring color
+  "ring-red-200 dark:ring-red-700/30",
+]
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/calendarnew" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+###  With year navigation
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendaryear"
+  preview={`<CalendarYearNavigationExample/>`}
+/>
+
+###  With disabled navigation
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendardisabled"
+  preview={`<CalendarDisableNavigationExample/>`}
+/>
+
+###  With range and two months
+
+
+<ComponentPreview
+  name="demos/components/core/input/calendarmonths"
+  preview={`<CalendarRangeExample/>`}
+/>
+
+
+###  With Locate
+
+<ComponentPreview
+  name="demos/components/core/input/calendarlocate"
+  preview={`<CalendarLocaleExample/>`}
+/>
+
+### With No dates
+
+<ComponentPreview
+  name="demos/components/core/input/calendernodates"
+  preview={`<CalendarToTodayExample/>`}
+/>
+
+### With Month and Year Dropdown
+
+<ComponentPreview
+  name="demos/components/core/input/calendardropdown"
+  preview={`<CalendarWithDropdown/>`}
+/>

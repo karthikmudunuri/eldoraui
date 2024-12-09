@@ -1,0 +1,41 @@
+---
+title: Installation
+description: How to install dependencies and structure your app.
+---
+
+## Next.js
+
+<Steps>
+
+<Step>Create a project</Step>
+
+Start by creating a new Next.js project using `create-next-app`:
+
+```bash
+npx create-next-app@latest my-app --typescript --tailwind --eslint
+```
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm i clsx tailwind-merge tailwind-variants
+```
+
+<Step>Add `utils/classes.ts`</Step>
+
+Add utilities for classnames:
+
+```ts
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+<Step>You're done.</Step>
+
+You can now start adding components of your choice
+
+</Steps>

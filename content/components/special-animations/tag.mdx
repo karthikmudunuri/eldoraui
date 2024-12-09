@@ -1,0 +1,41 @@
+---
+title: Tag
+description: An interactive 3D event badge with React Three Fiber.
+thumbnail:
+  image: /previews/components/core/3dtag.png
+  video: /previews/components/core/3dtag.mp4
+links:
+  - label: Inspiration
+    href: https://vercel.com/ship
+  - label: Reference
+    href: https://vercel.com/blog/building-an-interactive-3d-event-badge-with-react-three-fiber
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+  
+---
+
+<ComponentPreview
+  name="demos/components/core/globeanime/tag"
+  preview={`<Tag3d />`}
+/>
+
+## Installation
+
+<Steps>
+  <Step>Install the following dependencies:</Step>
+
+```bash
+npm install three @react-three/fiber @react-three/drei @react-three/rapier meshline leva
+```
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSourcej name="components/core/default/3dtag" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Props 
+
+| Prop      | Description                         | Type   | Default | Required |
+|-----------|-------------------------------------|--------|---------|----------|
+| maxSpeed  | Maximum speed for the band animation. | number | 50      | No       |
+| minSpeed  | Minimum speed for the band animation. | number | 10      | No       |

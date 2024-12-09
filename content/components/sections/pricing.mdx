@@ -1,0 +1,42 @@
+---
+title: Pricing
+description: These components are used to build the pricing of the website.
+thumbnail:
+  image: /previews/components/core/pricing.png
+  video: /previews/components/core/pricing.mov
+links:
+  - label: Reference
+    href: https://cruip.com/demos/stellar/
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<ComponentPreview
+  name="demos/components/core/sections/pricing"
+  preview={`<Pricingdemo>`}
+/>
+
+## Installation
+
+<Steps>
+  
+
+  <Step>Copy and paste the following code into your project.</Step>
+  <ComponentSource name="components/core/default/featurecomparision" />
+  <Step>Update the import paths to match your project setup.</Step>
+</Steps>
+
+## Props
+
+The `PricingTab` component accepts the following props:
+
+| Name             | Type       | Default | Description                                                                                                    |
+|------------------|------------|---------|----------------------------------------------------------------------------------------------------------------|
+| `yearly`         | `boolean`   | `false` | Indicates whether the pricing is for a yearly plan (`true`) or monthly plan (`false`).                         |
+| `popular`        | `boolean`   | `false` | Optional. If `true`, adds a "Most Popular" label to the plan.                                                   |
+| `planName`       | `string`    | N/A     | The name of the pricing plan.                                                                                   |
+| `price`          | `object`    | N/A     | An object containing `monthly` and `yearly` prices for the plan.                                                |
+| `price.monthly`  | `number`    | N/A     | The monthly price of the plan.                                                                                  |
+| `price.yearly`   | `number`    | N/A     | The yearly price of the plan.                                                                                   |
+| `planDescription`| `string`    | N/A     | A brief description of the plan.                                                                               |
+| `features`       | `string[]`  | N/A     | An array of features included in the plan.                                                                      |

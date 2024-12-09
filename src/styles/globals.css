@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-black: 0 0 0%;
+    --color-white: 0 0 100%;
+
+    --color-neutral-100: 0 0% 98%; /* Background layers (default bg) */
+    --color-neutral-200: 0 0% 94%; /* Background layers (Bg secondary/muted) */ /* Decorative border */
+    --color-neutral-300: 0 0% 90%; /* Decorative border */
+    --color-neutral-400: 0 0% 85%; /* Field border */
+    --color-neutral-500: 0 0% 80%; /* Disabled Text */
+    --color-neutral-600: 0 0% 40%; /* control border (switch/checkbox/radio) */
+    --color-neutral-700: 0 0% 35%; /* Text secondary (muted) */
+    --color-neutral-800: 0 0% 28%; /* Text */
+    --color-neutral-900: 0 0% 16%; /* Heading Text */
+    --color-neutral-1000: 0 0% 12%;
+
+    --color-primary-100: 0 0% 87%;
+    --color-primary-200: 0 0% 79%;
+    --color-primary-300: 0 0% 73%;
+    --color-primary-400: 0 0% 65%;
+    --color-primary-500: 0 0% 54%;
+    --color-primary-600: 0 0% 42%;
+    --color-primary-700: 0 0% 35%;
+    --color-primary-800: 0 0% 28%;
+    --color-primary-900: 0 0% 16%;
+    --color-primary-1000: 0 0% 12%;
+
+    --color-success-100: 130 34% 83%;
+    --color-success-200: 131 35% 75%;
+    --color-success-300: 131 35% 66%;
+    --color-success-400: 132 35% 56%;
+    --color-success-500: 131 41% 43%;
+    --color-success-600: 132 41% 34%;
+    --color-success-700: 132 41% 28%;
+    --color-success-800: 131 41% 23%;
+    --color-success-900: 131 40% 13%;
+    --color-success-1000: 132 42% 9%;
+
+    --color-warning-100: 35 100% 80%;
+    --color-warning-200: 35 100% 69%;
+    --color-warning-300: 35 100% 58%;
+    --color-warning-400: 35 93% 49%;
+    --color-warning-500: 35 92% 41%;
+    --color-warning-600: 35 93% 32%;
+    --color-warning-700: 35 93% 26%;
+    --color-warning-800: 35 93% 22%;
+    --color-warning-900: 35 94% 12%;
+    --color-warning-1000: 36 91% 9%;
+
+    --color-danger-100: 358 69% 90%;
+    --color-danger-200: 358 69% 85%;
+    --color-danger-300: 358 70% 79%;
+    --color-danger-400: 358 69% 73%;
+    --color-danger-500: 358 69% 63%;
+    --color-danger-600: 358 64% 49%;
+    --color-danger-700: 358 63% 41%;
+    --color-danger-800: 358 64% 33%;
+    --color-danger-900: 357 64% 20%;
+    --color-danger-1000: 358 65% 15%;
+
+    --color-accent-100: 210 100% 88%;
+    --color-accent-200: 210 100% 81%;
+    --color-accent-300: 210 100% 74%;
+    --color-accent-400: 210 100% 67%;
+    --color-accent-500: 210 64% 55%;
+    --color-accent-600: 210 51% 44%;
+    --color-accent-700: 210 51% 36%;
+    --color-accent-800: 210 52% 29%;
+    --color-accent-900: 211 52% 17%;
+    --color-accent-1000: 211 52% 12%;
+
+    --radius: 0.5rem;
+
+    --color-bg: var(--color-neutral-100);
+    --color-bg-muted: var(--color-neutral-200);
+    --color-bg-inverse: var(--color-neutral-1000);
+    --color-bg-disabled: var(--color-neutral-200);
+    --color-bg-tooltip: var(--color-neutral-500);
+    --color-bg-overlay: var(--color-neutral-200);
+
+    --color-bg-neutral: var(--color-neutral-300);
+    --color-bg-neutral-hover: var(--color-neutral-400);
+    --color-bg-neutral-active: var(--color-neutral-500);
+
+    --color-bg-primary: var(--color-neutral-1000);
+    --color-bg-primary-hover: var(--color-neutral-900);
+    --color-bg-primary-active: var(--color-neutral-800);
+
+    --color-bg-success: var(--color-success-500);
+    --color-bg-success-hover: var(--color-success-600);
+    --color-bg-success-active: var(--color-success-700);
+    --color-bg-success-muted: var(--color-success-300);
+    --color-bg-success-muted-hover: var(--color-success-300);
+    --color-bg-success-muted-active: var(--color-success-300);
+
+    --color-bg-danger: var(--color-danger-500);
+    --color-bg-danger-hover: var(--color-danger-600);
+    --color-bg-danger-active: var(--color-danger-700);
+    --color-bg-danger-muted: var(--color-danger-300);
+    --color-bg-danger-muted-hover: var(--color-danger-300);
+    --color-bg-danger-muted-active: var(--color-danger-300);
+
+    --color-bg-warning: var(--color-warning-500);
+    --color-bg-warning-hover: var(--color-warning-600);
+    --color-bg-warning-active: var(--color-warning-700);
+    --color-bg-warning-muted: var(--color-warning-300);
+    --color-bg-warning-muted-hover: var(--color-warning-300);
+    --color-bg-warning-muted-active: var(--color-warning-300);
+
+    --color-bg-accent: var(--color-accent-500);
+    --color-bg-accent-hover: var(--color-accent-600);
+    --color-bg-accent-active: var(--color-accent-700);
+    --color-bg-accent-muted: var(--color-accent-300);
+    --color-bg-accent-muted-hover: var(--color-accent-300);
+    --color-bg-accent-muted-active: var(--color-accent-300);
+
+    --color-fg: var(--color-neutral-1000);
+    --color-fg-muted: var(--color-neutral-800);
+    --color-fg-inverse: var(--color-neutral-100);
+    --color-fg-disabled: var(--color-neutral-500);
+
+    --color-fg-danger: var(--color-danger-600);
+    --color-fg-warning: var(--color-warning-600);
+    --color-fg-success: var(--color-success-600);
+    --color-fg-accent: var(--color-accent-600);
+
+    --color-fg-link: var(--color-neutral-1000);
+    --color-fg-link-hover: var(--color-neutral-1000);
+    --color-fg-link-active: var(--color-neutral-1000);
+    --color-fg-link-visited: var(--color-neutral-1000);
+
+    --color-fg-onAccent: var(--color-neutral-1000);
+    --color-fg-onNeutral: var(--color-neutral-1000);
+    --color-fg-onPrimary: var(--color-neutral-100);
+    --color-fg-onSuccess: var(--color-neutral-1000);
+    --color-fg-onMutedSuccess: var(--color-neutral-1000);
+    --color-fg-onDanger: var(--color-neutral-1000);
+    --color-fg-onMutedDanger: var(--color-neutral-1000);
+    --color-fg-onWarning: var(--color-neutral-1000);
+    --color-fg-onMutedWarning: var(--color-neutral-1000);
+
+    --color-fg-onTooltip: var(--color-neutral-1000);
+
+    --color-border: var(--color-neutral-300);
+    --color-border-field: var(--color-neutral-400);
+    --color-border-control: var(--color-neutral-700);
+    --color-border-hover: var(--color-neutral-1000);
+    --color-border-active: var(--color-neutral-500);
+    --color-border-disabled: var(--color-neutral-300);
+
+    --color-border-success: var(--color-success-400);
+    --color-border-danger: var(--color-danger-400);
+    --color-border-warning: var(--color-warning-400);
+    --color-border-info: var(--color-info-400);
+
+    --color-border-accent: var(--color-accent-500);
+    --color-border-secondary: var(--color-neutral-200);
+    --color-border-focus: var(--color-accent-500);
+    --color-border-inverse: var(--color-neutral-500);
+  }
+
+  .dark {
+    --color-neutral-100: 240 6% 8%;
+    --color-neutral-200: 240 6% 13%;
+    --color-neutral-300: 240 6% 19%;
+    --color-neutral-400: 240 6% 25%;
+    --color-neutral-500: 240 6% 33%;
+    --color-neutral-600: 240 6% 47%;
+    --color-neutral-700: 240 6% 55%;
+    --color-neutral-800: 240 6% 70%;
+    --color-neutral-900: 240 6% 85%;
+    --color-neutral-1000: 240 10% 98%;
+
+    --color-success-100: 132 42% 9%;
+    --color-success-200: 130 41% 14%;
+    --color-success-300: 131 41% 18%;
+    --color-success-400: 132 41% 22%;
+    --color-success-500: 131 41% 44%;
+    --color-success-600: 131 41% 48%;
+    --color-success-700: 131 41% 54%;
+    --color-success-800: 131 34% 70%;
+    --color-success-900: 131 34% 76%;
+    --color-success-1000: 130 35% 83%;
+
+    --color-warning-100: 34 100% 10%;
+    --color-warning-200: 34 100% 20%;
+    --color-warning-300: 35 100% 40%;
+    --color-warning-400: 35 100% 48%;
+    --color-warning-500: 35 100% 50%;
+    --color-warning-600: 35 100% 58%;
+    --color-warning-700: 35 100% 66%;
+    --color-warning-800: 35 93% 65%;
+    --color-warning-900: 35 100% 72%;
+    --color-warning-1000: 35 100% 80%;
+
+    --color-danger-100: 357 64% 14%;
+    --color-danger-200: 358 64% 21%;
+    --color-danger-300: 358 64% 26%;
+    --color-danger-400: 358 64% 32%;
+    --color-danger-500: 358 64% 42%;
+    --color-danger-600: 358 69% 51%;
+    --color-danger-700: 358 69% 60%;
+    --color-danger-800: 358 69% 70%;
+    --color-danger-900: 359 70% 86%;
+    --color-danger-1000: 358 69% 90%;
+
+    --color-accent-100: 211 51% 12%;
+    --color-accent-200: 211 52% 18%;
+    --color-accent-300: 210 52% 29%;
+    --color-accent-400: 209 51% 40%;
+    --color-accent-500: 210 52% 48%;
+    --color-accent-600: 210 51% 55%;
+    --color-accent-700: 210 68% 62%;
+    --color-accent-800: 210 97% 71%;
+    --color-accent-900: 210 100% 82%;
+    --color-accent-1000: 210 100% 87%;
+
+    --color-fg-onWarning: var(--color-black);
+    --color-fg-onTooltip: var(--color-white);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-bg text-fg;
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 border-bg bg-bg-muted text-center -indent-px font-mono text-base font-medium;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+
+  .category {
+    position: relative;
+  }
+
+  .category:before {
+    @apply absolute left-0 top-0 -ml-1 mt-1 h-2 w-2 rounded-full bg-bg-muted content-[''];
+  }
+
+  .category:after {
+    @apply absolute left-0 top-3 h-2 w-[1px] bg-bg-muted content-[''];
+  }
+
+  .category-xl {
+    position: relative;
+  }
+
+  .category-xl:before {
+    @apply absolute left-0 top-0 -ml-[7px] mt-[7px] h-4 w-4 rounded-full bg-bg-muted content-[''];
+  }
+
+  .category-xl:after {
+    @apply absolute left-0 top-3 h-4 w-[1px] bg-bg-muted content-[''];
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      @apply px-4;
+    }
+  }
+}
+.shiki,
+.shiki span {
+  background-color: transparent !important;
+}
+
+/* TODO PUT THIS SHIT IN TAILWIND CLASSES */
+
+.data-dragging .data-scrollable [data-direction="top"] {
+  overflow-y: hidden !important;
+}
+.data-dragging .data-scrollable [data-direction="bottom"] {
+  overflow-y: hidden !important;
+}
+
+.data-dragging .data-scrollable [data-direction="left"] {
+  overflow-x: hidden !important;
+}
+
+.data-dragging .data-scrollable [data-direction="right"] {
+  overflow-x: hidden !important;
+}
+
+[data-drawer]::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  background-color: inherit;
+}
+
+[data-drawer][data-direction="top"]::after {
+  top: initial;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 200%;
+}
+
+[data-drawer][data-direction="bottom"]::after {
+  top: 100%;
+  bottom: initial;
+  left: 0;
+  right: 0;
+  height: 200%;
+}
+
+[data-drawer][data-direction="left"]::after {
+  left: initial;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+  width: 200%;
+}
+
+[data-drawer][data-direction="right"]::after {
+  left: 100%;
+  right: initial;
+  top: 0;
+  bottom: 0;
+  width: 200%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-drawer] {
+    user-select: none;
+  }
+}
+
+@media (pointer: fine) {
+  [data-handle-hitarea] {
+    width: 100%;
+    height: 100%;
+  }
+}

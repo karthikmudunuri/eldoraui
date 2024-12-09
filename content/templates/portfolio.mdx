@@ -1,0 +1,62 @@
+---
+title: Portfolio Template
+description: Minimalist developer portfolio using Next.js 14, React, TailwindCSS, Framer motion
+thumbnail:
+  image: /previews/components/core/portfolio.png
+  video: /previews/components/core/portfolio.mp4
+links:
+  - label: Reference
+    href: https://www.youtube.com/watch?v=f-V-56vBU9g&t=31s
+  - label: Report an issue
+    href: https://github.com/karthikmudunuri/eldoraui/issues/new/choose
+---
+
+<div className="flex max-w-[800px] flex-col gap-4">
+  <video
+    autoPlay
+    loop
+    muted
+    src="/previews/components/core/portfolio.mp4"
+    className="w-full rounded-xl border shadow-2xl"
+  />
+  <div className="flex w-full flex-col gap-2 sm:flex-row">
+     <Linkpreview  href="https://karthikeyavarmamudunuri.vercel.app/">
+      Live Preview{" "}
+    </Linkpreview>
+    <Repodownload  href="https://github.com/karthikmudunuri/portfolio-template">
+      Download Here {" "}
+    </Repodownload>
+  </div>
+</div>
+
+## Installation through CLI
+
+<Steps>
+  <Step>Clone this repository to your local machine:</Step>
+
+```bash
+git clone https://github.com/karthikmudunuri/portfolio-template.git
+```
+
+  <Step>Move to the cloned directory:</Step>
+ 
+ ```bash
+ cd portfolio-template
+ ```
+
+  <Step>Install dependencies:</Step>
+  ```bash
+  npm install
+  ```
+  
+  
+  <Step>Start the local Server:</Step>
+  ```bash
+  npm run dev
+  ```
+
+  <Step>Open the [Sections](https://github.com/karthikmudunuri/portfolio-template/tree/main/app/sections) folder and make changes</Step>
+
+
+
+</Steps>
