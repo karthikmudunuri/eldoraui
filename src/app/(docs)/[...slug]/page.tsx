@@ -90,7 +90,7 @@ export default async function Page({ params }: PageProps) {
           </div>
         )}
         <div className="mt-10 text-sm md:text-base">
-          <Mdx source={rawContent} />
+           {await Mdx({ source: rawContent })}
         </div>
       </div>
       {doc.toc.items && ( // doc.toc
