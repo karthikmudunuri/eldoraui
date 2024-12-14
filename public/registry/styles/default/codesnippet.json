@@ -1,0 +1,15 @@
+{
+  "name": "codesnippet",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/codesnippet.tsx",
+      "content": "\"use client\";\nimport { ClipboardIcon } from \"lucide-react\";\nimport { toast } from \"sonner\";\nimport { useCopyToClipboard } from \"@/registry/default/hooks/copytoclipboard\";\n\nexport function CommandCode({ children }: Readonly<{ children: string }>) {\n  const [copiedText, copy] = useCopyToClipboard();\n  const handleCopyCode = (_code: string) => {\n    copy(children);\n    toast.success(`Command copied: ${copiedText}`);\n  };\n  return (\n    <button\n      className=\"flex transform-gpu items-center justify-between gap-5 rounded-full bg-fuchsia-300/20 px-5 py-3 tracking-tighter text-fuchsia-800 transition-all hover:bg-fuchsia-300/15 active:scale-90 active:bg-fuchsia-300/30 dark:text-fuchsia-400\"\n      onClick={() => handleCopyCode(children)}\n      type=\"button\"\n    >\n      <code className=\" truncate text-left\">{children}</code>\n      <ClipboardIcon className=\" size-5\" />\n    </button>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

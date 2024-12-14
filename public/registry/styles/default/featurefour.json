@@ -1,0 +1,15 @@
+{
+  "name": "featurefour",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/featurefour.tsx",
+      "content": "\"use client\";\nimport { useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n//TODO : Improve mobile version to display the image down the corresponding text instead of at the full bottom\n\nexport function TextComponent({\n  number,\n  title,\n  content,\n  isOpen,\n  loadingWidthPercent,\n}: Readonly<{\n  number: number;\n  title: string;\n  content: string;\n  isOpen: boolean;\n  loadingWidthPercent?: number;\n}>) {\n  return (\n    <div\n      className={cn(\n        \"transform-gpu rounded-lg border transition-all\",\n        isOpen\n          ? \"border-neutral-500/10 bg-gradient-to-b from-neutral-200/15 to-neutral-200/5 dark:border-neutral-500/15 dark:from-neutral-600/15 dark:to-neutral-600/5 dark:shadow-[2px_4px_25px_0px_rgba(248,248,248,0.06)_inset] \"\n          : \"scale-90 border-transparent opacity-50 saturate-0\",\n      )}\n    >\n      <div className=\"flex w-full items-center gap-4 p-4\">\n        <p\n          className={cn(\n            \"inline-flex size-8 shrink-0 items-center justify-center rounded-md bg-neutral-500/20 text-neutral-600\",\n          )}\n        >\n          {number}\n        </p>\n        <h2\n          className={cn(\n            \"text-left text-xl font-medium text-neutral-800 dark:text-neutral-200\",\n          )}\n        >\n          {title}\n        </h2>\n      </div>\n      <div\n        className={cn(\n          \"w-full transform-gpu overflow-hidden text-left text-neutral-600 transition-all duration-500 dark:text-neutral-400\",\n          isOpen ? \" max-h-64\" : \"max-h-0\",\n        )}\n      >\n        <p className=\"p-4 text-lg\">{content}</p>\n        <div className=\"w-full px-4 pb-4\">\n          <div className=\"relative h-1 w-full overflow-hidden rounded-full\">\n            <div\n              className={cn(\"absolute left-0 top-0 h-1 bg-neutral-500\")}\n              style={{ width: `${loadingWidthPercent}%` }}\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

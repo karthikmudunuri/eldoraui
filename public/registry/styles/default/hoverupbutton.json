@@ -1,0 +1,15 @@
+{
+  "name": "hoverupbutton",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/hoverupbutton.tsx",
+      "content": "\"use client\";\n\nexport function HoverUpButton() {\n  return (\n    <div className=\"w-[10rem] rounded-lg bg-purple-400 transition-colors\">\n      <button className=\"w-full origin-top-left rounded-lg border border-purple-900 bg-white py-3 text-xs font-medium text-purple-900 transition-all hover:-rotate-2 md:text-base\">\n        Hover me\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

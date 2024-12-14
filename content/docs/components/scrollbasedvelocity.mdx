@@ -1,0 +1,39 @@
+---
+title: Scroll Based Velocity
+date: 2024-05-23
+description: Text animation that changes speed based on scroll position.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="scrollbasedvelocitydemo" />
+
+## Installation
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/scrollbasedvelocity.tsx`
+
+<ComponentSource name="scrollbasedvelocity" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Props
+
+| Prop Name          | Type     | Default | Description                                           |
+| ------------------ | -------- | ------- | ----------------------------------------------------- |
+| `text`             | `string` | -       | The text to scroll horizontally with velocity effect. |
+| `default_velocity` | `number` | `5`     | The default velocity for the scrolling effect.        |
+| `className`        | `string` | `""`    | Additional CSS classes for custom styling.            |

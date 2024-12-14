@@ -1,0 +1,15 @@
+{
+  "name": "cobe",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/cobeglobe.jsx",
+      "content": "\"use client\";\nimport createGlobe from \"cobe\";\nimport { useEffect, useRef } from \"react\";\n\nexport function Cobe() {\n  const canvasRef = useRef();\n  useEffect(() => {\n    let phi = 0;\n    let width = 0;\n    const onResize = () =>\n      canvasRef.current && (width = canvasRef.current.offsetWidth);\n    window.addEventListener(\"resize\", onResize);\n    onResize();\n    const globe = createGlobe(canvasRef.current, {\n      devicePixelRatio: 2,\n      width: width * 2,\n      height: width * 2,\n      phi: 0,\n      theta: 0.3,\n      dark: 1,\n      diffuse: 3,\n      mapSamples: 16000,\n      mapBrightness: 1.2,\n      baseColor: [1, 1, 1],\n      markerColor: [251 / 255, 100 / 255, 21 / 255],\n      glowColor: [1.2, 1.2, 1.2],\n      markers: [],\n      onRender: (state) => {\n        // Called on every animation frame.\n        // `state` will be an empty object, return updated params.\n        state.phi = phi;\n        phi += 0.005;\n        state.width = width * 2;\n        state.height = width * 2;\n      },\n    });\n    setTimeout(() => (canvasRef.current.style.opacity = \"1\"));\n    return () => {\n      globe.destroy();\n      window.removeEventListener(\"resize\", onResize);\n    };\n  }, []);\n  return (\n    <div\n      style={{\n        width: \"100%\",\n        maxWidth: 600,\n        aspectRatio: 1,\n        margin: \"auto\",\n        position: \"relative\",\n      }}\n    >\n      <canvas\n        ref={canvasRef}\n        style={{\n          width: \"100%\",\n          height: \"100%\",\n          contain: \"layout paint size\",\n          opacity: 0,\n          transition: \"opacity 1s ease\",\n        }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

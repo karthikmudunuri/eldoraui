@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/components/eldoraui/*": [
+        "./registry/default/eldoraui/*"
+      ],
+      "@/components/demos/*": [
+        "./registry/default/demos/*"
+      ],
+      "content-collections": ["./.content-collections/generated"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".content-colletions/generated", "registry/default/eldoraui/cobeautodraggable.jsx", "registry/default/eldoraui/cobedraggable.jsx",
+  ],
+  "exclude": [
+    "node_modules",
+    "packages/**/*",
+    "scripts/**/*",
+    "scripts/build-registry.ts", 
+    "__registry__"
+  ]
+}

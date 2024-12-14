@@ -1,0 +1,15 @@
+{
+  "name": "copytoclipboard",
+  "type": "registry:hook",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "hooks/copytoclipboard.tsx",
+      "content": "\"use client\";\nimport { useCallback, useEffect, useState } from \"react\";\n\ntype CopiedValue = string | null;\n\ntype CopyFn = (text: string) => Promise<boolean>;\n\nexport function useCopyToClipboard({\n  isCopiedDelay = 2000,\n}: {\n  isCopiedDelay?: number;\n} = {}): [CopiedValue, CopyFn, boolean] {\n  const [copiedText, setCopiedText] = useState<CopiedValue>(null);\n  const [isCopied, setIsCopied] = useState(false);\n\n  useEffect(() => {\n    if (!isCopied) {\n      return;\n    }\n    setTimeout(() => {\n      setIsCopied(false);\n    }, isCopiedDelay);\n  }, [isCopied, isCopiedDelay]);\n\n  const copy: CopyFn = useCallback(async (text) => {\n    if (!navigator?.clipboard) {\n      return false;\n    }\n\n    // Try to save to clipboard then save it in the state if worked\n    try {\n      await navigator.clipboard.writeText(text);\n      setCopiedText(text);\n      setIsCopied(true);\n      return true;\n    } catch (_error) {\n      setCopiedText(null);\n      return false;\n    }\n  }, []);\n\n  return [copiedText, copy, isCopied];\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

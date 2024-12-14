@@ -1,0 +1,840 @@
+[
+  {
+    "name": "dynamicsquare",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/dynamicsquare.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "features",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/features.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "carousel",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/carousel.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "hackerbg",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/hackerbg.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "plusgrid",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/plusgrid.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "marquee",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "eldoraui/marquee.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "tailwind": {
+      "config": {
+        "theme": {
+          "extend": {
+            "keyframes": {
+              "marquee": {
+                "from": {
+                  "transform": "translateX(0)"
+                },
+                "to": {
+                  "transform": "translateX(calc(-100% - var(--gap)))"
+                }
+              },
+              "marquee-vertical": {
+                "from": {
+                  "transform": "translateY(0)"
+                },
+                "to": {
+                  "transform": "translateY(calc(-100% - var(--gap)))"
+                }
+              }
+            },
+            "animation": {
+              "marquee": "marquee var(--duration) infinite linear",
+              "marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "link",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "ui/link.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "swirl",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/swirlbg.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "worldmap",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/worldmap.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "featurefour",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/featurefour.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "animatedcard",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/animatedcard.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "factalgrid",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/factalgrid.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "wrapcontainer",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/wrapanimationcontainer.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "tweetgrid",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/tweetgrid.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "signature",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/signature.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "codesnippet",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/codesnippet.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "novatrix",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/novatrix.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "fadedown",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/fadedown.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "fadein",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/fadein.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "fadeup",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/fadeup.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "blurin",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/blurin.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "gradualspacing",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/gradualspacing.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "letterpullup",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/letterpullup.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "morphingtext",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/morphingtext.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "scrollprogress",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/scrollprogress.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "scaleslider",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/scaleslider.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "scratchtoreveal",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/scratchtoreveal.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "multidirectionslide",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/multidirectionslide.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "scrollbasedvelocity",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/scrollbasedvelocity.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "seperateaway",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/seperateaway.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "wavytext",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/wavytext.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "wordpullup",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/wordpullup.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "interactivebutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/interactivebutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "integrations",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/integrations.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "staticstepper",
+    "type": "registry:ui",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/staticstepper.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "bentogrid",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/bentocard.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "cardcomment",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/animatedcardcomment.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "ledcard",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/animatedledcard.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "hoverme",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/hoverme.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "gitstarbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/gitstarbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "shimmerbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/shimmerbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "neubutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/neubutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "colorchangingbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/colorchangingbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "spotlightbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/spotlightbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "motionbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/motionbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "shinybutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/shinybutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "animatedborderbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/animatedborderbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "hoverupbutton",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/hoverupbutton.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "header",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/header.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "testimonalslider",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/testimonalslider.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "cobe",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/cobeglobe.jsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "cobedraggable",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/cobedraggable.jsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "cobeautodraggable",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/cobeautodraggable.jsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "coberotatetolocation",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/coberotatetolocation.jsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "cobescaled",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/cobescaled.jsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "testimonals",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/testimonals.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "keyboard",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/keyboard.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "sparklestitle",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/sparklestitle.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "logocluster",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/logocluster.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "map",
+    "type": "registry:ui",
+    "dependencies": [
+      "framer-motion"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/map.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "backgroundlight",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "eldoraui/backgroundlight.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "tailwind": {
+      "config": {
+        "theme": {
+          "extend": {
+            "animation": {
+              "background-light": "background-light 60s linear infinite"
+            },
+            "keyframes": {
+              "background-light": {
+                "from": {
+                  "backgroundPosition": "50% 50%, 50% 50%"
+                },
+                "to": {
+                  "backgroundPosition": "350% 50%, 350% 50%"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

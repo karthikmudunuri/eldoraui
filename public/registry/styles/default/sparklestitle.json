@@ -1,0 +1,15 @@
+{
+  "name": "sparklestitle",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/sparklestitle.tsx",
+      "content": "",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

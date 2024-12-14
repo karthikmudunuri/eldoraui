@@ -1,0 +1,15 @@
+{
+  "name": "link",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "ui/link.tsx",
+      "content": "import * as Headless from \"@headlessui/react\";\nimport NextLink, { type LinkProps } from \"next/link\";\nimport { forwardRef } from \"react\";\n\nexport const Link = forwardRef(function Link(\n  props: LinkProps & React.ComponentPropsWithoutRef<\"a\">,\n  ref: React.ForwardedRef<HTMLAnchorElement>,\n) {\n  return (\n    <Headless.DataInteractive>\n      <NextLink ref={ref} {...props} />\n    </Headless.DataInteractive>\n  );\n});\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

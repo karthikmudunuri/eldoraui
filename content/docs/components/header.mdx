@@ -1,0 +1,51 @@
+---
+title: Header
+date: 2024-10-17
+description: These components are used to build the header of the website.
+author: Karthikeyavarma
+published: true
+toc: false
+---
+
+<ComponentPreview name="headerdemo" />
+
+## Installation
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx @headlessui/react @heroicons/react
+```
+
+</Step>
+
+<Step>Copy and paste the following code of `header` into your project.</Step>
+
+`components/eldoraui/header.tsx`
+
+<ComponentSource name="header" />
+
+<Step>Copy and paste the following code of `plusgrid` into your project.</Step>
+
+`components/eldoraui/plusgrid.tsx`
+
+<ComponentSource name="plusgrid" />
+
+<Step>Copy and paste the following code of `link` into your project.</Step>
+
+`components/eldoraui/link.tsx`
+
+<ComponentSource name="link" />
+
+</Steps>
+
+### Props Table
+
+| Prop        | Type              | Description                                                  | Default     |
+| ----------- | ----------------- | ------------------------------------------------------------ | ----------- |
+| `banner`    | `React.ReactNode` | An optional banner element to display within the navbar.     | `undefined` |
+| `className` | `string`          | Optional CSS class for custom styling of the grid.           | `""`        |
+| `children`  | `React.ReactNode` | Child elements to be rendered inside the grid, row, or item. | `undefined` |
+| `href`      | `string`          | The destination URL of the link.                             | `undefined` |

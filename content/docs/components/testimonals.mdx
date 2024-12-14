@@ -1,0 +1,186 @@
+---
+title: Testimonals
+date: 2024-10-17
+description: These components are used to build the social proof section of the website.
+author: Karthikeyavarma
+published: true
+toc: false
+---
+
+<Callout>
+
+**Note:** There are two testimonal components scroll down to see another
+
+</Callout>
+
+## Testimonals Carousel
+
+<ComponentPreview name="testimonalcarouseldemo" />
+
+## Installation
+
+<Steps>
+
+<Step>
+
+```bash
+npm install embla-carousel-react lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code of `header` into your project.</Step>
+
+`components/eldoraui/carousel.tsx`
+
+<ComponentSource name="carousel" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Testimonals Marquee
+
+<ComponentPreview name="testimonalsdemo" />
+
+## Installation
+
+<Steps>
+
+<Step>
+
+```bash
+npm install framer-motion lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/testimonals.tsx`
+
+<ComponentSource name="testimonals" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/marquee.tsx`
+
+<ComponentSource name="marquee" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
+    },
+  },
+};
+```
+
+</Steps>
+
+## Props
+
+### `Carousel` Props
+
+| Prop Name     | Type                         | Default        | Description                                                                  |
+| ------------- | ---------------------------- | -------------- | ---------------------------------------------------------------------------- |
+| `opts`        | `CarouselOptions`            | -              | Options for the carousel, passed to `useEmblaCarousel`.                      |
+| `plugins`     | `CarouselPlugin`             | -              | Plugins for the carousel, passed to `useEmblaCarousel`.                      |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Orientation of the carousel. Determines whether it's horizontal or vertical. |
+| `setApi`      | `(api: CarouselApi) => void` | -              | Function to set the API for controlling the carousel externally.             |
+
+---
+
+### `CarouselContent` Props
+
+| Prop Name   | Type                                   | Default | Description                                            |
+| ----------- | -------------------------------------- | ------- | ------------------------------------------------------ |
+| `className` | `string`                               | -       | Additional CSS classes to style the carousel content.  |
+| `...props`  | `React.HTMLAttributes<HTMLDivElement>` | -       | Other props passed to the `CarouselContent` container. |
+
+---
+
+### `CarouselItem` Props
+
+| Prop Name   | Type                                   | Default | Description                                         |
+| ----------- | -------------------------------------- | ------- | --------------------------------------------------- |
+| `className` | `string`                               | -       | Additional CSS classes to style each carousel item. |
+| `...props`  | `React.HTMLAttributes<HTMLDivElement>` | -       | Other props passed to the `CarouselItem`.           |
+
+---
+
+### `CarouselPrevious` Props
+
+| Prop Name   | Type                                  | Default     | Description                                                       |
+| ----------- | ------------------------------------- | ----------- | ----------------------------------------------------------------- |
+| `className` | `string`                              | -           | Additional CSS classes for styling the previous button.           |
+| `variant`   | `"outline" \| "solid"`                | `"outline"` | The variant of the button, determines styling.                    |
+| `size`      | `"icon" \| "sm" \| "md"`              | `"icon"`    | The size of the button.                                           |
+| `...props`  | `React.ComponentProps<typeof Button>` | -           | Other props passed to the `Button` component for previous action. |
+
+---
+
+### `CarouselNext` Props
+
+| Prop Name   | Type                                  | Default     | Description                                                   |
+| ----------- | ------------------------------------- | ----------- | ------------------------------------------------------------- |
+| `className` | `string`                              | -           | Additional CSS classes for styling the next button.           |
+| `variant`   | `"outline" \| "solid"`                | `"outline"` | The variant of the button, determines styling.                |
+| `size`      | `"icon" \| "sm" \| "md"`              | `"icon"`    | The size of the button.                                       |
+| `...props`  | `React.ComponentProps<typeof Button>` | -           | Other props passed to the `Button` component for next action. |
+
+---
+
+### `useCarousel` Hook Return Values
+
+| Prop Name       | Type                              | Description                                                   |
+| --------------- | --------------------------------- | ------------------------------------------------------------- |
+| `carouselRef`   | `React.RefObject<HTMLDivElement>` | A reference to the carousel container.                        |
+| `api`           | `CarouselApi`                     | The API object used to control the carousel programmatically. |
+| `scrollPrev`    | `() => void`                      | Function to scroll to the previous item in the carousel.      |
+| `scrollNext`    | `() => void`                      | Function to scroll to the next item in the carousel.          |
+| `canScrollPrev` | `boolean`                         | Indicates if there is a previous item to scroll to.           |
+| `canScrollNext` | `boolean`                         | Indicates if there is a next item to scroll to.               |
+
+### `Highlight` Props
+
+| Prop Name   | Type              | Default | Description                                                   |
+| ----------- | ----------------- | ------- | ------------------------------------------------------------- |
+| `children`  | `React.ReactNode` | -       | The content to be highlighted inside the `<span>`.            |
+| `className` | `string`          | -       | Additional CSS classes to apply to the `Highlight` component. |
+
+---
+
+### `TestimonialCard` Props
+
+| Prop Name       | Type                | Default | Description                                                             |
+| --------------- | ------------------- | ------- | ----------------------------------------------------------------------- |
+| `name`          | `string`            | -       | Name of the person providing the testimonial.                           |
+| `role`          | `string`            | -       | Role of the person providing the testimonial.                           |
+| `img`           | `string` (optional) | -       | URL of the image to display for the testimonial.                        |
+| `description`   | `React.ReactNode`   | -       | The testimonial text content.                                           |
+| `className`     | `string` (optional) | -       | Additional CSS classes for styling the `TestimonialCard`.               |
+| `[key: string]` | `any`               | -       | Capture any additional props passed to the `TestimonialCard` component. |
+
+---

@@ -1,0 +1,45 @@
+---
+title: Dynamic Square
+date: 2024-10-18
+description: A layout used to showcase the features of a product in a simple and elegant way.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="dynamicsquaredemo" />
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/dynamicsquare.tsx`
+
+<ComponentSource name="dynamicsquare" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Props
+
+### `DynamicSquareBackground` Component Props
+
+| Prop Name     | Type     | Default | Description                                                   |
+| ------------- | -------- | ------- | ------------------------------------------------------------- |
+| `title`       | `string` | -       | The title text to be displayed at the top of the component.   |
+| `tag`         | `string` | -       | The tag text to be displayed next to the title.               |
+| `description` | `string` | -       | The description text to be displayed below the title and tag. |
+| `buttonText`  | `string` | -       | The text to be displayed on the button.                       |
+| `buttonHref`  | `string` | -       | The URL or path to be used for the button's `href` attribute. |
+
+---
+
+### `DecorativeTilesBackground` Component Internal
+
+| Variable Name       | Type     | Description                                                                   |
+| ------------------- | -------- | ----------------------------------------------------------------------------- |
+| `rows`              | `number` | The number of rows for the decorative tiles (default is 20).                  |
+| `columns`           | `number` | The number of columns for the decorative tiles (default is 22).               |
+| `animationDuration` | `number` | The animation duration for the tiles' fade-in effect (default is 14 seconds). |

@@ -1,0 +1,34 @@
+---
+title: Hover Up Button
+date: 2024-05-23
+description: An animated text component that blurs in the text.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="hoverupdemo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add "https://magicui.design/r/blur-in"
+```
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="hoverupbutton" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Props
+
+| Prop      | Type   | Description                                    | Default                                                                                      |
+| --------- | ------ | ---------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| className | string | The class name to be applied to the component  |                                                                                              |
+| duration  | number | Durations (seconds) for the animation          | 1                                                                                            |
+| word      | string | The word to be animated                        |                                                                                              |
+| variant   | object | Custom animation variants for motion component | `hidden: { filter: "blur(10px)", opacity: 0 }, visible: { filter: "blur(0px)", opacity: 1 }` |

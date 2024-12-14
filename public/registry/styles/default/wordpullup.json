@@ -1,0 +1,15 @@
+{
+  "name": "wordpullup",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/wordpullup.tsx",
+      "content": "\"use client\";\nimport clsx from \"clsx\";\nimport { motion } from \"framer-motion\";\n\ninterface WordPullUpProps {\n  text?: string;\n  className?: string;\n}\n\nexport const WordPullUp: React.FC<WordPullUpProps> = ({\n  text = \"\",\n  className = \"\",\n}) => {\n  const container = {\n    hidden: { opacity: 0 },\n    show: {\n      opacity: 1,\n      transition: {\n        staggerChildren: 0.2,\n      },\n    },\n  };\n\n  const item = {\n    hidden: { y: 20, opacity: 0 },\n    show: { y: 0, opacity: 1 },\n  };\n\n  return (\n    <motion.h1\n      variants={container}\n      initial=\"hidden\"\n      animate=\"show\"\n      className={clsx(\n        \"text-center font-display font-bold drop-shadow-sm\",\n        \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n        \"tracking-[-0.02em]\",\n        \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\",\n        className,\n      )}\n    >\n      {text.split(\" \").map((word, i) => (\n        <motion.span\n          key={i}\n          variants={item}\n          style={{ display: \"inline-block\", paddingRight: \"15px\" }}\n        >\n          {word === \"\" ? <span>&nbsp;</span> : word}\n        </motion.span>\n      ))}\n    </motion.h1>\n  );\n};\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

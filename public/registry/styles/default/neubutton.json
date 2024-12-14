@@ -1,0 +1,15 @@
+{
+  "name": "neubutton",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/neubutton.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\ninterface NeuButtonProps {\n  text?: string;\n  className?: string;\n}\n\nexport function NeuButton({ text = \"Hover me\", className }: NeuButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"w-fit bg-purple-400 px-6 py-2 font-medium text-white shadow-none transition-all hover:translate-x-[-5px] hover:translate-y-[-5px] hover:shadow-[3px_3px_0px_white]\",\n        className,\n      )}\n    >\n      {text}\n    </button>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

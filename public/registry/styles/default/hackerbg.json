@@ -1,0 +1,15 @@
+{
+  "name": "hackerbg",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/hackerbg.tsx",
+      "content": "\"use client\";\nimport React, { useEffect, useRef } from \"react\";\n\ninterface HackerBackgroundProps {\n  color?: string;\n  fontSize?: number;\n  className?: string;\n  speed?: number;\n}\n\nconst HackerBackground: React.FC<HackerBackgroundProps> = ({\n  color = \"#0F0\",\n  fontSize = 14,\n  className = \"\",\n  speed = 1,\n}) => {\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n\n  useEffect(() => {\n    const canvas = canvasRef.current;\n    if (!canvas) return;\n\n    const ctx = canvas.getContext(\"2d\");\n    if (!ctx) return;\n\n    const resizeCanvas = () => {\n      canvas.width = window.innerWidth;\n      canvas.height = window.innerHeight;\n    };\n\n    resizeCanvas();\n    window.addEventListener(\"resize\", resizeCanvas);\n\n    let animationFrameId: number;\n\n    const columns = Math.floor(canvas.width / fontSize);\n    const drops: number[] = new Array(columns).fill(1);\n\n    const chars =\n      \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+\";\n\n    let lastTime = 0;\n    const interval = 33; // ~30 fps\n\n    const draw = (currentTime: number) => {\n      animationFrameId = requestAnimationFrame(draw);\n\n      if (currentTime - lastTime < interval) return;\n      lastTime = currentTime;\n\n      ctx.fillStyle = \"rgba(0, 0, 0, 0.05)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = color;\n      ctx.font = `${fontSize}px monospace`;\n\n      for (let i = 0; i < drops.length; i++) {\n        const text = chars[Math.floor(Math.random() * chars.length)];\n        ctx.fillText(text, i * fontSize, drops[i] * fontSize);\n\n        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {\n          drops[i] = 0;\n        }\n        drops[i] += speed; // Use the speed prop to control fall rate\n      }\n    };\n\n    animationFrameId = requestAnimationFrame(draw);\n\n    return () => {\n      window.removeEventListener(\"resize\", resizeCanvas);\n      cancelAnimationFrame(animationFrameId);\n    };\n  }, [color, fontSize, speed]);\n\n  return (\n    <canvas\n      ref={canvasRef}\n      className={`pointer-events-none ${className}`}\n      style={{\n        position: \"absolute\",\n        top: 0,\n        left: 0,\n        width: \"100%\",\n        height: \"100%\",\n      }}\n    />\n  );\n};\n\nexport default HackerBackground;\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

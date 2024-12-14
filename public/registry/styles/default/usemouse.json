@@ -1,0 +1,15 @@
+{
+  "name": "usemouse",
+  "type": "registry:hook",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "hooks/usemouse.tsx",
+      "content": "\"use client\";\nimport { type RefObject, useLayoutEffect, useRef, useState } from \"react\";\n\ninterface MouseState {\n  x: number | null;\n  y: number | null;\n  elementX: number | null;\n  elementY: number | null;\n  elementPositionX: number | null;\n  elementPositionY: number | null;\n}\n\nexport function useMouse(): [MouseState, RefObject<HTMLDivElement>] {\n  const [state, setState] = useState<MouseState>({\n    x: null,\n    y: null,\n    elementX: null,\n    elementY: null,\n    elementPositionX: null,\n    elementPositionY: null,\n  });\n\n  const ref = useRef<HTMLDivElement | null>(null);\n\n  useLayoutEffect(() => {\n    const handleMouseMove = (event: MouseEvent) => {\n      const newState: Partial<MouseState> = {\n        x: event.pageX,\n        y: event.pageY,\n      };\n\n      if (ref.current instanceof Element) {\n        const { left, top } = ref.current.getBoundingClientRect();\n        const elementPositionX = left + window.scrollX;\n        const elementPositionY = top + window.scrollY;\n        const elementX = event.pageX - elementPositionX;\n        const elementY = event.pageY - elementPositionY;\n\n        newState.elementX = elementX;\n        newState.elementY = elementY;\n        newState.elementPositionX = elementPositionX;\n        newState.elementPositionY = elementPositionY;\n      }\n\n      setState((s) => ({\n        ...s,\n        ...newState,\n      }));\n    };\n\n    document.addEventListener(\"mousemove\", handleMouseMove);\n\n    return () => {\n      document.removeEventListener(\"mousemove\", handleMouseMove);\n    };\n  }, []);\n\n  return [state, ref];\n}\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

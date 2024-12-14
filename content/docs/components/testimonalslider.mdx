@@ -1,0 +1,50 @@
+---
+title: Testimonal Slider
+date: 2023-11-23
+description: An animated sliding testimonal component
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="testimonalsliderdemo" />
+
+## Installation
+
+<Steps>
+
+<Step>
+
+```bash
+npm install @headlessui/react
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/testimonalslider.tsx`
+
+<ComponentSource name="testimonalslider" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Props
+
+### `TestimonialsSlider` Component Props
+
+| Prop Name      | Type            | Default | Description                                                               |
+| -------------- | --------------- | ------- | ------------------------------------------------------------------------- |
+| `testimonials` | `Testimonial[]` | -       | Array of testimonial objects containing the image, quote, name, and role. |
+
+---
+
+### `Testimonial` Object
+
+| Property Name | Type     | Description                                       |
+| ------------- | -------- | ------------------------------------------------- |
+| `img`         | `string` | The URL or path to the image for the testimonial. |
+| `quote`       | `string` | The testimonial quote text.                       |
+| `name`        | `string` | The name of the person giving the testimonial.    |
+| `role`        | `string` | The role of the person giving the testimonial.    |

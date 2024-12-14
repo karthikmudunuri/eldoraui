@@ -1,0 +1,81 @@
+---
+title: Logo cloud
+date: 2024-10-17
+description: These components are used to build the social proof section of the website.
+author: Karthikeyavarma
+published: true
+toc: false
+---
+
+<Callout>
+
+**Note:** There are two logo components scroll down to see another
+
+</Callout>
+
+## Logo Cloud
+
+<ComponentPreview name="logoclouddemo" />
+
+## Logo Marquee
+
+<Callout>
+
+**Note:** Remove Grayscale for removing grayscale effect
+
+</Callout>
+
+<ComponentPreview name="logomarqueedemo" />
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/marquee.tsx`
+
+<ComponentSource name="marquee" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
+    },
+  },
+};
+```
+
+</Steps>
+
+## Props
+
+| Prop           | Type      | Default | Description                                                                    |
+| -------------- | --------- | ------- | ------------------------------------------------------------------------------ |
+| `className`    | `string`  |         | The class name to apply to the component.                                      |
+| `reverse`      | `boolean` | `false` | Whether or not to reverse the direction of the `marquee`.                      |
+| `pauseOnHover` | `boolean` | `false` | Whether or not to pause the `marquee` when the user hovers over the component. |
+| `vertical`     | `boolean` | `false` | Whether or not to display the marquee `vertically`.                            |
+| `children`     | `node`    |         | The content to display in the marquee.                                         |
+| `repeat`       | `number`  | `1`     | The number of `times` to repeat the content.                                   |

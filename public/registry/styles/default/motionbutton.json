@@ -1,0 +1,15 @@
+{
+  "name": "motionbutton",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/motionbutton.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nexport function MotionButton({\n  text = \"Button\",\n  className,\n}: {\n  text?: string;\n  className?: string;\n}) {\n  return (\n    <button\n      className={cn(\n        \"rounded-2xl border-2 border-dashed border-black bg-white px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none\",\n        className,\n      )}\n    >\n      {text}\n    </button>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

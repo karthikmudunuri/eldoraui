@@ -1,0 +1,35 @@
+---
+title: Feature Four
+date: 2024-10-18
+description: A layout used to showcase the features of a product in a simple and elegant way.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="featurefourdemo" />
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/featurefour.tsx`
+
+<ComponentSource name="featurefour" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Props
+
+### `TextComponent` Component Props
+
+| Prop Name             | Type      | Default | Description                                                                                   |
+| --------------------- | --------- | ------- | --------------------------------------------------------------------------------------------- |
+| `number`              | `number`  | -       | The number to display, typically used for ordering or numbering items.                        |
+| `title`               | `string`  | -       | The title or label associated with the text content.                                          |
+| `content`             | `string`  | -       | The content text to display.                                                                  |
+| `isOpen`              | `boolean` | -       | A boolean indicating whether the content is expanded (`true`) or collapsed (`false`).         |
+| `loadingWidthPercent` | `number`  | `0`     | The width percentage of the loading progress bar, typically between `0` and `100`. (Optional) |
