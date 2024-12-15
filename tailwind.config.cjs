@@ -76,9 +76,10 @@ module.exports = {
         "shiny-text": "shiny-text 8s infinite",
         led: "led 100ms ease-in-out",
         'shine-infinite': 'shineInfinite 2s ease-in-out infinite',
+         "flip": "flip 6s infinite steps(2, end)",
+         "rotate": "rotate 3s linear infinite both",
       },
       keyframes: {
-       
         shineInfinite: {
           '0%': { transform: 'skew(-12deg) translateX(-100%)' },
           '100%': { transform: 'skew(-12deg) translateX(100%)' },
@@ -108,6 +109,16 @@ module.exports = {
         "marquee-vertical": {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+        "flip": {
+          "to": {
+            "transform": "rotate(360deg)"
+          }
+        },
+        "rotate": {
+          "to": {
+            "transform": "rotate(90deg)"
+          }
         },
         "shiny-text": {
           "0%, 90%, 100%": {
