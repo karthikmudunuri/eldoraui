@@ -1,7 +1,7 @@
 <div align="center">
   <a href="https://github.com/karthikmudunuri/eldoraui">
 
- <img src="https://github.com/user-attachments/assets/d00f15e8-cc1a-47a6-b99f-885156a55fc3" alt="Logo" width="60" height="60">
+ <img src="https://github.com/user-attachments/assets/39ad7b92-4696-44be-9079-f38ed06d80c5" alt="Logo" width="60" height="60">
 
   </a>
   <h1 align="center">Eldora UI</h1>
@@ -18,7 +18,6 @@
     <a href="https://github.com/karthikmudunuri/eldoraui/issues">Request Feature</a>
   </p>
 
-  <img src="https://github.com/user-attachments/assets/f0aacc0a-5c5e-476c-9419-bff399092310" alt="preview">
 </div>
 
 <!-- ABOUT THE PROJECT -->
