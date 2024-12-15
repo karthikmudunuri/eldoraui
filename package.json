@@ -5,6 +5,11 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "prefix:cli": "pnpm --prefix ./packages/cli/ -- ",
+    "install:cli": "pnpm prefix:cli install",
+    "dev:cli": "pnpm prefix:cli dev",
+    "build:cli": "pnpm prefix:cli build",
+    "release:cli": "pnpm prefix:cli release",
     "dev": "concurrently \"content-collections watch\" \"next dev\"",
     "prebuild": "pnpm build:docs && pnpm build:registry",
     "build": "next build",
