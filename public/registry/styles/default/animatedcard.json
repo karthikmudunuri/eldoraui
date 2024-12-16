@@ -2,7 +2,7 @@
   "name": "animatedcard",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "lucide-react"
   ],
   "files": [
     {

@@ -4,6 +4,7 @@ export const examples: Registry = [
   {
     name: "fadedowndemo",
     type: "registry:example",
+    registryDependencies: ["fadedown"],
     files: ["demos/fadedown-demo.tsx"],
   },
   {
@@ -14,6 +15,7 @@ export const examples: Registry = [
   {
     name: "testimonalcarouseldemo",
     type: "registry:example",
+    registryDependencies: ["carousel"],
     files: ["demos/testimonal-carousel.tsx"],
   },
   {
@@ -22,18 +24,15 @@ export const examples: Registry = [
     files: ["demos/hackerbg-demo.tsx"],
   },
   {
-    name: "swirlbgdemo",
-    type: "registry:example",
-    files: ["demos/swirlbg-demo.tsx"],
-  },
-  {
     name: "featuresdemo",
     type: "registry:example",
+    registryDependencies: ["features"],
     files: ["demos/features-demo.tsx"],
   },
   {
     name: "integrationsdemo",
     type: "registry:example",
+    registryDependencies: ["integrations"],
     files: ["demos/integrations-demo.tsx"],
   },
   {
@@ -42,13 +41,9 @@ export const examples: Registry = [
     files: ["demos/logomarquee.tsx"],
   },
   {
-    name: "worldmapdemo",
-    type: "registry:example",
-    files: ["demos/worldmap-demo.tsx"],
-  },
-  {
     name: "codesnippetdemo",
     type: "registry:example",
+    registryDependencies: ["codesnippet"],
     files: ["demos/codesnippet-demo.tsx"],
   },
   {
@@ -64,17 +59,14 @@ export const examples: Registry = [
   {
     name: "animatedcarddemo",
     type: "registry:example",
+    registryDependencies: ["animatedcard"],
     files: ["demos/animatedcard-demo.tsx"],
   },
   {
     name: "signaturedemo",
     type: "registry:example",
+    registryDependencies: ["signature"],
     files: ["demos/signature-demo.tsx"],
-  },
-  {
-    name: "factalgriddemo",
-    type: "registry:example",
-    files: ["demos/factalgrid-demo.tsx"],
   },
   {
     name: "gradientpricingdemo",
@@ -84,6 +76,7 @@ export const examples: Registry = [
   {
     name: "scrollprogressdemo",
     type: "registry:example",
+    registryDependencies: ["scrollprogress"],
     files: ["demos/scrollprogress-demo.tsx"],
   },
   {
@@ -92,68 +85,75 @@ export const examples: Registry = [
     files: ["demos/cardcomment-demo.tsx"],
   },
   {
-    name: "ledcarddemo",
-    type: "registry:example",
-    files: ["demos/ledcard-demo.tsx"],
-  },
-  {
     name: "scalesliderdemo",
     type: "registry:example",
+    registryDependencies: ["scaleslider"],
     files: ["demos/scaleslider-demo.tsx"],
   },
   {
     name: "scratchtorevealdemo",
     type: "registry:example",
+    registryDependencies: ["scratchtoreveal"],
     files: ["demos/scratchtoreveal-demo.tsx"],
   },
   {
     name: "wrapcontainerdemo",
     type: "registry:example",
+    registryDependencies: ["wrapcontainer"],
     files: ["demos/wrapanimation-demo.tsx"],
   },
   {
     name: "tweetgriddemo",
     type: "registry:example",
+    registryDependencies: ["tweetgrid"],
     files: ["demos/tweetgrid-demo.tsx"],
   },
   {
     name: "fadeindemo",
     type: "registry:example",
+    registryDependencies: ["fadein"],
     files: ["demos/fadein-demo.tsx"],
   },
   {
     name: "fadeupdemo",
     type: "registry:example",
+    registryDependencies: ["fadeup"],
     files: ["demos/fadeup-demo.tsx"],
   },
   {
     name: "gradualspacingdemo",
     type: "registry:example",
+    registryDependencies: ["gradualspacing"],
     files: ["demos/gradualspacing-demo.tsx"],
   },
   {
     name: "letterpullupdemo",
     type: "registry:example",
+    registryDependencies: ["letterpullup"],
     files: ["demos/letterpullup-demo.tsx"],
   },
   {
     name: "multidirectionalslidedemo",
     type: "registry:example",
+    registryDependencies: ["multidirectionalslide"],
     files: ["demos/multidirectionalslide-demo.tsx"],
   },
   {
     name: "scrollbasedvelocitydemo",
     type: "registry:example",
+    registryDependencies: ["scrollbasedvelocity"],
     files: ["demos/scrollbasedvelocity-demo.tsx"],
   },
   {
     name: "seperateawaydemo",
     type: "registry:example",
+    registryDependencies: ["seperateaway"],
     files: ["demos/seperateaway-demo.tsx"],
   },
   {
     name: "wavytextdemo",
     type: "registry:example",
+    registryDependencies: ["wavytext"],
     files: ["demos/wavytext-demo.tsx"],
   },
   {
@@ -164,66 +164,73 @@ export const examples: Registry = [
   {
     name: "blurindemo",
     type: "registry:example",
+    registryDependencies: ["blurin"],
     files: ["demos/blurin-demo.tsx"],
   },
   {
     name: "wordpullupdemo",
     type: "registry:example",
+    registryDependencies: ["wordpullup"],
     files: ["demos/wordpullup-demo.tsx"],
   },
   {
     name: "bentodemo",
     type: "registry:example",
+    registryDependencies: ["bentocard"],
     files: ["demos/bento-demo.tsx"],
   },
   {
     name: "headerdemo",
     type: "registry:example",
+    registryDependencies: ["header"],
     files: ["demos/header-demo.tsx"],
   },
   {
     name: "novatrixdemo",
     type: "registry:example",
+    registryDependencies: ["novatrix"],
     files: ["demos/novatrixbg-demo.tsx"],
   },
   {
     name: "testimonalsliderdemo",
     type: "registry:example",
+    registryDependencies: ["testimonalslider"],
     files: ["demos/testimonalslider-demo.tsx"],
-  },
-  {
-    name: "sparkledemo",
-    type: "registry:example",
-    files: ["demos/sparklestitle-demo.tsx"],
   },
   {
     name: "cobeglobedemo",
     type: "registry:example",
+    registryDependencies: ["cobeglobe"],
     files: ["demos/cobeglobe-demo.tsx"],
   },
   {
     name: "cobedraggabledemo",
     type: "registry:example",
+    registryDependencies: ["cobedraggable"],
     files: ["demos/cobedraggable-demo.tsx"],
   },
   {
     name: "cobeautodraggabledemo",
     type: "registry:example",
+    registryDependencies: ["cobeautodraggable"],
     files: ["demos/cobeautodraggable-demo.tsx"],
   },
   {
     name: "coberotatetolocationdemo",
     type: "registry:example",
+    registryDependencies: ["coberotatetolocation"],
     files: ["demos/coberotatetolocation-demo.tsx"],
   },
   {
     name: "cobescaleddemo",
     type: "registry:example",
+    registryDependencies: ["cobescaled"],
     files: ["demos/cobescaled-demo.tsx"],
   },
   {
     name: "testimonalsdemo",
     type: "registry:example",
+    registryDependencies: ["testimonals"],
     files: ["demos/testimonals-demo.tsx"],
   },
   {
@@ -244,12 +251,8 @@ export const examples: Registry = [
   {
     name: "interactivebuttondemo",
     type: "registry:example",
+    registryDependencies: ["interactivebutton"],
     files: ["demos/interactivebutton-demo.tsx"],
-  },
-  {
-    name: "backgroundlightdemo",
-    type: "registry:example",
-    files: ["demos/backgroundlight-demo.tsx"],
   },
   {
     name: "pricingdemo",
@@ -262,11 +265,6 @@ export const examples: Registry = [
     files: ["demos/shimmerbutton-demo.tsx"],
   },
   {
-    name: "neudemo",
-    type: "registry:example",
-    files: ["demos/neubutton-demo.tsx"],
-  },
-  {
     name: "colorchangingdemo",
     type: "registry:example",
     files: ["demos/colorchanging-demo.tsx"],
@@ -277,23 +275,8 @@ export const examples: Registry = [
     files: ["demos/spotlight-demo.tsx"],
   },
   {
-    name: "motiondemo",
-    type: "registry:example",
-    files: ["demos/motionbutton-demo.tsx"],
-  },
-  {
-    name: "shinydemo",
-    type: "registry:example",
-    files: ["demos/shinybutton-demo.tsx"],
-  },
-  {
     name: "borderdemo",
     type: "registry:example",
     files: ["demos/borderbutton-demo.tsx"],
-  },
-  {
-    name: "hoverupdemo",
-    type: "registry:example",
-    files: ["demos/hoverupbutton-demo.tsx"],
   },
 ];

@@ -2,7 +2,9 @@
   "name": "features",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "framer-motion",
+    "lucide-react",
+    "@radix-ui/react-accordion"
   ],
   "files": [
     {

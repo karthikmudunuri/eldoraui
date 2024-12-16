@@ -2,7 +2,7 @@
   "name": "tweetgrid",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "react-tweet"
   ],
   "files": [
     {

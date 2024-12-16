@@ -1,9 +1,6 @@
 {
   "name": "animatedborderbutton",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/animatedborderbutton.tsx",
@@ -11,5 +8,29 @@
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "animation": {
+            "flip": "flip 6s infinite steps(2, end)",
+            "rotate": "rotate 3s linear infinite both"
+          },
+          "keyframes": {
+            "flip": {
+              "to": {
+                "transform": "rotate(360deg)"
+              }
+            },
+            "rotate": {
+              "to": {
+                "transform": "rotate(90deg)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

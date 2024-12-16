@@ -2,7 +2,8 @@
   "name": "carousel",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "embla-carousel-react",
+    "lucide-react"
   ],
   "files": [
     {

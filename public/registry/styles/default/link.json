@@ -2,7 +2,7 @@
   "name": "link",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "@headlessui/react"
   ],
   "files": [
     {

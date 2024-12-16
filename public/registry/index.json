@@ -2,9 +2,6 @@
   {
     "name": "dynamicsquare",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/dynamicsquare.tsx",
@@ -16,7 +13,9 @@
     "name": "features",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "lucide-react",
+      "@radix-ui/react-accordion"
     ],
     "files": [
       {
@@ -29,7 +28,8 @@
     "name": "carousel",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "embla-carousel-react",
+      "lucide-react"
     ],
     "files": [
       {
@@ -41,9 +41,6 @@
   {
     "name": "hackerbg",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/hackerbg.tsx",
@@ -55,7 +52,7 @@
     "name": "plusgrid",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "clsx"
     ],
     "files": [
       {
@@ -108,7 +105,7 @@
     "name": "link",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "@headlessui/react"
     ],
     "files": [
       {
@@ -118,37 +115,8 @@
     ]
   },
   {
-    "name": "swirl",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/swirlbg.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "worldmap",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/worldmap.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "featurefour",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/featurefour.tsx",
@@ -160,7 +128,7 @@
     "name": "animatedcard",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "lucide-react"
     ],
     "files": [
       {
@@ -170,23 +138,11 @@
     ]
   },
   {
-    "name": "factalgrid",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/factalgrid.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "wrapcontainer",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -199,7 +155,7 @@
     "name": "tweetgrid",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "react-tweet"
     ],
     "files": [
       {
@@ -212,7 +168,8 @@
     "name": "signature",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "@uiw/react-signature",
+      "lucide-react"
     ],
     "files": [
       {
@@ -225,7 +182,8 @@
     "name": "codesnippet",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "sooner",
+      "lucide-react"
     ],
     "files": [
       {
@@ -238,7 +196,7 @@
     "name": "novatrix",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "ogl"
     ],
     "files": [
       {
@@ -251,7 +209,8 @@
     "name": "fadedown",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -264,7 +223,8 @@
     "name": "fadein",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -277,7 +237,8 @@
     "name": "fadeup",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -290,7 +251,8 @@
     "name": "blurin",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -303,7 +265,8 @@
     "name": "gradualspacing",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -316,7 +279,8 @@
     "name": "letterpullup",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -328,9 +292,6 @@
   {
     "name": "morphingtext",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/morphingtext.tsx",
@@ -381,7 +342,8 @@
     "name": "multidirectionslide",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -394,7 +356,8 @@
     "name": "scrollbasedvelocity",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -407,7 +370,8 @@
     "name": "seperateaway",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -420,7 +384,8 @@
     "name": "wavytext",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -433,7 +398,8 @@
     "name": "wordpullup",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -459,7 +425,8 @@
     "name": "integrations",
     "type": "registry:ui",
     "dependencies": [
-      "lucide-react"
+      "lucide-react",
+      "framer-motion"
     ],
     "files": [
       {
@@ -471,9 +438,6 @@
   {
     "name": "staticstepper",
     "type": "registry:ui",
-    "dependencies": [
-      "lucide-react"
-    ],
     "files": [
       {
         "path": "eldoraui/staticstepper.tsx",
@@ -485,7 +449,8 @@
     "name": "bentogrid",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -497,9 +462,6 @@
   {
     "name": "cardcomment",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/animatedcardcomment.tsx",
@@ -508,24 +470,8 @@
     ]
   },
   {
-    "name": "ledcard",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/animatedledcard.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "hoverme",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/hoverme.tsx",
@@ -536,9 +482,6 @@
   {
     "name": "gitstarbutton",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/gitstarbutton.tsx",
@@ -549,35 +492,37 @@
   {
     "name": "shimmerbutton",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/shimmerbutton.tsx",
         "type": "registry:ui"
       }
-    ]
-  },
-  {
-    "name": "neubutton",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
     ],
-    "files": [
-      {
-        "path": "eldoraui/neubutton.tsx",
-        "type": "registry:ui"
+    "tailwind": {
+      "config": {
+        "theme": {
+          "extend": {
+            "animation": {
+              "shine-infinite": "shineInfinite 2s ease-in-out infinite"
+            },
+            "keyframes": {
+              "shineInfinite": {
+                "0%": {
+                  "transform": "skew(-12deg) translateX(-100%)"
+                },
+                "100%": {
+                  "transform": "skew(-12deg) translateX(100%)"
+                }
+              }
+            }
+          }
+        }
       }
-    ]
+    }
   },
   {
     "name": "colorchangingbutton",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/colorchangingbutton.tsx",
@@ -588,9 +533,6 @@
   {
     "name": "spotlightbutton",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/spotlightbutton.tsx",
@@ -599,62 +541,46 @@
     ]
   },
   {
-    "name": "motionbutton",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/motionbutton.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "shinybutton",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/shinybutton.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "animatedborderbutton",
     "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
     "files": [
       {
         "path": "eldoraui/animatedborderbutton.tsx",
         "type": "registry:ui"
       }
-    ]
-  },
-  {
-    "name": "hoverupbutton",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
     ],
-    "files": [
-      {
-        "path": "eldoraui/hoverupbutton.tsx",
-        "type": "registry:ui"
+    "tailwind": {
+      "config": {
+        "theme": {
+          "extend": {
+            "animation": {
+              "flip": "flip 6s infinite steps(2, end)",
+              "rotate": "rotate 3s linear infinite both"
+            },
+            "keyframes": {
+              "flip": {
+                "to": {
+                  "transform": "rotate(360deg)"
+                }
+              },
+              "rotate": {
+                "to": {
+                  "transform": "rotate(90deg)"
+                }
+              }
+            }
+          }
+        }
       }
-    ]
+    }
   },
   {
     "name": "header",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "@headlessui/react",
+      "@heroicons/react"
     ],
     "files": [
       {
@@ -667,7 +593,7 @@
     "name": "testimonalslider",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "@headlessui/react"
     ],
     "files": [
       {
@@ -680,7 +606,7 @@
     "name": "cobe",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "cobe"
     ],
     "files": [
       {
@@ -693,7 +619,7 @@
     "name": "cobedraggable",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "cobe"
     ],
     "files": [
       {
@@ -706,7 +632,7 @@
     "name": "cobeautodraggable",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "cobe"
     ],
     "files": [
       {
@@ -719,7 +645,7 @@
     "name": "coberotatetolocation",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "cobe"
     ],
     "files": [
       {
@@ -732,7 +658,7 @@
     "name": "cobescaled",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "cobe"
     ],
     "files": [
       {
@@ -745,7 +671,8 @@
     "name": "testimonals",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "lucide-react"
     ],
     "files": [
       {
@@ -758,7 +685,8 @@
     "name": "keyboard",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -768,23 +696,11 @@
     ]
   },
   {
-    "name": "sparklestitle",
-    "type": "registry:ui",
-    "dependencies": [
-      "framer-motion"
-    ],
-    "files": [
-      {
-        "path": "eldoraui/sparklestitle.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "logocluster",
     "type": "registry:ui",
     "dependencies": [
-      "framer-motion"
+      "framer-motion",
+      "clsx"
     ],
     "files": [
       {
@@ -805,36 +721,5 @@
         "type": "registry:ui"
       }
     ]
-  },
-  {
-    "name": "backgroundlight",
-    "type": "registry:ui",
-    "files": [
-      {
-        "path": "eldoraui/backgroundlight.tsx",
-        "type": "registry:ui"
-      }
-    ],
-    "tailwind": {
-      "config": {
-        "theme": {
-          "extend": {
-            "animation": {
-              "background-light": "background-light 60s linear infinite"
-            },
-            "keyframes": {
-              "background-light": {
-                "from": {
-                  "backgroundPosition": "50% 50%, 50% 50%"
-                },
-                "to": {
-                  "backgroundPosition": "350% 50%, 350% 50%"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 ]

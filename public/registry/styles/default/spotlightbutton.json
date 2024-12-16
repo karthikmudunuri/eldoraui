@@ -1,9 +1,6 @@
 {
   "name": "spotlightbutton",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/spotlightbutton.tsx",

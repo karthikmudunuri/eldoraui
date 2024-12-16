@@ -1,9 +1,6 @@
 {
   "name": "shimmerbutton",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/shimmerbutton.tsx",
@@ -11,5 +8,26 @@
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "animation": {
+            "shine-infinite": "shineInfinite 2s ease-in-out infinite"
+          },
+          "keyframes": {
+            "shineInfinite": {
+              "0%": {
+                "transform": "skew(-12deg) translateX(-100%)"
+              },
+              "100%": {
+                "transform": "skew(-12deg) translateX(100%)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

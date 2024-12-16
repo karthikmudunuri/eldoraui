@@ -2,7 +2,7 @@
   "name": "coberotatetolocation",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "cobe"
   ],
   "files": [
     {

@@ -1,9 +1,6 @@
 {
   "name": "featurefour",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/featurefour.tsx",

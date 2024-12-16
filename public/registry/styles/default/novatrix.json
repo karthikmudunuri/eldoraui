@@ -2,7 +2,7 @@
   "name": "novatrix",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "ogl"
   ],
   "files": [
     {

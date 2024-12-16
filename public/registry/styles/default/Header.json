@@ -2,7 +2,9 @@
   "name": "header",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "framer-motion",
+    "@headlessui/react",
+    "@heroicons/react"
   ],
   "files": [
     {

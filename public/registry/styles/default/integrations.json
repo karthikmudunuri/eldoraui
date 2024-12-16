@@ -2,7 +2,8 @@
   "name": "integrations",
   "type": "registry:ui",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "framer-motion"
   ],
   "files": [
     {

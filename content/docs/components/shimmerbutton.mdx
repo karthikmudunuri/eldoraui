@@ -20,4 +20,27 @@ published: true
 
 <Step>Update the import paths to match your project setup.</Step>
 
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-13}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        "shine-infinite": "shineInfinite 2s ease-in-out infinite",
+      },
+      keyframes: {
+        shineInfinite: {
+          "0%": { transform: "skew(-12deg) translateX(-100%)" },
+          "100%": { transform: "skew(-12deg) translateX(100%)" },
+        },
+      },
+    },
+  },
+};
+```
+
 </Steps>

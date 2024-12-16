@@ -2,7 +2,7 @@
   "name": "plusgrid",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "clsx"
   ],
   "files": [
     {

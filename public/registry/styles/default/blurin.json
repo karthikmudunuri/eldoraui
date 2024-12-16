@@ -2,7 +2,8 @@
   "name": "blurin",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "framer-motion",
+    "clsx"
   ],
   "files": [
     {

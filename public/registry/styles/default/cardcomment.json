@@ -1,9 +1,6 @@
 {
   "name": "cardcomment",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/animatedcardcomment.tsx",

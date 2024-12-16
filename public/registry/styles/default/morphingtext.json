@@ -1,9 +1,6 @@
 {
   "name": "morphingtext",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/morphingtext.tsx",

@@ -2,7 +2,8 @@
   "name": "testimonals",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "framer-motion",
+    "lucide-react"
   ],
   "files": [
     {

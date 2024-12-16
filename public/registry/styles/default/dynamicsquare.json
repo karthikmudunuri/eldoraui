@@ -1,9 +1,6 @@
 {
   "name": "dynamicsquare",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/dynamicsquare.tsx",

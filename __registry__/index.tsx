@@ -82,28 +82,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "swirl": {
-      name: "swirl",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/swirlbg.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/swirlbg.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "worldmap": {
-      name: "worldmap",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/worldmap.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/worldmap.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "featurefour": {
       name: "featurefour",
       type: "registry:ui",
@@ -121,17 +99,6 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/eldoraui/animatedcard.tsx"],
       component: React.lazy(() => import("@/registry/default/eldoraui/animatedcard.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "factalgrid": {
-      name: "factalgrid",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/factalgrid.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/factalgrid.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -412,17 +379,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "ledcard": {
-      name: "ledcard",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/animatedledcard.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/animatedledcard.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "hoverme": {
       name: "hoverme",
       type: "registry:ui",
@@ -456,17 +412,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "neubutton": {
-      name: "neubutton",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/neubutton.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/neubutton.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "colorchangingbutton": {
       name: "colorchangingbutton",
       type: "registry:ui",
@@ -489,45 +434,12 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "motionbutton": {
-      name: "motionbutton",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/motionbutton.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/motionbutton.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "shinybutton": {
-      name: "shinybutton",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/shinybutton.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/shinybutton.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "animatedborderbutton": {
       name: "animatedborderbutton",
       type: "registry:ui",
       registryDependencies: undefined,
       files: ["registry/default/eldoraui/animatedborderbutton.tsx"],
       component: React.lazy(() => import("@/registry/default/eldoraui/animatedborderbutton.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "hoverupbutton": {
-      name: "hoverupbutton",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/hoverupbutton.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/hoverupbutton.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -632,17 +544,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "sparklestitle": {
-      name: "sparklestitle",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/sparklestitle.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/sparklestitle.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "logocluster": {
       name: "logocluster",
       type: "registry:ui",
@@ -665,21 +566,10 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "backgroundlight": {
-      name: "backgroundlight",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/eldoraui/backgroundlight.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/backgroundlight.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "fadedowndemo": {
       name: "fadedowndemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["fadedown"],
       files: ["registry/default/demos/fadedown-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/fadedown-demo.tsx")),
       source: "",
@@ -701,7 +591,7 @@ export const Index: Record<string, any> = {
     "testimonalcarouseldemo": {
       name: "testimonalcarouseldemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["carousel"],
       files: ["registry/default/demos/testimonal-carousel.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/testimonal-carousel.tsx")),
       source: "",
@@ -720,21 +610,10 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "swirlbgdemo": {
-      name: "swirlbgdemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/swirlbg-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/swirlbg-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "featuresdemo": {
       name: "featuresdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["features"],
       files: ["registry/default/demos/features-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/features-demo.tsx")),
       source: "",
@@ -745,7 +624,7 @@ export const Index: Record<string, any> = {
     "integrationsdemo": {
       name: "integrationsdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["integrations"],
       files: ["registry/default/demos/integrations-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/integrations-demo.tsx")),
       source: "",
@@ -764,21 +643,10 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "worldmapdemo": {
-      name: "worldmapdemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/worldmap-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/worldmap-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "codesnippetdemo": {
       name: "codesnippetdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["codesnippet"],
       files: ["registry/default/demos/codesnippet-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/codesnippet-demo.tsx")),
       source: "",
@@ -811,7 +679,7 @@ export const Index: Record<string, any> = {
     "animatedcarddemo": {
       name: "animatedcarddemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["animatedcard"],
       files: ["registry/default/demos/animatedcard-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/animatedcard-demo.tsx")),
       source: "",
@@ -822,20 +690,9 @@ export const Index: Record<string, any> = {
     "signaturedemo": {
       name: "signaturedemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["signature"],
       files: ["registry/default/demos/signature-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/signature-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "factalgriddemo": {
-      name: "factalgriddemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/factalgrid-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/factalgrid-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -855,7 +712,7 @@ export const Index: Record<string, any> = {
     "scrollprogressdemo": {
       name: "scrollprogressdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["scrollprogress"],
       files: ["registry/default/demos/scrollprogress-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/scrollprogress-demo.tsx")),
       source: "",
@@ -874,21 +731,10 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "ledcarddemo": {
-      name: "ledcarddemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/ledcard-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/ledcard-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "scalesliderdemo": {
       name: "scalesliderdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["scaleslider"],
       files: ["registry/default/demos/scaleslider-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/scaleslider-demo.tsx")),
       source: "",
@@ -899,7 +745,7 @@ export const Index: Record<string, any> = {
     "scratchtorevealdemo": {
       name: "scratchtorevealdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["scratchtoreveal"],
       files: ["registry/default/demos/scratchtoreveal-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/scratchtoreveal-demo.tsx")),
       source: "",
@@ -910,7 +756,7 @@ export const Index: Record<string, any> = {
     "wrapcontainerdemo": {
       name: "wrapcontainerdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["wrapcontainer"],
       files: ["registry/default/demos/wrapanimation-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/wrapanimation-demo.tsx")),
       source: "",
@@ -921,7 +767,7 @@ export const Index: Record<string, any> = {
     "tweetgriddemo": {
       name: "tweetgriddemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["tweetgrid"],
       files: ["registry/default/demos/tweetgrid-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/tweetgrid-demo.tsx")),
       source: "",
@@ -932,7 +778,7 @@ export const Index: Record<string, any> = {
     "fadeindemo": {
       name: "fadeindemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["fadein"],
       files: ["registry/default/demos/fadein-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/fadein-demo.tsx")),
       source: "",
@@ -943,7 +789,7 @@ export const Index: Record<string, any> = {
     "fadeupdemo": {
       name: "fadeupdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["fadeup"],
       files: ["registry/default/demos/fadeup-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/fadeup-demo.tsx")),
       source: "",
@@ -954,7 +800,7 @@ export const Index: Record<string, any> = {
     "gradualspacingdemo": {
       name: "gradualspacingdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["gradualspacing"],
       files: ["registry/default/demos/gradualspacing-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/gradualspacing-demo.tsx")),
       source: "",
@@ -965,7 +811,7 @@ export const Index: Record<string, any> = {
     "letterpullupdemo": {
       name: "letterpullupdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["letterpullup"],
       files: ["registry/default/demos/letterpullup-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/letterpullup-demo.tsx")),
       source: "",
@@ -976,7 +822,7 @@ export const Index: Record<string, any> = {
     "multidirectionalslidedemo": {
       name: "multidirectionalslidedemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["multidirectionalslide"],
       files: ["registry/default/demos/multidirectionalslide-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/multidirectionalslide-demo.tsx")),
       source: "",
@@ -987,7 +833,7 @@ export const Index: Record<string, any> = {
     "scrollbasedvelocitydemo": {
       name: "scrollbasedvelocitydemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["scrollbasedvelocity"],
       files: ["registry/default/demos/scrollbasedvelocity-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/scrollbasedvelocity-demo.tsx")),
       source: "",
@@ -998,7 +844,7 @@ export const Index: Record<string, any> = {
     "seperateawaydemo": {
       name: "seperateawaydemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["seperateaway"],
       files: ["registry/default/demos/seperateaway-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/seperateaway-demo.tsx")),
       source: "",
@@ -1009,7 +855,7 @@ export const Index: Record<string, any> = {
     "wavytextdemo": {
       name: "wavytextdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["wavytext"],
       files: ["registry/default/demos/wavytext-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/wavytext-demo.tsx")),
       source: "",
@@ -1031,7 +877,7 @@ export const Index: Record<string, any> = {
     "blurindemo": {
       name: "blurindemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["blurin"],
       files: ["registry/default/demos/blurin-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/blurin-demo.tsx")),
       source: "",
@@ -1042,7 +888,7 @@ export const Index: Record<string, any> = {
     "wordpullupdemo": {
       name: "wordpullupdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["wordpullup"],
       files: ["registry/default/demos/wordpullup-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/wordpullup-demo.tsx")),
       source: "",
@@ -1053,7 +899,7 @@ export const Index: Record<string, any> = {
     "bentodemo": {
       name: "bentodemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["bentocard"],
       files: ["registry/default/demos/bento-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/bento-demo.tsx")),
       source: "",
@@ -1064,7 +910,7 @@ export const Index: Record<string, any> = {
     "headerdemo": {
       name: "headerdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["header"],
       files: ["registry/default/demos/header-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/header-demo.tsx")),
       source: "",
@@ -1075,7 +921,7 @@ export const Index: Record<string, any> = {
     "novatrixdemo": {
       name: "novatrixdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["novatrix"],
       files: ["registry/default/demos/novatrixbg-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/novatrixbg-demo.tsx")),
       source: "",
@@ -1086,20 +932,9 @@ export const Index: Record<string, any> = {
     "testimonalsliderdemo": {
       name: "testimonalsliderdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["testimonalslider"],
       files: ["registry/default/demos/testimonalslider-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/testimonalslider-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "sparkledemo": {
-      name: "sparkledemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/sparklestitle-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/sparklestitle-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -1108,7 +943,7 @@ export const Index: Record<string, any> = {
     "cobeglobedemo": {
       name: "cobeglobedemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["cobeglobe"],
       files: ["registry/default/demos/cobeglobe-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/cobeglobe-demo.tsx")),
       source: "",
@@ -1119,7 +954,7 @@ export const Index: Record<string, any> = {
     "cobedraggabledemo": {
       name: "cobedraggabledemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["cobedraggable"],
       files: ["registry/default/demos/cobedraggable-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/cobedraggable-demo.tsx")),
       source: "",
@@ -1130,7 +965,7 @@ export const Index: Record<string, any> = {
     "cobeautodraggabledemo": {
       name: "cobeautodraggabledemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["cobeautodraggable"],
       files: ["registry/default/demos/cobeautodraggable-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/cobeautodraggable-demo.tsx")),
       source: "",
@@ -1141,7 +976,7 @@ export const Index: Record<string, any> = {
     "coberotatetolocationdemo": {
       name: "coberotatetolocationdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["coberotatetolocation"],
       files: ["registry/default/demos/coberotatetolocation-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/coberotatetolocation-demo.tsx")),
       source: "",
@@ -1152,7 +987,7 @@ export const Index: Record<string, any> = {
     "cobescaleddemo": {
       name: "cobescaleddemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["cobescaled"],
       files: ["registry/default/demos/cobescaled-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/cobescaled-demo.tsx")),
       source: "",
@@ -1163,7 +998,7 @@ export const Index: Record<string, any> = {
     "testimonalsdemo": {
       name: "testimonalsdemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["testimonals"],
       files: ["registry/default/demos/testimonals-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/testimonals-demo.tsx")),
       source: "",
@@ -1207,20 +1042,9 @@ export const Index: Record<string, any> = {
     "interactivebuttondemo": {
       name: "interactivebuttondemo",
       type: "registry:example",
-      registryDependencies: undefined,
+      registryDependencies: ["interactivebutton"],
       files: ["registry/default/demos/interactivebutton-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/interactivebutton-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "backgroundlightdemo": {
-      name: "backgroundlightdemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/backgroundlight-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/backgroundlight-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -1248,17 +1072,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "neudemo": {
-      name: "neudemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/neubutton-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/neubutton-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "colorchangingdemo": {
       name: "colorchangingdemo",
       type: "registry:example",
@@ -1281,45 +1094,12 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "motiondemo": {
-      name: "motiondemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/motionbutton-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/motionbutton-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "shinydemo": {
-      name: "shinydemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/shinybutton-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/shinybutton-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "borderdemo": {
       name: "borderdemo",
       type: "registry:example",
       registryDependencies: undefined,
       files: ["registry/default/demos/borderbutton-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/borderbutton-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "hoverupdemo": {
-      name: "hoverupdemo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/demos/hoverupbutton-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/hoverupbutton-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

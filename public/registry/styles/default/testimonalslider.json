@@ -2,7 +2,7 @@
   "name": "testimonalslider",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "@headlessui/react"
   ],
   "files": [
     {

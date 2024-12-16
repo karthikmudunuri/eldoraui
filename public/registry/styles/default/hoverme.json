@@ -1,9 +1,6 @@
 {
   "name": "hoverme",
   "type": "registry:ui",
-  "dependencies": [
-    "framer-motion"
-  ],
   "files": [
     {
       "path": "eldoraui/hoverme.tsx",

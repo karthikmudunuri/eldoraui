@@ -2,7 +2,8 @@
   "name": "signature",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "@uiw/react-signature",
+    "lucide-react"
   ],
   "files": [
     {
