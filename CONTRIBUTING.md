@@ -73,7 +73,7 @@ export default function ExampleComponent() {
 Provide a basic example to showcase your component in `registry/default/demos/example-component-demo.tsx`
 
 ```typescript
-import ExampleComponent from '@/registry/default/magicui/example-component'
+import ExampleComponent from '@/registry/default/eldoraui/example-component'
 
 export default function ExampleComponentDemo() {
   return (
