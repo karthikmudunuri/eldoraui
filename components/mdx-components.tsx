@@ -1,7 +1,7 @@
 import { useMDXComponent } from "@content-collections/mdx/react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { CodeBlockCommand } from "@/components/command-menu-selecter";
 import { Callout } from "@/components/callout";
 import RepoDownload from "@/components/repo-download";
 import TechStack from "@/components/tech-stack";
@@ -19,6 +19,9 @@ import { TweetCard } from "@/registry/default/eldoraui/servertweetcard";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { CopyButton, CopyNpmCommandButton } from "./copy-button";
+import { StyleWrapper } from "./stylewrapper";
+import { NpmCommands } from "types/unist";
+import { Style } from "@/registry/registry-styles";
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -216,60 +219,54 @@ const components = {
     className,
     __rawString__,
     __npmCommand__,
-    __pnpmCommand__,
     __yarnCommand__,
+    __pnpmCommand__,
     __bunCommand__,
     __withMeta__,
     __src__,
     __event__,
-    // __style__,
-    __name__,
+    __style__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
-    // __style__?: Style["name"]
-    __rawString__?: string;
-    __npmCommand__?: string;
-    __pnpmCommand__?: string;
-    __yarnCommand__?: string;
-    __bunCommand__?: string;
-    __withMeta__?: boolean;
-    __src__?: string;
-    __event__?: Event["name"];
-    __name__?: string;
-  }) => {
+    __style__?: Style["name"]
+    __rawString__?: string
+    __withMeta__?: boolean
+    __src__?: string
+    __event__?: Event["name"]
+  } & NpmCommands) => {
+    const isNpmCommand =
+      __npmCommand__ && __yarnCommand__ && __pnpmCommand__ && __bunCommand__
+
+    if (isNpmCommand) {
+      return (
+        <CodeBlockCommand
+          __npmCommand__={__npmCommand__}
+          __yarnCommand__={__yarnCommand__}
+          __pnpmCommand__={__pnpmCommand__}
+          __bunCommand__={__bunCommand__}
+        />
+      )
+    }
+
     return (
-      <>
+      <StyleWrapper styleName={__style__}>
         <pre
           className={cn(
-            "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900",
-            className,
+            "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
+            className
           )}
           {...props}
         />
-        {__rawString__ && __src__ && __event__ && (
+        {__rawString__ && (
           <CopyButton
             value={__rawString__}
-            src={__src__}
+            src={__src__ || ""}
             event={__event__}
             className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
           />
         )}
-        {__npmCommand__ &&
-          __yarnCommand__ &&
-          __pnpmCommand__ &&
-          __bunCommand__ && (
-            <CopyNpmCommandButton
-              commands={{
-                __npmCommand__,
-                __pnpmCommand__,
-                __yarnCommand__,
-                __bunCommand__,
-              }}
-              className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
-            />
-          )}
-      </>
-    );
+      </StyleWrapper>
+    )
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
