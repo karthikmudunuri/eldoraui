@@ -104,12 +104,12 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "wrapcontainer": {
-      name: "wrapcontainer",
+    "warpcontainer": {
+      name: "warpcontainer",
       type: "registry:ui",
       registryDependencies: undefined,
-      files: ["registry/default/eldoraui/wrapanimationcontainer.tsx"],
-      component: React.lazy(() => import("@/registry/default/eldoraui/wrapanimationcontainer.tsx")),
+      files: ["registry/default/eldoraui/warpanimationcontainer.tsx"],
+      component: React.lazy(() => import("@/registry/default/eldoraui/warpanimationcontainer.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -753,12 +753,12 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "wrapcontainerdemo": {
-      name: "wrapcontainerdemo",
+    "warpcontainerdemo": {
+      name: "warpcontainerdemo",
       type: "registry:example",
-      registryDependencies: ["wrapcontainer"],
-      files: ["registry/default/demos/wrapanimation-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/demos/wrapanimation-demo.tsx")),
+      registryDependencies: ["warpcontainer"],
+      files: ["registry/default/demos/warpanimation-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/demos/warpanimation-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

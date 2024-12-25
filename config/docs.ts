@@ -218,8 +218,8 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
-          title: "Wrap Container",
-          href: `/docs/components/wrapcontainer`,
+          title: "Warp Container",
+          href: `/docs/components/warpcontainer`,
           items: [],
           label: "New",
         },

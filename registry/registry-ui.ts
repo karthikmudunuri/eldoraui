@@ -79,10 +79,10 @@ export const ui: Registry = [
     files: ["eldoraui/animatedcard.tsx"],
   },
   {
-    name: "wrapcontainer",
+    name: "warpcontainer",
     type: "registry:ui",
     dependencies: ["framer-motion", "clsx"],
-    files: ["eldoraui/wrapanimationcontainer.tsx"],
+    files: ["eldoraui/warpanimationcontainer.tsx"],
   },
   {
     name: "tweetgrid",

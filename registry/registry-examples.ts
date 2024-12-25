@@ -97,10 +97,10 @@ export const examples: Registry = [
     files: ["demos/scratchtoreveal-demo.tsx"],
   },
   {
-    name: "wrapcontainerdemo",
+    name: "warpcontainerdemo",
     type: "registry:example",
-    registryDependencies: ["wrapcontainer"],
-    files: ["demos/wrapanimation-demo.tsx"],
+    registryDependencies: ["warpcontainer"],
+    files: ["demos/warpanimation-demo.tsx"],
   },
   {
     name: "tweetgriddemo",
