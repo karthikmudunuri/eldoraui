@@ -1,0 +1,15 @@
+{
+  "name": "circlingelements",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "eldoraui/circlingelements.tsx",
+      "content": "import { motion } from \"framer-motion\";\nimport React from \"react\";\n\ntype CirclingElementsProps = {\n  children: React.ReactNode;\n  radius?: number;\n  duration?: number;\n  className?: string;\n};\n\nconst CirclingElements: React.FC<CirclingElementsProps> = ({\n  children,\n  radius = 100,\n  duration = 10,\n  className,\n}) => {\n  return (\n    <div className={`relative h-full w-full ${className}`}>\n      {React.Children.map(children, (child, index) => {\n        const offset = (index * 360) / React.Children.count(children);\n        return (\n          <motion.div\n            key={index}\n            className=\"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform-gpu animate-circling\"\n            style={\n              {\n                \"--circling-duration\": duration,\n                \"--circling-radius\": radius,\n                \"--circling-offset\": offset,\n              } as React.CSSProperties\n            }\n          >\n            {child}\n          </motion.div>\n        );\n      })}\n    </div>\n  );\n};\n\nexport default CirclingElements;\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

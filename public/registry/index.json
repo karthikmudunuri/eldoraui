@@ -152,6 +152,19 @@
     ]
   },
   {
+    "name": "sphereanimation",
+    "type": "registry:ui",
+    "dependencies": [
+      "animejs"
+    ],
+    "files": [
+      {
+        "path": "eldoraui/sphere-animation.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "tweetgrid",
     "type": "registry:ui",
     "dependencies": [

@@ -85,6 +85,12 @@ export const ui: Registry = [
     files: ["eldoraui/wrapanimationcontainer.tsx"],
   },
   {
+    name: "sphereanimation",
+    type: "registry:ui",
+    dependencies: ["animejs"],
+    files: ["eldoraui/sphere-animation.tsx"],
+  },
+  {
     name: "tweetgrid",
     type: "registry:ui",
     dependencies: ["react-tweet"],

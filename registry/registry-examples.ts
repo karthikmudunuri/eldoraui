@@ -24,6 +24,12 @@ export const examples: Registry = [
     files: ["demos/hackerbg-demo.tsx"],
   },
   {
+    name: "sphereanimationdemo",
+    type: "registry:example",
+    registryDependencies: ["sphere-animation"],
+    files: ["demos/sphere-animation-demo.tsx"],
+  },
+  {
     name: "featuresdemo",
     type: "registry:example",
     registryDependencies: ["features"],

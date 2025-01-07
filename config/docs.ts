@@ -115,40 +115,34 @@ export const docsConfig: DocsConfig = {
           title: "Header",
           href: `/docs/components/header`,
           items: [],
-          label: "New",
         },
         {
           title: "Bento grid",
           href: `/docs/components/bentogrid`,
           items: [],
-          label: "New",
         },
         {
           title: "Features",
           href: `/docs/components/features`,
           items: [],
-          label: "New",
         },
         {
           title: "Testimonals",
           href: `/docs/components/testimonals`,
           items: [],
           no: 2,
-          label: "New",
           
         },
         {
           title: "Logo Cloud",
           href: `/docs/components/logocloud`,
           items: [],
-          label: "New",
           no: 2,
         },
         {
           title: "Gradient pricing",
           href: `/docs/components/gradientpricing`,
           items: [],
-          label: "New",
           no: 2,
         },
         
@@ -163,7 +157,6 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "New",
         },
-       
         {
           title: "Cobe globe",
           href: `/docs/components/cobe-globe`,
@@ -185,41 +178,40 @@ export const docsConfig: DocsConfig = {
           title: "Code Snippet",
           href: `/docs/components/codesnippet`,
           items: [],
-          label: "New",
         },
         {
           title: "Signature",
           href: `/docs/components/signature`,
           items: [],
-          label: "New",
         },
         {
           title: "Static Stepper",
           href: `/docs/components/staticstepper`,
           items: [],
-          label: "New",
         },
         {
           title: "Feature Four",
           href: `/docs/components/featurefour`,
           items: [],
-          label: "New",
         },
         {
           title: "Animated card",
           href: `/docs/components/animatedcard`,
           items: [],
-          label: "New",
         },
         {
           title: "Tweet Grid",
           href: `/docs/components/tweetgrid`,
           items: [],
-          label: "New",
         },
         {
           title: "Wrap Container",
           href: `/docs/components/wrapcontainer`,
+          items: [],
+        },
+        {
+          title: "Sphere Animation",
+          href: `/docs/components/sphereanimation`,
           items: [],
           label: "New",
         },
@@ -227,26 +219,22 @@ export const docsConfig: DocsConfig = {
           title: "Scroll progress",
           href: `/docs/components/scrollprogress`,
           items: [],
-          label: "New",
         },
         {
           title: "Scratch To Reveal",
           href: `/docs/components/scratchtoreveal`,
           items: [],
-          label: "New",
         },
         {
           title: "Scale Slider",
           href: `/docs/components/scaleslider`,
           items: [],
-          label: "New",
         },
        
         {
           title: "Animated Card comment",
           href: `/docs/components/animatedcardcomment`,
           items: [],
-          label: "New",
         },
        
         
@@ -259,43 +247,36 @@ export const docsConfig: DocsConfig = {
           title: "Hover me Button",
           href: `/docs/components/hovermebutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Git Star Button",
           href: `/docs/components/gitstarbutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Interactive Button",
           href: `/docs/components/interactivebutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Shimmer Button",
           href: `/docs/components/shimmerbutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Color changing Button",
           href: `/docs/components/colorchangingbutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Spotlight Button",
           href: `/docs/components/spotlightbutton`,
           items: [],
-          label: "New",
         },
         {
           title: "Animated Border Button",
           href: `/docs/components/animatedborderbutton`,
           items: [],
-          label: "New",
         },
       
         
@@ -386,7 +367,6 @@ export const docsConfig: DocsConfig = {
           title: "Novatrix Background",
           href: `/docs/components/novatrixbg`,
           items: [],
-          label: "New",
         },
         {
           title: "Hacker Background",

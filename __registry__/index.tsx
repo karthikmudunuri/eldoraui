@@ -115,6 +115,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "sphereanimation": {
+      name: "sphereanimation",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/eldoraui/sphere-animation.tsx"],
+      component: React.lazy(() => import("@/registry/default/eldoraui/sphere-animation.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "tweetgrid": {
       name: "tweetgrid",
       type: "registry:ui",
@@ -605,6 +616,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/demos/hackerbg-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/demos/hackerbg-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "sphereanimationdemo": {
+      name: "sphereanimationdemo",
+      type: "registry:example",
+      registryDependencies: ["sphere-animation"],
+      files: ["registry/default/demos/sphere-animation-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/demos/sphere-animation-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

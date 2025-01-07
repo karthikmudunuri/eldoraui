@@ -1,0 +1,12 @@
+{
+  "name": "usescreensize",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "hooks/usescreensize.tsx",
+      "content": "import { useState, useEffect } from \"react\";\n\n// Define the possible screen sizes as a const array for better type inference\nconst SCREEN_SIZES = [\"xs\", \"sm\", \"md\", \"lg\", \"xl\", \"2xl\"] as const;\n\n// Create a union type from the array\nexport type ScreenSize = (typeof SCREEN_SIZES)[number];\n\n// Type-safe size order mapping\nconst sizeOrder: Record<ScreenSize, number> = {\n  xs: 0,\n  sm: 1,\n  md: 2,\n  lg: 3,\n  xl: 4,\n  \"2xl\": 5,\n} as const;\n\nclass ComparableScreenSize {\n  constructor(private value: ScreenSize) {}\n\n  toString(): ScreenSize {\n    return this.value;\n  }\n\n  valueOf(): number {\n    return sizeOrder[this.value];\n  }\n\n  // Add type predicate methods for better TypeScript support\n  equals(other: ScreenSize): boolean {\n    return this.value === other;\n  }\n\n  lessThan(other: ScreenSize): boolean {\n    return this.valueOf() < sizeOrder[other];\n  }\n\n  greaterThan(other: ScreenSize): boolean {\n    return this.valueOf() > sizeOrder[other];\n  }\n\n  lessThanOrEqual(other: ScreenSize): boolean {\n    return this.valueOf() <= sizeOrder[other];\n  }\n\n  greaterThanOrEqual(other: ScreenSize): boolean {\n    return this.valueOf() >= sizeOrder[other];\n  }\n}\n\nconst useScreenSize = (): ComparableScreenSize => {\n  const [screenSize, setScreenSize] = useState<ScreenSize>(\"xs\");\n\n  useEffect(() => {\n    const handleResize = () => {\n      const width = window.innerWidth;\n\n      if (width >= 1536) {\n        setScreenSize(\"2xl\");\n      } else if (width >= 1280) {\n        setScreenSize(\"xl\");\n      } else if (width >= 1024) {\n        setScreenSize(\"lg\");\n      } else if (width >= 768) {\n        setScreenSize(\"md\");\n      } else if (width >= 640) {\n        setScreenSize(\"sm\");\n      } else {\n        setScreenSize(\"xs\");\n      }\n    };\n\n    handleResize();\n    window.addEventListener(\"resize\", handleResize);\n    return () => window.removeEventListener(\"resize\", handleResize);\n  }, []);\n\n  return new ComparableScreenSize(screenSize);\n};\n\nexport default useScreenSize;\n",
+      "type": "registry:hook",
+      "target": ""
+    }
+  ]
+}

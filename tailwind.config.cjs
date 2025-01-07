@@ -78,6 +78,7 @@ module.exports = {
         'shine-infinite': 'shineInfinite 2s ease-in-out infinite',
          "flip": "flip 6s infinite steps(2, end)",
          "rotate": "rotate 3s linear infinite both",
+         "circling": "circling calc(var(--duration)*1s) linear infinite",
       },
       keyframes: {
         shineInfinite: {
@@ -126,6 +127,16 @@ module.exports = {
           },
           "30%, 60%": {
             "background-position": "calc(100% + var(--shiny-width)) 0",
+          },
+        },
+        "circling": {
+          "0%": {
+            transform:
+              "rotate(calc(var(--offset) * 1deg)) translate(calc(var(--radius) * 1px), 0) rotate(calc(var(--offset) * -1deg))",
+          },
+          "100%": {
+            transform:
+              "rotate(calc(360deg + (var(--offset) * 1deg))) translate(calc(var(--radius) * 1px), 0) rotate(calc(-360deg + (var(--offset) * -1deg)))",
           },
         },
       },
