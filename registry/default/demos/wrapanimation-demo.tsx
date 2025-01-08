@@ -4,9 +4,9 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import WarpAnimationContainer from "@/registry/default/eldoraui/wrapanimationcontainer";
+import WarpAnimationContainer from "@/registry/default/eldoraui/warpanimationcontainer";
 
-export default function WrapAnimationDemo() {
+export default function WarpAnimationDemo() {
   return (
     <div className="grid place-items-center">
       <WarpAnimationContainer>
