@@ -16,7 +16,7 @@ Once done, open a pull request from your forked repo to the main repo [here](htt
 2. **Clone your forked repository to your local machine**
 
    ```bash
-   git clone https://github.com/<YOUR_USERNAME>/magicui.git
+   git clone https://github.com/<YOUR_USERNAME>/eldoraui.git
    ```
 
 3. **Navigate to the project directory**
