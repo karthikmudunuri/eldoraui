@@ -52,7 +52,7 @@ export const MainMenusGradientCard = ({
       {children && (
         <div
           className={cn(
-            "gird relative h-40 place-content-center overflow-hidden rounded-[15px] border-white bg-white/70 dark:border-neutral-950 dark:bg-black/50",
+            "grid relative h-40 place-content-center overflow-hidden rounded-[15px] border-white bg-white/70 dark:border-neutral-950 dark:bg-black/50",
             className,
           )}
         >
