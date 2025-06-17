@@ -228,6 +228,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.9
         version: 0.5.10(tailwindcss@3.4.1(ts-node@10.9.2(@types/node@20.11.22)(typescript@5.7.3)))
+      '@types/animejs':
+        specifier: ^3.1.13
+        version: 3.1.13
       '@types/canvas-confetti':
         specifier: ^1.6.4
         version: 1.6.4
@@ -2444,6 +2447,9 @@ packages:
 
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
+
+  '@types/animejs@3.1.13':
+    resolution: {integrity: sha512-yWg9l1z7CAv/TKpty4/vupEh24jDGUZXv4r26StRkpUPQm04ztJaftgpto8vwdFs8SiTq6XfaPKCSI+wjzNMvQ==}
 
   '@types/aws-lambda@8.10.140':
     resolution: {integrity: sha512-4Dh3dk2TUcbdfHrX0Al90mNGJDvA9NBiTQPzbrjGi/dLxzKCGOYgT8YQ47jUKNFALkAJAadifq0pzyjIUlhVhg==}
@@ -8535,6 +8541,8 @@ snapshots:
   '@types/acorn@4.0.6':
     dependencies:
       '@types/estree': 1.0.5
+
+  '@types/animejs@3.1.13': {}
 
   '@types/aws-lambda@8.10.140': {}
 

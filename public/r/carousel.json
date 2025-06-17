@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel",
   "type": "registry:ui",
-  "title": "carousel",
-  "description": "A card with a time warping background effect.",
+  "title": "testimonal carousel",
+  "description": "A testimonal carousel.",
   "dependencies": [
     "embla-carousel-react",
     "lucide-react"

@@ -223,7 +223,7 @@ export const docsConfig: DocsConfig = {
           title: "Sphere Animation",
           href: `/docs/components/sphereanimation`,
           items: [],
-          label: "New",
+          label: "",
         },
         {
           title: "Scroll progress",
@@ -274,11 +274,6 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Color changing Button",
-          href: `/docs/components/colorchangingbutton`,
-          items: [],
-        },
-        {
           title: "Spotlight Button",
           href: `/docs/components/spotlightbutton`,
           items: [],
@@ -305,7 +300,7 @@ export const docsConfig: DocsConfig = {
           title: "Morphing Text",
           href: `/docs/components/morphingtext`,
           items: [],
-          label: "New",
+          label: "",
         },
         {
           title: "Fade In",

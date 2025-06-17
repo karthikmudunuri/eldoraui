@@ -3,7 +3,7 @@
   "name": "cardcomment",
   "type": "registry:ui",
   "title": "cardcomment",
-  "description": "An implementation of the MacOS dock using react + tailwindcss + motion",
+  "description": "Animated card layout for messages",
   "dependencies": [
     "motion"
   ],

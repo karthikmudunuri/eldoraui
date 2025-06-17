@@ -3,7 +3,7 @@
   "name": "shimmerbutton",
   "type": "registry:ui",
   "title": "shimmerbutton",
-  "description": "Characters appearing in typed animation",
+  "description": "A shimmer button component with dynamic styles.",
   "dependencies": [
     "motion"
   ],

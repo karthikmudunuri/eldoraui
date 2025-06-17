@@ -3,7 +3,7 @@
   "name": "codesnippet",
   "type": "registry:ui",
   "title": "codesnippet",
-  "description": "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+  "description": "A codesnippet from which we can copy commands.",
   "dependencies": [
     "sooner",
     "lucide-react"

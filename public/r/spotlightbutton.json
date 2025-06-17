@@ -3,7 +3,7 @@
   "name": "spotlightbutton",
   "type": "registry:ui",
   "title": "spotlightbutton",
-  "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+  "description": "Button which Highlights while hovering by a spotlight.",
   "dependencies": [
     "motion"
   ],

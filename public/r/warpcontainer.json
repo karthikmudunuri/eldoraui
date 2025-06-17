@@ -3,9 +3,10 @@
   "name": "warpcontainer",
   "type": "registry:ui",
   "title": "warpcontainer",
-  "description": "A card with a time warping background effect.",
+  "description": "A container component that applies a warp animation effect to its children.",
   "dependencies": [
-    "motion"
+    "clsx",
+    "framer-motion"
   ],
   "files": [
     {

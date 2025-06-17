@@ -3,7 +3,7 @@
   "name": "wavytext",
   "type": "registry:ui",
   "title": "wavytext",
-  "description": "An animated beam of light which travels along the border of its container.",
+  "description": "Text animation where the text moves in a wavy motion.",
   "dependencies": [
     "framer-motion",
     "clsx"

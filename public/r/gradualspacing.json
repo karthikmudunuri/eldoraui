@@ -3,7 +3,7 @@
   "name": "gradualspacing",
   "type": "registry:ui",
   "title": "gradualspacing",
-  "description": "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.",
+  "description": "Text animation that increases letter spacing gradually.",
   "dependencies": [
     "framer-motion",
     "clsx"

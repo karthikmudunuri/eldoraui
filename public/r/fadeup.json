@@ -3,7 +3,7 @@
   "name": "fadeup",
   "type": "registry:ui",
   "title": "fadeup",
-  "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+  "description": "Text animation where the text fades down into view.",
   "dependencies": [
     "framer-motion",
     "clsx"

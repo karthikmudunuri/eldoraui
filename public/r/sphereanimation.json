@@ -3,7 +3,7 @@
   "name": "sphereanimation",
   "type": "registry:ui",
   "title": "sphereanimation",
-  "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "description": "SVG sphere animation using animejs.",
   "dependencies": [
     "animejs"
   ],

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/demos/cobeglobe-demo.tsx",
-      "content": "\"use client\";\n\nimport { Cobe } from \"@/components/eldoraui/cobeglobe\";\n\nexport default function cobeGlobeDemo() {\n  return (\n    <div className=\"relative z-10 h-[600px] w-full overflow-hidden rounded-lg border bg-background\">\n      <div className=\"mt-[50px]\">\n        <Cobe />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { Cobe } from \"@/components/eldoraui/cobe\";\n\nexport default function cobeGlobeDemo() {\n  return (\n    <div className=\"relative z-10 h-[600px] w-full overflow-hidden rounded-lg border bg-background\">\n      <div className=\"mt-[50px]\">\n        <Cobe />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": "components/cobeglobe-demo.tsx"
     }

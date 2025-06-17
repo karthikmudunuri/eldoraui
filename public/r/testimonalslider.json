@@ -3,7 +3,7 @@
   "name": "testimonalslider",
   "type": "registry:ui",
   "title": "testimonalslider",
-  "description": "An interactive 3D tag cloud component",
+  "description": "Testimonals slider",
   "dependencies": [],
   "files": [
     {

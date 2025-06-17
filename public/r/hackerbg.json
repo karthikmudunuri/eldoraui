@@ -3,7 +3,7 @@
   "name": "hackerbg",
   "type": "registry:ui",
   "title": "hackerbg",
-  "description": "A text component with a moving line shadow.",
+  "description": "An Hacker like background.",
   "files": [
     {
       "path": "registry/eldoraui/hackerbg.tsx",

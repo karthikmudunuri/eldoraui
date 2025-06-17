@@ -3,7 +3,7 @@
   "name": "blurin",
   "type": "registry:ui",
   "title": "blurin",
-  "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+  "description": "An animated text component that blurs in the text.",
   "dependencies": [
     "framer-motion",
     "clsx"

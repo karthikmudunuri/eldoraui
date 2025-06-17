@@ -3,11 +3,15 @@
   "name": "bentogrid",
   "type": "registry:ui",
   "title": "bentogrid",
-  "description": "A collection of circles which move in orbit along a circular path",
+  "description": "A modern grid layout designed for visually appealing and organized feature showcases.",
+  "dependencies": [
+    "clsx",
+    "framer-motion"
+  ],
   "registryDependencies": [
-    "https://eldoraui.site/r/keyboard",
-    "https://eldoraui.site/r/logocluster",
-    "https://eldoraui.site/r/map"
+    "keyboard",
+    "logocluster",
+    "map"
   ],
   "files": [
     {

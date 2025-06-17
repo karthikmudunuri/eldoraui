@@ -3,7 +3,7 @@
   "name": "novatrix",
   "type": "registry:ui",
   "title": "novatrix",
-  "description": "A hero video dialog component.",
+  "description": "A 3d shader background using vertex and fragment shader.",
   "dependencies": [
     "ogl"
   ],

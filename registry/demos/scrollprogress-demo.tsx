@@ -1,3 +1,4 @@
+"use client"
 import ScrollProgress from "@/registry/eldoraui/scrollprogress";
 
 const dummyContent = Array.from({ length: 10 }, (_, i) => (

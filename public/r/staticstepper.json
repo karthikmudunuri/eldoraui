@@ -3,7 +3,7 @@
   "name": "staticstepper",
   "type": "registry:ui",
   "title": "staticstepper",
-  "description": "An animated gradient background which transitions between colors for text.",
+  "description": "A Simple way to show the steps for users.",
   "files": [
     {
       "path": "registry/eldoraui/staticstepper.tsx",

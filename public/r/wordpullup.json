@@ -3,7 +3,7 @@
   "name": "wordpullup",
   "type": "registry:ui",
   "title": "wordpullup",
-  "description": "An animated beam of light which travels along a path. Useful for showcasing the \"integration\" features of a website.",
+  "description": "Text animation where entire words pull up into view.",
   "dependencies": [
     "framer-motion",
     "clsx"

@@ -3,7 +3,7 @@
   "name": "seperateaway",
   "type": "registry:ui",
   "title": "seperateaway",
-  "description": "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "description": "Text animation where letters move apart from each other.",
   "dependencies": [
     "framer-motion",
     "clsx"

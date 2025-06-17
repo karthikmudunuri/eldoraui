@@ -3,7 +3,7 @@
   "name": "hoverme",
   "type": "registry:ui",
   "title": "hoverme",
-  "description": "A vertical rotation of words",
+  "description": "An animated hover button.",
   "dependencies": [
     "motion"
   ],

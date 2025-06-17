@@ -3,7 +3,7 @@
   "name": "tweetgrid",
   "type": "registry:ui",
   "title": "tweetgrid",
-  "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
   "dependencies": [
     "react-tweet"
   ],

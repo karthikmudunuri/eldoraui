@@ -3,11 +3,15 @@
   "name": "header",
   "type": "registry:ui",
   "title": "header",
-  "description": "Text flipping character animation",
+  "description": "These components are used to build the header of the website",
   "dependencies": [
     "framer-motion",
     "@headlessui/react",
     "@heroicons/react"
+  ],
+  "registryDependencies": [
+    "link",
+    "plusgrid"
   ],
   "files": [
     {

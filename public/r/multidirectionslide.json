@@ -3,7 +3,7 @@
   "name": "multidirectionslide",
   "type": "registry:ui",
   "title": "multidirectionslide",
-  "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+  "description": "Text animation where text slides in from multiple directions.",
   "dependencies": [
     "framer-motion",
     "clsx"

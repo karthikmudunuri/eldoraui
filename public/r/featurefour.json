@@ -3,7 +3,7 @@
   "name": "featurefour",
   "type": "registry:ui",
   "title": "featurefour",
-  "description": "A beautiful neon card effect",
+  "description": "A layout used to showcase the features of a product in a simple and elegant way.",
   "files": [
     {
       "path": "registry/eldoraui/featurefour.tsx",

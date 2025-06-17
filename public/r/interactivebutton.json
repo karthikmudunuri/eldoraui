@@ -3,7 +3,7 @@
   "name": "interactivebutton",
   "type": "registry:ui",
   "title": "interactivebutton",
-  "description": "Fade in text as you scroll down the page.",
+  "description": "A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
   "dependencies": [
     "lucide-react"
   ],

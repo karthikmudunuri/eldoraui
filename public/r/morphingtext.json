@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "morphing-text",
+  "name": "morphingtext",
   "type": "registry:ui",
   "title": "Morphing Text",
-  "description": "A dynamic text morphing component for Magic UI.",
+  "description": "A dynamic text morphing component for Eldora UI.",
   "files": [
     {
       "path": "registry/eldoraui/morphingtext.tsx",

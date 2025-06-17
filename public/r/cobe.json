@@ -3,7 +3,7 @@
   "name": "cobe",
   "type": "registry:ui",
   "title": "cobe",
-  "description": "A text animation component that animates text using a variety of different animations.",
+  "description": "A globe animation which is Interactive and customizable.",
   "dependencies": [
     "cobe"
   ],

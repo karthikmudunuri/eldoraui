@@ -51,7 +51,7 @@ export const Index: Record<string, any> = {
   },
   "carousel": {
     name: "carousel",
-    description: "A card with a time warping background effect.",
+    description: "A testimonal carousel.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -68,7 +68,7 @@ export const Index: Record<string, any> = {
   },
   "hackerbg": {
     name: "hackerbg",
-    description: "A text component with a moving line shadow.",
+    description: "An Hacker like background.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -83,9 +83,9 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  "morphing-text": {
-    name: "morphing-text",
-    description: "A dynamic text morphing component for Magic UI.",
+  "morphingtext": {
+    name: "morphingtext",
+    description: "A dynamic text morphing component for Eldora UI.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -112,6 +112,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/scrollprogress.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "scrollbasedvelocity": {
+    name: "scrollbasedvelocity",
+    description: "Text animation that changes speed based on scroll position.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/scrollbasedvelocity.tsx",
+      type: "registry:ui",
+      target: "components/eldoraui/scrollbasedvelocity.tsx"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/scrollbasedvelocity.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -153,7 +170,7 @@ export const Index: Record<string, any> = {
   },
   "featurefour": {
     name: "featurefour",
-    description: "A beautiful neon card effect",
+    description: "A layout used to showcase the features of a product in a simple and elegant way.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -170,7 +187,7 @@ export const Index: Record<string, any> = {
   },
   "animatedcard": {
     name: "animatedcard",
-    description: "A meteor shower effect.",
+    description: "A layout used to showcase the features of a product in a simple and elegant way.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -187,7 +204,7 @@ export const Index: Record<string, any> = {
   },
   "sphereanimation": {
     name: "sphereanimation",
-    description: "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    description: "SVG sphere animation using animejs.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -204,7 +221,7 @@ export const Index: Record<string, any> = {
   },
   "tweetgrid": {
     name: "tweetgrid",
-    description: "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    description: "A card that displays a tweet with the author's name, handle, and profile picture.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -221,7 +238,7 @@ export const Index: Record<string, any> = {
   },
   "signature": {
     name: "signature",
-    description: "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+    description: "Component through which we can have digital signatures.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -238,7 +255,7 @@ export const Index: Record<string, any> = {
   },
   "codesnippet": {
     name: "codesnippet",
-    description: "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+    description: "A codesnippet from which we can copy commands.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -255,7 +272,7 @@ export const Index: Record<string, any> = {
   },
   "novatrix": {
     name: "novatrix",
-    description: "A hero video dialog component.",
+    description: "A 3d shader background using vertex and fragment shader.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -272,7 +289,7 @@ export const Index: Record<string, any> = {
   },
   "fadedown": {
     name: "fadedown",
-    description: "A component which compares two code snippets.",
+    description: "Text animation where the text fades down into view.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -289,7 +306,7 @@ export const Index: Record<string, any> = {
   },
   "fadein": {
     name: "fadein",
-    description: "Copy code to clipboard",
+    description: "Text animation that smoothly fades text into visibility.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -306,7 +323,7 @@ export const Index: Record<string, any> = {
   },
   "marquee": {
     name: "marquee",
-    description: "An infinite scrolling component that can be used to display text, images, or videos.",
+    description: "An infinite scrolling component.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -323,7 +340,7 @@ export const Index: Record<string, any> = {
   },
   "fadeup": {
     name: "fadeup",
-    description: "An autorotating, interactive, and highly performant globe made using WebGL.",
+    description: "Text animation where the text fades down into view.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -340,7 +357,7 @@ export const Index: Record<string, any> = {
   },
   "blurin": {
     name: "blurin",
-    description: "A card that displays a tweet with the author's name, handle, and profile picture.",
+    description: "An animated text component that blurs in the text.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -357,7 +374,7 @@ export const Index: Record<string, any> = {
   },
   "gradualspacing": {
     name: "gradualspacing",
-    description: "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.",
+    description: "Text animation that increases letter spacing gradually.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -374,7 +391,7 @@ export const Index: Record<string, any> = {
   },
   "letterpullup": {
     name: "letterpullup",
-    description: "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+    description: "Text animation where each letter pulls up into place.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -408,7 +425,7 @@ export const Index: Record<string, any> = {
   },
   "scaleslider": {
     name: "scaleslider",
-    description: "Animate numbers to count up or down to a target number",
+    description: "An animated scale slider component.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -425,7 +442,7 @@ export const Index: Record<string, any> = {
   },
   "multidirectionslide": {
     name: "multidirectionslide",
-    description: "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+    description: "Text animation where text slides in from multiple directions.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -442,7 +459,7 @@ export const Index: Record<string, any> = {
   },
   "seperateaway": {
     name: "seperateaway",
-    description: "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    description: "Text animation where letters move apart from each other.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -459,7 +476,7 @@ export const Index: Record<string, any> = {
   },
   "wavytext": {
     name: "wavytext",
-    description: "An animated beam of light which travels along the border of its container.",
+    description: "Text animation where the text moves in a wavy motion.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -476,7 +493,7 @@ export const Index: Record<string, any> = {
   },
   "wordpullup": {
     name: "wordpullup",
-    description: "An animated beam of light which travels along a path. Useful for showcasing the \"integration\" features of a website.",
+    description: "Text animation where entire words pull up into view.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -493,7 +510,7 @@ export const Index: Record<string, any> = {
   },
   "interactivebutton": {
     name: "interactivebutton",
-    description: "Fade in text as you scroll down the page.",
+    description: "A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -510,9 +527,9 @@ export const Index: Record<string, any> = {
   },
   "integrations": {
     name: "integrations",
-    description: "A text animation that scrambles letters before revealing the final text.",
+    description: "programmatically generated icons using marquee and fade effects.",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["marquee"],
     files: [{
       path: "registry/eldoraui/integrations.tsx",
       type: "registry:ui",
@@ -527,7 +544,7 @@ export const Index: Record<string, any> = {
   },
   "staticstepper": {
     name: "staticstepper",
-    description: "An animated gradient background which transitions between colors for text.",
+    description: "A Simple way to show the steps for users.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -544,9 +561,9 @@ export const Index: Record<string, any> = {
   },
   "bentogrid": {
     name: "bentogrid",
-    description: "A collection of circles which move in orbit along a circular path",
+    description: "A modern grid layout designed for visually appealing and organized feature showcases.",
     type: "registry:ui",
-    registryDependencies: ["https://eldoraui.site/r/keyboard","https://eldoraui.site/r/logocluster","https://eldoraui.site/r/map"],
+    registryDependencies: ["keyboard","logocluster","map"],
     files: [{
       path: "registry/eldoraui/bentocard.tsx",
       type: "registry:ui",
@@ -561,7 +578,7 @@ export const Index: Record<string, any> = {
   },
   "cardcomment": {
     name: "cardcomment",
-    description: "An implementation of the MacOS dock using react + tailwindcss + motion",
+    description: "Animated card layout for messages",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -578,7 +595,7 @@ export const Index: Record<string, any> = {
   },
   "hoverme": {
     name: "hoverme",
-    description: "A vertical rotation of words",
+    description: "An animated hover button.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -595,7 +612,7 @@ export const Index: Record<string, any> = {
   },
   "gitstarbutton": {
     name: "gitstarbutton",
-    description: "Overlapping circles of avatars.",
+    description: "An animated button to showcase Github stars.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -612,7 +629,7 @@ export const Index: Record<string, any> = {
   },
   "shimmerbutton": {
     name: "shimmerbutton",
-    description: "Characters appearing in typed animation",
+    description: "A shimmer button component with dynamic styles.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -629,7 +646,7 @@ export const Index: Record<string, any> = {
   },
   "spotlightbutton": {
     name: "spotlightbutton",
-    description: "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+    description: "Button which Highlights while hovering by a spotlight.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -646,7 +663,7 @@ export const Index: Record<string, any> = {
   },
   "animatedborderbutton": {
     name: "animatedborderbutton",
-    description: "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+    description: "A button with a shimmering light which travels around the perimeter.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -663,9 +680,9 @@ export const Index: Record<string, any> = {
   },
   "header": {
     name: "header",
-    description: "Text flipping character animation",
+    description: "These components are used to build the header of the website",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["link","plusgrid"],
     files: [{
       path: "registry/eldoraui/header.tsx",
       type: "registry:ui",
@@ -680,7 +697,7 @@ export const Index: Record<string, any> = {
   },
   "testimonalslider": {
     name: "testimonalslider",
-    description: "An interactive 3D tag cloud component",
+    description: "Testimonals slider",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -697,7 +714,7 @@ export const Index: Record<string, any> = {
   },
   "cobe": {
     name: "cobe",
-    description: "A text animation component that animates text using a variety of different animations.",
+    description: "A globe animation which is Interactive and customizable.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -714,9 +731,9 @@ export const Index: Record<string, any> = {
   },
   "testimonals": {
     name: "testimonals",
-    description: "Scrolling text whose speed changes based on scroll speed",
+    description: "Testimonal marquee",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["marquee"],
     files: [{
       path: "registry/eldoraui/testimonals.tsx",
       type: "registry:ui",
@@ -731,7 +748,7 @@ export const Index: Record<string, any> = {
   },
   "warpcontainer": {
     name: "warpcontainer",
-    description: "A card with a time warping background effect.",
+    description: "A container component that applies a warp animation effect to its children.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{

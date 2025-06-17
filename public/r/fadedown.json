@@ -3,7 +3,7 @@
   "name": "fadedown",
   "type": "registry:ui",
   "title": "fadedown",
-  "description": "A component which compares two code snippets.",
+  "description": "Text animation where the text fades down into view.",
   "dependencies": [
     "framer-motion",
     "clsx"

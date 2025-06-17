@@ -5,7 +5,7 @@
   "title": "Scratch To Reveal",
   "description": "The ScratchToReveal component creates an interactive scratch-off effect with customizable dimensions and animations, revealing hidden content beneath.",
   "dependencies": [
-    "motion"
+    "framer-motion"
   ],
   "files": [
     {

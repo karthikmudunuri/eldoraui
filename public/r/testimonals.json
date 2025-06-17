@@ -3,10 +3,13 @@
   "name": "testimonals",
   "type": "registry:ui",
   "title": "testimonals",
-  "description": "Scrolling text whose speed changes based on scroll speed",
+  "description": "Testimonal marquee",
   "dependencies": [
     "framer-motion",
     "lucide-react"
+  ],
+  "registryDependencies": [
+    "marquee"
   ],
   "files": [
     {

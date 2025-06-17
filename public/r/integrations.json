@@ -3,10 +3,13 @@
   "name": "integrations",
   "type": "registry:ui",
   "title": "integrations",
-  "description": "A text animation that scrambles letters before revealing the final text.",
+  "description": "programmatically generated icons using marquee and fade effects.",
   "dependencies": [
     "lucide-react",
     "framer-motion"
+  ],
+  "registryDependencies": [
+    "marquee"
   ],
   "files": [
     {

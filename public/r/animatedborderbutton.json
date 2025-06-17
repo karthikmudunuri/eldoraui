@@ -3,7 +3,7 @@
   "name": "animatedborderbutton",
   "type": "registry:ui",
   "title": "animatedborderbuttont",
-  "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+  "description": "A button with a shimmering light which travels around the perimeter.",
   "dependencies": [
     "motion"
   ],

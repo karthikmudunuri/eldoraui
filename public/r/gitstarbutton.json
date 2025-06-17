@@ -3,7 +3,7 @@
   "name": "gitstarbutton",
   "type": "registry:ui",
   "title": "gitstarbutton",
-  "description": "Overlapping circles of avatars.",
+  "description": "An animated button to showcase Github stars.",
   "files": [
     {
       "path": "registry/eldoraui/gitstarbutton.tsx",

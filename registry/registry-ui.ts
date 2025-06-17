@@ -32,8 +32,8 @@ export const ui: Registry["items"] = [
   {
     name: "carousel",
     type: "registry:ui",
-    title: "carousel",
-    description: "A card with a time warping background effect.",
+    title: "testimonal carousel",
+    description: "A testimonal carousel.",
     dependencies: ["embla-carousel-react", "lucide-react"],
     files: [
       {
@@ -47,7 +47,7 @@ export const ui: Registry["items"] = [
     name: "hackerbg",
     type: "registry:ui",
     title: "hackerbg",
-    description: "A text component with a moving line shadow.",
+    description: "An Hacker like background.",
     files: [
       {
         path: "registry/eldoraui/hackerbg.tsx",
@@ -57,10 +57,10 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "morphing-text",
+    name: "morphingtext",
     type: "registry:ui",
     title: "Morphing Text",
-    description: "A dynamic text morphing component for Magic UI.",
+    description: "A dynamic text morphing component for Eldora UI.",
     files: [
       {
         path: "registry/eldoraui/morphingtext.tsx",
@@ -74,12 +74,26 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "Scroll Progress",
     description: "Animated Scroll Progress for your pages",
-    dependencies: ["motion"],
+    dependencies: ["framer-motion"],
     files: [
       {
         path: "registry/eldoraui/scrollprogress.tsx",
         type: "registry:ui",
         target: "components/eldoraui/scrollprogress.tsx",
+      },
+    ],
+  },
+   {
+    name: "scrollbasedvelocity",
+    type: "registry:ui",
+    title: "scrollbasedvelocity",
+    description: "Text animation that changes speed based on scroll position.",
+    dependencies: ["framer-motion","clsx"],
+    files: [
+      {
+        path: "registry/eldoraui/scrollbasedvelocity.tsx",
+        type: "registry:ui",
+        target: "components/eldoraui/scrollbasedvelocity.tsx",
       },
     ],
   },
@@ -116,7 +130,7 @@ export const ui: Registry["items"] = [
     name: "featurefour",
     type: "registry:ui",
     title: "featurefour",
-    description: "A beautiful neon card effect",
+    description: "A layout used to showcase the features of a product in a simple and elegant way.",
     files: [
       {
         path: "registry/eldoraui/featurefour.tsx",
@@ -129,7 +143,7 @@ export const ui: Registry["items"] = [
     name: "animatedcard",
     type: "registry:ui",
     title: "animatedcard",
-    description: "A meteor shower effect.",
+    description: "A layout used to showcase the features of a product in a simple and elegant way.",
     dependencies: ["lucide-react"],
     files: [
       {
@@ -144,7 +158,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "sphereanimation",
     description:
-      "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "SVG sphere animation using animejs.",
     dependencies: ["animejs"],
     files: [
       {
@@ -159,7 +173,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "tweetgrid",
     description:
-      "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "A card that displays a tweet with the author's name, handle, and profile picture.",
     dependencies: ["react-tweet"],
     files: [
       {
@@ -174,7 +188,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "signature",
     description:
-      "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "Component through which we can have digital signatures.",
     dependencies: ["@uiw/react-signature", "lucide-react"],
     files: [
       {
@@ -189,7 +203,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "codesnippet",
     description:
-      "A flickering grid background made with SVGs, fully customizable using Tailwind CSS.",
+      "A codesnippet from which we can copy commands.",
     dependencies: ["sooner", "lucide-react"],
     files: [
       {
@@ -203,7 +217,7 @@ export const ui: Registry["items"] = [
     name: "novatrix",
     type: "registry:ui",
     title: "novatrix",
-    description: "A hero video dialog component.",
+    description: "A 3d shader background using vertex and fragment shader.",
     dependencies: ["ogl"],
     files: [
       {
@@ -217,7 +231,7 @@ export const ui: Registry["items"] = [
     name: "fadedown",
     type: "registry:ui",
     title: "fadedown",
-    description: "A component which compares two code snippets.",
+    description: "Text animation where the text fades down into view.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -231,7 +245,7 @@ export const ui: Registry["items"] = [
     name: "fadein",
     type: "registry:ui",
     title: "fadein",
-    description: "Copy code to clipboard",
+    description: "Text animation that smoothly fades text into visibility.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -246,7 +260,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "Marquee",
     description:
-      "An infinite scrolling component that can be used to display text, images, or videos.",
+      "An infinite scrolling component.",
     files: [
       {
         path: "registry/eldoraui/marquee.tsx",
@@ -283,7 +297,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "fadeup",
     description:
-      "An autorotating, interactive, and highly performant globe made using WebGL.",
+      "Text animation where the text fades down into view.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -298,7 +312,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "blurin",
     description:
-      "A card that displays a tweet with the author's name, handle, and profile picture.",
+      "An animated text component that blurs in the text.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -313,7 +327,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "gradualspacing",
     description:
-      "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.",
+      "Text animation that increases letter spacing gradually.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -328,7 +342,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "letterpullup",
     description:
-      "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+      "Text animation where each letter pulls up into place.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -357,7 +371,7 @@ export const ui: Registry["items"] = [
     name: "scaleslider",
     type: "registry:ui",
     title: "scaleslider",
-    description: "Animate numbers to count up or down to a target number",
+    description: "An animated scale slider component.",
     dependencies: ["framer-motion"],
     files: [
       {
@@ -372,7 +386,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "multidirectionslide",
     description:
-      "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+      "Text animation where text slides in from multiple directions.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -387,7 +401,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "seperateaway",
     description:
-      "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "Text animation where letters move apart from each other.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -402,7 +416,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "wavytext",
     description:
-      "An animated beam of light which travels along the border of its container.",
+      "Text animation where the text moves in a wavy motion.",
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -417,7 +431,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "wordpullup",
     description:
-      'An animated beam of light which travels along a path. Useful for showcasing the "integration" features of a website.',
+      'Text animation where entire words pull up into view.',
     dependencies: ["framer-motion", "clsx"],
     files: [
       {
@@ -431,7 +445,7 @@ export const ui: Registry["items"] = [
     name: "interactivebutton",
     type: "registry:ui",
     title: "interactivebutton",
-    description: "Fade in text as you scroll down the page.",
+    description: "A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
     dependencies: ["lucide-react"],
     files: [
       {
@@ -446,8 +460,9 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "integrations",
     description:
-      "A text animation that scrambles letters before revealing the final text.",
+      "programmatically generated icons using marquee and fade effects.",
     dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["marquee"],
     files: [
       {
         path: "registry/eldoraui/integrations.tsx",
@@ -461,7 +476,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "staticstepper",
     description:
-      "An animated gradient background which transitions between colors for text.",
+      "A Simple way to show the steps for users.",
     files: [
       {
         path: "registry/eldoraui/staticstepper.tsx",
@@ -475,8 +490,9 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "bentogrid",
     description:
-      "A collection of circles which move in orbit along a circular path",
-    registryDependencies:["https://eldoraui.site/r/keyboard","https://eldoraui.site/r/logocluster","https://eldoraui.site/r/map"],
+      "A modern grid layout designed for visually appealing and organized feature showcases.",
+    dependencies: ["clsx","framer-motion"],
+    registryDependencies: ["keyboard","logocluster","map"],
     files: [
       {
         path: "registry/eldoraui/bentocard.tsx",
@@ -490,7 +506,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "cardcomment",
     description:
-      "An implementation of the MacOS dock using react + tailwindcss + motion",
+      "Animated card layout for messages",
     dependencies: ["motion"],
     files: [
       {
@@ -504,7 +520,7 @@ export const ui: Registry["items"] = [
     name: "hoverme",
     type: "registry:ui",
     title: "hoverme",
-    description: "A vertical rotation of words",
+    description: "An animated hover button.",
     dependencies: ["motion"],
     files: [
       {
@@ -518,7 +534,7 @@ export const ui: Registry["items"] = [
     name: "gitstarbutton",
     type: "registry:ui",
     title: "gitstarbutton",
-    description: "Overlapping circles of avatars.",
+    description: "An animated button to showcase Github stars.",
     files: [
       {
         path: "registry/eldoraui/gitstarbutton.tsx",
@@ -531,7 +547,7 @@ export const ui: Registry["items"] = [
     name: "shimmerbutton",
     type: "registry:ui",
     title: "shimmerbutton",
-    description: "Characters appearing in typed animation",
+    description: "A shimmer button component with dynamic styles.",
     dependencies: ["motion"],
     files: [
       {
@@ -563,7 +579,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "spotlightbutton",
     description:
-      "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+      "Button which Highlights while hovering by a spotlight.",
     dependencies: ["motion"],
     files: [
       {
@@ -578,7 +594,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "animatedborderbuttont",
     description:
-      "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+      "A button with a shimmering light which travels around the perimeter.",
     dependencies: ["motion"],
     files: [
       {
@@ -616,21 +632,23 @@ export const ui: Registry["items"] = [
     name: "header",
     type: "registry:ui",
     title: "header",
-    description: "Text flipping character animation",
+    description: "These components are used to build the header of the website",
     dependencies: ["framer-motion", "@headlessui/react", "@heroicons/react"],
+    registryDependencies: ["link","plusgrid"],
     files: [
       {
         path: "registry/eldoraui/header.tsx",
         type: "registry:ui",
         target: "components/eldoraui/header.tsx",
       },
+
     ],
   },
   {
     name: "testimonalslider",
     type: "registry:ui",
     title: "testimonalslider",
-    description: "An interactive 3D tag cloud component",
+    description: "Testimonals slider",
     dependencies: [],
     files: [
       {
@@ -645,7 +663,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "cobe",
     description:
-      "A text animation component that animates text using a variety of different animations.",
+      "A globe animation which is Interactive and customizable.",
     dependencies: ["cobe"],
     files: [
       {
@@ -659,8 +677,9 @@ export const ui: Registry["items"] = [
     name: "testimonals",
     type: "registry:ui",
     title: "testimonals",
-    description: "Scrolling text whose speed changes based on scroll speed",
+    description: "Testimonal marquee",
     dependencies: ["framer-motion", "lucide-react"],
+    registryDependencies: ["marquee"],
     files: [
       {
         path: "registry/eldoraui/testimonals.tsx",
@@ -673,8 +692,8 @@ export const ui: Registry["items"] = [
     name: "warpcontainer",
     type: "registry:ui",
     title: "warpcontainer",
-    description: "A card with a time warping background effect.",
-    dependencies: ["motion"],
+    description: "A container component that applies a warp animation effect to its children.",
+    dependencies: ["clsx","framer-motion"],
     files: [
       {
         path: "registry/eldoraui/wrapanimationcontainer.tsx",
@@ -689,7 +708,7 @@ export const ui: Registry["items"] = [
     title: "Scratch To Reveal",
     description:
       "The ScratchToReveal component creates an interactive scratch-off effect with customizable dimensions and animations, revealing hidden content beneath.",
-    dependencies: ["motion"],
+    dependencies: ["framer-motion"],
     files: [
       {
         path: "registry/eldoraui/scratchtoreveal.tsx",

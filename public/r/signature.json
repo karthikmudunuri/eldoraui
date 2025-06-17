@@ -3,7 +3,7 @@
   "name": "signature",
   "type": "registry:ui",
   "title": "signature",
-  "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "description": "Component through which we can have digital signatures.",
   "dependencies": [
     "@uiw/react-signature",
     "lucide-react"

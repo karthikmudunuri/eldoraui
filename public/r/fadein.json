@@ -3,7 +3,7 @@
   "name": "fadein",
   "type": "registry:ui",
   "title": "fadein",
-  "description": "Copy code to clipboard",
+  "description": "Text animation that smoothly fades text into visibility.",
   "dependencies": [
     "framer-motion",
     "clsx"

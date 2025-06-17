@@ -3,7 +3,7 @@
   "name": "animatedcard",
   "type": "registry:ui",
   "title": "animatedcard",
-  "description": "A meteor shower effect.",
+  "description": "A layout used to showcase the features of a product in a simple and elegant way.",
   "dependencies": [
     "lucide-react"
   ],

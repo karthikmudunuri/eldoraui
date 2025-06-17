@@ -3,7 +3,7 @@
   "name": "scaleslider",
   "type": "registry:ui",
   "title": "scaleslider",
-  "description": "Animate numbers to count up or down to a target number",
+  "description": "An animated scale slider component.",
   "dependencies": [
     "framer-motion"
   ],
