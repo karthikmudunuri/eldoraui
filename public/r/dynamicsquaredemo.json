@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dynamicsquaredemo",
+  "type": "registry:example",
+  "title": "dynamicsquaredemo",
+  "description": "Example showing a mockup of an Android device.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/dynamicsquare"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/dynamicsquare-demo.tsx",
+      "content": "import DynamicSquareBackground from \"@/components/eldoraui/dynamicsquare\";\n\nexport default function DynamicSquareBackgroundPreview() {\n  return (\n    <DynamicSquareBackground\n      buttonHref=\"#\"\n      buttonText=\"Join Now\"\n      description=\"Eldoraui version 2.0 is here.\"\n      tag=\"2.0\"\n      title=\"Eldoraui\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/dynamicsquare-demo.tsx"
+    }
+  ]
+}

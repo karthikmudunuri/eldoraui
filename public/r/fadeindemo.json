@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fadeindemo",
+  "type": "registry:example",
+  "title": "fadeindemo",
+  "description": "Example showing a fadeindemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/fadein"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/fadein-demo.tsx",
+      "content": "\"use client\";\n\nimport StaggeredFade from \"@/components/eldoraui/fadein\";\n\nexport default function FadeInDemo() {\n  return (\n    <StaggeredFade\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Fade In\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/fadein-demo.tsx"
+    }
+  ]
+}

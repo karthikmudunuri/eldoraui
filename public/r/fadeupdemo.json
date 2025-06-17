@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fadeupdemo",
+  "type": "registry:example",
+  "title": "fadeupdemo",
+  "description": "Example showing a fadeupdemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/fadeup"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/fadeup-demo.tsx",
+      "content": "\"use client\";\n\nimport { FadeUpStagger } from \"@/components/eldoraui/fadeup\";\n\nexport default function FadeUpDemo() {\n  return (\n    <FadeUpStagger\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Fade Up\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/fadeup-demo.tsx"
+    }
+  ]
+}

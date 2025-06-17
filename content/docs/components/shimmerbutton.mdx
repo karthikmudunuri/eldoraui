@@ -1,0 +1,69 @@
+---
+title: Shimmer Button
+date: 2024-05-23
+description: A shimmer button component with dynamic styles.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="shimmerdemo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/shimmerbutton.tsx`
+
+<ComponentSource name="shimmerbutton" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-13}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        "shine-infinite": "shineInfinite 2s ease-in-out infinite",
+      },
+      keyframes: {
+        shineInfinite: {
+          "0%": { transform: "skew(-12deg) translateX(-100%)" },
+          "100%": { transform: "skew(-12deg) translateX(100%)" },
+        },
+      },
+    },
+  },
+};
+```
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+

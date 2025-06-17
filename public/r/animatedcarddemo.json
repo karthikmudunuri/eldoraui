@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animatedcarddemo",
+  "type": "registry:example",
+  "title": "animatedcarddemo",
+  "description": "Third example showing a lens effect component",
+  "registryDependencies": [
+    "https://eldoraui.site/r/animatedcard"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/animatedcard-demo.tsx",
+      "content": "\"use client\";\n\nimport { MainMenusGradientCard } from \"@/components/eldoraui/animatedcard\";\n\nexport default function AnimatedCardDemo() {\n  return (\n    <div className=\"relative grid w-5/6 grid-cols-1 gap-2 p-2 md:grid-cols-2\">\n      <MainMenusGradientCard\n        className=\"p-4\"\n        description=\"This is the best library for creating dynamic cards\"\n        title=\"EldoraUI\"\n      >\n        You can also add content inside the card\n      </MainMenusGradientCard>\n      <MainMenusGradientCard\n        className=\"p-4\"\n        description=\"How fast is it now to create cards\"\n        title=\"Is Just crazy\"\n      >\n        If leave the card empty, it will still look good\n      </MainMenusGradientCard>\n      <MainMenusGradientCard\n        description=\"I just have to copy paste the code and it instantly works\"\n        title=\"Amazing\"\n      />\n      <MainMenusGradientCard\n        description=\"I can't believe how easy it is to use\"\n        title=\"Unbelievable\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/animatedcard-demo.tsx"
+    }
+  ]
+}

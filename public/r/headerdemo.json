@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "headerdemo",
+  "type": "registry:example",
+  "title": "headerdemo",
+  "description": "Example showing a headerdemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/header"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/header-demo.tsx",
+      "content": "\"use client\";\n\nimport { ChevronRightIcon } from \"lucide-react\";\nimport { Navbar } from \"@/components/eldoraui/header\";\nimport { Link } from \"../ui/link\";\n\nexport default function HeaderDemo() {\n  return (\n    <div className=\"relative z-10 h-[160px] w-full overflow-hidden rounded-lg border bg-background\">\n      <Navbar\n        banner={\n          <Link\n            href=\"/\"\n            className=\"flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-[hover]:bg-fuchsia-950/30\"\n          >\n            EldoraUI Version 2.0 is here\n            <ChevronRightIcon className=\"size-4\" />\n          </Link>\n        }\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/header-demo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+---
+title: Animated Border Button
+date: 2024-05-23
+description: A button with a shimmering light which travels around the perimeter.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="borderdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/animatedborderbutton"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/animatedborderbutton.tsx`
+
+<ComponentSource name="animatedborderbutton" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-20}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        flip: "flip 6s infinite steps(2, end)",
+        rotate: "rotate 3s linear infinite both",
+      },
+      keyframes: {
+        flip: {
+          to: {
+            transform: "rotate(360deg)",
+          },
+        },
+        rotate: {
+          to: {
+            transform: "rotate(90deg)",
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+

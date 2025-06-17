@@ -1,0 +1,62 @@
+---
+title: Letter Pull Up
+date: 2024-05-23
+description: Text animation where each letter pulls up into place.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="letterpullupdemo" />
+
+## Installation
+
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/integrations"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/letterpullup.tsx`
+
+<ComponentSource name="letterpullup" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+| Prop Name   | Type     | Default | Description                                                          |
+| ----------- | -------- | ------- | -------------------------------------------------------------------- |
+| `text`      | `string` | `""`    | The text content to be displayed inside the `motion.h1`.             |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the component for custom styling. |

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multidirectionalslidedemo",
+  "type": "registry:example",
+  "title": "multidirectionalslidedemo",
+  "description": "Example showing a multidirectionalslidedemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/multidirectionalslide"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/multidirectionalslide-demo.tsx",
+      "content": "\"use client\";\n\nimport { MultiDirectionSlide } from \"@/components/eldoraui/multidirectionslide\";\n\nexport default function MultiDirectionSlideDemo() {\n  return (\n    <MultiDirectionSlide\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      textLeft=\"Multidirectional\"\n      textRight=\"Slide\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/multidirectionalslide-demo.tsx"
+    }
+  ]
+}

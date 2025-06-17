@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spotlightdemo",
+  "type": "registry:example",
+  "title": "spotlightdemo",
+  "description": "Example showing a spotlightdemo component.",
+  "files": [
+    {
+      "path": "registry/demos/spotlight-demo.tsx",
+      "content": "\"use client\";\n\nimport { SpotlightButton } from \"@/components/eldoraui/spotlightbutton\";\n\nexport default function SpotlightButtonDemo() {\n  return <SpotlightButton />;\n}\n",
+      "type": "registry:example",
+      "target": "components/spotlight-demo.tsx"
+    }
+  ]
+}

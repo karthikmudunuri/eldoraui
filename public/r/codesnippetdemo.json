@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "codesnippetdemo",
+  "type": "registry:example",
+  "title": "codesnippetdemo",
+  "description": "Example showing animated scroll progress for your pages.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/codesnippet"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/codesnippet-demo.tsx",
+      "content": "import { CommandCode } from \"@/components/eldoraui/codesnippet\";\n\nexport default function CodesnippetDemo() {\n  return <CommandCode>npm install eldoraui</CommandCode>;\n}\n",
+      "type": "registry:example",
+      "target": "components/codesnippet-demo.tsx"
+    }
+  ]
+}

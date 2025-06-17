@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hackerbgdemo",
+  "type": "registry:example",
+  "title": "hackerbgdemo",
+  "description": "Third example showing a mockup of an Android device.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/hackerbg"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/hackerbg-demo.tsx",
+      "content": "\"use client\";\n\nimport HackerBackground from \"@/components/eldoraui/hackerbg\";\n\nexport default function HackerBackgroundDemo() {\n  return (\n    <div className=\"relative z-10 h-[500px] w-full overflow-hidden rounded-lg border bg-background\">\n      <HackerBackground />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/hackerbg-demo.tsx"
+    }
+  ]
+}

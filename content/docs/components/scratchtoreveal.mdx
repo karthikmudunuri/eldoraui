@@ -1,0 +1,65 @@
+---
+title: Scratch To Reveal
+date: 2024-06-28
+description: The ScratchToReveal component creates an interactive scratch-off effect with customizable dimensions and animations, revealing hidden content beneath.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="scratchtorevealdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/scratchtoreveal.tsx`
+
+<ComponentSource name="scratchtoreveal" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+| Prop                   | Type       | Default | Description                                                                                         |
+| ---------------------- | ---------- | ------- | --------------------------------------------------------------------------------------------------- |
+| `className`            | `string`   |         | The class name to apply to the component.                                                           |
+| `width`                | `number`   |         | `Width` of the scratch container.                                                                   |
+| `height`               | `number`   |         | `Height` of the scratch container.                                                                  |
+| `minScratchPercentage` | `number`   | `50`    | `Minimum` percentage of scratched area to be considered as completed (Value between `0` and `100`). |
+| `children`             | `node`     |         | The content to display in the marquee.                                                              |
+| `onCompete`            | `function` |         | Callback function called when scratch is completed                                                  |

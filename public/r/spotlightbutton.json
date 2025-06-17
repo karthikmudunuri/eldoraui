@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spotlightbutton",
+  "type": "registry:ui",
+  "title": "spotlightbutton",
+  "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/spotlightbutton.tsx",
+      "content": "\"use client\";\n\nexport function SpotlightButton({ text = \"Hover me\" }) {\n  return (\n    <div style={{ transform: \"none\" }}>\n      <button className=\"group relative inline-block cursor-pointer rounded-xl bg-zinc-900 p-px font-semibold leading-6 text-white no-underline shadow-2xl shadow-zinc-900\">\n        <span className=\"absolute inset-0 overflow-hidden rounded-xl\">\n          <span className=\"absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100\">\n            {\" \"}\n          </span>{\" \"}\n        </span>\n        <div className=\"relative z-10 flex items-center space-x-2 rounded-xl bg-gray-950/50 px-6 py-3 ring-1 ring-white/10\">\n          <span>{text}</span>\n          <svg\n            xmlns=\"http://www.w3.org/2000/svg\"\n            viewBox=\"0 0 20 20\"\n            fill=\"currentColor\"\n            aria-hidden=\"true\"\n            data-slot=\"icon\"\n            className=\"h-6 w-6\"\n          >\n            <path\n              fillRule=\"evenodd\"\n              d=\"M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z\"\n              clipRule=\"evenodd\"\n            ></path>\n          </svg>\n        </div>\n        <span className=\"absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-fuchsia-400/0 via-gray-400/90 to-fuchsia-400/0 transition-opacity duration-500 group-hover:opacity-40\"></span>\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/spotlightbutton.tsx"
+    }
+  ]
+}

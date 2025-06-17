@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "integrationsdemo",
+  "type": "registry:example",
+  "title": "integrationsdemo",
+  "description": "Example showing a beautiful aurora text effect.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/integrations"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/integrations-demo.tsx",
+      "content": "\"use client\";\n\nimport Integrations from \"@/components/eldoraui/integrations\";\n\nexport default function IntegrationsDemo() {\n  return (\n    <div className=\"relative z-10 h-[500px] w-full overflow-hidden rounded-lg border bg-background\">\n      <Integrations />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/integrations-demo.tsx"
+    }
+  ]
+}

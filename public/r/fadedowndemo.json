@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fadedowndemo",
+  "type": "registry:example",
+  "title": "fadedowndemo",
+  "description": "Example showing a spotlight effect that follows your mouse cursor and highlights borders on hover.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/fadedown"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/fadedown-demo.tsx",
+      "content": "\"use client\";\n\nimport { FadeDown } from \"@/components/eldoraui/fadedown\";\n\nexport default function FadeDownDemo() {\n  return (\n    <FadeDown\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Fade Down\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/fadedown-demo.tsx"
+    }
+  ]
+}

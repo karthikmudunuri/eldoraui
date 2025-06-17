@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scrollbasedvelocitydemo",
+  "type": "registry:example",
+  "title": "scrollbasedvelocitydemo",
+  "description": "Example showing a scrollbasedvelocitydemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/scrollbasedvelocity"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/scrollbasedvelocity-demo.tsx",
+      "content": "\"use client\";\n\nimport { VelocityScroll } from \"@/components/eldoraui/scrollbasedvelocity\";\n\nexport default function ScrollBasedVelocityDemo() {\n  return (\n    <VelocityScroll\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Eldora UI\"\n      default_velocity={5}\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/scrollbasedvelocity-demo.tsx"
+    }
+  ]
+}

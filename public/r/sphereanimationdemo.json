@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sphereanimationdemo",
+  "type": "registry:example",
+  "title": "sphereanimationdemo",
+  "description": "Example showing a card with a time warping background effect.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/sphereanimation"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/sphere-animation-demo.tsx",
+      "content": "\"use client\";\n\nimport SphereAnimation from \"@/components/eldoraui/sphere-animation\";\n\nexport default function SphereAnimationDemo() {\n  return (\n    <div className=\"relative z-10  h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <div className=\"-mt-[200px]\">\n        <SphereAnimation />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/sphere-animation-demo.tsx"
+    }
+  ]
+}

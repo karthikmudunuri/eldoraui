@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bentogrid",
+  "type": "registry:ui",
+  "title": "bentogrid",
+  "description": "A collection of circles which move in orbit along a circular path",
+  "registryDependencies": [
+    "https://eldoraui.site/r/keyboard",
+    "https://eldoraui.site/r/logocluster",
+    "https://eldoraui.site/r/map"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/bentocard.tsx",
+      "content": "\"use client\";\n\nimport { clsx } from \"clsx\";\nimport { motion } from \"framer-motion\";\nimport { Subheading } from \"../ui/text\";\n\nexport function BentoCard({\n  dark = false,\n  className = \"\",\n  eyebrow,\n  title,\n  description,\n  graphic,\n  fade = [],\n}: {\n  dark?: boolean;\n  className?: string;\n  eyebrow: React.ReactNode;\n  title: React.ReactNode;\n  description: React.ReactNode;\n  graphic: React.ReactNode;\n  fade?: (\"top\" | \"bottom\")[];\n}) {\n  return (\n    <motion.div\n      initial=\"idle\"\n      whileHover=\"active\"\n      variants={{ idle: {}, active: {} }}\n      data-dark={dark ? \"true\" : undefined}\n      className={clsx(\n        className,\n        \"group relative flex flex-col overflow-hidden rounded-lg\",\n        \"bg-white dark:bg-gray-950 shadow-sm ring-1 ring-black/5 dark:ring-white/5\",\n        \"data-[dark]:bg-gray-950 data-[dark]:ring-white/5\",\n      )}\n    >\n      <div className=\"relative h-80 shrink-0\">\n        {graphic}\n        {fade.includes(\"top\") && (\n          // eslint-disable-next-line tailwindcss/no-contradicting-classname\n          <div className=\"absolute inset-0 bg-gradient-to-b from-white to-50% group-data-[dark]:from-gray-950 group-data-[dark]:from-[-25%]\" />\n        )}\n        {fade.includes(\"bottom\") && (\n          // eslint-disable-next-line tailwindcss/no-contradicting-classname\n          <div className=\"absolute inset-0 bg-gradient-to-t from-white to-50% group-data-[dark]:from-gray-950 group-data-[dark]:from-[-25%]\" />\n        )}\n      </div>\n      <div className=\"relative p-10\">\n        <Subheading as=\"h3\" dark={dark}>\n          {eyebrow}\n        </Subheading>\n        <p className=\"mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-[dark]:text-white dark:text-white\">\n          {title}\n        </p>\n        <p className=\"mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-[dark]:text-gray-400 dark:text-gray-400\">\n          {description}\n        </p>\n      </div>\n    </motion.div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/bentocard.tsx"
+    }
+  ]
+}

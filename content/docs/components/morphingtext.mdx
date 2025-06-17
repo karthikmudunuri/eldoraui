@@ -1,0 +1,53 @@
+---
+title: Morphing Text
+date: 2024-05-23
+description: A dynamic text morphing component.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="morphingtextdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/morphingtext"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/morphingtext.tsx`
+
+<ComponentSource name="morphingtext" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+## Props
+
+| Prop        | Type       | Description                          | Default |
+| ----------- | ---------- | ------------------------------------ | ------- |
+| `texts`     | `string[]` | Array of texts to morph between      | `[]`    |
+| `className` | `string?`  | Additional classes for the container | `""`    |

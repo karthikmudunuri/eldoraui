@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "novatrix",
+  "type": "registry:ui",
+  "title": "novatrix",
+  "description": "A hero video dialog component.",
+  "dependencies": [
+    "ogl"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/novatrix.tsx",
+      "content": "\"use client\"\nimport React, { useEffect, useRef } from \"react\";\nimport { Renderer, Program, Mesh, Color, Triangle } from \"ogl\";\n\n// Vertex Shader\nconst vert = `\nattribute vec2 uv;\nattribute vec2 position;\n\nvarying vec2 vUv;\n\nvoid main() {\n    vUv = uv;\n    gl_Position = vec4(position, 0, 1);\n}\n`;\n\n// Fragment Shader\nconst frag = `\nprecision highp float;\n\nuniform float uTime;\nuniform vec3 uColor;\nuniform vec3 uResolution;\n\nvarying vec2 vUv;\n\nvoid main() {\n    float mr = min(uResolution.x, uResolution.y);\n    vec2 uv = (vUv.xy * 2.0 - 1.0) * uResolution.xy / mr;\n\n    float d = -uTime * 1.2;\n    float a = 0.0;\n    for (float i = 0.0; i < 8.0; ++i) {\n        a += cos(i - d - a * uv.x);\n        d += sin(uv.y * i + a);\n    }\n    d += uTime * 1.0;\n    vec3 col = vec3(cos(uv * vec2(d, a)) * 0.6 + 0.4, cos(a + d) * 0.5 + 0.5);\n    col = cos(col * cos(vec3(d, a, 2.5)) * 0.5 + 0.5);\n    gl_FragColor = vec4(col, 1.0);\n}\n`;\n\ninterface NovatrixProps {}\n\nexport const Novatrix: React.FC<NovatrixProps> = () => {\n  const ctnDom = useRef<HTMLDivElement>(null);\n\n  useEffect(() => {\n    if (!ctnDom.current) {\n      return;\n    }\n\n    const ctn = ctnDom.current;\n    const renderer = new Renderer();\n    const gl = renderer.gl;\n    gl.clearColor(1, 1, 1, 1);\n\n    function resize() {\n      const scale = 1;\n      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);\n    }\n    window.addEventListener(\"resize\", resize, false);\n    resize();\n\n    const geometry = new Triangle(gl);\n\n    const program = new Program(gl, {\n      vertex: vert,\n      fragment: frag,\n      uniforms: {\n        uTime: { value: 0 },\n        uColor: { value: new Color(0.3, 0.2, 0.5) },\n        uResolution: {\n          value: [\n            gl.canvas.width,\n            gl.canvas.height,\n            gl.canvas.width / gl.canvas.height,\n          ],\n        },\n      },\n    });\n\n    const mesh = new Mesh(gl, { geometry, program });\n\n    let animateId: number;\n\n    animateId = requestAnimationFrame(update);\n\n    function update(t: number) {\n      animateId = requestAnimationFrame(update);\n      program.uniforms.uTime.value = t * 0.001;\n      renderer.render({ scene: mesh });\n    }\n\n    ctn.appendChild(gl.canvas);\n\n    return () => {\n      cancelAnimationFrame(animateId);\n      window.removeEventListener(\"resize\", resize);\n      ctn.removeChild(gl.canvas);\n      gl.getExtension(\"WEBGL_lose_context\")?.loseContext();\n    };\n  }, []);\n\n  return <div ref={ctnDom} className=\"gradient-canvas h-full w-full\"></div>;\n};\n\nconst Background = () => {\n  return (\n    <div className=\"h-screen w-screen\">\n      <Novatrix />\n    </div>\n  );\n};\n\nexport default Background;\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/novatrix.tsx"
+    }
+  ]
+}

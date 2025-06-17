@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmerdemo",
+  "type": "registry:example",
+  "title": "shimmerdemo",
+  "description": "Example showing a shimmerdemo component.",
+  "files": [
+    {
+      "path": "registry/demos/shimmerbutton-demo.tsx",
+      "content": "\"use client\";\n\nimport { ShimmerButton } from \"@/components/eldoraui/shimmerbutton\";\n\nexport default function HovermeButtonDemo() {\n  return <ShimmerButton />;\n}\n",
+      "type": "registry:example",
+      "target": "components/shimmerbutton-demo.tsx"
+    }
+  ]
+}

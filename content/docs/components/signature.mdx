@@ -1,0 +1,71 @@
+---
+title: Signature
+date: 2023-11-23
+description: Component through which we can have digital signatures
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="signaturedemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install @uiw/react-signature lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/signature.tsx`
+
+<ComponentSource name="signature" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/hooks/copytoclipboard.tsx`
+
+<ComponentSource name="copytoclipboard" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+### `ReactSignature` Component Props
+
+| Prop Name   | Type                     | Default | Description                                                                                                                                   |
+| ----------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `className` | `string`                 | -       | Optional class name for custom styling.                                                                                                       |
+| `readonly`  | `boolean`                | `false` | When `true`, the signature pad becomes read-only and disables signing.                                                                        |
+| `options`   | `object`                 | -       | Signature pad options for smoothing, thinning, and streamline. Pass an object with properties like `smoothing`, `streamline`, and `thinning`. |
+| `onChange`  | `(data: string) => void` | -       | Callback function when the signature data changes. It receives the signature data as a string.                                                |

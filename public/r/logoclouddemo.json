@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logoclouddemo",
+  "type": "registry:example",
+  "title": "logoclouddemo",
+  "description": "Example showing a logoclouddemo component.",
+  "files": [
+    {
+      "path": "registry/demos/logocloud-demo.tsx",
+      "content": "import Image from \"next/image\";\n\nexport default function ClientSection() {\n  return (\n    <section\n      id=\"clients\"\n      className=\"mx-auto max-w-7xl px-6 text-center md:px-8\"\n    >\n      <div className=\"py-14\">\n        <div className=\"mx-auto max-w-screen-xl px-4 md:px-8\">\n          <h2 className=\"text-center text-sm font-semibold text-gray-600\">\n            TRUSTED BY TEAMS FROM AROUND THE WORLD\n          </h2>\n          <div className=\"mt-6\">\n            <ul className=\"flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16 [&_path]:fill-white\">\n              <li>\n                <Image\n                  alt=\"Google\"\n                  src=\"https://res.cloudinary.com/eldoraui/image/upload/v1733986674/Google_hcdc9g.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"Microsoft\"\n                  src=\"https://res.cloudinary.com/eldoraui/image/upload/v1733986674/Microsoft_y2tjeg.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"GitHub\"\n                  src=\"https://res.cloudinary.com/eldoraui/image/upload/v1733986674/GitHub_lubmi9.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n\n              <li>\n                <Image\n                  alt=\"Uber\"\n                  src=\"https://res.cloudinary.com/eldoraui/image/upload/v1733986675/Uber_imzjlc.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"Notion\"\n                  src=\"https://res.cloudinary.com/eldoraui/image/upload/v1733986674/Notion_lno53n.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/logocloud-demo.tsx"
+    }
+  ]
+}

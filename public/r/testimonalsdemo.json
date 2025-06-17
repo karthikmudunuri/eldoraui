@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonalsdemo",
+  "type": "registry:example",
+  "title": "testimonalsdemo",
+  "description": "Example showing a testimonalsdemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/testimonals"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/testimonals-demo.tsx",
+      "content": "\"use client\";\n\nimport Testimonials from \"@/components/eldoraui/testimonals\";\n\nexport default function TestimonalsDemo() {\n  return (\n    <div className=\"relative z-10 h-[600px] w-full overflow-hidden rounded-lg border bg-background\">\n      <Testimonials />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/testimonals-demo.tsx"
+    }
+  ]
+}

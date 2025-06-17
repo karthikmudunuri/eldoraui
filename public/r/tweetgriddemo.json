@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tweetgriddemo",
+  "type": "registry:example",
+  "title": "tweetgriddemo",
+  "description": "Example showing a dot pattern with linear gradient effects.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/tweetgrid"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/tweetgrid-demo.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { TweetGrid } from \"@/components/eldoraui/tweetgrid\";\nimport { GradualSpacing } from \"@/components/eldoraui/gradualspacing\";\n\n// Grab tweet ids\nconst exampleTweets = [\n  \"1814496850134946210\",\n  \"1860031241325584796\",\n  \"1858816175121088962\",\n  \"1858433973489430841\",\n  \"1822728938507956633\",\n  \"1815138485440803034\",\n  \"1836064706185892062\",\n  \"1823274177639440741\",\n];\n\nexport default function TweetGridDemo({}) {\n  return (\n    <div className=\"max-w-md pb-12 md:max-w-4xl\">\n      <div className=\"flex w-full justify-center pb-12\">\n        <GradualSpacing\n          className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n          text=\"Explore Tweets\"\n        />\n      </div>\n      <div className=\"flex w-full items-center justify-center\">\n        <TweetGrid\n          className=\"w-80 md:w-full \"\n          tweets={exampleTweets}\n          columns={2}\n          spacing=\"lg\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/tweetgrid-demo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gitstardemo",
+  "type": "registry:example",
+  "title": "gitstardemo",
+  "description": "Example showing a gitstardemo component.",
+  "files": [
+    {
+      "path": "registry/demos/gitstar-demo.tsx",
+      "content": "\"use client\";\n\nimport { GitStarButton } from \"@/components/eldoraui/gitstarbutton\";\n\nexport default function GitStarButtonDemo() {\n  return <GitStarButton />;\n}\n",
+      "type": "registry:example",
+      "target": "components/gitstar-demo.tsx"
+    }
+  ]
+}

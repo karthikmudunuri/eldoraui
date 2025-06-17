@@ -1,0 +1,71 @@
+---
+title: Tweet Grid
+date: 2023-10-15
+description: A card that displays a tweet with the author's name, handle, and profile picture.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="tweetgriddemo" />
+
+### Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install react-tweet
+```
+
+</Step>
+
+<Step> Installation React Server Component (Next.js 13+): </Step>
+
+Copy and paste the following code into your project.
+
+`components/eldoraui/tweetgrid.tsx`
+
+<ComponentSource name="tweetgrid" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+
+
+
+## Props
+
+### `TweetGrid` Component Props
+
+| Prop Name   | Type            | Default     | Description                                                                |
+| ----------- | --------------- | ----------- | -------------------------------------------------------------------------- |
+| `tweets`    | `string[]`      | -           | An array of tweet IDs (as strings) to display in the grid.                 |
+| `columns`   | `1\|2\|3\|4\|5` | `3`         | The number of columns in the grid. For values: `1`, `2`, `3`, `4`, or `5`. |
+| `spacing`   | `sm\|md\|lg`    | `md`        | The spacing between tweet items. For values: `sm`, `md`, or `lg`.          |
+| `className` | `string`        | `undefined` | An optional custom className for further styling of the grid container.    |

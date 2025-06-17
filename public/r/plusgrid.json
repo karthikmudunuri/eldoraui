@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "plusgrid",
+  "type": "registry:ui",
+  "title": "plusgrid",
+  "description": "A interactive component that enables zooming into images, videos and other elements.",
+  "files": [
+    {
+      "path": "registry/eldoraui/plusgrid.tsx",
+      "content": "import { clsx } from \"clsx\";\n\nexport function PlusGrid({\n  className = \"\",\n  children,\n}: {\n  className?: string;\n  children: React.ReactNode;\n}) {\n  return <div className={className}>{children}</div>;\n}\n\nexport function PlusGridRow({\n  className = \"\",\n  children,\n}: {\n  className?: string;\n  children: React.ReactNode;\n}) {\n  return (\n    <div\n      className={clsx(\n        className,\n        \"group/row relative isolate pt-[calc(theme(spacing.2)+1px)] last:pb-[calc(theme(spacing.2)+1px)]\",\n      )}\n    >\n      <div\n        aria-hidden=\"true\"\n        className=\"absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2\"\n      >\n        <div className=\"absolute inset-x-0 top-0 border-t border-black/5 dark:border-white/10\"></div>\n        <div className=\"absolute inset-x-0 top-2 border-t border-black/5 dark:border-white/10\"></div>\n        <div className=\"absolute inset-x-0 bottom-0 hidden border-b border-black/5 group-last/row:block dark:border-white/10\"></div>\n        <div className=\"absolute inset-x-0 bottom-2 hidden border-b border-black/5  group-last/row:block dark:border-white/10\"></div>\n      </div>\n      {children}\n    </div>\n  );\n}\n\nexport function PlusGridItem({\n  className = \"\",\n  children,\n}: {\n  className?: string;\n  children: React.ReactNode;\n}) {\n  return (\n    <div className={clsx(className, \"group/item relative\")}>\n      <PlusGridIcon\n        placement=\"top left\"\n        className=\"hidden  group-first/item:block\"\n      />\n      <PlusGridIcon placement=\"top right\" />\n      <PlusGridIcon\n        placement=\"bottom left\"\n        className=\"hidden group-last/row:group-first/item:block\"\n      />\n      <PlusGridIcon\n        placement=\"bottom right\"\n        className=\"hidden group-last/row:block\"\n      />\n      {children}\n    </div>\n  );\n}\n\nexport function PlusGridIcon({\n  className = \"\",\n  placement,\n}: {\n  className?: string;\n  placement: `${\"top\" | \"bottom\"} ${\"right\" | \"left\"}`;\n}) {\n  let [yAxis, xAxis] = placement.split(\" \");\n\n  let yClass = yAxis === \"top\" ? \"-top-2\" : \"-bottom-2\";\n  let xClass = xAxis === \"left\" ? \"-left-2\" : \"-right-2\";\n\n  return (\n    <svg\n      viewBox=\"0 0 15 15\"\n      aria-hidden=\"true\"\n      className={clsx(\n        className,\n        \"absolute size-[15px] fill-black/10 dark:fill-white/15\",\n        yClass,\n        xClass,\n      )}\n    >\n      <path d=\"M8 0H7V7H0V8H7V15H8V8H15V7H8V0Z\" />\n    </svg>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/plusgrid.tsx"
+    }
+  ]
+}

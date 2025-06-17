@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "morphingtextdemo",
+  "type": "registry:example",
+  "title": "morphingtextdemo",
+  "description": "Example showing a morphingtextdemo component.",
+  "files": [
+    {
+      "path": "registry/demos/morphingtext-demo.tsx",
+      "content": "import MorphingText from \"@/components/eldoraui/morphingtext\";\n\nconst texts = [\n  \"Dynamic\",\n  \"Morphing\",\n  \"Text\",\n  \"Animation\",\n  \"React\",\n  \"Component\",\n  \"Smooth\",\n  \"Transition\",\n  \"Engaging\",\n];\n\nexport default function MorphingTextDemo() {\n  return <MorphingText texts={texts} />;\n}\n",
+      "type": "registry:example",
+      "target": "components/morphingtext-demo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scratchtorevealdemo",
+  "type": "registry:example",
+  "title": "scratchtorevealdemo",
+  "description": "Example showing a dashed grid pattern.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/scratchtoreveal"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/scratchtoreveal-demo.tsx",
+      "content": "import React from \"react\";\nimport ScratchToReveal from \"@/components/eldoraui/scratchtoreveal\";\n\nconst ScratchToRevealDemo = () => {\n  const handleComplete = () => {\n    // Do Something\n  };\n\n  return (\n    <div>\n      <ScratchToReveal\n        width={250}\n        height={250}\n        minScratchPercentage={70}\n        className=\"flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100\"\n        onComplete={handleComplete}\n      >\n        <p className=\"text-9xl\">🤯</p>\n      </ScratchToReveal>\n    </div>\n  );\n};\n\nexport default ScratchToRevealDemo;\n",
+      "type": "registry:example",
+      "target": "components/scratchtoreveal-demo.tsx"
+    }
+  ]
+}

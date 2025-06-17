@@ -1,0 +1,68 @@
+---
+title: Code Snippet
+date: 2024-10-18
+description: A codesnippet from which we can copy commands
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="codesnippetdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/codesnippet"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+
+```bash
+npm install lucide-react sooner
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/codesnippet.tsx`
+
+<ComponentSource name="codesnippet" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/hooks/copytoclipboard.tsx`
+
+<ComponentSource name="copytoclipboard" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+## Props
+
+### `CommandCode` Component Props
+
+| Prop Name  | Type     | Default | Description                                                 |
+| ---------- | -------- | ------- | ----------------------------------------------------------- |
+| `children` | `string` | -       | The command or code text that will be displayed and copied. |

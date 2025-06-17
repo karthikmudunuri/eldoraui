@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scalesliderdemo",
+  "type": "registry:example",
+  "title": "scalesliderdemo",
+  "description": "Example showing a grid pattern with linear gradient effects.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/scaleslider"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/scaleslider-demo.tsx",
+      "content": "import ScaleSlider from \"@/components/eldoraui/scaleslider\";\n\nexport default function ScaleSliderDemo() {\n  return <ScaleSlider />;\n}\n",
+      "type": "registry:example",
+      "target": "components/scaleslider-demo.tsx"
+    }
+  ]
+}

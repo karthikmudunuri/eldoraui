@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "staticstepperdemo",
+  "type": "registry:example",
+  "title": "staticstepperdemo",
+  "description": "Example showing a lens effect component",
+  "registryDependencies": [
+    "https://eldoraui.site/r/staticstepper"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/staticstepper-demo.tsx",
+      "content": "\"use client\";\n\nimport {\n  CodeContainer,\n  StaticStep,\n} from \"@/components/eldoraui/staticstepper\";\n\nconst dataSteps = [\n  {\n    title: \"Step 1\",\n    code: \"npx create-react-app my-app\",\n  },\n  {\n    title: \"Step 2\",\n    code: \"cd my-app\",\n  },\n  {\n    title: \"Step 3\",\n    code: \"npm start\",\n  },\n  {\n    title: \"Step 4\",\n    code: \"npm run build\",\n  },\n];\n\nexport default function StaticStepperDemo() {\n  return (\n    <div className=\"w-full max-w-2xl p-4\">\n      {dataSteps.map((step, index) => (\n        <StaticStep key={step.title} step={index + 1} title={step.title}>\n          <CodeContainer>{step.code}</CodeContainer>\n        </StaticStep>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/staticstepper-demo.tsx"
+    }
+  ]
+}

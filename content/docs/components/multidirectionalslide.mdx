@@ -1,0 +1,61 @@
+---
+title: Multi Directional Slide
+date: 2024-05-23
+description: Text animation where text slides in from multiple directions.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="multidirectionalslidedemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/multidirectionalslide.tsx`
+
+<ComponentSource name="multidirectionslide" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+| Prop Name   | Type     | Default | Description                                                          |
+| ----------- | -------- | ------- | -------------------------------------------------------------------- |
+| `textLeft`  | `string` | `""`    | The text content to display on the left side of the slide.           |
+| `textRight` | `string` | `""`    | The text content to display on the right side of the slide.          |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the component for custom styling. |

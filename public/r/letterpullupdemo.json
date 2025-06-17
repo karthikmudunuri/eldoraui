@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "letterpullupdemo",
+  "type": "registry:example",
+  "title": "letterpullupdemo",
+  "description": "Example showing a letterpullupdemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/letterpullup"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/letterpullup-demo.tsx",
+      "content": "\"use client\";\n\nimport { LetterPullUp } from \"@/components/eldoraui/letterpullup\";\n\nexport default function LetterPullUpDemo() {\n  return (\n    <LetterPullUp\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Letter Pull Up\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/letterpullup-demo.tsx"
+    }
+  ]
+}

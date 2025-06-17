@@ -1,0 +1,56 @@
+---
+title: Animated Card
+date: 2024-10-18
+description: Animated card layout for messages
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="cardcommentdemo" />
+
+## Installation
+
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/animatedcardcomment"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/cardcomment.tsx`
+
+<ComponentSource name="cardcomment" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+### `CardComment` Component Props
+
+| Prop Name   | Type     | Default | Description                                              |
+| ----------- | -------- | ------- | -------------------------------------------------------- |
+| `commenter` | `string` | -       | The name of the commenter who made the original comment. |
+| `replier`   | `string` | -       | The name of the person who replied to the comment.       |

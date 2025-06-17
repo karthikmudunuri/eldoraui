@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logomarqueedemo",
+  "type": "registry:example",
+  "title": "logomarqueedemo",
+  "description": "Example showing a dynamic text morphing component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/marquee"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/logomarquee.tsx",
+      "content": "import { Marquee } from \"@/components/eldoraui/marquee\";\nimport Image from \"next/image\";\n\nconst companies = [\n  {\n    name: \"Google\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066341/Google_fav2wl.svg\",\n  },\n  {\n    name: \"GitHub\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066341/GitHub_honend.svg\",\n  },\n  {\n    name: \"Amazon\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066178/Amazon_wckqtv.svg\",\n  },\n  {\n    name: \"Netflix\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066179/Netflix_skrjyn.svg\",\n  },\n  {\n    name: \"YouTube\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066180/YouTube_wknngk.svg\",\n  },\n  {\n    name: \"Instagram\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066178/Instagram_mo5ttl.svg\",\n  },\n  {\n    name: \"Spotify\",\n    url: \"https://res.cloudinary.com/eldoraui/image/upload/v1734066180/Spotify_ocrrnm.svg\",\n  },\n];\n\nexport default function Logos() {\n  return (\n    <section id=\"logos\">\n      <div className=\"container mx-auto px-4 py-12 md:px-8\">\n        <h3 className=\"text-center text-sm font-semibold text-gray-500\">\n          TRUSTED BY LEADING TEAMS\n        </h3>\n        <div className=\"relative mt-6\">\n          <Marquee className=\"max-w-full [--duration:40s]\">\n            {companies.map((company, idx) => (\n              <Image\n                key={idx}\n                width={112}\n                height={40}\n                src={company.url}\n                className=\"h-10 w-28 opacity-30 grayscale dark:brightness-0 dark:invert\"\n                alt={company.name}\n              />\n            ))}\n          </Marquee>\n          <div className=\"pointer-events-none absolute inset-y-0 left-0 h-full w-1/3 bg-gradient-to-r from-background\"></div>\n          <div className=\"pointer-events-none absolute inset-y-0 right-0 h-full w-1/3 bg-gradient-to-l from-background\"></div>\n        </div>\n      </div>\n    </section>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/logomarquee.tsx"
+    }
+  ]
+}

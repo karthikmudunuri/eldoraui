@@ -1,0 +1,119 @@
+---
+title: Integrations
+date: 2024-11-10
+description: programmatically generated icons using marquee and fade effects.
+author: karthikmudunuri
+published: true
+---
+
+<ComponentPreview name="integrationsdemo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/integrations"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install framer-motion lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/integrations.tsx`
+
+<ComponentSource name="integrations" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/marquee.tsx`
+
+<ComponentSource name="marquee" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `tailwind.config.js`</Step>
+
+Add the following animations to your `tailwind.config.js` file:
+
+```js title="tailwind.config.js" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
+    },
+  },
+};
+```
+
+</Steps>
+
+
+</TabsContent>
+
+</Tabs>
+
+
+
+
+## Props
+
+### `Integrations` Component Props
+
+| Prop Name | Type          | Default | Description                                                            |
+| --------- | ------------- | ------- | ---------------------------------------------------------------------- |
+| `icon`    | `JSX.Element` | -       | The icon to be displayed inside the card (e.g., from `lucide-react`).  |
+| `bg`      | `JSX.Element` | -       | The background element to be displayed behind the icon (a styled div). |
+
+---
+
+### Internal Variables
+
+| Variable Name  | Type           | Description                                                     |
+| -------------- | -------------- | --------------------------------------------------------------- |
+| `randomTiles1` | `typeof tiles` | A shuffled array of tile data for the first marquee animation.  |
+| `randomTiles2` | `typeof tiles` | A shuffled array of tile data for the second marquee animation. |
+| `randomTiles3` | `typeof tiles` | A shuffled array of tile data for the third marquee animation.  |
+| `randomTiles4` | `typeof tiles` | A shuffled array of tile data for the fourth marquee animation. |
+
+---
+
+### `tiles` Array
+
+| Property Name | Type          | Description                                                            |
+| ------------- | ------------- | ---------------------------------------------------------------------- |
+| `icon`        | `JSX.Element` | The icon to be displayed inside the card (e.g., from `lucide-react`).  |
+| `bg`          | `JSX.Element` | The background element to be displayed behind the icon (a styled div). |

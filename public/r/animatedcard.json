@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animatedcard",
+  "type": "registry:ui",
+  "title": "animatedcard",
+  "description": "A meteor shower effect.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/animatedcard.tsx",
+      "content": "\"use client\";\nimport { ArrowUpRightIcon } from \"lucide-react\";\nimport type { ReactNode } from \"react\";\nimport { useMouse } from \"@/registry/hooks/usemouse\";\nimport { cn } from \"@/lib/utils\";\n\nexport const MainMenusGradientCard = ({\n  title,\n  description,\n  withArrow = false,\n  circleSize = 400,\n  className,\n  children,\n}: {\n  title: string;\n  description: string;\n  withArrow?: boolean;\n  circleSize?: number;\n  children?: ReactNode;\n  className?: string;\n}) => {\n  const [mouse, parentRef] = useMouse();\n\n  return (\n    <div\n      className=\"group relative transform-gpu overflow-hidden rounded-[20px] bg-white/10 p-2 transition-transform hover:scale-[1.01] active:scale-90\"\n      ref={parentRef}\n    >\n      {withArrow && (\n        <ArrowUpRightIcon className=\"absolute right-2 top-2 z-10 size-5 translate-y-4 text-neutral-700 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:text-neutral-300 \" />\n      )}\n      <div\n        className={cn(\n          \"absolute -translate-x-1/2 -translate-y-1/2 transform-gpu rounded-full transition-transform duration-500 group-hover:scale-[3]\",\n          mouse.elementX === null || mouse.elementY === null\n            ? \"opacity-0\"\n            : \"opacity-100\",\n        )}\n        style={{\n          maskImage: `radial-gradient(${\n            circleSize / 2\n          }px circle at center, white, transparent)`,\n          width: `${circleSize}px`,\n          height: `${circleSize}px`,\n          left: `${mouse.elementX}px`,\n          top: `${mouse.elementY}px`,\n          background:\n            \"linear-gradient(135deg, #3BC4F2, #7A69F9,#F26378,#F5833F)\",\n        }}\n      />\n      <div className=\"absolute inset-px rounded-[19px] bg-neutral-100/80 dark:bg-neutral-900/80\" />\n      {children && (\n        <div\n          className={cn(\n            \"gird relative h-40 place-content-center overflow-hidden rounded-[15px] border-white bg-white/70 dark:border-neutral-950 dark:bg-black/50\",\n            className,\n          )}\n        >\n          {children}\n        </div>\n      )}\n      <div className=\"relative px-4 pb-2 pt-4\">\n        <h3 className=\"text-lg font-semibold text-neutral-800 dark:text-neutral-300\">\n          {title}\n        </h3>\n        <p className=\"mt-2 text-neutral-600 dark:text-neutral-400\">\n          {description}\n        </p>\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/animatedcard.tsx"
+    }
+  ]
+}

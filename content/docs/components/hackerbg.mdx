@@ -1,0 +1,55 @@
+---
+title: Hacker Background
+date: 2023-11-23
+description: An Hacker like background
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="hackerbgdemo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/hackerbg"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/hackerbg.tsx`
+
+<ComponentSource name="hackerbg" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+
+</TabsContent>
+
+</Tabs>
+
+
+
+## Props
+
+| Prop Name   | Type     | Default | Description                                                       |
+| ----------- | -------- | ------- | ----------------------------------------------------------------- |
+| `color`     | `string` | `#0F0`  | The color of the characters in the background (default is green). |
+| `fontSize`  | `number` | `14`    | The font size of the characters in pixels (default is 14).        |
+| `className` | `string` | `""`    | An optional custom class name for styling.                        |
+| `speed`     | `number` | `1`     | The speed at which the characters fall (default is 1).            |

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blurindemo",
+  "type": "registry:example",
+  "title": "blurindemo",
+  "description": "Example showing a blurindemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/blurin"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/blurin-demo.tsx",
+      "content": "\"use client\";\n\nimport { BlurIn } from \"@/components/eldoraui/blurin\";\n\nexport default function BlurInDemo() {\n  return (\n    <BlurIn\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Blur In\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/blurin-demo.tsx"
+    }
+  ]
+}

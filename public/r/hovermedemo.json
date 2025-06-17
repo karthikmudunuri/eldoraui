@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hovermedemo",
+  "type": "registry:example",
+  "title": "hovermedemo",
+  "description": "Example showing a hovermedemo component.",
+  "files": [
+    {
+      "path": "registry/demos/hoverme-demo.tsx",
+      "content": "\"use client\";\n\nimport { HovermeButton } from \"@/components/eldoraui/hoverme\";\n\nexport default function HovermeButtonDemo() {\n  return <HovermeButton />;\n}\n",
+      "type": "registry:example",
+      "target": "components/hoverme-demo.tsx"
+    }
+  ]
+}

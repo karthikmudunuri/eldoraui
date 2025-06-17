@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobe",
+  "type": "registry:ui",
+  "title": "cobe",
+  "description": "A text animation component that animates text using a variety of different animations.",
+  "dependencies": [
+    "cobe"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/cobe.tsx",
+      "content": "\"use client\"\nimport { useEffect, useRef } from 'react';\nimport createGlobe from 'cobe';\n\ntype CobeState = Record<string, any>;\n\nexport function Cobe() {\n  const canvasRef = useRef<HTMLCanvasElement>(null);\n\n  useEffect(() => {\n    let phi = 0;\n    let width = 0;\n\n    const onResize = () => {\n      if (canvasRef.current) {\n        width = canvasRef.current.offsetWidth;\n      }\n    };\n\n    window.addEventListener('resize', onResize);\n    onResize();\n\n    if (!canvasRef.current) return;\n\n    const globe = createGlobe(canvasRef.current, {\n      devicePixelRatio: 2,\n      width: width * 2,\n      height: width * 2,\n      phi: 0,\n      theta: 0.3,\n      dark: 1,\n      diffuse: 3,\n      mapSamples: 16000,\n      mapBrightness: 1.2,\n      baseColor: [1, 1, 1],\n      markerColor: [251 / 255, 100 / 255, 21 / 255],\n      glowColor: [1.2, 1.2, 1.2],\n      markers: [],\n      onRender: (state: CobeState) => {\n        state.phi = phi;\n        phi += 0.005;\n        state.width = width * 2;\n        state.height = width * 2;\n      },\n    });\n\n    if (canvasRef.current) {\n      setTimeout(() => {\n        if (canvasRef.current) {\n          canvasRef.current.style.opacity = '1';\n        }\n      });\n    }\n\n    return () => {\n      globe.destroy();\n      window.removeEventListener('resize', onResize);\n    };\n  }, []);\n\n  return (\n    <div\n      style={{\n        width: '100%',\n        maxWidth: 600,\n        aspectRatio: 1,\n        margin: 'auto',\n        position: 'relative',\n      }}\n    >\n      <canvas\n        ref={canvasRef}\n        style={{\n          width: '100%',\n          height: '100%',\n          contain: 'layout paint size',\n          opacity: 0,\n          transition: 'opacity 1s ease',\n        }}\n      />\n    </div>\n  );\n}",
+      "type": "registry:ui",
+      "target": "components/eldoraui/cobe.tsx"
+    }
+  ]
+}

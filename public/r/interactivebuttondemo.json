@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactivebuttondemo",
+  "type": "registry:example",
+  "title": "interactivebuttondemo",
+  "description": "Example showing a interactivebuttondemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/interactivebutton"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/interactivebutton-demo.tsx",
+      "content": "import InteractiveHoverButton from \"@/components/eldoraui/interactivebutton\";\n\nexport default function InteractiveHoverButtonDemo() {\n  return (\n    <div className=\"relative justify-center\">\n      <InteractiveHoverButton />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/interactivebutton-demo.tsx"
+    }
+  ]
+}

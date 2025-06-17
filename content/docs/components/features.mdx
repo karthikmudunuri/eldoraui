@@ -1,0 +1,103 @@
+---
+title: Features
+date: 2024-10-17
+description: These components are used to build the features section of the website.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="featuresdemo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/features"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+
+```bash
+npm install framer-motion @radix-ui/react-accordion lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code of `header` into your project.</Step>
+
+`components/eldoraui/features.tsx`
+
+<ComponentSource name="features" />
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+### `AccordionItem` Props
+
+| Prop Name   | Type                           | Default | Description                                            |
+| ----------- | ------------------------------ | ------- | ------------------------------------------------------ |
+| `children`  | `React.ReactNode`              | -       | The content to be displayed inside the accordion item. |
+| `className` | `string`                       | -       | Additional CSS classes to style the accordion item.    |
+| `...props`  | `Accordion.AccordionItemProps` | -       | Props inherited from Radix UI's `AccordionItem`.       |
+
+---
+
+### `AccordionTrigger` Props
+
+| Prop Name   | Type                              | Default | Description                                                          |
+| ----------- | --------------------------------- | ------- | -------------------------------------------------------------------- |
+| `children`  | `React.ReactNode`                 | -       | The trigger content (e.g., title or heading) for the accordion item. |
+| `className` | `string`                          | -       | Additional CSS classes for styling the trigger.                      |
+| `...props`  | `Accordion.AccordionTriggerProps` | -       | Props inherited from Radix UI's `AccordionTrigger`.                  |
+
+---
+
+### `AccordionContent` Props
+
+| Prop Name   | Type                              | Default | Description                                               |
+| ----------- | --------------------------------- | ------- | --------------------------------------------------------- |
+| `children`  | `React.ReactNode`                 | -       | The content to be displayed within the accordion.         |
+| `className` | `string`                          | -       | Additional CSS classes for styling the accordion content. |
+| `...props`  | `Accordion.AccordionContentProps` | -       | Props inherited from Radix UI's `AccordionContent`.       |
+
+---
+
+### `FeaturesDataProps` (Used in `Features`)
+
+| Prop Name | Type                         | Default | Description                                    |
+| --------- | ---------------------------- | ------- | ---------------------------------------------- |
+| `id`      | `number`                     | -       | Unique identifier for each feature item.       |
+| `title`   | `string`                     | -       | The title of the feature.                      |
+| `content` | `string`                     | -       | The description or content of the feature.     |
+| `image`   | `string` (optional)          | -       | URL of the image for the feature.              |
+| `video`   | `string` (optional)          | -       | URL of the video for the feature.              |
+| `icon`    | `React.ReactNode` (optional) | -       | Icon or visual representation for the feature. |
+
+---
+
+### `Features` Props
+
+| Prop Name       | Type                                     | Default  | Description                                                            |
+| --------------- | ---------------------------------------- | -------- | ---------------------------------------------------------------------- |
+| `collapseDelay` | `number`                                 | `5000`   | Time (in milliseconds) to auto-collapse an accordion item.             |
+| `ltr`           | `boolean`                                | `false`  | Defines if the layout should switch to left-to-right.                  |
+| `linePosition`  | `"left" \| "right" \| "top" \| "bottom"` | `"left"` | Specifies the position of the progress line indicator.                 |
+| `data`          | `FeaturesDataProps[]`                    | `[]`     | Array of feature objects containing title, content, image, video, etc. |

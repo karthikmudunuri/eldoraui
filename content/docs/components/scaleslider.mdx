@@ -1,0 +1,64 @@
+---
+title: Scale Slider
+date: 2024-06-01
+description: An animated scale slider component.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="scalesliderdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/scaleslider.tsx`
+
+<ComponentSource name="scaleslider" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+| Prop           | Type     | Description                                      | Default |
+| -------------- | -------- | ------------------------------------------------ | ------- |
+| `defaultValue` | `number` | The `initial` value of the slider                | `6`     |
+| `minValue`     | `number` | The `minimum` value of the slider                | `1`     |
+| `maxValue`     | `number` | The `maximum` value of the slider                | `10`    |
+| `damping`      | `number` | Controls the `damping` of the spring animation   | `20`    |
+| `stiffness`    | `number` | Controls the `stiffness` of the spring animation | `300`   |

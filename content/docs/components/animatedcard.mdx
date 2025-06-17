@@ -1,0 +1,73 @@
+---
+title: Animated Card
+date: 2024-10-18
+description: A layout used to showcase the features of a product in a simple and elegant way.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animatedcarddemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/animatedcard"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install lucide-react
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/animatedcard.tsx`
+
+<ComponentSource name="animatedcard" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/hooks/usemouse.tsx`
+
+<ComponentSource name="usemouse" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+## Props
+
+### `MainMenusGradientCard` Component Props
+
+| Prop Name     | Type        | Default     | Description                                                                                       |
+| ------------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------- |
+| `title`       | `string`    | -           | The title to display in the card.                                                                 |
+| `description` | `string`    | -           | The description text to display in the card.                                                      |
+| `withArrow`   | `boolean`   | `false`     | A boolean that determines if an arrow icon will be displayed in the top right corner of the card. |
+| `circleSize`  | `number`    | `400`       | The size of the circle used in the background gradient effect (measured in pixels).               |
+| `children`    | `ReactNode` | `undefined` | Any child elements to render inside the card (optional).                                          |
+| `className`   | `string`    | `undefined` | An optional custom className for further styling of the child container.                          |

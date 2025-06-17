@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "borderdemo",
+  "type": "registry:example",
+  "title": "borderdemo",
+  "description": "Example showing a borderdemo component.",
+  "files": [
+    {
+      "path": "registry/demos/borderbutton-demo.tsx",
+      "content": "\"use client\";\n\nimport { ButtonAnimatedBorder } from \"@/components/eldoraui/animatedborderbutton\";\n\nexport default function AnimatedBorderButtonDemo() {\n  return <ButtonAnimatedBorder />;\n}\n",
+      "type": "registry:example",
+      "target": "components/borderbutton-demo.tsx"
+    }
+  ]
+}

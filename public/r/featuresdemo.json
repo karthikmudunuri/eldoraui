@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "featuresdemo",
+  "type": "registry:example",
+  "title": "featuresdemo",
+  "description": "Example showing a text component with a moving line shadow.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/features"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/features-demo.tsx",
+      "content": "import Features from \"@/components/eldoraui/features\";\nimport Section from \"@/registry/ui/section\";\nimport { PackageSearch, Settings, Eye } from \"lucide-react\";\n\nconst data = [\n  {\n    id: 1,\n    title: \"1. Choose Your Component\",\n    content:\n      \"Select the component that best suits your needs from Eldora UI's versatile collection, designed to simplify and enhance your development process.\",\n    image:\n      \"https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png\",\n    icon: <PackageSearch className=\"size-6 text-primary\" />,\n  },\n  {\n    id: 2,\n    title: \"2. Add Utility Helpers\",\n    content:\n      \"Enhance functionality by incorporating utility helpers that align with the selected component, ensuring seamless integration and customization.\",\n    image:\n      \"https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png\",\n    icon: <Settings className=\"size-6 text-primary\" />,\n  },\n  {\n    id: 3,\n    title: \"3. Copy and Paste the Code\",\n    content:\n      \"Simply copy and paste the provided code into your project, making the process quick and hassle-free. You're now ready to see the magic in action!\",\n    image:\n      \"https://res.cloudinary.com/eldoraui/image/upload/v1734107781/Screenshot_2024-12-13_at_10.06.08_PM_molet1.png\",\n    icon: <Eye className=\"size-6 text-primary\" />,\n  },\n];\n\nexport default function Component() {\n  return (\n    <Section\n      title=\"Get Started Effortlessly\"\n      subtitle=\"Three simple steps to bring your ideas to life\"\n    >\n      <Features data={data} />\n    </Section>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/features-demo.tsx"
+    }
+  ]
+}

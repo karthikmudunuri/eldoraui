@@ -1,0 +1,65 @@
+---
+title: Static Stepper
+date: 2023-11-23
+description: A Simple way to show the steps for users
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="staticstepperdemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/staticstepper.tsx`
+
+<ComponentSource name="staticstepper" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+## Props
+
+### `StaticStep` Component Props
+
+| Prop Name  | Type        | Default | Description                                                                               |
+| ---------- | ----------- | ------- | ----------------------------------------------------------------------------------------- |
+| `step`     | `number`    | -       | The step number to display, typically used for indicating the current step in a sequence. |
+| `title`    | `string`    | -       | The title or label associated with the step.                                              |
+| `children` | `ReactNode` | `null`  | Optional child elements that can be rendered below the title.                             |
+
+---
+
+### `CodeContainer` Component Props
+
+| Prop Name  | Type        | Default | Description                                                                                                 |
+| ---------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| `children` | `ReactNode` | -       | The content to display inside the code container, typically used to display code blocks or similar content. |
+
+---

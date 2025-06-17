@@ -1,0 +1,62 @@
+---
+title: Seperate Away
+date: 2024-05-23
+description: Text animation where letters move apart from each other.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="seperateawaydemo" />
+
+## Installation
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/multidirectionalslide"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/seperateaway.tsx`
+
+<ComponentSource name="seperateaway" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+## Props
+
+| Prop Name   | Type     | Default | Description                                                          |
+| ----------- | -------- | ------- | -------------------------------------------------------------------- |
+| `textLeft`  | `string` | `""`    | The text content to display on the left side of the slide.           |
+| `textRight` | `string` | `""`    | The text content to display on the right side of the slide.          |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the component for custom styling. |

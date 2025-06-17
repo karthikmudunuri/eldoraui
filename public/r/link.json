@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "link",
+  "type": "registry:ui",
+  "title": "link",
+  "description": "A component that displays a pointer when hovering over an element",
+  "dependencies": [
+    "@headlessui/react"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/link.tsx",
+      "content": "import * as Headless from \"@headlessui/react\";\nimport NextLink, { type LinkProps } from \"next/link\";\nimport { forwardRef } from \"react\";\n\nexport const Link = forwardRef(function Link(\n  props: LinkProps & React.ComponentPropsWithoutRef<\"a\">,\n  ref: React.ForwardedRef<HTMLAnchorElement>,\n) {\n  return (\n    <Headless.DataInteractive>\n      <NextLink ref={ref} {...props} />\n    </Headless.DataInteractive>\n  );\n});\n",
+      "type": "registry:ui",
+      "target": "components/eldoraui/link.tsx"
+    }
+  ]
+}

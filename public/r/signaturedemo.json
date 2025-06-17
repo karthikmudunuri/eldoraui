@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "signaturedemo",
+  "type": "registry:example",
+  "title": "signaturedemo",
+  "description": "Example showing a pointer effect component",
+  "registryDependencies": [
+    "https://eldoraui.site/r/signature"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/signature-demo.tsx",
+      "content": "import { ReactSignature } from \"@/components/eldoraui/signature\";\n\nexport default function PreviewReactSignature() {\n  return <div className=\"z-50\"><ReactSignature /></div>;\n}\n",
+      "type": "registry:example",
+      "target": "components/signature-demo.tsx"
+    }
+  ]
+}

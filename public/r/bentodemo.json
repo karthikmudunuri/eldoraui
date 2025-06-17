@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bentodemo",
+  "type": "registry:example",
+  "title": "bentodemo",
+  "description": "Example showing a bentodemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/bentocard"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/bento-demo.tsx",
+      "content": "\"use client\";\nimport React from \"react\";\nimport { Keyboard } from \"@/components/eldoraui/keyboard\";\nimport { BentoCard } from \"@/components/eldoraui/bentocard\";\nimport { LogoCluster } from \"@/components/eldoraui/logocluster\";\nimport { Map } from \"@/components/eldoraui/map\";\n\nexport default function BentoDemo() {\n  return (\n    <div className=\"mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2\">\n      <BentoCard\n        eyebrow=\"Insight\"\n        title=\"Get perfect clarity\"\n        description=\"Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more.\"\n        graphic={\n          // eslint-disable-next-line tailwindcss/no-contradicting-classname\n          <div className=\"h-80 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021365/profile_ldoiwc.png)] bg-[size:1000px_560px] bg-[left_-109px_top_-112px] bg-no-repeat\" />\n        }\n        fade={[\"bottom\"]}\n        className=\"max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:col-span-3\"\n      />\n      <BentoCard\n        eyebrow=\"Analysis\"\n        title=\"Undercut your competitors\"\n        description=\"With our advanced data mining, you’ll know which companies your leads are talking to and exactly how much they’re being charged.\"\n        graphic={\n          // eslint-disable-next-line tailwindcss/no-contradicting-classname\n          <div className=\"absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021357/competitors_ouucah.png)] bg-[size:1100px_650px] bg-[left_-38px_top_-73px] bg-no-repeat\" />\n        }\n        fade={[\"bottom\"]}\n        className=\"lg:rounded-tr-4xl lg:col-span-3\"\n      />\n      <BentoCard\n        eyebrow=\"Speed\"\n        title=\"Built for power users\"\n        description=\"It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts.\"\n        graphic={\n          <div className=\"flex size-full pl-10 pt-10\">\n            <Keyboard highlighted={[\"LeftCommand\", \"C\", \"S\"]} />\n          </div>\n        }\n        className=\"lg:rounded-bl-4xl lg:col-span-2\"\n      />\n      <BentoCard\n        eyebrow=\"Source\"\n        title=\"Get the furthest reach\"\n        description=\"Bypass those inconvenient privacy laws to source leads from the most unexpected places.\"\n        graphic={<LogoCluster />}\n        className=\"lg:col-span-2\"\n      />\n      <BentoCard\n        eyebrow=\"Limitless\"\n        title=\"Sell globally\"\n        description=\"Radiant helps you sell in locations currently under international embargo.\"\n        graphic={<Map />}\n        className=\"max-lg:rounded-b-4xl lg:rounded-br-4xl lg:col-span-2\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/bento-demo.tsx"
+    }
+  ]
+}

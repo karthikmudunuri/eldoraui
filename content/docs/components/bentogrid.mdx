@@ -1,0 +1,93 @@
+---
+title: Bento Grid
+date: 2024-12-12
+description: A modern grid layout designed for visually appealing and organized feature showcases.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="bentodemo" />
+
+## Installation
+
+
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/bentogrid"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+
+
+<Steps>
+
+<Step>
+
+```bash
+npm install clsx framer-motion
+```
+
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/bentogrid.tsx`
+
+<ComponentSource name="bentogrid" />
+
+<Step>
+  Copy and paste the following `keyboard` component code into your project.
+</Step>
+
+`components/eldoraui/keyboard.tsx`
+
+<ComponentSource name="keyboard" />
+
+<Step>
+  {" "}
+  Copy and paste the following `Logocluster` component code into your project.
+</Step>
+
+`components/eldoraui/logocluster.tsx`
+
+<ComponentSource name="logocluster" />
+
+<Step>
+  {" "}
+  Copy and paste the following `Map` component code into your project.
+</Step>
+
+`components/eldoraui/map.tsx`
+
+<ComponentSource name="map" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+### BentoCard Props
+
+| Name          | Type              | Default  | Description                                                             |
+| ------------- | ----------------- | -------- | ----------------------------------------------------------------------- |
+| `dark`        | `boolean`         | `false`  | Determines if the card should use the dark mode styling.                |
+| `className`   | `string`          | `""`     | Additional classes to apply to the root element of the card.            |
+| `eyebrow`     | `React.ReactNode` | Required | Content to be displayed as the eyebrow text (usually a subheading).     |
+| `title`       | `React.ReactNode` | Required | Content to be displayed as the card title.                              |
+| `description` | `React.ReactNode` | Required | Content to be displayed as the card description.                        |
+| `graphic`     | `React.ReactNode` | Required | Element to be displayed as the graphic content (e.g., an image or SVG). |

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wrapcontainerdemo",
+  "type": "registry:example",
+  "title": "wrapcontainerdemo",
+  "description": "Example showing a background dot pattern made with SVGs.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/wrapcontainer"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/wrapanimation-demo.tsx",
+      "content": "import {\n  Card,\n  CardContent,\n  CardDescription,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport WarpAnimationContainer from \"@/components/eldoraui/wrapanimationcontainer\";\n\nexport default function WrapAnimationDemo() {\n  return (\n    <div className=\"grid place-items-center\">\n      <WarpAnimationContainer>\n        <Card className=\"w-80\">\n          <CardContent className=\"flex flex-col gap-2 p-4\">\n            <CardTitle>Introducing Eldora UI 2.0!</CardTitle>\n            <CardDescription>\n              We are excited to announce the release of Eldora UI 2.0. With\n              improved components, faster performance, and a more customizable\n              design system, its never been easier to create stunning,\n              responsive UIs. Start building with Eldora UI 2.0 today!\n            </CardDescription>\n          </CardContent>\n        </Card>\n      </WarpAnimationContainer>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/wrapanimation-demo.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "colorchangingdemo",
+  "type": "registry:example",
+  "title": "colorchangingdemo",
+  "description": "Example showing a colorchangingdemo component.",
+  "files": [
+    {
+      "path": "registry/demos/colorchanging-demo.tsx",
+      "content": "\"use client\";\n\nimport { ColorChangingButton } from \"@/components/eldoraui/colorchangingbutton\";\n\nexport default function ColorChangingButtonDemo() {\n  return <ColorChangingButton />;\n}\n",
+      "type": "registry:example",
+      "target": "components/colorchanging-demo.tsx"
+    }
+  ]
+}

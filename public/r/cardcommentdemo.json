@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cardcommentdemo",
+  "type": "registry:example",
+  "title": "cardcommentdemo",
+  "description": "Example showing a background grid pattern made with SVGs.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/cardcomment"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/cardcomment-demo.tsx",
+      "content": "\"use client\";\n\nimport { CardComment } from \"@/components/eldoraui/animatedcardcomment\";\n\nexport default function CardCommentDemo() {\n  return <CardComment commenter=\"Ravi\" replier=\"Sriram\" />;\n}\n",
+      "type": "registry:example",
+      "target": "components/cardcomment-demo.tsx"
+    }
+  ]
+}

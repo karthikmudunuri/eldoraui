@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wordpullupdemo",
+  "type": "registry:example",
+  "title": "wordpullupdemo",
+  "description": "Example showing a wordpullupdemo component.",
+  "registryDependencies": [
+    "https://eldoraui.site/r/wordpullup"
+  ],
+  "files": [
+    {
+      "path": "registry/demos/wordpullup-demo.tsx",
+      "content": "\"use client\";\n\nimport { WordPullUp } from \"@/components/eldoraui/wordpullup\";\n\nexport default function WordPullUpDemo() {\n  return (\n    <WordPullUp\n      className=\"font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]\"\n      text=\"Word Pull Up\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": "components/wordpullup-demo.tsx"
+    }
+  ]
+}
