@@ -13,7 +13,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Templates",
-      href: "/docs/templates/saas",
+      href: "/docs/templates/devportfolio",
       event: "header_cta_clicked",
       label: "New",
     },
@@ -85,15 +85,6 @@ export const docsConfig: DocsConfig = {
     {
       title: "Templates",
       items: [
-
-        {
-          title: "Saas Marketing",
-          href: `/docs/templates/saas`,
-          items: [],
-          label: "New",
-          paid: true,
-          event: "template_portfolio_clicked",
-        },
         {
           title: "Dev portfolio",
           href: `/docs/templates/devportfolio`,
@@ -121,16 +112,6 @@ export const docsConfig: DocsConfig = {
     {
       title: "Sections",
       items: [
-        {
-          title: "Header",
-          href: `/docs/components/header`,
-          items: [],
-        },
-        {
-          title: "Bento grid",
-          href: `/docs/components/bentogrid`,
-          items: [],
-        },
         {
           title: "Features",
           href: `/docs/components/features`,

@@ -20,7 +20,7 @@ const nextConfig = {
       },
       {
         source: "/components",
-        destination: "/docs/components/bentogrid",
+        destination: "/docs/components/integrations",
         permanent: true,
       },
       {
@@ -30,7 +30,7 @@ const nextConfig = {
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/bentogrid",
+        destination: "/docs/components/integrations",
         permanent: true,
       },
       {

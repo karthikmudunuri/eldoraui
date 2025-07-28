@@ -12,7 +12,7 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   return (
     <>
-      <DealBanner />
+      <SiteBanner />
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
