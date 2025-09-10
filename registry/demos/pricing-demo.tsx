@@ -129,9 +129,9 @@ export default function PricingSection() {
                   <h2 className="text-base font-semibold leading-7">
                     {price.name}
                   </h2>
-                  <p className="h-12 text-sm leading-5 text-black/70 dark:text-white">
-                    {price.description}
-                  </p>
+                    <p className="h-32 text-sm leading-5 text-black/70 dark:text-white">
+                      {price.description}
+                    </p>
                 </div>
               </div>
 
