@@ -12,7 +12,7 @@ import { ui } from "../registry/registry-ui";
 const DEPRECATED_ITEMS = ["toast"];
 
 const registry = {
-  name: "Eldora UI",
+  name: "eldoraui",
   homepage: "https://eldoraui.site",
   items: z.array(registryItemSchema).parse(
     [
