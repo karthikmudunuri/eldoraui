@@ -71,7 +71,7 @@ export default function ExampleComponent() {
 
 ### 2. Create Component Demo
 
-Provide a basic example to showcase your component in `registry/example/example-component-demo.tsx`
+Provide a basic example to showcase your component in `registry/demos/example-component-demo.tsx`
 
 ```typescript
 import ExampleComponent from '@/registry/eldoraui/example-component'
@@ -164,7 +164,7 @@ export const ui: Registry = [
     description: "A component that does something",
     type: "registry:ui",
     dependencies: ["motion"],
-    files: [{ path: "magicui/example-component.tsx", type: "registry:ui" }],
+    files: [{ path: "eldoraui/example-component.tsx", type: "registry:ui" }],
     // Add any dependencies or tailwind configurations if needed
   },
 ];
