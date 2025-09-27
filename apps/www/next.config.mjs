@@ -7,7 +7,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "cdn.eldoraui.site", "images.unsplash.com"],
+    domains: ["localhost", "res.cloudinary.com", "images.unsplash.com"],
   },
   async redirects() {
     return [
