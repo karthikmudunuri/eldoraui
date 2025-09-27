@@ -56,5 +56,15 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Mockups",
+      items: [
+        {
+          title: "Safari Browser",
+          href: "/docs/components/safari-browser",
+          items: [],
+        },
+      ],
+    },
   ],
 }

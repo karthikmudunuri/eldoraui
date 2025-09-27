@@ -1,8 +1,3 @@
-===== COMPONENT: safari-browser =====
-Title: safari-browser
-Description: A safari browser component.
-
---- file: eldoraui/safari-browser.tsx ---
 import type { SVGProps } from "react"
 
 export interface SafariProps extends SVGProps<SVGSVGElement> {
@@ -154,24 +149,5 @@ export function Safari({
         </clipPath>
       </defs>
     </svg>
-  )
-}
-
-
-===== EXAMPLE: safari-browser-demo =====
-Title: safari-browser-demo
-
---- file: example/safari-browser-demo.tsx ---
-import { Safari } from "@/registry/eldoraui/safari-browser"
-
-export function SafariBrowserDemo() {
-  return (
-    <div className="relative">
-      <Safari
-        url="eldoraui.site"
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
-        className="size-full"
-      />
-    </div>
   )
 }

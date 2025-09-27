@@ -19,6 +19,33 @@
       "cssVars": {}
     },
     {
+      "name": "safari-browser",
+      "type": "registry:ui",
+      "title": "safari-browser",
+      "description": "A safari browser component.",
+      "files": [
+        {
+          "path": "registry/eldoraui/safari-browser.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "safari-browser-demo",
+      "type": "registry:example",
+      "title": "safari-browser-demo",
+      "description": "Example showing a safari-browser-demo component.",
+      "registryDependencies": [
+        "@eldoraui/safari-browser"
+      ],
+      "files": [
+        {
+          "path": "registry/example/safari-browser-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
