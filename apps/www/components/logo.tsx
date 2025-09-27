@@ -4,7 +4,7 @@ import { clsx } from "clsx"
 import { motion, Transition } from "motion/react"
 
 export function Logo({ className }: { className?: string }) {
-  let baseTransition: Transition = {
+  const baseTransition: Transition = {
     duration: 0.5,
     ease: "easeInOut",
   }

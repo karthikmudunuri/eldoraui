@@ -13,7 +13,6 @@ type Commit = {
   }
 }
 
-
 export default function CommitList({
   repo,
   owner,
