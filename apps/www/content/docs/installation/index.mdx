@@ -1,0 +1,43 @@
+---
+title: Installation
+description: How to install dependencies and structure your app.
+date: 2024-09-16
+---
+
+<Callout>
+
+**Note:** We have the exact same installation process as [shadcn/ui](https://ui.shadcn.com/docs/installation/).
+
+</Callout>
+
+<Steps>
+
+### Create project
+
+Run the `init` command to create a new Next.js project or to setup an existing one:
+
+```bash
+npx shadcn@latest init
+```
+
+### Add components
+
+You can now start adding components to your project.
+
+```bash
+npx shadcn@latest add @eldoraui/globe
+```
+
+### Import component
+
+The command above will add the `Globe` component to your project. You can then import it like this:
+
+```tsx {1,6} showLineNumbers
+import { Globe } from "@/components/ui/globe"
+
+export default function Home() {
+  return <Globe />
+}
+```
+
+</Steps>

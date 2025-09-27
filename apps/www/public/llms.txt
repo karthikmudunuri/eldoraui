@@ -1,0 +1,16 @@
+# Eldora UI
+
+> Beautifully designed landing page components built with React & Tailwind CSS.
+
+This file provides LLM-friendly entry points to documentation and examples.
+
+## Components
+
+
+## Examples
+
+
+## Optional
+
+- [Repository](https://github.com/karthikmudunuri/eldoraui): Source code and issues
+- [Sitemap](https://eldoraui.site/sitemap.xml): Indexable pages

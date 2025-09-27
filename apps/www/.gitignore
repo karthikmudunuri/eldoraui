@@ -1,0 +1,11 @@
+# App-specific ignores
+.next
+out
+build
+node_modules
+.turbo
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+.source
+.env.local

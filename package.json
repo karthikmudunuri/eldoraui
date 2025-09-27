@@ -1,0 +1,35 @@
+{
+  "name": "@eldoraui/workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "typecheck": "turbo run typecheck",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
+    "build:docs": "turbo run build:docs --filter=@eldoraui/www",
+    "build:registry": "turbo run build:registry --filter=@eldoraui/www",
+    "dev:all": "turbo run dev --parallel",
+    "build:all": "turbo run build",
+    "lint:all": "turbo run lint",
+    "typecheck:all": "turbo run typecheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm format:check",
+    "test": "echo 'No tests configured'"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=22.14.0",
+    "pnpm": ">=9"
+  }
+}

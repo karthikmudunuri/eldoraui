@@ -1,0 +1,54 @@
+name: Publish Blog Article
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: "JSON payload from webhook"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish-article:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Save payload
+        run: node -e "require('fs').writeFileSync('payload.json', process.env.PAYLOAD)"
+        env:
+          PAYLOAD: ${{ github.event.inputs.payload }}
+
+      - name: Write blog posts
+        run: node .github/scripts/publish-articles.cjs
+
+      - name: Delete payload
+        run: rm -f payload.json
+
+      - name: Format code
+        run: pnpm format:fix
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Add blog article from webhook" || echo "No changes"
+          git push
