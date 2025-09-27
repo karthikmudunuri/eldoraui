@@ -13,9 +13,8 @@ import {
 import { Icons } from "@/components/icons"
 
 export function LogoButton() {
-  function copyLogoAsSVG() {
-    // Copy the static SVG version from public folder
-    fetch("/icon.svg")
+  function copyLogoAsSVG(path: string) {
+    fetch(path)
       .then((response) => response.blob())
       .then((blob) => {
         const reader = new FileReader()
@@ -26,30 +25,23 @@ export function LogoButton() {
         reader.readAsText(blob)
         toast.success("Logo copied to clipboard")
       })
-      .catch(() => {
-        toast.error("Failed to copy logo")
-      })
   }
 
-  function copyLogoAsPNG() {
-    // Copy the static PNG version from public folder
-    fetch("/icon.png")
+  function copyLogoAsPNG(path: string) {
+    fetch(path)
       .then((response) => response.blob())
       .then((blob) => {
         const item = new ClipboardItem({ "image/png": blob })
         navigator.clipboard.write([item])
         toast.success("Logo copied to clipboard")
       })
-      .catch(() => {
-        toast.error("Failed to copy logo")
-      })
   }
   return (
     <ContextMenu>
       <ContextMenuTrigger asChild>
-        <Link href="/" className="relative mr-6 flex items-center">
-          <Icons.logo className="h-6 w-auto" />
-          <span className="hidden font-bold whitespace-nowrap md:inline-block">
+        <Link href="/" className="relative mr-6 flex items-center space-x-2">
+          <Icons.logo className="size-6" />
+          <span className="mt-0.5 ml-2.5 hidden font-bold md:inline-block">
             {siteConfig.name}
           </span>
         </Link>
@@ -57,14 +49,14 @@ export function LogoButton() {
       <ContextMenuContent>
         <ContextMenuItem
           className="flex items-center gap-2"
-          onClick={() => copyLogoAsSVG()}
+          onClick={() => copyLogoAsSVG("/icon.svg")}
         >
           <Icons.logo className="size-4" />
           <span>Copy Logo as SVG</span>
         </ContextMenuItem>
         <ContextMenuItem
           className="flex items-center gap-2"
-          onClick={() => copyLogoAsPNG()}
+          onClick={() => copyLogoAsPNG("/icon.png")}
         >
           <Icons.logo className="size-4" />
           <span>Copy Logo as PNG</span>
