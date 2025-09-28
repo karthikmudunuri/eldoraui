@@ -85,7 +85,7 @@ export default async function DocPage({ params }: DocPageProps) {
   const { doc, page } = await getDocFromParams({ params })
   const MDX = doc.body
   const neighbours = findNeighbour(source.pageTree, page.url)
-  const links = doc.links
+  // const links = doc.links
 
   return (
     <div
@@ -94,7 +94,9 @@ export default async function DocPage({ params }: DocPageProps) {
     >
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
-        <div className="mx-auto flex w-full max-w-3xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+        <div
+          className={`mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300 ${doc.toc !== false ? "max-w-3xl" : "max-w-5xl"}`}
+        >
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <div className="flex items-start justify-between">
@@ -172,17 +174,36 @@ export default async function DocPage({ params }: DocPageProps) {
           )}
         </div>{" "}
       </div>
-      <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-84 flex-col gap-4 overflow-hidden overscroll-none xl:flex">
-        <div className="h-(--top-spacing) shrink-0" />
-        {doc.toc?.length ? (
-          <div className="no-scrollbar overflow-y-auto px-8">
-            <DocsTableOfContents toc={doc.toc} />
-            <Contribute page={page} />
-            <div className="h-8" />
-            <SidebarCTA />
-          </div>
-        ) : null}
-      </div>
+      {doc.toc !== false && (
+        <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-84 flex-col gap-4 overflow-hidden overscroll-none xl:flex">
+          <div className="h-(--top-spacing) shrink-0" />
+          {doc.toc &&
+          typeof doc.toc === "object" &&
+          "length" in doc.toc &&
+          (
+            doc.toc as Array<{
+              title?: React.ReactNode
+              url: string
+              depth: number
+            }>
+          ).length ? (
+            <div className="no-scrollbar overflow-y-auto px-8">
+              <DocsTableOfContents
+                toc={
+                  doc.toc as Array<{
+                    title?: React.ReactNode
+                    url: string
+                    depth: number
+                  }>
+                }
+              />
+              <Contribute page={page} />
+              <div className="h-8" />
+              <SidebarCTA />
+            </div>
+          ) : null}
+        </div>
+      )}
     </div>
   )
 }
