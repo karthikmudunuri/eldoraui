@@ -95,6 +95,12 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Animated Badge",
+          href: "/docs/components/animated-badge",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Cobe Globe",
           href: "/docs/components/cobe-globe",
           items: [],

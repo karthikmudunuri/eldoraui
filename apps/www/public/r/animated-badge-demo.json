@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-badge-demo",
+  "type": "registry:example",
+  "title": "animated-badge-demo",
+  "description": "Example showing a animated-badge-demo component.",
+  "registryDependencies": [
+    "@eldoraui/animated-badge"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-badge-demo.tsx",
+      "content": "import AnimatedBadge from \"@/registry/eldoraui/animated-badge\"\n\nexport function AnimatedBadgeDemo() {\n  return (\n    <div className=\"relative\" suppressHydrationWarning>\n      <AnimatedBadge\n        text=\"Introducing Eldora ui\"\n        color=\"#e879f9\"\n        href=\"/docs/components/animated-badge\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

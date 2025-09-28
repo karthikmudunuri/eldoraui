@@ -6,6 +6,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 ## Components
 
+- [animated-badge](https://eldoraui.site/docs/components/animated-badge): An animated badge component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
@@ -28,6 +29,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [cobe-globe-demo-4](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-4.tsx): Example usage
 - [cobe-globe-demo-5](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-5.tsx): Example usage
 - [github-inline-comments-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/github-inline-comments-demo.tsx): Example usage
+- [animated-badge-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-badge-demo.tsx): Example usage
 
 ## Optional
 

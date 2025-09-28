@@ -97,4 +97,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-badge",
+    type: "registry:ui",
+    title: "animated-badge",
+    description: "An animated badge component.",
+    dependencies: ["motion", "lucide-react"],
+    files: [
+      {
+        path: "eldoraui/animated-badge.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

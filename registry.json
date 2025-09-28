@@ -124,6 +124,22 @@
       ]
     },
     {
+      "name": "animated-badge",
+      "type": "registry:ui",
+      "title": "animated-badge",
+      "description": "An animated badge component.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/animated-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -299,6 +315,21 @@
       "files": [
         {
           "path": "registry/example/github-inline-comments-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-badge-demo",
+      "type": "registry:example",
+      "title": "animated-badge-demo",
+      "description": "Example showing a animated-badge-demo component.",
+      "registryDependencies": [
+        "@eldoraui/animated-badge"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-badge-demo.tsx",
           "type": "registry:example"
         }
       ]

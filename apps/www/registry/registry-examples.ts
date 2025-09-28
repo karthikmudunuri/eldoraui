@@ -157,4 +157,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-badge-demo",
+    type: "registry:example",
+    title: "animated-badge-demo",
+    description: "Example showing a animated-badge-demo component.",
+    registryDependencies: ["@eldoraui/animated-badge"],
+    files: [
+      {
+        path: "example/animated-badge-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

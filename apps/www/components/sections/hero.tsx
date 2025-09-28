@@ -1,3 +1,4 @@
+import { url } from "inspector"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
@@ -6,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { TechStack } from "@/components/tech-stack"
+import AnimatedBadge from "@/registry/eldoraui/animated-badge"
 
 export function Hero() {
   const pages = source.getPages() as Array<{
@@ -28,20 +30,17 @@ export function Hero() {
         <div className="z-10 flex flex-col">
           <div className="mt-10 grid grid-cols-1 md:mt-20">
             <div className="flex flex-col items-start gap-6 px-7 pb-8 text-center md:items-center md:px-10">
-              <Link
-                href={page?.url ?? ""}
-                className={cn(
-                  buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                  }),
-                  "rounded-full"
-                )}
+              <div
+                className="flex w-full justify-center"
+                suppressHydrationWarning
               >
-                🎉 <Separator className="mx-2 h-4" orientation="vertical" />
-                Introducing {pageTitle}
-                <ChevronRight className="text-muted-foreground ml-1 size-4" />
-              </Link>
+                {/* fallback to page.title and page.url if available */}
+                <AnimatedBadge
+                  text={`Introducing ${pageTitle}`}
+                  color="#e879f9"
+                  href={page?.url ?? ""}
+                />
+              </div>
               <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
                 <h1
                   className={cn(

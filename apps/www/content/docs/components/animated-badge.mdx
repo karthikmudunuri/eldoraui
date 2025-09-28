@@ -1,0 +1,51 @@
+---
+title: Animated Badge
+date: 2025-01-27
+description: An animated badge component with customizable text, color, and optional link functionality featuring a pulsing dot and smooth entrance animations.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animated-badge-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/animated-badge" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/animated-badge.tsx`
+      <ComponentSource name="animated-badge" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import AnimatedBadge from "@/components/eldoraui/animated-badge"
+```
+
+```tsx showLineNumbers
+<AnimatedBadge
+  text="Introducing Eldora ui"
+  color="#e879f9"
+  href="/docs/components/animated-badge"
+/>
+```
+
+## Props
+
+| Prop    | Type     | Default                  | Description                                      |
+| ------- | -------- | ------------------------ | ------------------------------------------------ |
+| `text`  | `string` | `"Introducing Eldoraui"` | The text content to display in the badge         |
+| `color` | `string` | `"#e879f9"`              | Hex color or CSS color value for the badge theme |
+| `href`  | `string` | `-`                      | Optional link URL to make the badge clickable    |
