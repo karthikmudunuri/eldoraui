@@ -4,9 +4,7 @@
   "envMode": "strict",
   "globalEnv": [
     "NODE_ENV",
-    "NEXT_PUBLIC_POSTHOG_API_KEY",
-    "BLOG_WEBHOOK_ACCESS_TOKEN",
-    "GITHUB_TOKEN"
+    "NEXT_PUBLIC_POSTHOG_API_KEY"
   ],
   "tasks": {
     "build": {
