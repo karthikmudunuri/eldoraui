@@ -41,3 +41,25 @@ npx shadcn@latest add "https://eldoraui.site/r/safari-browser"
 </TabsContent>
 
 </Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Safari } from "@/components/ui/safari-browser"
+```
+
+```tsx showLineNumbers
+<Safari 
+  url="eldoraui.site"
+  src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
+/>
+```
+
+## Props
+
+| Prop     | Type     | Default | Description                        |
+| -------- | -------- | ------- | ---------------------------------- |
+| `url`    | `string` | `-`     | The URL to display in the address bar |
+| `src`    | `string` | `-`     | The source of the image to display |
+| `width`  | `number` | `1203`  | The width of the Safari window     |
+| `height` | `number` | `753`   | The height of the Safari window    |
