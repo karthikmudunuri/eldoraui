@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/cobe-globe-demo-4.tsx",
-      "content": "\"use client\"\n\nimport { Cobe } from \"@/registry/eldoraui/cobe-globe\"\n\nexport function CobeGlobeDemo4() {\n  const customLocations = [\n    { name: \"Hyderabad,India\", emoji: \"🇮🇳\" },\n    { name: \"New York,USA\", emoji: \"🇺🇸\" },\n    { name: \"California\", emoji: \"🇺🇸\" },\n    { name: \"Paris\", emoji: \"🇫🇷\" },\n    { name: \"London\", emoji: \"🇬🇧\" },\n  ]\n\n  return (\n    <div className=\"bg-background relative z-10 h-[700px] w-full overflow-hidden rounded-lg border\">\n      <Cobe variant=\"rotate-to-location\" locations={customLocations} />\n    </div>\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { Cobe } from \"@/registry/eldoraui/cobe-globe\"\n\nexport function CobeGlobeDemo4() {\n  const customLocations = [\n    { name: \"Hyderabad,India\", emoji: \"🇮🇳\" },\n    { name: \"New York,USA\", emoji: \"🇺🇸\" },\n    { name: \"California\", emoji: \"🇺🇸\" },\n    { name: \"Paris\", emoji: \"🇫🇷\" },\n    { name: \"London\", emoji: \"🇬🇧\" },\n  ]\n\n  return (\n    <div className=\"bg-background relative z-10 h-[400px] w-full overflow-hidden rounded-lg border sm:h-[600px] md:h-[650px]\">\n      <Cobe variant=\"rotate-to-location\" locations={customLocations} />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

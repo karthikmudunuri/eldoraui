@@ -12,7 +12,7 @@ export function CobeGlobeDemo4() {
   ]
 
   return (
-    <div className="bg-background relative z-10 h-[700px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[400px] w-full overflow-hidden rounded-lg border sm:h-[600px] md:h-[650px]">
       <Cobe variant="rotate-to-location" locations={customLocations} />
     </div>
   )

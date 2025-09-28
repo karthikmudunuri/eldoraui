@@ -1165,7 +1165,7 @@ import { Cobe } from "@/registry/eldoraui/cobe-globe"
 
 export function CobeGlobeDemo() {
   return (
-    <div className="bg-background relative z-10 h-[600px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[300px] sm:h-[550px] md:h-[600px] w-full overflow-hidden rounded-lg border">
       <Cobe variant="default" />
     </div>
   )
@@ -1182,7 +1182,7 @@ import { Cobe } from "@/registry/eldoraui/cobe-globe"
 
 export function CobeGlobeDemo2() {
   return (
-    <div className="bg-background relative z-10 h-[600px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[300px] sm:h-[550px] md:h-[600px] w-full overflow-hidden rounded-lg border">
       <Cobe variant="draggable" />
     </div>
   )
@@ -1199,7 +1199,7 @@ import { Cobe } from "@/registry/eldoraui/cobe-globe"
 
 export function CobeGlobeDemo3() {
   return (
-    <div className="bg-background relative z-10 h-[600px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[300px] sm:h-[550px] md:h-[600px] w-full overflow-hidden rounded-lg border">
       <Cobe variant="auto-draggable" />
     </div>
   )
@@ -1224,7 +1224,7 @@ export function CobeGlobeDemo4() {
   ]
 
   return (
-    <div className="bg-background relative z-10 h-[700px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[400px] sm:h-[600px] md:h-[650px] w-full overflow-hidden rounded-lg border">
       <Cobe variant="rotate-to-location" locations={customLocations} />
     </div>
   )
@@ -1241,7 +1241,7 @@ import { Cobe } from "@/registry/eldoraui/cobe-globe"
 
 export function CobeGlobeDemo5() {
   return (
-    <div className="bg-background relative z-10 h-[200px] w-full overflow-hidden rounded-lg border">
+    <div className="bg-background relative z-10 h-[100px] sm:md:h-[200px] w-full overflow-hidden rounded-lg border">
       <Cobe variant="scaled" />
     </div>
   )
