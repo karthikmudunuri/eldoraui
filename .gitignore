@@ -42,3 +42,6 @@ next-env.d.ts
 
 # turbo cache
 .turbo
+
+# cursor rules
+.cursorrules
