@@ -79,4 +79,69 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "cobe-globe-demo",
+    type: "registry:example",
+    title: "cobe-globe-demo",
+    description: "Example showing a cobe-globe-demo component.",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [
+      {
+        path: "example/cobe-globe-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "cobe-globe-demo-2",
+    type: "registry:example",
+    title: "cobe-globe-demo-2",
+    description: "Example showing a cobe-globe-demo-2 component.",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [
+      {
+        path: "example/cobe-globe-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "cobe-globe-demo-3",
+    type: "registry:example",
+    title: "cobe-globe-demo-3",
+    description: "Example showing a cobe-globe-demo-3 component.",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [
+      {
+        path: "example/cobe-globe-demo-3.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "cobe-globe-demo-4",
+    type: "registry:example",
+    title: "cobe-globe-demo-4",
+    description: "Example showing a cobe-globe-demo-4 component.",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [
+      {
+        path: "example/cobe-globe-demo-4.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "cobe-globe-demo-5",
+    type: "registry:example",
+    title: "cobe-globe-demo-5",
+    description: "Example showing a cobe-globe-demo-5 component.",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [
+      {
+        path: "example/cobe-globe-demo-5.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

@@ -7,6 +7,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 ## Components
 
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
+- [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
@@ -20,6 +21,11 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [ipad-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/ipad-demo.tsx): Example usage
 - [browser-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/browser-demo.tsx): Example usage
 - [browser-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/browser-demo-2.tsx): Example usage
+- [cobe-globe-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo.tsx): Example usage
+- [cobe-globe-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-2.tsx): Example usage
+- [cobe-globe-demo-3](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-3.tsx): Example usage
+- [cobe-globe-demo-4](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-4.tsx): Example usage
+- [cobe-globe-demo-5](https://github.com/karthikmudunuri/eldoraui/blob/main/example/cobe-globe-demo-5.tsx): Example usage
 
 ## Optional
 

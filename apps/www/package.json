@@ -69,6 +69,7 @@
     "react-day-picker": "^9.11.0",
     "react-dom": "19.1.1",
     "react-hook-form": "^7.62.0",
+    "react-spring": "^10.0.3",
     "react-tweet": "^3.2.2",
     "rough-notation": "^0.5.1",
     "schema-dts": "^1.1.5",

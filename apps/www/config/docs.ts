@@ -91,5 +91,15 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Components",
+      items: [
+        {
+          title: "Cobe Globe",
+          href: "/docs/components/cobe-globe",
+          items: [],
+        },
+      ],
+    },
   ],
 }

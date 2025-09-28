@@ -61,4 +61,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "cobe-globe",
+    type: "registry:ui",
+    title: "cobe-globe",
+    description: "A cobe globe component.",
+    dependencies: ["react-spring", "cobe"],
+    registryDependencies: ["button", "utils"],
+    files: [
+      {
+        path: "eldoraui/cobe-globe.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

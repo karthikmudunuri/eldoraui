@@ -100,6 +100,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "cobe-globe": {
+    name: "cobe-globe",
+    description: "A cobe globe component.",
+    type: "registry:ui",
+    registryDependencies: ["button","utils"],
+    files: [{
+      path: "registry/eldoraui/cobe-globe.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/cobe-globe.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -197,6 +214,91 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/browser-demo-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cobe-globe-demo": {
+    name: "cobe-globe-demo",
+    description: "Example showing a cobe-globe-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [{
+      path: "registry/example/cobe-globe-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/cobe-globe-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cobe-globe-demo-2": {
+    name: "cobe-globe-demo-2",
+    description: "Example showing a cobe-globe-demo-2 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [{
+      path: "registry/example/cobe-globe-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/cobe-globe-demo-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cobe-globe-demo-3": {
+    name: "cobe-globe-demo-3",
+    description: "Example showing a cobe-globe-demo-3 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [{
+      path: "registry/example/cobe-globe-demo-3.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/cobe-globe-demo-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cobe-globe-demo-4": {
+    name: "cobe-globe-demo-4",
+    description: "Example showing a cobe-globe-demo-4 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [{
+      path: "registry/example/cobe-globe-demo-4.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/cobe-globe-demo-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cobe-globe-demo-5": {
+    name: "cobe-globe-demo-5",
+    description: "Example showing a cobe-globe-demo-5 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/cobe-globe"],
+    files: [{
+      path: "registry/example/cobe-globe-demo-5.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/cobe-globe-demo-5.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

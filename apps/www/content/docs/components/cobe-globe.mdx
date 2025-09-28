@@ -1,0 +1,80 @@
+---
+title: Cobe Globe
+date: 2025-01-27
+description: Interactive 3D globe component with multiple variants including draggable, auto-rotation, and location-based navigation.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="cobe-globe-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/cobe-globe"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/cobe-globe.tsx`
+
+<ComponentSource name="cobe-globe" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Draggable Globe
+
+<ComponentPreview name="cobe-globe-demo-2" />
+
+### Auto-Draggable Globe
+
+<ComponentPreview name="cobe-globe-demo-3" />
+
+### Location-Based Navigation
+
+<ComponentPreview name="cobe-globe-demo-4" />
+
+### Scaled Globe
+
+<ComponentPreview name="cobe-globe-demo-5" />
+
+## Usage
+
+```tsx showLineNumbers
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+```
+
+```tsx showLineNumbers
+<Cobe variant="default" className="h-[600px] w-full" />
+```
+
+## Props
+
+| Prop        | Type                                                                               | Default                                         | Description                                     |
+| ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `variant`   | `"default" \| "draggable" \| "auto-draggable" \| "rotate-to-location" \| "scaled"` | `"default"`                                     | Globe interaction variant                       |
+| `className` | `string`                                                                           | `-`                                             | Additional CSS classes for styling              |
+| `style`     | `React.CSSProperties`                                                              | `-`                                             | Inline styles for the container                 |
+| `locations` | `Location[]`                                                                       | `[{ name: "San Francisco", emoji: "📍" }, ...]` | Custom locations for rotate-to-location variant |
