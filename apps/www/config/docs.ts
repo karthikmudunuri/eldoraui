@@ -63,6 +63,13 @@ export const docsConfig: DocsConfig = {
           title: "Safari Browser",
           href: "/docs/components/safari-browser",
           items: [],
+          label: "New",
+        },
+        {
+          title: "MacBook Pro",
+          href: "/docs/components/macbook-pro",
+          items: [],
+          label: "New",
         },
       ],
     },

@@ -31,6 +31,18 @@
       ]
     },
     {
+      "name": "macbook-pro",
+      "type": "registry:ui",
+      "title": "macbook-pro",
+      "description": "A MacBook Pro SVG component.",
+      "files": [
+        {
+          "path": "registry/eldoraui/macbook-pro.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -41,6 +53,21 @@
       "files": [
         {
           "path": "registry/example/safari-browser-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "macbook-pro-demo",
+      "type": "registry:example",
+      "title": "macbook-pro-demo",
+      "description": "Example showing a macbook-pro-demo component.",
+      "registryDependencies": [
+        "@eldoraui/macbook-pro"
+      ],
+      "files": [
+        {
+          "path": "registry/example/macbook-pro-demo.tsx",
           "type": "registry:example"
         }
       ]

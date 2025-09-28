@@ -1,0 +1,66 @@
+---
+title: MacBook Pro
+date: 2025-09-22
+description: Interactive MacBook Pro mockup component with customizable screen content.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="macbook-pro-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/macbook-pro"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/macbook-pro.tsx`
+
+<ComponentSource name="macbook-pro" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { MacbookPro } from "@/components/ui/macbook-pro"
+```
+
+```tsx showLineNumbers
+<MacbookPro
+  src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
+  width={650}
+  height={400}
+/>
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                      |
+| ----------- | -------- | ------- | ------------------------------------------------ |
+| `src`       | `string` | `-`     | The source of the image to display on the screen |
+| `width`     | `number` | `650`   | The width of the MacBook Pro mockup              |
+| `height`    | `number` | `400`   | The height of the MacBook Pro mockup             |
+| `className` | `string` | `-`     | Additional CSS classes for styling               |
