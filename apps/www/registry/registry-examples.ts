@@ -27,4 +27,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "iphone-17-pro-demo",
+    type: "registry:example",
+    title: "iphone-17-pro-demo",
+    description: "Example showing a iphone-17-pro-demo component.",
+    registryDependencies: ["@eldoraui/iphone-17-pro"],
+    files: [
+      {
+        path: "example/iphone-17-pro-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

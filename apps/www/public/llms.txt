@@ -6,6 +6,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 ## Components
 
+- [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 
@@ -13,6 +14,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 - [safari-browser-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/safari-browser-demo.tsx): Example usage
 - [macbook-pro-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/macbook-pro-demo.tsx): Example usage
+- [iphone-17-pro-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/iphone-17-pro-demo.tsx): Example usage
 
 ## Optional
 

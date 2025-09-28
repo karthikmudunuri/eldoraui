@@ -25,4 +25,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "iphone-17-pro",
+    type: "registry:ui",
+    title: "iphone-17-pro",
+    description: "An iPhone 17 Pro SVG component.",
+    files: [
+      {
+        path: "eldoraui/iphone-17-pro.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

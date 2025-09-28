@@ -49,6 +49,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "iphone-17-pro": {
+    name: "iphone-17-pro",
+    description: "An iPhone 17 Pro SVG component.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/iphone-17-pro.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/iphone-17-pro.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -78,6 +95,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/macbook-pro-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "iphone-17-pro-demo": {
+    name: "iphone-17-pro-demo",
+    description: "Example showing a iphone-17-pro-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/iphone-17-pro"],
+    files: [{
+      path: "registry/example/iphone-17-pro-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/iphone-17-pro-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

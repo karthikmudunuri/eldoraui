@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "iphone-17-pro-demo",
+  "type": "registry:example",
+  "title": "iphone-17-pro-demo",
+  "description": "Example showing a iphone-17-pro-demo component.",
+  "registryDependencies": [
+    "@eldoraui/iphone-17-pro"
+  ],
+  "files": [
+    {
+      "path": "registry/example/iphone-17-pro-demo.tsx",
+      "content": "import { Iphone17Pro } from \"@/registry/eldoraui/iphone-17-pro\"\n\nexport function iPhone17ProDemo() {\n  return (\n    <div className=\"relative\">\n      <Iphone17Pro\n        src=\"https://res.cloudinary.com/eldoraui/image/upload/v1759051266/469059-640_kwga4s.jpg\"\n        className=\"h-80 w-full\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

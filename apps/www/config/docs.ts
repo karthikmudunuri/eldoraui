@@ -71,6 +71,12 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "New",
         },
+        {
+          title: "iPhone 17 Pro",
+          href: "/docs/components/iphone-17-pro",
+          items: [],
+          label: "New",
+        },
       ],
     },
   ],

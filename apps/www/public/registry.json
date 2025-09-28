@@ -43,6 +43,18 @@
       ]
     },
     {
+      "name": "iphone-17-pro",
+      "type": "registry:ui",
+      "title": "iphone-17-pro",
+      "description": "An iPhone 17 Pro SVG component.",
+      "files": [
+        {
+          "path": "registry/eldoraui/iphone-17-pro.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -68,6 +80,21 @@
       "files": [
         {
           "path": "registry/example/macbook-pro-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "iphone-17-pro-demo",
+      "type": "registry:example",
+      "title": "iphone-17-pro-demo",
+      "description": "Example showing a iphone-17-pro-demo component.",
+      "registryDependencies": [
+        "@eldoraui/iphone-17-pro"
+      ],
+      "files": [
+        {
+          "path": "registry/example/iphone-17-pro-demo.tsx",
           "type": "registry:example"
         }
       ]

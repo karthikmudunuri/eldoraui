@@ -1,12 +1,12 @@
 ---
-title: MacBook Pro
-date: 2025-09-22
-description: SVG MacBook Pro frame component with image slot
+title: iPhone 17 Pro
+date: 2025-01-27
+description: iPhone 17 Pro device mockup with rounded corners, notch, and customizable screen image display.
 author: Karthikeyavarma
 published: true
 ---
 
-<ComponentPreview name="macbook-pro-demo" />
+<ComponentPreview name="iphone-17-pro-demo" />
 
 ## Installation
 
@@ -19,7 +19,7 @@ published: true
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://eldoraui.site/r/macbook-pro"
+npx shadcn@latest add "https://eldoraui.site/r/iphone-17-pro"
 ```
 
 </TabsContent>
@@ -30,9 +30,9 @@ npx shadcn@latest add "https://eldoraui.site/r/macbook-pro"
 
 <Step>Copy and paste the following code into your project.</Step>
 
-`components/eldoraui/macbook-pro.tsx`
+`components/eldoraui/iphone-17-pro.tsx`
 
-<ComponentSource name="macbook-pro" />
+<ComponentSource name="iphone-17-pro" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -45,14 +45,15 @@ npx shadcn@latest add "https://eldoraui.site/r/macbook-pro"
 ## Usage
 
 ```tsx showLineNumbers
-import { MacbookPro } from "@/components/eldoraui/macbook-pro"
+import { Iphone17Pro } from "@/components/eldoraui/iphone-17-pro"
 ```
 
 ```tsx showLineNumbers
-<MacbookPro
-  src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
-  width={650}
+<Iphone17Pro
+  src="https://res.cloudinary.com/eldoraui/image/upload/v1759051266/469059-640_kwga4s.jpg"
+  width={200}
   height={400}
+  className="h-80 w-full"
 />
 ```
 
@@ -61,6 +62,6 @@ import { MacbookPro } from "@/components/eldoraui/macbook-pro"
 | Prop        | Type     | Default | Description                                      |
 | ----------- | -------- | ------- | ------------------------------------------------ |
 | `src`       | `string` | `-`     | The source of the image to display on the screen |
-| `width`     | `number` | `650`   | The width of the MacBook Pro mockup              |
-| `height`    | `number` | `400`   | The height of the MacBook Pro mockup             |
+| `width`     | `number` | `200`   | The width of the iPhone 17 Pro mockup            |
+| `height`    | `number` | `400`   | The height of the iPhone 17 Pro mockup           |
 | `className` | `string` | `-`     | Additional CSS classes for styling               |
