@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "browser-demo",
+  "type": "registry:example",
+  "title": "browser-demo",
+  "description": "Example showing a browser-demo component.",
+  "registryDependencies": [
+    "@eldoraui/browser"
+  ],
+  "files": [
+    {
+      "path": "registry/example/browser-demo.tsx",
+      "content": "import { Browser } from \"@/registry/eldoraui/browser\"\n\nexport function BrowserDemo() {\n  return (\n    <div className=\"h-[500px]\">\n      <Browser initialUrl=\"https://www.eldoraui.site\" loadingDuration={1500} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

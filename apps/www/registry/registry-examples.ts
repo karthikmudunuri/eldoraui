@@ -53,4 +53,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "browser-demo",
+    type: "registry:example",
+    title: "browser-demo",
+    description: "Example showing a browser-demo component.",
+    registryDependencies: ["@eldoraui/browser"],
+    files: [
+      {
+        path: "example/browser-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "browser-demo-2",
+    type: "registry:example",
+    title: "browser-demo-2",
+    description: "Example showing a browser-demo-2 component.",
+    registryDependencies: ["@eldoraui/browser"],
+    files: [
+      {
+        path: "example/browser-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

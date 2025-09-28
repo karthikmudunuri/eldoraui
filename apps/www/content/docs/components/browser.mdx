@@ -1,0 +1,105 @@
+---
+title: Browser
+date: 2025-01-27
+description: Fully interactive browser component with tabs, bookmarks, history, downloads, and customizable features.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="browser-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/browser"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/browser.tsx`
+
+<ComponentSource name="browser" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### With Customised Props
+
+<ComponentPreview name="browser-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import { Browser } from "@/components/eldoraui/browser"
+```
+
+```tsx showLineNumbers
+<Browser
+  initialUrl="https://www.eldoraui.site"
+  showWindowControls={true}
+  showBookmarksBar={true}
+  showStatusBar={true}
+  enableTabManagement={true}
+  enableBookmarks={true}
+  enableHistory={true}
+  enableDownloads={true}
+  enableSettings={true}
+  maxTabs={8}
+  simulateLoading={true}
+  loadingDuration={1500}
+/>
+```
+
+## Props
+
+| Prop                  | Type                                                   | Default                   | Description                                    |
+| --------------------- | ------------------------------------------------------ | ------------------------- | ---------------------------------------------- |
+| `image`               | `string`                                               | `"/placeholder.svg"`      | Default image to display in content area       |
+| `initialUrl`          | `string`                                               | `"https://eldoraui.site"` | Initial URL to load in the browser             |
+| `initialTabs`         | `Partial<Tab>[]`                                       | `-`                       | Initial tabs to display                        |
+| `theme`               | `"light" \| "dark" \| "system"`                        | `-`                       | Theme preference for the browser               |
+| `showWindowControls`  | `boolean`                                              | `false`                   | Show macOS-style window controls               |
+| `showBookmarksBar`    | `boolean`                                              | `false`                   | Show bookmarks bar below address bar           |
+| `showStatusBar`       | `boolean`                                              | `true`                    | Show status bar at the bottom                  |
+| `className`           | `string`                                               | `-`                       | Additional CSS classes for styling             |
+| `enableTabManagement` | `boolean`                                              | `false`                   | Enable tab creation, closing, and switching    |
+| `enableBookmarks`     | `boolean`                                              | `true`                    | Enable bookmark functionality                  |
+| `enableHistory`       | `boolean`                                              | `true`                    | Enable browsing history                        |
+| `enableDownloads`     | `boolean`                                              | `true`                    | Enable download simulation                     |
+| `enableSettings`      | `boolean`                                              | `true`                    | Enable settings panel                          |
+| `maxTabs`             | `number`                                               | `10`                      | Maximum number of tabs allowed                 |
+| `customBookmarks`     | `Bookmark[]`                                           | `-`                       | Custom bookmarks to display                    |
+| `customHistory`       | `HistoryItem[]`                                        | `-`                       | Custom history items to display                |
+| `onNavigate`          | `(url: string, tabId: string) => void`                 | `-`                       | Callback when navigating to a new URL          |
+| `onTabCreate`         | `(tab: Tab) => void`                                   | `-`                       | Callback when a new tab is created             |
+| `onTabClose`          | `(tabId: string) => void`                              | `-`                       | Callback when a tab is closed                  |
+| `onTabSwitch`         | `(tabId: string) => void`                              | `-`                       | Callback when switching between tabs           |
+| `onBookmarkToggle`    | `(url: string, isBookmarked: boolean) => void`         | `-`                       | Callback when bookmark is toggled              |
+| `onDownload`          | `(url: string) => void`                                | `-`                       | Callback when download is initiated            |
+| `renderContent`       | `(url: string, isLoading: boolean) => React.ReactNode` | `-`                       | Custom content renderer                        |
+| `customFavicons`      | `Record<string, string>`                               | `-`                       | Custom favicon mappings                        |
+| `openLinksInNewTab`   | `boolean`                                              | `-`                       | Open links in new tabs by default              |
+| `autoFocusAddressBar` | `boolean`                                              | `false`                   | Automatically focus the address bar on mount   |
+| `simulateLoading`     | `boolean`                                              | `true`                    | Simulate page loading states                   |
+| `loadingDuration`     | `number`                                               | `1000`                    | Duration of loading simulation in milliseconds |

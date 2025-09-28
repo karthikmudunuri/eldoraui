@@ -67,6 +67,18 @@
       ]
     },
     {
+      "name": "browser",
+      "type": "registry:ui",
+      "title": "browser",
+      "description": "A browser SVG component.",
+      "files": [
+        {
+          "path": "registry/eldoraui/browser.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -122,6 +134,36 @@
       "files": [
         {
           "path": "registry/example/ipad-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "browser-demo",
+      "type": "registry:example",
+      "title": "browser-demo",
+      "description": "Example showing a browser-demo component.",
+      "registryDependencies": [
+        "@eldoraui/browser"
+      ],
+      "files": [
+        {
+          "path": "registry/example/browser-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "browser-demo-2",
+      "type": "registry:example",
+      "title": "browser-demo-2",
+      "description": "Example showing a browser-demo-2 component.",
+      "registryDependencies": [
+        "@eldoraui/browser"
+      ],
+      "files": [
+        {
+          "path": "registry/example/browser-demo-2.tsx",
           "type": "registry:example"
         }
       ]

@@ -83,6 +83,12 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "New",
         },
+        {
+          title: "Browser",
+          href: "/docs/components/browser",
+          items: [],
+          label: "New",
+        },
       ],
     },
   ],

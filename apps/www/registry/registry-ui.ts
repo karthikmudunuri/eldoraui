@@ -49,4 +49,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "browser",
+    type: "registry:ui",
+    title: "browser",
+    description: "A browser SVG component.",
+    files: [
+      {
+        path: "eldoraui/browser.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]
