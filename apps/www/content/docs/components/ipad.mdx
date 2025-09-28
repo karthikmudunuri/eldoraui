@@ -1,0 +1,67 @@
+---
+title: iPad
+date: 2025-01-27
+description: iPad device mockup with rounded corners, home button, and customizable screen image display.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="ipad-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/ipad"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/ipad.tsx`
+
+<ComponentSource name="ipad" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Ipad } from "@/components/eldoraui/ipad"
+```
+
+```tsx showLineNumbers
+<Ipad
+  src="https://res.cloudinary.com/eldoraui/image/upload/v1758616622/ipad_xgn1qu.jpg"
+  width={520}
+  height={400}
+  className="size-full"
+/>
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                      |
+| ----------- | -------- | ------- | ------------------------------------------------ |
+| `src`       | `string` | `-`     | The source of the image to display on the screen |
+| `width`     | `number` | `520`   | The width of the iPad mockup                     |
+| `height`    | `number` | `400`   | The height of the iPad mockup                    |
+| `className` | `string` | `-`     | Additional CSS classes for styling               |

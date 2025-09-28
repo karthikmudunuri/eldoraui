@@ -55,6 +55,18 @@
       ]
     },
     {
+      "name": "ipad",
+      "type": "registry:ui",
+      "title": "ipad",
+      "description": "An iPad SVG component.",
+      "files": [
+        {
+          "path": "registry/eldoraui/ipad.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -95,6 +107,21 @@
       "files": [
         {
           "path": "registry/example/iphone-17-pro-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ipad-demo",
+      "type": "registry:example",
+      "title": "ipad-demo",
+      "description": "Example showing a ipad-demo component.",
+      "registryDependencies": [
+        "@eldoraui/ipad"
+      ],
+      "files": [
+        {
+          "path": "registry/example/ipad-demo.tsx",
           "type": "registry:example"
         }
       ]

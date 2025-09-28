@@ -77,6 +77,12 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "New",
         },
+        {
+          title: "iPad",
+          href: "/docs/components/ipad",
+          items: [],
+          label: "New",
+        },
       ],
     },
   ],

@@ -37,4 +37,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "ipad",
+    type: "registry:ui",
+    title: "ipad",
+    description: "An iPad SVG component.",
+    files: [
+      {
+        path: "eldoraui/ipad.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

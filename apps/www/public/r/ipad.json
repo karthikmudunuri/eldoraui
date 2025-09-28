@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ipad",
+  "type": "registry:ui",
+  "title": "ipad",
+  "description": "An iPad SVG component.",
+  "files": [
+    {
+      "path": "registry/eldoraui/ipad.tsx",
+      "content": "import type { SVGProps } from \"react\"\n\nexport interface IpadProps extends SVGProps<SVGSVGElement> {\n  width?: number\n  height?: number\n  src?: string\n}\n\nexport function Ipad({ width = 520, height = 400, src, ...props }: IpadProps) {\n  return (\n    <svg\n      width={width}\n      height={height}\n      viewBox={`0 0 ${width} ${height}`}\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path\n        fill=\"#aaabac\"\n        d=\"M479.04,14.14H88.14v-.59c0-.16-.13-.3-.3-.3h-16.7c-.16,0-.3.13-.3.3v.59h-3.46v-.59c0-.16-.13-.3-.3-.3h-16.7c-.16,0-.3.13-.3.3v.59h-9.13c-13.4,0-24.27,10.78-24.45,24.14h-.48c-.16,0-.3.13-.3.3v20.07c0,.16.13.3.3.3h.47v303.38c0,13.51,10.95,24.45,24.45,24.45h438.08c13.51,0,24.45-10.95,24.45-24.45V38.6c0-13.51-10.95-24.45-24.45-24.45Z\"\n      />\n      <rect\n        fill=\"#000\"\n        x=\"18.58\"\n        y=\"15.94\"\n        width=\"482.84\"\n        height=\"368.91\"\n        rx=\"23.29\"\n        ry=\"23.29\"\n      />\n      <rect\n        fill=\"currentColor\"\n        x=\"31.37\"\n        y=\"28.47\"\n        width=\"457.25\"\n        height=\"342.87\"\n        rx=\"9.61\"\n        ry=\"9.61\"\n      />\n      {src && (\n        <image\n          href={src}\n          x=\"31.37\"\n          y=\"28.47\"\n          width=\"457.25\"\n          height=\"342.87\"\n          preserveAspectRatio=\"xMidYMid slice\"\n          clipPath=\"url(#roundedCorners)\"\n        />\n      )}\n      <circle fill=\"#0a1054\" cx=\"245.1\" cy=\"22.23\" r=\"2.44\" />\n      <circle fill=\"#333\" cx=\"274.98\" cy=\"22.23\" r=\".88\" />\n      <defs>\n        <clipPath id=\"roundedCorners\">\n          <rect\n            fill=\"#ffffff\"\n            x=\"31.37\"\n            y=\"28.47\"\n            width=\"457.25\"\n            height=\"342.87\"\n            rx=\"9.61\"\n            ry=\"9.61\"\n          />\n        </clipPath>\n      </defs>\n    </svg>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

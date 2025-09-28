@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ipad-demo",
+  "type": "registry:example",
+  "title": "ipad-demo",
+  "description": "Example showing a ipad-demo component.",
+  "registryDependencies": [
+    "@eldoraui/ipad"
+  ],
+  "files": [
+    {
+      "path": "registry/example/ipad-demo.tsx",
+      "content": "import { Ipad } from \"@/registry/eldoraui/ipad\"\n\nexport function iPadDemo() {\n  return (\n    <div className=\"relative\">\n      <Ipad\n        src=\"https://res.cloudinary.com/eldoraui/image/upload/v1758616622/ipad_xgn1qu.jpg\"\n        className=\"size-full\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
