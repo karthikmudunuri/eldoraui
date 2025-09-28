@@ -1840,6 +1840,249 @@ export default function GithubInlineCommentsDemo() {
 
 
 
+===== COMPONENT: grid =====
+Title: grid
+Description: A grid component.
+
+--- file: eldoraui/grid.tsx ---
+"use client"
+
+import { ReactNode, SVGProps } from "react"
+
+import { cn } from "@/lib/utils"
+
+interface GridProps {
+  /** Number of columns in the grid */
+  columns?: number
+  /** Number of rows in the grid */
+  rows?: number
+  /** Height of the grid container */
+  height?: string
+  /** Width of the grid container */
+  width?: string
+  /** Whether to show the plus icons at corners */
+  showPlusIcons?: boolean
+  /** Custom className for the grid container */
+  className?: string
+  /** Children to render inside the grid */
+  children?: ReactNode
+  /** ARIA label for accessibility */
+  "aria-label"?: string
+}
+
+interface PlusIconProps extends SVGProps<SVGSVGElement> {
+  className?: string
+}
+
+/**
+ * A flexible grid component with customizable columns, rows, and optional decorative plus icons.
+ *
+ * @param columns - Number of columns in the grid (default: 9)
+ * @param rows - Number of rows in the grid (default: 2)
+ * @param height - Height of the grid container (default: "h-24")
+ * @param width - Width of the grid container (default: "w-full")
+ * @param showPlusIcons - Whether to show decorative plus icons at corners (default: true)
+ * @param className - Additional CSS classes for the grid container
+ * @param children - Content to render inside the grid
+ * @param aria-label - ARIA label for accessibility
+ */
+export function Grid({
+  columns = 9,
+  rows = 2,
+  height = "h-24",
+  width = "w-full",
+  showPlusIcons = true,
+  className,
+  children,
+  "aria-label": ariaLabel,
+}: GridProps) {
+  const PlusIcon = ({ className: iconClassName, ...rest }: PlusIconProps) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        width={24}
+        height={24}
+        strokeWidth="1"
+        stroke="currentColor"
+        aria-hidden="true"
+        {...rest}
+        className={cn(
+          "absolute size-6 text-black dark:text-white",
+          iconClassName
+        )}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+      </svg>
+    )
+  }
+
+  const totalItems = columns * rows
+
+  // Generate grid items if no children provided
+  const gridItems =
+    children ||
+    Array.from({ length: totalItems }, (_, i) => {
+      const isLastInRow = (i + 1) % columns === 0
+      const isLastRow = i >= totalItems - columns
+
+      return (
+        <span
+          key={i}
+          className={cn(
+            "h-full w-full",
+            !isLastInRow && "border-r",
+            !isLastRow && "border-b"
+          )}
+        />
+      )
+    })
+
+  return (
+    <div
+      className={cn("relative grid border", height, width, className)}
+      style={{
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+      }}
+      role="grid"
+      aria-label={ariaLabel || `Grid with ${columns} columns and ${rows} rows`}
+    >
+      {showPlusIcons && (
+        <>
+          <PlusIcon className="absolute -top-5 -left-5 h-10 w-10" />
+          <PlusIcon className="absolute -right-5 -bottom-5 h-10 w-10" />
+        </>
+      )}
+      {gridItems}
+    </div>
+  )
+}
+
+// Legacy component for backward compatibility
+export function GridDemo() {
+  return <Grid />
+}
+
+export default Grid
+
+
+===== EXAMPLE: grid-demo =====
+Title: grid-demo
+
+--- file: example/grid-demo.tsx ---
+"use client"
+
+import { Grid } from "@/registry/eldoraui/grid"
+
+export default function GridDemo() {
+  return (
+    <div className="bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8">
+      {/* Basic Grid */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Basic Grid</h3>
+        <Grid columns={9} rows={2} height="h-24" />
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: grid-demo-2 =====
+Title: grid-demo-2
+
+--- file: example/grid-demo-2.tsx ---
+"use client"
+
+import { Grid } from "@/registry/eldoraui/grid"
+
+export default function GridDemo2() {
+  return (
+    <div className="bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8">
+      {/* Custom Grid with Different Dimensions */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Custom Grid (6x3)</h3>
+        <Grid columns={6} rows={3} height="h-32" />
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: grid-demo-3 =====
+Title: grid-demo-3
+
+--- file: example/grid-demo-3.tsx ---
+"use client"
+
+import { Grid } from "@/registry/eldoraui/grid"
+
+export default function GridDemo3() {
+  return (
+    <div className="bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8">
+      {/* Grid without Plus Icons */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Grid without Plus Icons</h3>
+        <Grid columns={8} rows={2} height="h-20" showPlusIcons={false} />
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: grid-demo-4 =====
+Title: grid-demo-4
+
+--- file: example/grid-demo-4.tsx ---
+"use client"
+
+import { Grid } from "@/registry/eldoraui/grid"
+
+export default function GridDemo() {
+  return (
+    <div className="bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8">
+      {/* Large Grid */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Large Grid (12x4)</h3>
+        <Grid columns={12} rows={4} height="h-40" />
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: grid-demo-5 =====
+Title: grid-demo-5
+
+--- file: example/grid-demo-5.tsx ---
+"use client"
+
+import { Grid } from "@/registry/eldoraui/grid"
+
+export default function GridDemo() {
+  return (
+    <div className="bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8">
+      {/* Grid with Custom Content */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Grid with Custom Content</h3>
+        <Grid columns={4} rows={2} height="h-32" className="bg-muted/20">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div
+              key={i}
+              className="text-muted-foreground flex items-center justify-center border-r border-b text-sm font-medium"
+            >
+              {i + 1}
+            </div>
+          ))}
+        </Grid>
+      </div>
+    </div>
+  )
+}
+
+
+
 ===== COMPONENT: ipad =====
 Title: ipad
 Description: An iPad SVG component.

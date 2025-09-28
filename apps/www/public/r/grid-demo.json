@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "grid-demo",
+  "type": "registry:example",
+  "title": "grid-demo",
+  "description": "Example showing a grid-demo component.",
+  "registryDependencies": [
+    "@eldoraui/grid"
+  ],
+  "files": [
+    {
+      "path": "registry/example/grid-demo.tsx",
+      "content": "\"use client\"\n\nimport { Grid } from \"@/registry/eldoraui/grid\"\n\nexport default function GridDemo() {\n  return (\n    <div className=\"bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8\">\n      {/* Basic Grid */}\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-semibold\">Basic Grid</h3>\n        <Grid columns={9} rows={2} height=\"h-24\" />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

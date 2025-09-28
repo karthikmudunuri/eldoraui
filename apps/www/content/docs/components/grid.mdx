@@ -1,0 +1,74 @@
+---
+title: Grid
+date: 2025-01-27
+description: A flexible grid component with customizable columns, rows, and optional decorative plus icons for creating structured layouts.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="grid-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/grid" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/grid.tsx`
+      <ComponentSource name="grid" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Examples
+
+### Basic Grid
+
+<ComponentPreview name="grid-demo" />
+
+### Custom Dimensions
+
+<ComponentPreview name="grid-demo-2" />
+
+### Without Plus Icons
+
+<ComponentPreview name="grid-demo-3" />
+
+### Large Grid
+
+<ComponentPreview name="grid-demo-4" />
+
+### Custom Content
+
+<ComponentPreview name="grid-demo-5" />
+
+## Usage
+
+```tsx showLineNumbers
+import { Grid } from "@/components/eldoraui/grid"
+```
+
+```tsx showLineNumbers
+<Grid columns={9} rows={2} height="h-24" showPlusIcons={true} />
+```
+
+## Props
+
+| Prop            | Type        | Default    | Description                                      |
+| --------------- | ----------- | ---------- | ------------------------------------------------ |
+| `columns`       | `number`    | `9`        | Number of columns in the grid                    |
+| `rows`          | `number`    | `2`        | Number of rows in the grid                       |
+| `height`        | `string`    | `"h-24"`   | Height of the grid container                     |
+| `width`         | `string`    | `"w-full"` | Width of the grid container                      |
+| `showPlusIcons` | `boolean`   | `true`     | Whether to show decorative plus icons at corners |
+| `className`     | `string`    | `-`        | Additional CSS classes for the grid container    |
+| `children`      | `ReactNode` | `-`        | Custom content to render inside the grid         |
+| `aria-label`    | `string`    | `-`        | ARIA label for accessibility                     |

@@ -110,4 +110,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "grid",
+    type: "registry:ui",
+    title: "grid",
+    description: "A grid component.",
+    dependencies: ["react"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/grid.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

@@ -151,6 +151,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "grid": {
+    name: "grid",
+    description: "A grid component.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/eldoraui/grid.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/grid.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -367,6 +384,91 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-badge-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "grid-demo": {
+    name: "grid-demo",
+    description: "Example showing a grid-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [{
+      path: "registry/example/grid-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/grid-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "grid-demo-2": {
+    name: "grid-demo-2",
+    description: "Example showing a grid-demo-2 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [{
+      path: "registry/example/grid-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/grid-demo-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "grid-demo-3": {
+    name: "grid-demo-3",
+    description: "Example showing a grid-demo-3 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [{
+      path: "registry/example/grid-demo-3.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/grid-demo-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "grid-demo-4": {
+    name: "grid-demo-4",
+    description: "Example showing a grid-demo-4 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [{
+      path: "registry/example/grid-demo-4.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/grid-demo-4.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "grid-demo-5": {
+    name: "grid-demo-5",
+    description: "Example showing a grid-demo-5 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [{
+      path: "registry/example/grid-demo-5.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/grid-demo-5.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

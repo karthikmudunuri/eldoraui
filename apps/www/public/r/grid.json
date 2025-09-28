@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "grid",
+  "type": "registry:ui",
+  "title": "grid",
+  "description": "A grid component.",
+  "dependencies": [
+    "react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/grid.tsx",
+      "content": "\"use client\"\n\nimport { ReactNode, SVGProps } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface GridProps {\n  /** Number of columns in the grid */\n  columns?: number\n  /** Number of rows in the grid */\n  rows?: number\n  /** Height of the grid container */\n  height?: string\n  /** Width of the grid container */\n  width?: string\n  /** Whether to show the plus icons at corners */\n  showPlusIcons?: boolean\n  /** Custom className for the grid container */\n  className?: string\n  /** Children to render inside the grid */\n  children?: ReactNode\n  /** ARIA label for accessibility */\n  \"aria-label\"?: string\n}\n\ninterface PlusIconProps extends SVGProps<SVGSVGElement> {\n  className?: string\n}\n\n/**\n * A flexible grid component with customizable columns, rows, and optional decorative plus icons.\n *\n * @param columns - Number of columns in the grid (default: 9)\n * @param rows - Number of rows in the grid (default: 2)\n * @param height - Height of the grid container (default: \"h-24\")\n * @param width - Width of the grid container (default: \"w-full\")\n * @param showPlusIcons - Whether to show decorative plus icons at corners (default: true)\n * @param className - Additional CSS classes for the grid container\n * @param children - Content to render inside the grid\n * @param aria-label - ARIA label for accessibility\n */\nexport function Grid({\n  columns = 9,\n  rows = 2,\n  height = \"h-24\",\n  width = \"w-full\",\n  showPlusIcons = true,\n  className,\n  children,\n  \"aria-label\": ariaLabel,\n}: GridProps) {\n  const PlusIcon = ({ className: iconClassName, ...rest }: PlusIconProps) => {\n    return (\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        fill=\"none\"\n        viewBox=\"0 0 24 24\"\n        width={24}\n        height={24}\n        strokeWidth=\"1\"\n        stroke=\"currentColor\"\n        aria-hidden=\"true\"\n        {...rest}\n        className={cn(\n          \"absolute size-6 text-black dark:text-white\",\n          iconClassName\n        )}\n      >\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 6v12m6-6H6\" />\n      </svg>\n    )\n  }\n\n  const totalItems = columns * rows\n\n  // Generate grid items if no children provided\n  const gridItems =\n    children ||\n    Array.from({ length: totalItems }, (_, i) => {\n      const isLastInRow = (i + 1) % columns === 0\n      const isLastRow = i >= totalItems - columns\n\n      return (\n        <span\n          key={i}\n          className={cn(\n            \"h-full w-full\",\n            !isLastInRow && \"border-r\",\n            !isLastRow && \"border-b\"\n          )}\n        />\n      )\n    })\n\n  return (\n    <div\n      className={cn(\"relative grid border\", height, width, className)}\n      style={{\n        gridTemplateColumns: `repeat(${columns}, 1fr)`,\n        gridTemplateRows: `repeat(${rows}, 1fr)`,\n      }}\n      role=\"grid\"\n      aria-label={ariaLabel || `Grid with ${columns} columns and ${rows} rows`}\n    >\n      {showPlusIcons && (\n        <>\n          <PlusIcon className=\"absolute -top-5 -left-5 h-10 w-10\" />\n          <PlusIcon className=\"absolute -right-5 -bottom-5 h-10 w-10\" />\n        </>\n      )}\n      {gridItems}\n    </div>\n  )\n}\n\n// Legacy component for backward compatibility\nexport function GridDemo() {\n  return <Grid />\n}\n\nexport default Grid\n",
+      "type": "registry:ui"
+    }
+  ]
+}

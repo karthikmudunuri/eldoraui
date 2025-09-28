@@ -101,6 +101,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Grid",
+          href: "/docs/components/grid",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Cobe Globe",
           href: "/docs/components/cobe-globe",
           items: [],

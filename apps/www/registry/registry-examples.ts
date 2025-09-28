@@ -170,4 +170,69 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "grid-demo",
+    type: "registry:example",
+    title: "grid-demo",
+    description: "Example showing a grid-demo component.",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [
+      {
+        path: "example/grid-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "grid-demo-2",
+    type: "registry:example",
+    title: "grid-demo-2",
+    description: "Example showing a grid-demo-2 component.",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [
+      {
+        path: "example/grid-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "grid-demo-3",
+    type: "registry:example",
+    title: "grid-demo-3",
+    description: "Example showing a grid-demo-3 component.",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [
+      {
+        path: "example/grid-demo-3.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "grid-demo-4",
+    type: "registry:example",
+    title: "grid-demo-4",
+    description: "Example showing a grid-demo-4 component.",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [
+      {
+        path: "example/grid-demo-4.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "grid-demo-5",
+    type: "registry:example",
+    title: "grid-demo-5",
+    description: "Example showing a grid-demo-5 component.",
+    registryDependencies: ["@eldoraui/grid"],
+    files: [
+      {
+        path: "example/grid-demo-5.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

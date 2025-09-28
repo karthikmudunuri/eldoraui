@@ -1,11 +1,8 @@
-import { url } from "inspector"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
-
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import { TechStack } from "@/components/tech-stack"
 import AnimatedBadge from "@/registry/eldoraui/animated-badge"
 
