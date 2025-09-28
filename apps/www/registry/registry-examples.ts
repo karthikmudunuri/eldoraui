@@ -144,4 +144,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "github-inline-comments-demo",
+    type: "registry:example",
+    title: "github-inline-comments-demo",
+    description: "Example showing a github-inline-comments-demo component.",
+    registryDependencies: ["@eldoraui/github-inline-comments"],
+    files: [
+      {
+        path: "example/github-inline-comments-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

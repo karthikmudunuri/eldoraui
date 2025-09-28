@@ -99,6 +99,12 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/cobe-globe",
           items: [],
         },
+        {
+          title: "Github Inline Comments",
+          href: "/docs/components/github-inline-comments",
+          items: [],
+          label: "New",
+        },
       ],
     },
   ],

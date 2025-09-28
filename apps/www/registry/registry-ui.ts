@@ -75,4 +75,26 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "github-inline-comments",
+    type: "registry:ui",
+    title: "github-inline-comments",
+    description: "A github inline comments component.",
+    registryDependencies: [
+      "button",
+      "utils",
+      "tooltip",
+      "badge",
+      "textarea",
+      "separator",
+      "avatar",
+    ],
+    dependencies: ["react", "lucide-react"],
+    files: [
+      {
+        path: "eldoraui/github-inline-comments.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

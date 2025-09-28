@@ -99,6 +99,31 @@
       ]
     },
     {
+      "name": "github-inline-comments",
+      "type": "registry:ui",
+      "title": "github-inline-comments",
+      "description": "A github inline comments component.",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils",
+        "tooltip",
+        "badge",
+        "textarea",
+        "separator",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/github-inline-comments.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -259,6 +284,21 @@
       "files": [
         {
           "path": "registry/example/cobe-globe-demo-5.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "github-inline-comments-demo",
+      "type": "registry:example",
+      "title": "github-inline-comments-demo",
+      "description": "Example showing a github-inline-comments-demo component.",
+      "registryDependencies": [
+        "@eldoraui/github-inline-comments"
+      ],
+      "files": [
+        {
+          "path": "registry/example/github-inline-comments-demo.tsx",
           "type": "registry:example"
         }
       ]

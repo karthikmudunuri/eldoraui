@@ -1,0 +1,77 @@
+---
+title: GitHub Inline Comments
+date: 2025-01-27
+description: GitHub-style inline diff comments component with hover-to-reveal comment buttons and interactive discussion threads.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="github-inline-comments-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/github-inline-comments"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/github-inline-comments.tsx`
+
+<ComponentSource name="github-inline-comments" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import GithubInlineComments from "@/components/eldoraui/github-inline-comments"
+```
+
+```tsx showLineNumbers
+<GithubInlineComments
+  fileName="src/server.ts"
+  diff={[
+    { kind: "hunk", content: "@@ -10,8 +10,10 @@" },
+    { kind: "context", old: 10, new: 10, content: "export async function getUserName(id: string) },
+    { kind: "del", old: 12, new: null, content: "  const user = cache.get(id)" },
+    { kind: "add", old: null, new: 12, content: "  let user = cache.get(id)" },
+  ]}
+/>
+```
+
+## Props
+
+| Prop       | Type              | Default | Description                      |
+| ---------- | ----------------- | ------- | -------------------------------- |
+| `diff`     | `readonly Line[]` | `-`     | Array of diff lines to display   |
+| `fileName` | `string`          | `-`     | Name of the file being displayed |
+
+## Line Types
+
+| Type      | Description                                   |
+| --------- | --------------------------------------------- |
+| `hunk`    | Diff hunk header (e.g., `@@ -10,8 +10,10 @@`) |
+| `context` | Unchanged line with old and new line numbers  |
+| `add`     | Added line (new line number, old is null)     |
+| `del`     | Deleted line (old line number, new is null)   |
