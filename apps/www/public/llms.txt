@@ -8,6 +8,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 - [animated-badge](https://eldoraui.site/docs/components/animated-badge): An animated badge component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
+- [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
@@ -36,6 +37,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [grid-demo-3](https://github.com/karthikmudunuri/eldoraui/blob/main/example/grid-demo-3.tsx): Example usage
 - [grid-demo-4](https://github.com/karthikmudunuri/eldoraui/blob/main/example/grid-demo-4.tsx): Example usage
 - [grid-demo-5](https://github.com/karthikmudunuri/eldoraui/blob/main/example/grid-demo-5.tsx): Example usage
+- [clerk-otp-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/clerk-otp-demo.tsx): Example usage
+- [clerk-otp-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/clerk-otp-demo-2.tsx): Example usage
 
 ## Optional
 

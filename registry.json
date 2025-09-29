@@ -158,6 +158,25 @@
       ]
     },
     {
+      "name": "clerk-otp",
+      "type": "registry:ui",
+      "title": "clerk-otp",
+      "description": "A clerk OTP component.",
+      "dependencies": [
+        "react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/clerk-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -423,6 +442,36 @@
       "files": [
         {
           "path": "registry/example/grid-demo-5.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "clerk-otp-demo",
+      "type": "registry:example",
+      "title": "clerk-otp-demo",
+      "description": "Example showing a clerk-otp-demo component.",
+      "registryDependencies": [
+        "@eldoraui/clerk-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/example/clerk-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "clerk-otp-demo-2",
+      "type": "registry:example",
+      "title": "clerk-otp-demo-2",
+      "description": "Example showing a clerk-otp-demo-2 component.",
+      "registryDependencies": [
+        "@eldoraui/clerk-otp"
+      ],
+      "files": [
+        {
+          "path": "registry/example/clerk-otp-demo-2.tsx",
           "type": "registry:example"
         }
       ]

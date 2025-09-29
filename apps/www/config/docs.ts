@@ -101,6 +101,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Clerk OTP",
+          href: "/docs/components/clerk-otp",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Grid",
           href: "/docs/components/grid",
           items: [],

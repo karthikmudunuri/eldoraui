@@ -168,6 +168,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "clerk-otp": {
+    name: "clerk-otp",
+    description: "A clerk OTP component.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/eldoraui/clerk-otp.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/clerk-otp.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -469,6 +486,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo-5.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "clerk-otp-demo": {
+    name: "clerk-otp-demo",
+    description: "Example showing a clerk-otp-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/clerk-otp"],
+    files: [{
+      path: "registry/example/clerk-otp-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/clerk-otp-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "clerk-otp-demo-2": {
+    name: "clerk-otp-demo-2",
+    description: "Example showing a clerk-otp-demo-2 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/clerk-otp"],
+    files: [{
+      path: "registry/example/clerk-otp-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/clerk-otp-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

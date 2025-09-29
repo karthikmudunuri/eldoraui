@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clerk-otp-demo-2",
+  "type": "registry:example",
+  "title": "clerk-otp-demo-2",
+  "description": "Example showing a clerk-otp-demo-2 component.",
+  "registryDependencies": [
+    "@eldoraui/clerk-otp"
+  ],
+  "files": [
+    {
+      "path": "registry/example/clerk-otp-demo-2.tsx",
+      "content": "import ClerkOTP from \"@/registry/eldoraui/clerk-otp\"\n\nexport function ClerkOTPDemo2() {\n  return (\n    <ClerkOTP\n      delay={3500} // Time interval (in ms) after which the OTP animation resets.\n      cardTitle=\"Multifactor Authentication\"\n      cardDescription=\"Each user's self-serve multifactor settings are enforced automatically during sign-in.\"\n      whileHover={false} // Normal animation behavior\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

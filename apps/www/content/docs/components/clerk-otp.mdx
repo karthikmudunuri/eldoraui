@@ -1,0 +1,70 @@
+---
+title: Clerk OTP
+date: 2025-09-27
+description: An animated OTP (One-Time Password) input component with random digits, customizable delay, hover control, and card customization for authentication flows.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="clerk-otp-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/clerk-otp" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/clerk-otp.tsx`
+      <ComponentSource name="clerk-otp" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Examples
+
+### Without Hover Animation
+
+<ComponentPreview name="clerk-otp-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import ClerkOTP from "@/components/eldoraui/clerk-otp"
+```
+
+```tsx showLineNumbers
+<ClerkOTP
+  delay={3500}
+  cardTitle="Multifactor Authentication"
+  cardDescription="Each user's self-serve multifactor settings are enforced automatically during sign-in."
+  whileHover={false}
+/>
+```
+
+```tsx showLineNumbers
+<ClerkOTP
+  delay={3500}
+  cardTitle="Hover to Animate"
+  cardDescription="Animation only triggers when hovering over the card."
+  whileHover={true}
+/>
+```
+
+## Props
+
+| Prop              | Type      | Default                                                                                                    | Description                                                |
+| ----------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `delay`           | `number`  | `3500`                                                                                                     | Time interval (in ms) after which the OTP animation resets |
+| `cardTitle`       | `string`  | `"Multifactor Authentication"`                                                                                          | Title displayed at the bottom of the card                  |
+| `cardDescription` | `string`  | `"Each user's self-serve multifactor settings are enforced automatically during sign-in."` | Description text displayed below the title                 |
+| `whileHover`         | `boolean` | `false`                                                                                                    | When true, animations only trigger on hover. When false, animations run continuously |
+
+> This component was inspired by the OTP input animation on [Clerk's official website](https://clerk.com/).

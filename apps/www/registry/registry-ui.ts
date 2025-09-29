@@ -124,4 +124,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "clerk-otp",
+    type: "registry:ui",
+    title: "clerk-otp",
+    description: "A clerk OTP component.",
+    dependencies: ["react", "motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/clerk-otp.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

@@ -235,4 +235,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "clerk-otp-demo",
+    type: "registry:example",
+    title: "clerk-otp-demo",
+    description: "Example showing a clerk-otp-demo component.",
+    registryDependencies: ["@eldoraui/clerk-otp"],
+    files: [
+      {
+        path: "example/clerk-otp-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "clerk-otp-demo-2",
+    type: "registry:example",
+    title: "clerk-otp-demo-2",
+    description: "Example showing a clerk-otp-demo-2 component.",
+    registryDependencies: ["@eldoraui/clerk-otp"],
+    files: [
+      {
+        path: "example/clerk-otp-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]
