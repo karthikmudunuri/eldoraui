@@ -34,7 +34,7 @@ export function Hero() {
                 {/* fallback to page.title and page.url if available */}
                 <AnimatedBadge
                   text={`Introducing ${pageTitle}`}
-                  color="#e879f9"
+                  color="#22d3ee"
                   href={page?.url ?? ""}
                 />
               </div>

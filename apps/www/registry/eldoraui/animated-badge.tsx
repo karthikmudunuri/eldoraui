@@ -29,7 +29,7 @@ function hexToRgba(hexColor: string, alpha: number): string {
 
 const AnimatedBadge = ({
   text = "Introducing Eldoraui",
-  color = "#e879f9",
+  color = "#22d3ee",
   href,
 }: AnimatedBadgeProps) => {
   const content = (

@@ -5,7 +5,7 @@ export function AnimatedBadgeDemo() {
     <div className="relative" suppressHydrationWarning>
       <AnimatedBadge
         text="Introducing Eldora ui"
-        color="#e879f9"
+        color="#22d3ee"
         href="/docs/components/animated-badge"
       />
     </div>
