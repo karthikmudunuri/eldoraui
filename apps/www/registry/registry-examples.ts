@@ -261,4 +261,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "integrations-demo",
+    type: "registry:example",
+    title: "integrations-demo",
+    description: "Example showing a integrations-demo component.",
+    registryDependencies: ["@eldoraui/integrations"],
+    files: [
+      {
+        path: "example/integrations-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "integrations-demo-2",
+    type: "registry:example",
+    title: "integrations-demo-2",
+    description: "Example showing a integrations-demo-2 component.",
+    registryDependencies: ["@eldoraui/integrations"],
+    files: [
+      {
+        path: "example/integrations-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

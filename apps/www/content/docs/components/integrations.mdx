@@ -1,0 +1,66 @@
+---
+title: Integrations
+date: 2025-01-27
+description: Animated integrations showcase component with marquee effects and gradient backgrounds.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="integrations-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/integrations" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/integrations.tsx`
+      <ComponentSource name="integrations" />
+      <Step>
+        Also copy and paste the following code for the Marquee dependency.
+      </Step>
+      `components/eldoraui/marquee.tsx`
+      <ComponentSource name="marquee" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Examples
+
+### Background with Content Overlay
+
+<ComponentPreview name="integrations-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import Integrations from "@/components/eldoraui/integrations"
+```
+
+```tsx showLineNumbers
+<Integrations />
+```
+
+## Props
+
+| Prop     | Type | Default | Description                                                                        |
+| -------- | ---- | ------- | ---------------------------------------------------------------------------------- |
+| No props | -    | -       | This component doesn't accept any props. It's a self-contained showcase component. |
+
+## Features
+
+- **Animated Cards**: Each integration card has smooth entrance animations
+- **Marquee Effects**: Multiple marquee rows with different speeds and directions
+- **Gradient Backgrounds**: Beautiful gradient backgrounds for each integration icon
+- **Responsive Design**: Works seamlessly across all device sizes
+- **Dark Mode Support**: Fully compatible with light and dark themes
+- **Random Shuffling**: Integration tiles are randomly shuffled on each render
+- **Smooth Animations**: Powered by Framer Motion for fluid transitions

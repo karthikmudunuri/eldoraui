@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "integrations-demo-2",
+  "type": "registry:example",
+  "title": "integrations-demo-2",
+  "description": "Example showing a integrations-demo-2 component.",
+  "registryDependencies": [
+    "@eldoraui/integrations"
+  ],
+  "files": [
+    {
+      "path": "registry/example/integrations-demo-2.tsx",
+      "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\n\nimport Integrations from \"@/registry/eldoraui/integrations\"\n\nexport function IntegrationsDemo2() {\n  return (\n    <div className=\"bg-background relative h-[600px] w-full overflow-hidden rounded-lg border\">\n      {/* Background Integrations Component */}\n      <div className=\"absolute inset-0 opacity-30\">\n        <Integrations />\n      </div>\n\n      {/* Fading Overlay */}\n      <div className=\"from-background/80 via-background/60 to-background/90 absolute inset-0 bg-gradient-to-b\" />\n\n      {/* Main Content */}\n      <div className=\"relative z-10 flex h-full flex-col items-center justify-center p-8 text-center\">\n        <motion.div\n          initial={{ opacity: 0, y: 20 }}\n          animate={{ opacity: 1, y: 0 }}\n          transition={{ duration: 0.8, ease: \"easeOut\" }}\n          className=\"max-w-2xl space-y-6\"\n        >\n          <h2 className=\"text-foreground text-4xl font-bold tracking-tight\">\n            Seamless Integrations\n          </h2>\n          <p className=\"text-muted-foreground text-lg\">\n            Connect with your favorite tools and services. Our platform\n            integrates with over 100+ applications to streamline your workflow\n            and boost productivity.\n          </p>\n          <div className=\"flex flex-col gap-4 sm:flex-row sm:justify-center\">\n            <motion.button\n              whileHover={{ scale: 1.05 }}\n              whileTap={{ scale: 0.95 }}\n              className=\"bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-3 font-medium transition-colors\"\n            >\n              Explore Integrations\n            </motion.button>\n            <motion.button\n              whileHover={{ scale: 1.05 }}\n              whileTap={{ scale: 0.95 }}\n              className=\"border-border hover:bg-accent rounded-lg border px-6 py-3 font-medium transition-colors\"\n            >\n              View Documentation\n            </motion.button>\n          </div>\n        </motion.div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

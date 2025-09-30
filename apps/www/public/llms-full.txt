@@ -2305,6 +2305,271 @@ export default function GridDemo() {
 
 
 
+===== COMPONENT: integrations =====
+Title: integrations
+Description: An integrations component.
+
+--- file: eldoraui/integrations.tsx ---
+"use client"
+
+import { useEffect, useId, useRef, useState } from "react"
+import {
+  BarChart,
+  File,
+  Globe,
+  HeartHandshake,
+  Rss,
+  Shield,
+} from "lucide-react"
+import { motion, useAnimation, useInView } from "motion/react"
+
+import { cn } from "@/lib/utils"
+import { Marquee } from "@/registry/eldoraui/marquee"
+
+const tiles = [
+  {
+    icon: <HeartHandshake className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <Globe className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <File className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-green-500 via-teal-500 to-emerald-600 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <Shield className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <Rss className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <BarChart className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute top-1/2 left-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-teal-400 opacity-70 blur-[20px]"></div>
+    ),
+  },
+]
+
+function shuffleArray(array: any[]) {
+  let currentIndex = array.length
+  let randomIndex
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    // And swap it with the current element.
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ]
+  }
+  return array
+}
+
+function Card(card: { icon: React.ReactNode; bg: React.ReactNode }) {
+  const id = useId()
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        transition: { delay: Math.random() * 2, ease: "easeOut", duration: 1 },
+      })
+    }
+  }, [controls, inView])
+
+  return (
+    <motion.div
+      key={id}
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={controls}
+      className={cn(
+        "relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4",
+        // light styles
+        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+        // dark styles
+        "transform-gpu dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]"
+      )}
+    >
+      {card.icon}
+      {card.bg}
+    </motion.div>
+  )
+}
+
+export default function Integrations() {
+  const [randomTiles1, setRandomTiles1] = useState<typeof tiles>([])
+  const [randomTiles2, setRandomTiles2] = useState<typeof tiles>([])
+  const [randomTiles3, setRandomTiles3] = useState<typeof tiles>([])
+  const [randomTiles4, setRandomTiles4] = useState<typeof tiles>([])
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Ensures this runs client-side
+      setRandomTiles1(shuffleArray([...tiles]))
+      setRandomTiles2(shuffleArray([...tiles]))
+      setRandomTiles3(shuffleArray([...tiles]))
+      setRandomTiles4(shuffleArray([...tiles]))
+    }
+  }, [])
+
+  return (
+    <section id="cta">
+      <div className="container mx-auto px-4 py-12 md:px-8">
+        <div className="flex w-full flex-col items-center justify-center">
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+            <Marquee
+              reverse
+              className="-delay-[200ms] [--duration:10s]"
+              repeat={5}
+            >
+              {randomTiles1.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <Marquee reverse className="[--duration:25s]" repeat={5}>
+              {randomTiles2.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <Marquee
+              reverse
+              className="-delay-[200ms] [--duration:20s]"
+              repeat={5}
+            >
+              {randomTiles1.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <Marquee reverse className="[--duration:30s]" repeat={5}>
+              {randomTiles2.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <Marquee
+              reverse
+              className="-delay-[200ms] [--duration:20s]"
+              repeat={5}
+            >
+              {randomTiles3.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <Marquee reverse className="[--duration:30s]" repeat={5}>
+              {randomTiles4.map((review, idx) => (
+                <Card key={idx} {...review} />
+              ))}
+            </Marquee>
+            <div className="absolute">
+              <div className="bg-backtround dark:bg-background absolute inset-0 -z-10 rounded-full opacity-40 blur-xl" />
+            </div>
+            <div className="to-backtround dark:to-background absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-70%" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+===== EXAMPLE: integrations-demo =====
+Title: integrations-demo
+
+--- file: example/integrations-demo.tsx ---
+"use client"
+
+import Integrations from "@/registry/eldoraui/integrations"
+
+export function IntegrationsDemo() {
+  return (
+    <div className="bg-background relative z-10 h-[500px] w-full overflow-hidden rounded-lg border">
+      <Integrations />
+    </div>
+  )
+}
+
+
+===== EXAMPLE: integrations-demo-2 =====
+Title: integrations-demo-2
+
+--- file: example/integrations-demo-2.tsx ---
+"use client"
+
+import { motion } from "motion/react"
+
+import Integrations from "@/registry/eldoraui/integrations"
+
+export function IntegrationsDemo2() {
+  return (
+    <div className="bg-background relative h-[600px] w-full overflow-hidden rounded-lg border">
+      {/* Background Integrations Component */}
+      <div className="absolute inset-0 opacity-30">
+        <Integrations />
+      </div>
+
+      {/* Fading Overlay */}
+      <div className="from-background/80 via-background/60 to-background/90 absolute inset-0 bg-gradient-to-b" />
+
+      {/* Main Content */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-2xl space-y-6"
+        >
+          <h2 className="text-foreground text-4xl font-bold tracking-tight">
+            Seamless Integrations
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Connect with your favorite tools and services. Our platform
+            integrates with over 100+ applications to streamline your workflow
+            and boost productivity.
+          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-3 font-medium transition-colors"
+            >
+              Explore Integrations
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="border-border hover:bg-accent rounded-lg border px-6 py-3 font-medium transition-colors"
+            >
+              View Documentation
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
+
+
 ===== COMPONENT: ipad =====
 Title: ipad
 Description: An iPad SVG component.
@@ -2635,6 +2900,65 @@ export function MacbookProDemo() {
         src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
         className="size-full"
       />
+    </div>
+  )
+}
+
+
+
+===== COMPONENT: marquee =====
+Title: marquee
+Description: A performant, customizable marquee (scrolling text/content) component.
+
+--- file: eldoraui/marquee.tsx ---
+import { cn } from "@/lib/utils"
+
+interface MarqueeProps {
+  className?: string
+  reverse?: boolean
+  pauseOnHover?: boolean
+  children?: React.ReactNode
+  vertical?: boolean
+  repeat?: number
+  [key: string]: any
+}
+
+export function Marquee({
+  className,
+  reverse,
+  pauseOnHover = false,
+  children,
+  vertical = false,
+  repeat = 4,
+  ...props
+}: MarqueeProps) {
+  return (
+    <div
+      {...props}
+      className={cn(
+        "group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]",
+        {
+          "flex-row": !vertical,
+          "flex-col": vertical,
+        },
+        className
+      )}
+    >
+      {Array(repeat)
+        .fill(0)
+        .map((_, i) => (
+          <div
+            key={i}
+            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+              "animate-marquee flex-row": !vertical,
+              "animate-marquee-vertical flex-col": vertical,
+              "group-hover:[animation-play-state:paused]": pauseOnHover,
+              "[animation-direction:reverse]": reverse,
+            })}
+          >
+            {children}
+          </div>
+        ))}
     </div>
   )
 }

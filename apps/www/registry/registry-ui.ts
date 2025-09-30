@@ -138,4 +138,32 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "marquee",
+    type: "registry:ui",
+    title: "marquee",
+    description:
+      "A performant, customizable marquee (scrolling text/content) component.",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/marquee.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "integrations",
+    type: "registry:ui",
+    title: "integrations",
+    description: "An integrations component.",
+    dependencies: ["react", "motion", "lucide-react"],
+    registryDependencies: ["utils", "marquee"],
+    files: [
+      {
+        path: "eldoraui/integrations.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

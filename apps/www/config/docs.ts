@@ -118,6 +118,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Integrations",
+          href: "/docs/components/integrations",
+          items: [],
+        },
+        {
           title: "Github Inline Comments",
           href: "/docs/components/github-inline-comments",
           items: [],

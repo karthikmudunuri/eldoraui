@@ -12,9 +12,11 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
+- [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
+- [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 
 ## Examples
@@ -39,6 +41,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [grid-demo-5](https://github.com/karthikmudunuri/eldoraui/blob/main/example/grid-demo-5.tsx): Example usage
 - [clerk-otp-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/clerk-otp-demo.tsx): Example usage
 - [clerk-otp-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/clerk-otp-demo-2.tsx): Example usage
+- [integrations-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo.tsx): Example usage
+- [integrations-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo-2.tsx): Example usage
 
 ## Optional
 

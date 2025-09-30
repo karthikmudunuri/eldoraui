@@ -177,6 +177,42 @@
       ]
     },
     {
+      "name": "marquee",
+      "type": "registry:ui",
+      "title": "marquee",
+      "description": "A performant, customizable marquee (scrolling text/content) component.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "integrations",
+      "type": "registry:ui",
+      "title": "integrations",
+      "description": "An integrations component.",
+      "dependencies": [
+        "react",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "marquee"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/integrations.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -472,6 +508,36 @@
       "files": [
         {
           "path": "registry/example/clerk-otp-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "integrations-demo",
+      "type": "registry:example",
+      "title": "integrations-demo",
+      "description": "Example showing a integrations-demo component.",
+      "registryDependencies": [
+        "@eldoraui/integrations"
+      ],
+      "files": [
+        {
+          "path": "registry/example/integrations-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "integrations-demo-2",
+      "type": "registry:example",
+      "title": "integrations-demo-2",
+      "description": "Example showing a integrations-demo-2 component.",
+      "registryDependencies": [
+        "@eldoraui/integrations"
+      ],
+      "files": [
+        {
+          "path": "registry/example/integrations-demo-2.tsx",
           "type": "registry:example"
         }
       ]
