@@ -80,7 +80,7 @@ export async function generateMetadata({
       title: doc.title,
       description: doc.description,
       images: [ogUrl.toString()],
-      creator: "@dillionverma",
+      creator: "@karthikmudunuri",
     },
   }
 }
@@ -145,7 +145,7 @@ export default async function DocPage({ params }: DocPageProps) {
     },
     isPartOf: {
       "@type": "CreativeWorkSeries",
-      name: "Magic UI Documentation",
+      name: "Eldora UI Documentation",
       url: absoluteUrl("/docs"),
     },
     wordCount: doc.content ? doc.content.split(/\s+/).length : 0,

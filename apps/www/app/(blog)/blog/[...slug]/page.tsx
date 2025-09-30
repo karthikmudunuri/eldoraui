@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
@@ -136,11 +137,13 @@ export default async function BlogPage({ params }: PageProps) {
           {doc && (
             <div>
               <div className="relative overflow-hidden rounded-xl p-5 md:p-10">
-                <img
-                  src={doc.image}
-                  alt={doc.title}
-                  className="border-border size-full rounded-xl border object-cover object-left"
-                />
+                {doc.image ? (
+                  <Image
+                    src={doc.image}
+                    alt={doc.title}
+                    className="border-border size-full rounded-xl border object-cover object-left"
+                  />
+                ) : null}
               </div>
               <div className="border-border mx-auto flex flex-col items-center justify-center gap-y-2 border-y p-5">
                 <div className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-y-2">

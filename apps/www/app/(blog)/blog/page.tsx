@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import type { Blog, WithContext } from "schema-dts"
 
@@ -172,7 +173,7 @@ export default async function Page({
                 <Link href={post.url} className="flex h-full flex-col">
                   {post.data?.image && (
                     <div className="aspect-video overflow-hidden">
-                      <img
+                      <Image
                         src={post.data.image}
                         alt={post.data?.title ?? post.url}
                         width={640}
