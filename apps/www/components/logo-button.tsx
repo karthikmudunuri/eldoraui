@@ -39,7 +39,11 @@ export function LogoButton() {
   return (
     <ContextMenu>
       <ContextMenuTrigger asChild>
-        <Link href="/" className="relative mr-6 flex items-center space-x-2">
+        <Link
+          href="/"
+          className="relative mr-6 flex items-center space-x-2"
+          aria-label="Home"
+        >
           <Icons.logo className="size-6" />
           <span className="mt-0.5 ml-2.5 hidden font-bold md:inline-block">
             {siteConfig.name}
