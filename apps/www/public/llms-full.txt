@@ -1374,8 +1374,8 @@ export function Cobe({
       baseColor: [1, 1, 1],
       markerColor:
         variant === "rotate-to-location"
-          ? [251 / 255, 200 / 255, 21 / 255]
-          : [251 / 255, 100 / 255, 21 / 255],
+          ? [34 / 255, 211 / 255, 238 / 255]
+          : [8 / 255, 145 / 255, 178 / 255],
       glowColor: [1.2, 1.2, 1.2],
       markers:
         variant === "rotate-to-location"
