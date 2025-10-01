@@ -54,6 +54,12 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "",
         },
+        {
+          title: "Changelog",
+          href: "/docs/changelog",
+          items: [],
+          label: "New",
+        },
       ],
     },
     {
