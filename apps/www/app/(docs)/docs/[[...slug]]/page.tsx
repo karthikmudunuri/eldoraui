@@ -139,9 +139,9 @@ export default async function DocPage({ params }: DocPageProps) {
       },
     },
     author: {
-      "@type": "Person",
-      name: "Karthik Mudunuri",
-      url: "https://eldoraui.site",
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
     isPartOf: {
       "@type": "CreativeWorkSeries",
@@ -293,9 +293,9 @@ export default async function DocPage({ params }: DocPageProps) {
         </div>
         <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-84 flex-col gap-4 overflow-hidden overscroll-none xl:flex">
           <div className="h-(--top-spacing) shrink-0" />
-          {doc.toc ? (
+          {doc.toc?.length ? (
             <div className="no-scrollbar overflow-y-auto px-8">
-              <DocsTableOfContents toc={[]} />
+              <DocsTableOfContents toc={doc.toc} />
               <Contribute page={page} />
               <div className="h-8" />
               <SidebarCTA />

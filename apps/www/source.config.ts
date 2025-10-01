@@ -47,7 +47,6 @@ export const docs = defineDocs({
       author: z.string(),
       published: z.boolean(),
       video: z.string().optional(),
-      toc: z.boolean().optional().default(true),
       links: z
         .object({
           doc: z.string().optional(),

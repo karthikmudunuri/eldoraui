@@ -111,12 +111,12 @@ const Terminal = ({
         <LocalHost title={hostBarTitle} message={hostMessage} />
       )}
 
-      <pre className="bg-card w-full min-w-[600px] overflow-hidden rounded-xl border text-[13px] shadow-lg">
-        <div className="bg-muted flex flex-row items-center gap-2 border-b px-4 py-2">
+      <pre className="bg-card w-full min-w-[320px] overflow-hidden rounded-xl border text-[11px] shadow-lg sm:min-w-[480px] sm:text-[12px] md:min-w-[600px] md:text-[13px]">
+        <div className="bg-muted flex flex-row items-center gap-2 border-b px-3 py-2 sm:px-4">
           <MacControls />
         </div>
-        <div className="from-background to-muted min-h-[200px] bg-gradient-to-b">
-          <div className="grid p-4 whitespace-pre-wrap">{elements}</div>
+        <div className="from-background to-muted min-h-[150px] bg-gradient-to-b sm:min-h-[180px] md:min-h-[200px]">
+          <div className="grid p-3 whitespace-pre-wrap sm:p-4">{elements}</div>
         </div>
       </pre>
     </div>
