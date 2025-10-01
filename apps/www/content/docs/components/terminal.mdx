@@ -1,0 +1,84 @@
+---
+title: Terminal
+date: 2025-01-27
+description: Interactive terminal component with typing animation and localhost notification.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="terminal-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/terminal"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/terminal.tsx`
+
+<ComponentSource name="terminal" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import Terminal from "@/components/eldoraui/terminal"
+```
+
+```tsx showLineNumbers
+<Terminal
+  command="npx shadcn@latest add 'https://eldoraui.site/r/terminal'"
+  steps={[
+    { text: "~ Project name", bold: true },
+    { text: " | terminal-demo" },
+    { text: " | cd terminal-demo" },
+    { text: "~ Installing UI components", bold: true },
+    { text: " | ✓ eldoraui/terminal" },
+  ]}
+  pulseInterval={100}
+  showLocalhost={true}
+  hostBarTitle="localhost:3000"
+  hostMessage="New App Created!"
+/>
+```
+
+## Props
+
+| Prop            | Type             | Default              | Description                                   |
+| --------------- | ---------------- | -------------------- | --------------------------------------------- |
+| `command`       | `string`         | `-`                  | The command to display and type out           |
+| `steps`         | `TerminalStep[]` | `-`                  | Array of terminal output steps to display     |
+| `pulseInterval` | `number`         | `100`                | Interval in milliseconds for typing animation |
+| `showLocalhost` | `boolean`        | `true`               | Whether to show the localhost notification    |
+| `hostBarTitle`  | `string`         | `"localhost:3000"`   | Title for the localhost notification bar      |
+| `hostMessage`   | `string`         | `"New App Created!"` | Message for the localhost notification        |
+
+## TerminalStep Type
+
+| Prop   | Type      | Default | Description                     |
+| ------ | --------- | ------- | ------------------------------- |
+| `text` | `string`  | `-`     | The text content to display     |
+| `bold` | `boolean` | `false` | Whether the text should be bold |

@@ -191,4 +191,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "terminal",
+    type: "registry:ui",
+    title: "terminal",
+    description: "A terminal component.",
+    dependencies: ["react", "lucide-react", "react-icons/go"],
+    files: [
+      {
+        path: "eldoraui/terminal.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

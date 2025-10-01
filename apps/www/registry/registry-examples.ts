@@ -287,4 +287,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "terminal-demo",
+    type: "registry:example",
+    title: "terminal-demo",
+    description: "Example showing a terminal-demo component.",
+    registryDependencies: ["@eldoraui/terminal"],
+    files: [
+      {
+        path: "example/terminal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

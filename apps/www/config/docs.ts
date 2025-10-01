@@ -107,6 +107,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Terminal",
+          href: "/docs/components/terminal",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Grid",
           href: "/docs/components/grid",
           items: [],

@@ -189,7 +189,31 @@
           "path": "registry/eldoraui/marquee.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-marquee": "marquee var(--duration) infinite linear",
+          "animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes marquee": {
+          "from": {
+            "transform": "translateX(0)"
+          },
+          "to": {
+            "transform": "translateX(calc(-100% - var(--gap)))"
+          }
+        },
+        "@keyframes marquee-vertical": {
+          "from": {
+            "transform": "translateY(0)"
+          },
+          "to": {
+            "transform": "translateY(calc(-100% - var(--gap)))"
+          }
+        }
+      }
     },
     {
       "name": "integrations",
@@ -208,6 +232,23 @@
       "files": [
         {
           "path": "registry/eldoraui/integrations.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "terminal",
+      "description": "A terminal component.",
+      "dependencies": [
+        "react",
+        "lucide-react",
+        "react-icons/go"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/terminal.tsx",
           "type": "registry:ui"
         }
       ]
@@ -538,6 +579,21 @@
       "files": [
         {
           "path": "registry/example/integrations-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "terminal-demo",
+      "type": "registry:example",
+      "title": "terminal-demo",
+      "description": "Example showing a terminal-demo component.",
+      "registryDependencies": [
+        "@eldoraui/terminal"
+      ],
+      "files": [
+        {
+          "path": "registry/example/terminal-demo.tsx",
           "type": "registry:example"
         }
       ]

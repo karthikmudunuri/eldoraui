@@ -18,6 +18,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
+- [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
 
 ## Examples
 
@@ -43,6 +44,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [clerk-otp-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/clerk-otp-demo-2.tsx): Example usage
 - [integrations-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo.tsx): Example usage
 - [integrations-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo-2.tsx): Example usage
+- [terminal-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/terminal-demo.tsx): Example usage
 
 ## Optional
 

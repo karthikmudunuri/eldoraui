@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "terminal-demo",
+  "type": "registry:example",
+  "title": "terminal-demo",
+  "description": "Example showing a terminal-demo component.",
+  "registryDependencies": [
+    "@eldoraui/terminal"
+  ],
+  "files": [
+    {
+      "path": "registry/example/terminal-demo.tsx",
+      "content": "import Terminal from \"@/registry/eldoraui/terminal\"\n\nexport default function TerminalDemo() {\n  return (\n    <main className=\"flex min-h-[60vh] items-center justify-center p-6\">\n      <div className=\"w-full max-w-3xl\">\n        <Terminal\n          command=\"npx shadcn@latest add 'https://eldoraui.site/r/terminal'\"\n          steps={[\n            { text: \"~ Project name\", bold: true },\n            { text: \" | terminal-demo\" },\n            { text: \" | cd terminal-demo\" },\n            { text: \"~ Installing UI components\", bold: true },\n            { text: \" | ✓ eldoraui/terminal\" },\n          ]}\n          pulseInterval={100}\n          showLocalhost={true}\n          hostBarTitle=\"localhost:3000\"\n          hostMessage=\"New App Created!\"\n        />\n      </div>\n    </main>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
