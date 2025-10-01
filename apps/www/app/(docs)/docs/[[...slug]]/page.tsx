@@ -139,9 +139,9 @@ export default async function DocPage({ params }: DocPageProps) {
       },
     },
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
+      "@type": "Person",
+      name: "Karthik Mudunuri",
+      url: "https://eldoraui.site",
     },
     isPartOf: {
       "@type": "CreativeWorkSeries",
@@ -176,7 +176,6 @@ export default async function DocPage({ params }: DocPageProps) {
         className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
       >
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="h-(--top-spacing) shrink-0" />
           <div className="mx-auto flex w-full max-w-3xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2">
