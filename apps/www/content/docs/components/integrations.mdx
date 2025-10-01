@@ -16,7 +16,9 @@ published: true
     <TabsTrigger value="manual">Manual</TabsTrigger>
   </TabsList>
   <TabsContent value="cli">
-    ```bash npx shadcn@latest add "https://eldoraui.site/r/integrations" ```
+    ```bash
+     npx shadcn@latest add "https://eldoraui.site/r/integrations" 
+     ```
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
@@ -28,7 +30,37 @@ published: true
       </Step>
       `components/eldoraui/marquee.tsx`
       <ComponentSource name="marquee" />
+      <Step>Add the required CSS animations</Step>
+
+Add the following animations to your global CSS file.
+
+```css title="app/globals.css" showLineNumbers {2-3, 4-20}
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+```
+
+</Steps>
       <Step>Update the import paths to match your project setup.</Step>
+
     </Steps>
   </TabsContent>
 </Tabs>

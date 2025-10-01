@@ -151,6 +151,31 @@ export const ui: Registry["items"] = [
         type: "registry:ui",
       },
     ],
+    cssVars: {
+      theme: {
+        "animate-marquee": "marquee var(--duration) infinite linear",
+        "animate-marquee-vertical":
+          "marquee-vertical var(--duration) linear infinite",
+      },
+    },
+    css: {
+      "@keyframes marquee": {
+        from: {
+          transform: "translateX(0)",
+        },
+        to: {
+          transform: "translateX(calc(-100% - var(--gap)))",
+        },
+      },
+      "@keyframes marquee-vertical": {
+        from: {
+          transform: "translateY(0)",
+        },
+        to: {
+          transform: "translateY(calc(-100% - var(--gap)))",
+        },
+      },
+    },
   },
   {
     name: "integrations",
