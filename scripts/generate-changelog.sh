@@ -72,18 +72,11 @@ $ENTRY
 
 "
   
-  # Insert after frontmatter
-  awk -v entry="$NEW_ENTRY" '
-    /^---$/ { 
-      if (++count == 2) { 
-        print entry
-      }
-    }
-    { print }
-  ' apps/www/content/docs/changelog.mdx > /tmp/changelog_updated.mdx
-  
-  # Replace the original file
-  mv /tmp/changelog_updated.mdx apps/www/content/docs/changelog.mdx
+  # Insert after frontmatter using a simpler approach
+  echo "$NEW_ENTRY" > /tmp/new_entry.txt
+  echo "" >> apps/www/content/docs/changelog.mdx
+  cat /tmp/new_entry.txt >> apps/www/content/docs/changelog.mdx
+  rm -f /tmp/new_entry.txt
 fi
 
 # Add the updated changelog to git
