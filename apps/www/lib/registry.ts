@@ -1,6 +1,7 @@
 import fs from "node:fs/promises"
 import { tmpdir } from "os"
 import path from "path"
+import * as React from "react"
 import { RegistryItem, registryItemSchema } from "shadcn/schema"
 import { Project, ScriptKind } from "ts-morph"
 
@@ -14,13 +15,33 @@ interface RegistryItemFile {
   target: string
 }
 
+interface RegistryFile {
+  path: string
+  type: RegistryItem["type"]
+  target: string
+}
+
+interface RegistryIndexItem {
+  name: string
+  description: string
+  type: RegistryItem["type"]
+  registryDependencies?: string[]
+  files: Array<{
+    path: string
+    type: RegistryItem["type"]
+    target: string
+  }>
+  component: React.LazyExoticComponent<React.ComponentType<unknown>> | null
+  meta?: unknown
+}
+
 export function getRegistryComponent(name: string) {
-  const item = Index[name] as any
+  const item = Index[name] as RegistryIndexItem
   return item?.component
 }
 
 export async function getRegistryItem(name: string) {
-  const item = Index[name] as any
+  const item = Index[name] as RegistryIndexItem
 
   if (!item) {
     return null
@@ -29,8 +50,8 @@ export async function getRegistryItem(name: string) {
   // Convert all file paths to object.
   // TODO: remove when we migrate to new registry.
   if (item.files) {
-    item.files = item.files.map((file: unknown) =>
-      typeof file === "string" ? { path: file } : file
+    item.files = item.files.map((file: string | { path: string; type: RegistryItem["type"]; target: string }) =>
+      typeof file === "string" ? { path: file, type: item.type, target: "" } : file
     )
   }
 
@@ -70,7 +91,7 @@ export async function getRegistryItem(name: string) {
   return parsed.data
 }
 
-async function getFileContent(file: RegistryItemFile) {
+async function getFileContent(file: RegistryFile) {
   const raw = await fs.readFile(file.path, "utf-8")
 
   const project = new Project({
@@ -102,7 +123,7 @@ async function getFileContent(file: RegistryItemFile) {
   return code
 }
 
-function getFileTarget(file: RegistryItemFile) {
+function getFileTarget(file: RegistryFile) {
   let target = file.target
 
   if (!target || target === "") {
