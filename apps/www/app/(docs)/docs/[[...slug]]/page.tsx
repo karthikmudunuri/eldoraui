@@ -185,9 +185,9 @@ export default async function DocPage({ params }: DocPageProps) {
                     className="text-muted-foreground"
                   >
                     <ol className="flex flex-wrap items-center gap-1 text-sm">
-                      {breadcrumbs.map((item) => {
+                      {breadcrumbs.map((item, index) => {
                         const label = resolveBreadcrumbName(item)
-                        const key = item.url ?? label
+                        const key = `${item.url ?? label}-${index}`
                         const isLast = item === lastBreadcrumb
 
                         return (

@@ -72,7 +72,7 @@ export function MobileNav({ className }: { className?: string }) {
                       <span className="flex items-center gap-2">
                         {item.title}
                         {item.label && (
-                          <span className="rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                          <span className="rounded-md border border-cyan-400 bg-cyan-400/60 px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
                             {item.label}
                           </span>
                         )}
@@ -109,7 +109,7 @@ export function MobileNav({ className }: { className?: string }) {
                             <span className="flex items-center gap-2">
                               {item.title}
                               {item.label && (
-                                <span className="rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                                <span className="rounded-md border border-cyan-400 bg-cyan-400/60 px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
                                   {item.label}
                                 </span>
                               )}
