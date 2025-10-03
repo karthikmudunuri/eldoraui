@@ -183,7 +183,7 @@ export default function CommitList({
                         href={commit.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cyan-400 underline transition-colors hover:text-cyan-500"
+                        className="text-cyan-600 underline transition-colors hover:text-cyan-500 dark:text-cyan-400"
                       >
                         ({commit.sha.slice(0, 7)})
                       </a>

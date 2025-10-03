@@ -97,7 +97,7 @@ export const mdxComponents = {
   a: ({ className, ...props }: React.ComponentProps<"a">) => (
     <a
       className={cn(
-        "font-medium text-cyan-400 underline underline-offset-4",
+        "font-medium text-cyan-600 underline underline-offset-4 dark:text-cyan-400",
         className
       )}
       {...props}
