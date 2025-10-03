@@ -17,10 +17,10 @@ published: true
   </TabsList>
   <TabsContent value="cli">
 
-    ```bash 
-    npx shadcn@latest add "https://eldoraui.site/r/clerk-otp" 
+    ```bash
+    npx shadcn@latest add "https://eldoraui.site/r/clerk-otp"
     ```
-    
+
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
@@ -64,11 +64,11 @@ import ClerkOTP from "@/components/eldoraui/clerk-otp"
 
 ## Props
 
-| Prop              | Type      | Default                                                                                                    | Description                                                |
-| ----------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `delay`           | `number`  | `3500`                                                                                                     | Time interval (in ms) after which the OTP animation resets |
-| `cardTitle`       | `string`  | `"Multifactor Authentication"`                                                                                          | Title displayed at the bottom of the card                  |
-| `cardDescription` | `string`  | `"Each user's self-serve multifactor settings are enforced automatically during sign-in."` | Description text displayed below the title                 |
-| `whileHover`         | `boolean` | `false`                                                                                                    | When true, animations only trigger on hover. When false, animations run continuously |
+| Prop              | Type      | Default                                                                                    | Description                                                                          |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `delay`           | `number`  | `3500`                                                                                     | Time interval (in ms) after which the OTP animation resets                           |
+| `cardTitle`       | `string`  | `"Multifactor Authentication"`                                                             | Title displayed at the bottom of the card                                            |
+| `cardDescription` | `string`  | `"Each user's self-serve multifactor settings are enforced automatically during sign-in."` | Description text displayed below the title                                           |
+| `whileHover`      | `boolean` | `false`                                                                                    | When true, animations only trigger on hover. When false, animations run continuously |
 
 > This component was inspired by the OTP input animation on [Clerk's official website](https://clerk.com/).

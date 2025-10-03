@@ -28,7 +28,7 @@ export function DiscordLink({ className }: { className?: string }) {
           <Icons.discord />
           <div className="ml-2 flex items-center gap-1">
             <PingDot />
-            <span className="text-muted-foreground">Join the Discord</span>
+            <span className="text-muted-foreground">Join Us</span>
           </div>
         </Link>
       </TooltipTrigger>
