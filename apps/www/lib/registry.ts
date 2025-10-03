@@ -15,11 +15,12 @@ interface RegistryItemFile {
 }
 
 export function getRegistryComponent(name: string) {
-  return Index[name]?.component
+  const item = Index[name] as any
+  return item?.component
 }
 
 export async function getRegistryItem(name: string) {
-  const item = Index[name]
+  const item = Index[name] as any
 
   if (!item) {
     return null
@@ -27,9 +28,11 @@ export async function getRegistryItem(name: string) {
 
   // Convert all file paths to object.
   // TODO: remove when we migrate to new registry.
-  item.files = item.files.map((file: unknown) =>
-    typeof file === "string" ? { path: file } : file
-  )
+  if (item.files) {
+    item.files = item.files.map((file: unknown) =>
+      typeof file === "string" ? { path: file } : file
+    )
+  }
 
   // Fail early before doing expensive file operations.
   const result = registryItemSchema.safeParse(item)
@@ -38,15 +41,17 @@ export async function getRegistryItem(name: string) {
   }
 
   let files: typeof result.data.files = []
-  for (const file of item.files) {
-    const content = await getFileContent(file)
-    const relativePath = path.relative(process.cwd(), file.path)
+  if (item.files) {
+    for (const file of item.files) {
+      const content = await getFileContent(file)
+      const relativePath = path.relative(process.cwd(), file.path)
 
-    files.push({
-      ...file,
-      path: relativePath,
-      content,
-    })
+      files.push({
+        ...file,
+        path: relativePath,
+        content,
+      })
+    }
   }
 
   // Fix file paths.
@@ -219,3 +224,4 @@ export function createFileTreeForRegistryItemFiles(
 
   return root
 }
+

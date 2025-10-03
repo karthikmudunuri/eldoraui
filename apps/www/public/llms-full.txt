@@ -1212,7 +1212,7 @@ Description: A cobe globe component.
 --- file: eldoraui/cobe-globe.tsx ---
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import createGlobe from "cobe"
 import { useSpring } from "react-spring"
 
@@ -1246,7 +1246,7 @@ interface CobeProps {
   locations?: Location[]
 }
 
-type CobeState = Record<string, any>
+type CobeState = Record<string, unknown>
 
 export function Cobe({
   variant = "default",
@@ -1306,7 +1306,7 @@ export function Cobe({
     }
   }
 
-  const geocodeLocationList = async (locationList: Location[]) => {
+  const geocodeLocationList = useCallback(async (locationList: Location[]) => {
     const geocodedLocations: Location[] = []
 
     for (const location of locationList) {
@@ -1327,7 +1327,7 @@ export function Cobe({
     }
 
     return geocodedLocations
-  }
+  }, [])
 
   // Initialize locations on component mount
   useEffect(() => {
@@ -1341,7 +1341,7 @@ export function Cobe({
     }
 
     initializeLocations()
-  }, [variant, locations])
+  }, [variant, locations, geocodeLocationList])
 
   useEffect(() => {
     let phi = 0
@@ -2001,8 +2001,9 @@ export default function GithubInlineCommentsDemo() {
     <div className="mx-auto max-w-4xl p-4">
       <p className="text-muted-foreground mb-4 text-sm">
         This is a GitHub-style inline diff comments component. Hover over a line
-        in the diff to reveal the "Add comment" button, then click to open a
-        compact inline thread for discussion—just like reviewing code on GitHub.
+        in the diff to reveal the &quot;Add comment&quot; button, then click to
+        open a compact inline thread for discussion—just like reviewing code on
+        GitHub.
       </p>
       <GithubInlineComments
         fileName="src/server.ts"
@@ -2365,7 +2366,7 @@ const tiles = [
   },
 ]
 
-function shuffleArray(array: any[]) {
+function shuffleArray<T>(array: T[]): T[] {
   let currentIndex = array.length
   let randomIndex
   // While there remain elements to shuffle.
@@ -2920,7 +2921,7 @@ interface MarqueeProps {
   children?: React.ReactNode
   vertical?: boolean
   repeat?: number
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export function Marquee({
@@ -3263,12 +3264,12 @@ const Terminal = ({
         <LocalHost title={hostBarTitle} message={hostMessage} />
       )}
 
-      <pre className="bg-card w-full min-w-[320px] sm:min-w-[480px] md:min-w-[600px] overflow-hidden rounded-xl border text-[11px] sm:text-[12px] md:text-[13px] shadow-lg">
+      <pre className="bg-card w-full min-w-[320px] overflow-hidden rounded-xl border text-[11px] shadow-lg sm:min-w-[480px] sm:text-[12px] md:min-w-[600px] md:text-[13px]">
         <div className="bg-muted flex flex-row items-center gap-2 border-b px-3 py-2 sm:px-4">
           <MacControls />
         </div>
-        <div className="from-background to-muted min-h-[150px] sm:min-h-[180px] md:min-h-[200px] bg-gradient-to-b">
-          <div className="grid p-3 sm:p-4 whitespace-pre-wrap">{elements}</div>
+        <div className="from-background to-muted min-h-[150px] bg-gradient-to-b sm:min-h-[180px] md:min-h-[200px]">
+          <div className="grid p-3 whitespace-pre-wrap sm:p-4">{elements}</div>
         </div>
       </pre>
     </div>

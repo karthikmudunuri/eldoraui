@@ -13,8 +13,8 @@
     "shadcn:build": "npx shadcn build registry.json --output ../www/public/r",
     "typecheck": "tsc --noEmit",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check"
@@ -94,6 +94,7 @@
     "@types/unist": "^3.0.3",
     "cssnano": "^7.1.1",
     "eslint": "^9.36.0",
+    "@eslint/eslintrc": "^3.3.1",
     "eslint-config-next": "15.5.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",

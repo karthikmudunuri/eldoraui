@@ -97,19 +97,12 @@ async function buildRegistryJsonFile() {
     { recursive: true }
   )
 
-    // 3. Copy the registry.json to the www/public directory.
-    await fs.cp(
-      path.join(process.cwd(), "registry.json"),
-      path.join(process.cwd(), "../www/public/registry.json"),
-      { recursive: true }
-    )
-
-    // Copy the registry.json to the root folder
-    await fs.cp(
-      path.join(process.cwd(), "registry.json"),
-      path.join(process.cwd(), "../../registry.json"),
-      { recursive: true }
-    )
+  // 3. Copy the registry.json to the www/public/r directory.
+  await fs.cp(
+    path.join(process.cwd(), "registry.json"),
+    path.join(process.cwd(), "../www/public/registry.json"),
+    { recursive: true }
+  )
 }
 
 type RegistryItem = Registry["items"][number]
@@ -168,9 +161,8 @@ async function generateLlmsContent() {
     .filter((item) => item.type === "registry:ui")
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((component) => {
-      const title = (component as any).title || component.name
-      const description =
-        (component as any).description || `The ${title} component.`
+      const title = component.title || component.name
+      const description = component.description || `The ${title} component.`
       return `- [${title}](${siteConfig.url}/docs/components/${component.name}): ${description}`
     })
 
@@ -183,7 +175,7 @@ async function generateLlmsContent() {
       return true
     })
     .map((example) => {
-      const title = (example as any).title || example.name
+      const title = example.title || example.name
       const firstFile = example.files?.[0]?.path || ""
       const url = firstFile
         ? `${siteConfig.links.github}/blob/main/${firstFile}`
@@ -222,16 +214,15 @@ async function generateLlmsFullContent(
 
   const componentContents = await Promise.all(
     components.map(async (component) => {
-      const title = (component as any).title || component.name
-      const description =
-        (component as any).description || `The ${title} component.`
+      const title = component.title || component.name
+      const description = component.description || `The ${title} component.`
 
       let content = [
         `===== COMPONENT: ${component.name} =====`,
         `Title: ${title}`,
         `Description: ${description}`,
         "",
-        await readRegistryFilesContents(component as unknown as RegistryItem),
+        await readRegistryFilesContents(component),
       ].join("\n")
 
       // Add examples for this component
@@ -239,14 +230,14 @@ async function generateLlmsFullContent(
       for (const exampleName of relatedExamples) {
         const example = registry.items.find((e) => e.name === exampleName)
         if (example) {
-          const exTitle = (example as any).title || example.name
+          const exTitle = example.title || example.name
           content += [
             "",
             "",
             `===== EXAMPLE: ${exampleName} =====`,
             `Title: ${exTitle}`,
             "",
-            await readRegistryFilesContents(example as unknown as RegistryItem),
+            await readRegistryFilesContents(example),
           ].join("\n")
         }
       }

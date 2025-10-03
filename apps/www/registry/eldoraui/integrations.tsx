@@ -53,7 +53,7 @@ const tiles = [
   },
 ]
 
-function shuffleArray(array: any[]) {
+function shuffleArray<T>(array: T[]): T[] {
   let currentIndex = array.length
   let randomIndex
   // While there remain elements to shuffle.

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import createGlobe from "cobe"
 import { useSpring } from "react-spring"
 
@@ -34,7 +34,7 @@ interface CobeProps {
   locations?: Location[]
 }
 
-type CobeState = Record<string, any>
+type CobeState = Record<string, unknown>
 
 export function Cobe({
   variant = "default",
@@ -94,7 +94,7 @@ export function Cobe({
     }
   }
 
-  const geocodeLocationList = async (locationList: Location[]) => {
+  const geocodeLocationList = useCallback(async (locationList: Location[]) => {
     const geocodedLocations: Location[] = []
 
     for (const location of locationList) {
@@ -115,7 +115,7 @@ export function Cobe({
     }
 
     return geocodedLocations
-  }
+  }, [])
 
   // Initialize locations on component mount
   useEffect(() => {
@@ -129,7 +129,7 @@ export function Cobe({
     }
 
     initializeLocations()
-  }, [variant, locations])
+  }, [variant, locations, geocodeLocationList])
 
   useEffect(() => {
     let phi = 0

@@ -7,8 +7,9 @@ export default function GithubInlineCommentsDemo() {
     <div className="mx-auto max-w-4xl p-4">
       <p className="text-muted-foreground mb-4 text-sm">
         This is a GitHub-style inline diff comments component. Hover over a line
-        in the diff to reveal the "Add comment" button, then click to open a
-        compact inline thread for discussion—just like reviewing code on GitHub.
+        in the diff to reveal the &quot;Add comment&quot; button, then click to
+        open a compact inline thread for discussion—just like reviewing code on
+        GitHub.
       </p>
       <GithubInlineComments
         fileName="src/server.ts"

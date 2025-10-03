@@ -6,6 +6,16 @@ import { visit } from "unist-util-visit"
 
 import { Index } from "@/registry/__index__"
 
+interface RegistryIndexItem {
+  name: string
+  description: string
+  type: string
+  registryDependencies?: string[]
+  files: Array<{ path: string; type?: string; target?: string } | string>
+  component: React.LazyExoticComponent<React.ComponentType<unknown>> | null
+  meta?: unknown
+}
+
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
@@ -33,8 +43,9 @@ export function rehypeComponent() {
           if (srcPath) {
             src = path.join(process.cwd(), srcPath)
           } else {
-            const component = Index[name]
-            src = fileName
+            const component = Index[name] as RegistryIndexItem | undefined
+            if (!component) return null
+            const file = fileName
               ? component.files.find((file: unknown) => {
                   if (typeof file === "string") {
                     return (
@@ -43,8 +54,9 @@ export function rehypeComponent() {
                     )
                   }
                   return false
-                }) || component.files[0]?.path
-              : component.files[0]?.path
+                }) || component.files[0]
+              : component.files[0]
+            src = typeof file === "string" ? file : file?.path
           }
 
           // Read the source file.
@@ -101,8 +113,10 @@ export function rehypeComponent() {
         }
 
         try {
-          const component = Index[name]
-          const src = component.files[0]?.path
+          const component = Index[name] as RegistryIndexItem | undefined
+          if (!component) return null
+          const file = component.files[0]
+          const src = typeof file === "string" ? file : file?.path
 
           // Read the source file.
           const filePath = src
