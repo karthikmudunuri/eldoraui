@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
@@ -80,6 +79,8 @@ export default async function BlogPage({ params }: PageProps) {
 
   const MDX = doc.body
 
+  const content = await doc.getText("raw")
+
   // Generate structured data for individual blog post
   const structuredData: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
@@ -108,10 +109,10 @@ export default async function BlogPage({ params }: PageProps) {
       "@type": "WebPage",
       "@id": absoluteUrl(page.url),
     },
-    wordCount: doc.content ? doc.content.split(/\s+/).length : 0,
-    timeRequired: `PT${calculateReadingTime(doc.content || "")}M`,
+    wordCount: content ? content.split(/\s+/).length : 0,
+    timeRequired: `PT${calculateReadingTime(content || "")}M`,
     keywords: (() => {
-      const docTag = doc.tag
+      const docTag = doc.tags
       if (!docTag) return undefined
       return Array.isArray(docTag) ? docTag : [docTag]
     })(),
@@ -137,13 +138,11 @@ export default async function BlogPage({ params }: PageProps) {
           {doc && (
             <div>
               <div className="relative overflow-hidden rounded-xl p-5 md:p-10">
-                {doc.image ? (
-                  <Image
-                    src={doc.image}
-                    alt={doc.title}
-                    className="border-border size-full rounded-xl border object-cover object-left"
-                  />
-                ) : null}
+                <img
+                  src={doc.image}
+                  alt={doc.title}
+                  className="border-border size-full rounded-xl border object-cover object-left"
+                />
               </div>
               <div className="border-border mx-auto flex flex-col items-center justify-center gap-y-2 border-y p-5">
                 <div className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-y-2">
@@ -161,9 +160,8 @@ export default async function BlogPage({ params }: PageProps) {
                 </div>
               </div>
               <div className="border-border text-secondary-foreground flex items-center justify-center gap-x-2 border-b p-3 text-sm">
-                <span>{calculateReadingTime(doc.content)} min read</span>
                 {(() => {
-                  const docTag = doc.tag
+                  const docTag = doc.tags
                   const tags = docTag
                     ? Array.isArray(docTag)
                       ? docTag
@@ -173,6 +171,7 @@ export default async function BlogPage({ params }: PageProps) {
                   return (
                     tags.length > 0 && (
                       <>
+                        <span>{calculateReadingTime(content)} min read</span>
                         <span>·</span>
                         <div className="flex flex-wrap gap-1">
                           {tags.map((tag) => (
