@@ -39,6 +39,11 @@ const nextConfig = {
         destination: "/docs/:path*.md",
         permanent: true,
       },
+      {
+        source: "/r/:path([^.]*)",
+        destination: "/r/:path.json",
+        permanent: true,
+      },
     ]
   },
   rewrites() {
