@@ -207,16 +207,87 @@ export function DocsTableOfContents({
   className?: string
 }) {
   const [open, setOpen] = React.useState(false)
+
+  // Merge static TOC with dynamic headings
+  const [dynamicItems, setDynamicItems] = React.useState<
+    {
+      title?: React.ReactNode
+      url: string
+      depth: number
+    }[]
+  >([])
+  const [allItems, setAllItems] = React.useState(toc)
+
+  React.useEffect(() => {
+    // Listen for headings updates from CommitList EXCLUSIVELY
+    const handleHeadingsUpdate = () => {
+      // Only scan for headings within the CommitList component
+      const commitListHeadings = Array.from(
+        document.querySelectorAll(
+          '[data-component="commit-list"] h2[id], [data-component="commit-list"] h3[id]'
+        )
+      )
+
+      const dynamicHeadings = commitListHeadings
+        .map((heading) => {
+          const id = heading.id
+          const existingTocItem = toc.find((item) => item.url === `#${id}`)
+          if (!existingTocItem) {
+            const depth = parseInt(heading.tagName.charAt(1))
+            // Double-check: ensure this is a genuine CommitList heading by checking formatting
+            const textContent = heading.textContent || ""
+            const isValidCommitListHeading =
+              // Month heading format (like "October 2024", "November 2025")
+              /^[A-Za-z]+ \d{4}$/.test(textContent) ||
+              // Category heading format (like "Added", "Fixed", "Documentation", "Maintenance")
+              ["Added", "Fixed", "Documentation", "Maintenance"].includes(
+                textContent
+              )
+
+            if (isValidCommitListHeading) {
+              return {
+                title: textContent,
+                url: `#${id}`,
+                depth: depth,
+              }
+            }
+          }
+          return null
+        })
+        .filter((item): item is NonNullable<typeof item> => item !== null)
+
+      setDynamicItems(dynamicHeadings)
+    }
+
+    // Initial update
+    handleHeadingsUpdate()
+
+    // Listen for custom event from CommitList
+    window.addEventListener("headings-updated", handleHeadingsUpdate)
+
+    // Also check for headings periodically (fallback)
+    const interval = setInterval(handleHeadingsUpdate, 1000)
+
+    return () => {
+      window.removeEventListener("headings-updated", handleHeadingsUpdate)
+      clearInterval(interval)
+    }
+  }, [toc])
+
+  React.useEffect(() => {
+    setAllItems([...toc, ...dynamicItems])
+  }, [toc, dynamicItems])
+
   const itemIds = React.useMemo(
-    () => toc.map((item) => item.url.replace("#", "")),
-    [toc]
+    () => allItems.map((item) => item.url.replace("#", "")),
+    [allItems]
   )
   const activeHeading = useActiveItem(itemIds)
   const containerRef = React.useRef<HTMLDivElement>(null)
   const pos = useTocThumb(containerRef)
-  const svg = useTocSvg(toc, containerRef)
+  const svg = useTocSvg(allItems, containerRef)
 
-  if (!toc?.length) {
+  if (!allItems?.length) {
     return null
   }
 
@@ -236,7 +307,7 @@ export function DocsTableOfContents({
           align="start"
           className="no-scrollbar max-h-[70svh]"
         >
-          {toc.map((item) => (
+          {allItems.map((item) => (
             <DropdownMenuItem
               key={item.url}
               asChild
@@ -282,7 +353,7 @@ export function DocsTableOfContents({
           </div>
         ) : null}
         <div className="flex flex-col">
-          {toc.map((item, i) => (
+          {allItems.map((item, i) => (
             <a
               key={item.url}
               href={item.url}
@@ -293,14 +364,14 @@ export function DocsTableOfContents({
               data-active={item.url === `#${activeHeading}`}
               data-depth={item.depth}
             >
-              {item.depth >= 3 && toc[i - 1]?.depth < item.depth ? (
+              {item.depth >= 3 && allItems[i - 1]?.depth < item.depth ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
                   className="absolute start-0 -top-2 size-4"
                 >
                   <line
-                    x1={toc[i - 1]?.depth >= 3 ? 12 : 0}
+                    x1={allItems[i - 1]?.depth >= 3 ? 12 : 0}
                     y1="0"
                     x2="12"
                     y2="16"
@@ -309,7 +380,7 @@ export function DocsTableOfContents({
                   />
                 </svg>
               ) : null}
-              {item.depth <= 2 && toc[i - 1]?.depth >= 3 ? (
+              {item.depth <= 2 && allItems[i - 1]?.depth >= 3 ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -328,12 +399,14 @@ export function DocsTableOfContents({
               <div
                 className={cn(
                   "bg-foreground/10 absolute inset-y-0 w-px",
-                  item.depth >= 3 && toc[i - 1]?.depth < item.depth && "top-2",
                   item.depth >= 3 &&
-                    toc[i + 1]?.depth < item.depth &&
+                    allItems[i - 1]?.depth < item.depth &&
+                    "top-2",
+                  item.depth >= 3 &&
+                    allItems[i + 1]?.depth < item.depth &&
                     "bottom-2",
-                  item.depth <= 2 && toc[i + 1]?.depth >= 3 && "bottom-2",
-                  item.depth <= 2 && toc[i - 1]?.depth >= 3 && "top-2"
+                  item.depth <= 2 && allItems[i + 1]?.depth >= 3 && "bottom-2",
+                  item.depth <= 2 && allItems[i - 1]?.depth >= 3 && "top-2"
                 )}
                 style={{
                   insetInlineStart: item.depth >= 3 ? 12 : 0,

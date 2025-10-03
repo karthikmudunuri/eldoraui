@@ -1,4 +1,5 @@
 import * as React from "react"
+import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -16,6 +17,7 @@ import { Callout } from "@/components/callout"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
 import { CodeTabs } from "@/components/code-tabs"
+import CommitList from "@/components/commit-list"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
@@ -24,7 +26,10 @@ import { getIconForLanguageExtension } from "@/components/icons"
 import { TechStack } from "@/components/tech-stack"
 import { TemplateOpen } from "@/components/template-open"
 import { TemplatePreview } from "@/components/template-preview"
-import { TweetCard } from "@/registry/eldoraui/tweet-card"
+
+const TweetCard = dynamic(() =>
+  import("@/registry/eldoraui/tweet-card").then((module) => module.TweetCard)
+)
 
 export const mdxComponents = {
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
@@ -357,4 +362,5 @@ export const mdxComponents = {
   Tweet: ({ id, className }: { id: string; className?: string }) => (
     <TweetCard id={id} className={cn("mx-auto", className)} />
   ),
+  CommitList,
 }

@@ -22,8 +22,3 @@ commit-msg:
   commands:
     "lint commit message":
       run: npx --no -- commitlint --edit "$1"
-
-post-commit:
-  commands:
-    "generate changelog":
-      run: ./scripts/generate-changelog.sh
