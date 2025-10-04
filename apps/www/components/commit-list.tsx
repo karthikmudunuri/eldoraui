@@ -102,6 +102,7 @@ export default function CommitList({
     const loadCommits = async () => {
       setLoading(true)
       try {
+        // Fetch ALL commits from the repository
         const response = await fetch(`/api/repo/commits`, {
           method: "POST",
           headers: {
