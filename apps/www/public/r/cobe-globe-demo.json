@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/cobe-globe-demo.tsx",
-      "content": "\"use client\"\n\nimport { Cobe } from \"@/registry/eldoraui/cobe-globe\"\n\nexport function CobeGlobeDemo() {\n  return (\n    <div className=\"bg-background relative z-10 h-[300px] w-full overflow-hidden rounded-lg border sm:h-[550px] md:h-[600px]\">\n      <Cobe variant=\"default\" />\n    </div>\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { Cobe } from \"@/registry/eldoraui/cobe-globe\"\n\nexport function CobeGlobeDemo() {\n  return (\n    <div className=\"bg-background relative z-10 h-[300px] w-full overflow-hidden rounded-lg border sm:h-[550px] md:h-[600px]\">\n      <Cobe\n        variant=\"default\"\n        phi={0}\n        theta={0.2}\n        mapSamples={16000}\n        mapBrightness={1.8}\n        mapBaseBrightness={0.05}\n        diffuse={3}\n        dark={1.1}\n        baseColor=\"#ffffff\"\n        markerColor=\"#fb6415\"\n        markerSize={0.05}\n        glowColor=\"#ffffff\"\n        scale={1.0}\n        offsetX={0.0}\n        offsetY={0.0}\n        opacity={0.7}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

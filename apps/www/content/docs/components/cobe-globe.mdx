@@ -1,7 +1,7 @@
 ---
 title: Cobe Globe
 date: 2025-01-27
-description: Interactive 3D globe component with multiple variants including draggable, auto-rotation, and location-based navigation.
+description: Interactive 3D globe component with multiple variants, customizable settings, and colorful location markers.
 author: Karthikeyavarma
 published: true
 ---
@@ -44,19 +44,28 @@ npx shadcn@latest add "https://eldoraui.site/r/cobe-globe"
 
 ## Examples
 
-### Draggable Globe
+### Default Globe (Interactive)
+Interactive globe with drag functionality and auto-rotation, featuring colorful location markers and customizable settings.
+
+<ComponentPreview name="cobe-globe-demo" />
+
+### Auto-Rotation Globe
+Pure auto-rotating globe with colorful markers, no user interaction.
 
 <ComponentPreview name="cobe-globe-demo-2" />
 
 ### Auto-Draggable Globe
+Auto-rotating globe that pauses rotation when dragged by the user.
 
 <ComponentPreview name="cobe-globe-demo-3" />
 
 ### Location-Based Navigation
+Interactive globe with clickable location buttons for navigation to custom locations.
 
 <ComponentPreview name="cobe-globe-demo-4" />
 
 ### Scaled Globe
+Horizontally-oriented globe perfect for wide layouts and banners.
 
 <ComponentPreview name="cobe-globe-demo-5" />
 
@@ -66,33 +75,125 @@ npx shadcn@latest add "https://eldoraui.site/r/cobe-globe"
 import { Cobe } from "@/components/eldoraui/cobe-globe"
 ```
 
+### Basic Usage
+
 ```tsx showLineNumbers
 <Cobe variant="default" className="h-[600px] w-full" />
 ```
 
-### For Variants
+### All Variants
 
 ```tsx showLineNumbers
-<Cobe variant="draggable" className="h-[600px] w-full" />
+// Default: Interactive with drag + auto-rotation
+<Cobe variant="default" />
+
+// Draggable: User drag only
+<Cobe variant="draggable" />
+
+// Auto-draggable: Auto-rotation + drag override
+<Cobe variant="auto-draggable" />
+
+// Auto-rotation: Pure auto-rotation
+<Cobe variant="auto-rotation" />
+
+// Location-based: Clickable location navigation
+<Cobe variant="rotate-to-location" locations={[
+  { name: "New York", lat: 40.7128, long: -74.006 },
+  { name: "Tokyo", lat: 35.6895, long: 139.6917 }
+]} />
+
+// Scaled: Horizontally-oriented for wide layouts
+<Cobe variant="scaled" />
 ```
 
-```tsx showLineNumbers
-<Cobe variant="auto-draggable" className="h-[600px] w-full" />
-```
+### Customizable Settings
 
 ```tsx showLineNumbers
-<Cobe variant="rotate-to-location" className="h-[600px] w-full" />
-```
-
-```tsx showLineNumbers
-<Cobe variant="scaled" className="h-[600px] w-full" />
+<Cobe 
+  variant="default"
+  phi={0}
+  theta={0.2}
+  mapSamples={16000}
+  mapBrightness={1.8}
+  mapBaseBrightness={0.05}
+  diffuse={3}
+  dark={1.1}
+  baseColor="#ffffff"
+  markerColor="#fb6415"
+  markerSize={0.05}
+  glowColor="#ffffff"
+  opacity={0.7}
+/>
 ```
 
 ## Props
 
-| Prop        | Type                                                                               | Default                                         | Description                                     |
-| ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `variant`   | `"default" \| "draggable" \| "auto-draggable" \| "rotate-to-location" \| "scaled"` | `"default"`                                     | Globe interaction variant                       |
-| `className` | `string`                                                                           | `-`                                             | Additional CSS classes for styling              |
-| `style`     | `React.CSSProperties`                                                              | `-`                                             | Inline styles for the container                 |
-| `locations` | `Location[]`                                                                       | `[{ name: "San Francisco", emoji: "📍" }, ...]` | Custom locations for rotate-to-location variant |
+| Prop                | Type                                                                               | Default                                         | Description                                     |
+| ------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `variant`           | `"default" \| "draggable" \| "auto-draggable" \| "auto-rotation" \| "rotate-to-location" \| "scaled"` | `"default"`                                     | Globe interaction variant                       |
+| `className`         | `string`                                                                           | `-`                                             | Additional CSS classes for styling              |
+| `style`             | `React.CSSProperties`                                                              | `-`                                             | Inline styles for the container                 |
+| `locations`         | `Location[]`                                                                       | `[{ name: "San Francisco", emoji: "📍" }, ...]` | Custom locations for rotate-to-location variant |
+| `phi`               | `number`                                                                           | `0`                                             | Initial rotation angle (phi)                    |
+| `theta`             | `number`                                                                           | `0.2`                                           | Initial tilt angle (theta)                      |
+| `mapSamples`        | `number`                                                                           | `16000`                                         | Map detail level (higher = more detail)         |
+| `mapBrightness`     | `number`                                                                           | `1.8`                                           | Map brightness multiplier                       |
+| `mapBaseBrightness` | `number`                                                                           | `0.05`                                          | Base map brightness                             |
+| `diffuse`           | `number`                                                                           | `3`                                             | Diffuse lighting intensity                      |
+| `dark`              | `number`                                                                           | `1.1`                                           | Dark mode intensity                             |
+| `baseColor`         | `string`                                                                           | `"#ffffff"`                                     | Base globe color (hex)                          |
+| `markerColor`       | `string`                                                                           | `"#fb6415"`                                     | Default marker color (hex)                      |
+| `markerSize`        | `number`                                                                           | `0.05`                                          | Size of location markers                        |
+| `glowColor`         | `string`                                                                           | `"#ffffff"`                                     | Glow effect color (hex)                         |
+| `scale`             | `number`                                                                           | `1.00`                                          | Globe scale (for scaled variant)                |
+| `offsetX`           | `number`                                                                           | `0.00`                                          | Horizontal offset                               |
+| `offsetY`           | `number`                                                                           | `0.00`                                          | Vertical offset                                 |
+| `opacity`           | `number`                                                                           | `0.7`                                           | Globe opacity (0-1)                            |
+
+### Location Interface
+
+```tsx
+interface Location {
+  name: string
+  lat?: number
+  long?: number
+  emoji?: string
+}
+```
+
+## Features
+
+### Colorful Location Markers
+
+The globe includes 13 pre-configured colorful location markers:
+
+- **San Francisco** - Default orange
+- **New York** - Red
+- **Tokyo** - Blue  
+- **Sydney** - Green
+- **Rio de Janeiro** - Purple
+- **Paris** - Yellow
+- **Porto** - Orange
+- **Athens** - Pink
+- **Rome** - Brown
+- **Kathmandu** - Blue
+- **Tarbes** - Green
+- **Bamako** - Yellow
+- **Djibouti** - Purple
+
+### Variant Behaviors
+
+- **Default**: Combines drag interaction with continuous auto-rotation
+- **Draggable**: Pure drag interaction, no auto-rotation
+- **Auto-draggable**: Auto-rotates until user drags, then responds to drag
+- **Auto-rotation**: Pure auto-rotation, no user interaction
+- **Rotate-to-location**: Clickable location buttons for navigation
+- **Scaled**: Horizontally-oriented for wide layouts and banners
+
+### Interactive Features
+
+- **Drag to rotate**: Smooth spring-based rotation
+- **Touch support**: Works on mobile devices
+- **Responsive design**: Adapts to container size
+- **Circular design**: Rounded appearance for most variants
+- **Customizable**: Full control over colors, lighting, and positioning

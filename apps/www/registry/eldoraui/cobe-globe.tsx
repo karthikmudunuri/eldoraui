@@ -11,6 +11,7 @@ type CobeVariant =
   | "default"
   | "draggable"
   | "auto-draggable"
+  | "auto-rotation"
   | "rotate-to-location"
   | "scaled"
 
@@ -32,6 +33,22 @@ interface CobeProps {
   className?: string
   style?: React.CSSProperties
   locations?: Location[]
+  // Globe configuration settings
+  phi?: number
+  theta?: number
+  mapSamples?: number
+  mapBrightness?: number
+  mapBaseBrightness?: number
+  diffuse?: number
+  dark?: number
+  baseColor?: string
+  markerColor?: string
+  markerSize?: number
+  glowColor?: string
+  scale?: number
+  offsetX?: number
+  offsetY?: number
+  opacity?: number
 }
 
 type CobeState = Record<string, unknown>
@@ -46,6 +63,22 @@ export function Cobe({
     { name: "Tokyo", emoji: "📍" },
     { name: "Buenos Aires", emoji: "📍" },
   ],
+  // Default values based on the original JSX version
+  phi = 0,
+  theta = 0.2,
+  mapSamples = 16000,
+  mapBrightness = 1.8,
+  mapBaseBrightness = 0.05,
+  diffuse = 3,
+  dark = 1.1,
+  baseColor = "#ffffff",
+  markerColor = "#fb6415",
+  markerSize = 0.05,
+  glowColor = "#ffffff",
+  scale = 1.0,
+  offsetX = 0.0,
+  offsetY = 0.0,
+  opacity = 0.7,
 }: CobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<number | null>(null)
@@ -69,6 +102,17 @@ export function Cobe({
       Math.PI - ((long * Math.PI) / 180 - Math.PI / 2),
       (lat * Math.PI) / 180,
     ] as [number, number]
+  }
+
+  const hexToRgb = (hex: string): [number, number, number] => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+    return result
+      ? [
+          parseInt(result[1], 16) / 255,
+          parseInt(result[2], 16) / 255,
+          parseInt(result[3], 16) / 255,
+        ]
+      : [0, 0, 0]
   }
 
   const geocodeLocation = async (
@@ -153,33 +197,113 @@ export function Cobe({
       devicePixelRatio: 2,
       width: width * 2,
       height: variant === "scaled" ? width * 2 * 0.4 : width * 2,
-      phi: 0,
-      theta: 0.3,
-      dark: 1,
-      diffuse: 3,
-      mapSamples: 16000,
-      mapBrightness: 1.2,
-      baseColor: [1, 1, 1],
-      markerColor:
-        variant === "rotate-to-location"
-          ? [34 / 255, 211 / 255, 238 / 255]
-          : [8 / 255, 145 / 255, 178 / 255],
-      glowColor: [1.2, 1.2, 1.2],
+      phi: phi,
+      theta: theta,
+      dark: dark,
+      diffuse: diffuse,
+      mapSamples: mapSamples,
+      mapBrightness: mapBrightness,
+      mapBaseBrightness: mapBaseBrightness,
+      baseColor: hexToRgb(baseColor),
+      markerColor: hexToRgb(markerColor),
+      glowColor: hexToRgb(glowColor),
       markers:
-        variant === "rotate-to-location"
-          ? customLocations
-              .filter((loc) => loc.lat && loc.long)
-              .map((loc) => ({
-                location: [loc.lat!, loc.long!],
-                size: 0.1,
-              }))
-          : [],
+        variant === "default" ||
+        variant === "draggable" ||
+        variant === "auto-draggable" ||
+        variant === "auto-rotation" ||
+        variant === "scaled"
+          ? [
+              // San Francisco, default color
+              { location: [37.7595, -122.4367], size: markerSize },
+              // New York, red color
+              {
+                location: [40.7128, -74.006],
+                size: markerSize,
+                color: [1, 0, 0],
+              },
+              // Tokyo, blue color
+              {
+                location: [35.6895, 139.6917],
+                size: markerSize,
+                color: [0, 0.5, 1],
+              },
+              // Sydney, green color
+              {
+                location: [-33.8688, 151.2093],
+                size: markerSize,
+                color: [0, 1, 0],
+              },
+              // Rio de Janeiro, purple color
+              {
+                location: [-22.9068, -43.1729],
+                size: markerSize,
+                color: [0.8, 0, 0.8],
+              },
+              // Paris, yellow color
+              {
+                location: [48.8566, 2.3522],
+                size: markerSize,
+                color: [1, 1, 0],
+              },
+              // Porto, orange color
+              {
+                location: [41.1579, -8.6291],
+                size: markerSize,
+                color: [1, 0.5, 0],
+              },
+              // Athens, pink color
+              {
+                location: [37.9838, 23.7275],
+                size: markerSize,
+                color: [1, 0.5, 1],
+              },
+              // Rome, brown color
+              {
+                location: [41.9028, 12.4964],
+                size: markerSize,
+                color: [0.5, 0.3, 0],
+              },
+              // Kathmandu, blue color
+              {
+                location: [27.7172, 85.324],
+                size: markerSize,
+                color: [0, 0.5, 1],
+              },
+              // Tarbes, green color
+              {
+                location: [43.4643, -0.5167],
+                size: markerSize,
+                color: [0, 1, 0],
+              },
+              // Bamako, yellow color
+              {
+                location: [12.6683, -8.0076],
+                size: markerSize,
+                color: [1, 1, 0],
+              },
+              // Djibouti, purple color
+              {
+                location: [11.55, 43.1667],
+                size: markerSize,
+                color: [0.8, 0, 0.8],
+              },
+            ]
+          : variant === "rotate-to-location"
+            ? customLocations
+                .filter((loc) => loc.lat && loc.long)
+                .map((loc) => ({
+                  location: [loc.lat!, loc.long!],
+                  size: markerSize,
+                }))
+            : [],
       scale: variant === "scaled" ? 2.5 : undefined,
       offset: variant === "scaled" ? [0, width * 2 * 0.4 * 0.6] : undefined,
+      opacity: opacity,
       onRender: (state: CobeState) => {
         switch (variant) {
           case "default":
-            state.phi = phi
+            state.phi = phi + r.get()
             phi += 0.005
             break
           case "draggable":
@@ -190,6 +314,10 @@ export function Cobe({
               phi += 0.005
             }
             state.phi = phi + r.get()
+            break
+          case "auto-rotation":
+            state.phi = phi
+            phi += 0.005
             break
           case "rotate-to-location":
             state.phi = currentPhi
@@ -217,7 +345,7 @@ export function Cobe({
     if (canvasRef.current) {
       setTimeout(() => {
         if (canvasRef.current) {
-          canvasRef.current.style.opacity = "1"
+          canvasRef.current.style.opacity = opacity.toString()
         }
       })
     }
@@ -226,10 +354,33 @@ export function Cobe({
       globe.destroy()
       window.removeEventListener("resize", onResize)
     }
-  }, [variant, r, customLocations])
+  }, [
+    variant,
+    r,
+    customLocations,
+    phi,
+    theta,
+    mapSamples,
+    mapBrightness,
+    mapBaseBrightness,
+    diffuse,
+    dark,
+    baseColor,
+    markerColor,
+    markerSize,
+    glowColor,
+    scale,
+    offsetX,
+    offsetY,
+    opacity,
+  ])
 
   const handlePointerDown = (e: React.PointerEvent) => {
-    if (variant === "draggable" || variant === "auto-draggable") {
+    if (
+      variant === "draggable" ||
+      variant === "auto-draggable" ||
+      variant === "default"
+    ) {
       pointerInteracting.current =
         e.clientX - pointerInteractionMovement.current
       if (canvasRef.current) canvasRef.current.style.cursor = "grabbing"
@@ -237,14 +388,22 @@ export function Cobe({
   }
 
   const handlePointerUp = () => {
-    if (variant === "draggable" || variant === "auto-draggable") {
+    if (
+      variant === "draggable" ||
+      variant === "auto-draggable" ||
+      variant === "default"
+    ) {
       pointerInteracting.current = null
       if (canvasRef.current) canvasRef.current.style.cursor = "grab"
     }
   }
 
   const handlePointerOut = () => {
-    if (variant === "draggable" || variant === "auto-draggable") {
+    if (
+      variant === "draggable" ||
+      variant === "auto-draggable" ||
+      variant === "default"
+    ) {
       pointerInteracting.current = null
       if (canvasRef.current) canvasRef.current.style.cursor = "grab"
     }
@@ -252,7 +411,9 @@ export function Cobe({
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (
-      (variant === "draggable" || variant === "auto-draggable") &&
+      (variant === "draggable" ||
+        variant === "auto-draggable" ||
+        variant === "default") &&
       pointerInteracting.current !== null
     ) {
       const delta = e.clientX - pointerInteracting.current
@@ -265,7 +426,9 @@ export function Cobe({
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (
-      (variant === "draggable" || variant === "auto-draggable") &&
+      (variant === "draggable" ||
+        variant === "auto-draggable" ||
+        variant === "default") &&
       pointerInteracting.current !== null &&
       e.touches[0]
     ) {
@@ -285,8 +448,8 @@ export function Cobe({
 
   const containerStyle = {
     width: "100%",
-    maxWidth: 600,
-    aspectRatio: variant === "scaled" ? 1 / 0.4 : 1,
+    maxWidth: variant === "scaled" ? 800 : 600,
+    aspectRatio: variant === "scaled" ? 2.5 : 1,
     margin: "auto",
     position: "relative" as const,
     ...style,
@@ -299,9 +462,20 @@ export function Cobe({
     opacity: 0,
     transition: "opacity 1s ease",
     cursor:
-      variant === "draggable" || variant === "auto-draggable"
+      variant === "draggable" ||
+      variant === "auto-draggable" ||
+      variant === "default"
         ? "grab"
         : undefined,
+    borderRadius:
+      variant === "default" ||
+      variant === "draggable" ||
+      variant === "auto-draggable" ||
+      variant === "auto-rotation"
+        ? "50%"
+        : variant === "scaled"
+          ? "8px"
+          : undefined,
   }
 
   return (
