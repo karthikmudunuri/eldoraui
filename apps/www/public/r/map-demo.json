@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "map-demo",
+  "type": "registry:example",
+  "title": "map-demo",
+  "description": "Example showing a map component.",
+  "registryDependencies": [
+    "@eldoraui/map"
+  ],
+  "files": [
+    {
+      "path": "registry/example/map-demo.tsx",
+      "content": "import { Map } from \"@/registry/eldoraui/map\"\n\nexport function MapDemo() {\n  return (\n    <div className=\"relative mx-auto h-[400px] w-full max-w-[600px]\">\n      <Map />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

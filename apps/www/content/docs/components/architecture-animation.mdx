@@ -1,0 +1,74 @@
+---
+title: Architecture Animation
+date: 2025-01-27
+description: Animated architecture diagram component with customizable text and interactive elements.
+author: Karthikeyavarma
+published: false
+---
+
+<ComponentPreview name="architecture-animation-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/architecture-animation"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/architecture-animation.tsx`
+
+<ComponentSource name="architecture-animation" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { EldoraUI } from "@/components/eldoraui/architecture-animation"
+```
+
+```tsx showLineNumbers
+<EldoraUI
+  animatedText="npx @eldoraui/cli install"
+  appName="Eldoraui"
+  circleText="Registry"
+  triangleText="AI"
+  diamondText="Registry"
+  animatedBoxText="Cobe"
+  hintText="(components.json)"
+/>
+```
+
+## Props
+
+| Prop              | Type     | Default                       | Description                                      |
+| ----------------- | -------- | ----------------------------- | ------------------------------------------------ |
+| `className`       | `string` | `-`                           | Additional CSS classes to apply to the component |
+| `circleText`      | `string` | `"Registry"`                  | Text displayed inside the circle shape           |
+| `triangleText`    | `string` | `"AI"`                        | Text displayed inside the triangle shape         |
+| `diamondText`     | `string` | `"Registry"`                  | Text displayed inside the diamond shape          |
+| `animatedText`    | `string` | `"npx @eldoraui/cli install"` | The main animated text with shimmer effect       |
+| `animatedBoxText` | `string` | `"Cobe"`                      | Text displayed in the animated box               |
+| `hintText`        | `string` | `"(components.json)"`         | Hint text displayed below the main text          |
+| `appName`         | `string` | `"Eldoraui"`                  | Application name displayed in the animation      |

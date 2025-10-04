@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "architecture-animation-demo",
+  "type": "registry:example",
+  "title": "architecture-animation-demo",
+  "description": "Example showing a architecture-animation-demo component.",
+  "registryDependencies": [
+    "@eldoraui/architecture-animation"
+  ],
+  "files": [
+    {
+      "path": "registry/example/architecture-animation-demo.tsx",
+      "content": "\"use client\";\n\nimport EldoraUI from \"@/registry/eldoraui/architecture-animation\";\n\nexport default function ArchitectureAnimationDemo() {\n  return (\n    <div className=\"space-y-8\">\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-semibold\">Default Props</h3>\n        <div className=\"h-64 w-full rounded-lg border bg-background p-4\">\n          <EldoraUI />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

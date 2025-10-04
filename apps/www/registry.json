@@ -270,6 +270,36 @@
       ]
     },
     {
+      "name": "map",
+      "type": "registry:ui",
+      "title": "map",
+      "description": "An animated map component with location markers.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/map.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "svg-ripple-effect",
+      "type": "registry:ui",
+      "title": "svg-ripple-effect",
+      "description": "An SVG ripple effect component.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/svg-ripple-effect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -625,6 +655,36 @@
       "files": [
         {
           "path": "registry/example/testimonal-slider-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "map-demo",
+      "type": "registry:example",
+      "title": "map-demo",
+      "description": "Example showing a map component.",
+      "registryDependencies": [
+        "@eldoraui/map"
+      ],
+      "files": [
+        {
+          "path": "registry/example/map-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "svg-ripple-effect-demo",
+      "type": "registry:example",
+      "title": "svg-ripple-effect-demo",
+      "description": "Example showing a svg-ripple-effect component.",
+      "registryDependencies": [
+        "@eldoraui/svg-ripple-effect"
+      ],
+      "files": [
+        {
+          "path": "registry/example/svg-ripple-effect-demo.tsx",
           "type": "registry:example"
         }
       ]

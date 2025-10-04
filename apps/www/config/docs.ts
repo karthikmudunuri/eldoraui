@@ -147,5 +147,22 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Special Animations",
+      items: [
+        {
+          title: "Map",
+          href: "/docs/components/map",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Svg Ripple Effect",
+          href: "/docs/components/svg-ripple-effect",
+          items: [],
+          label: "New",
+        },
+      ],
+    },
   ],
 }

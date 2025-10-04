@@ -313,4 +313,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "map-demo",
+    type: "registry:example",
+    title: "map-demo",
+    description: "Example showing a map component.",
+    registryDependencies: ["@eldoraui/map"],
+    files: [
+      {
+        path: "example/map-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "svg-ripple-effect-demo",
+    type: "registry:example",
+    title: "svg-ripple-effect-demo",
+    description: "Example showing a svg-ripple-effect component.",
+    registryDependencies: ["@eldoraui/svg-ripple-effect"],
+    files: [
+      {
+        path: "example/svg-ripple-effect-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

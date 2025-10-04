@@ -16,8 +16,10 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
+- [map](https://eldoraui.site/docs/components/map): An animated map component with location markers.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
+- [svg-ripple-effect](https://eldoraui.site/docs/components/svg-ripple-effect): An SVG ripple effect component.
 - [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
 - [testimonal-slider](https://eldoraui.site/docs/components/testimonal-slider): A testimonial slider component.
 
@@ -47,6 +49,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [integrations-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo-2.tsx): Example usage
 - [terminal-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/terminal-demo.tsx): Example usage
 - [testimonal-slider-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/testimonal-slider-demo.tsx): Example usage
+- [map-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/map-demo.tsx): Example usage
+- [svg-ripple-effect-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo.tsx): Example usage
 
 ## Optional
 

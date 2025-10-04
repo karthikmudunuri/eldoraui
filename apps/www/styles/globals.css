@@ -330,7 +330,6 @@
   -webkit-mask-composite: source-in, xor;
   mask-composite: intersect;
 }
-
 @layer components {
   .steps {
     counter-reset: steps;

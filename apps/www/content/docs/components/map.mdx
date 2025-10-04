@@ -1,0 +1,81 @@
+---
+title: Map
+date: 2025-01-27
+description: An animated map component with location markers that animate in with staggered delays.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="map-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/map"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/map.tsx`
+
+<ComponentSource name="map" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Map } from "@/components/eldoraui/map"
+```
+
+```tsx showLineNumbers
+<div className="relative mx-auto h-[400px] w-full max-w-[600px]">
+  <Map />
+</div>
+```
+
+## Props
+
+| Prop     | Type | Default | Description                                                                                           |
+| -------- | ---- | ------- | ----------------------------------------------------------------------------------------------------- |
+| No props | -    | -       | The Map component doesn't accept any props. It renders a static map with 5 animated location markers. |
+
+## Features
+
+- **Animated Markers**: 5 location markers that animate in with staggered delays
+- **Customizable Positioning**: Each marker has specific top and offset positioning
+- **Smooth Animations**: Uses Framer Motion for smooth entrance animations
+- **Responsive Design**: Adapts to container size with proper scaling
+- **Accessibility**: Includes proper ARIA attributes for screen readers
+
+## Marker Configuration
+
+The component includes 5 predefined markers with the following properties:
+
+- **Marker 1**: Positioned at top 96px, offset -128px, delay 0.15s
+- **Marker 2**: Positioned at top 160px, offset -16px, delay 0.4s
+- **Marker 3**: Positioned at top 144px, offset 96px, delay 0.3s
+- **Marker 4**: Positioned at top 192px, offset 64px, delay 0.6s
+- **Marker 5**: Positioned at top 224px, offset -32px, delay 0.8s
+
+Each marker displays a user avatar image and includes a custom SVG pin design with shadow effects.

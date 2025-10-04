@@ -217,4 +217,30 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "map",
+    type: "registry:ui",
+    title: "map",
+    description: "An animated map component with location markers.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "eldoraui/map.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "svg-ripple-effect",
+    type: "registry:ui",
+    title: "svg-ripple-effect",
+    description: "An SVG ripple effect component.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "eldoraui/svg-ripple-effect.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

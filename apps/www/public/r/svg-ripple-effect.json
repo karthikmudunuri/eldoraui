@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "svg-ripple-effect",
+  "type": "registry:ui",
+  "title": "svg-ripple-effect",
+  "description": "An SVG ripple effect component.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/svg-ripple-effect.tsx",
+      "content": "\"use client\"\n\nimport { clsx } from \"clsx\"\nimport { motion } from \"motion/react\"\n\ninterface SvgRippleEffectProps {\n  transition?: {\n    duration?: number\n    repeat?: number\n    repeatDelay?: number\n  }\n  fade?: (\"top\" | \"bottom\")[]\n  whileHover?: boolean\n  image?: string\n}\n\nexport function SvgRippleEffect({\n  transition = {\n    duration: 0.75,\n    repeat: Infinity,\n    repeatDelay: 1.25,\n  },\n  fade = [],\n  whileHover = false,\n  image,\n}: SvgRippleEffectProps) {\n  return (\n    <motion.div\n      initial=\"idle\"\n      animate={whileHover ? \"idle\" : \"active\"}\n      whileHover={whileHover ? \"active\" : undefined}\n      variants={{ idle: {}, active: {} }}\n    >\n      <svg\n        viewBox=\"0 0 500 500\"\n        fill=\"none\"\n        className={clsx(\n          \"col-start-1 row-start-1 size-full\",\n          \"mask-[linear-gradient(to_bottom,black_90%,transparent),radial-gradient(circle,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_100%)] mask-intersect\"\n        )}\n      >\n        {Array.from(Array(42).keys()).map((n) => (\n          <motion.circle\n            variants={{\n              idle: {\n                scale: 1,\n                strokeOpacity: 0.15,\n              },\n              active: {\n                scale: [1, 1.08, 1],\n                strokeOpacity: [0.15, 0.3, 0.15],\n                transition: { ...transition, delay: n * 0.05 },\n              },\n            }}\n            key={n}\n            cx=\"250\"\n            cy=\"250\"\n            r={n * 14 + 4}\n            className=\"stroke-white\"\n          />\n        ))}\n      </svg>\n      {fade.includes(\"top\") && (\n        <div className=\"absolute inset-0 bg-linear-to-b from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]\" />\n      )}\n      {fade.includes(\"bottom\") && (\n        <div className=\"absolute inset-0 bg-linear-to-t from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]\" />\n      )}\n      {image && (\n        <div className=\"absolute inset-0 flex items-center justify-center\">\n          <img\n            src={image}\n            alt=\"\"\n            className=\"h-6 w-6 rounded-full object-cover\"\n          />\n        </div>\n      )}\n    </motion.div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}
