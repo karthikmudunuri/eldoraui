@@ -236,6 +236,7 @@ export const ui: Registry["items"] = [
     title: "svg-ripple-effect",
     description: "An SVG ripple effect component.",
     dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "eldoraui/svg-ripple-effect.tsx",

@@ -14,7 +14,7 @@ interface SvgRippleEffectProps {
   image?: string
 }
 
-export function SvgRippleEffect({
+export default function SvgRippleEffect({
   transition = {
     duration: 0.75,
     repeat: Infinity,
@@ -26,6 +26,7 @@ export function SvgRippleEffect({
 }: SvgRippleEffectProps) {
   return (
     <motion.div
+      className="group bg-white dark:bg-black"
       initial="idle"
       animate={whileHover ? "idle" : "active"}
       whileHover={whileHover ? "active" : undefined}
@@ -44,11 +45,11 @@ export function SvgRippleEffect({
             variants={{
               idle: {
                 scale: 1,
-                strokeOpacity: 0.15,
+                strokeOpacity: 0.3,
               },
               active: {
                 scale: [1, 1.08, 1],
-                strokeOpacity: [0.15, 0.3, 0.15],
+                strokeOpacity: [0.3, 0.6, 0.3],
                 transition: { ...transition, delay: n * 0.05 },
               },
             }}
@@ -56,22 +57,22 @@ export function SvgRippleEffect({
             cx="250"
             cy="250"
             r={n * 14 + 4}
-            className="stroke-white"
+            className="stroke-gray-800 dark:stroke-gray-200"
           />
         ))}
       </svg>
       {fade.includes("top") && (
-        <div className="absolute inset-0 bg-linear-to-b from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-[50%] dark:from-neutral-950 dark:to-[70%]" />
       )}
       {fade.includes("bottom") && (
-        <div className="absolute inset-0 bg-linear-to-t from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+        <div className="absolute inset-0 bg-linear-to-t from-white to-[50%] dark:from-neutral-950 dark:to-[70%]" />
       )}
       {image && (
         <div className="absolute inset-0 flex items-center justify-center">
           <img
             src={image}
             alt=""
-            className="h-6 w-6 rounded-full object-cover"
+            className="h-8 w-8 rounded-full bg-white object-cover dark:bg-neutral-950"
           />
         </div>
       )}

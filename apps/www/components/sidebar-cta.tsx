@@ -1,96 +1,58 @@
 "use client"
 
 import Link from "next/link"
-import { CheckIcon, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import posthog from "posthog-js"
-
 import { trackEvent } from "@/lib/events"
 import { Button } from "@/components/ui/button"
 import { PingDot } from "@/components/ping-dot"
 import { AnimatedShinyText } from "@/registry/eldoraui/animated-shiny-text"
 import { AuroraText } from "@/registry/eldoraui/aurora-text"
-import { LineShadowText } from "@/registry/eldoraui/line-shadow-text"
 import { TextAnimate } from "@/registry/eldoraui/text-animate"
+import { siteConfig } from "@/config/site"
 
-export function ProCTA() {
+export function DiscordCTA() {
   return (
     <div className="border-border my-6 flex w-full flex-col gap-4 rounded-xl border p-6">
       <div className="flex items-center gap-2">
         <PingDot />
-        <span className="text-xs font-semibold tracking-wider text-emerald-600 uppercase">
-          Limited Time Offer
+        <span className="text-xs font-semibold tracking-wider text-cyan-600 uppercase">
+          Join Us on Discord
         </span>
       </div>
 
       <div className="space-y-3">
         <p className="text-foreground text-2xl leading-tight font-bold">
-          Ship{" "}
-          <LineShadowText className="font-bold tracking-tighter italic">
-            Faster
-          </LineShadowText>{" "}
-          with <AuroraText>Eldora UI Pro</AuroraText>
+          <AuroraText>Eldora UI </AuroraText>
         </p>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Stop building from scratch. <br /> Get{" "}
+          Get latest updates and support <br /> and get help from {" "}
           <span className="text-foreground font-semibold">
-            8 production-ready templates
-          </span>{" "}
-          and{" "}
-          <span className="text-foreground font-semibold">
-            50+ premium components
-          </span>{" "}
-          that your users will love.
+            our community
+          </span>
         </p>
-      </div>
-
-      <div className="space-y-2.5">
-        <div className="text-muted-foreground flex items-center gap-3 text-sm">
-          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100">
-            <CheckIcon className="h-3 w-3 text-emerald-600" />
-          </div>
-          <span>Next.js 15 + TypeScript ready</span>
-        </div>
-        <div className="text-muted-foreground flex items-center gap-3 text-sm">
-          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100">
-            <CheckIcon className="h-3 w-3 text-emerald-600" />
-          </div>
-          <span>Copy, paste, customize in minutes</span>
-        </div>
-        <div className="text-muted-foreground flex items-center gap-3 text-sm">
-          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100">
-            <CheckIcon className="h-3 w-3 text-emerald-600" />
-          </div>
-          <span>Save 100+ hours of development</span>
-        </div>
       </div>
 
       <div className="space-y-4 pt-2">
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="text-foreground text-3xl font-bold">$199</span>
-          <span className="text-muted-foreground text-sm font-medium">
-            once
-          </span>
-        </div>
-
         <Button
           asChild
           className="bg-primary hover:bg-primary/90 text-primary-foreground w-full rounded-lg py-3 font-semibold shadow-sm transition-all duration-200 hover:shadow-md"
           onClick={() => trackEvent({ name: "sidebar_cta_clicked" })}
         >
           <Link
-            href="https://pro.eldoraui.site"
+            href={siteConfig.links.discord}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2"
           >
-            Get Lifetime Access
+            Join Now
             <ChevronRight className="size-4" />
           </Link>
         </Button>
 
         <div className="text-center">
           <p className="text-muted-foreground text-xs">
-            Trusted by <span className="font-semibold">5,000+</span> developers
+            Trusted by <span className="font-semibold">1,000+</span> developers
           </p>
         </div>
       </div>
@@ -125,6 +87,7 @@ export function ProductHuntCTA() {
   )
 }
 
+
 export function SidebarCTA() {
-  return <ProCTA />
+  return <DiscordCTA />
 }

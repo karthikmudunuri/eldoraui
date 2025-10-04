@@ -51,6 +51,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [testimonal-slider-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/testimonal-slider-demo.tsx): Example usage
 - [map-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/map-demo.tsx): Example usage
 - [svg-ripple-effect-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo.tsx): Example usage
+- [svg-ripple-effect-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo-2.tsx): Example usage
 
 ## Optional
 

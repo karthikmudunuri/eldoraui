@@ -339,4 +339,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "svg-ripple-effect-demo-2",
+    type: "registry:example",
+    title: "svg-ripple-effect-demo-2",
+    description: "Example showing a svg-ripple-effect-demo-2 component.",
+    registryDependencies: ["@eldoraui/svg-ripple-effect"],
+    files: [
+      {
+        path: "example/svg-ripple-effect-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

@@ -274,7 +274,7 @@ export const Index: Record<string, any> = {
     name: "svg-ripple-effect",
     description: "An SVG ripple effect component.",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/eldoraui/svg-ripple-effect.tsx",
       type: "registry:ui",
@@ -724,6 +724,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/svg-ripple-effect-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "svg-ripple-effect-demo-2": {
+    name: "svg-ripple-effect-demo-2",
+    description: "Example showing a svg-ripple-effect-demo-2 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/svg-ripple-effect"],
+    files: [{
+      path: "registry/example/svg-ripple-effect-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/svg-ripple-effect-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
