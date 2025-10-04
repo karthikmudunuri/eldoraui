@@ -19,6 +19,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 - [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
+- [testimonal-slider](https://eldoraui.site/docs/components/testimonal-slider): A testimonial slider component.
 
 ## Examples
 
@@ -45,6 +46,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [integrations-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo.tsx): Example usage
 - [integrations-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/integrations-demo-2.tsx): Example usage
 - [terminal-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/terminal-demo.tsx): Example usage
+- [testimonal-slider-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/testimonal-slider-demo.tsx): Example usage
 
 ## Optional
 

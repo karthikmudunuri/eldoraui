@@ -119,6 +119,11 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Testimonal Slider",
+          href: "/docs/components/testimonal-slider",
+          items: [],
+        },
+        {
           title: "Grid",
           href: "/docs/components/grid",
           items: [],

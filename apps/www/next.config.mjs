@@ -10,7 +10,7 @@ const nextConfig = {
     inlineCss: true,
   },
   images: {
-    domains: ["localhost", "res.cloudinary.com", "images.unsplash.com", "pbs.twimg.com",],
+    domains: ["localhost", "res.cloudinary.com", "avatar.vercel.sh", "pbs.twimg.com",],
   },
   async redirects() {
     return [

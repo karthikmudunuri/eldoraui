@@ -254,6 +254,22 @@
       ]
     },
     {
+      "name": "testimonal-slider",
+      "type": "registry:ui",
+      "title": "testimonal-slider",
+      "description": "A testimonial slider component.",
+      "dependencies": [
+        "react",
+        "@headlessui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/testimonal-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -594,6 +610,21 @@
       "files": [
         {
           "path": "registry/example/terminal-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "testimonal-slider-demo",
+      "type": "registry:example",
+      "title": "testimonal-slider-demo",
+      "description": "Example showing a testimonal-slider-demo component.",
+      "registryDependencies": [
+        "@eldoraui/testimonal-slider"
+      ],
+      "files": [
+        {
+          "path": "registry/example/testimonal-slider-demo.tsx",
           "type": "registry:example"
         }
       ]

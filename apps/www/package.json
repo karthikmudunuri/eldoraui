@@ -20,6 +20,7 @@
     "check": "pnpm lint && pnpm typecheck && pnpm format:check"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -84,6 +85,7 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@shikijs/transformers": "^2.5.0",
     "@tailwindcss/typography": "^0.5.19",
@@ -94,7 +96,6 @@
     "@types/unist": "^3.0.3",
     "cssnano": "^7.1.1",
     "eslint": "^9.36.0",
-    "@eslint/eslintrc": "^3.3.1",
     "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",

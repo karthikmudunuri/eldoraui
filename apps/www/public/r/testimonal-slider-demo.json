@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonal-slider-demo",
+  "type": "registry:example",
+  "title": "testimonal-slider-demo",
+  "description": "Example showing a testimonal-slider-demo component.",
+  "registryDependencies": [
+    "@eldoraui/testimonal-slider"
+  ],
+  "files": [
+    {
+      "path": "registry/example/testimonal-slider-demo.tsx",
+      "content": "\"use client\"\n\nimport FancyTestimonialsSlider from \"@/registry/eldoraui/testimonal-slider\"\n\nexport function TestimonalSliderDemo() {\n  const testimonials = [\n    {\n      img: \"https://avatar.vercel.sh/karthik\",\n      quote: \"EldoraUI's components make building UIs effortless great work!\",\n      name: \"Karthik\",\n      role: \"Developer\",\n    },\n    {\n      img: \"https://avatar.vercel.sh/nick\",\n      quote:\n        \"EldoraUI simplifies complex designs with ready-to-use components.\",\n      name: \"Nick\",\n      role: \"Designer\",\n    },\n    {\n      img: \"https://avatar.vercel.sh/amelia\",\n      quote: \"With EldoraUI, creating responsive UIs is a breeze.\",\n      name: \"Amelia\",\n      role: \"Tester\",\n    },\n  ]\n  return (\n    <div className=\"bg-background relative h-[400px] w-full overflow-hidden rounded-lg border sm:h-[500px]\">\n      <div className=\"mt-8 flex justify-center px-4 sm:mt-16 sm:px-12\">\n        <FancyTestimonialsSlider\n          testimonials={testimonials}\n          autorotateTiming={5000}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

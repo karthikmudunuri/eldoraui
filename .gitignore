@@ -45,3 +45,6 @@ next-env.d.ts
 
 # cursor rules
 .cursorrules
+
+# vscode
+.vscode

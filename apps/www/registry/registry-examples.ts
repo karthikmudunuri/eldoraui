@@ -300,4 +300,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "testimonal-slider-demo",
+    type: "registry:example",
+    title: "testimonal-slider-demo",
+    description: "Example showing a testimonal-slider-demo component.",
+    registryDependencies: ["@eldoraui/testimonal-slider"],
+    files: [
+      {
+        path: "example/testimonal-slider-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

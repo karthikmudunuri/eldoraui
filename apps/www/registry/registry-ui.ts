@@ -204,4 +204,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "testimonal-slider",
+    type: "registry:ui",
+    title: "testimonal-slider",
+    description: "A testimonial slider component.",
+    dependencies: ["react", "@headlessui/react"],
+    files: [
+      {
+        path: "eldoraui/testimonal-slider.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

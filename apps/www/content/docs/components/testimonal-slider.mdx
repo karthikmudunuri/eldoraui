@@ -1,0 +1,92 @@
+---
+title: Testimonial Slider
+date: 2025-01-27
+description: Interactive testimonial slider with smooth transitions and auto-rotation features.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="testimonal-slider-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/testimonal-slider"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/testimonal-slider.tsx`
+
+<ComponentSource name="testimonal-slider" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import FancyTestimonialsSlider from "@/components/eldoraui/testimonal-slider"
+```
+
+```tsx showLineNumbers
+const testimonials = [
+  {
+    img: "https://avatar.vercel.sh/karthik",
+    quote: "EldoraUI's components make building UIs effortless great work!",
+    name: "Karthik",
+    role: "Developer",
+  },
+  {
+    img: "https://avatar.vercel.sh/nick",
+    quote: "EldoraUI simplifies complex designs with ready-to-use components.",
+    name: "Nick",
+    role: "Designer",
+  },
+]
+
+;<FancyTestimonialsSlider testimonials={testimonials} autorotateTiming={5000} />
+```
+
+## Props
+
+| Prop               | Type            | Default | Description                             |
+| ------------------ | --------------- | ------- | --------------------------------------- |
+| `testimonials`     | `Testimonial[]` | `-`     | Array of testimonial objects to display |
+| `autorotateTiming` | `number`        | `7000`  | Auto-rotation timing in milliseconds    |
+
+## Testimonial Object
+
+| Prop    | Type     | Description                  |
+| ------- | -------- | ---------------------------- |
+| `img`   | `string` | URL of the testimonial image |
+| `quote` | `string` | The testimonial quote text   |
+| `name`  | `string` | Name of the person           |
+| `role`  | `string` | Role or title of the person  |
+
+## Features
+
+- **Auto-rotation**: Automatically cycles through testimonials (configurable timing)
+- **Smooth transitions**: Uses Headless UI transitions for smooth animations
+- **Interactive controls**: Click on testimonial buttons to manually navigate
+- **Responsive design**: Adapts to different screen sizes
+- **Accessibility**: Proper focus management and keyboard navigation
