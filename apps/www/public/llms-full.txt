@@ -3529,7 +3529,7 @@ export default function SvgRippleEffect({
           <img
             src={image}
             alt=""
-            className="h-8 w-8 rounded-full bg-white object-cover dark:bg-neutral-950"
+            className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-white object-cover dark:bg-neutral-950"
           />
         </div>
       )}
