@@ -88,7 +88,7 @@ export async function generateMetadata({
 export default async function DocPage({ params }: DocPageProps) {
   const { doc, page } = await getDocFromParams({ params })
   const MDX = doc.body
-  const content = await doc.getText("raw")
+  const content = await page.data.getText("raw")
   const neighbours = findNeighbour(source.pageTree, page.url)
   const breadcrumbs = getBreadcrumbItems(page.url, source.pageTree, {
     includeRoot: { url: "/docs" },
