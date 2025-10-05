@@ -46,14 +46,32 @@ function useActiveItem(itemIds: string[]) {
               : current
           )
           setActiveId(topEntry.target.id)
+        } else {
+          // Fallback: find the closest element to the top of the viewport
+          const allElements = itemIds
+            .map((id) => document.getElementById(id))
+            .filter((el): el is HTMLElement => el !== null)
+          if (allElements.length > 0) {
+            const closestElement = allElements.reduce((prev, current) => {
+              const prevRect = prev.getBoundingClientRect()
+              const currentRect = current.getBoundingClientRect()
+              return Math.abs(currentRect.top) < Math.abs(prevRect.top)
+                ? current
+                : prev
+            })
+            setActiveId(closestElement.id)
+          }
         }
       },
-      { rootMargin: "0% 0% -80% 0%" }
+      {
+        rootMargin: "0% 0% -70% 0%",
+        threshold: [0, 0.1, 0.5, 1],
+      }
     )
 
     const scrollHandler = () => {
       const scrollContainer = document.querySelector(
-        ".overflow-auto.rounded-lg.border"
+        ".no-scrollbar.overflow-y-auto"
       )
       if (scrollContainer) {
         const { scrollTop, scrollHeight, clientHeight } = scrollContainer
@@ -73,7 +91,7 @@ function useActiveItem(itemIds: string[]) {
     }
 
     const scrollContainer = document.querySelector(
-      ".overflow-auto.rounded-lg.border"
+      ".no-scrollbar.overflow-y-auto"
     )
     if (scrollContainer) {
       scrollContainer.addEventListener("scroll", scrollHandler)
@@ -102,31 +120,35 @@ function useTocThumb(containerRef: React.RefObject<HTMLDivElement | null>) {
     const container = containerRef.current
     if (!container) return
 
-    const observer = new MutationObserver(() => {
+    const updatePosition = () => {
       const activeItem = container.querySelector('[data-active="true"]')
       if (activeItem) {
         const rect = activeItem.getBoundingClientRect()
         const containerRect = container.getBoundingClientRect()
         setPos([rect.top - containerRect.top + 2, rect.height - 4])
       }
-    })
+    }
 
+    const observer = new MutationObserver(updatePosition)
     observer.observe(container, { attributes: true, subtree: true })
 
-    const resizeObserver = new ResizeObserver(() => {
-      const activeItem = container.querySelector('[data-active="true"]')
-      if (activeItem) {
-        const rect = activeItem.getBoundingClientRect()
-        const containerRect = container.getBoundingClientRect()
-        setPos([rect.top - containerRect.top + 2, rect.height - 4])
-      }
-    })
-
+    const resizeObserver = new ResizeObserver(updatePosition)
     resizeObserver.observe(container)
+
+    // Add scroll listener to ensure position updates during scroll
+    const scrollContainer = document.querySelector(
+      ".no-scrollbar.overflow-y-auto"
+    )
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", updatePosition)
+    }
 
     return () => {
       observer.disconnect()
       resizeObserver.disconnect()
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", updatePosition)
+      }
     }
   }, [containerRef])
 
