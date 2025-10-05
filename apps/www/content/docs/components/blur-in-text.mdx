@@ -1,0 +1,60 @@
+---
+title: Blur In Text
+date: 2025-01-27
+description: Animated text component that reveals text with a blur-in effect using Framer Motion.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="blur-in-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/blur-in-text"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/blur-in-text.tsx`
+
+<ComponentSource name="blur-in-text" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+```
+
+```tsx showLineNumbers
+<BlurIn text="Welcome to EldoraUI" className="text-white" />
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                      |
+| ----------- | -------- | ------- | ------------------------------------------------ |
+| `text`      | `string` | `""`    | The text content to display with blur-in effect  |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the component |

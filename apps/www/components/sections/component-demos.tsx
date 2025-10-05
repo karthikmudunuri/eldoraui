@@ -3,7 +3,7 @@ import { mdxComponents } from "@/mdx-components"
 
 import { source } from "@/lib/source"
 
-const PAGE = "home"
+const PAGE = "/docs/home"
 
 export function ComponentDemos() {
   const pages = source.getPages()

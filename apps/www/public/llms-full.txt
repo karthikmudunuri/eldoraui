@@ -363,6 +363,69 @@ export function AnimatedFrameworksExample() {
 
 
 
+===== COMPONENT: blur-in-text =====
+Title: blur-in-text
+Description: A blur in text component.
+
+--- file: eldoraui/blur-in-text.tsx ---
+"use client"
+
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface BlurInProps {
+  text?: string
+  className?: string
+}
+
+export const BlurIn: React.FC<BlurInProps> = ({
+  text = "",
+  className = "",
+}) => {
+  const variants1 = {
+    hidden: { filter: "blur(10px)", opacity: 0 },
+    visible: { filter: "blur(0px)", opacity: 1 },
+  }
+
+  return (
+    <motion.h1
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 1 }}
+      variants={variants1}
+      className={clsx(
+        "font-display text-center font-bold drop-shadow-sm",
+        "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+        "tracking-[-0.02em]",
+        "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
+        className
+      )}
+    >
+      {text}
+    </motion.h1>
+  )
+}
+
+
+===== EXAMPLE: blur-in-text-demo =====
+Title: blur-in-text-demo
+
+--- file: example/blur-in-text-demo.tsx ---
+"use client"
+
+import { BlurIn } from "@/registry/eldoraui/blur-in-text"
+
+export function BlurInDemo() {
+  return (
+    <BlurIn
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      text="Blur In"
+    />
+  )
+}
+
+
+
 ===== COMPONENT: browser =====
 Title: browser
 Description: A browser SVG component.
@@ -1469,7 +1532,7 @@ export function Cobe({
   mapBrightness = 1.8,
   mapBaseBrightness = 0.05,
   diffuse = 3,
-  dark = 1.1,
+  dark = 1.0,
   baseColor = "#ffffff",
   markerColor = "#fb6415",
   markerSize = 0.05,

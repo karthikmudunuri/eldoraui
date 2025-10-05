@@ -170,5 +170,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Text Animations",
+      items: [
+        {
+          title: "Blur In Text",
+          href: "/docs/components/blur-in-text",
+          items: [],
+          label: "New",
+        },
+      ],
+    },
   ],
 }

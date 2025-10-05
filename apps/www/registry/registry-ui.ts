@@ -258,4 +258,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "blur-in-text",
+    type: "registry:ui",
+    title: "blur-in-text",
+    description: "A blur in text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/blur-in-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

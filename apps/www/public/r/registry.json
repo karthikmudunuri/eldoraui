@@ -322,6 +322,23 @@
       ]
     },
     {
+      "name": "blur-in-text",
+      "type": "registry:ui",
+      "title": "blur-in-text",
+      "description": "A blur in text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/blur-in-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -737,6 +754,21 @@
       "files": [
         {
           "path": "registry/example/animated-frameworks-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "blur-in-text-demo",
+      "type": "registry:example",
+      "title": "blur-in-text-demo",
+      "description": "Example showing a blur-in-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/blur-in-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/blur-in-text-demo.tsx",
           "type": "registry:example"
         }
       ]

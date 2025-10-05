@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blur-in-text-demo",
+  "type": "registry:example",
+  "title": "blur-in-text-demo",
+  "description": "Example showing a blur-in-text-demo component.",
+  "registryDependencies": [
+    "@eldoraui/blur-in-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/blur-in-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { BlurIn } from \"@/registry/eldoraui/blur-in-text\"\n\nexport function BlurInDemo() {\n  return (\n    <BlurIn\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Blur In\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

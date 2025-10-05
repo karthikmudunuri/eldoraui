@@ -70,7 +70,7 @@ export function Cobe({
   mapBrightness = 1.8,
   mapBaseBrightness = 0.05,
   diffuse = 3,
-  dark = 1.1,
+  dark = 1.0,
   baseColor = "#ffffff",
   markerColor = "#fb6415",
   markerSize = 0.05,

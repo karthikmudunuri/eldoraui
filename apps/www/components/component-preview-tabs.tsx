@@ -65,7 +65,7 @@ export function ComponentPreviewTabs({
           className="invisible overflow-hidden data-[active=true]:visible"
         >
           <div className="flex items-center justify-end gap-2 p-4">
-            <OpenInV0Button url={`https://eldoraui.site/r/${name}.json`} />
+            <OpenInV0Button url={`https://magicui.design/r/${name}.json`} />
             <Button
               onClick={() => setKey((prev) => prev + 1)}
               className="flex items-center rounded-lg px-3 py-1"

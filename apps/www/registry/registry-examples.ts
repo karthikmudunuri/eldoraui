@@ -365,4 +365,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "blur-in-text-demo",
+    type: "registry:example",
+    title: "blur-in-text-demo",
+    description: "Example showing a blur-in-text-demo component.",
+    registryDependencies: ["@eldoraui/blur-in-text"],
+    files: [
+      {
+        path: "example/blur-in-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

@@ -8,6 +8,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 - [animated-badge](https://eldoraui.site/docs/components/animated-badge): An animated badge component.
 - [animated-frameworks](https://eldoraui.site/docs/components/animated-frameworks): An animated frameworks component.
+- [blur-in-text](https://eldoraui.site/docs/components/blur-in-text): A blur in text component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
 - [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
@@ -54,6 +55,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [svg-ripple-effect-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo.tsx): Example usage
 - [svg-ripple-effect-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo-2.tsx): Example usage
 - [animated-frameworks-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-frameworks-demo.tsx): Example usage
+- [blur-in-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/blur-in-text-demo.tsx): Example usage
 
 ## Optional
 
