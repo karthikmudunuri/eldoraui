@@ -277,6 +277,33 @@
   }
 }
 
+.frameworkline {
+  offset-anchor: 10px 0px;
+  animation: frameworkline-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.9, 0.8, 0.8, 0.9);
+  animation-duration: 3.5s;
+}
+
+.framework-line {
+  offset-path: path(
+    "M 1 0 v 5 q 0 5 5 5 h 39 q 5 0 5 5 v 71 q 0 5 5 5 h 39 q 5 0 5 5 v 20"
+  );
+}
+
+@keyframes frameworkline-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  85% {
+    offset-distance: 100%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

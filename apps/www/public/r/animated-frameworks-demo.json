@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-frameworks-demo",
+  "type": "registry:example",
+  "title": "animated-frameworks-demo",
+  "description": "Example showing a animated-frameworks-demo component.",
+  "registryDependencies": [
+    "@eldoraui/animated-frameworks"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-frameworks-demo.tsx",
+      "content": "import AnimatedFrameworks from \"@/registry/eldoraui/animated-frameworks\"\n\nexport function AnimatedFrameworksExample() {\n  return (\n    <AnimatedFrameworks\n      cardTitle=\"Universal Compatibility\"\n      cardDescription=\"Works seamlessly with Next.js, React, HTML, Apple, GitHub, OpenAI, and more fits everywhere.\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

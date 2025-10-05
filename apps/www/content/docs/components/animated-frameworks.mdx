@@ -1,0 +1,63 @@
+---
+title: Animated Frameworks
+date: 2025-10-05
+description: Interactive animated card showcasing framework icons with 3D transform effects.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animated-frameworks-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/animated-frameworks"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/animated-frameworks.tsx`
+
+<ComponentSource name="animated-frameworks" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import AnimatedFrameworks from "@/components/eldoraui/animated-frameworks"
+```
+
+```tsx showLineNumbers
+<AnimatedFrameworks
+  cardTitle="Universal Compatibility"
+  cardDescription="Works seamlessly with Next.js, React, HTML, Apple, GitHub, OpenAI, and more fits everywhere."
+/>
+```
+
+## Props
+
+| Prop              | Type     | Default                                                                                          | Description                                    |
+| ----------------- | -------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| `cardTitle`       | `string` | `"Universal Compatibility"`                                                                      | The title displayed at the bottom of the card  |
+| `cardDescription` | `string` | `"Works seamlessly with Next.js, React, HTML, Apple, GitHub, OpenAI, and more fits everywhere."` | The description text displayed below the title |

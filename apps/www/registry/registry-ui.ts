@@ -244,4 +244,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-frameworks",
+    type: "registry:ui",
+    title: "animated-frameworks",
+    description: "An animated frameworks component.",
+    dependencies: ["motion", "react"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/animated-frameworks.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

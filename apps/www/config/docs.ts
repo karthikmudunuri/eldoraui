@@ -151,6 +151,12 @@ export const docsConfig: DocsConfig = {
       title: "Special Animations",
       items: [
         {
+          title: "Animated Frameworks",
+          href: "/docs/components/animated-frameworks",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Map",
           href: "/docs/components/map",
           items: [],
