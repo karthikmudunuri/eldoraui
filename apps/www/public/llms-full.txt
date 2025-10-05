@@ -411,8 +411,6 @@ export const BlurInText: React.FC<BlurInTextProps> = ({
 Title: blur-in-text-demo
 
 --- file: example/blur-in-text-demo.tsx ---
-"use client"
-
 import { BlurInText } from "@/registry/eldoraui/blur-in-text"
 
 export function BlurInTextDemo() {
@@ -2090,189 +2088,113 @@ export function CobeGlobeDemo5() {
 
 
 
-===== COMPONENT: fade-down-text =====
-Title: fade-down-text
-Description: A fade down text component.
+===== COMPONENT: fade-text =====
+Title: fade-text
+Description: A combined fade text component with support for in, up, and down directions.
 
---- file: eldoraui/fade-down-text.tsx ---
-"use client"
-
-import clsx from "clsx"
-import { motion } from "motion/react"
-
-interface FadeDownTextProps {
-  text?: string
-  className?: string
-}
-
-export const FadeDownText: React.FC<FadeDownTextProps> = ({
-  text = "",
-  className = "",
-}) => {
-  const FADE_DOWN_ANIMATION_VARIANTS = {
-    hidden: { opacity: 0, y: -10 },
-    show: { opacity: 1, y: 0, transition: { type: "spring" as const } },
-  }
-
-  return (
-    <motion.div
-      initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.15,
-          },
-        },
-      }}
-    >
-      <motion.h1
-        className={clsx(
-          "font-display text-center font-bold drop-shadow-sm",
-          "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
-          "tracking-[-0.02em]",
-          "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
-          className
-        )}
-        variants={FADE_DOWN_ANIMATION_VARIANTS}
-      >
-        {text}
-      </motion.h1>
-    </motion.div>
-  )
-}
-
-
-===== EXAMPLE: fade-down-text-demo =====
-Title: fade-down-text-demo
-
---- file: example/fade-down-text-demo.tsx ---
-"use client"
-
-import { FadeDownText } from "@/registry/eldoraui/fade-down-text"
-
-export function FadeDownTextDemo() {
-  return (
-    <FadeDownText
-      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Fade Down"
-    />
-  )
-}
-
-
-
-===== COMPONENT: fade-in-text =====
-Title: fade-in-text
-Description: A fade in text component.
-
---- file: eldoraui/fade-in-text.tsx ---
+--- file: eldoraui/fade-text.tsx ---
 "use client"
 
 import React from "react"
 import clsx from "clsx"
 import { motion } from "motion/react"
 
-interface FadeInTextProps {
+type FadeDirection = "in" | "up" | "down"
+
+interface FadeTextProps {
   text?: string
   className?: string
+  direction?: FadeDirection
+  staggerDelay?: number
+  wordDelay?: number
 }
 
-export const FadeInText: React.FC<FadeInTextProps> = ({
+export const FadeText: React.FC<FadeTextProps> = ({
   text = "",
   className = "",
+  direction = "in",
+  staggerDelay = 0.15,
+  wordDelay = 0.1,
 }) => {
-  const wordVariants = {
-    hidden: { opacity: 0 },
-    visible: (i: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: i * 0.1 },
-    }),
+  // For "in" direction, we animate word by word
+  if (direction === "in") {
+    const words = text.split(" ")
+    
+    return (
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: wordDelay,
+            },
+          },
+        }}
+      >
+        <motion.h1
+          className={clsx(
+            "font-display text-center font-bold drop-shadow-sm",
+            "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "tracking-[-0.02em]",
+            "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
+            className
+          )}
+        >
+          {words.map((word, i) => (
+            <motion.span 
+              key={`${word}-${i}`} 
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+            >
+              {word}{" "}
+            </motion.span>
+          ))}
+        </motion.h1>
+      </motion.div>
+    )
   }
 
-  const words = text.split(" ")
-
-  return (
-    <motion.h1
-      initial="hidden"
-      animate="visible"
-      className={clsx(
-        "font-display text-center font-bold drop-shadow-sm",
-        "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
-        "tracking-[-0.02em]",
-        "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
-        className
-      )}
-    >
-      {words.map((word, i) => (
-        <motion.span key={word} variants={wordVariants} custom={i}>
-          {word}{" "}
-        </motion.span>
-      ))}
-    </motion.h1>
-  )
-}
-
-
-===== EXAMPLE: fade-in-text-demo =====
-Title: fade-in-text-demo
-
---- file: example/fade-in-text-demo.tsx ---
-"use client"
-
-import { FadeInText } from "@/registry/eldoraui/fade-in-text"
-
-export function FadeInTextDemo() {
-  return (
-    <FadeInText
-      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Fade In"
-    />
-  )
-}
-
-
-
-===== COMPONENT: fade-up-text =====
-Title: fade-up-text
-Description: A fade up text component.
-
---- file: eldoraui/fade-up-text.tsx ---
-"use client"
-
-import clsx from "clsx"
-import { motion } from "motion/react"
-
-interface FadeUpTextProps {
-  text?: string
-  className?: string
-}
-
-export const FadeUpText: React.FC<FadeUpTextProps> = ({
-  text = "",
-  className = "",
-}) => {
-  const FADE_UP_ANIMATION_VARIANTS = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { type: "spring" as const } },
-  }
+  // For "up" and "down" directions, we animate the entire text
+  const animationVariants =
+    direction === "up"
+      ? {
+          hidden: { opacity: 0, y: 20 },
+          show: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { 
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 12,
+              duration: 0.8
+            } 
+          },
+        }
+      : {
+          hidden: { opacity: 0, y: -20 },
+          show: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { 
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 12,
+              duration: 0.8
+            } 
+          },
+        }
 
   return (
     <motion.div
       initial="hidden"
       animate="show"
       viewport={{ once: true }}
-      variants={{
-        hidden: {},
-        show: {
-          transition: {
-            staggerChildren: 0.15,
-          },
-        },
-      }}
+      transition={{ delay: staggerDelay }}
     >
       <motion.h1
         className={clsx(
@@ -2282,7 +2204,7 @@ export const FadeUpText: React.FC<FadeUpTextProps> = ({
           "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
           className
         )}
-        variants={FADE_UP_ANIMATION_VARIANTS}
+        variants={animationVariants}
       >
         {text}
       </motion.h1>
@@ -2291,19 +2213,52 @@ export const FadeUpText: React.FC<FadeUpTextProps> = ({
 }
 
 
-===== EXAMPLE: fade-up-text-demo =====
-Title: fade-up-text-demo
+===== EXAMPLE: fade-text-demo =====
+Title: fade-text-demo
 
---- file: example/fade-up-text-demo.tsx ---
-"use client"
+--- file: example/fade-text-demo.tsx ---
+import { FadeText } from "@/registry/eldoraui/fade-text"
 
-import { FadeUpText } from "@/registry/eldoraui/fade-up-text"
-
-export function FadeUpTextDemo() {
+export default function FadeTextDemo() {
   return (
-    <FadeUpText
-      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Fade Up"
+    <FadeText
+      text="Welcome to the future"
+      direction="in"
+      wordDelay={0.2}
+    />
+  )
+}
+
+
+===== EXAMPLE: fade-text-demo-2 =====
+Title: fade-text-demo-2
+
+--- file: example/fade-text-demo-2.tsx ---
+import { FadeText } from "@/registry/eldoraui/fade-text"
+
+export default function FadeTextDemo2() {
+  return (
+    <FadeText
+      text="Rising to new heights"
+      direction="up"
+      staggerDelay={0.3}
+    />
+  )
+}
+
+
+===== EXAMPLE: fade-text-demo-3 =====
+Title: fade-text-demo-3
+
+--- file: example/fade-text-demo-3.tsx ---
+import { FadeText } from "@/registry/eldoraui/fade-text"
+
+export default function FadeTextDemo3() {
+  return (
+    <FadeText
+      text="Gracefully descending"
+      direction="down"
+      staggerDelay={0.3}
     />
   )
 }
@@ -2779,8 +2734,6 @@ export const GradualSpacingText: React.FC<GradualSpacingTextProps> = ({
 Title: gradual-spacing-text-demo
 
 --- file: example/gradual-spacing-text-demo.tsx ---
-"use client"
-
 import { GradualSpacingText } from "@/registry/eldoraui/gradual-spacing-text"
 
 export function GradualSpacingTextDemo() {
@@ -3563,8 +3516,6 @@ export const LetterPullUpText: React.FC<LetterPullUpTextProps> = ({
 Title: letter-pull-up-text-demo
 
 --- file: example/letter-pull-up-text-demo.tsx ---
-"use client"
-
 import { LetterPullUpText } from "@/registry/eldoraui/letter-pull-up-text"
 
 export function LetterPullUpTextDemo() {
@@ -3951,8 +3902,6 @@ export const MultiDirectionSlideText: React.FC<
 Title: multi-direction-slide-text-demo
 
 --- file: example/multi-direction-slide-text-demo.tsx ---
-"use client"
-
 import { MultiDirectionSlideText } from "@/registry/eldoraui/multi-direction-slide-text"
 
 export function MultiDirectionSlideTextDemo() {
@@ -4216,8 +4165,6 @@ export const SeparateAwayText: React.FC<SeparateAwayTextProps> = ({
 Title: seperate-away-text-demo
 
 --- file: example/seperate-away-text-demo.tsx ---
-"use client"
-
 import { SeparateAwayText } from "@/registry/eldoraui/seperate-away-text"
 
 export function SeparateAwayTextDemo() {
@@ -4762,8 +4709,6 @@ export const WavyText: React.FC<WavyTextProps> = ({
 Title: wavy-text-demo
 
 --- file: example/wavy-text-demo.tsx ---
-"use client"
-
 import { WavyText } from "@/registry/eldoraui/wavy-text"
 
 export function WavyTextDemo() {

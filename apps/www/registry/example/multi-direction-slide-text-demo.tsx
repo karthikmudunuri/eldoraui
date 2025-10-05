@@ -1,5 +1,3 @@
-"use client"
-
 import { MultiDirectionSlideText } from "@/registry/eldoraui/multi-direction-slide-text"
 
 export function MultiDirectionSlideTextDemo() {

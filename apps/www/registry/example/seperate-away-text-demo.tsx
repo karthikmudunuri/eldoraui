@@ -1,5 +1,3 @@
-"use client"
-
 import { SeparateAwayText } from "@/registry/eldoraui/seperate-away-text"
 
 export function SeparateAwayTextDemo() {

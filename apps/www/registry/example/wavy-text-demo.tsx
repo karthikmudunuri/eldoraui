@@ -1,5 +1,3 @@
-"use client"
-
 import { WavyText } from "@/registry/eldoraui/wavy-text"
 
 export function WavyTextDemo() {

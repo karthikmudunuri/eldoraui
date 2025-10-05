@@ -1,5 +1,3 @@
-"use client"
-
 import { BlurInText } from "@/registry/eldoraui/blur-in-text"
 
 export function BlurInTextDemo() {

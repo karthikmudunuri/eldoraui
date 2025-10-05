@@ -379,40 +379,41 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "fade-in-text-demo",
+    name: "fade-text-demo",
     type: "registry:example",
-    title: "fade-in-text-demo",
-    description: "Example showing a fade-in-text-demo component.",
-    registryDependencies: ["@eldoraui/fade-in-text"],
+    title: "fade-text-demo",
+    description:
+      "Example showing a fade-text-demo component with all directions.",
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [
       {
-        path: "example/fade-in-text-demo.tsx",
+        path: "example/fade-text-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "fade-down-text-demo",
+    name: "fade-text-demo-2",
     type: "registry:example",
-    title: "fade-down-text-demo",
-    description: "Example showing a fade-down-text-demo component.",
-    registryDependencies: ["@eldoraui/fade-down-text"],
+    title: "fade-text-demo-2",
+    description: "Example showing a fade-text-demo-2 component.",
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [
       {
-        path: "example/fade-down-text-demo.tsx",
+        path: "example/fade-text-demo-2.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "fade-up-text-demo",
+    name: "fade-text-demo-3",
     type: "registry:example",
-    title: "fade-up-text-demo",
-    description: "Example showing a fade-up-text-demo component.",
-    registryDependencies: ["@eldoraui/fade-up-text"],
+    title: "fade-text-demo-3",
+    description: "Example showing a fade-text-demo-3 component.",
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [
       {
-        path: "example/fade-up-text-demo.tsx",
+        path: "example/fade-text-demo-3.tsx",
         type: "registry:example",
       },
     ],

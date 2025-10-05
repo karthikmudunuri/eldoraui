@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fade-text-demo-3",
+  "type": "registry:example",
+  "title": "fade-text-demo-3",
+  "description": "Example showing a fade-text-demo-3 component.",
+  "registryDependencies": [
+    "@eldoraui/fade-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/fade-text-demo-3.tsx",
+      "content": "import { FadeText } from \"@/registry/eldoraui/fade-text\"\n\nexport default function FadeTextDemo3() {\n  return (\n    <FadeText\n      text=\"Gracefully descending\"\n      direction=\"down\"\n      staggerDelay={0.3}\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

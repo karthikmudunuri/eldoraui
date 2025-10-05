@@ -321,52 +321,18 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  "fade-in-text": {
-    name: "fade-in-text",
-    description: "A fade in text component.",
+  "fade-text": {
+    name: "fade-text",
+    description: "A combined fade text component with support for in, up, and down directions.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
-      path: "registry/eldoraui/fade-in-text.tsx",
+      path: "registry/eldoraui/fade-text.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/eldoraui/fade-in-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    meta: undefined,
-  },
-  "fade-down-text": {
-    name: "fade-down-text",
-    description: "A fade down text component.",
-    type: "registry:ui",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/eldoraui/fade-down-text.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/eldoraui/fade-down-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    meta: undefined,
-  },
-  "fade-up-text": {
-    name: "fade-up-text",
-    description: "A fade up text component.",
-    type: "registry:ui",
-    registryDependencies: undefined,
-    files: [{
-      path: "registry/eldoraui/fade-up-text.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/eldoraui/fade-up-text.tsx")
+      const mod = await import("@/registry/eldoraui/fade-text.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -967,52 +933,52 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
-  "fade-in-text-demo": {
-    name: "fade-in-text-demo",
-    description: "Example showing a fade-in-text-demo component.",
+  "fade-text-demo": {
+    name: "fade-text-demo",
+    description: "Example showing a fade-text-demo component with all directions.",
     type: "registry:example",
-    registryDependencies: ["@eldoraui/fade-in-text"],
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [{
-      path: "registry/example/fade-in-text-demo.tsx",
+      path: "registry/example/fade-text-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/example/fade-in-text-demo.tsx")
+      const mod = await import("@/registry/example/fade-text-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
   },
-  "fade-down-text-demo": {
-    name: "fade-down-text-demo",
-    description: "Example showing a fade-down-text-demo component.",
+  "fade-text-demo-2": {
+    name: "fade-text-demo-2",
+    description: "Example showing a fade-text-demo-2 component.",
     type: "registry:example",
-    registryDependencies: ["@eldoraui/fade-down-text"],
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [{
-      path: "registry/example/fade-down-text-demo.tsx",
+      path: "registry/example/fade-text-demo-2.tsx",
       type: "registry:example",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/example/fade-down-text-demo.tsx")
+      const mod = await import("@/registry/example/fade-text-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
   },
-  "fade-up-text-demo": {
-    name: "fade-up-text-demo",
-    description: "Example showing a fade-up-text-demo component.",
+  "fade-text-demo-3": {
+    name: "fade-text-demo-3",
+    description: "Example showing a fade-text-demo-3 component.",
     type: "registry:example",
-    registryDependencies: ["@eldoraui/fade-up-text"],
+    registryDependencies: ["@eldoraui/fade-text"],
     files: [{
-      path: "registry/example/fade-up-text-demo.tsx",
+      path: "registry/example/fade-text-demo-3.tsx",
       type: "registry:example",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/example/fade-up-text-demo.tsx")
+      const mod = await import("@/registry/example/fade-text-demo-3.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

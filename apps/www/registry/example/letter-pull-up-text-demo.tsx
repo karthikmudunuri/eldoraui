@@ -1,5 +1,3 @@
-"use client"
-
 import { LetterPullUpText } from "@/registry/eldoraui/letter-pull-up-text"
 
 export function LetterPullUpTextDemo() {

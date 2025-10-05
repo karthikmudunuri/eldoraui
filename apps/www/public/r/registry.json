@@ -339,10 +339,10 @@
       ]
     },
     {
-      "name": "fade-in-text",
+      "name": "fade-text",
       "type": "registry:ui",
-      "title": "fade-in-text",
-      "description": "A fade in text component.",
+      "title": "fade-text",
+      "description": "A combined fade text component with support for in, up, and down directions.",
       "dependencies": [
         "motion",
         "react",
@@ -350,41 +350,7 @@
       ],
       "files": [
         {
-          "path": "registry/eldoraui/fade-in-text.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "fade-down-text",
-      "type": "registry:ui",
-      "title": "fade-down-text",
-      "description": "A fade down text component.",
-      "dependencies": [
-        "motion",
-        "react",
-        "clsx"
-      ],
-      "files": [
-        {
-          "path": "registry/eldoraui/fade-down-text.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "fade-up-text",
-      "type": "registry:ui",
-      "title": "fade-up-text",
-      "description": "A fade up text component.",
-      "dependencies": [
-        "motion",
-        "react",
-        "clsx"
-      ],
-      "files": [
-        {
-          "path": "registry/eldoraui/fade-up-text.tsx",
+          "path": "registry/eldoraui/fade-text.tsx",
           "type": "registry:ui"
         }
       ]
@@ -927,46 +893,46 @@
       ]
     },
     {
-      "name": "fade-in-text-demo",
+      "name": "fade-text-demo",
       "type": "registry:example",
-      "title": "fade-in-text-demo",
-      "description": "Example showing a fade-in-text-demo component.",
+      "title": "fade-text-demo",
+      "description": "Example showing a fade-text-demo component with all directions.",
       "registryDependencies": [
-        "@eldoraui/fade-in-text"
+        "@eldoraui/fade-text"
       ],
       "files": [
         {
-          "path": "registry/example/fade-in-text-demo.tsx",
+          "path": "registry/example/fade-text-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "fade-down-text-demo",
+      "name": "fade-text-demo-2",
       "type": "registry:example",
-      "title": "fade-down-text-demo",
-      "description": "Example showing a fade-down-text-demo component.",
+      "title": "fade-text-demo-2",
+      "description": "Example showing a fade-text-demo-2 component.",
       "registryDependencies": [
-        "@eldoraui/fade-down-text"
+        "@eldoraui/fade-text"
       ],
       "files": [
         {
-          "path": "registry/example/fade-down-text-demo.tsx",
+          "path": "registry/example/fade-text-demo-2.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "fade-up-text-demo",
+      "name": "fade-text-demo-3",
       "type": "registry:example",
-      "title": "fade-up-text-demo",
-      "description": "Example showing a fade-up-text-demo component.",
+      "title": "fade-text-demo-3",
+      "description": "Example showing a fade-text-demo-3 component.",
       "registryDependencies": [
-        "@eldoraui/fade-up-text"
+        "@eldoraui/fade-text"
       ],
       "files": [
         {
-          "path": "registry/example/fade-up-text-demo.tsx",
+          "path": "registry/example/fade-text-demo-3.tsx",
           "type": "registry:example"
         }
       ]

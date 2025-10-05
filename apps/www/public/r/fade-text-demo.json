@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fade-text-demo",
+  "type": "registry:example",
+  "title": "fade-text-demo",
+  "description": "Example showing a fade-text-demo component with all directions.",
+  "registryDependencies": [
+    "@eldoraui/fade-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/fade-text-demo.tsx",
+      "content": "import { FadeText } from \"@/registry/eldoraui/fade-text\"\n\nexport default function FadeTextDemo() {\n  return (\n    <FadeText text=\"Welcome to the future\" direction=\"in\" wordDelay={0.2} />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

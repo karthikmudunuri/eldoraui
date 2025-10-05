@@ -1,0 +1,101 @@
+---
+title: Fade Text
+date: 2025-01-27
+description: A versatile text animation component with support for fade in, fade up, and fade down directions.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="fade-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/fade-text"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/fade-text.tsx`
+
+<ComponentSource name="fade-text" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+### Examples
+
+### Fade Up Example
+
+<ComponentPreview name="fade-text-demo-2" />
+
+### Fade Down Example
+
+<ComponentPreview name="fade-text-demo-3" />
+
+## Usage
+
+```tsx showLineNumbers
+import { FadeText } from "@/components/eldoraui/fade-text"
+```
+
+### Basic Usage
+
+```tsx showLineNumbers
+<FadeText text="Welcome to the future" direction="in" />
+```
+
+### Different Directions
+
+```tsx showLineNumbers
+{
+  /* Fade in word by word */
+}
+;<FadeText text="Welcome to the future" direction="in" />
+
+{
+  /* Fade up from below */
+}
+;<FadeText text="Rising to new heights" direction="up" />
+
+{
+  /* Fade down from above */
+}
+;<FadeText text="Gracefully descending" direction="down" />
+```
+
+### Custom Timing
+
+```tsx showLineNumbers
+<FadeText
+  text="Custom timing animation"
+  direction="up"
+  staggerDelay={0.3}
+  wordDelay={0.2}
+/>
+```
+
+## Props
+
+| Prop           | Type                     | Default | Description                                  |
+| -------------- | ------------------------ | ------- | -------------------------------------------- |
+| `text`         | `string`                 | `""`    | The text content to animate                  |
+| `className`    | `string`                 | `""`    | Additional CSS classes                       |
+| `direction`    | `"in" \| "up" \| "down"` | `"in"`  | Animation direction                          |
+| `staggerDelay` | `number`                 | `0.15`  | Delay between staggered animations (up/down) |
+| `wordDelay`    | `number`                 | `0.1`   | Delay between word animations (in direction) |
+
+## Animation Details
+
+- **`"in"`**: Animates each word individually with a fade-in effect
+- **`"up"`**: Animates the entire text sliding up from below with a spring transition
+- **`"down"`**: Animates the entire text sliding down from above with a spring transition

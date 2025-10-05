@@ -1,5 +1,3 @@
-"use client"
-
 import { GradualSpacingText } from "@/registry/eldoraui/gradual-spacing-text"
 
 export function GradualSpacingTextDemo() {

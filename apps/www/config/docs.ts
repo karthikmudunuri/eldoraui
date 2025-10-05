@@ -179,18 +179,8 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Fade In Text",
-          href: "/docs/components/fade-in-text",
-          items: [],
-        },
-        {
-          title: "Fade Down Text",
-          href: "/docs/components/fade-down-text",
-          items: [],
-        },
-        {
-          title: "Fade Up Text",
-          href: "/docs/components/fade-up-text",
+          title: "Fade Text",
+          href: "/docs/components/fade-text",
           items: [],
         },
         {
