@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-weight-text",
+  "type": "registry:ui",
+  "title": "font-weight-text",
+  "description": "A font weight text component.",
+  "dependencies": [
+    "react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/font-weight-text.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface FontWeightTextProps {\n  text: string\n  className?: string\n  fontSize?: number\n  minWeight?: number\n  maxWeight?: number\n  animationDuration?: number\n  delayMultiplier?: number\n}\n\nexport function FontWeightText({\n  text,\n  className = \"\",\n  fontSize = 150,\n  minWeight = 0,\n  maxWeight = 840,\n  animationDuration = 1.5,\n  delayMultiplier = 0.25,\n}: FontWeightTextProps) {\n  const containerRef = useRef<HTMLParagraphElement>(null)\n\n  useEffect(() => {\n    if (!containerRef.current) return\n\n    const spans = containerRef.current.querySelectorAll(\"span\")\n    const numLetters = spans.length\n\n    spans.forEach((span, i) => {\n      const mappedIndex = i - numLetters / 2\n      span.style.animationDelay = mappedIndex * delayMultiplier + \"s\"\n    })\n  }, [text, delayMultiplier])\n\n  const characters = text.split(\"\").map((char, index) => (\n    <span\n      key={index}\n      aria-hidden=\"true\"\n      style={{\n        animation: `breath ${animationDuration}s alternate cubic-bezier(0.37, 0, 0.63, 1) infinite`,\n        animationFillMode: \"both\",\n        fontVariationSettings: `\"wght\" ${minWeight}`,\n      }}\n    >\n      {char}\n    </span>\n  ))\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <p\n        className={cn(\"m-0 font-sans\", className)}\n        ref={containerRef}\n        aria-label={text}\n        style={{\n          fontSize: `${fontSize}px`,\n          fontFeatureSettings: '\"wght\"',\n        }}\n      >\n        {characters}\n        <style jsx>{`\n          @keyframes breath {\n            0% {\n              font-variation-settings: \"wght\" ${minWeight};\n            }\n            100% {\n              font-variation-settings: \"wght\" ${maxWeight};\n            }\n          }\n        `}</style>\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

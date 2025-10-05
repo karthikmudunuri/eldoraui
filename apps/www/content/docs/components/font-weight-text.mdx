@@ -1,0 +1,69 @@
+---
+title: Font Weight Text
+date: 2024-12-19
+description: An animated text component that breathes with variable font weight changes
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="font-weight-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/font-weight-text"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/font-weight-text.tsx`
+
+<ComponentSource name="font-weight-text" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { FontWeightText } from "@/components/eldoraui/font-weight-text"
+```
+
+```tsx showLineNumbers
+<FontWeightText text="Let's Go" />
+```
+
+## Customization Example
+
+```tsx showLineNumbers
+<FontWeightText
+  text="Let's Go"
+  fontSize={60}
+  className="text-cyan-200"
+  minWeight={100}
+  maxWeight={900}
+  animationDuration={2}
+  delayMultiplier={0.1}
+/>
+```
+
+## Props
+
+| Prop                | Type     | Default | Description                                        |
+| ------------------- | -------- | ------- | -------------------------------------------------- |
+| `text`              | `string` | `-`     | The text to display with font weight animation     |
+| `className`         | `string` | `""`    | Additional CSS classes to apply to the container   |
+| `fontSize`          | `number` | `150`   | Font size in pixels                                |
+| `minWeight`         | `number` | `0`     | Minimum font weight value                          |
+| `maxWeight`         | `number` | `840`   | Maximum font weight value                          |
+| `animationDuration` | `number` | `1.5`   | Duration of the breathing animation in seconds     |
+| `delayMultiplier`   | `number` | `0.25`  | Delay multiplier for staggered character animation |

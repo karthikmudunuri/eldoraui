@@ -519,6 +519,24 @@
       ]
     },
     {
+      "name": "font-weight-text",
+      "type": "registry:ui",
+      "title": "font-weight-text",
+      "description": "A font weight text component.",
+      "dependencies": [
+        "react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/font-weight-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1174,6 +1192,21 @@
       "files": [
         {
           "path": "registry/example/scale-letter-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "font-weight-text-demo",
+      "type": "registry:example",
+      "title": "font-weight-text-demo",
+      "description": "Example showing a font-weight-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/font-weight-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/font-weight-text-demo.tsx",
           "type": "registry:example"
         }
       ]

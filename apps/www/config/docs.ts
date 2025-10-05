@@ -202,6 +202,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Font Weight Text",
+          href: "/docs/components/font-weight-text",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Gradual Spacing Text",
           href: "/docs/components/gradual-spacing-text",
           items: [],

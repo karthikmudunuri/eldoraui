@@ -14,6 +14,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
 - [fade-text](https://eldoraui.site/docs/components/fade-text): A combined fade text component with support for in, up, and down directions.
+- [font-weight-text](https://eldoraui.site/docs/components/font-weight-text): A font weight text component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [gradual-spacing-text](https://eldoraui.site/docs/components/gradual-spacing-text): A gradual spacing text component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
@@ -82,6 +83,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [hacker-background-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/hacker-background-demo-2.tsx): Example usage
 - [card-flip-hover-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/card-flip-hover-demo.tsx): Example usage
 - [scale-letter-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/scale-letter-text-demo.tsx): Example usage
+- [font-weight-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/font-weight-text-demo.tsx): Example usage
 
 ## Optional
 

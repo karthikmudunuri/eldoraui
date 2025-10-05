@@ -574,4 +574,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "font-weight-text-demo",
+    type: "registry:example",
+    title: "font-weight-text-demo",
+    description: "Example showing a font-weight-text-demo component.",
+    registryDependencies: ["@eldoraui/font-weight-text"],
+    files: [
+      {
+        path: "example/font-weight-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

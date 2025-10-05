@@ -508,6 +508,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "font-weight-text": {
+    name: "font-weight-text",
+    description: "A font weight text component.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/eldoraui/font-weight-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/font-weight-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -1251,6 +1268,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/scale-letter-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "font-weight-text-demo": {
+    name: "font-weight-text-demo",
+    description: "Example showing a font-weight-text-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/font-weight-text"],
+    files: [{
+      path: "registry/example/font-weight-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/font-weight-text-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

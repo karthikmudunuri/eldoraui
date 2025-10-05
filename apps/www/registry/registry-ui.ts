@@ -415,4 +415,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "font-weight-text",
+    type: "registry:ui",
+    title: "font-weight-text",
+    description: "A font weight text component.",
+    dependencies: ["react"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/font-weight-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]
