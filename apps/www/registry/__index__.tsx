@@ -440,6 +440,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "novatrix-background": {
+    name: "novatrix-background",
+    description: "A novatrix background component.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/novatrix-background.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/novatrix-background.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -1081,6 +1098,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/word-pull-up-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "novatrix-background-demo": {
+    name: "novatrix-background-demo",
+    description: "Example showing a novatrix-background-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/novatrix-background"],
+    files: [{
+      path: "registry/example/novatrix-background-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/novatrix-background-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "novatrix-background-demo-2": {
+    name: "novatrix-background-demo-2",
+    description: "Example showing a novatrix-background-demo-2 component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/novatrix-background"],
+    files: [{
+      path: "registry/example/novatrix-background-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/novatrix-background-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

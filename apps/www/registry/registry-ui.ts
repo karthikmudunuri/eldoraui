@@ -363,4 +363,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "novatrix-background",
+    type: "registry:ui",
+    title: "novatrix-background",
+    description: "A novatrix background component.",
+    dependencies: ["react", "ogl"],
+    files: [
+      {
+        path: "eldoraui/novatrix-background.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

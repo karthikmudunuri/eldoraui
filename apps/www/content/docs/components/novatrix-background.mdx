@@ -1,0 +1,68 @@
+---
+title: Novatrix Background
+date: 2025-01-27
+description: Animated WebGL background component with customizable colors, speed, and mouse interaction.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="novatrix-background-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/novatrix-background"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/novatrix-background.tsx`
+
+<ComponentSource name="novatrix-background" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### With Hover Animation
+
+<ComponentPreview name="novatrix-background-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import Novatrix from "@/components/eldoraui/novatrix-background"
+```
+
+```tsx showLineNumbers
+<Novatrix color={[1, 1, 1]} speed={1.0} amplitude={0.1} mouseReact={true} />
+```
+
+## Props
+
+| Prop         | Type                       | Default     | Description                                   |
+| ------------ | -------------------------- | ----------- | --------------------------------------------- |
+| `color`      | `[number, number, number]` | `[1, 1, 1]` | RGB color values for the background animation |
+| `speed`      | `number`                   | `1.0`       | Animation speed multiplier                    |
+| `amplitude`  | `number`                   | `0.1`       | Mouse interaction amplitude                   |
+| `mouseReact` | `boolean`                  | `true`      | Enable mouse interaction effects              |

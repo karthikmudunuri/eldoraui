@@ -496,4 +496,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "novatrix-background-demo",
+    type: "registry:example",
+    title: "novatrix-background-demo",
+    description: "Example showing a novatrix-background-demo component.",
+    registryDependencies: ["@eldoraui/novatrix-background"],
+    files: [
+      {
+        path: "example/novatrix-background-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "novatrix-background-demo-2",
+    type: "registry:example",
+    title: "novatrix-background-demo-2",
+    description: "Example showing a novatrix-background-demo-2 component.",
+    registryDependencies: ["@eldoraui/novatrix-background"],
+    files: [
+      {
+        path: "example/novatrix-background-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

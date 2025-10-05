@@ -13,7 +13,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Templates",
-      href: "https://pro.eldoraui.site",
+      href: "/docs/templates/portfolio",
       event: "header_cta_clicked",
       label: "",
     },
@@ -59,6 +59,18 @@ export const docsConfig: DocsConfig = {
           href: "/docs/changelog",
           items: [],
           label: "New",
+        },
+      ],
+    },
+    {
+      title: "Templates",
+      items: [
+        {
+          title: "Portfolio",
+          href: `/docs/templates/portfolio`,
+          items: [],
+          label: "",
+          event: "template_portfolio_clicked",
         },
       ],
     },
@@ -211,6 +223,16 @@ export const docsConfig: DocsConfig = {
         {
           title: "Word Pull Up Text",
           href: "/docs/components/word-pull-up-text",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Backgrounds",
+      items: [
+        {
+          title: "Novatrix Background",
+          href: `/docs/components/novatrix-background`,
           items: [],
         },
       ],
