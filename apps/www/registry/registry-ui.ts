@@ -389,4 +389,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "card-flip-hover",
+    type: "registry:ui",
+    title: "card-flip-hover",
+    description: "A card flip hover component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/card-flip-hover.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

@@ -1,0 +1,49 @@
+---
+title: Card Flip Hover
+date: 2024-12-19
+description: A 3D card flip animation component that triggers on hover
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="card-flip-hover-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/card-flip-hover"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/card-flip-hover.tsx`
+
+<ComponentSource name="card-flip-hover" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { CardFlipHover } from "@/components/eldoraui/card-flip-hover"
+```
+
+```tsx showLineNumbers
+<CardFlipHover imageUrl="https://example.com/image.jpg" />
+```
+
+## Props
+
+| Prop       | Type     | Default | Description                                           |
+| ---------- | -------- | ------- | ----------------------------------------------------- |
+| `imageUrl` | `string` | `-`     | URL of the image to display on both sides of the card |

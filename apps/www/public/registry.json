@@ -489,6 +489,21 @@
       ]
     },
     {
+      "name": "card-flip-hover",
+      "type": "registry:ui",
+      "title": "card-flip-hover",
+      "description": "A card flip hover component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/card-flip-hover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1114,6 +1129,21 @@
       "files": [
         {
           "path": "registry/example/hacker-background-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "card-flip-hover-demo",
+      "type": "registry:example",
+      "title": "card-flip-hover-demo",
+      "description": "Example showing a card-flip-hover-demo component.",
+      "registryDependencies": [
+        "@eldoraui/card-flip-hover"
+      ],
+      "files": [
+        {
+          "path": "registry/example/card-flip-hover-demo.tsx",
           "type": "registry:example"
         }
       ]

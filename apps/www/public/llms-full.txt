@@ -1231,6 +1231,77 @@ export function BrowserDemo2() {
 
 
 
+===== COMPONENT: card-flip-hover =====
+Title: card-flip-hover
+Description: A card flip hover component.
+
+--- file: eldoraui/card-flip-hover.tsx ---
+"use client"
+
+import React, { useState } from "react"
+
+interface CardFlipHoverProps {
+  imageUrl: string
+}
+
+export const CardFlipHover = ({ imageUrl }: CardFlipHoverProps) => {
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  const handleHover = () => {
+    if (!isFlipped) {
+      setIsFlipped(true)
+      setTimeout(() => setIsFlipped(false), 700)
+    }
+  }
+
+  return (
+    <div className="h-60 w-44 [perspective:1000px]" onMouseEnter={handleHover}>
+      <div
+        className={`relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] ${
+          isFlipped
+            ? "[transform:rotateY(180deg)_translateY(-40px)]"
+            : "[transform:rotateY(0deg)_translateY(0px)]"
+        }`}
+      >
+        {/* Front Side */}
+        <div className="absolute h-full w-full overflow-hidden rounded-xl shadow-xl [backface-visibility:hidden]">
+          <img
+            src={imageUrl}
+            alt="Front"
+            className="h-full w-full object-cover"
+          />
+        </div>
+
+        {/* Back Side */}
+        <div className="absolute flex h-full w-full [transform:rotateY(180deg)] items-center justify-center overflow-hidden rounded-xl bg-cyan-600 text-xl font-bold text-white shadow-xl [backface-visibility:hidden]">
+          <img
+            src={imageUrl}
+            alt="Back"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: card-flip-hover-demo =====
+Title: card-flip-hover-demo
+
+--- file: example/card-flip-hover-demo.tsx ---
+import { CardFlipHover } from "@/registry/eldoraui/card-flip-hover"
+
+export default function DemoOne() {
+  return (
+    <div className="flex items-center justify-center">
+      <CardFlipHover imageUrl="https://res.cloudinary.com/eldoraui/image/upload/v1734021310/advanced-gradient_un8eg6.jpg" />
+    </div>
+  )
+}
+
+
+
 ===== COMPONENT: clerk-otp =====
 Title: clerk-otp
 Description: A clerk OTP component.

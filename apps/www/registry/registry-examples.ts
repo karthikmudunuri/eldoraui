@@ -548,4 +548,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "card-flip-hover-demo",
+    type: "registry:example",
+    title: "card-flip-hover-demo",
+    description: "Example showing a card-flip-hover-demo component.",
+    registryDependencies: ["@eldoraui/card-flip-hover"],
+    files: [
+      {
+        path: "example/card-flip-hover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

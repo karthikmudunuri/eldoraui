@@ -125,6 +125,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Card Flip Hover",
+          href: "/docs/components/card-flip-hover",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Terminal",
           href: "/docs/components/terminal",
           items: [],

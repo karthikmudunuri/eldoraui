@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-flip-hover-demo",
+  "type": "registry:example",
+  "title": "card-flip-hover-demo",
+  "description": "Example showing a card-flip-hover-demo component.",
+  "registryDependencies": [
+    "@eldoraui/card-flip-hover"
+  ],
+  "files": [
+    {
+      "path": "registry/example/card-flip-hover-demo.tsx",
+      "content": "import { CardFlipHover } from \"@/registry/eldoraui/card-flip-hover\"\n\nexport default function DemoOne() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <CardFlipHover imageUrl=\"https://res.cloudinary.com/eldoraui/image/upload/v1734021310/advanced-gradient_un8eg6.jpg\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
