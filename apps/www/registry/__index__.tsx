@@ -372,6 +372,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "gradual-spacing-text": {
+    name: "gradual-spacing-text",
+    description: "A gradual spacing text component.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/gradual-spacing-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/gradual-spacing-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -911,6 +928,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/fade-up-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "gradual-spacing-text-demo": {
+    name: "gradual-spacing-text-demo",
+    description: "Example showing a gradual-spacing-text-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/gradual-spacing-text"],
+    files: [{
+      path: "registry/example/gradual-spacing-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/gradual-spacing-text-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

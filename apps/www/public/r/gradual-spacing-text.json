@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradual-spacing-text",
+  "type": "registry:ui",
+  "title": "gradual-spacing-text",
+  "description": "A gradual spacing text component.",
+  "dependencies": [
+    "motion",
+    "react",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/gradual-spacing-text.tsx",
+      "content": "\"use client\"\n\nimport clsx from \"clsx\"\nimport { AnimatePresence, motion } from \"motion/react\"\n\ninterface GradualSpacingTextProps {\n  text?: string\n  className?: string\n}\n\nexport const GradualSpacingText: React.FC<GradualSpacingTextProps> = ({\n  text = \"\",\n  className = \"\",\n}) => {\n  const gradual = {\n    hidden: { opacity: 0, x: -20 },\n    visible: { opacity: 1, x: 0 },\n  }\n\n  return (\n    <div className={clsx(\"flex justify-center space-x-1\", className)}>\n      <AnimatePresence>\n        {text.split(\"\").map((char, i) => (\n          <motion.h1\n            key={i}\n            initial=\"hidden\"\n            animate=\"visible\"\n            exit=\"hidden\"\n            variants={gradual}\n            transition={{ duration: 0.5, delay: i * 0.1 }}\n            className={clsx(\n              \"font-display text-center font-bold drop-shadow-sm\",\n              \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n              \"tracking-[-0.02em]\",\n              \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\"\n            )}\n          >\n            {char === \" \" ? <span>&nbsp;</span> : char}\n          </motion.h1>\n        ))}\n      </AnimatePresence>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

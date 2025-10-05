@@ -1,12 +1,12 @@
 ---
-title: Fade Up Text
+title: Gradual Spacing Text
 date: 2025-01-27
-description: Animated text component that fades in from bottom with smooth spring animation.
+description: Animated text component that reveals characters one by one with gradual spacing effect.
 author: Karthikeyavarma
 published: true
 ---
 
-<ComponentPreview name="fade-up-text-demo" />
+<ComponentPreview name="gradual-spacing-text-demo" />
 
 ## Installation
 
@@ -17,14 +17,14 @@ published: true
   </TabsList>
   <TabsContent value="cli">
     ```bash 
-    npx shadcn@latest add "https://eldoraui.site/r/fade-up-text" 
+    npx shadcn@latest add "https://eldoraui.site/r/gradual-spacing-text" 
     ```
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
       <Step>Copy and paste the following code into your project.</Step>
-      `components/eldoraui/fade-up-text.tsx`
-      <ComponentSource name="fade-up-text" />
+      `components/eldoraui/gradual-spacing-text.tsx`
+      <ComponentSource name="gradual-spacing-text" />
       <Step>Update the import paths to match your project setup.</Step>
     </Steps>
   </TabsContent>
@@ -33,11 +33,11 @@ published: true
 ## Usage
 
 ```tsx showLineNumbers
-import { FadeUpText } from "@/components/eldoraui/fade-up-text"
+import { GradualSpacingText } from "@/components/eldoraui/gradual-spacing-text"
 ```
 
 ```tsx showLineNumbers
-<FadeUpText text="Welcome to EldoraUI" className="text-blue-600" />
+<GradualSpacingText text="Welcome to EldoraUI" className="text-blue-600" />
 ```
 
 ## Props

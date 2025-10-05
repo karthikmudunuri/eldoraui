@@ -417,4 +417,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "gradual-spacing-text-demo",
+    type: "registry:example",
+    title: "gradual-spacing-text-demo",
+    description: "Example showing a gradual-spacing-text-demo component.",
+    registryDependencies: ["@eldoraui/gradual-spacing-text"],
+    files: [
+      {
+        path: "example/gradual-spacing-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

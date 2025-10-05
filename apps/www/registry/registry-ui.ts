@@ -310,4 +310,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "gradual-spacing-text",
+    type: "registry:ui",
+    title: "gradual-spacing-text",
+    description: "A gradual spacing text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/gradual-spacing-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

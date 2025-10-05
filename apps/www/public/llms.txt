@@ -16,6 +16,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [fade-in-text](https://eldoraui.site/docs/components/fade-in-text): A fade in text component.
 - [fade-up-text](https://eldoraui.site/docs/components/fade-up-text): A fade up text component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
+- [gradual-spacing-text](https://eldoraui.site/docs/components/gradual-spacing-text): A gradual spacing text component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
 - [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
@@ -62,6 +63,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [fade-in-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-in-text-demo.tsx): Example usage
 - [fade-down-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-down-text-demo.tsx): Example usage
 - [fade-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-up-text-demo.tsx): Example usage
+- [gradual-spacing-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/gradual-spacing-text-demo.tsx): Example usage
 
 ## Optional
 
