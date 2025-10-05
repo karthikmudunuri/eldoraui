@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fade-down-text-demo",
+  "type": "registry:example",
+  "title": "fade-down-text-demo",
+  "description": "Example showing a fade-down-text-demo component.",
+  "registryDependencies": [
+    "@eldoraui/fade-down-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/fade-down-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { FadeDownText } from \"@/registry/eldoraui/fade-down-text\"\n\nexport function FadeDownTextDemo() {\n  return (\n    <FadeDownText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Fade Down\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

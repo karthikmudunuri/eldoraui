@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/fade-in-text-demo.tsx",
-      "content": "\"use client\"\n\nimport { FadeInText } from \"@/registry/eldoraui/fade-in-text\"\n\nexport function FadeInDemo() {\n  return (\n    <FadeInText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Fade In\"\n    />\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { FadeInText } from \"@/registry/eldoraui/fade-in-text\"\n\nexport function FadeInTextDemo() {\n  return (\n    <FadeInText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Fade In\"\n    />\n  )\n}\n",
       "type": "registry:example"
     }
   ]

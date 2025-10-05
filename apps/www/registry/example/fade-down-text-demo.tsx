@@ -1,12 +1,12 @@
 "use client"
 
-import { BlurInText } from "@/registry/eldoraui/blur-in-text"
+import { FadeDownText } from "@/registry/eldoraui/fade-down-text"
 
-export function BlurInTextDemo() {
+export function FadeDownTextDemo() {
   return (
-    <BlurInText
+    <FadeDownText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Blur In"
+      text="Fade Down"
     />
   )
 }

@@ -284,4 +284,30 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fade-down-text",
+    type: "registry:ui",
+    title: "fade-down-text",
+    description: "A fade down text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/fade-down-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "fade-up-text",
+    type: "registry:ui",
+    title: "fade-up-text",
+    description: "A fade up text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/fade-up-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

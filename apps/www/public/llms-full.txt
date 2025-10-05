@@ -415,7 +415,7 @@ Title: blur-in-text-demo
 
 import { BlurInText } from "@/registry/eldoraui/blur-in-text"
 
-export function BlurInDemo() {
+export function BlurInTextDemo() {
   return (
     <BlurInText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
@@ -2090,6 +2090,80 @@ export function CobeGlobeDemo5() {
 
 
 
+===== COMPONENT: fade-down-text =====
+Title: fade-down-text
+Description: A fade down text component.
+
+--- file: eldoraui/fade-down-text.tsx ---
+"use client"
+
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface FadeDownTextProps {
+  text?: string
+  className?: string
+}
+
+export const FadeDownText: React.FC<FadeDownTextProps> = ({
+  text = "",
+  className = "",
+}) => {
+  const FADE_DOWN_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: -10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const } },
+  }
+
+  return (
+    <motion.div
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+    >
+      <motion.h1
+        className={clsx(
+          "font-display text-center font-bold drop-shadow-sm",
+          "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+          "tracking-[-0.02em]",
+          "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
+          className
+        )}
+        variants={FADE_DOWN_ANIMATION_VARIANTS}
+      >
+        {text}
+      </motion.h1>
+    </motion.div>
+  )
+}
+
+
+===== EXAMPLE: fade-down-text-demo =====
+Title: fade-down-text-demo
+
+--- file: example/fade-down-text-demo.tsx ---
+"use client"
+
+import { FadeDownText } from "@/registry/eldoraui/fade-down-text"
+
+export function FadeDownTextDemo() {
+  return (
+    <FadeDownText
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      text="Fade Down"
+    />
+  )
+}
+
+
+
 ===== COMPONENT: fade-in-text =====
 Title: fade-in-text
 Description: A fade in text component.
@@ -2151,11 +2225,85 @@ Title: fade-in-text-demo
 
 import { FadeInText } from "@/registry/eldoraui/fade-in-text"
 
-export function FadeInDemo() {
+export function FadeInTextDemo() {
   return (
     <FadeInText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
       text="Fade In"
+    />
+  )
+}
+
+
+
+===== COMPONENT: fade-up-text =====
+Title: fade-up-text
+Description: A fade up text component.
+
+--- file: eldoraui/fade-up-text.tsx ---
+"use client"
+
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface FadeUpTextProps {
+  text?: string
+  className?: string
+}
+
+export const FadeUpText: React.FC<FadeUpTextProps> = ({
+  text = "",
+  className = "",
+}) => {
+  const FADE_UP_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const } },
+  }
+
+  return (
+    <motion.div
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+    >
+      <motion.h1
+        className={clsx(
+          "font-display text-center font-bold drop-shadow-sm",
+          "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+          "tracking-[-0.02em]",
+          "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
+          className
+        )}
+        variants={FADE_UP_ANIMATION_VARIANTS}
+      >
+        {text}
+      </motion.h1>
+    </motion.div>
+  )
+}
+
+
+===== EXAMPLE: fade-up-text-demo =====
+Title: fade-up-text-demo
+
+--- file: example/fade-up-text-demo.tsx ---
+"use client"
+
+import { FadeUpText } from "@/registry/eldoraui/fade-up-text"
+
+export function FadeUpTextDemo() {
+  return (
+    <FadeUpText
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      text="Fade Up"
     />
   )
 }

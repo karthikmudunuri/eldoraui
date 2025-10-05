@@ -1,0 +1,46 @@
+---
+title: Fade Down Text
+date: 2025-01-27
+description: Animated text component that fades in from top with smooth spring animation.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="fade-down-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/fade-down-text" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/fade-down-text.tsx`
+      <ComponentSource name="fade-down-text" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { FadeDownText } from "@/components/eldoraui/fade-down-text"
+```
+
+```tsx showLineNumbers
+<FadeDownText text="Welcome to EldoraUI" className="text-blue-600" />
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                    |
+| ----------- | -------- | ------- | ---------------------------------------------- |
+| `text`      | `string` | `""`    | The text content to display                    |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the element |

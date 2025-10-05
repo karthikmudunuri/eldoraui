@@ -1,12 +1,12 @@
 "use client"
 
-import { BlurInText } from "@/registry/eldoraui/blur-in-text"
+import { GradualSpacingText } from "@/registry/eldoraui/gradual-spacing-text"
 
-export function BlurInTextDemo() {
+export function GradualSpacingDemo() {
   return (
-    <BlurInText
+    <GradualSpacingText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Blur In"
+      text="Gradual Spacing"
     />
   )
 }

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/blur-in-text-demo.tsx",
-      "content": "\"use client\"\n\nimport { BlurInText } from \"@/registry/eldoraui/blur-in-text\"\n\nexport function BlurInDemo() {\n  return (\n    <BlurInText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Blur In\"\n    />\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { BlurInText } from \"@/registry/eldoraui/blur-in-text\"\n\nexport function BlurInTextDemo() {\n  return (\n    <BlurInText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Blur In\"\n    />\n  )\n}\n",
       "type": "registry:example"
     }
   ]
