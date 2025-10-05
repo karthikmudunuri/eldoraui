@@ -17,10 +17,6 @@ export const docsConfig: DocsConfig = {
       event: "header_cta_clicked",
       label: "",
     },
-    {
-      title: "Showcase",
-      href: "/showcase",
-    },
   ],
   sidebarNav: [
     {
@@ -37,22 +33,10 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "MCP",
-          href: "/docs/mcp",
-          items: [],
-          label: "",
-        },
-        {
           title: "Story",
           href: "/docs/story",
           items: [],
           label: "New",
-        },
-        {
-          title: "Legacy",
-          href: "/docs/legacy",
-          items: [],
-          label: "",
         },
         {
           title: "Changelog",
@@ -75,46 +59,17 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Mockups",
-      items: [
-        {
-          title: "Safari Browser",
-          href: "/docs/components/safari-browser",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "MacBook Pro",
-          href: "/docs/components/macbook-pro",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "iPhone 17 Pro",
-          href: "/docs/components/iphone-17-pro",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "iPad",
-          href: "/docs/components/ipad",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "Browser",
-          href: "/docs/components/browser",
-          items: [],
-          label: "New",
-        },
-      ],
-    },
-    {
       title: "Components",
       items: [
         {
           title: "Animated Badge",
           href: "/docs/components/animated-badge",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Card Flip Hover",
+          href: "/docs/components/card-flip-hover",
           items: [],
           label: "New",
         },
@@ -125,10 +80,26 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
-          title: "Card Flip Hover",
-          href: "/docs/components/card-flip-hover",
+          title: "Cobe Globe",
+          href: "/docs/components/cobe-globe",
+          items: [],
+        },
+        {
+          title: "Github Inline Comments",
+          href: "/docs/components/github-inline-comments",
           items: [],
           label: "New",
+        },
+        {
+          title: "Grid",
+          href: "/docs/components/grid",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Integrations",
+          href: "/docs/components/integrations",
+          items: [],
         },
         {
           title: "Terminal",
@@ -141,25 +112,38 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/testimonal-slider",
           items: [],
         },
+      ],
+    },
+    {
+      title: "Mockups",
+      items: [
         {
-          title: "Grid",
-          href: "/docs/components/grid",
+          title: "Browser",
+          href: "/docs/components/browser",
           items: [],
           label: "New",
         },
         {
-          title: "Cobe Globe",
-          href: "/docs/components/cobe-globe",
+          title: "iPad",
+          href: "/docs/components/ipad",
           items: [],
+          label: "New",
         },
         {
-          title: "Integrations",
-          href: "/docs/components/integrations",
+          title: "iPhone 17 Pro",
+          href: "/docs/components/iphone-17-pro",
           items: [],
+          label: "New",
         },
         {
-          title: "Github Inline Comments",
-          href: "/docs/components/github-inline-comments",
+          title: "MacBook Pro",
+          href: "/docs/components/macbook-pro",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Safari Browser",
+          href: "/docs/components/safari-browser",
           items: [],
           label: "New",
         },
@@ -249,13 +233,13 @@ export const docsConfig: DocsConfig = {
       title: "Backgrounds",
       items: [
         {
-          title: "Novatrix Background",
-          href: `/docs/components/novatrix-background`,
+          title: "Hacker Background",
+          href: `/docs/components/hacker-background`,
           items: [],
         },
         {
-          title: "Hacker Background",
-          href: `/docs/components/hacker-background`,
+          title: "Novatrix Background",
+          href: `/docs/components/novatrix-background`,
           items: [],
         },
       ],
