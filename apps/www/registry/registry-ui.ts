@@ -336,4 +336,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "multi-direction-slide-text",
+    type: "registry:ui",
+    title: "multi-direction-slide-text",
+    description: "A multi direction slide text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/multi-direction-slide-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

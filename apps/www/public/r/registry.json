@@ -424,6 +424,23 @@
       ]
     },
     {
+      "name": "multi-direction-slide-text",
+      "type": "registry:ui",
+      "title": "multi-direction-slide-text",
+      "description": "A multi direction slide text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/multi-direction-slide-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -929,6 +946,21 @@
       "files": [
         {
           "path": "registry/example/letter-pull-up-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "multi-direction-slide-text-demo",
+      "type": "registry:example",
+      "title": "multi-direction-slide-text-demo",
+      "description": "Example showing a multi-direction-slide-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/multi-direction-slide-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/multi-direction-slide-text-demo.tsx",
           "type": "registry:example"
         }
       ]

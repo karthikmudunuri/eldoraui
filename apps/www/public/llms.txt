@@ -25,6 +25,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [map](https://eldoraui.site/docs/components/map): An animated map component with location markers.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
+- [multi-direction-slide-text](https://eldoraui.site/docs/components/multi-direction-slide-text): A multi direction slide text component.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 - [svg-ripple-effect](https://eldoraui.site/docs/components/svg-ripple-effect): An SVG ripple effect component.
 - [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
@@ -66,6 +67,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [fade-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-up-text-demo.tsx): Example usage
 - [gradual-spacing-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/gradual-spacing-text-demo.tsx): Example usage
 - [letter-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/letter-pull-up-text-demo.tsx): Example usage
+- [multi-direction-slide-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/multi-direction-slide-text-demo.tsx): Example usage
 
 ## Optional
 

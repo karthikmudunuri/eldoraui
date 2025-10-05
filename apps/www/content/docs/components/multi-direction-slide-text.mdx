@@ -1,12 +1,12 @@
 ---
-title: Fade Up Text
+title: Multi Direction Slide Text
 date: 2025-01-27
-description: Animated text component that fades in from bottom with smooth spring animation.
+description: Animated text component that slides text from different directions with smooth motion effects.
 author: Karthikeyavarma
 published: true
 ---
 
-<ComponentPreview name="fade-up-text-demo" />
+<ComponentPreview name="multi-direction-slide-text-demo" />
 
 ## Installation
 
@@ -17,16 +17,16 @@ published: true
   </TabsList>
   <TabsContent value="cli">
     ```bash 
-    npx shadcn@latest add "https://eldoraui.site/r/fade-up-text" 
+    npx shadcn@latest add "https://eldoraui.site/r/multi-direction-slide-text"
     ```
   </TabsContent>
   <TabsContent value="manual">
     <Steps>
       <Step>Copy and paste the following code into your project.</Step>
 
-      `components/eldoraui/fade-up-text.tsx`
+      `components/eldoraui/multi-direction-slide-text.tsx`
 
-      <ComponentSource name="fade-up-text" />
+      <ComponentSource name="multi-direction-slide-text" />
       <Step>Update the import paths to match your project setup.</Step>
     </Steps>
 
@@ -36,16 +36,21 @@ published: true
 ## Usage
 
 ```tsx showLineNumbers
-import { FadeUpText } from "@/components/eldoraui/fade-up-text"
+import { MultiDirectionSlideText } from "@/components/eldoraui/multi-direction-slide-text"
 ```
 
 ```tsx showLineNumbers
-<FadeUpText text="Welcome to EldoraUI" className="text-blue-600" />
+<MultiDirectionSlideText
+  textLeft="Multidirectional"
+  textRight="Slide"
+  className="text-blue-600"
+/>
 ```
 
 ## Props
 
 | Prop        | Type     | Default | Description                                    |
 | ----------- | -------- | ------- | ---------------------------------------------- |
-| `text`      | `string` | `""`    | The text content to display                    |
+| `textLeft`  | `string` | `""`    | The text content that slides in from the left  |
+| `textRight` | `string` | `""`    | The text content that slides in from the right |
 | `className` | `string` | `""`    | Additional CSS classes to apply to the element |

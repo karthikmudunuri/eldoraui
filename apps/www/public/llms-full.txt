@@ -3886,6 +3886,87 @@ export function Marquee({
 
 
 
+===== COMPONENT: multi-direction-slide-text =====
+Title: multi-direction-slide-text
+Description: A multi direction slide text component.
+
+--- file: eldoraui/multi-direction-slide-text.tsx ---
+"use client"
+
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface MultiDirectionSlideTextProps {
+  textLeft?: string
+  textRight?: string
+  className?: string
+}
+
+export const MultiDirectionSlideText: React.FC<
+  MultiDirectionSlideTextProps
+> = ({ textLeft = "", textRight = "", className = "" }) => {
+  const MULTIDIRECTION_SLIDE_VARIANTS = {
+    hidden: { opacity: 0, x: "-25vw" },
+    visible: { opacity: 1, x: 0 },
+    right: { opacity: 0, x: "25vw" },
+  }
+
+  return (
+    <div className={clsx("overflow-hidden", className)}>
+      <motion.h1
+        initial="hidden"
+        animate="visible"
+        variants={MULTIDIRECTION_SLIDE_VARIANTS}
+        transition={{ duration: 1 }}
+        className={clsx(
+          "font-display text-center font-bold drop-shadow-sm",
+          "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+          "tracking-[-0.02em]",
+          "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+        )}
+      >
+        {textLeft}
+      </motion.h1>
+
+      <motion.h1
+        initial="right"
+        animate="visible"
+        variants={MULTIDIRECTION_SLIDE_VARIANTS}
+        transition={{ duration: 1 }}
+        className={clsx(
+          "font-display text-center font-bold drop-shadow-sm",
+          "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+          "tracking-[-0.02em]",
+          "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+        )}
+      >
+        {textRight}
+      </motion.h1>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: multi-direction-slide-text-demo =====
+Title: multi-direction-slide-text-demo
+
+--- file: example/multi-direction-slide-text-demo.tsx ---
+"use client"
+
+import { MultiDirectionSlideText } from "@/registry/eldoraui/multi-direction-slide-text"
+
+export function MultiDirectionSlideTextDemo() {
+  return (
+    <MultiDirectionSlideText
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      textLeft="Multidirectional"
+      textRight="Slide"
+    />
+  )
+}
+
+
+
 ===== COMPONENT: safari-browser =====
 Title: safari-browser
 Description: A safari browser component.

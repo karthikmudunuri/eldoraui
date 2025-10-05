@@ -443,4 +443,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "multi-direction-slide-text-demo",
+    type: "registry:example",
+    title: "multi-direction-slide-text-demo",
+    description: "Example showing a multi-direction-slide-text-demo component.",
+    registryDependencies: ["@eldoraui/multi-direction-slide-text"],
+    files: [
+      {
+        path: "example/multi-direction-slide-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

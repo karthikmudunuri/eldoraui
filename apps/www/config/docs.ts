@@ -203,6 +203,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/letter-pull-up-text",
           items: [],
         },
+        {
+          title: "Multi Direction Slide Text",
+          href: "/docs/components/multi-direction-slide-text",
+          items: [],
+        },
       ],
     },
   ],

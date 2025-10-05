@@ -406,6 +406,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "multi-direction-slide-text": {
+    name: "multi-direction-slide-text",
+    description: "A multi direction slide text component.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/multi-direction-slide-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/multi-direction-slide-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -979,6 +996,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/letter-pull-up-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "multi-direction-slide-text-demo": {
+    name: "multi-direction-slide-text-demo",
+    description: "Example showing a multi-direction-slide-text-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/multi-direction-slide-text"],
+    files: [{
+      path: "registry/example/multi-direction-slide-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/multi-direction-slide-text-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
