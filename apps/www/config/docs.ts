@@ -235,6 +235,11 @@ export const docsConfig: DocsConfig = {
           href: `/docs/components/novatrix-background`,
           items: [],
         },
+        {
+          title: "Hacker Background",
+          href: `/docs/components/hacker-background`,
+          items: [],
+        },
       ],
     },
   ],

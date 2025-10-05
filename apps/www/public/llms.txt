@@ -16,6 +16,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [gradual-spacing-text](https://eldoraui.site/docs/components/gradual-spacing-text): A gradual spacing text component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
+- [hacker-background](https://eldoraui.site/docs/components/hacker-background): A hacker background component.
 - [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
@@ -75,6 +76,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [word-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/word-pull-up-text-demo.tsx): Example usage
 - [novatrix-background-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/novatrix-background-demo.tsx): Example usage
 - [novatrix-background-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/novatrix-background-demo-2.tsx): Example usage
+- [hacker-background-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/hacker-background-demo.tsx): Example usage
+- [hacker-background-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/hacker-background-demo-2.tsx): Example usage
 
 ## Optional
 

@@ -474,6 +474,21 @@
       ]
     },
     {
+      "name": "hacker-background",
+      "type": "registry:ui",
+      "title": "hacker-background",
+      "description": "A hacker background component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/hacker-background.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1069,6 +1084,36 @@
       "files": [
         {
           "path": "registry/example/novatrix-background-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hacker-background-demo",
+      "type": "registry:example",
+      "title": "hacker-background-demo",
+      "description": "Example showing a hacker-background-demo component.",
+      "registryDependencies": [
+        "@eldoraui/hacker-background"
+      ],
+      "files": [
+        {
+          "path": "registry/example/hacker-background-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hacker-background-demo-2",
+      "type": "registry:example",
+      "title": "hacker-background-demo-2",
+      "description": "Example showing a hacker-background-demo-2 component.",
+      "registryDependencies": [
+        "@eldoraui/hacker-background"
+      ],
+      "files": [
+        {
+          "path": "registry/example/hacker-background-demo-2.tsx",
           "type": "registry:example"
         }
       ]

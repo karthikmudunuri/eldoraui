@@ -376,4 +376,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "hacker-background",
+    type: "registry:ui",
+    title: "hacker-background",
+    description: "A hacker background component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/hacker-background.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

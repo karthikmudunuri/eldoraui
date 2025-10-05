@@ -1,0 +1,65 @@
+---
+title: Hacker Background
+date: 2024-12-19
+description: A Matrix-style falling characters background animation component
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="hacker-background-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/hacker-background"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/hacker-background.tsx`
+
+<ComponentSource name="hacker-background" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Customization Example
+
+<ComponentPreview name="hacker-background-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import { HackerBackground } from "@/components/eldoraui/hacker-background"
+```
+
+```tsx showLineNumbers
+<HackerBackground color="#0F0" fontSize={14} speed={1} />
+```
+
+```tsx showLineNumbers
+<HackerBackground
+  color="#22d3ee"
+  fontSize={18}
+  speed={2.5}
+  className="opacity-80"
+/>
+```
+
+## Props
+
+| Prop        | Type     | Default  | Description                                      |
+| ----------- | -------- | -------- | ------------------------------------------------ |
+| `color`     | `string` | `"#0F0"` | Color of the falling characters (hex color)      |
+| `fontSize`  | `number` | `14`     | Size of the characters in pixels                 |
+| `speed`     | `number` | `1`      | Speed multiplier for character falling animation |
+| `className` | `string` | `""`     | Additional CSS classes to apply to the canvas    |

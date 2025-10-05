@@ -522,4 +522,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "hacker-background-demo",
+    type: "registry:example",
+    title: "hacker-background-demo",
+    description: "Example showing a hacker-background-demo component.",
+    registryDependencies: ["@eldoraui/hacker-background"],
+    files: [
+      {
+        path: "example/hacker-background-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hacker-background-demo-2",
+    type: "registry:example",
+    title: "hacker-background-demo-2",
+    description: "Example showing a hacker-background-demo-2 component.",
+    registryDependencies: ["@eldoraui/hacker-background"],
+    files: [
+      {
+        path: "example/hacker-background-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]
