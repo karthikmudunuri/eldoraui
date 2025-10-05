@@ -402,4 +402,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "scale-letter-text",
+    type: "registry:ui",
+    title: "scale-letter-text",
+    description: "A scale letter text component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/scale-letter-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

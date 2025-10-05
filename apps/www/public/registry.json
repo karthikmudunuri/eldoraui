@@ -504,6 +504,21 @@
       ]
     },
     {
+      "name": "scale-letter-text",
+      "type": "registry:ui",
+      "title": "scale-letter-text",
+      "description": "A scale letter text component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/scale-letter-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1144,6 +1159,21 @@
       "files": [
         {
           "path": "registry/example/card-flip-hover-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scale-letter-text-demo",
+      "type": "registry:example",
+      "title": "scale-letter-text-demo",
+      "description": "Example showing a scale-letter-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/scale-letter-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/scale-letter-text-demo.tsx",
           "type": "registry:example"
         }
       ]

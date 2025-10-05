@@ -217,6 +217,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Scale Letter Text",
+          href: "/docs/components/scale-letter-text",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Seperate Away Text",
           href: "/docs/components/seperate-away-text",
           items: [],

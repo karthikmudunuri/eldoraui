@@ -561,4 +561,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "scale-letter-text-demo",
+    type: "registry:example",
+    title: "scale-letter-text-demo",
+    description: "Example showing a scale-letter-text-demo component.",
+    registryDependencies: ["@eldoraui/scale-letter-text"],
+    files: [
+      {
+        path: "example/scale-letter-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

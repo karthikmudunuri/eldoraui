@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scale-letter-text-demo",
+  "type": "registry:example",
+  "title": "scale-letter-text-demo",
+  "description": "Example showing a scale-letter-text-demo component.",
+  "registryDependencies": [
+    "@eldoraui/scale-letter-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/scale-letter-text-demo.tsx",
+      "content": "import ScaleLetterText from \"@/registry/eldoraui/scale-letter-text\"\n\nexport function ScaleLetterTextDemo() {\n  return (\n    <ScaleLetterText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Hover Me\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

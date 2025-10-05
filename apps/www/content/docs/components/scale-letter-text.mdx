@@ -1,0 +1,59 @@
+---
+title: Scale Letter Text
+date: 2024-12-19
+description: An interactive text component with 3D scaling and hover effects on individual letters
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="scale-letter-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/scale-letter-text"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/scale-letter-text.tsx`
+
+<ComponentSource name="scale-letter-text" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import ScaleLetterText from "@/components/eldoraui/scale-letter-text"
+```
+
+```tsx showLineNumbers
+<ScaleLetterText text="Hello World" />
+```
+
+## Customization Example
+
+```tsx showLineNumbers
+<ScaleLetterText
+  className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+  text="Scale Letter Text"
+/>
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                        |
+| ----------- | -------- | ------- | -------------------------------------------------- |
+| `text`      | `string` | `-`     | The text to display with scaling animation effects |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the container   |

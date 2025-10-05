@@ -491,6 +491,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "scale-letter-text": {
+    name: "scale-letter-text",
+    description: "A scale letter text component.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/scale-letter-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/scale-letter-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -1217,6 +1234,23 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/card-flip-hover-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "scale-letter-text-demo": {
+    name: "scale-letter-text-demo",
+    description: "Example showing a scale-letter-text-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/scale-letter-text"],
+    files: [{
+      path: "registry/example/scale-letter-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/scale-letter-text-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
