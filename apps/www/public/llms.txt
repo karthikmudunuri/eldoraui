@@ -32,6 +32,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
 - [testimonal-slider](https://eldoraui.site/docs/components/testimonal-slider): A testimonial slider component.
 - [wavy-text](https://eldoraui.site/docs/components/wavy-text): A wavy text component.
+- [word-pull-up-text](https://eldoraui.site/docs/components/word-pull-up-text): A word pull up text component.
 
 ## Examples
 
@@ -72,6 +73,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [multi-direction-slide-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/multi-direction-slide-text-demo.tsx): Example usage
 - [seperate-away-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/seperate-away-text-demo.tsx): Example usage
 - [wavy-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/wavy-text-demo.tsx): Example usage
+- [word-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/word-pull-up-text-demo.tsx): Example usage
 
 ## Optional
 

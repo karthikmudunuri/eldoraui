@@ -218,6 +218,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/wavy-text",
           items: [],
         },
+        {
+          title: "Word Pull Up Text",
+          href: "/docs/components/word-pull-up-text",
+          items: [],
+        },
       ],
     },
   ],

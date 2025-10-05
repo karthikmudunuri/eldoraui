@@ -482,4 +482,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "word-pull-up-text-demo",
+    type: "registry:example",
+    title: "word-pull-up-text-demo",
+    description: "Example showing a word-pull-up-text-demo component.",
+    registryDependencies: ["@eldoraui/word-pull-up-text"],
+    files: [
+      {
+        path: "example/word-pull-up-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

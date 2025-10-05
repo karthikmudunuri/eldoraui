@@ -475,6 +475,23 @@
       ]
     },
     {
+      "name": "word-pull-up-text",
+      "type": "registry:ui",
+      "title": "word-pull-up-text",
+      "description": "A word pull up text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/word-pull-up-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1025,6 +1042,21 @@
       "files": [
         {
           "path": "registry/example/wavy-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "word-pull-up-text-demo",
+      "type": "registry:example",
+      "title": "word-pull-up-text-demo",
+      "description": "Example showing a word-pull-up-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/word-pull-up-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/word-pull-up-text-demo.tsx",
           "type": "registry:example"
         }
       ]
