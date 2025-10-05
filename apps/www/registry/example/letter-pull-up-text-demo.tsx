@@ -1,12 +1,12 @@
 "use client"
 
-import { GradualSpacingText } from "@/registry/eldoraui/gradual-spacing-text"
+import { LetterPullUpText } from "@/registry/eldoraui/letter-pull-up-text"
 
-export function GradualSpacingTextDemo() {
+export function LetterPullUpTextDemo() {
   return (
-    <GradualSpacingText
+    <LetterPullUpText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
-      text="Gradual Spacing"
+      text="Letter Pull Up"
     />
   )
 }

@@ -2783,7 +2783,7 @@ Title: gradual-spacing-text-demo
 
 import { GradualSpacingText } from "@/registry/eldoraui/gradual-spacing-text"
 
-export function GradualSpacingDemo() {
+export function GradualSpacingTextDemo() {
   return (
     <GradualSpacingText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
@@ -3497,6 +3497,82 @@ export function iPhone17ProDemo() {
         className="h-80 w-full"
       />
     </div>
+  )
+}
+
+
+
+===== COMPONENT: letter-pull-up-text =====
+Title: letter-pull-up-text
+Description: A letter pull up text component.
+
+--- file: eldoraui/letter-pull-up-text.tsx ---
+"use client"
+
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface LetterPullUpTextProps {
+  text?: string
+  className?: string
+}
+
+export const LetterPullUpText: React.FC<LetterPullUpTextProps> = ({
+  text = "",
+  className = "",
+}) => {
+  const letters = text.split("")
+
+  const pullupVariant = {
+    initial: { y: 100, opacity: 0 },
+    animate: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.05, // Delay each letter's animation by 0.05 seconds
+        duration: 0.5, // Adjust duration for smoothness
+      },
+    }),
+  }
+
+  return (
+    <div className={clsx("flex justify-center", className)}>
+      {letters.map((letter, i) => (
+        <motion.h1
+          key={i}
+          variants={pullupVariant}
+          initial="initial"
+          animate="animate"
+          custom={i}
+          className={clsx(
+            "font-display text-center font-bold drop-shadow-sm",
+            "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "tracking-[-0.02em]",
+            "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]"
+          )}
+        >
+          {letter === " " ? <span>&nbsp;</span> : letter}
+        </motion.h1>
+      ))}
+    </div>
+  )
+}
+
+
+===== EXAMPLE: letter-pull-up-text-demo =====
+Title: letter-pull-up-text-demo
+
+--- file: example/letter-pull-up-text-demo.tsx ---
+"use client"
+
+import { LetterPullUpText } from "@/registry/eldoraui/letter-pull-up-text"
+
+export function LetterPullUpTextDemo() {
+  return (
+    <LetterPullUpText
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      text="Letter Pull Up"
+    />
   )
 }
 

@@ -1,0 +1,47 @@
+---
+title: Letter Pull Up Text
+date: 2025-01-27
+description: Animated text component that pulls up letters from bottom with staggered timing effect.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="letter-pull-up-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/letter-pull-up-text"
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/letter-pull-up-text.tsx`
+      <ComponentSource name="letter-pull-up-text" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { LetterPullUpText } from "@/components/eldoraui/letter-pull-up-text"
+```
+
+```tsx showLineNumbers
+<LetterPullUpText text="Welcome to EldoraUI" className="text-blue-600" />
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                    |
+| ----------- | -------- | ------- | ---------------------------------------------- |
+| `text`      | `string` | `""`    | The text content to display                    |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the element |

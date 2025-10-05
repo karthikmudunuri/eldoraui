@@ -407,6 +407,23 @@
       ]
     },
     {
+      "name": "letter-pull-up-text",
+      "type": "registry:ui",
+      "title": "letter-pull-up-text",
+      "description": "A letter pull up text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/letter-pull-up-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -897,6 +914,21 @@
       "files": [
         {
           "path": "registry/example/gradual-spacing-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "letter-pull-up-text-demo",
+      "type": "registry:example",
+      "title": "letter-pull-up-text-demo",
+      "description": "Example showing a letter-pull-up-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/letter-pull-up-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/letter-pull-up-text-demo.tsx",
           "type": "registry:example"
         }
       ]

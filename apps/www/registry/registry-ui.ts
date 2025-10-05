@@ -323,4 +323,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "letter-pull-up-text",
+    type: "registry:ui",
+    title: "letter-pull-up-text",
+    description: "A letter pull up text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/letter-pull-up-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

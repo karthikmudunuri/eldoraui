@@ -21,6 +21,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
+- [letter-pull-up-text](https://eldoraui.site/docs/components/letter-pull-up-text): A letter pull up text component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [map](https://eldoraui.site/docs/components/map): An animated map component with location markers.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
@@ -64,6 +65,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [fade-down-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-down-text-demo.tsx): Example usage
 - [fade-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-up-text-demo.tsx): Example usage
 - [gradual-spacing-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/gradual-spacing-text-demo.tsx): Example usage
+- [letter-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/letter-pull-up-text-demo.tsx): Example usage
 
 ## Optional
 

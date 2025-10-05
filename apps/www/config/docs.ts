@@ -198,6 +198,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/gradual-spacing-text",
           items: [],
         },
+        {
+          title: "Letter Pull Up Text",
+          href: "/docs/components/letter-pull-up-text",
+          items: [],
+        },
       ],
     },
   ],
