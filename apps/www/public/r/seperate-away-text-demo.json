@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "seperate-away-text-demo",
+  "type": "registry:example",
+  "title": "seperate-away-text-demo",
+  "description": "Example showing a seperate-away-text-demo component.",
+  "registryDependencies": [
+    "@eldoraui/seperate-away-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/seperate-away-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { SeparateAwayText } from \"@/registry/eldoraui/seperate-away-text\"\n\nexport function SeparateAwayTextDemo() {\n  return (\n    <SeparateAwayText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      textLeft=\"Seperate\"\n      textRight=\"Away\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -349,4 +349,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "seperate-away-text",
+    type: "registry:ui",
+    title: "seperate-away-text",
+    description: "A seperate away text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/seperate-away-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

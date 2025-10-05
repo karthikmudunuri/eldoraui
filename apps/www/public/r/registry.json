@@ -441,6 +441,23 @@
       ]
     },
     {
+      "name": "seperate-away-text",
+      "type": "registry:ui",
+      "title": "seperate-away-text",
+      "description": "A seperate away text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/seperate-away-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -961,6 +978,21 @@
       "files": [
         {
           "path": "registry/example/multi-direction-slide-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "seperate-away-text-demo",
+      "type": "registry:example",
+      "title": "seperate-away-text-demo",
+      "description": "Example showing a seperate-away-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/seperate-away-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/seperate-away-text-demo.tsx",
           "type": "registry:example"
         }
       ]

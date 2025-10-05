@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "seperate-away-text",
+  "type": "registry:ui",
+  "title": "seperate-away-text",
+  "description": "A seperate away text component.",
+  "dependencies": [
+    "motion",
+    "react",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/seperate-away-text.tsx",
+      "content": "\"use client\"\n\nimport clsx from \"clsx\"\nimport { motion } from \"motion/react\"\n\ninterface SeparateAwayTextProps {\n  textLeft?: string\n  textRight?: string\n  className?: string\n}\n\nexport const SeparateAwayText: React.FC<SeparateAwayTextProps> = ({\n  textLeft = \"\",\n  textRight = \"\",\n  className = \"\",\n}) => {\n  const separate = {\n    hidden: { opacity: 0, y: 0 },\n    visible: (custom: number) => ({\n      opacity: 1,\n      y: custom * 5,\n      transition: { duration: 1.5 },\n    }),\n  }\n\n  return (\n    <div className={className}>\n      <motion.h1\n        custom={-1}\n        variants={separate}\n        initial=\"hidden\"\n        animate=\"visible\"\n        className={clsx(\n          \"font-display text-center font-bold drop-shadow-sm\",\n          \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n          \"tracking-[-0.02em]\",\n          \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\"\n        )}\n      >\n        {textLeft}\n      </motion.h1>\n      <motion.h1\n        custom={1}\n        variants={separate}\n        initial=\"hidden\"\n        animate=\"visible\"\n        className={clsx(\n          \"font-display text-center font-bold drop-shadow-sm\",\n          \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n          \"tracking-[-0.02em]\",\n          \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\"\n        )}\n      >\n        {textRight}\n      </motion.h1>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

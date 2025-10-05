@@ -1,0 +1,53 @@
+---
+title: Separate Away Text
+date: 2025-01-27
+description: Animated text component that separates text elements away from each other with vertical motion effects.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="seperate-away-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash 
+    npx shadcn@latest add "https://eldoraui.site/r/seperate-away-text"
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/seperate-away-text.tsx`
+      <ComponentSource name="seperate-away-text" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { SeparateAwayText } from "@/components/eldoraui/seperate-away-text"
+```
+
+```tsx showLineNumbers
+<SeparateAwayText 
+  textLeft="Separate"
+  textRight="Away"
+  className="text-blue-600"
+/>
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                    |
+| ----------- | -------- | ------- | ---------------------------------------------- |
+| `textLeft`  | `string` | `""`    | The text content that moves upward             |
+| `textRight` | `string` | `""`    | The text content that moves downward           |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the element |

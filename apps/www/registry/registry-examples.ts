@@ -456,4 +456,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "seperate-away-text-demo",
+    type: "registry:example",
+    title: "seperate-away-text-demo",
+    description: "Example showing a seperate-away-text-demo component.",
+    registryDependencies: ["@eldoraui/seperate-away-text"],
+    files: [
+      {
+        path: "example/seperate-away-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

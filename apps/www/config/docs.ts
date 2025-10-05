@@ -208,6 +208,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/multi-direction-slide-text",
           items: [],
         },
+        {
+          title: "Seperate Away Text",
+          href: "/docs/components/seperate-away-text",
+          items: [],
+        },
       ],
     },
   ],
