@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wavy-text",
+  "type": "registry:ui",
+  "title": "wavy-text",
+  "description": "A wavy text component.",
+  "dependencies": [
+    "motion",
+    "react",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/wavy-text.tsx",
+      "content": "\"use client\"\n\nimport clsx from \"clsx\"\nimport { AnimatePresence, motion } from \"motion/react\"\n\ninterface WavyTextProps {\n  text?: string\n  className?: string\n}\n\nexport const WavyText: React.FC<WavyTextProps> = ({\n  text = \"\",\n  className = \"\",\n}) => {\n  const variants1 = {\n    hidden: { y: 10 },\n    visible: { y: -10 },\n  }\n\n  return (\n    <div className={clsx(\"flex justify-center space-x-2\", className)}>\n      <AnimatePresence>\n        {text.split(\"\").map((char, i) => (\n          <motion.h1\n            key={i}\n            initial=\"hidden\"\n            animate=\"visible\"\n            exit=\"hidden\"\n            variants={variants1}\n            transition={{\n              repeat: Infinity,\n              repeatType: \"reverse\",\n              duration: 0.5,\n              delay: i * 0.2,\n            }}\n            className={clsx(\n              \"font-display text-center font-bold drop-shadow-sm\",\n              \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n              \"tracking-[-0.02em]\",\n              \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\"\n            )}\n          >\n            {char}\n          </motion.h1>\n        ))}\n      </AnimatePresence>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

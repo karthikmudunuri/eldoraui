@@ -31,6 +31,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [svg-ripple-effect](https://eldoraui.site/docs/components/svg-ripple-effect): An SVG ripple effect component.
 - [terminal](https://eldoraui.site/docs/components/terminal): A terminal component.
 - [testimonal-slider](https://eldoraui.site/docs/components/testimonal-slider): A testimonial slider component.
+- [wavy-text](https://eldoraui.site/docs/components/wavy-text): A wavy text component.
 
 ## Examples
 
@@ -70,6 +71,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [letter-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/letter-pull-up-text-demo.tsx): Example usage
 - [multi-direction-slide-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/multi-direction-slide-text-demo.tsx): Example usage
 - [seperate-away-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/seperate-away-text-demo.tsx): Example usage
+- [wavy-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/wavy-text-demo.tsx): Example usage
 
 ## Optional
 

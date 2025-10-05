@@ -1,0 +1,51 @@
+---
+title: Wavy Text
+date: 2025-01-27
+description: Animated text component that creates a wavy motion effect with each character moving up and down in sequence.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="wavy-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash 
+    npx shadcn@latest add "https://eldoraui.site/r/wavy-text"
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+
+      `components/eldoraui/wavy-text.tsx`
+
+      <ComponentSource name="wavy-text" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { WavyText } from "@/components/eldoraui/wavy-text"
+```
+
+```tsx showLineNumbers
+<WavyText text="Wavy Text" className="text-blue-600" />
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                     |
+| ----------- | -------- | ------- | ----------------------------------------------- |
+| `text`      | `string` | `""`    | The text content to display with wavy animation |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the element  |

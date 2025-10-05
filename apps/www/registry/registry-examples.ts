@@ -469,4 +469,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "wavy-text-demo",
+    type: "registry:example",
+    title: "wavy-text-demo",
+    description: "Example showing a wavy-text-demo component.",
+    registryDependencies: ["@eldoraui/wavy-text"],
+    files: [
+      {
+        path: "example/wavy-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wavy-text-demo",
+  "type": "registry:example",
+  "title": "wavy-text-demo",
+  "description": "Example showing a wavy-text-demo component.",
+  "registryDependencies": [
+    "@eldoraui/wavy-text"
+  ],
+  "files": [
+    {
+      "path": "registry/example/wavy-text-demo.tsx",
+      "content": "\"use client\"\n\nimport { WavyText } from \"@/registry/eldoraui/wavy-text\"\n\nexport function WavyTextDemo() {\n  return (\n    <WavyText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Wavy Text\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

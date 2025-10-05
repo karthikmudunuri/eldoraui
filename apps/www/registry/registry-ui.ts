@@ -362,4 +362,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "wavy-text",
+    type: "registry:ui",
+    title: "wavy-text",
+    description: "A wavy text component.",
+    dependencies: ["motion", "react", "clsx"],
+    files: [
+      {
+        path: "eldoraui/wavy-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

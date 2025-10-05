@@ -213,6 +213,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/seperate-away-text",
           items: [],
         },
+        {
+          title: "Wavy Text",
+          href: "/docs/components/wavy-text",
+          items: [],
+        },
       ],
     },
   ],

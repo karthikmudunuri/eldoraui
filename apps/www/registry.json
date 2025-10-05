@@ -458,6 +458,23 @@
       ]
     },
     {
+      "name": "wavy-text",
+      "type": "registry:ui",
+      "title": "wavy-text",
+      "description": "A wavy text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/wavy-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -993,6 +1010,21 @@
       "files": [
         {
           "path": "registry/example/seperate-away-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "wavy-text-demo",
+      "type": "registry:example",
+      "title": "wavy-text-demo",
+      "description": "Example showing a wavy-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/wavy-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/wavy-text-demo.tsx",
           "type": "registry:example"
         }
       ]
