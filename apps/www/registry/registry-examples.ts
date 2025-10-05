@@ -378,4 +378,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "fade-in-text-demo",
+    type: "registry:example",
+    title: "fade-in-text-demo",
+    description: "Example showing a fade-in-text-demo component.",
+    registryDependencies: ["@eldoraui/fade-in-text"],
+    files: [
+      {
+        path: "example/fade-in-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

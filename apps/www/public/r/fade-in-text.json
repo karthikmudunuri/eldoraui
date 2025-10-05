@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fade-in-text",
+  "type": "registry:ui",
+  "title": "fade-in-text",
+  "description": "A fade in text component.",
+  "dependencies": [
+    "motion",
+    "react",
+    "clsx"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/fade-in-text.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport clsx from \"clsx\"\nimport { motion } from \"motion/react\"\n\ninterface FadeInTextProps {\n  text?: string\n  className?: string\n}\n\nexport const FadeInText: React.FC<FadeInTextProps> = ({\n  text = \"\",\n  className = \"\",\n}) => {\n  const wordVariants = {\n    hidden: { opacity: 0 },\n    visible: (i: number) => ({\n      y: 0,\n      opacity: 1,\n      transition: { delay: i * 0.1 },\n    }),\n  }\n\n  const words = text.split(\" \")\n\n  return (\n    <motion.h1\n      initial=\"hidden\"\n      animate=\"visible\"\n      className={clsx(\n        \"font-display text-center font-bold drop-shadow-sm\",\n        \"text-4xl md:text-5xl lg:text-6xl xl:text-7xl\",\n        \"tracking-[-0.02em]\",\n        \"md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]\",\n        className\n      )}\n    >\n      {words.map((word, i) => (\n        <motion.span key={word} variants={wordVariants} custom={i}>\n          {word}{\" \"}\n        </motion.span>\n      ))}\n    </motion.h1>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

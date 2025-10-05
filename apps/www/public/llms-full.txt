@@ -373,12 +373,12 @@ Description: A blur in text component.
 import clsx from "clsx"
 import { motion } from "motion/react"
 
-interface BlurInProps {
+interface BlurInTextProps {
   text?: string
   className?: string
 }
 
-export const BlurIn: React.FC<BlurInProps> = ({
+export const BlurInText: React.FC<BlurInTextProps> = ({
   text = "",
   className = "",
 }) => {
@@ -413,11 +413,11 @@ Title: blur-in-text-demo
 --- file: example/blur-in-text-demo.tsx ---
 "use client"
 
-import { BlurIn } from "@/registry/eldoraui/blur-in-text"
+import { BlurInText } from "@/registry/eldoraui/blur-in-text"
 
 export function BlurInDemo() {
   return (
-    <BlurIn
+    <BlurInText
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
       text="Blur In"
     />
@@ -2085,6 +2085,78 @@ export function CobeGlobeDemo5() {
     <div className="bg-background relative z-10 h-[200px] w-full overflow-hidden rounded-lg border sm:h-[300px] md:h-[400px]">
       <Cobe variant="scaled" />
     </div>
+  )
+}
+
+
+
+===== COMPONENT: fade-in-text =====
+Title: fade-in-text
+Description: A fade in text component.
+
+--- file: eldoraui/fade-in-text.tsx ---
+"use client"
+
+import React from "react"
+import clsx from "clsx"
+import { motion } from "motion/react"
+
+interface FadeInTextProps {
+  text?: string
+  className?: string
+}
+
+export const FadeInText: React.FC<FadeInTextProps> = ({
+  text = "",
+  className = "",
+}) => {
+  const wordVariants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: i * 0.1 },
+    }),
+  }
+
+  const words = text.split(" ")
+
+  return (
+    <motion.h1
+      initial="hidden"
+      animate="visible"
+      className={clsx(
+        "font-display text-center font-bold drop-shadow-sm",
+        "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+        "tracking-[-0.02em]",
+        "md:leading-[4rem] lg:leading-[4.5rem] xl:leading-[5rem]",
+        className
+      )}
+    >
+      {words.map((word, i) => (
+        <motion.span key={word} variants={wordVariants} custom={i}>
+          {word}{" "}
+        </motion.span>
+      ))}
+    </motion.h1>
+  )
+}
+
+
+===== EXAMPLE: fade-in-text-demo =====
+Title: fade-in-text-demo
+
+--- file: example/fade-in-text-demo.tsx ---
+"use client"
+
+import { FadeInText } from "@/registry/eldoraui/fade-in-text"
+
+export function FadeInDemo() {
+  return (
+    <FadeInText
+      className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
+      text="Fade In"
+    />
   )
 }
 

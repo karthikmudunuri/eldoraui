@@ -339,6 +339,23 @@
       ]
     },
     {
+      "name": "fade-in-text",
+      "type": "registry:ui",
+      "title": "fade-in-text",
+      "description": "A fade in text component.",
+      "dependencies": [
+        "motion",
+        "react",
+        "clsx"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/fade-in-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -769,6 +786,21 @@
       "files": [
         {
           "path": "registry/example/blur-in-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "fade-in-text-demo",
+      "type": "registry:example",
+      "title": "fade-in-text-demo",
+      "description": "Example showing a fade-in-text-demo component.",
+      "registryDependencies": [
+        "@eldoraui/fade-in-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/fade-in-text-demo.tsx",
           "type": "registry:example"
         }
       ]

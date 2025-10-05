@@ -177,7 +177,11 @@ export const docsConfig: DocsConfig = {
           title: "Blur In Text",
           href: "/docs/components/blur-in-text",
           items: [],
-          label: "New",
+        },
+        {
+          title: "Fade In Text",
+          href: "/docs/components/fade-in-text",
+          items: [],
         },
       ],
     },

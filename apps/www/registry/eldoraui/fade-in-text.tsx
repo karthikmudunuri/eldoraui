@@ -1,28 +1,33 @@
 "use client"
 
+import React from "react"
 import clsx from "clsx"
 import { motion } from "motion/react"
 
-interface BlurInTextProps {
+interface FadeInTextProps {
   text?: string
   className?: string
 }
 
-export const BlurInText: React.FC<BlurInTextProps> = ({
+export const FadeInText: React.FC<FadeInTextProps> = ({
   text = "",
   className = "",
 }) => {
-  const variants1 = {
-    hidden: { filter: "blur(10px)", opacity: 0 },
-    visible: { filter: "blur(0px)", opacity: 1 },
+  const wordVariants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: i * 0.1 },
+    }),
   }
+
+  const words = text.split(" ")
 
   return (
     <motion.h1
       initial="hidden"
       animate="visible"
-      transition={{ duration: 1 }}
-      variants={variants1}
       className={clsx(
         "font-display text-center font-bold drop-shadow-sm",
         "text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
@@ -31,7 +36,11 @@ export const BlurInText: React.FC<BlurInTextProps> = ({
         className
       )}
     >
-      {text}
+      {words.map((word, i) => (
+        <motion.span key={word} variants={wordVariants} custom={i}>
+          {word}{" "}
+        </motion.span>
+      ))}
     </motion.h1>
   )
 }

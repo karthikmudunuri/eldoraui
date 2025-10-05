@@ -1,0 +1,60 @@
+---
+title: Fade In Text
+date: 2025-01-27
+description: Animated text component that reveals text with a word-by-word fade-in effect using Framer Motion.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="fade-in-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/fade-in-text"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/fade-in-text.tsx`
+
+<ComponentSource name="fade-in-text" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { FadeInText } from "@/components/eldoraui/fade-in-text"
+```
+
+```tsx showLineNumbers
+<FadeInText text="Welcome to EldoraUI" className="text-white" />
+```
+
+## Props
+
+| Prop        | Type     | Default | Description                                      |
+| ----------- | -------- | ------- | ------------------------------------------------ |
+| `text`      | `string` | `""`    | The text content to display with fade-in effect  |
+| `className` | `string` | `""`    | Additional CSS classes to apply to the component |

@@ -12,6 +12,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
 - [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
+- [fade-in-text](https://eldoraui.site/docs/components/fade-in-text): A fade in text component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
 - [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
@@ -56,6 +57,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [svg-ripple-effect-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/svg-ripple-effect-demo-2.tsx): Example usage
 - [animated-frameworks-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-frameworks-demo.tsx): Example usage
 - [blur-in-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/blur-in-text-demo.tsx): Example usage
+- [fade-in-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fade-in-text-demo.tsx): Example usage
 
 ## Optional
 
