@@ -81,12 +81,12 @@ export async function GET(request: Request) {
                 </div>
               </div>
               <div tw="text-black flex text-[80px] font-semibold tracking-tight">
-                Modern Next.js Templates
+                Beautiful UI Components
               </div>
               <div tw="text-gray-600 text-2xl flex">
                 <p>
-                  Built with React, Typescript, shadcn/ui, Tailwind CSS, and
-                  Motion.
+                  Curated collection of modern React components built with
+                  TypeScript, shadcn/ui, Tailwind CSS, and Framer Motion.
                 </p>
               </div>
             </div>
