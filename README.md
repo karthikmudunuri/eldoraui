@@ -1,4 +1,4 @@
-<img alt="Eldora UI - UI Library for Design Engineers" src="![eldoraui](https://github.com/user-attachments/assets/b6748ae1-db82-4868-9cb8-86a1f0cd8589)" width="100%">
+<img alt="Eldora UI - UI Library for Design Engineers" src="<img width="1503" height="744" alt="eldoraui" src="https://github.com/user-attachments/assets/e3057d8c-a41c-440f-b891-2cbaf4453596" width="100%">
 <h3 align="center">Eldora UI</h3>
 <p align="center">
     UI Library for Design Engineers
