@@ -59,6 +59,41 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Mockups",
+      items: [
+        {
+          title: "Browser",
+          href: "/docs/components/browser",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "iPad",
+          href: "/docs/components/ipad",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "iPhone 17 Pro",
+          href: "/docs/components/iphone-17-pro",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "MacBook Pro",
+          href: "/docs/components/macbook-pro",
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Safari Browser",
+          href: "/docs/components/safari-browser",
+          items: [],
+          label: "New",
+        },
+      ],
+    },
+    {
       title: "Components",
       items: [
         {
@@ -115,41 +150,6 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Mockups",
-      items: [
-        {
-          title: "Browser",
-          href: "/docs/components/browser",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "iPad",
-          href: "/docs/components/ipad",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "iPhone 17 Pro",
-          href: "/docs/components/iphone-17-pro",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "MacBook Pro",
-          href: "/docs/components/macbook-pro",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "Safari Browser",
-          href: "/docs/components/safari-browser",
-          items: [],
-          label: "New",
-        },
-      ],
-    },
-    {
       title: "Special Animations",
       items: [
         {
@@ -167,6 +167,17 @@ export const docsConfig: DocsConfig = {
         {
           title: "Svg Ripple Effect",
           href: "/docs/components/svg-ripple-effect",
+          items: [],
+          label: "New",
+        },
+      ],
+    },
+    {
+      title: "Buttons",
+      items: [
+        {
+          title: "Live Button",
+          href: "/docs/components/live-button",
           items: [],
           label: "New",
         },
@@ -234,12 +245,12 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Hacker Background",
-          href: `/docs/components/hacker-background`,
+          href: "/docs/components/hacker-background",
           items: [],
         },
         {
           title: "Novatrix Background",
-          href: `/docs/components/novatrix-background`,
+          href: "/docs/components/novatrix-background",
           items: [],
         },
       ],

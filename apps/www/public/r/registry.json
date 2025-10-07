@@ -537,6 +537,38 @@
       ]
     },
     {
+      "name": "animated-grid-pattern",
+      "type": "registry:ui",
+      "title": "animated-grid-pattern",
+      "description": "An animated grid pattern component.",
+      "dependencies": [
+        "react",
+        "three",
+        "react-three-fiber"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/animated-grid-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "live-button",
+      "type": "registry:ui",
+      "title": "live-button",
+      "description": "A live button component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/live-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1207,6 +1239,36 @@
       "files": [
         {
           "path": "registry/example/font-weight-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-grid-pattern-demo",
+      "type": "registry:example",
+      "title": "animated-grid-pattern-demo",
+      "description": "Example showing a animated-grid-pattern-demo component.",
+      "registryDependencies": [
+        "@eldoraui/animated-grid-pattern"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-grid-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "live-button-demo",
+      "type": "registry:example",
+      "title": "live-button-demo",
+      "description": "Example showing a live-button-demo component.",
+      "registryDependencies": [
+        "@eldoraui/live-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/live-button-demo.tsx",
           "type": "registry:example"
         }
       ]

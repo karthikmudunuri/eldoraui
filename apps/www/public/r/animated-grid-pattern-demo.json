@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-grid-pattern-demo",
+  "type": "registry:example",
+  "title": "animated-grid-pattern-demo",
+  "description": "Example showing a animated-grid-pattern-demo component.",
+  "registryDependencies": [
+    "@eldoraui/animated-grid-pattern"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-grid-pattern-demo.tsx",
+      "content": "import { AnimatedGridPattern } from \"@/registry/eldoraui/animated-grid-pattern\"\n\nexport function AnimatedGridPatternDemo() {\n  return (\n    <div className=\"bg-background relative mx-auto h-[500px] w-full overflow-hidden rounded-lg border\">\n      <AnimatedGridPattern\n        gridSize={10}\n        gridWidth={4}\n        gridLength={4}\n        gap={0.05}\n        rippleScale={2.5}\n        rippleRadius={2}\n        cornerRadius={0.8}\n        cameraPosition={[-9.31, 12, 11.5]}\n        cameraRotation={[-0.65, -0.2, -0.13]}\n        fov={60}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

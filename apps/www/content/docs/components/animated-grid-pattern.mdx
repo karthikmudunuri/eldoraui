@@ -1,0 +1,63 @@
+---
+title: AnimatedGridPattern
+date: 2025-10-07
+description: A 3D animated grid pattern component with interactive hover effects and ripple animations
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animated-grid-pattern-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add
+    "https://eldoraui.site/r/animated-grid-pattern" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/animated-grid-pattern.tsx`
+      <ComponentSource name="animated-grid-pattern" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { AnimatedGridPattern } from "@/components/eldoraui/animated-grid-pattern"
+```
+
+```tsx showLineNumbers
+<AnimatedGridPattern
+  gridSize={8}
+  gridWidth={3}
+  gridLength={3}
+  gap={0.1}
+  rippleScale={2}
+  rippleRadius={2}
+  cornerRadius={0.5}
+/>
+```
+
+## Props
+
+| Prop             | Type                       | Default                | Description                                      |
+| ---------------- | -------------------------- | ---------------------- | ------------------------------------------------ |
+| `gridSize`       | `number`                   | `10`                   | Number of grids in each direction (x and z axis) |
+| `gridWidth`      | `number`                   | `4`                    | Width of individual grid tiles                   |
+| `gridLength`     | `number`                   | `4`                    | Length of individual grid tiles                  |
+| `gap`            | `number`                   | `0.05`                 | Spacing between grid tiles                       |
+| `rippleScale`    | `number`                   | `2.5`                  | Intensity of the ripple effect on hover          |
+| `rippleRadius`   | `number`                   | `2`                    | Radius of the ripple effect from hovered tile    |
+| `cornerRadius`   | `number`                   | `0.8`                  | Corner radius of individual grid tiles           |
+| `cameraPosition` | `[number, number, number]` | `[-9.31, 12, 24.72]`   | 3D camera position in the scene                  |
+| `cameraRotation` | `[number, number, number]` | `[-0.65, -0.2, -0.13]` | 3D camera rotation angles                        |
+| `fov`            | `number`                   | `35`                   | Camera field of view                             |

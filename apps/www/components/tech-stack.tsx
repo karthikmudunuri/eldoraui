@@ -144,10 +144,32 @@ export function TechStack({
   className?: string
 }) {
   return (
-    <div className={cn("flex flex-row gap-2", className)}>
+    <div className={cn("flex flex-row gap-3", className)}>
       {technologies.map((tech) => (
         <Tooltip key={tech}>
-          <TooltipTrigger>{techComponents[tech].icon}</TooltipTrigger>
+          <TooltipTrigger>
+            <div className="[perspective:200px] [transform-style:preserve-3d]">
+              <div
+                className="relative mx-auto h-12 w-12 rounded-md bg-gradient-to-b from-neutral-200 to-neutral-100 p-[3px] transition-transform duration-300 hover:scale-105 dark:from-neutral-800 dark:to-neutral-950"
+                style={{
+                  transform: "rotateX(15deg)",
+                  transformOrigin: "center",
+                }}
+              >
+                <div className="relative z-20 flex h-full w-full items-center justify-center overflow-hidden rounded-[4px] bg-white dark:bg-black">
+                  <div className="text-cyan-500 transition-colors duration-200 hover:text-cyan-400 dark:text-cyan-500 dark:hover:text-cyan-400">
+                    {techComponents[tech].icon}
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 z-30 mx-auto h-3 w-full rounded-full bg-neutral-300 opacity-50 blur-md dark:bg-neutral-600" />
+
+                <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-[60%] bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+
+                <div className="absolute inset-x-0 bottom-0 mx-auto h-[6px] w-[60%] bg-gradient-to-r from-transparent via-cyan-600 to-transparent blur-sm" />
+              </div>
+            </div>
+          </TooltipTrigger>
           <TooltipContent>
             <p>{techComponents[tech].name}</p>
           </TooltipContent>

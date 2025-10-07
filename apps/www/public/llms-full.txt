@@ -363,6 +363,354 @@ export function AnimatedFrameworksExample() {
 
 
 
+===== COMPONENT: animated-grid-pattern =====
+Title: animated-grid-pattern
+Description: An animated grid pattern component.
+
+--- file: eldoraui/animated-grid-pattern.tsx ---
+"use client"
+
+import React, { useEffect, useMemo, useRef, useState } from "react"
+import { Canvas, useFrame, useThree } from "@react-three/fiber"
+import { useTheme } from "next-themes"
+import { ExtrudeGeometry, Shape } from "three"
+import * as THREE from "three"
+
+interface GridProps {
+  position: [number, number, number]
+  width?: number
+  length?: number
+  cornerRadius?: number
+  gridPosition: [number, number]
+  hoveredGrid: [number, number] | null
+  rippleScale?: number
+  rippleRadius?: number
+}
+
+const Grid = ({
+  position,
+  width = 4,
+  length = 4,
+  cornerRadius = 2,
+  gridPosition,
+  hoveredGrid,
+  rippleScale = 0.3,
+  rippleRadius = 3,
+}: GridProps) => {
+  const meshRef = useRef<THREE.Mesh>(null)
+  const [currentScale, setCurrentScale] = useState(1)
+  const { theme } = useTheme()
+
+  const gridColor = theme === "dark" ? "#232323" : "#e5e7eb"
+
+  const geometry = useMemo(() => {
+    const shape = new Shape()
+    const angleStep = Math.PI * 0.5
+    const radius = cornerRadius
+
+    const halfWidth = width / 2
+    const halfLength = length / 2
+
+    shape.absarc(
+      halfWidth - radius,
+      halfLength - radius,
+      radius,
+      angleStep * 0,
+      angleStep * 1
+    )
+    shape.absarc(
+      -halfWidth + radius,
+      halfLength - radius,
+      radius,
+      angleStep * 1,
+      angleStep * 2
+    )
+    shape.absarc(
+      -halfWidth + radius,
+      -halfLength + radius,
+      radius,
+      angleStep * 2,
+      angleStep * 3
+    )
+    shape.absarc(
+      halfWidth - radius,
+      -halfLength + radius,
+      radius,
+      angleStep * 3,
+      angleStep * 4
+    )
+
+    const extrudeSettings = {
+      depth: 0.3,
+      bevelEnabled: true,
+      bevelThickness: 0.05,
+      bevelSize: 0.05,
+      bevelSegments: 20,
+      curveSegments: 20,
+    }
+
+    const geometry = new ExtrudeGeometry(shape, extrudeSettings)
+    geometry.center()
+
+    return geometry
+  }, [width, length, cornerRadius])
+
+  useEffect(() => {
+    return () => {
+      geometry.dispose()
+    }
+  }, [geometry])
+
+  useFrame(() => {
+    if (meshRef.current) {
+      let targetScale = 1
+
+      const isThisGridHovered =
+        hoveredGrid &&
+        gridPosition[0] === hoveredGrid[0] &&
+        gridPosition[1] === hoveredGrid[1]
+
+      if (isThisGridHovered) {
+        targetScale = 5
+      } else if (hoveredGrid) {
+        const dx = gridPosition[0] - hoveredGrid[0]
+        const dz = gridPosition[1] - hoveredGrid[1]
+        const distance = Math.sqrt(dx * dx + dz * dz)
+
+        if (distance <= rippleRadius && distance > 0) {
+          const falloff = Math.max(0, 1 - distance / rippleRadius)
+          const rippleEffect = falloff * rippleScale
+          targetScale = 1 + rippleEffect * 3
+        }
+      }
+
+      const lerpFactor = 0.1
+      const newScale = currentScale + (targetScale - currentScale) * lerpFactor
+      setCurrentScale(newScale)
+
+      meshRef.current.scale.z = newScale
+    }
+  })
+
+  useEffect(() => {
+    if (meshRef.current) {
+      meshRef.current.userData.gridPosition = gridPosition
+    }
+  }, [gridPosition])
+
+  return (
+    <mesh
+      ref={meshRef}
+      geometry={geometry}
+      position={position}
+      rotation={[Math.PI / 2, 0, 0]}
+    >
+      <meshPhysicalMaterial
+        color={gridColor}
+        roughness={0.5}
+        metalness={1}
+        clearcoat={1}
+        clearcoatRoughness={0}
+        clearcoatNormalScale={1}
+        clearcoatNormalMap={null}
+      />
+    </mesh>
+  )
+}
+
+function HoverDetector({
+  onHoverChange,
+}: {
+  gridSize: number
+  spacingX: number
+  spacingZ: number
+  onHoverChange: (hoveredGrid: [number, number] | null) => void
+}) {
+  const { camera, raycaster, pointer, scene } = useThree()
+
+  useFrame(() => {
+    raycaster.setFromCamera(pointer, camera)
+
+    const intersects = raycaster.intersectObjects(scene.children, true)
+
+    if (intersects.length > 0) {
+      for (const intersect of intersects) {
+        const mesh = intersect.object
+        if (mesh.userData && mesh.userData.gridPosition) {
+          const gridPos = mesh.userData.gridPosition as [number, number]
+          onHoverChange(gridPos)
+          return
+        }
+      }
+    }
+
+    onHoverChange(null)
+  })
+
+  return null
+}
+
+interface GridOfGridesProps {
+  gridSize: number
+  gridWidth: number
+  gridLength: number
+  gap: number
+  rippleScale: number
+  rippleRadius: number
+  cornerRadius: number
+}
+
+function GridOfGrides({
+  gridSize,
+  gridWidth,
+  gridLength,
+  gap,
+  rippleScale,
+  rippleRadius,
+  cornerRadius,
+}: GridOfGridesProps) {
+  const spacingX = gridWidth + gap
+  const spacingZ = gridLength + gap
+
+  const [hoveredGrid, setHoveredGrid] = useState<[number, number] | null>(null)
+
+  const Grides = []
+
+  for (let x = 0; x < gridSize; x++) {
+    for (let z = 0; z < gridSize; z++) {
+      const posX = (x - (gridSize - 1) / 2) * spacingX
+      const posZ = (z - (gridSize - 1) / 2) * spacingZ
+
+      Grides.push(
+        <Grid
+          key={`${x}-${z}`}
+          position={[posX, -0.85, posZ]}
+          width={gridWidth}
+          length={gridLength}
+          cornerRadius={cornerRadius}
+          gridPosition={[x, z]}
+          hoveredGrid={hoveredGrid}
+          rippleScale={rippleScale}
+          rippleRadius={rippleRadius}
+        />
+      )
+    }
+  }
+
+  return (
+    <>
+      <HoverDetector
+        gridSize={gridSize}
+        spacingX={spacingX}
+        spacingZ={spacingZ}
+        onHoverChange={setHoveredGrid}
+      />
+      {Grides}
+    </>
+  )
+}
+
+interface AnimatedGridPatternProps {
+  gridSize?: number
+  gridWidth?: number
+  gridLength?: number
+  gap?: number
+  rippleScale?: number
+  rippleRadius?: number
+  cornerRadius?: number
+  cameraPosition?: [number, number, number]
+  cameraRotation?: [number, number, number]
+  fov?: number
+}
+
+export function AnimatedGridPattern({
+  gridSize = 10,
+  gridWidth = 4,
+  gridLength = 4,
+  gap = 0.05,
+  rippleScale = 2.5,
+  rippleRadius = 2,
+  cornerRadius = 0.8,
+  cameraPosition = [-9.31, 12, 24.72],
+  cameraRotation = [-0.65, -0.2, -0.13],
+  fov = 35,
+}: AnimatedGridPatternProps) {
+  return (
+    <div className="relative z-0 h-full w-full bg-gray-50 dark:bg-black">
+      <Canvas
+        camera={{
+          position: cameraPosition,
+          rotation: cameraRotation,
+          fov: fov,
+        }}
+      >
+        <ambientLight intensity={1} />
+
+        <directionalLight position={[10, 15, 10]} intensity={10} castShadow />
+
+        <directionalLight
+          position={[-10, 10, -5]}
+          intensity={10}
+          color="#ffffff"
+        />
+
+        <directionalLight
+          position={[5, -10, 15]}
+          intensity={5}
+          color="#f0f8ff"
+        />
+
+        <pointLight position={[0, 20, 3]} intensity={2} distance={50} />
+
+        <pointLight
+          position={[15, 5, 15]}
+          intensity={1.5}
+          distance={40}
+          color="#ffffff"
+        />
+
+        <GridOfGrides
+          gridSize={gridSize}
+          gridWidth={gridWidth}
+          gridLength={gridLength}
+          gap={gap}
+          rippleScale={rippleScale}
+          rippleRadius={rippleRadius}
+          cornerRadius={cornerRadius}
+        />
+      </Canvas>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: animated-grid-pattern-demo =====
+Title: animated-grid-pattern-demo
+
+--- file: example/animated-grid-pattern-demo.tsx ---
+import { AnimatedGridPattern } from "@/registry/eldoraui/animated-grid-pattern"
+
+export function AnimatedGridPatternDemo() {
+  return (
+    <div className="bg-background relative mx-auto h-[500px] w-full overflow-hidden rounded-lg border">
+      <AnimatedGridPattern
+        gridSize={10}
+        gridWidth={4}
+        gridLength={4}
+        gap={0.05}
+        rippleScale={2.5}
+        rippleRadius={2}
+        cornerRadius={0.8}
+        cameraPosition={[-9.31, 12, 11.5]}
+        cameraRotation={[-0.65, -0.2, -0.13]}
+        fov={60}
+      />
+    </div>
+  )
+}
+
+
+
 ===== COMPONENT: blur-in-text =====
 Title: blur-in-text
 Description: A blur in text component.
@@ -3824,6 +4172,78 @@ export function LetterPullUpTextDemo() {
       className="font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white"
       text="Letter Pull Up"
     />
+  )
+}
+
+
+
+===== COMPONENT: live-button =====
+Title: live-button
+Description: A live button component.
+
+--- file: eldoraui/live-button.tsx ---
+"use client"
+
+import React, { useState } from "react"
+
+interface LiveButtonProps {
+  text: string
+  url: string
+}
+
+export default function LiveButton({ text, url }: LiveButtonProps) {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isPressed, setIsPressed] = useState(false)
+
+  return (
+    <button
+      className="group relative flex h-12 min-w-[9.3rem] px-6 items-center justify-center gap-3 overflow-hidden rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 transition-all duration-500 ease-out before:absolute before:inset-0 before:translate-x-[-100%] before:bg-gradient-to-r before:from-transparent before:via-black/5 dark:before:via-white/5 before:to-transparent before:transition-transform before:duration-700 hover:scale-105 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg hover:shadow-black/20 dark:hover:shadow-white/20 hover:before:translate-x-[100%] active:scale-95"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false)
+        setIsPressed(false)
+      }}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onClick={() => (window.location.href = url)}
+    >
+      {/* Subtle glow effect */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-200/0 via-cyan-200/10 to-cyan-200/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-cyan-200/0 dark:via-cyan-200/10 dark:to-cyan-200/0"></div>
+
+      {/* Text */}
+      <span className="relative z-10 text-sm font-medium tracking-wide text-black dark:text-white transition-all duration-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-50 whitespace-nowrap">
+        {text}
+      </span>
+
+      {/* Animated dot */}
+      <span
+        className={`relative z-10 h-3 w-3 rounded-full bg-cyan-400 transition-all duration-500 ease-out ${isHovered ? "scale-125 bg-cyan-300 shadow-lg shadow-cyan-300/50" : ""} ${isPressed ? "scale-90" : ""} before:absolute before:inset-0 before:animate-pulse before:rounded-full before:bg-cyan-200 before:opacity-0 group-hover:before:opacity-50`}
+      >
+        {/* Ripple effect */}
+        <div
+          className="absolute inset-0 animate-ping rounded-full bg-cyan-400 opacity-0 group-hover:opacity-60"
+          style={{ animationDuration: "2s" }}
+        ></div>
+      </span>
+
+      {/* Hover state border animation */}
+      <div className="absolute inset-0 animate-pulse rounded-lg border-2 border-cyan-200/0 opacity-0 transition-all duration-500 group-hover:border-cyan-500/30 dark:group-hover:border-cyan-200/30 group-hover:opacity-100"></div>
+    </button>
+  )
+}
+
+
+===== EXAMPLE: live-button-demo =====
+Title: live-button-demo
+
+--- file: example/live-button-demo.tsx ---
+"use client"
+
+import LiveButton from "@/registry/eldoraui/live-button"
+
+export function LiveButtonDemo() {
+  return (
+    <LiveButton text="Get Started" url="https://www.eldoraui.site/" />
   )
 }
 

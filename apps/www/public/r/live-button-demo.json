@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "live-button-demo",
+  "type": "registry:example",
+  "title": "live-button-demo",
+  "description": "Example showing a live-button-demo component.",
+  "registryDependencies": [
+    "@eldoraui/live-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/live-button-demo.tsx",
+      "content": "\"use client\"\n\nimport LiveButton from \"@/registry/eldoraui/live-button\"\n\nexport function LiveButtonDemo() {\n  return (\n    <LiveButton text=\"Get Started\" url=\"https://www.eldoraui.site/\" />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

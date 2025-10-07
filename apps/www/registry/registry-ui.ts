@@ -429,4 +429,30 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-grid-pattern",
+    type: "registry:ui",
+    title: "animated-grid-pattern",
+    description: "An animated grid pattern component.",
+    dependencies: ["react", "three", "react-three-fiber"],
+    files: [
+      {
+        path: "eldoraui/animated-grid-pattern.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "live-button",
+    type: "registry:ui",
+    title: "live-button",
+    description: "A live button component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/live-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

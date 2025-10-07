@@ -8,6 +8,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 - [animated-badge](https://eldoraui.site/docs/components/animated-badge): An animated badge component.
 - [animated-frameworks](https://eldoraui.site/docs/components/animated-frameworks): An animated frameworks component.
+- [animated-grid-pattern](https://eldoraui.site/docs/components/animated-grid-pattern): An animated grid pattern component.
 - [blur-in-text](https://eldoraui.site/docs/components/blur-in-text): A blur in text component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
 - [card-flip-hover](https://eldoraui.site/docs/components/card-flip-hover): A card flip hover component.
@@ -23,6 +24,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [letter-pull-up-text](https://eldoraui.site/docs/components/letter-pull-up-text): A letter pull up text component.
+- [live-button](https://eldoraui.site/docs/components/live-button): A live button component.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [map](https://eldoraui.site/docs/components/map): An animated map component with location markers.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
@@ -84,6 +86,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [card-flip-hover-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/card-flip-hover-demo.tsx): Example usage
 - [scale-letter-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/scale-letter-text-demo.tsx): Example usage
 - [font-weight-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/font-weight-text-demo.tsx): Example usage
+- [animated-grid-pattern-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-grid-pattern-demo.tsx): Example usage
+- [live-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/live-button-demo.tsx): Example usage
 
 ## Optional
 

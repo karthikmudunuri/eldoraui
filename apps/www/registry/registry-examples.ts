@@ -587,4 +587,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-grid-pattern-demo",
+    type: "registry:example",
+    title: "animated-grid-pattern-demo",
+    description: "Example showing a animated-grid-pattern-demo component.",
+    registryDependencies: ["@eldoraui/animated-grid-pattern"],
+    files: [
+      {
+        path: "example/animated-grid-pattern-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "live-button-demo",
+    type: "registry:example",
+    title: "live-button-demo",
+    description: "Example showing a live-button-demo component.",
+    registryDependencies: ["@eldoraui/live-button"],
+    files: [
+      {
+        path: "example/live-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

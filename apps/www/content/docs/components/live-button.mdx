@@ -1,0 +1,54 @@
+---
+title: LiveButton
+date: 2025-01-27
+description: An animated button component with hover effects, ripple animations, and customizable text and URL
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="live-button-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash npx shadcn@latest add "https://eldoraui.site/r/live-button" ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      `components/eldoraui/live-button.tsx`
+      <ComponentSource name="live-button" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { LiveButton } from "@/components/eldoraui/live-button"
+```
+
+```tsx showLineNumbers
+<LiveButton text="Get Started" url="https://example.com" />
+```
+
+## Example with Background
+
+```tsx showLineNumbers
+<div className="flex h-screen w-full items-center justify-center bg-gradient-to-br from-black/90 to-black">
+  <LiveButton text="Get Started" url="https://example.com" />
+</div>
+```
+
+## Props
+
+| Prop   | Type     | Default | Description                                       |
+| ------ | -------- | ------- | ------------------------------------------------- |
+| `text` | `string` | `-`     | The text to display on the button                 |
+| `url`  | `string` | `-`     | The URL to navigate to when the button is clicked |
