@@ -1,13 +1,11 @@
-<img alt="Eldora UI - UI Library for Design Engineers" src="https://cdn.eldoraui.site/bento-grid.gif" width="100%">
+<img alt="Eldora UI - UI Library for Design Engineers" src="![eldoraui](https://github.com/user-attachments/assets/b6748ae1-db82-4868-9cb8-86a1f0cd8589)" width="100%">
 <h3 align="center">Eldora UI</h3>
 <p align="center">
     UI Library for Design Engineers
 </p>
 <div align="center">
   <a href="https://github.com/karthikmudunuri/eldoraui/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/karthikmudunuri/eldoraui"></a>
-  <a href="https://twitter.com/karthikmudunuri"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/karthikmudunuri"></a>
   <a href="https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
-  <a href="https://discord.com/invite/axfexQhr"><img alt="Discord" src="https://img.shields.io/discord/1151315619246002176"></a>
   
 </div>
 
