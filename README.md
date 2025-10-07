@@ -7,7 +7,7 @@
   <a href="https://github.com/karthikmudunuri/eldoraui/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/karthikmudunuri/eldoraui"></a>
   <a href="https://twitter.com/karthikmudunuri"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/karthikmudunuri"></a>
   <a href="https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
-  <a href="https://discord.com/invite/87p2vpsat5"><img alt="Discord" src="https://img.shields.io/discord/1151315619246002176"></a>
+  <a href="https://discord.com/invite/axfexQhr"><img alt="Discord" src="https://img.shields.io/discord/1151315619246002176"></a>
   
 </div>
 
@@ -31,7 +31,7 @@ Have questions, comments or feedback? [Join our discord](http://eldoraui.site/di
 
 ## Stats
 
-![Alt](https://repobeats.axiom.co/api/embed/38b63c4514a8a4cd7d1307985af2889c78d67bcc.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/35271c3244e24efbae34731d1ee21d0988f8fc0e.svg "Repobeats analytics image")
 
 ## Star History
 
