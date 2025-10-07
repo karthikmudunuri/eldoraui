@@ -1,6 +1,7 @@
 "use client"
 
 import Script from "next/script"
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
 
 export function Analytics() {
   return (
@@ -19,6 +20,7 @@ gtag('js', new Date());
 gtag('config', 'G-4CVHZX68BT');
 `}
       </Script>
+      <VercelAnalytics />
     </>
   )
 }
