@@ -1,7 +1,5 @@
 import { ImageResponse } from "next/og"
 
-import { Icons } from "@/components/icons"
-
 async function loadAssets(): Promise<
   { name: string; data: Buffer; weight: 400 | 600; style: "normal" }[]
 > {
@@ -56,7 +54,15 @@ export async function GET(request: Request) {
         <div tw="flex border absolute border-neutral-200 inset-x-0 h-[1px] bottom-16" />
         {(title || description) && (
           <div tw="flex absolute flex-row items-center justify-center bottom-24 right-24 text-white">
-            <Icons.logo width={48} height={48} />
+            <svg width={48} height={48} viewBox="0 0 16 30" fill="none">
+              <circle cx="8" cy="8" r="2" fill="#3B82F6" />
+              <circle cx="8" cy="15" r="1.5" fill="#3B82F6" />
+              <circle cx="8" cy="22" r="1" fill="#3B82F6" />
+              <circle cx="4" cy="11" r="1" fill="#3B82F6" />
+              <circle cx="12" cy="11" r="1" fill="#3B82F6" />
+              <circle cx="4" cy="18" r="0.8" fill="#3B82F6" />
+              <circle cx="12" cy="18" r="0.8" fill="#3B82F6" />
+            </svg>
             <div tw="text-black flex text-[32px] font-semibold tracking-tight ml-2">
               Eldora UI
             </div>
@@ -75,7 +81,15 @@ export async function GET(request: Request) {
           ) : (
             <div tw="flex flex-col items-center justify-center text-center w-full h-full">
               <div tw="flex flex-row items-center justify-center space-x-4">
-                <Icons.logo width={48} height={48} />
+                <svg width={48} height={48} viewBox="0 0 16 30" fill="none">
+                  <circle cx="8" cy="8" r="2" fill="#3B82F6" />
+                  <circle cx="8" cy="15" r="1.5" fill="#3B82F6" />
+                  <circle cx="8" cy="22" r="1" fill="#3B82F6" />
+                  <circle cx="4" cy="11" r="1" fill="#3B82F6" />
+                  <circle cx="12" cy="11" r="1" fill="#3B82F6" />
+                  <circle cx="4" cy="18" r="0.8" fill="#3B82F6" />
+                  <circle cx="12" cy="18" r="0.8" fill="#3B82F6" />
+                </svg>
                 <div tw="text-black flex text-[32px] font-semibold tracking-tight ml-2">
                   Eldora UI
                 </div>

@@ -66,7 +66,8 @@ export const normalizeTag = (tag: unknown): string[] => {
 }
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://eldoraui.site"
+  return `${baseUrl}${path}`
 }
 
 export function constructMetadata({
