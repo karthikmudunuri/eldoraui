@@ -176,6 +176,12 @@ export const docsConfig: DocsConfig = {
       title: "Buttons",
       items: [
         {
+          title: "Animated Shiny Button",
+          href: "/docs/components/animated-shiny-button",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Live Button",
           href: "/docs/components/live-button",
           items: [],

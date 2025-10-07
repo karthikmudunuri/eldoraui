@@ -7,6 +7,7 @@ import { buttonVariants } from "@/components/ui/button"
 import HeroAnimatedSlides from "@/components/sections/hero-animated-slides"
 import { TechStack } from "@/components/tech-stack"
 import AnimatedBadge from "@/registry/eldoraui/animated-badge"
+import { AnimatedShinyButton } from "@/registry/eldoraui/animated-shiny-button"
 import { AuroraText } from "@/registry/eldoraui/aurora-text"
 import LiveButton from "@/registry/eldoraui/live-button"
 
@@ -28,7 +29,7 @@ export function Hero() {
   return (
     <section id="hero">
       <div className="relative h-full overflow-hidden py-5 md:py-14">
-        {/* <HeroAnimatedSlides className="absolute inset-0 py-4" /> */}
+        <HeroAnimatedSlides className="absolute inset-x-8 inset-y-0 hidden py-4 md:block lg:inset-x-24 xl:inset-x-32" />
         <div className="z-10 flex flex-col">
           <div className="mt-10 grid grid-cols-1 md:mt-20">
             <div className="flex flex-col items-start gap-6 px-7 pb-8 text-center md:items-center md:px-10">
@@ -69,26 +70,18 @@ export function Hero() {
                 <b className="font-[550] dark:font-[580]">shadcn/ui</b>.
               </p>
 
-              <div className="flex w-full flex-col gap-4 gap-y-2 md:mx-auto md:max-w-md md:flex-row md:justify-center">
-                <Link
-                  href="https://pro.eldoraui.site"
-                  className={cn(
-                    buttonVariants({
-                      size: "lg",
-                      variant: "outline",
-                    }),
-                    "w-full gap-2"
-                  )}
+              <div className="flex w-full flex-col items-center gap-4 md:mx-auto md:max-w-lg md:flex-row md:justify-center md:gap-6">
+                <AnimatedShinyButton
+                  url="/docs/components"
+                  className="w-full md:w-60"
                 >
-                  Browse Templates
-                  <ChevronRight className="ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
-                </Link>
-                <div className="w-full md:w-auto">
-                  <LiveButton
-                    text="Browse Templates"
-                    url="https://pro.eldoraui.site"
-                  />
-                </div>
+                  Browse Components
+                </AnimatedShinyButton>
+                <LiveButton
+                  text="Browse Templates"
+                  url="/docs/templates/portfolio"
+                  className="w-full md:w-60"
+                />
               </div>
             </div>
           </div>

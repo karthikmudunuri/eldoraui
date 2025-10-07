@@ -455,4 +455,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-shiny-button",
+    type: "registry:ui",
+    title: "animated-shiny-button",
+    description: "An animated shiny button component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/animated-shiny-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

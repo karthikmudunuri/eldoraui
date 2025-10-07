@@ -5,15 +5,20 @@ import React, { useState } from "react"
 interface LiveButtonProps {
   text: string
   url: string
+  className?: string
 }
 
-export default function LiveButton({ text, url }: LiveButtonProps) {
+export default function LiveButton({
+  text,
+  url,
+  className = "",
+}: LiveButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
 
   return (
     <button
-      className="group relative flex h-12 min-w-[9.3rem] items-center justify-center gap-3 overflow-hidden rounded-lg border border-gray-300 bg-white px-6 transition-all duration-500 ease-out before:absolute before:inset-0 before:translate-x-[-100%] before:bg-gradient-to-r before:from-transparent before:via-black/5 before:to-transparent before:transition-transform before:duration-700 hover:scale-105 hover:border-gray-400 hover:shadow-lg hover:shadow-black/20 hover:before:translate-x-[100%] active:scale-95 dark:border-gray-600 dark:bg-gray-800 dark:before:via-white/5 dark:hover:border-gray-500 dark:hover:shadow-white/20"
+      className={`group relative flex h-12 min-w-[9.3rem] items-center justify-center gap-3 overflow-hidden rounded-lg border border-gray-300 bg-white px-6 transition-all duration-500 ease-out before:absolute before:inset-0 before:translate-x-[-100%] before:bg-gradient-to-r before:from-transparent before:via-black/5 before:to-transparent before:transition-transform before:duration-700 hover:scale-105 hover:border-gray-400 hover:shadow-lg hover:shadow-black/20 hover:before:translate-x-[100%] active:scale-95 dark:border-gray-600 dark:bg-black dark:before:via-white/5 dark:hover:border-gray-500 dark:hover:shadow-white/20 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false)

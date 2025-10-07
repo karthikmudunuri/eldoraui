@@ -1,0 +1,76 @@
+---
+title: Animated Shiny Button
+date: 2025-01-27
+description: A beautiful animated button with cyan shimmer effects and automatic light/dark theme support
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animated-shiny-button-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add "https://eldoraui.site/r/animated-shiny-button"
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+
+      `components/eldoraui/animated-shiny-button.tsx`
+
+      <ComponentSource name="animated-shiny-button" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
+```
+
+```tsx showLineNumbers
+<AnimatedShinyButton>Get Started</AnimatedShinyButton>
+```
+
+```tsx showLineNumbers
+<AnimatedShinyButton className="w-full">Sign Up Now</AnimatedShinyButton>
+```
+
+```tsx showLineNumbers
+<AnimatedShinyButton url="/signup">Get Started</AnimatedShinyButton>
+```
+
+```tsx showLineNumbers
+<AnimatedShinyButton url="https://example.com" className="w-full">
+  Visit Website
+</AnimatedShinyButton>
+```
+
+## Props
+
+| Prop        | Type              | Default | Description                                        |
+| ----------- | ----------------- | ------- | -------------------------------------------------- |
+| `children`  | `React.ReactNode` | `-`     | The content to display inside the button           |
+| `className` | `string`          | `""`    | Additional CSS classes to apply to the button      |
+| `url`       | `string`          | `-`     | Optional URL to make the button function as a link |
+
+## Features
+
+- **Cyan Shimmer Effect**: Beautiful animated cyan gradient that rotates around the button
+- **Automatic Theme Support**: Automatically adapts to light and dark themes
+- **Interactive Animations**: Hover effects with enhanced shimmer and breathing animations
+- **Dot Pattern**: Subtle animated dot pattern overlay for added visual interest
+- **Smooth Transitions**: Fluid animations with custom easing curves
+- **Accessible**: Proper focus states and keyboard navigation support
+- **Flexible Usage**: Can function as either a button or a link depending on the `url` prop

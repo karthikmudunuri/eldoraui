@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-shiny-button-demo",
+  "type": "registry:example",
+  "title": "animated-shiny-button-demo",
+  "description": "Example showing a animated-shiny-button-demo component.",
+  "registryDependencies": [
+    "@eldoraui/animated-shiny-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/animated-shiny-button-demo.tsx",
+      "content": "\"use client\"\n\nimport { AnimatedShinyButton } from \"@/registry/eldoraui/animated-shiny-button\"\n\nexport function AnimatedShinyButtonDemo() {\n    return <AnimatedShinyButton url=\"/docs/components/animated-shiny-button\">Get Started</AnimatedShinyButton>\n    }\n",
+      "type": "registry:example"
+    }
+  ]
+}

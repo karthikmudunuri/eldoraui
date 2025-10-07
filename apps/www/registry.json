@@ -569,6 +569,21 @@
       ]
     },
     {
+      "name": "animated-shiny-button",
+      "type": "registry:ui",
+      "title": "animated-shiny-button",
+      "description": "An animated shiny button component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/animated-shiny-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1269,6 +1284,21 @@
       "files": [
         {
           "path": "registry/example/live-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-shiny-button-demo",
+      "type": "registry:example",
+      "title": "animated-shiny-button-demo",
+      "description": "Example showing a animated-shiny-button-demo component.",
+      "registryDependencies": [
+        "@eldoraui/animated-shiny-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-shiny-button-demo.tsx",
           "type": "registry:example"
         }
       ]

@@ -613,4 +613,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-shiny-button-demo",
+    type: "registry:example",
+    title: "animated-shiny-button-demo",
+    description: "Example showing a animated-shiny-button-demo component.",
+    registryDependencies: ["@eldoraui/animated-shiny-button"],
+    files: [
+      {
+        path: "example/animated-shiny-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

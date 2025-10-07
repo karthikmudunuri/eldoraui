@@ -43,7 +43,7 @@ export default function RootLayout({
       >
         <JotaiProvider>
           <PHProvider>
-            <ThemeProvider attribute="class" defaultTheme="light">
+            <ThemeProvider attribute="class" defaultTheme="dark">
               <TooltipProvider>
                 {children}
                 <Toaster position="top-center" richColors toastOptions={{}} />

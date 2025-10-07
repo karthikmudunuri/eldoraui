@@ -25,7 +25,7 @@ export default function HeroAnimatedSides({
       {/* Left Side */}
       <div
         suppressHydrationWarning
-        className="pointer-events-none absolute top-0 left-0 hidden h-full w-28 md:block"
+        className="pointer-events-none absolute top-0 left-8 hidden h-full w-28 md:block lg:left-16 xl:left-24"
       >
         <svg
           className="h-full w-full"
@@ -68,7 +68,7 @@ export default function HeroAnimatedSides({
       {/* Right Side */}
       <div
         suppressHydrationWarning
-        className="pointer-events-none absolute top-0 right-1 hidden h-full w-28 md:block"
+        className="pointer-events-none absolute top-0 right-8 hidden h-full w-28 md:block lg:right-16 xl:right-24"
       >
         <svg
           className="h-full w-full"

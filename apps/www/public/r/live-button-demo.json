@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/live-button-demo.tsx",
-      "content": "\"use client\"\n\nimport LiveButton from \"@/registry/eldoraui/live-button\"\n\nexport function LiveButtonDemo() {\n  return (\n    <LiveButton text=\"Get Started\" url=\"https://www.eldoraui.site/\" />\n  )\n}\n",
+      "content": "\"use client\"\n\nimport LiveButton from \"@/registry/eldoraui/live-button\"\n\nexport function LiveButtonDemo() {\n  return <LiveButton text=\"Get Started\" url=\"https://www.eldoraui.site/\" />\n}\n",
       "type": "registry:example"
     }
   ]

@@ -48,11 +48,11 @@
   --selection: oklch(0.145 0 0);
   --selection-foreground: oklch(1 0 0);
 
-  --color-1: oklch(66.2% 0.225 25.9);
-  --color-2: oklch(60.4% 0.26 302);
-  --color-3: oklch(69.6% 0.165 251);
-  --color-4: oklch(80.2% 0.134 225);
-  --color-5: oklch(90.7% 0.231 133);
+  --color-1: #67e8f9; /* cyan-300 */
+  --color-2: #22d3ee; /* cyan-400 */
+  --color-3: #06b6d4; /* cyan-500 */
+  --color-4: #0891b2; /* cyan-600 */
+  --color-5: #67e8f9; /* cyan-300 */
 }
 
 .dark {

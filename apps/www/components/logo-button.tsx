@@ -10,6 +10,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
+import { BetaButton } from "@/components/beta-button"
 import { Icons } from "@/components/icons"
 
 export function LogoButton() {
@@ -41,13 +42,16 @@ export function LogoButton() {
       <ContextMenuTrigger asChild>
         <Link
           href="/"
-          className="relative mr-6 flex items-center space-x-2"
+          className="relative mr-6 flex items-center space-x-0.5"
           aria-label="Home"
         >
           <Icons.logo className="size-6" />
-          <span className="mt-0.5 ml-2.5 hidden font-bold md:inline-block">
+          <span className="mt-0.5 ml-3.5 hidden font-bold md:inline-block">
             {siteConfig.name}
           </span>
+          <div className="mt-1.5 -ml-4.5 hidden sm:block">
+            <BetaButton text="BETA" />
+          </div>
         </Link>
       </ContextMenuTrigger>
       <ContextMenuContent>
