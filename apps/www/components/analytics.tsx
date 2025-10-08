@@ -2,6 +2,7 @@
 
 import Script from "next/script"
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export function Analytics() {
   return (
@@ -21,6 +22,7 @@ gtag('config', 'G-4CVHZX68BT');
 `}
       </Script>
       <VercelAnalytics />
+      <SpeedInsights />
     </>
   )
 }
