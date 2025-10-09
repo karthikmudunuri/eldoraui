@@ -718,8 +718,8 @@ Description: An animated shiny button component.
 --- file: eldoraui/animated-shiny-button.tsx ---
 "use client"
 
-import { ChevronRight } from "lucide-react"
 import type React from "react"
+import { ChevronRight } from "lucide-react"
 
 interface AnimatedShinyButtonProps {
   children: React.ReactNode
@@ -987,8 +987,12 @@ Title: animated-shiny-button-demo
 import { AnimatedShinyButton } from "@/registry/eldoraui/animated-shiny-button"
 
 export function AnimatedShinyButtonDemo() {
-    return <AnimatedShinyButton url="/docs/components/animated-shiny-button">Get Started</AnimatedShinyButton>
-    }
+  return (
+    <AnimatedShinyButton url="/docs/components/animated-shiny-button">
+      Get Started
+    </AnimatedShinyButton>
+  )
+}
 
 
 
@@ -3052,7 +3056,11 @@ import { FontWeightText } from "@/registry/eldoraui/font-weight-text"
 export function FontWeightTextDemo() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <FontWeightText text="Get Started" fontSize={60} className="text-cyan-200" />
+      <FontWeightText
+        text="Get Started"
+        fontSize={60}
+        className="text-cyan-200"
+      />
     </div>
   )
 }
@@ -4473,7 +4481,11 @@ interface LiveButtonProps {
   className?: string
 }
 
-export default function LiveButton({ text, url, className = "" }: LiveButtonProps) {
+export default function LiveButton({
+  text,
+  url,
+  className = "",
+}: LiveButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
 

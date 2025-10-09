@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/animated-shiny-button-demo.tsx",
-      "content": "\"use client\"\n\nimport { AnimatedShinyButton } from \"@/registry/eldoraui/animated-shiny-button\"\n\nexport function AnimatedShinyButtonDemo() {\n    return <AnimatedShinyButton url=\"/docs/components/animated-shiny-button\">Get Started</AnimatedShinyButton>\n    }\n",
+      "content": "\"use client\"\n\nimport { AnimatedShinyButton } from \"@/registry/eldoraui/animated-shiny-button\"\n\nexport function AnimatedShinyButtonDemo() {\n  return (\n    <AnimatedShinyButton url=\"/docs/components/animated-shiny-button\">\n      Get Started\n    </AnimatedShinyButton>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

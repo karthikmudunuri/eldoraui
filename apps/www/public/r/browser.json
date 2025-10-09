@@ -4,6 +4,18 @@
   "type": "registry:ui",
   "title": "browser",
   "description": "A browser SVG component.",
+  "dependencies": [
+    "react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "button",
+    "badge",
+    "card",
+    "separator",
+    "input"
+  ],
   "files": [
     {
       "path": "registry/eldoraui/browser.tsx",

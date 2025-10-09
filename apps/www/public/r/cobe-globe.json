@@ -6,7 +6,8 @@
   "description": "A cobe globe component.",
   "dependencies": [
     "react-spring",
-    "cobe"
+    "cobe",
+    "react"
   ],
   "registryDependencies": [
     "button",

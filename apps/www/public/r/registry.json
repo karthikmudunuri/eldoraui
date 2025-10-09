@@ -23,6 +23,9 @@
       "type": "registry:ui",
       "title": "safari-browser",
       "description": "A safari browser component.",
+      "dependencies": [
+        "react"
+      ],
       "files": [
         {
           "path": "registry/eldoraui/safari-browser.tsx",
@@ -35,6 +38,9 @@
       "type": "registry:ui",
       "title": "macbook-pro",
       "description": "A MacBook Pro SVG component.",
+      "dependencies": [
+        "react"
+      ],
       "files": [
         {
           "path": "registry/eldoraui/macbook-pro.tsx",
@@ -47,6 +53,9 @@
       "type": "registry:ui",
       "title": "iphone-17-pro",
       "description": "An iPhone 17 Pro SVG component.",
+      "dependencies": [
+        "react"
+      ],
       "files": [
         {
           "path": "registry/eldoraui/iphone-17-pro.tsx",
@@ -59,6 +68,9 @@
       "type": "registry:ui",
       "title": "ipad",
       "description": "An iPad SVG component.",
+      "dependencies": [
+        "react"
+      ],
       "files": [
         {
           "path": "registry/eldoraui/ipad.tsx",
@@ -71,6 +83,18 @@
       "type": "registry:ui",
       "title": "browser",
       "description": "A browser SVG component.",
+      "dependencies": [
+        "react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "button",
+        "badge",
+        "card",
+        "separator",
+        "input"
+      ],
       "files": [
         {
           "path": "registry/eldoraui/browser.tsx",
@@ -85,7 +109,8 @@
       "description": "A cobe globe component.",
       "dependencies": [
         "react-spring",
-        "cobe"
+        "cobe",
+        "react"
       ],
       "registryDependencies": [
         "button",
@@ -226,8 +251,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils",
-        "marquee"
+        "utils"
       ],
       "files": [
         {

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/font-weight-text-demo.tsx",
-      "content": "import { FontWeightText } from \"@/registry/eldoraui/font-weight-text\"\n\nexport function FontWeightTextDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <FontWeightText text=\"Get Started\" fontSize={60} className=\"text-cyan-200\" />\n    </div>\n  )\n}\n",
+      "content": "import { FontWeightText } from \"@/registry/eldoraui/font-weight-text\"\n\nexport function FontWeightTextDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <FontWeightText\n        text=\"Get Started\"\n        fontSize={60}\n        className=\"text-cyan-200\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

@@ -87,7 +87,7 @@ export const Index: Record<string, any> = {
     name: "browser",
     description: "A browser SVG component.",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["utils","button","badge","card","separator","input"],
     files: [{
       path: "registry/eldoraui/browser.tsx",
       type: "registry:ui",
@@ -206,7 +206,7 @@ export const Index: Record<string, any> = {
     name: "integrations",
     description: "An integrations component.",
     type: "registry:ui",
-    registryDependencies: ["utils","marquee"],
+    registryDependencies: ["utils"],
     files: [{
       path: "registry/eldoraui/integrations.tsx",
       type: "registry:ui",

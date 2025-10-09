@@ -10,8 +10,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "utils",
-    "marquee"
+    "utils"
   ],
   "files": [
     {

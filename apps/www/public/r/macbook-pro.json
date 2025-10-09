@@ -4,6 +4,9 @@
   "type": "registry:ui",
   "title": "macbook-pro",
   "description": "A MacBook Pro SVG component.",
+  "dependencies": [
+    "react"
+  ],
   "files": [
     {
       "path": "registry/eldoraui/macbook-pro.tsx",

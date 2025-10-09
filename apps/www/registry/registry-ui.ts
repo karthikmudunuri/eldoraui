@@ -6,6 +6,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "safari-browser",
     description: "A safari browser component.",
+    dependencies: ["react"],
     files: [
       {
         path: "eldoraui/safari-browser.tsx",
@@ -18,6 +19,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "macbook-pro",
     description: "A MacBook Pro SVG component.",
+    dependencies: ["react"],
     files: [
       {
         path: "eldoraui/macbook-pro.tsx",
@@ -30,6 +32,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "iphone-17-pro",
     description: "An iPhone 17 Pro SVG component.",
+    dependencies: ["react"],
     files: [
       {
         path: "eldoraui/iphone-17-pro.tsx",
@@ -42,6 +45,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "ipad",
     description: "An iPad SVG component.",
+    dependencies: ["react"],
     files: [
       {
         path: "eldoraui/ipad.tsx",
@@ -54,6 +58,15 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "browser",
     description: "A browser SVG component.",
+    dependencies: ["react", "lucide-react"],
+    registryDependencies: [
+      "utils",
+      "button",
+      "badge",
+      "card",
+      "separator",
+      "input",
+    ],
     files: [
       {
         path: "eldoraui/browser.tsx",
@@ -66,7 +79,7 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "cobe-globe",
     description: "A cobe globe component.",
-    dependencies: ["react-spring", "cobe"],
+    dependencies: ["react-spring", "cobe", "react"],
     registryDependencies: ["button", "utils"],
     files: [
       {
@@ -183,7 +196,7 @@ export const ui: Registry["items"] = [
     title: "integrations",
     description: "An integrations component.",
     dependencies: ["react", "motion", "lucide-react"],
-    registryDependencies: ["utils", "marquee"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "eldoraui/integrations.tsx",
