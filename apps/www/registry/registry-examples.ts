@@ -626,4 +626,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-list-demo",
+    type: "registry:example",
+    title: "animated-list-demo",
+    description: "Example showing a animated-list-demo component.",
+    registryDependencies: ["@eldoraui/animated-list"],
+    files: [
+      {
+        path: "example/animated-list-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

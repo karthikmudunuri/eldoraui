@@ -103,6 +103,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Animated List",
+          href: "/docs/components/animated-list",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Card Flip Hover",
           href: "/docs/components/card-flip-hover",
           items: [],

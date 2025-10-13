@@ -9,6 +9,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [animated-badge](https://eldoraui.site/docs/components/animated-badge): An animated badge component.
 - [animated-frameworks](https://eldoraui.site/docs/components/animated-frameworks): An animated frameworks component.
 - [animated-grid-pattern](https://eldoraui.site/docs/components/animated-grid-pattern): An animated grid pattern component.
+- [animated-list](https://eldoraui.site/docs/components/animated-list): An animated list component.
 - [animated-shiny-button](https://eldoraui.site/docs/components/animated-shiny-button): An animated shiny button component.
 - [blur-in-text](https://eldoraui.site/docs/components/blur-in-text): A blur in text component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
@@ -90,6 +91,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [animated-grid-pattern-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-grid-pattern-demo.tsx): Example usage
 - [live-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/live-button-demo.tsx): Example usage
 - [animated-shiny-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-shiny-button-demo.tsx): Example usage
+- [animated-list-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-list-demo.tsx): Example usage
 
 ## Optional
 

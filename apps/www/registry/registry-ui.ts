@@ -481,4 +481,17 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "animated-list",
+    type: "registry:ui",
+    title: "animated-list",
+    description: "An animated list component.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/animated-list.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

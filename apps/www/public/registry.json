@@ -608,6 +608,21 @@
       ]
     },
     {
+      "name": "animated-list",
+      "type": "registry:ui",
+      "title": "animated-list",
+      "description": "An animated list component.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/animated-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1323,6 +1338,21 @@
       "files": [
         {
           "path": "registry/example/animated-shiny-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-list-demo",
+      "type": "registry:example",
+      "title": "animated-list-demo",
+      "description": "Example showing a animated-list-demo component.",
+      "registryDependencies": [
+        "@eldoraui/animated-list"
+      ],
+      "files": [
+        {
+          "path": "registry/example/animated-list-demo.tsx",
           "type": "registry:example"
         }
       ]

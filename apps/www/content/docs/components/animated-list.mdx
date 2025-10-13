@@ -1,0 +1,152 @@
+---
+title: Animated List
+date: 2025-10-13
+description: A dynamic list component with smooth animations that forms a column and scrolls through items continuously.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="animated-list-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/animated-list"
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/animated-list.tsx`
+
+<ComponentSource name="animated-list" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { AnimatedList } from "@/components/eldoraui/animated-list"
+```
+
+### Basic Usage
+
+```tsx showLineNumbers
+<div className="bg-background relative h-[400px] w-full overflow-hidden rounded-lg border">
+  <AnimatedList>
+    <div className="bg-card flex w-full max-w-[350px] items-center gap-4 rounded-2xl border p-4 shadow-sm">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-sm font-medium text-white">
+        A
+      </div>
+      <div className="flex flex-1 flex-col">
+        <span className="text-sm font-medium">App</span>
+        <span className="text-muted-foreground text-sm">
+          Notification message
+        </span>
+      </div>
+    </div>
+  </AnimatedList>
+</div>
+```
+
+### With Custom Configuration
+
+```tsx showLineNumbers
+<AnimatedList
+  stackGap={20}
+  columnGap={85}
+  scaleFactor={0.05}
+  scrollDownDuration={5}
+  formationDuration={1}
+>
+  {items.map((item) => (
+    <div key={item.id}>{item.content}</div>
+  ))}
+</AnimatedList>
+```
+
+### Notification List Example
+
+```tsx showLineNumbers
+const notifications = [
+  { name: "Location", message: "Thomas has arrived home", time: "2h ago" },
+  { name: "Fitness", message: "Daily step goal reached!", time: "1h ago" },
+  { name: "Calendar", message: "Team meeting in 30 minutes", time: "45m ago" },
+  // ... more notifications
+]
+
+<div className="relative h-[400px] w-full overflow-hidden rounded-lg border bg-background">
+  <AnimatedList
+    stackGap={20}
+    columnGap={85}
+    scaleFactor={0.05}
+    scrollDownDuration={5}
+    formationDuration={1}
+  >
+    {notifications.map((notification, index) => (
+      <div
+        key={index}
+        className="flex w-full max-w-[350px] items-center gap-4 rounded-2xl border bg-card p-4 shadow-sm"
+      >
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white text-sm font-medium">
+          {notification.name.charAt(0)}
+        </div>
+        <div className="flex flex-1 flex-col">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium">{notification.name}</span>
+            <span className="text-xs text-muted-foreground">{notification.time}</span>
+          </div>
+          <span className="text-sm text-muted-foreground">{notification.message}</span>
+        </div>
+      </div>
+    ))}
+  </AnimatedList>
+</div>
+```
+
+## Props
+
+| Prop                 | Type        | Default | Description                                       |
+| -------------------- | ----------- | ------- | ------------------------------------------------- |
+| `children`           | `ReactNode` | `-`     | The list items to animate                         |
+| `className`          | `string`    | `-`     | Additional CSS classes for the container          |
+| `stackGap`           | `number`    | `20`    | Vertical spacing between stacked items            |
+| `columnGap`          | `number`    | `85`    | Horizontal spacing between column items           |
+| `scaleFactor`        | `number`    | `0.05`  | Scale difference between stacked items            |
+| `scrollDownDuration` | `number`    | `5`     | Duration for scrolling animation (seconds)        |
+| `formationDuration`  | `number`    | `1`     | Duration for column formation animation (seconds) |
+
+## Animation Phases
+
+The component goes through four distinct animation phases:
+
+1. **Idle**: Items are stacked with scale and opacity effects
+2. **Forming Column**: Items animate to form a vertical column
+3. **Scrolling Down**: The entire list scrolls downward
+4. **Resetting**: Items return to their initial stacked position
+
+## Features
+
+- **Continuous Loop**: Automatically cycles through all animation phases
+- **Smooth Transitions**: Uses Framer Motion for fluid animations
+- **Customizable Timing**: Control formation and scroll durations
+- **Responsive Spacing**: Adjustable gaps and scaling factors
+- **Performance Optimized**: Uses `AnimatePresence` for efficient rendering
+
+## Use Cases
+
+- Notification feeds
+- Activity streams
+- Social media timelines
+- Dashboard widgets
+- News tickers
+- Any continuously updating list content
