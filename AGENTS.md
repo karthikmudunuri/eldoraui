@@ -1,17 +1,28 @@
-# Project Context
-Ultracite enforces strict type safety, accessibility standards, and consistent code quality for JavaScript/TypeScript projects using Biome's lightning-fast formatter and linter.
+# EldoraUI Development Standards
+
+EldoraUI is a modern UI component library built with React, TypeScript, and Tailwind CSS. This document defines the coding standards, component patterns, and development workflows for maintaining high-quality, accessible, and performant components.
+
+## Project Overview
+- **Framework**: Next.js 15 with React 19
+- **Language**: TypeScript with strict type checking
+- **Styling**: Tailwind CSS with custom animations
+- **Component System**: shadcn/ui compatible registry
+- **Documentation**: MDX-based with live examples
+- **Package Manager**: pnpm with workspace support
 
 ## Key Principles
-- Zero configuration required
-- Subsecond performance
-- Maximum type safety
-- AI-friendly code generation
+- **Component-First Architecture**: Every UI element is a reusable, composable component
+- **Type Safety**: Strict TypeScript with comprehensive prop interfaces
+- **Accessibility First**: WCAG 2.1 AA compliance for all components
+- **Performance Optimized**: Minimal bundle size with tree-shaking support
+- **Developer Experience**: Excellent IntelliSense and documentation
 
 ## Before Writing Code
-1. Analyze existing patterns in the codebase
-2. Consider edge cases and error scenarios
-3. Follow the rules below strictly
-4. Validate accessibility requirements
+1. **Analyze existing component patterns** in `/apps/www/registry/eldoraui/`
+2. **Review component demos** in `/apps/www/registry/example/`
+3. **Check documentation structure** in `/apps/www/content/docs/components/`
+4. **Follow the registry system** defined in `/apps/www/registry/`
+5. **Validate accessibility requirements** and test with screen readers
 
 ## Rules
 
@@ -302,26 +313,131 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Make sure the assertion function, like expect, is placed inside an it() function call.
 - Don't use disabled tests.
 
-## Common Tasks
-- `npx ultracite init` - Initialize Ultracite in your project
-- `npx ultracite fix` - Format and fix code automatically
-- `npx ultracite check` - Check for issues without fixing
+## EldoraUI Component Development
 
-## Example: Error Handling
+### Component Structure
+Every EldoraUI component follows this structure:
+
 ```typescript
-// ✅ Good: Comprehensive error handling
-try {
-  const result = await fetchData();
-  return { success: true, data: result };
-} catch (error) {
-  console.error('API call failed:', error);
-  return { success: false, error: error.message };
+"use client"
+
+import type React from "react"
+import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
+// Import other dependencies
+
+interface ComponentProps {
+  // Define all props with proper types
+  className?: string
+  children?: React.ReactNode
+  // Component-specific props
 }
 
-// ❌ Bad: Swallowing errors
-try {
-  return await fetchData();
-} catch (e) {
-  console.log(e);
+export function ComponentName({
+  className,
+  children,
+  // Destructure all props
+  ...props
+}: ComponentProps) {
+  // Component logic
+  return (
+    <div className={cn("base-styles", className)} {...props}>
+      {children}
+    </div>
+  )
+}
+```
+
+### Registry Integration
+Components must be registered in the registry system:
+
+1. **Component File**: `/apps/www/registry/eldoraui/component-name.tsx`
+2. **Demo File**: `/apps/www/registry/example/component-name-demo.tsx`
+3. **Registry Entry**: Add to `/apps/www/registry/registry-ui.ts`
+4. **Documentation**: Create `/apps/www/content/docs/components/component-name.mdx`
+5. **Build**: Run `pnpm build:registry`
+
+### Animation Guidelines
+- Use CSS custom properties for animation variables
+- Follow the `--animate-*` naming convention
+- Include keyframes in component CSS
+- Support `prefers-reduced-motion` for accessibility
+
+### Common Tasks
+- `pnpm dev` - Start development server
+- `pnpm build:registry` - Build component registry
+- `pnpm lint:fix` - Fix linting issues
+- `pnpm typecheck` - Run TypeScript checks
+- `pnpm format:fix` - Format code with Prettier
+
+## Example: Component Development
+```typescript
+// ✅ Good: Proper EldoraUI component structure
+"use client"
+
+import type React from "react"
+import { useState } from "react"
+import { cn } from "@/lib/utils"
+import { motion } from "motion/react"
+
+interface AnimatedButtonProps {
+  children: React.ReactNode
+  variant?: "default" | "outline" | "ghost"
+  size?: "sm" | "md" | "lg"
+  className?: string
+  onClick?: () => void
+  disabled?: boolean
+}
+
+export function AnimatedButton({
+  children,
+  variant = "default",
+  size = "md",
+  className,
+  onClick,
+  disabled = false,
+  ...props
+}: AnimatedButtonProps) {
+  const [isPressed, setIsPressed] = useState(false)
+
+  return (
+    <motion.button
+      className={cn(
+        "inline-flex items-center justify-center rounded-md font-medium transition-colors",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "disabled:pointer-events-none disabled:opacity-50",
+        {
+          "bg-primary text-primary-foreground hover:bg-primary/90": variant === "default",
+          "border border-input bg-background hover:bg-accent": variant === "outline",
+          "hover:bg-accent hover:text-accent-foreground": variant === "ghost",
+        },
+        {
+          "h-9 px-3 text-sm": size === "sm",
+          "h-10 px-4 py-2": size === "md",
+          "h-11 px-8 text-lg": size === "lg",
+        },
+        className
+      )}
+      onClick={onClick}
+      disabled={disabled}
+      whileTap={{ scale: 0.95 }}
+      animate={{ scale: isPressed ? 0.95 : 1 }}
+      onTapStart={() => setIsPressed(true)}
+      onTap={() => setIsPressed(false)}
+      aria-disabled={disabled}
+      {...props}
+    >
+      {children}
+    </motion.button>
+  )
+}
+
+// ❌ Bad: Missing proper structure and accessibility
+export function BadButton({ children, onClick }) {
+  return (
+    <button onClick={onClick}>
+      {children}
+    </button>
+  )
 }
 ```
