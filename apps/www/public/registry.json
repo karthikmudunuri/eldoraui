@@ -623,6 +623,35 @@
       ]
     },
     {
+      "name": "orbit-rotation",
+      "type": "registry:ui",
+      "title": "orbit-rotation",
+      "description": "An orbit rotation component with customizable icons.",
+      "dependencies": [
+        "react",
+        "react-icons"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/orbit-rotation.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "css": {
+        "@keyframes orbit-spin": {
+          "from": {
+            "transform": "rotate(0deg)"
+          },
+          "to": {
+            "transform": "rotate(360deg)"
+          }
+        }
+      }
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1353,6 +1382,21 @@
       "files": [
         {
           "path": "registry/example/animated-list-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orbit-rotation-demo",
+      "type": "registry:example",
+      "title": "orbit-rotation-demo",
+      "description": "Example showing a orbit-rotation-demo component.",
+      "registryDependencies": [
+        "@eldoraui/orbit-rotation"
+      ],
+      "files": [
+        {
+          "path": "registry/example/orbit-rotation-demo.tsx",
           "type": "registry:example"
         }
       ]

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbit-rotation",
+  "type": "registry:ui",
+  "title": "orbit-rotation",
+  "description": "An orbit rotation component with customizable icons.",
+  "dependencies": [
+    "react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/eldoraui/orbit-rotation.tsx",
+      "content": "\"use client\"\n\nimport type React from \"react\"\nimport {\n  FaApple,\n  FaAws,\n  FaDocker,\n  FaGithub,\n  FaGoogle,\n  FaInstagram,\n  FaLinkedin,\n  FaNodeJs,\n  FaReact,\n  FaTwitter,\n} from \"react-icons/fa\"\nimport {\n  SiFacebook,\n  SiNextdotjs,\n  SiRedux,\n  SiTypescript,\n  SiVercel,\n} from \"react-icons/si\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface OrbitIcon {\n  Icon: React.ComponentType<{ className?: string }>\n  name?: string\n}\n\ninterface OrbitRotationProps {\n  icons?: OrbitIcon[]\n  orbitCount?: number\n  orbitGap?: number\n  centerIcon?: OrbitIcon\n  className?: string\n  size?: \"sm\" | \"md\" | \"lg\"\n}\n\nconst defaultIcons: OrbitIcon[] = [\n  { Icon: FaReact, name: \"React\" },\n  { Icon: FaAws, name: \"AWS\" },\n  { Icon: FaDocker, name: \"Docker\" },\n  { Icon: FaNodeJs, name: \"Node.js\" },\n  { Icon: SiNextdotjs, name: \"Next.js\" },\n  { Icon: SiVercel, name: \"Vercel\" },\n  { Icon: SiRedux, name: \"Redux\" },\n  { Icon: SiTypescript, name: \"TypeScript\" },\n  { Icon: FaGithub, name: \"GitHub\" },\n  { Icon: FaTwitter, name: \"Twitter\" },\n  { Icon: FaLinkedin, name: \"LinkedIn\" },\n  { Icon: FaInstagram, name: \"Instagram\" },\n  { Icon: FaGoogle, name: \"Google\" },\n  { Icon: FaApple, name: \"Apple\" },\n  { Icon: SiFacebook, name: \"Facebook\" },\n]\n\nconst defaultCenterIcon: OrbitIcon = {\n  Icon: FaReact,\n  name: \"React\",\n}\n\nexport function OrbitRotation({\n  icons = defaultIcons,\n  orbitCount = 3,\n  orbitGap = 6,\n  centerIcon = defaultCenterIcon,\n  className,\n  size = \"md\",\n  ...props\n}: OrbitRotationProps) {\n  const iconsPerOrbit = Math.ceil(icons.length / orbitCount)\n\n  const sizeClasses = {\n    sm: \"w-16 h-16\",\n    md: \"w-24 h-24\",\n    lg: \"w-32 h-32\",\n  }\n\n  const iconSizeClasses = {\n    sm: \"w-6 h-6\",\n    md: \"w-8 h-8\",\n    lg: \"w-10 h-10\",\n  }\n\n  return (\n    <div\n      className={cn(\"relative flex items-center justify-center\", className)}\n      {...props}\n    >\n      <div className=\"relative flex items-center justify-center\">\n        {/* Center Icon */}\n        <div\n          className={cn(\n            \"bg-background/90 border-border/50 flex items-center justify-center rounded-full border shadow-xl backdrop-blur-sm\",\n            sizeClasses[size]\n          )}\n        >\n          <centerIcon.Icon className={cn(iconSizeClasses[size])} />\n        </div>\n\n        {/* Generate Orbits */}\n        {[...Array(orbitCount)].map((_, orbitIdx) => {\n          const orbitSize = `${8 + orbitGap * (orbitIdx + 1)}rem`\n          const angleStep = (2 * Math.PI) / iconsPerOrbit\n          const animationDuration = `${12 + orbitIdx * 6}s`\n\n          return (\n            <div\n              key={orbitIdx}\n              className=\"border-muted-foreground/30 absolute rounded-full border-2 border-dotted\"\n              style={{\n                width: orbitSize,\n                height: orbitSize,\n                animation: `orbit-spin ${animationDuration} linear infinite`,\n              }}\n            >\n              {icons\n                .slice(\n                  orbitIdx * iconsPerOrbit,\n                  orbitIdx * iconsPerOrbit + iconsPerOrbit\n                )\n                .map((iconConfig, iconIdx) => {\n                  const angle = iconIdx * angleStep\n                  const x = 50 + 50 * Math.cos(angle)\n                  const y = 50 + 50 * Math.sin(angle)\n\n                  return (\n                    <div\n                      key={iconIdx}\n                      className=\"bg-background/80 border-border/50 absolute rounded-full border p-1 shadow-lg backdrop-blur-sm\"\n                      style={{\n                        left: `${x}%`,\n                        top: `${y}%`,\n                        transform: \"translate(-50%, -50%)\",\n                      }}\n                    >\n                      <iconConfig.Icon className={cn(iconSizeClasses[size])} />\n                    </div>\n                  )\n                })}\n            </div>\n          )\n        })}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "css": {
+    "@keyframes orbit-spin": {
+      "from": {
+        "transform": "rotate(0deg)"
+      },
+      "to": {
+        "transform": "rotate(360deg)"
+      }
+    }
+  }
+}

@@ -3,13 +3,14 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import posthog from "posthog-js"
+
+import { siteConfig } from "@/config/site"
 import { trackEvent } from "@/lib/events"
 import { Button } from "@/components/ui/button"
 import { PingDot } from "@/components/ping-dot"
 import { AnimatedShinyText } from "@/registry/eldoraui/animated-shiny-text"
 import { AuroraText } from "@/registry/eldoraui/aurora-text"
 import { TextAnimate } from "@/registry/eldoraui/text-animate"
-import { siteConfig } from "@/config/site"
 
 export function DiscordCTA() {
   return (
@@ -26,10 +27,8 @@ export function DiscordCTA() {
           <AuroraText>Eldora UI </AuroraText>
         </p>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Get latest updates and support <br /> and get help from {" "}
-          <span className="text-foreground font-semibold">
-            our community
-          </span>
+          Get latest updates and support <br /> and get help from{" "}
+          <span className="text-foreground font-semibold">our community</span>
         </p>
       </div>
 
@@ -86,7 +85,6 @@ export function ProductHuntCTA() {
     </Link>
   )
 }
-
 
 export function SidebarCTA() {
   return <DiscordCTA />

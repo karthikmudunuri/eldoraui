@@ -45,26 +45,31 @@ npx shadcn@latest add @eldoraui/cobe-globe
 ## Examples
 
 ### Default Globe (Interactive)
+
 Interactive globe with drag functionality and auto-rotation, featuring colorful location markers and customizable settings.
 
 <ComponentPreview name="cobe-globe-demo" />
 
 ### Auto-Rotation Globe
+
 Pure auto-rotating globe with colorful markers, no user interaction.
 
 <ComponentPreview name="cobe-globe-demo-2" />
 
 ### Auto-Draggable Globe
+
 Auto-rotating globe that pauses rotation when dragged by the user.
 
 <ComponentPreview name="cobe-globe-demo-3" />
 
 ### Location-Based Navigation
+
 Interactive globe with clickable location buttons for navigation to custom locations.
 
 <ComponentPreview name="cobe-globe-demo-4" />
 
 ### Scaled Globe
+
 Horizontally-oriented globe perfect for wide layouts and banners.
 
 <ComponentPreview name="cobe-globe-demo-5" />
@@ -109,7 +114,7 @@ import { Cobe } from "@/components/eldoraui/cobe-globe"
 ### Customizable Settings
 
 ```tsx showLineNumbers
-<Cobe 
+<Cobe
   variant="default"
   phi={0}
   theta={0.2}
@@ -128,27 +133,27 @@ import { Cobe } from "@/components/eldoraui/cobe-globe"
 
 ## Props
 
-| Prop                | Type                                                                               | Default                                         | Description                                     |
-| ------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| Prop                | Type                                                                                                  | Default                                         | Description                                     |
+| ------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | `variant`           | `"default" \| "draggable" \| "auto-draggable" \| "auto-rotation" \| "rotate-to-location" \| "scaled"` | `"default"`                                     | Globe interaction variant                       |
-| `className`         | `string`                                                                           | `-`                                             | Additional CSS classes for styling              |
-| `style`             | `React.CSSProperties`                                                              | `-`                                             | Inline styles for the container                 |
-| `locations`         | `Location[]`                                                                       | `[{ name: "San Francisco", emoji: "📍" }, ...]` | Custom locations for rotate-to-location variant |
-| `phi`               | `number`                                                                           | `0`                                             | Initial rotation angle (phi)                    |
-| `theta`             | `number`                                                                           | `0.2`                                           | Initial tilt angle (theta)                      |
-| `mapSamples`        | `number`                                                                           | `16000`                                         | Map detail level (higher = more detail)         |
-| `mapBrightness`     | `number`                                                                           | `1.8`                                           | Map brightness multiplier                       |
-| `mapBaseBrightness` | `number`                                                                           | `0.05`                                          | Base map brightness                             |
-| `diffuse`           | `number`                                                                           | `3`                                             | Diffuse lighting intensity                      |
-| `dark`              | `number`                                                                           | `1.1`                                           | Dark mode intensity                             |
-| `baseColor`         | `string`                                                                           | `"#ffffff"`                                     | Base globe color (hex)                          |
-| `markerColor`       | `string`                                                                           | `"#fb6415"`                                     | Default marker color (hex)                      |
-| `markerSize`        | `number`                                                                           | `0.05`                                          | Size of location markers                        |
-| `glowColor`         | `string`                                                                           | `"#ffffff"`                                     | Glow effect color (hex)                         |
-| `scale`             | `number`                                                                           | `1.00`                                          | Globe scale (for scaled variant)                |
-| `offsetX`           | `number`                                                                           | `0.00`                                          | Horizontal offset                               |
-| `offsetY`           | `number`                                                                           | `0.00`                                          | Vertical offset                                 |
-| `opacity`           | `number`                                                                           | `0.7`                                           | Globe opacity (0-1)                            |
+| `className`         | `string`                                                                                              | `-`                                             | Additional CSS classes for styling              |
+| `style`             | `React.CSSProperties`                                                                                 | `-`                                             | Inline styles for the container                 |
+| `locations`         | `Location[]`                                                                                          | `[{ name: "San Francisco", emoji: "📍" }, ...]` | Custom locations for rotate-to-location variant |
+| `phi`               | `number`                                                                                              | `0`                                             | Initial rotation angle (phi)                    |
+| `theta`             | `number`                                                                                              | `0.2`                                           | Initial tilt angle (theta)                      |
+| `mapSamples`        | `number`                                                                                              | `16000`                                         | Map detail level (higher = more detail)         |
+| `mapBrightness`     | `number`                                                                                              | `1.8`                                           | Map brightness multiplier                       |
+| `mapBaseBrightness` | `number`                                                                                              | `0.05`                                          | Base map brightness                             |
+| `diffuse`           | `number`                                                                                              | `3`                                             | Diffuse lighting intensity                      |
+| `dark`              | `number`                                                                                              | `1.1`                                           | Dark mode intensity                             |
+| `baseColor`         | `string`                                                                                              | `"#ffffff"`                                     | Base globe color (hex)                          |
+| `markerColor`       | `string`                                                                                              | `"#fb6415"`                                     | Default marker color (hex)                      |
+| `markerSize`        | `number`                                                                                              | `0.05`                                          | Size of location markers                        |
+| `glowColor`         | `string`                                                                                              | `"#ffffff"`                                     | Glow effect color (hex)                         |
+| `scale`             | `number`                                                                                              | `1.00`                                          | Globe scale (for scaled variant)                |
+| `offsetX`           | `number`                                                                                              | `0.00`                                          | Horizontal offset                               |
+| `offsetY`           | `number`                                                                                              | `0.00`                                          | Vertical offset                                 |
+| `opacity`           | `number`                                                                                              | `0.7`                                           | Globe opacity (0-1)                             |
 
 ### Location Interface
 
@@ -169,7 +174,7 @@ The globe includes 13 pre-configured colorful location markers:
 
 - **San Francisco** - Default orange
 - **New York** - Red
-- **Tokyo** - Blue  
+- **Tokyo** - Blue
 - **Sydney** - Green
 - **Rio de Janeiro** - Purple
 - **Paris** - Yellow

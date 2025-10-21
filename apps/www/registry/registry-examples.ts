@@ -639,4 +639,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "orbit-rotation-demo",
+    type: "registry:example",
+    title: "orbit-rotation-demo",
+    description: "Example showing a orbit-rotation-demo component.",
+    registryDependencies: ["@eldoraui/orbit-rotation"],
+    files: [
+      {
+        path: "example/orbit-rotation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

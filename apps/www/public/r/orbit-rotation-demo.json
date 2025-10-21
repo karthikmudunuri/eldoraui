@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbit-rotation-demo",
+  "type": "registry:example",
+  "title": "orbit-rotation-demo",
+  "description": "Example showing a orbit-rotation-demo component.",
+  "registryDependencies": [
+    "@eldoraui/orbit-rotation"
+  ],
+  "files": [
+    {
+      "path": "registry/example/orbit-rotation-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  FaApple,\n  FaAws,\n  FaDocker,\n  FaGithub,\n  FaGoogle,\n  FaInstagram,\n  FaLinkedin,\n  FaNodeJs,\n  FaReact,\n  FaTwitter,\n} from \"react-icons/fa\"\nimport {\n  SiFacebook,\n  SiNextdotjs,\n  SiRedux,\n  SiTypescript,\n  SiVercel,\n} from \"react-icons/si\"\n\nimport { OGLogo } from \"@/components/og-logo\"\nimport { OrbitRotation } from \"@/registry/eldoraui/orbit-rotation\"\n\nexport function OrbitRotationDemo() {\n  const techIcons = [\n    { Icon: FaReact, name: \"React\" },\n    { Icon: FaAws, name: \"AWS\" },\n    { Icon: FaDocker, name: \"Docker\" },\n    { Icon: FaNodeJs, name: \"Node.js\" },\n    { Icon: SiNextdotjs, name: \"Next.js\" },\n    { Icon: SiVercel, name: \"Vercel\" },\n    { Icon: SiRedux, name: \"Redux\" },\n    { Icon: SiTypescript, name: \"TypeScript\" },\n    { Icon: FaGithub, name: \"GitHub\" },\n    { Icon: FaTwitter, name: \"Twitter\" },\n    { Icon: FaLinkedin, name: \"LinkedIn\" },\n    { Icon: FaInstagram, name: \"Instagram\" },\n    { Icon: FaGoogle, name: \"Google\" },\n    { Icon: FaApple, name: \"Apple\" },\n    { Icon: SiFacebook, name: \"Facebook\" },\n  ]\n\n  const centerIcon = {\n    Icon: ({ className }: { className?: string }) => (\n      <div className={className}>\n        <OGLogo width={32} height={32} />\n      </div>\n    ),\n    name: \"EldoraUI\",\n  }\n\n  return (\n    <div className=\"bg-background relative h-[500px] w-full overflow-hidden rounded-lg border p-8\">\n      <div className=\"flex h-full items-center justify-center\">\n        <OrbitRotation\n          icons={techIcons}\n          orbitCount={3}\n          orbitGap={6}\n          centerIcon={centerIcon}\n          size=\"md\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

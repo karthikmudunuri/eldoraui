@@ -958,7 +958,11 @@ export function AnimatedListDemo() {
   const notifications = [
     { name: "Location", message: "Thomas has arrived home", time: "2h ago" },
     { name: "Fitness", message: "Daily step goal reached!", time: "1h ago" },
-    { name: "Calendar", message: "Team meeting in 30 minutes", time: "45m ago" },
+    {
+      name: "Calendar",
+      message: "Team meeting in 30 minutes",
+      time: "45m ago",
+    },
     { name: "Tasks", message: "3 tasks due today", time: "1d ago" },
     { name: "Health", message: "Heart rate elevated", time: "3h ago" },
     { name: "Email", message: "New message from manager", time: "5m ago" },
@@ -969,7 +973,7 @@ export function AnimatedListDemo() {
   ]
 
   return (
-    <div className="relative h-[400px] w-full overflow-hidden rounded-lg border bg-background">
+    <div className="bg-background relative h-[400px] w-full overflow-hidden rounded-lg border">
       <AnimatedList
         stackGap={20}
         columnGap={85}
@@ -980,17 +984,21 @@ export function AnimatedListDemo() {
         {notifications.map((notification, index) => (
           <div
             key={index}
-            className="flex w-full max-w-[350px] items-center gap-4 rounded-2xl border bg-card p-4 shadow-sm"
+            className="bg-card flex w-full max-w-[350px] items-center gap-4 rounded-2xl border p-4 shadow-sm"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white text-sm font-medium">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-sm font-medium text-white">
               {notification.name.charAt(0)}
             </div>
             <div className="flex flex-1 flex-col">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium">{notification.name}</span>
-                <span className="text-xs text-muted-foreground">{notification.time}</span>
+                <span className="text-muted-foreground text-xs">
+                  {notification.time}
+                </span>
               </div>
-              <span className="text-sm text-muted-foreground">{notification.message}</span>
+              <span className="text-muted-foreground text-sm">
+                {notification.message}
+              </span>
             </div>
           </div>
         ))}
@@ -5406,6 +5414,235 @@ export default function NovatrixbgDemo() {
         mouseReact={true}
         speed={1.0}
       />
+    </div>
+  )
+}
+
+
+
+===== COMPONENT: orbit-rotation =====
+Title: orbit-rotation
+Description: An orbit rotation component with customizable icons.
+
+--- file: eldoraui/orbit-rotation.tsx ---
+"use client"
+
+import type React from "react"
+import {
+  FaApple,
+  FaAws,
+  FaDocker,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaLinkedin,
+  FaNodeJs,
+  FaReact,
+  FaTwitter,
+} from "react-icons/fa"
+import {
+  SiFacebook,
+  SiNextdotjs,
+  SiRedux,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si"
+
+import { cn } from "@/lib/utils"
+
+interface OrbitIcon {
+  Icon: React.ComponentType<{ className?: string }>
+  name?: string
+}
+
+interface OrbitRotationProps {
+  icons?: OrbitIcon[]
+  orbitCount?: number
+  orbitGap?: number
+  centerIcon?: OrbitIcon
+  className?: string
+  size?: "sm" | "md" | "lg"
+}
+
+const defaultIcons: OrbitIcon[] = [
+  { Icon: FaReact, name: "React" },
+  { Icon: FaAws, name: "AWS" },
+  { Icon: FaDocker, name: "Docker" },
+  { Icon: FaNodeJs, name: "Node.js" },
+  { Icon: SiNextdotjs, name: "Next.js" },
+  { Icon: SiVercel, name: "Vercel" },
+  { Icon: SiRedux, name: "Redux" },
+  { Icon: SiTypescript, name: "TypeScript" },
+  { Icon: FaGithub, name: "GitHub" },
+  { Icon: FaTwitter, name: "Twitter" },
+  { Icon: FaLinkedin, name: "LinkedIn" },
+  { Icon: FaInstagram, name: "Instagram" },
+  { Icon: FaGoogle, name: "Google" },
+  { Icon: FaApple, name: "Apple" },
+  { Icon: SiFacebook, name: "Facebook" },
+]
+
+const defaultCenterIcon: OrbitIcon = {
+  Icon: FaReact,
+  name: "React",
+}
+
+export function OrbitRotation({
+  icons = defaultIcons,
+  orbitCount = 3,
+  orbitGap = 6,
+  centerIcon = defaultCenterIcon,
+  className,
+  size = "md",
+  ...props
+}: OrbitRotationProps) {
+  const iconsPerOrbit = Math.ceil(icons.length / orbitCount)
+
+  const sizeClasses = {
+    sm: "w-16 h-16",
+    md: "w-24 h-24",
+    lg: "w-32 h-32",
+  }
+
+  const iconSizeClasses = {
+    sm: "w-6 h-6",
+    md: "w-8 h-8",
+    lg: "w-10 h-10",
+  }
+
+  return (
+    <div
+      className={cn("relative flex items-center justify-center", className)}
+      {...props}
+    >
+      <div className="relative flex items-center justify-center">
+        {/* Center Icon */}
+        <div
+          className={cn(
+            "bg-background/90 border-border/50 flex items-center justify-center rounded-full border shadow-xl backdrop-blur-sm",
+            sizeClasses[size]
+          )}
+        >
+          <centerIcon.Icon className={cn(iconSizeClasses[size])} />
+        </div>
+
+        {/* Generate Orbits */}
+        {[...Array(orbitCount)].map((_, orbitIdx) => {
+          const orbitSize = `${8 + orbitGap * (orbitIdx + 1)}rem`
+          const angleStep = (2 * Math.PI) / iconsPerOrbit
+          const animationDuration = `${12 + orbitIdx * 6}s`
+
+          return (
+            <div
+              key={orbitIdx}
+              className="border-muted-foreground/30 absolute rounded-full border-2 border-dotted"
+              style={{
+                width: orbitSize,
+                height: orbitSize,
+                animation: `orbit-spin ${animationDuration} linear infinite`,
+              }}
+            >
+              {icons
+                .slice(
+                  orbitIdx * iconsPerOrbit,
+                  orbitIdx * iconsPerOrbit + iconsPerOrbit
+                )
+                .map((iconConfig, iconIdx) => {
+                  const angle = iconIdx * angleStep
+                  const x = 50 + 50 * Math.cos(angle)
+                  const y = 50 + 50 * Math.sin(angle)
+
+                  return (
+                    <div
+                      key={iconIdx}
+                      className="bg-background/80 border-border/50 absolute rounded-full border p-1 shadow-lg backdrop-blur-sm"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <iconConfig.Icon className={cn(iconSizeClasses[size])} />
+                    </div>
+                  )
+                })}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+
+===== EXAMPLE: orbit-rotation-demo =====
+Title: orbit-rotation-demo
+
+--- file: example/orbit-rotation-demo.tsx ---
+"use client"
+
+import {
+  FaApple,
+  FaAws,
+  FaDocker,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaLinkedin,
+  FaNodeJs,
+  FaReact,
+  FaTwitter,
+} from "react-icons/fa"
+import {
+  SiFacebook,
+  SiNextdotjs,
+  SiRedux,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si"
+
+import { OGLogo } from "@/components/og-logo"
+import { OrbitRotation } from "@/registry/eldoraui/orbit-rotation"
+
+export function OrbitRotationDemo() {
+  const techIcons = [
+    { Icon: FaReact, name: "React" },
+    { Icon: FaAws, name: "AWS" },
+    { Icon: FaDocker, name: "Docker" },
+    { Icon: FaNodeJs, name: "Node.js" },
+    { Icon: SiNextdotjs, name: "Next.js" },
+    { Icon: SiVercel, name: "Vercel" },
+    { Icon: SiRedux, name: "Redux" },
+    { Icon: SiTypescript, name: "TypeScript" },
+    { Icon: FaGithub, name: "GitHub" },
+    { Icon: FaTwitter, name: "Twitter" },
+    { Icon: FaLinkedin, name: "LinkedIn" },
+    { Icon: FaInstagram, name: "Instagram" },
+    { Icon: FaGoogle, name: "Google" },
+    { Icon: FaApple, name: "Apple" },
+    { Icon: SiFacebook, name: "Facebook" },
+  ]
+
+  const centerIcon = {
+    Icon: ({ className }: { className?: string }) => (
+      <div className={className}>
+        <OGLogo width={32} height={32} />
+      </div>
+    ),
+    name: "EldoraUI",
+  }
+
+  return (
+    <div className="bg-background relative h-[500px] w-full overflow-hidden rounded-lg border p-8">
+      <div className="flex h-full items-center justify-center">
+        <OrbitRotation
+          icons={techIcons}
+          orbitCount={3}
+          orbitGap={6}
+          centerIcon={centerIcon}
+          size="md"
+        />
+      </div>
     </div>
   )
 }

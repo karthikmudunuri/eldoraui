@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient-tracing-demo",
+  "type": "registry:example",
+  "title": "gradient-tracing-demo",
+  "description": "Example showing a gradient-tracing-demo component.",
+  "registryDependencies": [
+    "@eldoraui/gradient-tracing"
+  ],
+  "files": [
+    {
+      "path": "registry/example/gradient-tracing-demo.tsx",
+      "content": "import { CpuArchitecture } from \"@/registry/eldoraui/gradient-tracing\"\n\nexport default function GradientTracingDemo() {\n  return (\n    <CpuArchitecture/>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

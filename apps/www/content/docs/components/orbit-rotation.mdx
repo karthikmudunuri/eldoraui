@@ -1,0 +1,93 @@
+---
+title: Orbit Rotation
+date: 2025-10-21
+description: An animated orbit rotation component with customizable icons and multiple orbits.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="orbit-rotation-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @eldoraui/orbit-rotation
+```
+
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/orbit-rotation.tsx`
+
+<ComponentSource name="orbit-rotation" />
+
+<Step>Add the required CSS animations</Step>
+
+Add the following animations to your global CSS file.
+
+```css title="app/globals.css" showLineNumbers {2-9}
+@theme inline {
+  @keyframes orbit-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { FaAws, FaReact } from "react-icons/fa"
+
+import { OrbitRotation } from "@/components/eldoraui/orbit-rotation"
+```
+
+```tsx showLineNumbers
+<OrbitRotation
+  icons={[
+    { Icon: FaReact, color: "#61DAFB", name: "React" },
+    { Icon: FaAws, color: "#FF9900", name: "AWS" },
+  ]}
+  orbitCount={2}
+  size="md"
+  speed="medium"
+/>
+```
+
+## Props
+
+| Prop         | Type                           | Default    | Description                         |
+| ------------ | ------------------------------ | ---------- | ----------------------------------- |
+| `icons`      | `OrbitIcon[]`                  | `-`        | Array of icons to display in orbits |
+| `orbitCount` | `number`                       | `3`        | Number of orbit rings               |
+| `orbitGap`   | `number`                       | `8`        | Gap between orbits in rem units     |
+| `centerIcon` | `OrbitIcon`                    | `-`        | Icon to display in the center       |
+| `className`  | `string`                       | `-`        | Additional CSS classes              |
+| `size`       | `"sm" \| "md" \| "lg"`         | `"md"`     | Size of the component               |
+| `speed`      | `"slow" \| "medium" \| "fast"` | `"medium"` | Animation speed                     |
+
+## OrbitIcon Interface
+
+| Prop    | Type                  | Description                     |
+| ------- | --------------------- | ------------------------------- |
+| `Icon`  | `React.ComponentType` | The icon component to render    |
+| `color` | `string`              | The color of the icon           |
+| `name`  | `string`              | Optional name for accessibility |

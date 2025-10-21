@@ -32,6 +32,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
 - [multi-direction-slide-text](https://eldoraui.site/docs/components/multi-direction-slide-text): A multi direction slide text component.
 - [novatrix-background](https://eldoraui.site/docs/components/novatrix-background): A novatrix background component.
+- [orbit-rotation](https://eldoraui.site/docs/components/orbit-rotation): An orbit rotation component with customizable icons.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 - [scale-letter-text](https://eldoraui.site/docs/components/scale-letter-text): A scale letter text component.
 - [seperate-away-text](https://eldoraui.site/docs/components/seperate-away-text): A seperate away text component.
@@ -92,6 +93,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [live-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/live-button-demo.tsx): Example usage
 - [animated-shiny-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-shiny-button-demo.tsx): Example usage
 - [animated-list-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-list-demo.tsx): Example usage
+- [orbit-rotation-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/orbit-rotation-demo.tsx): Example usage
 
 ## Optional
 

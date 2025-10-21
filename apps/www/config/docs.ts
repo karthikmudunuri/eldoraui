@@ -171,6 +171,12 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          title: "Orbit Rotation",
+          href: "/docs/components/orbit-rotation",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Svg Ripple Effect",
           href: "/docs/components/svg-ripple-effect",
           items: [],

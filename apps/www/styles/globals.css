@@ -156,6 +156,8 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-spin-slow: spin-slow 3s linear infinite;
+  --animate-spin-fast: spin-fast 0.5s linear infinite;
   --animate-shiny-text: shiny-text 8s infinite;
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
     alternate;
@@ -173,10 +175,29 @@
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
   --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 
+  
   /* End Animation Variables */
 
   /* Added Keyframes */
-  @keyframes aurora {
+  @keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aurora {
     0% {
       background-position: 0% 50%;
       transform: rotate(-5deg) scale(0.9);
@@ -225,7 +246,19 @@
       background-position: 200%;
     }
   }
-
+  
+  @keyframes frameworkline-animation-path {
+    0% {
+      offset-distance: 0%;
+    }
+    85% {
+      offset-distance: 100%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+  
   @keyframes line-shadow {
     0% {
       background-position: 0 0;
@@ -241,6 +274,15 @@
       transform: scale(2);
       opacity: 0;
     }
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -289,18 +331,6 @@
   offset-path: path(
     "M 1 0 v 5 q 0 5 5 5 h 39 q 5 0 5 5 v 71 q 0 5 5 5 h 39 q 5 0 5 5 v 20"
   );
-}
-
-@keyframes frameworkline-animation-path {
-  0% {
-    offset-distance: 0%;
-  }
-  85% {
-    offset-distance: 100%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
 }
 
 
@@ -476,3 +506,5 @@
     font-size: 0.8rem;
   }
 }
+
+

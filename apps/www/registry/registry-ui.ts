@@ -494,4 +494,28 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "orbit-rotation",
+    type: "registry:ui",
+    title: "orbit-rotation",
+    description: "An orbit rotation component with customizable icons.",
+    dependencies: ["react", "react-icons"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/orbit-rotation.tsx",
+        type: "registry:ui",
+      },
+    ],
+    css: {
+      "@keyframes orbit-spin": {
+        from: {
+          transform: "rotate(0deg)",
+        },
+        to: {
+          transform: "rotate(360deg)",
+        },
+      },
+    },
+  },
 ]

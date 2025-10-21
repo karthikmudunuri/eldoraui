@@ -50,8 +50,15 @@ export async function getRegistryItem(name: string) {
   // Convert all file paths to object.
   // TODO: remove when we migrate to new registry.
   if (item.files) {
-    item.files = item.files.map((file: string | { path: string; type: RegistryItem["type"]; target: string }) =>
-      typeof file === "string" ? { path: file, type: item.type, target: "" } : file
+    item.files = item.files.map(
+      (
+        file:
+          | string
+          | { path: string; type: RegistryItem["type"]; target: string }
+      ) =>
+        typeof file === "string"
+          ? { path: file, type: item.type, target: "" }
+          : file
     )
   }
 
@@ -245,4 +252,3 @@ export function createFileTreeForRegistryItemFiles(
 
   return root
 }
-
