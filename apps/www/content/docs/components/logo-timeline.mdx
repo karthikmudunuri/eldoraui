@@ -1,0 +1,125 @@
+---
+title: Logo Timeline
+date: 2025-11-01
+description: A visually stunning animated logo timeline component that displays logos in horizontal scrolling rows with smooth infinite animations, perfect for showcasing partners, technologies, or integrations.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="logo-timeline-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @eldoraui/logo-timeline
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/logo-timeline.tsx`
+
+<ComponentSource name="logo-timeline" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### With Hover Animation
+
+<ComponentPreview name="logo-timeline-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  LogoTimeline,
+  type LogoItem,
+} from "@/components/eldoraui/logo-timeline"
+```
+
+```tsx showLineNumbers
+<LogoTimeline
+  items={logos}
+  height="h-[500px] sm:h-[600px]"
+  iconSize={18}
+  showRowSeparator={true}
+/>
+```
+
+### Hover Animation Example
+
+Animate logos only on hover for an interactive experience:
+
+```tsx showLineNumbers {4}
+<LogoTimeline
+  items={logos}
+  height="h-[400px]"
+  animateOnHover={true}
+  iconSize={20}
+/>
+```
+
+### With Title
+
+Add a centered title overlay for additional context:
+
+```tsx showLineNumbers {3}
+<LogoTimeline
+  items={logos}
+  title="Trusted by Industry Leaders"
+  height="h-[600px]"
+  iconSize={18}
+  showRowSeparator={true}
+/>
+```
+
+## Props
+
+| Prop               | Type         | Default                    | Description                                                      |
+| ------------------ | ------------ | -------------------------- | ---------------------------------------------------------------- |
+| `items`            | `LogoItem[]` | `-`                        | Array of logo items to display on the timeline (required)        |
+| `title`            | `string`     | `-`                        | Optional title text displayed in the center of the timeline      |
+| `height`           | `string`     | `"h-[400px] sm:h-[800px]"` | Height of the timeline container (e.g., "h-[400px]", "h-screen") |
+| `className`        | `string`     | `-`                        | Additional CSS classes for the container                         |
+| `iconSize`         | `number`     | `16`                       | Size of icons in pixels                                          |
+| `showRowSeparator` | `boolean`    | `true`                     | Whether to display separator lines between rows                  |
+| `animateOnHover`   | `boolean`    | `false`                    | If true, animations only play when the component is hovered      |
+
+## LogoItem Interface
+
+| Prop                | Type                 | Default | Description                                                          |
+| ------------------- | -------------------- | ------- | -------------------------------------------------------------------- |
+| `label`             | `string`             | `-`     | Label text displayed next to the icon                                |
+| `icon`              | `keyof typeof Icons` | `-`     | Icon key from the Icons object (e.g., "discord", "gitHub", "google") |
+| `animationDelay`    | `number`             | `-`     | Animation delay in seconds (typically negative, e.g., -23)           |
+| `animationDuration` | `number`             | `-`     | Animation duration in seconds (e.g., 30, 40, 45, 60)                 |
+| `row`               | `number`             | `-`     | Row index (1-based) to group logos on the same timeline row          |
+
+## Notes
+
+- **Animation Timing**: Use negative `animationDelay` values to stagger logo animations and create a natural flow. The delay determines when each logo starts its animation cycle.
+- **Row Organization**: Logos are grouped by their `row` property. Each row can have multiple logos with different animation timings to create a seamless, infinite scrolling effect.
+- **Icon Selection**: Icons must be valid keys from the `Icons` object exported from `@/components/icons`. Common icons include: `react`, `ts`, `tailwind`, `gitHub`, `discord`, `openai`, `v0`, `radix`, and more.
+- **Animation Duration**: Longer durations create slower, more elegant animations. Typical values range from 30-65 seconds. Logos on the same row should use the same duration for synchronized movement.
+- **Responsive Design**: The component is fully responsive and works well on mobile devices. Use Tailwind's responsive height utilities (e.g., `h-[400px] sm:h-[600px]`) for optimal viewing across screen sizes.
+- **Performance**: The component uses CSS animations for smooth, performant scrolling without JavaScript overhead.

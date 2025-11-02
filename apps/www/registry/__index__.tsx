@@ -610,6 +610,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "logo-timeline": {
+    name: "logo-timeline",
+    description: "An animated logo timeline component with horizontal scrolling logos.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    files: [{
+      path: "registry/eldoraui/logo-timeline.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/logo-timeline.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -1455,6 +1472,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/orbit-rotation-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "logo-timeline-demo": {
+    name: "logo-timeline-demo",
+    description: "Example showing a logo-timeline-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/logo-timeline"],
+    files: [{
+      path: "registry/example/logo-timeline-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/logo-timeline-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "logo-timeline-demo-2": {
+    name: "logo-timeline-demo-2",
+    description: "Example showing a logo-timeline-demo-2 component with hover animation.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/logo-timeline"],
+    files: [{
+      path: "registry/example/logo-timeline-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/logo-timeline-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

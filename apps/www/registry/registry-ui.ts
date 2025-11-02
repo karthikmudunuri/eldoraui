@@ -518,4 +518,29 @@ export const ui: Registry["items"] = [
       },
     },
   },
+  {
+    name: "logo-timeline",
+    type: "registry:ui",
+    title: "logo-timeline",
+    description:
+      "An animated logo timeline component with horizontal scrolling logos.",
+    dependencies: ["react", "motion"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/logo-timeline.tsx",
+        type: "registry:ui",
+      },
+    ],
+    css: {
+      "@keyframes move-x": {
+        from: {
+          transform: "translateX(-100%)",
+        },
+        to: {
+          transform: "translateX(100%)",
+        },
+      },
+    },
+  },
 ]

@@ -652,4 +652,31 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "logo-timeline-demo",
+    type: "registry:example",
+    title: "logo-timeline-demo",
+    description: "Example showing a logo-timeline-demo component.",
+    registryDependencies: ["@eldoraui/logo-timeline"],
+    files: [
+      {
+        path: "example/logo-timeline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "logo-timeline-demo-2",
+    type: "registry:example",
+    title: "logo-timeline-demo-2",
+    description:
+      "Example showing a logo-timeline-demo-2 component with hover animation.",
+    registryDependencies: ["@eldoraui/logo-timeline"],
+    files: [
+      {
+        path: "example/logo-timeline-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

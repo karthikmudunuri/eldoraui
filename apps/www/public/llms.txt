@@ -27,6 +27,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
 - [letter-pull-up-text](https://eldoraui.site/docs/components/letter-pull-up-text): A letter pull up text component.
 - [live-button](https://eldoraui.site/docs/components/live-button): A live button component.
+- [logo-timeline](https://eldoraui.site/docs/components/logo-timeline): An animated logo timeline component with horizontal scrolling logos.
 - [macbook-pro](https://eldoraui.site/docs/components/macbook-pro): A MacBook Pro SVG component.
 - [map](https://eldoraui.site/docs/components/map): An animated map component with location markers.
 - [marquee](https://eldoraui.site/docs/components/marquee): A performant, customizable marquee (scrolling text/content) component.
@@ -94,6 +95,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [animated-shiny-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-shiny-button-demo.tsx): Example usage
 - [animated-list-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/animated-list-demo.tsx): Example usage
 - [orbit-rotation-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/orbit-rotation-demo.tsx): Example usage
+- [logo-timeline-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/logo-timeline-demo.tsx): Example usage
+- [logo-timeline-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/logo-timeline-demo-2.tsx): Example usage
 
 ## Optional
 

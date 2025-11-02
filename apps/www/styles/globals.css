@@ -277,6 +277,15 @@
   }
 }
 
+@keyframes move-x {
+  0% {
+    transform: translateX(var(--move-x-from));
+  }
+  100% {
+    transform: translateX(var(--move-x-to));
+  }
+}
+
 @keyframes orbit-spin {
   from {
     transform: rotate(0deg);

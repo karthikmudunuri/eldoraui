@@ -652,6 +652,35 @@
       }
     },
     {
+      "name": "logo-timeline",
+      "type": "registry:ui",
+      "title": "logo-timeline",
+      "description": "An animated logo timeline component with horizontal scrolling logos.",
+      "dependencies": [
+        "react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/logo-timeline.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "css": {
+        "@keyframes move-x": {
+          "from": {
+            "transform": "translateX(-100%)"
+          },
+          "to": {
+            "transform": "translateX(100%)"
+          }
+        }
+      }
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1397,6 +1426,36 @@
       "files": [
         {
           "path": "registry/example/orbit-rotation-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "logo-timeline-demo",
+      "type": "registry:example",
+      "title": "logo-timeline-demo",
+      "description": "Example showing a logo-timeline-demo component.",
+      "registryDependencies": [
+        "@eldoraui/logo-timeline"
+      ],
+      "files": [
+        {
+          "path": "registry/example/logo-timeline-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "logo-timeline-demo-2",
+      "type": "registry:example",
+      "title": "logo-timeline-demo-2",
+      "description": "Example showing a logo-timeline-demo-2 component with hover animation.",
+      "registryDependencies": [
+        "@eldoraui/logo-timeline"
+      ],
+      "files": [
+        {
+          "path": "registry/example/logo-timeline-demo-2.tsx",
           "type": "registry:example"
         }
       ]
