@@ -13,6 +13,7 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Author } from "@/components/author"
 import { Callout } from "@/components/callout"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
@@ -366,4 +367,5 @@ export const mdxComponents = {
     <TweetCard id={id} className={cn("mx-auto", className)} />
   ),
   CommitList,
+  Author,
 }
