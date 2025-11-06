@@ -16,6 +16,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [card-flip-hover](https://eldoraui.site/docs/components/card-flip-hover): A card flip hover component.
 - [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
+- [dock-text](https://eldoraui.site/docs/components/dock-text): A dock text component with interactive hover effects.
 - [fade-text](https://eldoraui.site/docs/components/fade-text): A combined fade text component with support for in, up, and down directions.
 - [font-weight-text](https://eldoraui.site/docs/components/font-weight-text): A font weight text component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
@@ -97,6 +98,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [orbit-rotation-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/orbit-rotation-demo.tsx): Example usage
 - [logo-timeline-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/logo-timeline-demo.tsx): Example usage
 - [logo-timeline-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/logo-timeline-demo-2.tsx): Example usage
+- [dock-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo.tsx): Example usage
+- [dock-text-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo-2.tsx): Example usage
 
 ## Optional
 

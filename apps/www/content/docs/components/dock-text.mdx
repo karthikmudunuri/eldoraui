@@ -1,0 +1,79 @@
+---
+title: Dock Text
+date: 2025-11-06
+description: Interactive text component with dock-like hover effects that scale letters based on mouse position.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="dock-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @eldoraui/dock-text
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/dock-text.tsx`
+
+<ComponentSource name="dock-text" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### With Down Prop
+
+<ComponentPreview name="dock-text-demo-2" />
+
+## Usage
+
+```tsx showLineNumbers
+import DockText from "@/components/eldoraui/dock-text"
+```
+
+```tsx showLineNumbers
+<DockText text="Dock Text" />
+```
+
+### With Down Prop
+
+```tsx showLineNumbers
+<DockText text="Dock Text" down={true} />
+```
+
+### Custom Text Size
+
+```tsx showLineNumbers
+<DockText text="Dock Text" className="text-4xl" />
+```
+
+## Props
+
+| Prop        | Type      | Default | Description                                                                      |
+| ----------- | --------- | ------- | -------------------------------------------------------------------------------- |
+| `text`      | `string`  | `-`     | The text content to display with dock animation                                  |
+| `down`      | `boolean` | `false` | When `true`, the animation scales from the top. When `false`, scales from bottom |
+| `className` | `string`  | `-`     | Additional CSS classes to customize the text size and styling                    |

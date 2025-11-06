@@ -543,4 +543,17 @@ export const ui: Registry["items"] = [
       },
     },
   },
+  {
+    name: "dock-text",
+    type: "registry:ui",
+    title: "dock-text",
+    description: "A dock text component with interactive hover effects.",
+    dependencies: ["react", "motion"],
+    files: [
+      {
+        path: "eldoraui/dock-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

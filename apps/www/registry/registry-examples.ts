@@ -679,4 +679,30 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "dock-text-demo",
+    type: "registry:example",
+    title: "dock-text-demo",
+    description: "Example showing a dock-text component.",
+    registryDependencies: ["@eldoraui/dock-text"],
+    files: [
+      {
+        path: "example/dock-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "dock-text-demo-2",
+    type: "registry:example",
+    title: "dock-text-demo-2",
+    description: "Example showing a dock-text component with down prop.",
+    registryDependencies: ["@eldoraui/dock-text"],
+    files: [
+      {
+        path: "example/dock-text-demo-2.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

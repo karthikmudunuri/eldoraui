@@ -200,6 +200,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Dock Text",
+          href: "/docs/components/dock-text",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Fade Text",
           href: "/docs/components/fade-text",
           items: [],

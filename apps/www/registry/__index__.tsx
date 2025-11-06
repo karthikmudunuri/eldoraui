@@ -627,6 +627,23 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "dock-text": {
+    name: "dock-text",
+    description: "A dock text component with interactive hover effects.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/eldoraui/dock-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/dock-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -1506,6 +1523,40 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/logo-timeline-demo-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "dock-text-demo": {
+    name: "dock-text-demo",
+    description: "Example showing a dock-text component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/dock-text"],
+    files: [{
+      path: "registry/example/dock-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/dock-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "dock-text-demo-2": {
+    name: "dock-text-demo-2",
+    description: "Example showing a dock-text component with down prop.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/dock-text"],
+    files: [{
+      path: "registry/example/dock-text-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/dock-text-demo-2.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

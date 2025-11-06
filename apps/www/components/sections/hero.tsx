@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <section id="hero">
       <div className="relative h-full overflow-hidden py-5 md:py-14">
-        <HeroAnimatedSlides className="absolute inset-x-8 inset-y-0 hidden py-4 md:block lg:inset-x-24 xl:inset-x-32" />
+        {/* <HeroAnimatedSlides className="absolute inset-x-8 inset-y-0 hidden py-4 md:block lg:inset-x-24 xl:inset-x-32" /> */}
         <div className="z-10 flex flex-col">
           <div className="mt-10 grid grid-cols-1 md:mt-20">
             <div className="flex flex-col items-start gap-6 px-7 pb-8 text-center md:items-center md:px-10">

@@ -681,6 +681,22 @@
       }
     },
     {
+      "name": "dock-text",
+      "type": "registry:ui",
+      "title": "dock-text",
+      "description": "A dock text component with interactive hover effects.",
+      "dependencies": [
+        "react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/dock-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "safari-browser-demo",
       "type": "registry:example",
       "title": "safari-browser-demo",
@@ -1456,6 +1472,36 @@
       "files": [
         {
           "path": "registry/example/logo-timeline-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock-text-demo",
+      "type": "registry:example",
+      "title": "dock-text-demo",
+      "description": "Example showing a dock-text component.",
+      "registryDependencies": [
+        "@eldoraui/dock-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/dock-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock-text-demo-2",
+      "type": "registry:example",
+      "title": "dock-text-demo-2",
+      "description": "Example showing a dock-text component with down prop.",
+      "registryDependencies": [
+        "@eldoraui/dock-text"
+      ],
+      "files": [
+        {
+          "path": "registry/example/dock-text-demo-2.tsx",
           "type": "registry:example"
         }
       ]
