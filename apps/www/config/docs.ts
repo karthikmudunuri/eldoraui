@@ -142,6 +142,12 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/testimonal-slider",
           items: [],
         },
+        {
+          title: "Holographic Card",
+          href: "/docs/components/holographic-card",
+          items: [],
+          label: "New",
+        },
       ],
     },
     {

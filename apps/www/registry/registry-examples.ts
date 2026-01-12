@@ -705,4 +705,17 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "holographic-card-demo",
+    type: "registry:example",
+    title: "holographic-card-demo",
+    description: "Example showing a holographic-card component.",
+    registryDependencies: ["@eldoraui/holographic-card"],
+    files: [
+      {
+        path: "example/holographic-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]
