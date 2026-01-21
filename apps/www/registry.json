@@ -703,7 +703,7 @@
       "description": "An interactive card with a holographic gradient and mouse‑reactive tilt effect.",
       "dependencies": [
         "react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
