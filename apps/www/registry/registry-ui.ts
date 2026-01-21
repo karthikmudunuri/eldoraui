@@ -562,7 +562,7 @@ export const ui: Registry["items"] = [
     title: "holographic-card",
     description:
       "An interactive card with a holographic gradient and mouse‑reactive tilt effect.",
-    dependencies: ["react", "framer-motion"],
+    dependencies: ["react", "motion"],
     files: [
       {
         path: "eldoraui/holographic-card.tsx",
