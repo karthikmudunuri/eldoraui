@@ -23,6 +23,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [gradual-spacing-text](https://eldoraui.site/docs/components/gradual-spacing-text): A gradual spacing text component.
 - [grid](https://eldoraui.site/docs/components/grid): A grid component.
 - [hacker-background](https://eldoraui.site/docs/components/hacker-background): A hacker background component.
+- [holographic-card](https://eldoraui.site/docs/components/holographic-card): An interactive card with a holographic gradient and mouse‑reactive tilt effect.
 - [integrations](https://eldoraui.site/docs/components/integrations): An integrations component.
 - [ipad](https://eldoraui.site/docs/components/ipad): An iPad SVG component.
 - [iphone-17-pro](https://eldoraui.site/docs/components/iphone-17-pro): An iPhone 17 Pro SVG component.
@@ -100,6 +101,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [logo-timeline-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/logo-timeline-demo-2.tsx): Example usage
 - [dock-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo.tsx): Example usage
 - [dock-text-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo-2.tsx): Example usage
+- [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo.tsx): Example usage
 
 ## Optional
 
