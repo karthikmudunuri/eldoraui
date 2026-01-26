@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "holographic-card-demo-3",
+  "type": "registry:example",
+  "title": "holographic-card-demo",
+  "description": "Example showing a holographic-card component.",
+  "registryDependencies": [
+    "@eldoraui/holographic-card"
+  ],
+  "files": [
+    {
+      "path": "registry/example/holographic-card-demo-3.tsx",
+      "content": "import HolographicCard from \"@/registry/eldoraui/holographic-card\"\n\nexport default function HolographicCardDemo3() {\n  return (\n    <div className=\"flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12\">\n      <div className=\"pointer-events-none absolute inset-0 z-[-1]\" />\n\n      <HolographicCard\n        id=\"namer-ui-holographic-card-3\"\n        width={316}\n        height={448}\n        imageSrc=\"https://github.com/Northstrix/my-portfolio/blob/main/public/third-playground-card-image.png?raw=true\"\n        topText=\"נמר\"\n        bottomText=\"I'm draggable!\"\n        topTextLetterSpacing=\"0.0175rem\"\n        bottomTextLetterSpacing=\"0.0175rem\"\n        textOverlayPadding=\"1.125rem 1.375rem\"\n        maxImageWidthPct={0.54}\n        topTextColor=\"#5F73FB\"\n        topTextHoverColor=\"#5FA4FB\"\n        bottomTextColor=\"#5F73FB\"\n        bottomTextHoverColor=\"#5FA4FB\"\n        borderWidth={2}\n        borderColor=\"#5F73FB\"\n        topTextVertical={false}\n        bottomTextVertical={false}\n        mirrorBottomText={false}\n        enableDrag={true}\n        isRTL\n        patternColor=\"rgba(95, 115, 251, 0.15)\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

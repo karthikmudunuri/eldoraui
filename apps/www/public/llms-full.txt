@@ -2226,7 +2226,7 @@ import { CardFlipHover } from "@/registry/eldoraui/card-flip-hover"
 export default function DemoOne() {
   return (
     <div className="flex items-center justify-center">
-      <CardFlipHover imageUrl="https://res.cloudinary.com/eldoraui/image/upload/v1734021310/advanced-gradient_un8eg6.jpg" />
+      <CardFlipHover imageUrl="https://avatar.vercel.sh/karthik" />
     </div>
   )
 }
@@ -4346,8 +4346,15 @@ Description: An interactive card with a holographic gradient and mouse‑reactiv
 
 --- file: eldoraui/holographic-card.tsx ---
 "use client"
+
 import React, { useRef, useState } from "react"
-import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from "framer-motion"
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react"
 
 // ==========================================
 // ==== Component Interface ================
@@ -4582,7 +4589,7 @@ const HolographicCard: React.FC<HolographicCardProps> = ({
           <div className={cardBodyClass}>
             {/* Pattern */}
             <div className={patternClass} />
-            
+
             {/* Background Image 1 (Base) - z-0 like original */}
             <div
               className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
@@ -4626,7 +4633,7 @@ const HolographicCard: React.FC<HolographicCardProps> = ({
 
             {/* Hologram Overlay - z-20 like original, mix-blend-color-dodge */}
             {enableHologram && (
-              <motion.div 
+              <motion.div
                 className="pointer-events-none absolute inset-0 z-20 mix-blend-color-dodge"
                 style={{
                   background: holographicGradient,
@@ -4653,10 +4660,12 @@ const HolographicCard: React.FC<HolographicCardProps> = ({
                     fontWeight: topTextWeight,
                     fontSize: topTextFontSize,
                     letterSpacing: topTextLetterSpacing,
-                    writingMode: topTextVertical ? "vertical-rl" : "horizontal-tb",
+                    writingMode: topTextVertical
+                      ? "vertical-rl"
+                      : "horizontal-tb",
                     textOrientation: topTextVertical ? "mixed" : undefined,
-                    textShadow: isHovered 
-                      ? `0 0 15px ${topTextHoverColorFinal}` 
+                    textShadow: isHovered
+                      ? `0 0 15px ${topTextHoverColorFinal}`
                       : "none",
                     transition: "all 0.3s ease",
                   }}
@@ -4682,14 +4691,18 @@ const HolographicCard: React.FC<HolographicCardProps> = ({
                   <div
                     className={bottomTextClassName}
                     style={{
-                      color: isHovered ? bottomTextHoverColorFinal : bottomTextColor,
+                      color: isHovered
+                        ? bottomTextHoverColorFinal
+                        : bottomTextColor,
                       fontWeight: bottomTextWeight,
                       fontSize: bottomTextFontSize,
                       letterSpacing: bottomTextLetterSpacing,
-                      writingMode: bottomTextVertical ? "vertical-rl" : "horizontal-tb",
+                      writingMode: bottomTextVertical
+                        ? "vertical-rl"
+                        : "horizontal-tb",
                       textOrientation: bottomTextVertical ? "mixed" : undefined,
-                      textShadow: isHovered 
-                        ? `0 0 15px ${bottomTextHoverColorFinal}` 
+                      textShadow: isHovered
+                        ? `0 0 15px ${bottomTextHoverColorFinal}`
                         : "none",
                       transition: "all 0.3s ease",
                     }}
@@ -4727,9 +4740,9 @@ import HolographicCard from "@/registry/eldoraui/holographic-card"
 
 export default function HolographicCardDemo() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12">
       <div className="pointer-events-none absolute inset-0 z-[-1]" />
-      
+
       {/* Card 1 - Default */}
       <HolographicCard
         width={316}
@@ -4742,8 +4755,22 @@ export default function HolographicCardDemo() {
         topTextHoverColor="#FBE75F"
         bottomTextHoverColor="#FBE75F"
       />
-      
-      {/* Card 2 - Purple Theme */}
+    </div>
+  )
+}
+
+
+===== EXAMPLE: holographic-card-demo-2 =====
+Title: holographic-card-demo
+
+--- file: example/holographic-card-demo-2.tsx ---
+import HolographicCard from "@/registry/eldoraui/holographic-card"
+
+export default function HolographicCardDemo2() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12">
+      <div className="pointer-events-none absolute inset-0 z-[-1]" />
+
       <HolographicCard
         id="namer-ui-holographic-card-2"
         width={316}
@@ -4765,8 +4792,22 @@ export default function HolographicCardDemo() {
         patternDotSize={1.75}
         patternColor="rgba(142, 91, 238, 0.1)"
       />
-      
-      {/* Card 3 - Blue Draggable */}
+    </div>
+  )
+}
+
+
+===== EXAMPLE: holographic-card-demo-3 =====
+Title: holographic-card-demo
+
+--- file: example/holographic-card-demo-3.tsx ---
+import HolographicCard from "@/registry/eldoraui/holographic-card"
+
+export default function HolographicCardDemo3() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12">
+      <div className="pointer-events-none absolute inset-0 z-[-1]" />
+
       <HolographicCard
         id="namer-ui-holographic-card-3"
         width={316}
@@ -5148,7 +5189,7 @@ export function iPadDemo() {
   return (
     <div className="relative">
       <Ipad
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1758616622/ipad_xgn1qu.jpg"
+        src="https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/ipados-14-ipad-air-2020-pink-light-stock-aesthetic-3840x2160-2917.jpg"
         className="size-full"
       />
     </div>
@@ -5253,7 +5294,7 @@ export function iPhone17ProDemo() {
   return (
     <div className="relative">
       <Iphone17Pro
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1759051266/469059-640_kwga4s.jpg"
+        src="https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/iPhone17Pro_Orange.jpg"
         className="h-80 w-full"
       />
     </div>
@@ -5980,7 +6021,7 @@ export function MacbookProDemo() {
   return (
     <div className="relative">
       <MacbookPro
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
+        src="https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/m.webp"
         className="size-full"
       />
     </div>
@@ -6047,7 +6088,7 @@ export function Map() {
       aria-hidden="true"
       className="relative size-full"
     >
-      <div className="absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021299/map_pcqdwb.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat dark:mask-[linear-gradient(to_bottom,black_50%,transparent)]" />
+      <div className="absolute inset-0 bg-[url(https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/map.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat dark:mask-[linear-gradient(to_bottom,black_50%,transparent)]" />
       <div className="absolute inset-0">
         <Marker
           src="https://avatar.vercel.sh/karthik"
@@ -7134,7 +7175,7 @@ export function SvgRippleEffectDemo() {
           repeatDelay: 1.25,
         }}
         fade={["top", "bottom"]}
-        image="https://res.cloudinary.com/eldoraui/image/upload/v1759610754/icon_fcvkvx.png"
+        image="https://avatar.vercel.sh/karthik"
       />
     </div>
   )
@@ -7157,7 +7198,7 @@ export function SvgRippleEffectDemo2() {
           repeatDelay: 1.25,
         }}
         fade={["top", "bottom"]}
-        image="https://res.cloudinary.com/eldoraui/image/upload/v1759610754/icon_fcvkvx.png"
+        image="https://avatar.vercel.sh/karthik"
         whileHover={true}
       />
     </div>

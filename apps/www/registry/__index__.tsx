@@ -1596,6 +1596,40 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "holographic-card-demo-2": {
+    name: "holographic-card-demo-2",
+    description: "Example showing a holographic-card component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/holographic-card"],
+    files: [{
+      path: "registry/example/holographic-card-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/holographic-card-demo-2.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "holographic-card-demo-3": {
+    name: "holographic-card-demo-3",
+    description: "Example showing a holographic-card component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/holographic-card"],
+    files: [{
+      path: "registry/example/holographic-card-demo-3.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/holographic-card-demo-3.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "utils": {
     name: "utils",
     description: "",

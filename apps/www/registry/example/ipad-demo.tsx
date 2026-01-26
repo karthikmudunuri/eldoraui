@@ -4,7 +4,7 @@ export function iPadDemo() {
   return (
     <div className="relative">
       <Ipad
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1758616622/ipad_xgn1qu.jpg"
+        src="https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/ipados-14-ipad-air-2020-pink-light-stock-aesthetic-3840x2160-2917.jpg"
         className="size-full"
       />
     </div>

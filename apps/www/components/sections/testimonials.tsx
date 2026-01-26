@@ -7,7 +7,6 @@ import { TweetCard } from "@/registry/eldoraui/tweet-card"
 const allTweets = [
   "https://x.com/miantiao_me/status/1814496850134946210",
   "https://x.com/ArabsDev/status/1860031241325584796",
-  "https://x.com/AnshulSoni2010/status/1858816175121088962",
   "https://x.com/treyvijay/status/1858433973489430841",
   "https://x.com/DevKhan03/status/1856600564013903952",
   "https://x.com/Theme_Selection/status/1851222039413330414",
@@ -26,7 +25,6 @@ const allTweets = [
   "https://x.com/miantiao_me/status/1814496850134946210",
   "https://x.com/red_claww/status/1836064706185892062",
   "https://x.com/codemasteerrr/status/1823274177639440741",
-  "https://x.com/delgorithm/status/1821170345472110788",
   "https://x.com/weeklyfoo/status/1816272881438892282",
   "https://x.com/NanimonoDaemon/status/1815015059552337956",
 ].map((t) => t.split("/").slice(-1)[0])

@@ -10,7 +10,7 @@ export function SvgRippleEffectDemo() {
           repeatDelay: 1.25,
         }}
         fade={["top", "bottom"]}
-        image="https://res.cloudinary.com/eldoraui/image/upload/v1759610754/icon_fcvkvx.png"
+        image="https://avatar.vercel.sh/karthik"
       />
     </div>
   )

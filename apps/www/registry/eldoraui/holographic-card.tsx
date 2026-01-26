@@ -7,7 +7,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion"
+} from "motion/react"
 
 // ==========================================
 // ==== Component Interface ================

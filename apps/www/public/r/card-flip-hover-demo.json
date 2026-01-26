@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/card-flip-hover-demo.tsx",
-      "content": "import { CardFlipHover } from \"@/registry/eldoraui/card-flip-hover\"\n\nexport default function DemoOne() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <CardFlipHover imageUrl=\"https://res.cloudinary.com/eldoraui/image/upload/v1734021310/advanced-gradient_un8eg6.jpg\" />\n    </div>\n  )\n}\n",
+      "content": "import { CardFlipHover } from \"@/registry/eldoraui/card-flip-hover\"\n\nexport default function DemoOne() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <CardFlipHover imageUrl=\"https://avatar.vercel.sh/karthik\" />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

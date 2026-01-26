@@ -51,7 +51,7 @@ export function Map() {
       aria-hidden="true"
       className="relative size-full"
     >
-      <div className="absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021299/map_pcqdwb.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat dark:mask-[linear-gradient(to_bottom,black_50%,transparent)]" />
+      <div className="absolute inset-0 bg-[url(https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/map.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat dark:mask-[linear-gradient(to_bottom,black_50%,transparent)]" />
       <div className="absolute inset-0">
         <Marker
           src="https://avatar.vercel.sh/karthik"

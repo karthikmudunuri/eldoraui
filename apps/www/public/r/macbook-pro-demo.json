@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/example/macbook-pro-demo.tsx",
-      "content": "import { MacbookPro } from \"@/registry/eldoraui/macbook-pro\"\n\nexport function MacbookProDemo() {\n  return (\n    <div className=\"relative\">\n      <MacbookPro\n        src=\"https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg\"\n        className=\"size-full\"\n      />\n    </div>\n  )\n}\n",
+      "content": "import { MacbookPro } from \"@/registry/eldoraui/macbook-pro\"\n\nexport function MacbookProDemo() {\n  return (\n    <div className=\"relative\">\n      <MacbookPro\n        src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/m.webp\"\n        className=\"size-full\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

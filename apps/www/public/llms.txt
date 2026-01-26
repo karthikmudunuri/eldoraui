@@ -102,6 +102,8 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [dock-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo.tsx): Example usage
 - [dock-text-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/dock-text-demo-2.tsx): Example usage
 - [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo.tsx): Example usage
+- [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo-2.tsx): Example usage
+- [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo-3.tsx): Example usage
 
 ## Optional
 
