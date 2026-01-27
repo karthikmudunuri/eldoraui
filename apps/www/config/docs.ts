@@ -142,12 +142,6 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/testimonal-slider",
           items: [],
         },
-        {
-          title: "Holographic Card",
-          href: "/docs/components/holographic-card",
-          items: [],
-          label: "New",
-        },
       ],
     },
     {
@@ -167,17 +161,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Map",
           href: "/docs/components/map",
-          items: [],
-        },
-        {
-          title: "Orbit Rotation",
-          href: "/docs/components/orbit-rotation",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "Svg Ripple Effect",
-          href: "/docs/components/svg-ripple-effect",
           items: [],
         },
       ],
