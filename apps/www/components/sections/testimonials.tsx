@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
 import { ExpandableMasonarySection } from "@/components/sections/expandable-masonary-section"
 import { TweetCard } from "@/registry/eldoraui/tweet-card"
 
@@ -31,8 +32,8 @@ const allTweets = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="container max-w-screen-xl py-14">
-      <h2 className="text-foreground mb-8 text-center text-5xl leading-[1.2] font-bold tracking-tighter">
+    <section id="testimonials" className="container mx-auto py-10 md:py-14">
+      <h2 className="text-foreground mb-10 text-center text-3xl leading-[1.2] font-semibold tracking-tighter text-balance md:text-4xl lg:text-5xl">
         What People Are Saying on Twitter
       </h2>
       <ExpandableMasonarySection>
@@ -40,18 +41,22 @@ export function Testimonials() {
           <Link
             href={`https://x.com/i/status/${id}`}
             key={id}
-            className="group relative"
+            className="group relative block contain-layout"
           >
             <TweetCard
               id={id}
-              className="break-inside-avoid overflow-hidden rounded-lg"
+              className="border-border bg-card break-inside-avoid overflow-hidden rounded-xl border transition-[border-color,background-color,box-shadow] duration-200 ease-in-out hover:shadow-md"
             />
-            <span className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/20 p-4 text-lg font-bold text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-              <span className="flex translate-y-[14px] items-center gap-2 transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+            <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/5 opacity-0 backdrop-blur-sm transition-opacity duration-200 ease-in-out will-change-[opacity] group-hover:opacity-100">
+              <Button
+                variant="default"
+                size="default"
+                className="pointer-events-none h-8 w-fit translate-y-3 px-2 transition-transform duration-200 ease-in-out will-change-transform group-hover:translate-y-0"
+              >
                 View Tweet
-                <ArrowUpRight className="h-6 w-6" />
-              </span>
-            </span>
+                <ArrowUpRight className="h-4 w-4" />
+              </Button>
+            </div>
           </Link>
         ))}
       </ExpandableMasonarySection>

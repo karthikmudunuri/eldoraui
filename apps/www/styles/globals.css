@@ -514,6 +514,10 @@
     font-family: var(--font-mono);
     font-size: 0.8rem;
   }
+
+  iframe {
+    @apply mt-6 rounded-lg overflow-hidden;
+  }
 }
 
 
