@@ -1,5 +1,6 @@
 import { registryIndexSchema, RegistryItem, type Registry } from "shadcn/schema"
 
+import { block } from "@/registry/registry-blocks"
 import { examples } from "@/registry/registry-examples"
 import { lib } from "@/registry/registry-lib"
 import { ui } from "@/registry/registry-ui"
@@ -20,7 +21,7 @@ export const registry = {
   name: "eldoraui",
   homepage: "https://eldoraui.site",
   items: registryIndexSchema.parse(
-    [DEFAULT, ...ui, ...examples, ...lib].filter((item) => {
+    [DEFAULT, ...ui, ...examples, ...lib, ...block].filter((item) => {
       return !DEPRECATED_ITEMS.includes(item.name)
     })
   ),

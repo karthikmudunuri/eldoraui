@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cobe-globe-demo-3",
-  "type": "registry:example",
   "title": "cobe-globe-demo-3",
   "description": "Example showing a cobe-globe-demo-3 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport { Cobe } from \"@/registry/eldoraui/cobe-globe\"\n\nexport function CobeGlobeDemo3() {\n  return (\n    <div className=\"bg-background relative z-10 h-[300px] w-full overflow-hidden rounded-lg border sm:h-[550px] md:h-[600px]\">\n      <Cobe variant=\"auto-draggable\" />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

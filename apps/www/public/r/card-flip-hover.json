@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-flip-hover",
-  "type": "registry:ui",
   "title": "card-flip-hover",
   "description": "A card flip hover component.",
   "dependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\ninterface CardFlipHoverProps {\n  imageUrl: string\n}\n\nexport const CardFlipHover = ({ imageUrl }: CardFlipHoverProps) => {\n  const [isFlipped, setIsFlipped] = useState(false)\n\n  const handleHover = () => {\n    if (!isFlipped) {\n      setIsFlipped(true)\n      setTimeout(() => setIsFlipped(false), 700)\n    }\n  }\n\n  return (\n    <div className=\"h-60 w-44 [perspective:1000px]\" onMouseEnter={handleHover}>\n      <div\n        className={`relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] ${\n          isFlipped\n            ? \"[transform:rotateY(180deg)_translateY(-40px)]\"\n            : \"[transform:rotateY(0deg)_translateY(0px)]\"\n        }`}\n      >\n        {/* Front Side */}\n        <div className=\"absolute h-full w-full overflow-hidden rounded-xl shadow-xl [backface-visibility:hidden]\">\n          <img\n            src={imageUrl}\n            alt=\"Front\"\n            className=\"h-full w-full object-cover\"\n          />\n        </div>\n\n        {/* Back Side */}\n        <div className=\"absolute flex h-full w-full [transform:rotateY(180deg)] items-center justify-center overflow-hidden rounded-xl bg-cyan-600 text-xl font-bold text-white shadow-xl [backface-visibility:hidden]\">\n          <img\n            src={imageUrl}\n            alt=\"Back\"\n            className=\"h-full w-full object-cover\"\n          />\n        </div>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

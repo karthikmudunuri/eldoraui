@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dock-text-demo-2",
-  "type": "registry:example",
   "title": "dock-text-demo-2",
   "description": "Example showing a dock-text component with down prop.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport DockText from \"@/registry/eldoraui/dock-text\"\n\nexport default function DockTextDemo2() {\n  return <DockText text={\"Dock Text\"} down={true} />\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

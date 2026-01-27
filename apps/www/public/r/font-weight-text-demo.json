@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "font-weight-text-demo",
-  "type": "registry:example",
   "title": "font-weight-text-demo",
   "description": "Example showing a font-weight-text-demo component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import { FontWeightText } from \"@/registry/eldoraui/font-weight-text\"\n\nexport function FontWeightTextDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <FontWeightText\n        text=\"Get Started\"\n        fontSize={60}\n        className=\"text-cyan-200\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

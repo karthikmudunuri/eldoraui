@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "svg-ripple-effect-demo-2",
-  "type": "registry:example",
   "title": "svg-ripple-effect-demo-2",
   "description": "Example showing a svg-ripple-effect-demo-2 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import SvgRippleEffect from \"@/registry/eldoraui/svg-ripple-effect\"\n\nexport function SvgRippleEffectDemo2() {\n  return (\n    <div className=\"bg-background relative mx-auto h-[300px] w-[300px] overflow-hidden rounded-lg border\">\n      <SvgRippleEffect\n        transition={{\n          duration: 0.75,\n          repeat: Infinity,\n          repeatDelay: 1.25,\n        }}\n        fade={[\"top\", \"bottom\"]}\n        image=\"https://avatar.vercel.sh/karthik\"\n        whileHover={true}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

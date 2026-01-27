@@ -21,6 +21,7 @@ import { CodeTabs } from "@/components/code-tabs"
 import CommitList from "@/components/commit-list"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
+import { BlockDisplay } from "@/components/block-display"
 import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
 import { getIconForLanguageExtension } from "@/components/icons"
@@ -363,6 +364,7 @@ export const mdxComponents = {
   TemplateOpen,
   TemplatePreview,
   TechStack,
+  BlockDisplay,
   Tweet: ({ id, className }: { id: string; className?: string }) => (
     <TweetCard id={id} className={cn("mx-auto", className)} />
   ),

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "macbook-pro-demo",
-  "type": "registry:example",
   "title": "macbook-pro-demo",
   "description": "Example showing a macbook-pro-demo component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import { MacbookPro } from \"@/registry/eldoraui/macbook-pro\"\n\nexport function MacbookProDemo() {\n  return (\n    <div className=\"relative\">\n      <MacbookPro\n        src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/m.webp\"\n        className=\"size-full\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

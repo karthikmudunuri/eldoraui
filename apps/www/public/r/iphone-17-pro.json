@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "iphone-17-pro",
-  "type": "registry:ui",
   "title": "iphone-17-pro",
   "description": "An iPhone 17 Pro SVG component.",
   "dependencies": [
@@ -13,5 +12,6 @@
       "content": "import type { SVGProps } from \"react\"\n\nexport interface Iphone17ProProps extends SVGProps<SVGSVGElement> {\n  width?: number\n  height?: number\n  src?: string\n}\n\nexport function Iphone17Pro({\n  width = 200,\n  height = 400,\n  src,\n  ...props\n}: Iphone17ProProps) {\n  return (\n    <svg\n      width={width}\n      height={height}\n      viewBox={`0 0 ${width} ${height}`}\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path\n        fill=\"#303333\"\n        d=\"M196.11,128.09c0-.25-.2-.45-.45-.45-.11.04-.37.03-.69,0V36.69c0-17.84-14.46-32.31-32.31-32.31H37.48C19.63,4.39,5.17,18.85,5.17,36.69v48.99c-.3.02-.55.03-.66-.02-.25,0-.45.2-.45.45,0,0,0,17.29,0,17.29-.03.41.5.49,1.11.48v13.63c-.61,0-1.14.08-1.11.48,0,0,0,28.54,0,28.54-.03.42.5.49,1.11.48v7.95c-.61,0-1.14.08-1.11.48,0,0,0,28.54,0,28.54-.03.42.5.49,1.11.48v178.86c0,17.84,14.46,32.31,32.31,32.31h125.2c17.84,0,32.31-14.46,32.31-32.31v-188.87c.32-.02.58-.03.69.04,1.26.1.03-45.94.45-46.38ZM186.07,362.63c0,13.56-10.99,24.56-24.56,24.56H38.64c-13.56,0-24.56-10.99-24.56-24.56V37.37c0-13.56,10.99-24.56,24.56-24.56h122.87c13.56,0,24.56,10.99,24.56,24.56v325.26Z\"\n      />\n      <path\n        fill=\"#000000\"\n        d=\"M161.38,7.29H38.78c-16.54,0-29.95,13.41-29.95,29.95v325.52c0,16.54,13.41,29.95,29.95,29.95h122.6c16.54,0,29.95-13.41,29.95-29.95V37.24c0-16.54-13.41-29.95-29.95-29.95ZM186.07,362.57c0,13.6-11.02,24.62-24.62,24.62H38.7c-13.6,0-24.62-11.02-24.62-24.62V37.43c0-13.6,11.02-24.62,24.62-24.62h122.75c13.6,0,24.62,11.02,24.62,24.62v325.14Z\"\n      />\n\n      <rect\n        fill=\"currentColor\"\n        x=\"14.08\"\n        y=\"12.81\"\n        width=\"171.98\"\n        height=\"374.37\"\n        rx=\"24.62\"\n        ry=\"24.62\"\n      />\n      {src && (\n        <image\n          href={src}\n          x=\"14.08\"\n          y=\"12.81\"\n          width=\"171.98\"\n          height=\"374.37\"\n          rx=\"24.62\"\n          ry=\"24.62\"\n          preserveAspectRatio=\"xMidYMid slice\"\n          clipPath=\"url(#roundedCorners)\"\n        />\n      )}\n      <path\n        fill=\"#000000\"\n        d=\"M119.61,33.86h-38.93c-10.48-.18-10.5-15.78,0-15.96,0,0,38.93,0,38.93,0,4.41,0,7.98,3.57,7.98,7.98,0,4.41-3.57,7.98-7.98,7.98Z\"\n      />\n      <path\n        fill=\"#080d4c\"\n        d=\"M118.78,29.21c-4.32.06-4.32-6.73,0-6.66,4.32-.06,4.32,6.73,0,6.66Z\"\n      />\n\n      <defs>\n        <clipPath id=\"roundedCorners\">\n          <rect\n            fill=\"#ffffff\"\n            x=\"14.08\"\n            y=\"12.81\"\n            width=\"171.98\"\n            height=\"374.37\"\n            rx=\"24.62\"\n            ry=\"24.62\"\n          />\n        </clipPath>\n      </defs>\n    </svg>\n  )\n}\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

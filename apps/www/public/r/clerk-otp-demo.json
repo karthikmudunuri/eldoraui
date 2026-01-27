@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "clerk-otp-demo",
-  "type": "registry:example",
   "title": "clerk-otp-demo",
   "description": "Example showing a clerk-otp-demo component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import ClerkOTP from \"@/registry/eldoraui/clerk-otp\"\n\nexport function ClerkOTPDemo() {\n  return (\n    <ClerkOTP\n      delay={3500}\n      cardTitle=\"Hover to Animate\"\n      cardDescription=\"Animation only triggers when hovering over the card. Random digits generated each time.\"\n      whileHover={true} // Animation only on hover\n    />\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

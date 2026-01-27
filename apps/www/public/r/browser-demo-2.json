@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "browser-demo-2",
-  "type": "registry:example",
   "title": "browser-demo-2",
   "description": "Example showing a browser-demo-2 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import { Browser } from \"@/registry/eldoraui/browser\"\n\nexport function BrowserDemo2() {\n  return (\n    <div className=\"mx-auto h-[620px]\">\n      <Browser\n        initialUrl=\"https://www.eldoraui.site\"\n        showWindowControls={true}\n        showBookmarksBar={true}\n        showStatusBar={true}\n        enableTabManagement={true}\n        enableBookmarks={true}\n        enableHistory={true}\n        enableDownloads={true}\n        enableSettings={true}\n        maxTabs={8}\n        simulateLoading={true}\n        loadingDuration={1500}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dock-text-demo",
-  "type": "registry:example",
   "title": "dock-text-demo",
   "description": "Example showing a dock-text component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport DockText from \"@/registry/eldoraui/dock-text\"\n\nexport default function DockTextDemo() {\n  return <DockText text={\"Eldoraui\"} />\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

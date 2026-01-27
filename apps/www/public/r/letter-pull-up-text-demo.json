@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "letter-pull-up-text-demo",
-  "type": "registry:example",
   "title": "letter-pull-up-text-demo",
   "description": "Example showing a letter-pull-up-text-demo component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import { LetterPullUpText } from \"@/registry/eldoraui/letter-pull-up-text\"\n\nexport function LetterPullUpTextDemo() {\n  return (\n    <LetterPullUpText\n      className=\"font-display text-center text-4xl font-bold -tracking-widest text-black md:text-7xl md:leading-[5rem] dark:text-white\"\n      text=\"Letter Pull Up\"\n    />\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

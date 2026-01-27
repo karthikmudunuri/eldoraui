@@ -8,7 +8,7 @@ import { Project, ScriptKind } from "ts-morph"
 import { Index } from "@/registry/__index__"
 
 // Fumadocs zod v4 compat type fix. Temporary.
-interface RegistryItemFile {
+export interface RegistryItemFile {
   path: string
   content: string
   type: RegistryItem["type"]
@@ -38,6 +38,19 @@ interface RegistryIndexItem {
 export function getRegistryComponent(name: string) {
   const item = Index[name] as RegistryIndexItem
   return item?.component
+}
+
+export async function getDemoItem(name: string) {
+  // EldoraUI uses a single flat registry index (no styles).
+  // Most "demo" content is already present as `registry:example` items, so
+  // `getRegistryItem` usually covers it. This helper exists as a fallback for
+  // non-registry examples.
+  const item = await getRegistryItem(name)
+  if (item) {
+    return item
+  }
+
+  return null
 }
 
 export async function getRegistryItem(name: string) {

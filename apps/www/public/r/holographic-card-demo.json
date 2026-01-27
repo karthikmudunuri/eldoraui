@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "holographic-card-demo",
-  "type": "registry:example",
   "title": "holographic-card-demo",
   "description": "Example showing a holographic-card component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import HolographicCard from \"@/registry/eldoraui/holographic-card\"\n\nexport default function HolographicCardDemo() {\n  return (\n    <div className=\"flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12\">\n      <div className=\"pointer-events-none absolute inset-0 z-[-1]\" />\n\n      {/* Card 1 - Default */}\n      <HolographicCard\n        width={316}\n        height={448}\n        imageSrc=\"https://github.com/Northstrix/my-portfolio/blob/main/public/fourth-playground-card-image.jpg?raw=true\"\n        topText=\"旅\"\n        bottomText=\"創世\"\n        borderWidth={1}\n        borderColor=\"rgba(255,255,255,0.1)\"\n        topTextHoverColor=\"#FBE75F\"\n        bottomTextHoverColor=\"#FBE75F\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

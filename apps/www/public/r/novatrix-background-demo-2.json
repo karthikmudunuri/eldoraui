@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "novatrix-background-demo-2",
-  "type": "registry:example",
   "title": "novatrix-background-demo-2",
   "description": "Example showing a novatrix-background-demo-2 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport Novatrix from \"@/registry/eldoraui/novatrix-background\"\n\nexport default function NovatrixbgDemo() {\n  return (\n    <div className=\"bg-background relative z-10 h-[500px] w-full overflow-hidden rounded-lg border\">\n      <Novatrix\n        color={[1, 1, 1]}\n        amplitude={0.1}\n        mouseReact={true}\n        speed={1.0}\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

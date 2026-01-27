@@ -1647,4 +1647,25 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "login-01": {
+    name: "login-01",
+    description: "A simple login form.",
+    type: "registry:block",
+    registryDependencies: ["button","card","input","label","field"],
+    files: [{
+      path: "registry/blocks/login-01/page.tsx",
+      type: "registry:page",
+      target: "app/login/page.tsx"
+    },{
+      path: "registry/blocks/login-01/components/login-form.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/login-01/page.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   }

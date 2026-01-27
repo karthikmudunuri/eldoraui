@@ -17,6 +17,11 @@ export const docsConfig: DocsConfig = {
       event: "header_cta_clicked",
       label: "",
     },
+    {
+      title: "Blocks",
+      href: "/blocks",
+      label: "New",
+    },
   ],
   sidebarNav: [
     {
@@ -36,13 +41,11 @@ export const docsConfig: DocsConfig = {
           title: "Story",
           href: "/docs/story",
           items: [],
-          label: "New",
         },
         {
           title: "Changelog",
           href: "/docs/changelog",
           items: [],
-          label: "New",
         },
       ],
     },
@@ -100,7 +103,6 @@ export const docsConfig: DocsConfig = {
           title: "Animated List",
           href: "/docs/components/animated-list",
           items: [],
-          label: "New",
         },
         {
           title: "Card Flip Hover",
@@ -156,7 +158,6 @@ export const docsConfig: DocsConfig = {
           title: "Logo Timeline",
           href: "/docs/components/logo-timeline",
           items: [],
-          label: "New",
         },
         {
           title: "Map",
@@ -192,7 +193,6 @@ export const docsConfig: DocsConfig = {
           title: "Dock Text",
           href: "/docs/components/dock-text",
           items: [],
-          label: "New",
         },
         {
           title: "Fade Text",
@@ -203,7 +203,6 @@ export const docsConfig: DocsConfig = {
           title: "Font Weight Text",
           href: "/docs/components/font-weight-text",
           items: [],
-          label: "New",
         },
         {
           title: "Gradual Spacing Text",

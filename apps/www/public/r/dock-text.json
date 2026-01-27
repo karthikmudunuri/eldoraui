@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dock-text",
-  "type": "registry:ui",
   "title": "dock-text",
   "description": "A dock text component with interactive hover effects.",
   "dependencies": [
@@ -14,5 +13,6 @@
       "content": "\"use client\"\n\nimport React, { useRef, useState } from \"react\"\nimport { motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface DockTextProps {\n  text: string\n  down?: boolean\n  className?: string\n}\n\nexport default function DockText({\n  text,\n  down = false,\n  className,\n}: DockTextProps) {\n  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)\n  const containerRef = useRef<HTMLHeadingElement>(null)\n\n  const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {\n    const container = containerRef.current\n    if (!container) return\n\n    const letters = container.children\n    const containerRect = container.getBoundingClientRect()\n    const mouseX = e.clientX - containerRect.left\n\n    Array.from(letters).forEach((letter, index) => {\n      const letterRect = letter.getBoundingClientRect()\n      const letterCenterX =\n        letterRect.left + letterRect.width / 2 - containerRect.left\n      const distance = Math.abs(mouseX - letterCenterX)\n\n      if (distance <= 10) {\n        setHoveredIndex(index)\n      }\n    })\n  }\n\n  const handleMouseLeave = () => {\n    setHoveredIndex(null)\n  }\n\n  return (\n    <motion.h1\n      ref={containerRef}\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n      className={cn(\n        \"my-8 flex cursor-pointer items-center text-6xl font-bold text-gray-900 uppercase md:text-7xl lg:text-8xl dark:text-white\",\n        className\n      )}\n    >\n      {text.split(\"\").map((letter, index) => (\n        <motion.span\n          key={index}\n          animate={{\n            scaleY:\n              hoveredIndex === null\n                ? 1\n                : Math.max(1, 1.3638 - Math.abs(index - hoveredIndex) * 0.1),\n          }}\n          transition={{\n            type: \"spring\",\n            stiffness: 150,\n            damping: 20,\n            mass: 0.5,\n          }}\n          style={{\n            display: \"inline-block\",\n            transformOrigin: down ? \"top\" : \"bottom\",\n          }}\n        >\n          {letter}\n        </motion.span>\n      ))}\n    </motion.h1>\n  )\n}\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

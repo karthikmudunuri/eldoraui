@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "marquee",
-  "type": "registry:ui",
   "title": "marquee",
   "description": "A performant, customizable marquee (scrolling text/content) component.",
   "registryDependencies": [
@@ -37,5 +36,6 @@
         "transform": "translateY(calc(-100% - var(--gap)))"
       }
     }
-  }
+  },
+  "type": "registry:ui"
 }

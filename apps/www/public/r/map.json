@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "map",
-  "type": "registry:ui",
   "title": "map",
   "description": "An animated map component with location markers.",
   "dependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\n\nfunction Marker({\n  src,\n  top,\n  offset,\n  delay,\n}: {\n  src: string\n  top: number\n  offset: number\n  delay: number\n}) {\n  return (\n    <motion.div\n      variants={{\n        idle: { scale: 0, opacity: 0, rotateX: 0, rotate: 0, y: 0 },\n        active: { y: [-20, 0, 4, 0], scale: [0.75, 1], opacity: [0, 1] },\n      }}\n      transition={{ duration: 0.25, delay, ease: \"easeOut\" }}\n      style={{ \"--offset\": `${offset}px`, top } as React.CSSProperties}\n      className=\"absolute left-[calc(50%+var(--offset))] size-[38px] drop-shadow-[0_3px_1px_rgba(0,0,0,.15)]\"\n    >\n      <svg fill=\"none\" viewBox=\"0 0 38 38\" className=\"absolute size-full\">\n        <path\n          d=\"M29.607 5.193c5.858 5.857 5.858 15.355 0 21.213l-9.9 9.9-.707.706-.708-.708-9.899-9.898c-5.857-5.858-5.857-15.356 0-21.213 5.858-5.858 15.356-5.858 21.214 0Z\"\n          className=\"fill-black/5\"\n        />\n        <path\n          d=\"m28.9 25.698-9.9 9.9-9.9-9.9C3.634 20.232 3.634 11.367 9.1 5.9 14.569.432 23.433.432 28.9 5.9c5.467 5.468 5.467 14.332 0 19.8Z\"\n          className=\"fill-white\"\n        />\n      </svg>\n      <img\n        alt=\"\"\n        src={src}\n        className=\"absolute top-[4px] left-[7px] size-6 rounded-full\"\n      />\n    </motion.div>\n  )\n}\n\nexport function Map() {\n  return (\n    <motion.div\n      initial=\"idle\"\n      whileHover=\"active\"\n      variants={{ idle: {}, active: {} }}\n      aria-hidden=\"true\"\n      className=\"relative size-full\"\n    >\n      <div className=\"absolute inset-0 bg-[url(https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/map.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat dark:mask-[linear-gradient(to_bottom,black_50%,transparent)]\" />\n      <div className=\"absolute inset-0\">\n        <Marker\n          src=\"https://avatar.vercel.sh/karthik\"\n          top={96}\n          offset={-128}\n          delay={0.15}\n        />\n        <Marker\n          src=\"https://avatar.vercel.sh/varma\"\n          top={160}\n          offset={-16}\n          delay={0.4}\n        />\n        <Marker\n          src=\"https://avatar.vercel.sh/pawan\"\n          top={144}\n          offset={96}\n          delay={0.3}\n        />\n        <Marker\n          src=\"https://avatar.vercel.sh/mark\"\n          top={192}\n          offset={64}\n          delay={0.6}\n        />\n        <Marker\n          src=\"https://avatar.vercel.sh/jeff\"\n          top={224}\n          offset={-32}\n          delay={0.8}\n        />\n      </div>\n      <div className=\"absolute inset-0 bg-gradient-to-b from-white to-[50%] dark:from-neutral-950 dark:to-[70%]\" />\n    </motion.div>\n  )\n}\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

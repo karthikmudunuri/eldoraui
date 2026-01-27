@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "orbit-rotation",
-  "type": "registry:ui",
   "title": "orbit-rotation",
   "description": "An orbit rotation component with customizable icons.",
   "dependencies": [
@@ -27,5 +26,6 @@
         "transform": "rotate(360deg)"
       }
     }
-  }
+  },
+  "type": "registry:ui"
 }

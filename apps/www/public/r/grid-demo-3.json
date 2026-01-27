@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "grid-demo-3",
-  "type": "registry:example",
   "title": "grid-demo-3",
   "description": "Example showing a grid-demo-3 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport { Grid } from \"@/registry/eldoraui/grid\"\n\nexport default function GridDemo3() {\n  return (\n    <div className=\"bg-background relative z-10 w-full space-y-8 overflow-hidden rounded-lg border p-8\">\n      {/* Grid without Plus Icons */}\n      <div className=\"space-y-4\">\n        <h3 className=\"text-lg font-semibold\">Grid without Plus Icons</h3>\n        <Grid columns={8} rows={2} height=\"h-20\" showPlusIcons={false} />\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "holographic-card-demo-2",
-  "type": "registry:example",
   "title": "holographic-card-demo",
   "description": "Example showing a holographic-card component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import HolographicCard from \"@/registry/eldoraui/holographic-card\"\n\nexport default function HolographicCardDemo2() {\n  return (\n    <div className=\"flex min-h-screen flex-col items-center justify-center gap-12 overflow-hidden px-6 py-12\">\n      <div className=\"pointer-events-none absolute inset-0 z-[-1]\" />\n\n      <HolographicCard\n        id=\"namer-ui-holographic-card-2\"\n        width={316}\n        height={448}\n        imageSrc=\"https://github.com/Northstrix/my-portfolio/blob/main/public/playground-card-image.webp?raw=true\"\n        topText=\"洪秀全\"\n        bottomText=\"洪秀全\"\n        topTextLetterSpacing=\"0.375rem\"\n        bottomTextLetterSpacing=\"0.375rem\"\n        maxImageWidthPct={0.64}\n        topTextColor=\"#8E5BEE\"\n        topTextHoverColor=\"#E95FF6\"\n        bottomTextColor=\"#8E5BEE\"\n        bottomTextHoverColor=\"#E95FF6\"\n        borderWidth={2}\n        borderColor=\"#8E5BEE\"\n        backgroundColor=\"#fff\"\n        patternSize={12.06}\n        patternDotSize={1.75}\n        patternColor=\"rgba(142, 91, 238, 0.1)\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hacker-background-demo-2",
-  "type": "registry:example",
   "title": "hacker-background-demo-2",
   "description": "Example showing a hacker-background-demo-2 component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "\"use client\"\n\nimport { HackerBackground } from \"@/registry/eldoraui/hacker-background\"\n\nexport default function HackerBackgroundDemo2() {\n  return (\n    <div className=\"bg-background relative z-10 h-[500px] w-full overflow-hidden rounded-lg border\">\n      <HackerBackground\n        color=\"#22d3ee\"\n        fontSize={8}\n        speed={1.5}\n        className=\"opacity-80\"\n      />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-flip-hover-demo",
-  "type": "registry:example",
   "title": "card-flip-hover-demo",
   "description": "Example showing a card-flip-hover-demo component.",
   "registryDependencies": [
@@ -13,5 +12,6 @@
       "content": "import { CardFlipHover } from \"@/registry/eldoraui/card-flip-hover\"\n\nexport default function DemoOne() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <CardFlipHover imageUrl=\"https://avatar.vercel.sh/karthik\" />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }
