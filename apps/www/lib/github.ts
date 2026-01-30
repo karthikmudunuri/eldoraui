@@ -1,3 +1,7 @@
+/* ======================================================
+ * Existing types & helpers (UNCHANGED)
+ * ====================================================== */
+
 interface GitHubIssueUrlParams {
   owner: string
   repo: string
@@ -13,18 +17,6 @@ interface GitHubIssueUrlParams {
 /**
  * Generates a GitHub issue URL with the provided parameters.
  * https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-url-query
- *
- * @param params - Parameters for the GitHub issue URL.
- * @param params.owner - The GitHub repository owner's username.
- * @param params.repo - The name of the GitHub repository.
- * @param params.title - Optional title of the issue.
- * @param params.body - Optional body content of the issue.
- * @param params.labels - Optional array of labels for the issue.
- * @param params.template - Optional template file name for the issue.
- * @param params.projects - Optional array of project names to associate with the issue.
- * @param params.assignees - Optional array of usernames to assign the issue to.
- * @param params.milestone - Optional milestone to associate with the issue.
- * @returns A string containing the generated GitHub issue URL.
  */
 export function getGitHubIssueUrl(params: GitHubIssueUrlParams): string {
   const { owner, repo, ...issueParams } = params
@@ -53,4 +45,60 @@ export function getGithubFileUrl(params: GithubFileUrlParams) {
   return `https://github.com/${owner}/${repo}/edit/main/apps/www/content${
     slug === "/docs" ? "/docs/index" : slug
   }.mdx`
+}
+
+/* ======================================================
+ * NEW: Stargazers / Supporters
+ * ====================================================== */
+
+export interface Stargazer {
+  login: string
+  id: number
+  avatar_url: string
+  html_url: string
+  type: string
+}
+
+/**
+ * Fetch GitHub stargazers (paginated & cached)
+ * - Respects GitHub API limits
+ * - Optimized for Server Components & API routes
+ */
+export async function fetchStargazers(
+  limit: number = 1500,
+): Promise<Stargazer[]> {
+  const stargazers: Stargazer[] = []
+  let page = 1
+  const perPage = 100 // GitHub max
+
+  while (stargazers.length < limit) {
+    const res = await fetch(
+      `https://api.github.com/repos/karthikmudunuri/eldoraui/stargazers?per_page=${perPage}&page=${page}`,
+      {
+        headers: process.env.GITHUB_OAUTH_TOKEN
+          ? {
+              Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
+              Accept: "application/vnd.github+json",
+            }
+          : {},
+        next: {
+          revalidate: 3600, // cache for 1 hour
+        },
+      },
+    )
+
+    if (!res.ok) {
+      console.error("GitHub API error:", res.status)
+      break
+    }
+
+    const data: Stargazer[] = await res.json()
+
+    if (data.length === 0) break
+
+    stargazers.push(...data)
+    page++
+  }
+
+  return stargazers.slice(0, limit)
 }

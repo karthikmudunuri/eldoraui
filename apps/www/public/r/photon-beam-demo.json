@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "photon-beam-demo",
+  "title": "photon-beam-demo",
+  "description": "Example showing a photon-beam-demo component.",
+  "registryDependencies": [
+    "@eldoraui/photon-beam"
+  ],
+  "files": [
+    {
+      "path": "registry/example/photon-beam-demo.tsx",
+      "content": "\"use client\"\n\nimport PhotonBeam from \"@/registry/eldoraui/photon-beam\"\n\nexport default function PhotonBeamDemo() {\n  return (\n    <div className=\"bg-background relative z-10 h-[500px] w-full overflow-hidden rounded-lg border\">\n      <PhotonBeam\n        colorBg=\"#080808\"\n        colorLine=\"#005f6f\"\n        colorSignal=\"#00d9ff\"\n        colorSignal2=\"#00ffff\"\n        colorSignal3=\"#00b8d4\"\n        lineCount={80}\n        spreadHeight={50}\n        signalCount={94}\n        speedGlobal={0.345}\n        trailLength={3}\n        bloomStrength={3.0}\n        bloomRadius={0.5}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

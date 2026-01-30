@@ -390,6 +390,20 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "photon-beam",
+    type: "registry:ui",
+    title: "photon-beam",
+    description:
+      "A photon beam background component with animated light trails.",
+    dependencies: ["react", "three"],
+    files: [
+      {
+        path: "eldoraui/photon-beam.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "hacker-background",
     type: "registry:ui",
     title: "hacker-background",

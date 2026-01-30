@@ -7,7 +7,7 @@ export const dynamic = "force-static"
 export const revalidate = false
 
 // NOTE: With a single style, we only need to reference block names.
-const FEATURED_BLOCKS = ["login-01"]
+const FEATURED_BLOCKS = ["logo-cloud-01", "cta-02", "testimonal-02"]
 
 export default async function BlocksPage() {
   return (
@@ -18,7 +18,7 @@ export default async function BlocksPage() {
       <div className="container-wrapper">
         <div className="container flex justify-center py-6">
           <Button asChild variant="outline">
-            <Link href="/blocks/sidebar">Browse more blocks</Link>
+            <Link href="/blocks/header">Browse more blocks</Link>
           </Button>
         </div>
       </div>

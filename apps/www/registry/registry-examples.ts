@@ -523,6 +523,19 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "photon-beam-demo",
+    type: "registry:example",
+    title: "photon-beam-demo",
+    description: "Example showing a photon-beam-demo component.",
+    registryDependencies: ["@eldoraui/photon-beam"],
+    files: [
+      {
+        path: "example/photon-beam-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "hacker-background-demo",
     type: "registry:example",
     title: "hacker-background-demo",

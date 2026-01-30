@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-02",
+  "description": "A logo cloud with flex wrap layout.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/blocks/logo-cloud-02/page.tsx",
+      "content": "import { LogoCloud02 } from \"@/registry/blocks/logo-cloud-02/components/logo-cloud-02\"\n\nexport default function LogoCloudPage() {\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm md:max-w-3xl\">\n        <LogoCloud02 />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/logo-cloud/page.tsx"
+    },
+    {
+      "path": "registry/blocks/logo-cloud-02/components/logo-cloud-02.tsx",
+      "content": "import Image from \"next/image\"\n\nexport function LogoCloud02() {\n  return (\n    <section\n      id=\"clients\"\n      className=\"mx-auto max-w-7xl px-6 text-center md:px-8\"\n    >\n      <div className=\"py-14\">\n        <div className=\"mx-auto max-w-screen-xl px-4 md:px-8\">\n          <h2 className=\"text-center text-sm font-semibold text-gray-600\">\n            TRUSTED BY TEAMS FROM AROUND THE WORLD\n          </h2>\n          <div className=\"mt-6\">\n            <ul className=\"flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16 [&_path]:fill-white\">\n              <li>\n                <Image\n                  alt=\"Google\"\n                  src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Google.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"Microsoft\"\n                  src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Microsoft.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"GitHub\"\n                  src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/GitHub.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n\n              <li>\n                <Image\n                  alt=\"Uber\"\n                  src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Uber.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n              <li>\n                <Image\n                  alt=\"Notion\"\n                  src=\"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Notion.svg\"\n                  className=\"h-8 w-28 px-2 dark:brightness-0 dark:invert\"\n                  width={28}\n                  height={8}\n                />\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "logo-cloud"
+  ],
+  "type": "registry:block"
+}

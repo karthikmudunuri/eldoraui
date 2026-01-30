@@ -498,6 +498,22 @@
       "type": "registry:ui"
     },
     {
+      "name": "photon-beam",
+      "title": "photon-beam",
+      "description": "A photon beam background component with animated light trails.",
+      "dependencies": [
+        "react",
+        "three"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/photon-beam.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "hacker-background",
       "title": "hacker-background",
       "description": "A hacker background component.",
@@ -1313,6 +1329,21 @@
       "type": "registry:example"
     },
     {
+      "name": "photon-beam-demo",
+      "title": "photon-beam-demo",
+      "description": "Example showing a photon-beam-demo component.",
+      "registryDependencies": [
+        "@eldoraui/photon-beam"
+      ],
+      "files": [
+        {
+          "path": "registry/example/photon-beam-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
       "name": "hacker-background-demo",
       "title": "hacker-background-demo",
       "description": "Example showing a hacker-background-demo component.",
@@ -1582,29 +1613,424 @@
       "type": "registry:lib"
     },
     {
-      "name": "login-01",
-      "description": "A simple login form.",
+      "name": "header-01",
+      "description": "A simple header.",
+      "dependencies": [
+        "motion/react",
+        "lucide-react",
+        "next-themes"
+      ],
       "registryDependencies": [
         "button",
-        "card",
-        "input",
-        "label",
-        "field"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/blocks/login-01/page.tsx",
+          "path": "registry/blocks/header-01/page.tsx",
           "type": "registry:page",
-          "target": "app/login/page.tsx"
+          "target": "app/header/page.tsx"
         },
         {
-          "path": "registry/blocks/login-01/components/login-form.tsx",
+          "path": "registry/blocks/header-01/components/navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/header-01/components/nav-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/header-01/components/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/header-01/lib/nav-links.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "categories": [
+        "header"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "header-02",
+      "description": "A simple header.",
+      "dependencies": [
+        "motion/react",
+        "lucide-react",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/header-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/header-02/page.tsx"
+        },
+        {
+          "path": "registry/blocks/header-02/components/navbar.tsx",
           "type": "registry:component"
         }
       ],
       "categories": [
-        "authentication",
-        "login"
+        "header"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "logo-cloud-01",
+      "description": "A simple logo cloud.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/logo-cloud/page.tsx"
+        },
+        {
+          "path": "registry/blocks/logo-cloud-01/components/logo-cloud.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "logo-cloud-02",
+      "description": "A logo cloud with flex wrap layout.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/logo-cloud/page.tsx"
+        },
+        {
+          "path": "registry/blocks/logo-cloud-02/components/logo-cloud-02.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "logo-cloud-03",
+      "description": "A logo cloud with marquee effect.",
+      "dependencies": [],
+      "registryDependencies": [
+        "marquee"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/logo-cloud/page.tsx"
+        },
+        {
+          "path": "registry/blocks/logo-cloud-03/components/marquee.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "logo-cloud-04",
+      "description": "A logo cloud with motion.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/logo-cloud/page.tsx"
+        },
+        {
+          "path": "registry/blocks/logo-cloud-04/components/logo-cloud-04.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "testimonal-01",
+      "description": "A testimonial slider.",
+      "dependencies": [
+        "react-icons/md"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonal-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/testimonial/page.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonal-01/components/carousel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/testimonal-01/components/section.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "testimonials"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "testimonal-02",
+      "description": "A testimonial marquee.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonal-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/testimonial/page.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonal-02/components/marquee.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/testimonal-02/components/testimonals.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "testimonials"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "testimonal-03",
+      "description": "A testimonial card grid.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/blocks/testimonal-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/testimonial/page.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonal-03/components/testimonal-03.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "testimonials"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "features-01",
+      "description": "Features section with accordion and image carousel.",
+      "dependencies": [
+        "motion/react",
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/features/page.tsx"
+        },
+        {
+          "path": "registry/blocks/features-01/components/features.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/features-01/components/section.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "features"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "cta-01",
+      "description": "CTA with heading, grid background, and animated side lines.",
+      "dependencies": [
+        "motion/react",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta/page.tsx"
+        },
+        {
+          "path": "registry/blocks/cta-01/components/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "cta-02",
+      "description": "CTA with heading, button, and orbiting app icons.",
+      "dependencies": [
+        "motion/react",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "button",
+        "grid",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta/page.tsx"
+        },
+        {
+          "path": "registry/blocks/cta-02/components/cta-02.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/cta-02/components/orbiting-circle.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "cta-03",
+      "description": "CTA with heading, button, and ripple background.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta/page.tsx"
+        },
+        {
+          "path": "registry/blocks/cta-03/components/cta-03.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/cta-03/components/ripple-bg.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-01",
+      "description": "A pricing section.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/pricing/page.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing-01/components/pricing.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "pricing"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-02",
+      "description": "A pricing table with a dropdown menu.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/pricing/page.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing-02/components/pricing-table.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "pricing"
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "footer-01",
+      "description": "A footer.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footer-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/footer/page.tsx"
+        },
+        {
+          "path": "registry/blocks/footer-01/components/footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/blocks/footer-01/components/theme-toggler.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "footer"
       ],
       "type": "registry:block"
     }

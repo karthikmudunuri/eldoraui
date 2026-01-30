@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/example/browser-demo.tsx",
-      "content": "import { Browser } from \"@/registry/eldoraui/browser\"\n\nexport function BrowserDemo() {\n  return (\n    <div className=\"h-[500px]\">\n      <Browser initialUrl=\"https://www.eldoraui.site\" loadingDuration={1500} />\n    </div>\n  )\n}\n",
+      "content": "import { Browser } from \"@/registry/eldoraui/browser\"\n\nexport function BrowserDemo() {\n  return (\n    <div className=\"h-full\">\n      <Browser initialUrl=\"https://www.eldoraui.site\" loadingDuration={1500} />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

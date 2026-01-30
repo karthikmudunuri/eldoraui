@@ -1,18 +1,13 @@
 export const registryCategories = [
   {
+    name: "Hero",
+    slug: "hero",
+    hidden: true,
+  },
+  {
     name: "Header",
     slug: "header",
     hidden: false,
-  },
-  {
-    name: "Footer",
-    slug: "footer",
-    hidden: true,
-  },
-  {
-    name: "Authentication",
-    slug: "authentication",
-    hidden: true,
   },
   {
     name: "Logo Cloud",
@@ -30,13 +25,23 @@ export const registryCategories = [
     hidden: false,
   },
   {
+    name: "Faq",
+    slug: "faq",
+    hidden: true,
+  },
+  {
     name: "Pricing",
     slug: "pricing",
     hidden: false,
   },
   {
-    name: "Hero",
-    slug: "hero",
+    name: "Cta",
+    slug: "cta",
+    hidden: false,
+  },
+  {
+    name: "Footer",
+    slug: "footer",
     hidden: false,
   },
 ]

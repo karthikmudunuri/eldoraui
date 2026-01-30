@@ -36,6 +36,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [multi-direction-slide-text](https://eldoraui.site/docs/components/multi-direction-slide-text): A multi direction slide text component.
 - [novatrix-background](https://eldoraui.site/docs/components/novatrix-background): A novatrix background component.
 - [orbit-rotation](https://eldoraui.site/docs/components/orbit-rotation): An orbit rotation component with customizable icons.
+- [photon-beam](https://eldoraui.site/docs/components/photon-beam): A photon beam background component with animated light trails.
 - [safari-browser](https://eldoraui.site/docs/components/safari-browser): A safari browser component.
 - [scale-letter-text](https://eldoraui.site/docs/components/scale-letter-text): A scale letter text component.
 - [seperate-away-text](https://eldoraui.site/docs/components/seperate-away-text): A seperate away text component.
@@ -87,6 +88,7 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [word-pull-up-text-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/word-pull-up-text-demo.tsx): Example usage
 - [novatrix-background-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/novatrix-background-demo.tsx): Example usage
 - [novatrix-background-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/novatrix-background-demo-2.tsx): Example usage
+- [photon-beam-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/photon-beam-demo.tsx): Example usage
 - [hacker-background-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/hacker-background-demo.tsx): Example usage
 - [hacker-background-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/hacker-background-demo-2.tsx): Example usage
 - [card-flip-hover-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/card-flip-hover-demo.tsx): Example usage

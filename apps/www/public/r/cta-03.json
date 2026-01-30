@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-03",
+  "description": "CTA with heading, button, and ripple background.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta-03/page.tsx",
+      "content": "import { CallToAction } from \"@/registry/blocks/cta-03/components/cta-03\"\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-screen w-full flex-col items-center justify-center px-4\">\n      <CallToAction />\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/cta/page.tsx"
+    },
+    {
+      "path": "registry/blocks/cta-03/components/cta-03.tsx",
+      "content": "import { ArrowRightIcon, AtSignIcon } from \"lucide-react\"\n\nimport { Ripple } from \"./ripple-bg\"\n\nexport function CallToAction() {\n  return (\n    <div className=\"bg-secondary/80 dark:bg-secondary/40 relative mx-auto flex min-h-[20rem] w-full max-w-3xl flex-col justify-between gap-y-8 border-x px-2 py-14 md:px-4 md:py-20\">\n      <div className=\"pointer-events-none absolute -top-px left-1/2 w-screen -translate-x-1/2 border-t\" />\n      <Ripple />\n\n      <div className=\"space-y-1\">\n        <h2 className=\"text-center text-2xl font-semibold tracking-tight md:text-4xl\">\n          Join our community\n        </h2>\n        <p className=\"text-muted-foreground text-center text-sm text-balance md:text-base\">\n          Connect with fellow builders, get early access, and stay in the loop\n          with product updates and exclusive events.\n        </p>\n        <div className=\"mt-4 flex items-center justify-center -space-x-[0.45rem]\">\n          <img\n            alt=\"Avatar 01\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar1\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 02\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar2\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 03\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar3\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 04\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar4\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 05\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar5\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 06\"\n            className=\"ring-background rounded-full ring-1\"\n            height={24}\n            src=\"https://avatar.vercel.sh/avatar6\"\n            width={24}\n          />\n        </div>\n      </div>\n      <div className=\"pointer-events-none absolute -bottom-px left-1/2 w-screen -translate-x-1/2 border-b\" />\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/blocks/cta-03/components/ripple-bg.tsx",
+      "content": "import React, { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface RippleProps extends ComponentPropsWithoutRef<\"div\"> {\n  mainCircleSize?: number\n  mainCircleOpacity?: number\n  numCircles?: number\n}\n\nexport const Ripple = React.memo(function Ripple({\n  mainCircleSize = 210,\n  mainCircleOpacity = 0.24,\n  numCircles = 8,\n  className,\n  ...props\n}: RippleProps) {\n  return (\n    <div\n      className={cn(\n        \"pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,white,transparent)] select-none\",\n        className\n      )}\n      {...props}\n    >\n      {Array.from({ length: numCircles }, (_, i) => {\n        const size = mainCircleSize + i * 70\n        const opacity = mainCircleOpacity - i * 0.03\n        const animationDelay = `${i * 0.06}s`\n        const borderStyle = \"solid\"\n\n        return (\n          <div\n            key={i}\n            className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl`}\n            style={\n              {\n                \"--i\": i,\n                width: `${size}px`,\n                height: `${size}px`,\n                opacity,\n                animationDelay,\n                borderStyle,\n                borderWidth: \"1px\",\n                borderColor: `var(--foreground)`,\n                top: \"50%\",\n                left: \"50%\",\n                transform: \"translate(-50%, -50%) scale(1)\",\n              } as CSSProperties\n            }\n          />\n        )\n      })}\n    </div>\n  )\n})\n\nRipple.displayName = \"Ripple\"\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "cta"
+  ],
+  "type": "registry:block"
+}

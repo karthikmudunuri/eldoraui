@@ -254,6 +254,12 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/novatrix-background",
           items: [],
         },
+        {
+          title: "Photon Beam",
+          href: "/docs/components/photon-beam",
+          items: [],
+          label: "New",
+        },
       ],
     },
   ],

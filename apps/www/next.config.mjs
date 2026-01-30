@@ -3,6 +3,8 @@ import { createMDX } from "fumadocs-mdx/next"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  // Hide Next.js dev indicator when capturing screenshots (run dev with CAPTURE_SCREENSHOTS=1)
+  ...(process.env.CAPTURE_SCREENSHOTS === "1" ? { devIndicators: false } : {}),
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*", "./content/**/*"],
   },
@@ -11,7 +13,7 @@ const nextConfig = {
     inlineCss: true,
   },
   images: {
-    domains: ["localhost", "res.cloudinary.com", "avatar.vercel.sh", "pbs.twimg.com",],
+    domains: ["localhost", "res.cloudinary.com", "avatar.vercel.sh", "pbs.twimg.com","pub-b3533f2e1c954842824758490b95c9d5.r2.dev","avatars.githubusercontent.com"],
   },
   async redirects() {
     return [

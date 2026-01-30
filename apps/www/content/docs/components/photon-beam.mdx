@@ -1,0 +1,90 @@
+---
+title: Photon Beam
+date: 2025-01-30
+description: WebGL background with animated light trails, bloom, and customizable colors.
+author: Karthikeyavarma
+published: true
+---
+
+<ComponentPreview name="photon-beam-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://eldoraui.site/r/photon-beam"
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/photon-beam.tsx`
+
+<ComponentSource name="photon-beam" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import PhotonBeam from "@/components/eldoraui/photon-beam"
+```
+
+```tsx showLineNumbers
+<div className="relative h-[500px] w-full overflow-hidden rounded-lg border">
+  <PhotonBeam
+    colorBg="#080808"
+    colorLine="#005f6f"
+    colorSignal="#00d9ff"
+    colorSignal2="#00ffff"
+    colorSignal3="#00b8d4"
+    lineCount={80}
+    spreadHeight={30.33}
+    signalCount={94}
+    speedGlobal={0.345}
+    trailLength={3}
+    bloomStrength={3.0}
+    bloomRadius={0.5}
+  />
+</div>
+```
+
+## Props
+
+| Prop             | Type      | Default     | Description                                  |
+| ---------------- | --------- | ----------- | -------------------------------------------- |
+| `colorBg`        | `string`  | `"#080808"` | Background color (hex)                       |
+| `colorLine`      | `string`  | `"#005f6f"` | Base line color (hex)                        |
+| `colorSignal`    | `string`  | `"#00d9ff"` | Primary signal/trail color (hex)             |
+| `useColor2`      | `boolean` | `false`     | Enable second signal color                   |
+| `colorSignal2`   | `string`  | `"#00ffff"` | Second signal color when `useColor2` is true |
+| `useColor3`      | `boolean` | `false`     | Enable third signal color                    |
+| `colorSignal3`   | `string`  | `"#00b8d4"` | Third signal color when `useColor3` is true  |
+| `lineCount`      | `number`  | `80`        | Number of beam lines                         |
+| `spreadHeight`   | `number`  | `30.33`     | Vertical spread of the beam field            |
+| `spreadDepth`    | `number`  | `0`         | Depth spread of the beam field               |
+| `curveLength`    | `number`  | `50`        | Length of curved segments                    |
+| `straightLength` | `number`  | `100`       | Length of straight segments                  |
+| `curvePower`     | `number`  | `0.8265`    | Curve shape exponent                         |
+| `waveSpeed`      | `number`  | `2.48`      | Speed of wave motion                         |
+| `waveHeight`     | `number`  | `0.145`     | Amplitude of wave motion                     |
+| `lineOpacity`    | `number`  | `0.557`     | Opacity of beam lines (0–1)                  |
+| `signalCount`    | `number`  | `94`        | Number of moving signal particles            |
+| `speedGlobal`    | `number`  | `0.345`     | Global animation speed multiplier            |
+| `trailLength`    | `number`  | `3`         | Length of signal trails                      |
+| `bloomStrength`  | `number`  | `3.0`       | Bloom post-processing intensity              |
+| `bloomRadius`    | `number`  | `0.5`       | Bloom effect radius                          |

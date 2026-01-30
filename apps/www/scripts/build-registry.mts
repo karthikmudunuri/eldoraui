@@ -17,8 +17,16 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {`
   for (const item of registry.items) {
-    const resolveFiles = item.files?.map((file) => `registry/${file.path}`)
-    if (!resolveFiles) {
+    const files =
+      item.files?.map((file) => ({
+        // Registry items in EldoraUI are object entries (not strings).
+        // Keep supporting both to avoid breaking older entries.
+        path: `registry/${typeof file === "string" ? file : file.path}`,
+        type: typeof file === "string" ? item.type : file.type,
+        target: typeof file === "string" ? "" : (file.target ?? ""),
+      })) ?? []
+
+    if (files.length === 0) {
       continue
     }
 
@@ -32,22 +40,24 @@ export const Index: Record<string, any> = {`
     description: "${item.description ?? ""}",
     type: "${item.type}",
     registryDependencies: ${JSON.stringify(item.registryDependencies)},
-    files: [${item.files?.map((file) => {
-      const filePath = `registry/${typeof file === "string" ? file : file.path}`
-      const resolvedFilePath = path.resolve(filePath)
-      return typeof file === "string"
-        ? `"${resolvedFilePath}"`
-        : `{
-      path: "${filePath}",
+    categories: ${JSON.stringify((item as { categories?: string[] }).categories ?? [])},
+    files: [${files
+      .map((file) => {
+        return `{
+      path: "${file.path}",
       type: "${file.type}",
-      target: "${file.target ?? ""}"
+      target: "${file.target}"
     }`
-    })}],
+      })
+      .join(",")}],
     component: ${
       componentPath
         ? `React.lazy(async () => {
       const mod = await import("${componentPath}")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "${item.name}"
       return { default: mod.default || mod[exportName] }
     })`
         : "null"
@@ -57,7 +67,7 @@ export const Index: Record<string, any> = {`
   }
 
   index += `
-  }`
+}`
 
   // Write style index.
   rimraf.sync(path.join(process.cwd(), "registry/__index__.tsx"))

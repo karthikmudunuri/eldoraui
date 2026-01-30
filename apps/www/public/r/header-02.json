@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-02",
+  "description": "A simple header.",
+  "dependencies": [
+    "motion/react",
+    "lucide-react",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "button",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/header-02/page.tsx",
+      "content": "import Link from \"next/link\"\nimport { ChevronRightIcon } from \"lucide-react\"\n\nimport { Navbar } from \"@/registry/blocks/header-02/components/navbar\"\n\nexport default function Page() {\n  return (\n    <div className=\"flex h-screen w-full flex-col overflow-hidden\">\n      <Navbar\n        banner={\n          <Link\n            href=\"/blog/radiant-raises-100m-series-a-from-tailwind-ventures\"\n            className=\"flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-fuchsia-950/30\"\n          >\n            Radiant raises $100M Series A from Tailwind Ventures\n            <ChevronRightIcon className=\"size-4\" />\n          </Link>\n        }\n      />\n      <section className=\"flex flex-1 items-center justify-center\">\n        <h1 className=\"text-foreground text-4xl font-bold\">Hero</h1>\n      </section>\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/header-02/page.tsx"
+    },
+    {
+      "path": "registry/blocks/header-02/components/navbar.tsx",
+      "content": "\"use client\"\n\nimport { forwardRef, useEffect, useState } from \"react\"\nimport NextLink, { type LinkProps } from \"next/link\"\nimport * as Headless from \"@headlessui/react\"\nimport {\n  Disclosure,\n  DisclosureButton,\n  DisclosurePanel,\n} from \"@headlessui/react\"\nimport { Bars2Icon } from \"@heroicons/react/24/solid\"\nimport { motion } from \"motion/react\"\n\nimport { Logo } from \"@/components/logo\"\n\nimport { PlusGrid, PlusGridItem, PlusGridRow } from \"./plus-grid\"\n\nconst Link = forwardRef(function Link(\n  props: LinkProps & React.ComponentPropsWithoutRef<\"a\">,\n  ref: React.ForwardedRef<HTMLAnchorElement>\n) {\n  return (\n    <Headless.DataInteractive>\n      <NextLink ref={ref} {...props} />\n    </Headless.DataInteractive>\n  )\n})\n\nconst links = [\n  { href: \"/pricing\", label: \"Pricing\" },\n  { href: \"/company\", label: \"Company\" },\n  { href: \"/blog\", label: \"Blog\" },\n  { href: \"/login\", label: \"Login\" },\n]\n\nfunction DesktopNav() {\n  return (\n    <nav className=\"relative hidden lg:flex\">\n      {links.map(({ href, label }) => (\n        <PlusGridItem key={href} className=\"relative flex\">\n          <Link\n            href={href}\n            className=\"text-foreground hover:bg-accent/50 flex items-center px-4 py-3 text-base font-medium transition-colors\"\n          >\n            {label}\n          </Link>\n        </PlusGridItem>\n      ))}\n    </nav>\n  )\n}\n\nfunction MobileNavButton() {\n  return (\n    <DisclosureButton\n      className=\"text-foreground hover:bg-accent flex size-12 items-center justify-center self-center rounded-lg transition-colors lg:hidden\"\n      aria-label=\"Open main menu\"\n    >\n      <Bars2Icon className=\"size-6\" />\n    </DisclosureButton>\n  )\n}\n\nfunction MobileNav() {\n  return (\n    <DisclosurePanel className=\"lg:hidden\">\n      <div className=\"flex flex-col gap-6 py-4\">\n        {links.map(({ href, label }, linkIndex) => (\n          <motion.div\n            initial={{ opacity: 0, rotateX: -90 }}\n            animate={{ opacity: 1, rotateX: 0 }}\n            transition={{\n              duration: 0.15,\n              ease: \"easeInOut\",\n              rotateX: { duration: 0.3, delay: linkIndex * 0.1 },\n            }}\n            key={href}\n          >\n            <Link href={href} className=\"text-foreground text-base font-medium\">\n              {label}\n            </Link>\n          </motion.div>\n        ))}\n      </div>\n      <div className=\"absolute left-1/2 w-screen -translate-x-1/2\">\n        <div className=\"border-border absolute inset-x-0 top-0 border-t\" />\n        <div className=\"border-border absolute inset-x-0 top-2 border-t\" />\n      </div>\n    </DisclosurePanel>\n  )\n}\n\nexport function Navbar({ banner }: { banner?: React.ReactNode }) {\n  const [mounted, setMounted] = useState(false)\n\n  useEffect(() => {\n    setMounted(true)\n  }, [])\n\n  const headerContent = (\n    <>\n      <PlusGrid>\n        <PlusGridRow className=\"relative flex justify-between\">\n          <div className=\"relative flex gap-6\">\n            <PlusGridItem className=\"py-3\">\n              <Link href=\"/\" title=\"Home\">\n                <Logo className=\"h-9\" />\n              </Link>\n            </PlusGridItem>\n            {banner && (\n              <div className=\"relative hidden items-center py-3 lg:flex\">\n                {banner}\n              </div>\n            )}\n          </div>\n          <DesktopNav />\n          <MobileNavButton />\n        </PlusGridRow>\n      </PlusGrid>\n      <MobileNav />\n    </>\n  )\n\n  if (!mounted) {\n    return (\n      <header className=\"pt-12 sm:pt-16\">\n        <PlusGrid>\n          <PlusGridRow className=\"relative flex justify-between\">\n            <div className=\"relative flex gap-6\">\n              <PlusGridItem className=\"py-3\">\n                <Link href=\"/\" title=\"Home\">\n                  <Logo className=\"h-9\" />\n                </Link>\n              </PlusGridItem>\n              {banner && (\n                <div className=\"relative hidden items-center py-3 lg:flex\">\n                  {banner}\n                </div>\n              )}\n            </div>\n            <DesktopNav />\n            <div\n              className=\"text-foreground flex size-12 items-center justify-center self-center rounded-lg lg:hidden\"\n              aria-hidden\n            >\n              <Bars2Icon className=\"size-6\" />\n            </div>\n          </PlusGridRow>\n        </PlusGrid>\n      </header>\n    )\n  }\n\n  return (\n    <Disclosure as=\"header\" className=\"pt-12 sm:pt-16\">\n      {headerContent}\n    </Disclosure>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "header"
+  ],
+  "type": "registry:block"
+}

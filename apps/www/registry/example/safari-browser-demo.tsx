@@ -5,7 +5,7 @@ export function SafariBrowserDemo() {
     <div className="relative">
       <Safari
         url="eldoraui.site"
-        src="https://res.cloudinary.com/eldoraui/image/upload/v1758570676/mac_llxzg3.jpg"
+        src="https://avatar.vercel.sh/karthik"
         className="size-full"
       />
     </div>

@@ -39,9 +39,9 @@ export function Hero() {
               >
                 {/* fallback to page.title and page.url if available */}
                 <AnimatedBadge
-                  text={`Introducing ${pageTitle}`}
+                  text={`Introducing Blocks`}
                   color="#22d3ee"
-                  href={page?.url ?? ""}
+                  href={"/blocks"}
                 />
               </div>
               <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">

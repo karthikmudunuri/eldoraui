@@ -6,20 +6,12 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
-  "index": {
-    name: "index",
-    description: "",
-    type: "registry:style",
-    registryDependencies: ["utils"],
-    files: [],
-    component: null,
-    meta: undefined,
-  },
   "safari-browser": {
     name: "safari-browser",
     description: "A safari browser component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/safari-browser.tsx",
       type: "registry:ui",
@@ -27,7 +19,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/safari-browser.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "safari-browser"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -37,6 +32,7 @@ export const Index: Record<string, any> = {
     description: "A MacBook Pro SVG component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/macbook-pro.tsx",
       type: "registry:ui",
@@ -44,7 +40,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/macbook-pro.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "macbook-pro"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -54,6 +53,7 @@ export const Index: Record<string, any> = {
     description: "An iPhone 17 Pro SVG component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/iphone-17-pro.tsx",
       type: "registry:ui",
@@ -61,7 +61,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/iphone-17-pro.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "iphone-17-pro"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -71,6 +74,7 @@ export const Index: Record<string, any> = {
     description: "An iPad SVG component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/ipad.tsx",
       type: "registry:ui",
@@ -78,7 +82,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/ipad.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "ipad"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -88,6 +95,7 @@ export const Index: Record<string, any> = {
     description: "A browser SVG component.",
     type: "registry:ui",
     registryDependencies: ["utils","button","badge","card","separator","input"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/browser.tsx",
       type: "registry:ui",
@@ -95,7 +103,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/browser.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "browser"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -105,6 +116,7 @@ export const Index: Record<string, any> = {
     description: "A cobe globe component.",
     type: "registry:ui",
     registryDependencies: ["button","utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/cobe-globe.tsx",
       type: "registry:ui",
@@ -112,7 +124,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/cobe-globe.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -122,6 +137,7 @@ export const Index: Record<string, any> = {
     description: "A github inline comments component.",
     type: "registry:ui",
     registryDependencies: ["button","utils","tooltip","badge","textarea","separator","avatar"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/github-inline-comments.tsx",
       type: "registry:ui",
@@ -129,7 +145,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/github-inline-comments.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "github-inline-comments"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -139,6 +158,7 @@ export const Index: Record<string, any> = {
     description: "An animated badge component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/animated-badge.tsx",
       type: "registry:ui",
@@ -146,7 +166,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/animated-badge.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-badge"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -156,6 +179,7 @@ export const Index: Record<string, any> = {
     description: "A grid component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/grid.tsx",
       type: "registry:ui",
@@ -163,7 +187,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/grid.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -173,6 +200,7 @@ export const Index: Record<string, any> = {
     description: "A clerk OTP component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/clerk-otp.tsx",
       type: "registry:ui",
@@ -180,7 +208,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/clerk-otp.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "clerk-otp"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -190,6 +221,7 @@ export const Index: Record<string, any> = {
     description: "A performant, customizable marquee (scrolling text/content) component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/marquee.tsx",
       type: "registry:ui",
@@ -197,7 +229,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/marquee.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "marquee"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -207,6 +242,7 @@ export const Index: Record<string, any> = {
     description: "An integrations component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/integrations.tsx",
       type: "registry:ui",
@@ -214,7 +250,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/integrations.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "integrations"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -224,6 +263,7 @@ export const Index: Record<string, any> = {
     description: "A terminal component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/terminal.tsx",
       type: "registry:ui",
@@ -231,7 +271,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/terminal.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "terminal"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -241,6 +284,7 @@ export const Index: Record<string, any> = {
     description: "A testimonial slider component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/testimonal-slider.tsx",
       type: "registry:ui",
@@ -248,7 +292,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/testimonal-slider.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "testimonal-slider"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -258,6 +305,7 @@ export const Index: Record<string, any> = {
     description: "An animated map component with location markers.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/map.tsx",
       type: "registry:ui",
@@ -265,7 +313,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/map.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "map"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -275,6 +326,7 @@ export const Index: Record<string, any> = {
     description: "An SVG ripple effect component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/svg-ripple-effect.tsx",
       type: "registry:ui",
@@ -282,7 +334,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/svg-ripple-effect.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "svg-ripple-effect"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -292,6 +347,7 @@ export const Index: Record<string, any> = {
     description: "An animated frameworks component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/animated-frameworks.tsx",
       type: "registry:ui",
@@ -299,7 +355,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/animated-frameworks.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-frameworks"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -309,6 +368,7 @@ export const Index: Record<string, any> = {
     description: "A blur in text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/blur-in-text.tsx",
       type: "registry:ui",
@@ -316,7 +376,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/blur-in-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "blur-in-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -326,6 +389,7 @@ export const Index: Record<string, any> = {
     description: "A combined fade text component with support for in, up, and down directions.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/fade-text.tsx",
       type: "registry:ui",
@@ -333,7 +397,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/fade-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fade-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -343,6 +410,7 @@ export const Index: Record<string, any> = {
     description: "A gradual spacing text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/gradual-spacing-text.tsx",
       type: "registry:ui",
@@ -350,7 +418,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/gradual-spacing-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "gradual-spacing-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -360,6 +431,7 @@ export const Index: Record<string, any> = {
     description: "A letter pull up text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/letter-pull-up-text.tsx",
       type: "registry:ui",
@@ -367,7 +439,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/letter-pull-up-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "letter-pull-up-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -377,6 +452,7 @@ export const Index: Record<string, any> = {
     description: "A multi direction slide text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/multi-direction-slide-text.tsx",
       type: "registry:ui",
@@ -384,7 +460,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/multi-direction-slide-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "multi-direction-slide-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -394,6 +473,7 @@ export const Index: Record<string, any> = {
     description: "A seperate away text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/seperate-away-text.tsx",
       type: "registry:ui",
@@ -401,7 +481,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/seperate-away-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "seperate-away-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -411,6 +494,7 @@ export const Index: Record<string, any> = {
     description: "A wavy text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/wavy-text.tsx",
       type: "registry:ui",
@@ -418,7 +502,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/wavy-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "wavy-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -428,6 +515,7 @@ export const Index: Record<string, any> = {
     description: "A word pull up text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/word-pull-up-text.tsx",
       type: "registry:ui",
@@ -435,7 +523,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/word-pull-up-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "word-pull-up-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -445,6 +536,7 @@ export const Index: Record<string, any> = {
     description: "A novatrix background component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/novatrix-background.tsx",
       type: "registry:ui",
@@ -452,7 +544,31 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/novatrix-background.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "novatrix-background"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "photon-beam": {
+    name: "photon-beam",
+    description: "A photon beam background component with animated light trails.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    categories: [],
+    files: [{
+      path: "registry/eldoraui/photon-beam.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/photon-beam.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "photon-beam"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -462,6 +578,7 @@ export const Index: Record<string, any> = {
     description: "A hacker background component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/hacker-background.tsx",
       type: "registry:ui",
@@ -469,7 +586,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/hacker-background.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "hacker-background"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -479,6 +599,7 @@ export const Index: Record<string, any> = {
     description: "A card flip hover component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/card-flip-hover.tsx",
       type: "registry:ui",
@@ -486,7 +607,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/card-flip-hover.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "card-flip-hover"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -496,6 +620,7 @@ export const Index: Record<string, any> = {
     description: "A scale letter text component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/scale-letter-text.tsx",
       type: "registry:ui",
@@ -503,7 +628,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/scale-letter-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "scale-letter-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -513,6 +641,7 @@ export const Index: Record<string, any> = {
     description: "A font weight text component.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/font-weight-text.tsx",
       type: "registry:ui",
@@ -520,7 +649,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/font-weight-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "font-weight-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -530,6 +662,7 @@ export const Index: Record<string, any> = {
     description: "An animated grid pattern component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/animated-grid-pattern.tsx",
       type: "registry:ui",
@@ -537,7 +670,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/animated-grid-pattern.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-grid-pattern"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -547,6 +683,7 @@ export const Index: Record<string, any> = {
     description: "A live button component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/live-button.tsx",
       type: "registry:ui",
@@ -554,7 +691,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/live-button.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "live-button"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -564,6 +704,7 @@ export const Index: Record<string, any> = {
     description: "An animated shiny button component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/animated-shiny-button.tsx",
       type: "registry:ui",
@@ -571,7 +712,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/animated-shiny-button.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-shiny-button"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -581,6 +725,7 @@ export const Index: Record<string, any> = {
     description: "An animated list component.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/animated-list.tsx",
       type: "registry:ui",
@@ -588,7 +733,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/animated-list.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-list"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -598,6 +746,7 @@ export const Index: Record<string, any> = {
     description: "An orbit rotation component with customizable icons.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/orbit-rotation.tsx",
       type: "registry:ui",
@@ -605,7 +754,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/orbit-rotation.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "orbit-rotation"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -615,6 +767,7 @@ export const Index: Record<string, any> = {
     description: "An animated logo timeline component with horizontal scrolling logos.",
     type: "registry:ui",
     registryDependencies: ["utils"],
+    categories: [],
     files: [{
       path: "registry/eldoraui/logo-timeline.tsx",
       type: "registry:ui",
@@ -622,7 +775,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/logo-timeline.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-timeline"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -632,6 +788,7 @@ export const Index: Record<string, any> = {
     description: "A dock text component with interactive hover effects.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/dock-text.tsx",
       type: "registry:ui",
@@ -639,7 +796,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/dock-text.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "dock-text"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -649,6 +809,7 @@ export const Index: Record<string, any> = {
     description: "An interactive card with a holographic gradient and mouse‑reactive tilt effect.",
     type: "registry:ui",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/eldoraui/holographic-card.tsx",
       type: "registry:ui",
@@ -656,7 +817,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/eldoraui/holographic-card.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "holographic-card"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -666,6 +830,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a safari-browser-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/safari-browser"],
+    categories: [],
     files: [{
       path: "registry/example/safari-browser-demo.tsx",
       type: "registry:example",
@@ -673,7 +838,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/safari-browser-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "safari-browser-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -683,6 +851,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a macbook-pro-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/macbook-pro"],
+    categories: [],
     files: [{
       path: "registry/example/macbook-pro-demo.tsx",
       type: "registry:example",
@@ -690,7 +859,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/macbook-pro-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "macbook-pro-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -700,6 +872,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a iphone-17-pro-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/iphone-17-pro"],
+    categories: [],
     files: [{
       path: "registry/example/iphone-17-pro-demo.tsx",
       type: "registry:example",
@@ -707,7 +880,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/iphone-17-pro-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "iphone-17-pro-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -717,6 +893,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a ipad-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/ipad"],
+    categories: [],
     files: [{
       path: "registry/example/ipad-demo.tsx",
       type: "registry:example",
@@ -724,7 +901,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/ipad-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "ipad-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -734,6 +914,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a browser-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/browser"],
+    categories: [],
     files: [{
       path: "registry/example/browser-demo.tsx",
       type: "registry:example",
@@ -741,7 +922,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/browser-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "browser-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -751,6 +935,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a browser-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/browser"],
+    categories: [],
     files: [{
       path: "registry/example/browser-demo-2.tsx",
       type: "registry:example",
@@ -758,7 +943,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/browser-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "browser-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -768,6 +956,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a cobe-globe-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/cobe-globe"],
+    categories: [],
     files: [{
       path: "registry/example/cobe-globe-demo.tsx",
       type: "registry:example",
@@ -775,7 +964,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/cobe-globe-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -785,6 +977,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a cobe-globe-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/cobe-globe"],
+    categories: [],
     files: [{
       path: "registry/example/cobe-globe-demo-2.tsx",
       type: "registry:example",
@@ -792,7 +985,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/cobe-globe-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -802,6 +998,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a cobe-globe-demo-3 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/cobe-globe"],
+    categories: [],
     files: [{
       path: "registry/example/cobe-globe-demo-3.tsx",
       type: "registry:example",
@@ -809,7 +1006,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/cobe-globe-demo-3.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe-demo-3"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -819,6 +1019,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a cobe-globe-demo-4 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/cobe-globe"],
+    categories: [],
     files: [{
       path: "registry/example/cobe-globe-demo-4.tsx",
       type: "registry:example",
@@ -826,7 +1027,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/cobe-globe-demo-4.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe-demo-4"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -836,6 +1040,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a cobe-globe-demo-5 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/cobe-globe"],
+    categories: [],
     files: [{
       path: "registry/example/cobe-globe-demo-5.tsx",
       type: "registry:example",
@@ -843,7 +1048,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/cobe-globe-demo-5.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cobe-globe-demo-5"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -853,6 +1061,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a github-inline-comments-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/github-inline-comments"],
+    categories: [],
     files: [{
       path: "registry/example/github-inline-comments-demo.tsx",
       type: "registry:example",
@@ -860,7 +1069,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/github-inline-comments-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "github-inline-comments-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -870,6 +1082,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a animated-badge-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/animated-badge"],
+    categories: [],
     files: [{
       path: "registry/example/animated-badge-demo.tsx",
       type: "registry:example",
@@ -877,7 +1090,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-badge-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-badge-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -887,6 +1103,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a grid-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/grid"],
+    categories: [],
     files: [{
       path: "registry/example/grid-demo.tsx",
       type: "registry:example",
@@ -894,7 +1111,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -904,6 +1124,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a grid-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/grid"],
+    categories: [],
     files: [{
       path: "registry/example/grid-demo-2.tsx",
       type: "registry:example",
@@ -911,7 +1132,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -921,6 +1145,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a grid-demo-3 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/grid"],
+    categories: [],
     files: [{
       path: "registry/example/grid-demo-3.tsx",
       type: "registry:example",
@@ -928,7 +1153,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo-3.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid-demo-3"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -938,6 +1166,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a grid-demo-4 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/grid"],
+    categories: [],
     files: [{
       path: "registry/example/grid-demo-4.tsx",
       type: "registry:example",
@@ -945,7 +1174,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo-4.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid-demo-4"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -955,6 +1187,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a grid-demo-5 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/grid"],
+    categories: [],
     files: [{
       path: "registry/example/grid-demo-5.tsx",
       type: "registry:example",
@@ -962,7 +1195,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/grid-demo-5.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "grid-demo-5"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -972,6 +1208,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a clerk-otp-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/clerk-otp"],
+    categories: [],
     files: [{
       path: "registry/example/clerk-otp-demo.tsx",
       type: "registry:example",
@@ -979,7 +1216,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/clerk-otp-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "clerk-otp-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -989,6 +1229,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a clerk-otp-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/clerk-otp"],
+    categories: [],
     files: [{
       path: "registry/example/clerk-otp-demo-2.tsx",
       type: "registry:example",
@@ -996,7 +1237,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/clerk-otp-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "clerk-otp-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1006,6 +1250,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a integrations-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/integrations"],
+    categories: [],
     files: [{
       path: "registry/example/integrations-demo.tsx",
       type: "registry:example",
@@ -1013,7 +1258,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/integrations-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "integrations-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1023,6 +1271,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a integrations-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/integrations"],
+    categories: [],
     files: [{
       path: "registry/example/integrations-demo-2.tsx",
       type: "registry:example",
@@ -1030,7 +1279,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/integrations-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "integrations-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1040,6 +1292,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a terminal-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/terminal"],
+    categories: [],
     files: [{
       path: "registry/example/terminal-demo.tsx",
       type: "registry:example",
@@ -1047,7 +1300,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/terminal-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "terminal-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1057,6 +1313,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a testimonal-slider-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/testimonal-slider"],
+    categories: [],
     files: [{
       path: "registry/example/testimonal-slider-demo.tsx",
       type: "registry:example",
@@ -1064,7 +1321,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/testimonal-slider-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "testimonal-slider-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1074,6 +1334,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a map component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/map"],
+    categories: [],
     files: [{
       path: "registry/example/map-demo.tsx",
       type: "registry:example",
@@ -1081,7 +1342,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/map-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "map-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1091,6 +1355,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a svg-ripple-effect component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/svg-ripple-effect"],
+    categories: [],
     files: [{
       path: "registry/example/svg-ripple-effect-demo.tsx",
       type: "registry:example",
@@ -1098,7 +1363,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/svg-ripple-effect-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "svg-ripple-effect-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1108,6 +1376,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a svg-ripple-effect-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/svg-ripple-effect"],
+    categories: [],
     files: [{
       path: "registry/example/svg-ripple-effect-demo-2.tsx",
       type: "registry:example",
@@ -1115,7 +1384,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/svg-ripple-effect-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "svg-ripple-effect-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1125,6 +1397,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a animated-frameworks-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/animated-frameworks"],
+    categories: [],
     files: [{
       path: "registry/example/animated-frameworks-demo.tsx",
       type: "registry:example",
@@ -1132,7 +1405,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-frameworks-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-frameworks-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1142,6 +1418,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a blur-in-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/blur-in-text"],
+    categories: [],
     files: [{
       path: "registry/example/blur-in-text-demo.tsx",
       type: "registry:example",
@@ -1149,7 +1426,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/blur-in-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "blur-in-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1159,6 +1439,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a fade-text-demo component with all directions.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/fade-text"],
+    categories: [],
     files: [{
       path: "registry/example/fade-text-demo.tsx",
       type: "registry:example",
@@ -1166,7 +1447,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/fade-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fade-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1176,6 +1460,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a fade-text-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/fade-text"],
+    categories: [],
     files: [{
       path: "registry/example/fade-text-demo-2.tsx",
       type: "registry:example",
@@ -1183,7 +1468,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/fade-text-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fade-text-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1193,6 +1481,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a fade-text-demo-3 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/fade-text"],
+    categories: [],
     files: [{
       path: "registry/example/fade-text-demo-3.tsx",
       type: "registry:example",
@@ -1200,7 +1489,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/fade-text-demo-3.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fade-text-demo-3"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1210,6 +1502,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a gradual-spacing-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/gradual-spacing-text"],
+    categories: [],
     files: [{
       path: "registry/example/gradual-spacing-text-demo.tsx",
       type: "registry:example",
@@ -1217,7 +1510,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/gradual-spacing-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "gradual-spacing-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1227,6 +1523,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a letter-pull-up-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/letter-pull-up-text"],
+    categories: [],
     files: [{
       path: "registry/example/letter-pull-up-text-demo.tsx",
       type: "registry:example",
@@ -1234,7 +1531,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/letter-pull-up-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "letter-pull-up-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1244,6 +1544,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a multi-direction-slide-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/multi-direction-slide-text"],
+    categories: [],
     files: [{
       path: "registry/example/multi-direction-slide-text-demo.tsx",
       type: "registry:example",
@@ -1251,7 +1552,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/multi-direction-slide-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "multi-direction-slide-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1261,6 +1565,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a seperate-away-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/seperate-away-text"],
+    categories: [],
     files: [{
       path: "registry/example/seperate-away-text-demo.tsx",
       type: "registry:example",
@@ -1268,7 +1573,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/seperate-away-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "seperate-away-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1278,6 +1586,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a wavy-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/wavy-text"],
+    categories: [],
     files: [{
       path: "registry/example/wavy-text-demo.tsx",
       type: "registry:example",
@@ -1285,7 +1594,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/wavy-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "wavy-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1295,6 +1607,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a word-pull-up-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/word-pull-up-text"],
+    categories: [],
     files: [{
       path: "registry/example/word-pull-up-text-demo.tsx",
       type: "registry:example",
@@ -1302,7 +1615,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/word-pull-up-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "word-pull-up-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1312,6 +1628,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a novatrix-background-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/novatrix-background"],
+    categories: [],
     files: [{
       path: "registry/example/novatrix-background-demo.tsx",
       type: "registry:example",
@@ -1319,7 +1636,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/novatrix-background-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "novatrix-background-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1329,6 +1649,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a novatrix-background-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/novatrix-background"],
+    categories: [],
     files: [{
       path: "registry/example/novatrix-background-demo-2.tsx",
       type: "registry:example",
@@ -1336,7 +1657,31 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/novatrix-background-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "novatrix-background-demo-2"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "photon-beam-demo": {
+    name: "photon-beam-demo",
+    description: "Example showing a photon-beam-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/photon-beam"],
+    categories: [],
+    files: [{
+      path: "registry/example/photon-beam-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/photon-beam-demo.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "photon-beam-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1346,6 +1691,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a hacker-background-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/hacker-background"],
+    categories: [],
     files: [{
       path: "registry/example/hacker-background-demo.tsx",
       type: "registry:example",
@@ -1353,7 +1699,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/hacker-background-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "hacker-background-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1363,6 +1712,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a hacker-background-demo-2 component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/hacker-background"],
+    categories: [],
     files: [{
       path: "registry/example/hacker-background-demo-2.tsx",
       type: "registry:example",
@@ -1370,7 +1720,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/hacker-background-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "hacker-background-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1380,6 +1733,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a card-flip-hover-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/card-flip-hover"],
+    categories: [],
     files: [{
       path: "registry/example/card-flip-hover-demo.tsx",
       type: "registry:example",
@@ -1387,7 +1741,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/card-flip-hover-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "card-flip-hover-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1397,6 +1754,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a scale-letter-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/scale-letter-text"],
+    categories: [],
     files: [{
       path: "registry/example/scale-letter-text-demo.tsx",
       type: "registry:example",
@@ -1404,7 +1762,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/scale-letter-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "scale-letter-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1414,6 +1775,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a font-weight-text-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/font-weight-text"],
+    categories: [],
     files: [{
       path: "registry/example/font-weight-text-demo.tsx",
       type: "registry:example",
@@ -1421,7 +1783,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/font-weight-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "font-weight-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1431,6 +1796,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a animated-grid-pattern-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/animated-grid-pattern"],
+    categories: [],
     files: [{
       path: "registry/example/animated-grid-pattern-demo.tsx",
       type: "registry:example",
@@ -1438,7 +1804,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-grid-pattern-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-grid-pattern-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1448,6 +1817,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a live-button-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/live-button"],
+    categories: [],
     files: [{
       path: "registry/example/live-button-demo.tsx",
       type: "registry:example",
@@ -1455,7 +1825,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/live-button-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "live-button-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1465,6 +1838,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a animated-shiny-button-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/animated-shiny-button"],
+    categories: [],
     files: [{
       path: "registry/example/animated-shiny-button-demo.tsx",
       type: "registry:example",
@@ -1472,7 +1846,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-shiny-button-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-shiny-button-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1482,6 +1859,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a animated-list-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/animated-list"],
+    categories: [],
     files: [{
       path: "registry/example/animated-list-demo.tsx",
       type: "registry:example",
@@ -1489,7 +1867,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/animated-list-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "animated-list-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1499,6 +1880,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a orbit-rotation-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/orbit-rotation"],
+    categories: [],
     files: [{
       path: "registry/example/orbit-rotation-demo.tsx",
       type: "registry:example",
@@ -1506,7 +1888,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/orbit-rotation-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "orbit-rotation-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1516,6 +1901,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a logo-timeline-demo component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/logo-timeline"],
+    categories: [],
     files: [{
       path: "registry/example/logo-timeline-demo.tsx",
       type: "registry:example",
@@ -1523,7 +1909,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/logo-timeline-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-timeline-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1533,6 +1922,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a logo-timeline-demo-2 component with hover animation.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/logo-timeline"],
+    categories: [],
     files: [{
       path: "registry/example/logo-timeline-demo-2.tsx",
       type: "registry:example",
@@ -1540,7 +1930,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/logo-timeline-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-timeline-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1550,6 +1943,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a dock-text component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/dock-text"],
+    categories: [],
     files: [{
       path: "registry/example/dock-text-demo.tsx",
       type: "registry:example",
@@ -1557,7 +1951,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/dock-text-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "dock-text-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1567,6 +1964,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a dock-text component with down prop.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/dock-text"],
+    categories: [],
     files: [{
       path: "registry/example/dock-text-demo-2.tsx",
       type: "registry:example",
@@ -1574,7 +1972,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/dock-text-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "dock-text-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1584,6 +1985,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a holographic-card component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/holographic-card"],
+    categories: [],
     files: [{
       path: "registry/example/holographic-card-demo.tsx",
       type: "registry:example",
@@ -1591,7 +1993,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/holographic-card-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "holographic-card-demo"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1601,6 +2006,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a holographic-card component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/holographic-card"],
+    categories: [],
     files: [{
       path: "registry/example/holographic-card-demo-2.tsx",
       type: "registry:example",
@@ -1608,7 +2014,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/holographic-card-demo-2.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "holographic-card-demo-2"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1618,6 +2027,7 @@ export const Index: Record<string, any> = {
     description: "Example showing a holographic-card component.",
     type: "registry:example",
     registryDependencies: ["@eldoraui/holographic-card"],
+    categories: [],
     files: [{
       path: "registry/example/holographic-card-demo-3.tsx",
       type: "registry:example",
@@ -1625,7 +2035,10 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/example/holographic-card-demo-3.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "holographic-card-demo-3"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
@@ -1635,6 +2048,7 @@ export const Index: Record<string, any> = {
     description: "",
     type: "registry:lib",
     registryDependencies: undefined,
+    categories: [],
     files: [{
       path: "registry/lib/utils.ts",
       type: "registry:lib",
@@ -1642,30 +2056,448 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/lib/utils.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "utils"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
   },
-  "login-01": {
-    name: "login-01",
-    description: "A simple login form.",
+  "header-01": {
+    name: "header-01",
+    description: "A simple header.",
     type: "registry:block",
-    registryDependencies: ["button","card","input","label","field"],
+    registryDependencies: ["button","utils"],
+    categories: ["header"],
     files: [{
-      path: "registry/blocks/login-01/page.tsx",
+      path: "registry/blocks/header-01/page.tsx",
       type: "registry:page",
-      target: "app/login/page.tsx"
+      target: "app/header/page.tsx"
     },{
-      path: "registry/blocks/login-01/components/login-form.tsx",
+      path: "registry/blocks/header-01/components/navbar.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/header-01/components/nav-menu.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/header-01/components/theme-toggle.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/header-01/lib/nav-links.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/header-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "header-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "header-02": {
+    name: "header-02",
+    description: "A simple header.",
+    type: "registry:block",
+    registryDependencies: ["button","utils"],
+    categories: ["header"],
+    files: [{
+      path: "registry/blocks/header-02/page.tsx",
+      type: "registry:page",
+      target: "app/header-02/page.tsx"
+    },{
+      path: "registry/blocks/header-02/components/navbar.tsx",
       type: "registry:component",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/blocks/login-01/page.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      const mod = await import("@/registry/blocks/header-02/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "header-02"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
   },
-  }
+  "logo-cloud-01": {
+    name: "logo-cloud-01",
+    description: "A simple logo cloud.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["logo-cloud"],
+    files: [{
+      path: "registry/blocks/logo-cloud-01/page.tsx",
+      type: "registry:page",
+      target: "app/logo-cloud/page.tsx"
+    },{
+      path: "registry/blocks/logo-cloud-01/components/logo-cloud.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/logo-cloud-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-cloud-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "logo-cloud-02": {
+    name: "logo-cloud-02",
+    description: "A logo cloud with flex wrap layout.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["logo-cloud"],
+    files: [{
+      path: "registry/blocks/logo-cloud-02/page.tsx",
+      type: "registry:page",
+      target: "app/logo-cloud/page.tsx"
+    },{
+      path: "registry/blocks/logo-cloud-02/components/logo-cloud-02.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/logo-cloud-02/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-cloud-02"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "logo-cloud-03": {
+    name: "logo-cloud-03",
+    description: "A logo cloud with marquee effect.",
+    type: "registry:block",
+    registryDependencies: ["marquee"],
+    categories: ["logo-cloud"],
+    files: [{
+      path: "registry/blocks/logo-cloud-03/page.tsx",
+      type: "registry:page",
+      target: "app/logo-cloud/page.tsx"
+    },{
+      path: "registry/blocks/logo-cloud-03/components/marquee.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/logo-cloud-03/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-cloud-03"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "logo-cloud-04": {
+    name: "logo-cloud-04",
+    description: "A logo cloud with motion.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["logo-cloud"],
+    files: [{
+      path: "registry/blocks/logo-cloud-04/page.tsx",
+      type: "registry:page",
+      target: "app/logo-cloud/page.tsx"
+    },{
+      path: "registry/blocks/logo-cloud-04/components/logo-cloud-04.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/logo-cloud-04/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "logo-cloud-04"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "testimonal-01": {
+    name: "testimonal-01",
+    description: "A testimonial slider.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["testimonials"],
+    files: [{
+      path: "registry/blocks/testimonal-01/page.tsx",
+      type: "registry:page",
+      target: "app/testimonial/page.tsx"
+    },{
+      path: "registry/blocks/testimonal-01/components/carousel.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/testimonal-01/components/section.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonal-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "testimonal-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "testimonal-02": {
+    name: "testimonal-02",
+    description: "A testimonial marquee.",
+    type: "registry:block",
+    registryDependencies: ["utils"],
+    categories: ["testimonials"],
+    files: [{
+      path: "registry/blocks/testimonal-02/page.tsx",
+      type: "registry:page",
+      target: "app/testimonial/page.tsx"
+    },{
+      path: "registry/blocks/testimonal-02/components/marquee.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/testimonal-02/components/testimonals.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonal-02/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "testimonal-02"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "testimonal-03": {
+    name: "testimonal-03",
+    description: "A testimonial card grid.",
+    type: "registry:block",
+    registryDependencies: [],
+    categories: ["testimonials"],
+    files: [{
+      path: "registry/blocks/testimonal-03/page.tsx",
+      type: "registry:page",
+      target: "app/testimonial/page.tsx"
+    },{
+      path: "registry/blocks/testimonal-03/components/testimonal-03.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonal-03/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "testimonal-03"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "features-01": {
+    name: "features-01",
+    description: "Features section with accordion and image carousel.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["features"],
+    files: [{
+      path: "registry/blocks/features-01/page.tsx",
+      type: "registry:page",
+      target: "app/features/page.tsx"
+    },{
+      path: "registry/blocks/features-01/components/features.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/features-01/components/section.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/features-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "features-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cta-01": {
+    name: "cta-01",
+    description: "CTA with heading, grid background, and animated side lines.",
+    type: "registry:block",
+    registryDependencies: ["utils"],
+    categories: ["cta"],
+    files: [{
+      path: "registry/blocks/cta-01/page.tsx",
+      type: "registry:page",
+      target: "app/cta/page.tsx"
+    },{
+      path: "registry/blocks/cta-01/components/cta.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cta-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cta-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cta-02": {
+    name: "cta-02",
+    description: "CTA with heading, button, and orbiting app icons.",
+    type: "registry:block",
+    registryDependencies: ["button","grid","utils"],
+    categories: ["cta"],
+    files: [{
+      path: "registry/blocks/cta-02/page.tsx",
+      type: "registry:page",
+      target: "app/cta/page.tsx"
+    },{
+      path: "registry/blocks/cta-02/components/cta-02.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/cta-02/components/orbiting-circle.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cta-02/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cta-02"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "cta-03": {
+    name: "cta-03",
+    description: "CTA with heading, button, and ripple background.",
+    type: "registry:block",
+    registryDependencies: ["utils"],
+    categories: ["cta"],
+    files: [{
+      path: "registry/blocks/cta-03/page.tsx",
+      type: "registry:page",
+      target: "app/cta/page.tsx"
+    },{
+      path: "registry/blocks/cta-03/components/cta-03.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/cta-03/components/ripple-bg.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cta-03/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "cta-03"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "pricing-01": {
+    name: "pricing-01",
+    description: "A pricing section.",
+    type: "registry:block",
+    registryDependencies: ["utils"],
+    categories: ["pricing"],
+    files: [{
+      path: "registry/blocks/pricing-01/page.tsx",
+      type: "registry:page",
+      target: "app/pricing/page.tsx"
+    },{
+      path: "registry/blocks/pricing-01/components/pricing.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "pricing-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "pricing-02": {
+    name: "pricing-02",
+    description: "A pricing table with a dropdown menu.",
+    type: "registry:block",
+    registryDependencies: ["utils"],
+    categories: ["pricing"],
+    files: [{
+      path: "registry/blocks/pricing-02/page.tsx",
+      type: "registry:page",
+      target: "app/pricing/page.tsx"
+    },{
+      path: "registry/blocks/pricing-02/components/pricing-table.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing-02/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "pricing-02"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "footer-01": {
+    name: "footer-01",
+    description: "A footer.",
+    type: "registry:block",
+    registryDependencies: undefined,
+    categories: ["footer"],
+    files: [{
+      path: "registry/blocks/footer-01/page.tsx",
+      type: "registry:page",
+      target: "app/footer/page.tsx"
+    },{
+      path: "registry/blocks/footer-01/components/footer.tsx",
+      type: "registry:component",
+      target: ""
+    },{
+      path: "registry/blocks/footer-01/components/theme-toggler.tsx",
+      type: "registry:component",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer-01/page.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "footer-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+}

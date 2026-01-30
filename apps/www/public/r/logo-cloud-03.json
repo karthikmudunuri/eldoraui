@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-03",
+  "description": "A logo cloud with marquee effect.",
+  "dependencies": [],
+  "registryDependencies": [
+    "marquee"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/logo-cloud-03/page.tsx",
+      "content": "import Image from \"next/image\"\n\nimport { Marquee } from \"@/registry/eldoraui/marquee\"\n\nconst companies = [\n  {\n    name: \"Google\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Google.svg\",\n  },\n  {\n    name: \"GitHub\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/GitHub.svg\",\n  },\n  {\n    name: \"Amazon\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Amazon.svg\",\n  },\n  {\n    name: \"Netflix\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Netflix.svg\",\n  },\n  {\n    name: \"YouTube\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/YouTube.svg\",\n  },\n  {\n    name: \"Instagram\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Instagram.svg\",\n  },\n  {\n    name: \"Spotify\",\n    url: \"https://pub-b3533f2e1c954842824758490b95c9d5.r2.dev/Spotify.svg\",\n  },\n]\n\nexport default function LogoCloud03Page() {\n  return (\n    <div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n      <div className=\"w-full max-w-sm md:max-w-3xl\">\n        <section id=\"logos\">\n          <div className=\"container mx-auto px-4 py-12 md:px-8\">\n            <h3 className=\"text-center text-sm font-semibold text-gray-500\">\n              TRUSTED BY LEADING TEAMS\n            </h3>\n            <div className=\"relative mt-6\">\n              <Marquee className=\"max-w-full [--duration:40s]\">\n                {companies.map((company, idx) => (\n                  <Image\n                    key={idx}\n                    width={112}\n                    height={40}\n                    src={company.url}\n                    className=\"h-10 w-28 opacity-30 grayscale dark:brightness-0 dark:invert\"\n                    alt={company.name}\n                  />\n                ))}\n              </Marquee>\n              <div className=\"from-background pointer-events-none absolute inset-y-0 left-0 h-full w-1/3 bg-gradient-to-r\"></div>\n              <div className=\"from-background pointer-events-none absolute inset-y-0 right-0 h-full w-1/3 bg-gradient-to-l\"></div>\n            </div>\n          </div>\n        </section>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/logo-cloud/page.tsx"
+    },
+    {
+      "path": "registry/blocks/logo-cloud-03/components/marquee.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\ninterface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {\n  reverse?: boolean\n  pauseOnHover?: boolean\n  children?: React.ReactNode\n  vertical?: boolean\n  repeat?: number\n}\n\nexport function Marquee({\n  className,\n  reverse,\n  pauseOnHover = false,\n  children,\n  vertical = false,\n  repeat = 4,\n  ...props\n}: MarqueeProps) {\n  return (\n    <div\n      {...props}\n      className={cn(\n        \"group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\n        {\n          \"flex-row\": !vertical,\n          \"flex-col\": vertical,\n        },\n        className\n      )}\n    >\n      {Array(repeat)\n        .fill(0)\n        .map((_, i) => (\n          <div\n            key={i}\n            className={cn(\"flex shrink-0 justify-around [gap:var(--gap)]\", {\n              \"animate-marquee flex-row\": !vertical,\n              \"animate-marquee-vertical flex-col\": vertical,\n              \"group-hover:[animation-play-state:paused]\": pauseOnHover,\n              \"[animation-direction:reverse]\": reverse,\n            })}\n          >\n            {children}\n          </div>\n        ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "logo-cloud"
+  ],
+  "type": "registry:block"
+}
