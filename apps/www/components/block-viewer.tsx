@@ -291,7 +291,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
       ) : (
         <div className="overflow-hidden rounded-xl border">
           <Image
-            src={`/r/styles/new-york-v4/${item.name}-light.png`}
+            src={`/blocks/${item.name}/light.png`}
             alt={item.name}
             data-block={item.name}
             width={1440}
@@ -299,7 +299,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
             className="object-cover dark:hidden"
           />
           <Image
-            src={`/r/styles/new-york-v4/${item.name}-dark.png`}
+            src={`/blocks/${item.name}/dark.png`}
             alt={item.name}
             data-block={item.name}
             width={1440}
