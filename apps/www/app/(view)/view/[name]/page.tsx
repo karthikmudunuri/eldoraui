@@ -3,6 +3,7 @@ import { type Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { siteConfig } from "@/config/site"
+import { Index } from "@/registry/__index__"
 import {
   getDemoItem,
   getRegistryComponent,
@@ -105,7 +106,13 @@ export default async function BlockPage({
   const { name } = await params
 
   const item = await getCachedRegistryItem(name)
-  const Component = getRegistryComponent(name)
+  // Prefer demo component when viewing a component that has a demo (e.g. github-inline-comments -> github-inline-comments-demo)
+  const demoName = `${name}-demo`
+  const demoItem = Index[demoName]
+  const Component =
+    demoItem && typeof (demoItem as { component?: unknown }).component !== "undefined"
+      ? getRegistryComponent(demoName)
+      : getRegistryComponent(name)
 
   if (!item || !Component) {
     return notFound()

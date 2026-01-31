@@ -39,7 +39,7 @@ function DiffList({
   diff: readonly Line[]
   fileName: string
 }) {
-  const rows = diff
+  const rows = diff ?? []
 
   // Tracks which line index currently has an open thread
   const [openThreadAt, setOpenThreadAt] = useState<number | null>(null)

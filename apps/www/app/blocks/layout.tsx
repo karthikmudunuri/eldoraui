@@ -1,11 +1,7 @@
 import { type Metadata } from "next"
-import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
-import { Announcement } from "@/components/announcement"
 import { BlocksNav } from "@/components/blocks-nav"
 import {
-  PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,

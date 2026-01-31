@@ -1,10 +1,4 @@
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-
-import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import HeroAnimatedSlides from "@/components/sections/hero-animated-slides"
 import { TechStack } from "@/components/tech-stack"
 import AnimatedBadge from "@/registry/eldoraui/animated-badge"
 import { AnimatedShinyButton } from "@/registry/eldoraui/animated-shiny-button"
@@ -12,20 +6,6 @@ import { AuroraText } from "@/registry/eldoraui/aurora-text"
 import LiveButton from "@/registry/eldoraui/live-button"
 
 export function Hero() {
-  const pages = source.getPages() as Array<{
-    data?: { title?: string; date?: string }
-    url?: string
-  }>
-  const page = pages.sort((a, b) => {
-    const dateA = a?.data?.date
-    const dateB = b?.data?.date
-    if (!dateA && !dateB) return 0
-    if (!dateA) return 1
-    if (!dateB) return -1
-    return new Date(dateB).getTime() - new Date(dateA).getTime()
-  })[0]
-  const pageTitle = page?.data?.title
-
   return (
     <section id="hero">
       <div className="relative h-full overflow-hidden py-5 md:py-14">

@@ -21,7 +21,7 @@ export default function HeroAnimatedSides({
   }
 
   return (
-    <>
+    <div className={className}>
       {/* Left Side */}
       <div
         suppressHydrationWarning
@@ -141,6 +141,6 @@ export default function HeroAnimatedSides({
         `,
         }}
       />
-    </>
+    </div>
   )
 }
