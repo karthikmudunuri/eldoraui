@@ -81,7 +81,7 @@ export function XBanner() {
     <div className="group relative top-0 bg-cyan-500/80 py-3 text-white transition-all duration-300 md:py-0">
       <div className="container flex flex-col items-center justify-center gap-4 md:h-12 md:flex-row">
         <Link
-          href="https://x.com/kartikmudunuri"
+          href="https://x.com/intent/follow?screen_name=kartikmudunuri"
           onClick={() => posthog.capture("x_banner_clicked")}
           target="_blank"
           className="inline-flex text-xs leading-normal md:text-sm"
