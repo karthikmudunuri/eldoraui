@@ -10,7 +10,7 @@ export function Analytics() {
       <Script
         async
         defer
-        src="https://www.googletagmanager.com/gtag/js?id=G-4CVHZX68BT"
+        src="https://www.googletagmanager.com/gtag/js?id=G-N39TSSCELY"
       ></Script>
       <Script id="gtag">
         {`
@@ -18,7 +18,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'G-4CVHZX68BT');
+gtag('config', 'G-N39TSSCELY');
 `}
       </Script>
       {/* X (Twitter) conversion tracking */}
