@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-import { Icons } from "@/components/icons"
+import { OGLogo } from "@/components/og-logo"
 
 async function loadAssets(): Promise<
   { name: string; data: Buffer; weight: 400 | 600; style: "normal" }[]
@@ -56,7 +56,7 @@ export async function GET(request: Request) {
         <div tw="flex border absolute border-neutral-200 inset-x-0 h-[1px] bottom-16" />
         {(title || description) && (
           <div tw="flex absolute flex-row items-center justify-center bottom-24 right-24 text-white">
-            <Icons.logo width={48} height={48} />
+            <OGLogo width={48} height={48} />
             <div tw="text-black flex text-[32px] font-semibold tracking-tight ml-2">
               Eldora UI
             </div>
@@ -75,7 +75,7 @@ export async function GET(request: Request) {
           ) : (
             <div tw="flex flex-col items-center justify-center text-center w-full h-full">
               <div tw="flex flex-row items-center justify-center space-x-4">
-                <Icons.logo width={48} height={48} />
+                <OGLogo width={48} height={48} />
                 <div tw="text-black flex text-[32px] font-semibold tracking-tight ml-2">
                   Magic UI
                 </div>
