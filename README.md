@@ -33,6 +33,12 @@ Have questions, comments or feedback? [Join our discord](http://eldoraui.site/di
   <img src="https://contrib.rocks/image?repo=karthikmudunuri/eldoraui" />
 </a>
 
+## Supported by Vercel
+
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
+
 ## Stats
 
 ![Alt](https://repobeats.axiom.co/api/embed/35271c3244e24efbae34731d1ee21d0988f8fc0e.svg "Repobeats analytics image")
