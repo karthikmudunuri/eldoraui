@@ -12,7 +12,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-   "format:fix": "turbo run format:fix",
+    "format:fix": "turbo run format:fix",
     "format:fix:silent": "turbo run format:fix -- --log-level silent",
     "format:check": "turbo run format:check",
     "build:docs": "turbo run build:docs --filter=www",
@@ -22,10 +22,10 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "js-yaml": "^4.1.0",
     "lefthook": "^1.13.4",
     "turbo": "^2.5.8",
-    "ultracite": "5.4.4",
-    "js-yaml": "^4.1.0"
+    "ultracite": "5.4.4"
   },
   "engines": {
     "node": ">=22.14.0",
@@ -35,5 +35,8 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "dependencies": {
+    "@uiw/color-convert": "^2.9.5"
   }
 }

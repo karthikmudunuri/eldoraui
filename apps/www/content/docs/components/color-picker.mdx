@@ -1,0 +1,312 @@
+---
+title: Color Picker
+date: 2026-02-21
+description: Advanced color picker with multi-language support and theme customization.
+author: Northstrix
+published: true
+---
+
+<ComponentPreview name="color-picker-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add @eldoraui/color-picker
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/color-picker.tsx`
+
+<ComponentSource name="color-picker" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Hebrew RTL Example
+
+<ComponentPreview name="color-picker-demo-2" />
+
+## Japanese Theme Example
+
+<ComponentPreview name="color-picker-demo-3" />
+
+## Usage
+
+```tsx showLineNumbers
+import ColorPicker from "@/components/eldoraui/color-picker"
+```
+
+```tsx showLineNumbers
+<ColorPicker
+  value={color1}
+  onValueChange={setColor1}
+  showAlpha={false}
+  showContrast={true}
+/>
+```
+
+```tsx showLineNumbers
+<ColorPicker
+  value={color2}
+  onValueChange={setColor2}
+  isRTL={true}
+  showAlpha={false}
+  showContrast={true}
+  hexLabel="הקס"
+  rgbLabel="ארג׳יבי"
+  hslLabel="האסאל"
+  modeLabel="מצב"
+  contrastLabel="ניגודיות"
+  rLabel="אדום"
+  gLabel="ירוק"
+  bLabel="כחול"
+  hLabel="גוון"
+  sLabel="רוויה"
+  lLabel="בהירות"
+  floatingLabelFocusBorderColor="#fff"
+  floatingLabelActiveTextColor={color2}
+/>
+```
+
+```tsx showLineNumbers
+<ColorPicker
+  value={color7}
+  onValueChange={setColor7}
+  // Authentic Japanese indigo base (紺 = stability)
+  containerBg="#0A0E17"
+  containerBorderColor="#1F2832"
+  containerRadius="12px"
+  containerPadding="24px"
+  enabledModes={["hex", "rgb"]}
+  // Input: indigo theme
+  inputBg="#151C26"
+  inputBorderColor="#2D3A4A" // Indigo (positive stability)
+  inputBorderWidth={1}
+  inputRadius={8}
+  inputTextColor="#F0F4F8" // Soft white (purity)
+  inputErrorOutlineColor="#8CE300"
+  // Saturation: subtle indigo containment
+  saturationHeight={160}
+  saturationRadius={8}
+  saturationBorderColor="#2D3A4A" // Indigo
+  saturationBorderWidth={1}
+  saturationThumbWidth={16}
+  saturationThumbHeight={16}
+  saturationThumbRadius={50}
+  saturationThumbBorderStyle="solid"
+  saturationThumbBorderWidth={1}
+  saturationThumbBorderColor="#F0F4F8" // White purity
+  // Hue track: dark indigo outline
+  hueTrackHeight={12}
+  hueTrackRadius="6px"
+  hueTrackBorderWidth={1}
+  hueTrackBorderColor="#2D3A4A" // Indigo
+  // Hue thumb: white outline (positive purity)
+  hueThumbSize={20}
+  hueThumbRadius="50%"
+  hueThumbBorderWidth={1}
+  hueThumbBgDefault="#1A2333"
+  hueThumbBgHover="#25334A"
+  hueThumbBgActive="#334B62"
+  hueThumbBorderDefault="#F0F4F8" // White (positive)
+  hueThumbBorderHover="#FFFFFF"
+  hueThumbBorderActive="#FFFFFF"
+  // Authentic Japanese labels
+  hexLabel="十六進数"
+  rgbLabel="赤緑青"
+  hslLabel="色相・彩度・明度"
+  modeLabel="表示モード"
+  contrastLabel="コントラスト比"
+  rLabel="赤"
+  gLabel="緑"
+  bLabel="青"
+  hLabel="色相"
+  sLabel="彩度"
+  lLabel="明度"
+  // Preview: indigo containment
+  previewBgFallback="#151C26"
+  previewBorderColor="#2D3A4A"
+  previewBorderWidth={1}
+  previewRadius={8}
+  previewFontSize={20}
+  previewFontWeight={500}
+  previewTextColor="#F0F4F8"
+  // Floating labels: vermilion active (positive authority)
+  floatingLabelBg="#0A0E17"
+  floatingLabelTextColor="#8AA8C2" // Cool blue (stability)
+  floatingLabelActiveTextColor="#E13535" // Vermilion (positive focus!)
+  floatingLabelFocusBorderColor="#E13535" // Vermilion (positive highlight)
+  floatingLabelRadius={6}
+  floatingLabelBorderColor="#2D3A4A" // Indigo
+  floatingLabelBorderWidth={1}
+  // Dropdown: indigo theme
+  dropdownHeight={48}
+  dropdownBg="#151C26"
+  dropdownBorderColor="#2D3A4A"
+  dropdownBorderWidth={1}
+  dropdownRadius={8}
+  dropdownTextColor="#F0F4F8"
+  dropdownFocusBorderColor="#E13535" // Vermilion focus
+  dropdownChevronColor="#8AA8C2"
+  dropdownMenuBg="#0A0E17"
+  dropdownMenuBorderColor="#2D3A4A"
+  dropdownMenuBorderWidth={1}
+  dropdownMenuRadius={8}
+  dropdownMenuTextColor="#E0E8F0"
+  dropdownMenuActiveTextColor="#E13535" // Vermilion active
+  dropdownMenuHoverBg="rgba(225,53,53,0.1)" // Vermilion hover
+  dropdownMenuActiveBg="rgba(225,53,53,0.15)"
+  modeDropdownWidth="120px"
+  // Badges: vermilion success, slate neutral fail (no negativity)
+  badgeBgPass="rgba(227,53,53,0.18)" // Vermilion (positive)
+  badgeBgFail="rgba(70,80,90,0.25)" // Slate (neutral attention)
+  badgeBorderPass="rgba(227,53,53,0.5)"
+  badgeBorderFail="rgba(70,80,90,0.5)"
+  badgeTextPass="#E13535" // Vermilion
+  badgeTextFail="#787878" // Slate gray (neutral)
+  badgeBorderRadius="100px"
+  badgeFontWeight={500}
+/>
+```
+
+## Props
+
+| Prop                            | Type                                | Default                    | Description                                   |
+| ------------------------------- | ----------------------------------- | -------------------------- | --------------------------------------------- |
+| `value`                         | `string`                            | `"#06B5EF"`                | Current color value (hex format)              |
+| `onValueChange`                 | `(val: string) => void`             | `-`                        | Callback when color changes                   |
+| `isRTL`                         | `boolean`                           | `false`                    | Enable RTL layout for Hebrew/Arabic           |
+| `showContrast`                  | `boolean`                           | `true`                     | Display contrast ratio checker                |
+| `enabledModes`                  | `("hex" \| "rgb" \| "hsl")[]`       | `["hex","rgb","hsl"]`      | Available color formats                       |
+| `defaultFormat`                 | `"hex" \| "rgb" \| "hsl"`           | `"hex"`                    | Default color format                          |
+| `hexLabel`                      | `string`                            | `"HEX"`                    | Label for HEX mode                            |
+| `rgbLabel`                      | `string`                            | `"RGB"`                    | Label for RGB mode                            |
+| `hslLabel`                      | `string`                            | `"HSL"`                    | Label for HSL mode                            |
+| `modeLabel`                     | `string`                            | `"Mode"`                   | Mode selector label                           |
+| `rLabel`                        | `string`                            | `"R"`                      | Red channel label                             |
+| `gLabel`                        | `string`                            | `"G"`                      | Green channel label                           |
+| `bLabel`                        | `string`                            | `"B"`                      | Blue channel label                            |
+| `hLabel`                        | `string`                            | `"H"`                      | Hue channel label                             |
+| `sLabel`                        | `string`                            | `"S"`                      | Saturation channel label                      |
+| `lLabel`                        | `string`                            | `"L"`                      | Lightness channel label                       |
+| `contrastBgLuminance`           | `number`                            | `0`                        | Background luminance for contrast calculation |
+| `colorPreviewAreaText`          | `string`                            | `"A"`                      | Text shown in color preview area              |
+| `containerBg`                   | `string`                            | `"#000"`                   | Container background color                    |
+| `containerBorderColor`          | `string`                            | `"#242424"`                | Container border color                        |
+| `containerBorderWidth`          | `number`                            | `1`                        | Container border width                        |
+| `containerRadius`               | `string`                            | `"12px"`                   | Container border radius                       |
+| `containerPadding`              | `string`                            | `"16px"`                   | Container padding                             |
+| `containerElementGap`           | `string`                            | `"16px"`                   | Gap between container elements                |
+| `saturationHeight`              | `number`                            | `140`                      | Saturation picker height                      |
+| `saturationRadius`              | `number`                            | `8`                        | Saturation picker border radius               |
+| `saturationBorderColor`         | `string`                            | `"#242424"`                | Saturation picker border color                |
+| `saturationBorderWidth`         | `number`                            | `1`                        | Saturation picker border width                |
+| `saturationThumbWidth`          | `number \| string`                  | `14`                       | Saturation thumb width                        |
+| `saturationThumbHeight`         | `number \| string`                  | `14`                       | Saturation thumb height                       |
+| `saturationThumbRadius`         | `number \| string`                  | `50`                       | Saturation thumb border radius                |
+| `saturationThumbBorderStyle`    | `"solid" \| "dashed" \| "none"`     | `"solid"`                  | Saturation thumb border style                 |
+| `saturationThumbBorderWidth`    | `number`                            | `2`                        | Saturation thumb border width                 |
+| `saturationThumbBorderColor`    | `string`                            | `"#ffffff"`                | Saturation thumb border color                 |
+| `saturationThumbBgColor`        | `string`                            | `"transparent"`            | Saturation thumb background color             |
+| `hueTrackHeight`                | `number \| string`                  | `10`                       | Hue track height                              |
+| `hueTrackRadius`                | `number \| string`                  | `"8px"`                    | Hue track border radius                       |
+| `hueTrackBorderWidth`           | `number`                            | `1`                        | Hue track border width                        |
+| `hueTrackBorderColor`           | `string`                            | `"transparent"`            | Hue track border color                        |
+| `hueThumbSize`                  | `number \| string`                  | `16`                       | Hue thumb size                                |
+| `hueThumbRadius`                | `number \| string`                  | `"50%"`                    | Hue thumb border radius                       |
+| `hueThumbBorderWidth`           | `number`                            | `3`                        | Hue thumb border width                        |
+| `hueThumbBgDefault`             | `string`                            | `"#f0f0f0"`                | Hue thumb default background                  |
+| `hueThumbBgHover`               | `string`                            | `"#e5e5e5"`                | Hue thumb hover background                    |
+| `hueThumbBgActive`              | `string`                            | `"#f0f0f0"`                | Hue thumb active background                   |
+| `hueThumbBorderDefault`         | `string`                            | `"#e5e5e5"`                | Hue thumb default border                      |
+| `hueThumbBorderHover`           | `string`                            | `"#f0f0f0"`                | Hue thumb hover border                        |
+| `hueThumbBorderActive`          | `string`                            | `"#fff"`                   | Hue thumb active border                       |
+| `badgeBorderWidth`              | `number \| string`                  | `1`                        | Badge border width                            |
+| `badgeBorderRadius`             | `number \| string`                  | `"50px"`                   | Badge border radius                           |
+| `badgeFontSize`                 | `number \| string`                  | `"10px"`                   | Badge font size                               |
+| `badgeFontWeight`               | `number`                            | `600`                      | Badge font weight                             |
+| `badgeIconSize`                 | `number \| string`                  | `10`                       | Badge icon size                               |
+| `badgePadding`                  | `string`                            | `"0.25rem 0.5rem"`         | Badge padding                                 |
+| `badgeIconStrokeWidth`          | `number`                            | `2.25`                     | Badge icon stroke width                       |
+| `badgeBgPass`                   | `string`                            | `"rgba(65, 239, 6, 0.1)"`  | Pass badge background                         |
+| `badgeBgFail`                   | `string`                            | `"rgba(239, 6, 65, 0.1)"`  | Fail badge background                         |
+| `badgeBorderPass`               | `string`                            | `"rgba(65, 239, 6, 0.5)"`  | Pass badge border                             |
+| `badgeBorderFail`               | `string`                            | `"rgba(239, 6, 65, 0.5)"`  | Fail badge border                             |
+| `badgeTextPass`                 | `string`                            | `"#41EF06"`                | Pass badge text color                         |
+| `badgeTextFail`                 | `string`                            | `"#EF0641"`                | Fail badge text color                         |
+| `contrastLabel`                 | `string`                            | `"Contrast"`               | Contrast label text                           |
+| `contrastLabelSize`             | `string`                            | `"12px"`                   | Contrast label font size                      |
+| `contrastLabelColor`            | `string`                            | `"#737373"`                | Contrast label color                          |
+| `contrastLabelWeight`           | `number`                            | `700`                      | Contrast label font weight                    |
+| `contrastValueSize`             | `string`                            | `"14px"`                   | Contrast value font size                      |
+| `contrastValueColor`            | `string`                            | `"#ffffff"`                | Contrast value color                          |
+| `contrastValueWeight`           | `number`                            | `400`                      | Contrast value font weight                    |
+| `contrastFormat`                | `"value:1" \| "1:value" \| "value"` | `"value:1"`                | Contrast ratio format                         |
+| `contrastLabelGap`              | `string`                            | `"0.125rem"`               | Gap between contrast label and value          |
+| `contrastItemGap`               | `string`                            | `"16px"`                   | Gap between contrast items                    |
+| `contrastBadgeGap`              | `string`                            | `"8px"`                    | Gap between contrast value and badge          |
+| `showContrastAALabel`           | `boolean`                           | `true`                     | Show AA contrast label                        |
+| `showContrastAAALabel`          | `boolean`                           | `true`                     | Show AAA contrast label                       |
+| `contrastAreaTopMargin`         | `string`                            | `"0px"`                    | Top margin for contrast area                  |
+| `inputHeight`                   | `number`                            | `44`                       | Input field height                            |
+| `inputBg`                       | `string`                            | `"#000"`                   | Input background color                        |
+| `inputBorderColor`              | `string`                            | `"#242424"`                | Input border color                            |
+| `inputBorderWidth`              | `number`                            | `1`                        | Input border width                            |
+| `inputRadius`                   | `number`                            | `8`                        | Input border radius                           |
+| `inputTextColor`                | `string`                            | `"#ffffff"`                | Input text color                              |
+| `floatingLabelFocusBorderColor` | `string`                            | `"#06B5EF"`                | Floating label focus border color             |
+| `inputErrorOutlineColor`        | `string`                            | `"#EF0641"`                | Input error outline color                     |
+| `floatingLabelBg`               | `string`                            | `-`                        | Floating label background color               |
+| `floatingLabelTextColor`        | `string`                            | `"#777777"`                | Floating label text color                     |
+| `floatingLabelActiveTextColor`  | `string`                            | `"#ffffff"`                | Floating label active text color              |
+| `floatingLabelRadius`           | `number`                            | `4`                        | Floating label border radius                  |
+| `floatingLabelBorderColor`      | `string`                            | `-`                        | Floating label border color                   |
+| `floatingLabelBorderWidth`      | `number`                            | `0`                        | Floating label border width                   |
+| `floatingLabelMainTextSize`     | `number`                            | `14`                       | Floating label main text size                 |
+| `dropdownHeight`                | `number`                            | `44`                       | Dropdown height                               |
+| `dropdownBg`                    | `string`                            | `-`                        | Dropdown background color                     |
+| `dropdownBorderColor`           | `string`                            | `-`                        | Dropdown border color                         |
+| `dropdownBorderWidth`           | `number`                            | `-`                        | Dropdown border width                         |
+| `dropdownRadius`                | `number`                            | `-`                        | Dropdown border radius                        |
+| `dropdownTextColor`             | `string`                            | `-`                        | Dropdown text color                           |
+| `dropdownFocusBorderColor`      | `string`                            | `-`                        | Dropdown focus border color                   |
+| `dropdownChevronColor`          | `string`                            | `"#6b7280"`                | Dropdown chevron color                        |
+| `dropdownMenuBg`                | `string`                            | `"#111111"`                | Dropdown menu background color                |
+| `dropdownMenuBorderColor`       | `string`                            | `"#242424"`                | Dropdown menu border color                    |
+| `dropdownMenuBorderWidth`       | `number`                            | `1`                        | Dropdown menu border width                    |
+| `dropdownMenuRadius`            | `number`                            | `10`                       | Dropdown menu border radius                   |
+| `dropdownMenuTextColor`         | `string`                            | `"#d1d5db"`                | Dropdown menu text color                      |
+| `dropdownMenuActiveTextColor`   | `string`                            | `"#ffffff"`                | Dropdown menu active text color               |
+| `dropdownMenuHoverBg`           | `string`                            | `"rgba(255,255,255,0.05)"` | Dropdown menu hover background                |
+| `dropdownMenuActiveBg`          | `string`                            | `"rgba(255,255,255,0.10)"` | Dropdown menu active background               |
+| `modeDropdownWidth`             | `string`                            | `"128px"`                  | Mode dropdown width                           |
+| `modeDropdownFullWidth`         | `boolean`                           | `false`                    | Mode dropdown full width                      |
+| `previewBgFallback`             | `string`                            | `"#111111"`                | Preview background fallback color             |
+| `previewBorderColor`            | `string`                            | `"rgba(255,255,255,0.14)"` | Preview border color                          |
+| `previewBorderWidth`            | `number`                            | `1`                        | Preview border width                          |
+| `previewRadius`                 | `number`                            | `8`                        | Preview border radius                         |
+| `previewFontSize`               | `number`                            | `18`                       | Preview font size                             |
+| `previewFontWeight`             | `number`                            | `600`                      | Preview font weight                           |
+| `previewTextColor`              | `string`                            | `"#ffffff"`                | Preview text color                            |
+| `colorPreviewPosition`          | `"top" \| "contrast" \| "none"`     | `"contrast"`               | Color preview position                        |
+| `previewWidth`                  | `number \| string`                  | `44`                       | Preview width                                 |
+| `previewHeight`                 | `number`                            | `44`                       | Preview height                                |
+| `inputFocusRingColor`           | `string`                            | `-`                        | Input focus ring color                        |
+| `dropdownFocusRingColor`        | `string`                            | `-`                        | Dropdown focus ring color                     |
+| `showLetterTop`                 | `boolean`                           | `-`                        | Show letter at top position                   |
+
+## Credit
+
+> Originally published on [Namer UI](https://namer-ui.vercel.app/components/color-picker)
+
+> Made from [Color Picker](https://21st.dev/community/components/uplusion23/color-picker/color-picker-with-swatches-and-onchange) by [Trevor McIntire](https://21st.dev/community/uplusion23) and [Input Floating Label animation](https://codepen.io/Mahe76/pen/qBQgXyK) by [Elpeeda](https://codepen.io/Mahe76) and [radix-ui](https://www.npmjs.com/package/radix-ui)

@@ -11,13 +11,16 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [animated-grid-pattern](https://eldoraui.site/docs/components/animated-grid-pattern): An animated grid pattern component.
 - [animated-list](https://eldoraui.site/docs/components/animated-list): An animated list component.
 - [animated-shiny-button](https://eldoraui.site/docs/components/animated-shiny-button): An animated shiny button component.
+- [bauble-toggle](https://eldoraui.site/docs/components/bauble-toggle): A playful bauble-style toggle switch with smooth SVG animation and a customizable initial state, exposing a callback when the value changes.
 - [blur-in-text](https://eldoraui.site/docs/components/blur-in-text): A blur in text component.
 - [browser](https://eldoraui.site/docs/components/browser): A browser SVG component.
 - [card-flip-hover](https://eldoraui.site/docs/components/card-flip-hover): A card flip hover component.
 - [clerk-otp](https://eldoraui.site/docs/components/clerk-otp): A clerk OTP component.
 - [cobe-globe](https://eldoraui.site/docs/components/cobe-globe): A cobe globe component.
+- [color-picker](https://eldoraui.site/docs/components/color-picker): Advanced color picker with multi-language support and theme customization.
 - [dock-text](https://eldoraui.site/docs/components/dock-text): A dock text component with interactive hover effects.
 - [fade-text](https://eldoraui.site/docs/components/fade-text): A combined fade text component with support for in, up, and down directions.
+- [fishy-button](https://eldoraui.site/docs/components/fishy-button): Playful animated button with swimming fish effect on hover.
 - [font-weight-text](https://eldoraui.site/docs/components/font-weight-text): A font weight text component.
 - [github-inline-comments](https://eldoraui.site/docs/components/github-inline-comments): A github inline comments component.
 - [gradual-spacing-text](https://eldoraui.site/docs/components/gradual-spacing-text): A gradual spacing text component.
@@ -106,6 +109,13 @@ This file provides LLM-friendly entry points to documentation and examples.
 - [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo.tsx): Example usage
 - [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo-2.tsx): Example usage
 - [holographic-card-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/holographic-card-demo-3.tsx): Example usage
+- [bauble-toggle-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/bauble-toggle-demo.tsx): Example usage
+- [color-picker-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/color-picker-demo.tsx): Example usage
+- [color-picker-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/color-picker-demo-2.tsx): Example usage
+- [color-picker-demo-3](https://github.com/karthikmudunuri/eldoraui/blob/main/example/color-picker-demo-3.tsx): Example usage
+- [fishy-button-demo](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fishy-button-demo.tsx): Example usage
+- [fishy-button-demo-2](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fishy-button-demo-2.tsx): Example usage
+- [fishy-button-demo-3](https://github.com/karthikmudunuri/eldoraui/blob/main/example/fishy-button-demo-3.tsx): Example usage
 
 ## Optional
 

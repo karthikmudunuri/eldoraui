@@ -1,0 +1,65 @@
+---
+title: Bauble Toggle
+date: 2026-02-21
+description: A playful bauble-style toggle switch with smooth SVG animation and a customizable initial state, exposing a callback when the value changes.
+author: Northstrix
+published: true
+---
+
+<ComponentPreview name="bauble-toggle-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+
+    ```bash
+    npx shadcn@latest add @eldoraui/bauble-toggle
+    ```
+
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+
+      `components/eldoraui/bauble-toggle.tsx`
+
+      <ComponentSource name="bauble-toggle" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+
+  </TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import BaubleToggle from "@/components/eldoraui/bauble-toggle"
+```
+
+```tsx showLineNumbers
+<BaubleToggle
+  initialState={true}
+  onToggleChange={(isOn) => {
+    console.log("Bauble toggle is now:", isOn)
+  }}
+/>
+```
+
+## Props
+
+| Prop           | Type                    | Default | Description                                                |
+| -------------- | ----------------------- | ------- | ---------------------------------------------------------- |
+| initialState   | boolean                 | true    | Initial on/off value of the bauble toggle.                 |
+| onToggleChange | (isOn: boolean) => void | -       | Optional callback fired whenever the toggle state changes. |
+
+
+## Credit
+
+> Originally published on [Namer UI](https://namer-ui.vercel.app/components/bauble-toggle)
+
+> Made from [Bauble Toggle](https://codepen.io/chrisgannon/pen/ZaPmKp) by [Chris Gannon](https://codepen.io/chrisgannon)

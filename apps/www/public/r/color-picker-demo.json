@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-picker-demo",
+  "title": "color-picker-demo",
+  "description": "Default color picker demo.",
+  "registryDependencies": [
+    "@eldoraui/color-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/example/color-picker-demo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport ColorPicker from \"@/registry/eldoraui/color-picker\"\n\nexport default function ColorPickerDemo() {\n  const [color1, setColor1] = useState(\"#06B5EF\")\n\n  const colorValueStyle = (color: string) => ({\n    color,\n    fontWeight: 600,\n    display: \"block\",\n    marginTop: \"4px\",\n  })\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div\n        style={{\n          width: \"360px\",\n          display: \"flex\",\n          flexDirection: \"column\",\n          alignItems: \"center\",\n          gap: \"16px\",\n        }}\n      >\n        <div style={{ textAlign: \"center\" }}>\n          <span style={colorValueStyle(color1)}>{color1}</span>\n        </div>\n        <ColorPicker\n          value={color1}\n          onValueChange={setColor1}\n          showContrast={true}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

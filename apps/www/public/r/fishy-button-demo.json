@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fishy-button-demo",
+  "title": "fishy-button-demo",
+  "description": "Basic Fishy Button example.",
+  "registryDependencies": [
+    "@eldoraui/fishy-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/fishy-button-demo.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport { FishyButton } from \"@/registry/eldoraui/fishy-button\"\n\nexport default function FishyButtonDemo() {\n  return (\n    <div className=\"bg-transparent p-2\">\n      <FishyButton\n        type=\"button\"\n        className=\"button--1\"\n        onClick={() => console.log(\"Ekhad button clicked\")}\n      >\n        Ekhad\n      </FishyButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

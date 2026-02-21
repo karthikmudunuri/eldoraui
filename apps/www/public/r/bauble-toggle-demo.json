@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bauble-toggle-demo",
+  "title": "bauble-toggle-demo",
+  "description": "Example showing a bauble-toggle-demo component.",
+  "registryDependencies": [
+    "@eldoraui/bauble-toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/example/bauble-toggle-demo.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport BaubleToggle from \"@/registry/eldoraui/bauble-toggle\"\n\nexport function BaubleToggleDemo() {\n  const [isOn, setIsOn] = useState(true)\n\n  return (\n    <div\n      className=\"relative\"\n      style={{\n        display: \"flex\",\n        justifyContent: \"center\",\n        alignItems: \"center\",\n        padding: \"2rem\",\n      }}\n      suppressHydrationWarning\n    >\n      <div\n        style={{\n          width: \"114px\",\n          height: \"114px\",\n          overflow: \"hidden\",\n          transformOrigin: \"center\",\n          transform: \"scale(5)\",\n          pointerEvents: \"auto\",\n        }}\n      >\n        <BaubleToggle initialState={isOn} onToggleChange={setIsOn} />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -105,6 +105,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Bauble Toggle",
+          href: "/docs/components/bauble-toggle",
+          items: [],
+        },
+        {
           title: "Card Flip Hover",
           href: "/docs/components/card-flip-hover",
           items: [],
@@ -118,6 +123,18 @@ export const docsConfig: DocsConfig = {
           title: "Cobe Globe",
           href: "/docs/components/cobe-globe",
           items: [],
+        },
+        {
+          title: "Color Picker",
+          href: `/docs/components/color-picker`,
+          items: [],
+          label: "New",
+        },
+        {
+          title: "Fishy Button",
+          href: "/docs/components/fishy-button",
+          items: [],
+          label: "New",
         },
         {
           title: "Github Inline Comments",

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fishy-button-demo-3",
+  "title": "fishy-button-demo-3",
+  "description": "Slow fish animation variant.",
+  "registryDependencies": [
+    "@eldoraui/fishy-button"
+  ],
+  "files": [
+    {
+      "path": "registry/example/fishy-button-demo-3.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport { FishyButton } from \"@/registry/eldoraui/fishy-button\"\n\nexport default function FishyButtonDemo3() {\n  return (\n    <div className=\"bg-transparent p-2\">\n      <FishyButton\n        type=\"button\"\n        className=\"button--3\"\n        width=\"216px\"\n        fishSpeed=\"6s\"\n        fontFamily=\"'Griffy', cursive\"\n        borderRadius=\"50px\"\n        onClick={() => console.log(\"Slow fish clicked\")}\n      >\n        שלוש\n      </FishyButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

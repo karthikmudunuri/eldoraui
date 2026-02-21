@@ -825,6 +825,69 @@ export const Index: Record<string, any> = {
     }),
     meta: undefined,
   },
+  "bauble-toggle": {
+    name: "bauble-toggle",
+    description: "A playful bauble-style toggle switch with smooth SVG animation and a customizable initial state, exposing a callback when the value changes.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    categories: [],
+    files: [{
+      path: "registry/eldoraui/bauble-toggle.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/bauble-toggle.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "bauble-toggle"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "color-picker": {
+    name: "color-picker",
+    description: "Advanced color picker with multi-language support and theme customization.",
+    type: "registry:ui",
+    registryDependencies: ["utils"],
+    categories: [],
+    files: [{
+      path: "registry/eldoraui/color-picker.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/color-picker.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "color-picker"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "fishy-button": {
+    name: "fishy-button",
+    description: "Playful animated button with swimming fish effect on hover.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    categories: [],
+    files: [{
+      path: "registry/eldoraui/fishy-button.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/eldoraui/fishy-button.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fishy-button"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
   "safari-browser-demo": {
     name: "safari-browser-demo",
     description: "Example showing a safari-browser-demo component.",
@@ -2039,6 +2102,153 @@ export const Index: Record<string, any> = {
         const value = mod[key]
         return typeof value === "function" || typeof value === "object"
       }) || "holographic-card-demo-3"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "bauble-toggle-demo": {
+    name: "bauble-toggle-demo",
+    description: "Example showing a bauble-toggle-demo component.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/bauble-toggle"],
+    categories: [],
+    files: [{
+      path: "registry/example/bauble-toggle-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/bauble-toggle-demo.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "bauble-toggle-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "color-picker-demo": {
+    name: "color-picker-demo",
+    description: "Default color picker demo.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/color-picker"],
+    categories: [],
+    files: [{
+      path: "registry/example/color-picker-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/color-picker-demo.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "color-picker-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "color-picker-demo-2": {
+    name: "color-picker-demo-2",
+    description: "Hebrew RTL color picker demo.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/color-picker"],
+    categories: [],
+    files: [{
+      path: "registry/example/color-picker-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/color-picker-demo-2.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "color-picker-demo-2"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "color-picker-demo-3": {
+    name: "color-picker-demo-3",
+    description: "Japanese themed color picker demo.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/color-picker"],
+    categories: [],
+    files: [{
+      path: "registry/example/color-picker-demo-3.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/color-picker-demo-3.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "color-picker-demo-3"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "fishy-button-demo": {
+    name: "fishy-button-demo",
+    description: "Basic Fishy Button example.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/fishy-button"],
+    categories: [],
+    files: [{
+      path: "registry/example/fishy-button-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/fishy-button-demo.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fishy-button-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "fishy-button-demo-2": {
+    name: "fishy-button-demo-2",
+    description: "Fishy Button with custom fonts.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/fishy-button"],
+    categories: [],
+    files: [{
+      path: "registry/example/fishy-button-demo-2.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/fishy-button-demo-2.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fishy-button-demo-2"
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "fishy-button-demo-3": {
+    name: "fishy-button-demo-3",
+    description: "Slow fish animation variant.",
+    type: "registry:example",
+    registryDependencies: ["@eldoraui/fishy-button"],
+    categories: [],
+    files: [{
+      path: "registry/example/fishy-button-demo-3.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/example/fishy-button-demo-3.tsx")
+      const exportName = Object.keys(mod).find((key) => {
+        const value = mod[key]
+        return typeof value === "function" || typeof value === "object"
+      }) || "fishy-button-demo-3"
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,

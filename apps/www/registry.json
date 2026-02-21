@@ -729,6 +729,55 @@
       "type": "registry:ui"
     },
     {
+      "name": "bauble-toggle",
+      "title": "bauble-toggle",
+      "description": "A playful bauble-style toggle switch with smooth SVG animation and a customizable initial state, exposing a callback when the value changes.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/bauble-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "color-picker",
+      "title": "color-picker",
+      "description": "Advanced color picker with multi-language support and theme customization.",
+      "dependencies": [
+        "@uiw/color-convert",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "fishy-button",
+      "title": "fishy-button",
+      "description": "Playful animated button with swimming fish effect on hover.",
+      "dependencies": [
+        "react"
+      ],
+      "files": [
+        {
+          "path": "registry/eldoraui/fishy-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "safari-browser-demo",
       "title": "safari-browser-demo",
       "description": "Example showing a safari-browser-demo component.",
@@ -1593,6 +1642,111 @@
       "files": [
         {
           "path": "registry/example/holographic-card-demo-3.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "bauble-toggle-demo",
+      "title": "bauble-toggle-demo",
+      "description": "Example showing a bauble-toggle-demo component.",
+      "registryDependencies": [
+        "@eldoraui/bauble-toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/example/bauble-toggle-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "color-picker-demo",
+      "title": "color-picker-demo",
+      "description": "Default color picker demo.",
+      "registryDependencies": [
+        "@eldoraui/color-picker"
+      ],
+      "files": [
+        {
+          "path": "registry/example/color-picker-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "color-picker-demo-2",
+      "title": "color-picker-demo-2",
+      "description": "Hebrew RTL color picker demo.",
+      "registryDependencies": [
+        "@eldoraui/color-picker"
+      ],
+      "files": [
+        {
+          "path": "registry/example/color-picker-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "color-picker-demo-3",
+      "title": "color-picker-demo-3",
+      "description": "Japanese themed color picker demo.",
+      "registryDependencies": [
+        "@eldoraui/color-picker"
+      ],
+      "files": [
+        {
+          "path": "registry/example/color-picker-demo-3.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "fishy-button-demo",
+      "title": "fishy-button-demo",
+      "description": "Basic Fishy Button example.",
+      "registryDependencies": [
+        "@eldoraui/fishy-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/fishy-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "fishy-button-demo-2",
+      "title": "fishy-button-demo-2",
+      "description": "Fishy Button with custom fonts.",
+      "registryDependencies": [
+        "@eldoraui/fishy-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/fishy-button-demo-2.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "name": "fishy-button-demo-3",
+      "title": "fishy-button-demo-3",
+      "description": "Slow fish animation variant.",
+      "registryDependencies": [
+        "@eldoraui/fishy-button"
+      ],
+      "files": [
+        {
+          "path": "registry/example/fishy-button-demo-3.tsx",
           "type": "registry:example"
         }
       ],

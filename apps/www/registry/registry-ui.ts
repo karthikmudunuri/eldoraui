@@ -584,4 +584,46 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "bauble-toggle",
+    type: "registry:ui",
+    title: "bauble-toggle",
+    description:
+      "A playful bauble-style toggle switch with smooth SVG animation and a customizable initial state, exposing a callback when the value changes.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/bauble-toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "color-picker",
+    type: "registry:ui",
+    title: "color-picker",
+    description:
+      "Advanced color picker with multi-language support and theme customization.",
+    dependencies: ["@uiw/color-convert", "lucide-react"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "eldoraui/color-picker.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "fishy-button",
+    type: "registry:ui",
+    title: "fishy-button",
+    description: "Playful animated button with swimming fish effect on hover.",
+    dependencies: ["react"],
+    files: [
+      {
+        path: "eldoraui/fishy-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ]

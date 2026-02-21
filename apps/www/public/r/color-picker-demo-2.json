@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-picker-demo-2",
+  "title": "color-picker-demo-2",
+  "description": "Hebrew RTL color picker demo.",
+  "registryDependencies": [
+    "@eldoraui/color-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/example/color-picker-demo-2.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport ColorPicker from \"@/registry/eldoraui/color-picker\"\n\nexport default function ColorPickerDemo2() {\n  const [color2, setColor2] = useState(\"#7B24D2\")\n\n  const colorValueStyle = (color: string) => ({\n    color,\n    fontWeight: 600,\n    display: \"block\",\n    marginTop: \"4px\",\n  })\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div\n        style={{\n          width: \"372px\",\n          display: \"flex\",\n          flexDirection: \"column\",\n          alignItems: \"center\",\n          gap: \"16px\",\n          direction: \"rtl\",\n        }}\n      >\n        <div style={{ textAlign: \"center\" }}>\n          <span style={colorValueStyle(color2)}>{color2}</span>\n        </div>\n        <ColorPicker\n          value={color2}\n          onValueChange={setColor2}\n          isRTL={true}\n          showContrast={true}\n          hexLabel=\"הקס\"\n          rgbLabel=\"ארג׳יבי\"\n          hslLabel=\"האסאל\"\n          modeLabel=\"מצב\"\n          contrastLabel=\"ניגודיות\"\n          rLabel=\"אדום\"\n          gLabel=\"ירוק\"\n          bLabel=\"כחול\"\n          hLabel=\"גוון\"\n          sLabel=\"רוויה\"\n          lLabel=\"בהירות\"\n          floatingLabelFocusBorderColor=\"#fff\"\n          floatingLabelActiveTextColor={color2}\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

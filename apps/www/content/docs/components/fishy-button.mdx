@@ -1,0 +1,104 @@
+---
+title: Fishy Button
+date: 2026-02-21
+description: Playful animated button with swimming fish effect on hover.
+author: Northstrix
+published: true
+---
+
+<ComponentPreview name="fishy-button-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+```bash
+npx shadcn@latest add @eldoraui/fishy-button
+```
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+
+`components/eldoraui/fishy-button.tsx`
+
+<ComponentSource name="fishy-button" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Custom Font
+
+<ComponentPreview name="fishy-button-demo-2" />
+
+## Custom Fish Speed
+
+<ComponentPreview name="fishy-button-demo-3" />
+
+## Usage
+
+```tsx showLineNumbers
+import { FishyButton } from "@/components/eldoraui/fishy-button"
+```
+
+```tsx showLineNumbers
+<FishyButton
+  type="button"
+  className="button--1"
+  onClick={() => console.log("Ekhad button clicked")}
+>
+  Ekhad
+</FishyButton>
+```
+
+```tsx showLineNumbers
+<FishyButton
+  type="button"
+  className="button--2"
+  fontFamily="'Roboto Mono', monospace"
+  borderRadius="40px"
+  width="200px"
+  onClick={() => console.log("Roboto Mono clicked")}
+>
+  Two
+</FishyButton>
+```
+
+```tsx showLineNumbers
+<FishyButton
+  type="button"
+  className="button--3"
+  width="216px"
+  fishSpeed="6s"
+  fontFamily="'Griffy', cursive"
+  borderRadius="50px"
+  onClick={() => console.log("Slow fish clicked")}
+>
+  שלוש
+</FishyButton>
+```
+
+## Props
+
+| Prop         | Type                          | Default     | Description                          |
+|--------------|-------------------------------|-------------|--------------------------------------|
+| `children`   | `React.ReactNode`             | `-`         | Button content/text                  |
+| `onClick`    | `() => void`                  | `-`         | Click event handler                  |
+| `type`       | `"button" \| "submit" \| "reset"` | `"button"` | Button HTML type                   |
+| `className`  | `string`                      | `""`        | Additional Tailwind CSS classes      |
+| `fontFamily` | `string`                      | `-`         | Custom font family for button text   |
+| `borderRadius` | `string`                   | `"20px"`    | Border radius (Tailwind or CSS)      |
+| `width`      | `string`                      | `"140px"`   | Button width                         |
+| `height`     | `string`                      | `"53px"`    | Button height                        |
+| `fishSpeed`  | `string`                      | `"2.3s"`    | Fish swim animation duration         |
+
+## Credit
+
+> Originally published on [Namer UI](https://namer-ui.vercel.app/components/fishy-button)
+
+> Made from [深海なボタン](https://codepen.io/ash_creator/pen/GRGZYyV) by [あしざわ - Webクリエイター](https://codepen.io/ash_creator)

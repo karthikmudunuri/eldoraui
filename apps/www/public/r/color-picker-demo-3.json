@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-picker-demo-3",
+  "title": "color-picker-demo-3",
+  "description": "Japanese themed color picker demo.",
+  "registryDependencies": [
+    "@eldoraui/color-picker"
+  ],
+  "files": [
+    {
+      "path": "registry/example/color-picker-demo-3.tsx",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport ColorPicker from \"@/registry/eldoraui/color-picker\"\n\nexport default function ColorPickerDemo3() {\n  const [color7, setColor7] = useState(\"#D6001C\")\n\n  const colorValueStyle = (color: string) => ({\n    color,\n    fontWeight: 600,\n    display: \"block\",\n    marginTop: \"4px\",\n  })\n\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div\n        style={{\n          width: \"386px\",\n          display: \"flex\",\n          flexDirection: \"column\",\n          alignItems: \"center\",\n          gap: \"16px\",\n        }}\n      >\n        <div style={{ textAlign: \"center\" }}>\n          <span style={colorValueStyle(color7)}>{color7}</span>\n        </div>\n        <ColorPicker\n          value={color7}\n          onValueChange={setColor7}\n          containerBg=\"#0A0E17\"\n          containerBorderColor=\"#1F2832\"\n          containerRadius=\"12px\"\n          containerPadding=\"24px\"\n          enabledModes={[\"hex\", \"rgb\"]}\n          inputBg=\"#151C26\"\n          inputBorderColor=\"#2D3A4A\"\n          inputBorderWidth={1}\n          inputRadius={8}\n          inputTextColor=\"#F0F4F8\"\n          hexLabel=\"十六進数\"\n          rgbLabel=\"赤緑青\"\n          modeLabel=\"表示モード\"\n          rLabel=\"赤\"\n          gLabel=\"緑\"\n          bLabel=\"青\"\n          floatingLabelActiveTextColor=\"#E13535\"\n          floatingLabelFocusBorderColor=\"#E13535\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
