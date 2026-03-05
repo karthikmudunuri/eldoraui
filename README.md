@@ -36,7 +36,7 @@ Have questions, comments or feedback? [Join our discord](http://eldoraui.site/di
 ## Supported by Vercel
 
 <a href="https://vercel.com/oss">
-  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
 </a>
 
 ## Stats
