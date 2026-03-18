@@ -1,5 +1,5 @@
 # Instincts generated from https://github.com/karthikmudunuri/eldoraui
-# Generated: 2026-03-18T20:04:35.352Z
+# Generated: 2026-03-18T20:05:24.249Z
 # Version: 2.0
 
 ---
@@ -19,9 +19,9 @@ Use conventional commit format with prefixes: feat, fix, chore, docs
 
 ## Evidence
 
-- 148 commits analyzed
+- 162 commits analyzed
 - Detected conventional commit pattern
-- Examples: style: format blog posts with prettier, feat: add 10 blog posts to increase component library value
+- Examples: feat: add eldoraui ECC bundle (.claude/commands/add-blog-posts.md), style: format blog posts with prettier
 
 ---
 id: eldoraui-commit-length
@@ -40,8 +40,8 @@ Keep commit messages concise (under 50 characters)
 
 ## Evidence
 
-- Average commit message length: 41 chars
-- Based on 148 commits
+- Average commit message length: 43 chars
+- Based on 162 commits
 
 ---
 id: eldoraui-naming-files
@@ -144,8 +144,8 @@ Follow the feature-development workflow:
 ## Evidence
 
 - Workflow detected from commit patterns
-- Frequency: ~10x per month
-- Files: apps/www/components/sections/*, apps/www/components/*, apps/www/config/*
+- Frequency: ~16x per month
+- Files: apps/www/config/*, apps/www/content/docs/components/*, apps/www/registry/*
 
 ---
 id: eldoraui-workflow-add-new-component-with-demo-and-docs
@@ -161,20 +161,18 @@ source_repo: https://github.com/karthikmudunuri/eldoraui
 ## Action
 
 Follow the add-new-component-with-demo-and-docs workflow:
-1. Implement component in apps/www/registry/eldoraui/{component-name}.tsx
-2. Create demo(s) in apps/www/registry/example/{component-name}-demo.tsx
+1. Implement the new component in apps/www/registry/eldoraui/{component-name}.tsx
+2. Create demo(s) for the component in apps/www/registry/example/{component-name}-demo.tsx (and possibly numbered variants)
 3. Add documentation in apps/www/content/docs/components/{component-name}.mdx
-4. Update registry files: apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts, apps/www/registry/__index__.tsx
-5. Update apps/www/config/docs.ts to register the component
-6. Add or update JSON metadata in apps/www/public/r/{component-name}.json and related demo JSONs
-7. Update public registry files: apps/www/public/registry.json, apps/www/registry.json
-8. Update apps/www/public/llms.txt and apps/www/public/llms-full.txt
+4. Update registry files: apps/www/registry.json, apps/www/public/registry.json, apps/www/public/r/{component-name}.json, apps/www/public/r/{component-name}-demo.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts
+5. Update apps/www/config/docs.ts to register the new component
+6. Update apps/www/public/llms-full.txt and apps/www/public/llms.txt
 
 ## Evidence
 
 - Workflow detected from commit patterns
 - Frequency: ~2x per month
-- Files: apps/www/registry/eldoraui/*.tsx, apps/www/registry/example/*.tsx, apps/www/content/docs/components/*.mdx
+- Files: apps/www/registry/eldoraui/*.tsx, apps/www/registry/example/*-demo*.tsx, apps/www/content/docs/components/*.mdx
 
 ---
 id: eldoraui-workflow-add-blog-posts
@@ -190,8 +188,8 @@ source_repo: https://github.com/karthikmudunuri/eldoraui
 ## Action
 
 Follow the add-blog-posts workflow:
-1. Add new .mdx files to apps/www/content/blog/
-2. Optionally, format all blog posts with Prettier
+1. Create new .mdx files in apps/www/content/blog/
+2. Optionally, format blog posts with prettier
 
 ## Evidence
 
@@ -200,73 +198,71 @@ Follow the add-blog-posts workflow:
 - Files: apps/www/content/blog/*.mdx
 
 ---
-id: eldoraui-workflow-update-readme-or-project-metadata
-trigger: "when doing update readme or project metadata"
-confidence: 0.6
-domain: workflow
-source: repo-analysis
-source_repo: https://github.com/karthikmudunuri/eldoraui
----
-
-# Eldoraui Workflow Update Readme Or Project Metadata
-
-## Action
-
-Follow the update-readme-or-project-metadata workflow:
-1. Edit README.md
-2. Optionally edit LICENSE.md
-
-## Evidence
-
-- Workflow detected from commit patterns
-- Frequency: ~2x per month
-- Files: README.md, LICENSE.md
-
----
-id: eldoraui-workflow-update-or-fix-component-documentation
-trigger: "when doing update or fix component documentation"
-confidence: 0.6
-domain: workflow
-source: repo-analysis
-source_repo: https://github.com/karthikmudunuri/eldoraui
----
-
-# Eldoraui Workflow Update Or Fix Component Documentation
-
-## Action
-
-Follow the update-or-fix-component-documentation workflow:
-1. Edit one or more apps/www/content/docs/components/*.mdx files
-2. Optionally update apps/www/config/docs.ts
-
-## Evidence
-
-- Workflow detected from commit patterns
-- Frequency: ~2x per month
-- Files: apps/www/content/docs/components/*.mdx, apps/www/config/docs.ts
-
----
-id: eldoraui-workflow-update-dependencies-and-lockfile
-trigger: "when doing update dependencies and lockfile"
+id: eldoraui-workflow-update-readme-or-badges
+trigger: "when doing update readme or badges"
 confidence: 0.55
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Update Dependencies And Lockfile
+# Eldoraui Workflow Update Readme Or Badges
 
 ## Action
 
-Follow the update-dependencies-and-lockfile workflow:
-1. Edit apps/www/package.json
-2. Edit pnpm-lock.yaml
+Follow the update-readme-or-badges workflow:
+1. Edit README.md to add or update badges, support sections, or other documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: README.md
+
+---
+id: eldoraui-workflow-dependency-or-security-update
+trigger: "when doing dependency or security update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Dependency Or Security Update
+
+## Action
+
+Follow the dependency-or-security-update workflow:
+1. Update apps/www/package.json
+2. Update pnpm-lock.yaml
 
 ## Evidence
 
 - Workflow detected from commit patterns
 - Frequency: ~1x per month
 - Files: apps/www/package.json, pnpm-lock.yaml
+
+---
+id: eldoraui-workflow-add-legal-or-policy-docs
+trigger: "when doing add legal or policy docs"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Add Legal Or Policy Docs
+
+## Action
+
+Follow the add-legal-or-policy-docs workflow:
+1. Create or update .mdx files in apps/www/content/docs/ (privacy-policy.mdx, terms-and-conditions.mdx)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: apps/www/content/docs/privacy-policy.mdx, apps/www/content/docs/terms-and-conditions.mdx
 
 ---
 id: eldoraui-workflow-fix-build-or-bug
@@ -282,12 +278,11 @@ source_repo: https://github.com/karthikmudunuri/eldoraui
 ## Action
 
 Follow the fix-build-or-bug workflow:
-1. Edit the file(s) causing the error (often in apps/www/app/, apps/www/components/, or registry files)
-2. Commit with a message indicating a fix
+1. Edit relevant implementation files (e.g., .tsx, .ts, .mdx, config files) to fix the error
 
 ## Evidence
 
 - Workflow detected from commit patterns
 - Frequency: ~2x per month
-- Files: apps/www/app/**/*.tsx, apps/www/components/**/*.tsx, apps/www/registry/**/*.tsx
+- Files: apps/www/app/**/*.tsx, apps/www/components/**/*.tsx, apps/www/config/**/*.ts
 
