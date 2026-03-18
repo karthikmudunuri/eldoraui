@@ -35,12 +35,12 @@ Follow these commit message conventions based on 8 analyzed commits.
 
 - `feat`
 - `fix`
-- `chore`
 - `docs`
+- `chore`
 
 ### Message Guidelines
 
-- Average message length: ~52 characters
+- Average message length: ~53 characters
 - Keep first line concise and descriptive
 - Use imperative mood ("Add feature" not "Added feature")
 
@@ -174,9 +174,6 @@ Standard feature implementation workflow
 2. Add tests for feature
 3. Update documentation
 
-**Files typically involved**:
-- `.claude/commands/*`
-
 **Example commit sequence**:
 ```
 feat: add eldoraui ECC bundle (.codex/AGENTS.md)
@@ -186,28 +183,31 @@ feat: add eldoraui ECC bundle (.codex/agents/reviewer.toml)
 
 ### Add Eldoraui Ecc Bundle
 
-Adds or updates the Eldoraui ECC bundle, including commands, skills, agent configs, instincts, and documentation.
+Adds or updates the eldoraui ECC bundle, including commands, skills, agent configs, and documentation across multiple directories.
 
 **Frequency**: ~4 times per month
 
 **Steps**:
 1. Add or update .claude/commands/add-eldoraui-ecc-bundle.md
 2. Add or update .claude/commands/feature-development.md
-3. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-4. Add or update .codex/agents/docs-researcher.toml
-5. Add or update .codex/agents/reviewer.toml
-6. Add or update .codex/agents/explorer.toml
-7. Add or update .codex/AGENTS.md
-8. Add or update .codex/config.toml
-9. Add or update .claude/identity.json
-10. Add or update .agents/skills/eldoraui/agents/openai.yaml
-11. Add or update .agents/skills/eldoraui/SKILL.md
-12. Add or update .claude/skills/eldoraui/SKILL.md
-13. Add or update .claude/ecc-tools.json
+3. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
+4. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+5. Add or update .codex/agents/docs-researcher.toml
+6. Add or update .codex/agents/reviewer.toml
+7. Add or update .codex/agents/explorer.toml
+8. Add or update .codex/AGENTS.md
+9. Add or update .codex/config.toml
+10. Add or update .claude/identity.json
+11. Add or update .agents/skills/eldoraui/agents/openai.yaml
+12. Add or update .agents/skills/eldoraui/SKILL.md
+13. Add or update .claude/skills/eldoraui/SKILL.md
+14. Add or update .claude/ecc-tools.json
 
 **Files typically involved**:
 - `.claude/commands/add-eldoraui-ecc-bundle.md`
 - `.claude/commands/feature-development.md`
+- `.claude/commands/add-or-update-eldoraui-command-docs.md`
+- `.claude/commands/add-or-update-eldoraui-command-md.md`
 - `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
 - `.codex/agents/docs-researcher.toml`
 - `.codex/agents/reviewer.toml`
@@ -224,6 +224,7 @@ Adds or updates the Eldoraui ECC bundle, including commands, skills, agent confi
 ```
 Add or update .claude/commands/add-eldoraui-ecc-bundle.md
 Add or update .claude/commands/feature-development.md
+Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
 Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 Add or update .codex/agents/docs-researcher.toml
 Add or update .codex/agents/reviewer.toml
@@ -237,15 +238,14 @@ Add or update .claude/skills/eldoraui/SKILL.md
 Add or update .claude/ecc-tools.json
 ```
 
-### Add Or Update Eldoraui Command Docs
+### Update Eldoraui Command Docs
 
-Adds or updates documentation for Eldoraui-related commands.
+Updates or adds documentation for eldoraui commands, typically in the .claude/commands directory.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md
-2. Optionally add or update related command markdown files (e.g., add-or-update-eldoraui-command-md.md)
+1. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
 
 **Files typically involved**:
 - `.claude/commands/add-or-update-eldoraui-command-docs.md`
@@ -253,43 +253,44 @@ Adds or updates documentation for Eldoraui-related commands.
 
 **Example commit sequence**:
 ```
-Add or update .claude/commands/add-or-update-eldoraui-command-docs.md
-Optionally add or update related command markdown files (e.g., add-or-update-eldoraui-command-md.md)
+Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
 ```
 
-### Update Readme Or Project Metadata
+### Update Eldoraui Instincts
 
-Updates README badges or project metadata sections.
+Updates the eldoraui instincts YAML file for homunculus behavior.
 
-**Frequency**: ~2 times per month
+**Frequency**: ~3 times per month
 
 **Steps**:
-1. Add or update .claude/commands/update-readme-badge-or-section.md or .claude/commands/update-readme-or-project-metadata.md
+1. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 
 **Files typically involved**:
-- `.claude/commands/update-readme-badge-or-section.md`
-- `.claude/commands/update-readme-or-project-metadata.md`
+- `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
 
 **Example commit sequence**:
 ```
-Add or update .claude/commands/update-readme-badge-or-section.md or .claude/commands/update-readme-or-project-metadata.md
+Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 ```
 
-### Add New Component With Demo And Docs
+### Update Eldoraui Skill Md
 
-Adds a new component along with demo and documentation files.
+Adds or updates the SKILL.md documentation for eldoraui skills in both .agents and .claude directories.
 
-**Frequency**: ~2 times per month
+**Frequency**: ~3 times per month
 
 **Steps**:
-1. Add .claude/commands/add-new-component-with-demo-and-docs.md
+1. Add or update .agents/skills/eldoraui/SKILL.md
+2. Add or update .claude/skills/eldoraui/SKILL.md
 
 **Files typically involved**:
-- `.claude/commands/add-new-component-with-demo-and-docs.md`
+- `.agents/skills/eldoraui/SKILL.md`
+- `.claude/skills/eldoraui/SKILL.md`
 
 **Example commit sequence**:
 ```
-Add .claude/commands/add-new-component-with-demo-and-docs.md
+Add or update .agents/skills/eldoraui/SKILL.md
+Add or update .claude/skills/eldoraui/SKILL.md
 ```
 
 
