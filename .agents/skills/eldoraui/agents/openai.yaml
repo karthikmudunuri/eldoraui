@@ -1,0 +1,6 @@
+interface:
+  display_name: "Eldoraui"
+  short_description: "Repo-specific patterns and workflows for eldoraui"
+  default_prompt: "Use the eldoraui repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
