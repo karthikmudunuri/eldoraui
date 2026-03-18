@@ -31,11 +31,16 @@ The key insight is this: **the fewer stages you trigger, the faster the update**
 This is the single most impactful optimization you can make. The difference between animating `transform` and animating `top`/`left`/`width`/`height` is enormous.
 
 **Expensive (triggers layout):**
+
 ```css
 /* Avoid: Animating layout properties */
 @keyframes slideIn {
-  from { left: -100px; }
-  to { left: 0; }
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
 }
 
 .element {
@@ -44,11 +49,16 @@ This is the single most impactful optimization you can make. The difference betw
 ```
 
 **Performant (compositing only):**
+
 ```css
 /* Prefer: Animating transform */
 @keyframes slideIn {
-  from { transform: translateX(-100px); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .element {
@@ -82,7 +92,7 @@ function AnimatedCard({ isAnimating }: { isAnimating: boolean }) {
     >
       {/* content */}
     </div>
-  );
+  )
 }
 ```
 
@@ -99,20 +109,21 @@ Keep animation state isolated from the rest of your component tree:
 ```tsx
 // Bad: Animation state in parent causes children to re-render
 function Page() {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
-    const handler = () => setScrollProgress(window.scrollY / document.body.scrollHeight);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+    const handler = () =>
+      setScrollProgress(window.scrollY / document.body.scrollHeight)
+    window.addEventListener("scroll", handler)
+    return () => window.removeEventListener("scroll", handler)
+  }, [])
 
   return (
     <div>
       <ProgressBar progress={scrollProgress} />
       <ExpensiveContent /> {/* Re-renders on every scroll! */}
     </div>
-  );
+  )
 }
 
 // Good: Isolated animation component
@@ -122,7 +133,7 @@ function Page() {
       <ScrollProgress /> {/* Self-contained, no parent re-renders */}
       <ExpensiveContent />
     </div>
-  );
+  )
 }
 ```
 
@@ -134,26 +145,26 @@ For animations that update on every frame, bypass React's state system entirely:
 
 ```tsx
 function SmoothCounter({ target }: { target: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    let current = 0;
-    const step = target / 60; // Complete in ~1 second at 60fps
+    let current = 0
+    const step = target / 60 // Complete in ~1 second at 60fps
 
     function animate() {
-      current = Math.min(current + step, target);
+      current = Math.min(current + step, target)
       if (ref.current) {
-        ref.current.textContent = Math.round(current).toString();
+        ref.current.textContent = Math.round(current).toString()
       }
       if (current < target) {
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animate)
       }
     }
 
-    requestAnimationFrame(animate);
-  }, [target]);
+    requestAnimationFrame(animate)
+  }, [target])
 
-  return <span ref={ref}>0</span>;
+  return <span ref={ref}>0</span>
 }
 ```
 
@@ -165,26 +176,26 @@ When you need JavaScript-driven animations, always use `requestAnimationFrame` (
 
 ```tsx
 function useAnimationFrame(callback: (deltaTime: number) => void) {
-  const requestRef = useRef<number>();
-  const previousTimeRef = useRef<number>();
+  const requestRef = useRef<number>()
+  const previousTimeRef = useRef<number>()
 
   useEffect(() => {
     function animate(time: number) {
       if (previousTimeRef.current !== undefined) {
-        const deltaTime = time - previousTimeRef.current;
-        callback(deltaTime);
+        const deltaTime = time - previousTimeRef.current
+        callback(deltaTime)
       }
-      previousTimeRef.current = time;
-      requestRef.current = requestAnimationFrame(animate);
+      previousTimeRef.current = time
+      requestRef.current = requestAnimationFrame(animate)
     }
 
-    requestRef.current = requestAnimationFrame(animate);
+    requestRef.current = requestAnimationFrame(animate)
     return () => {
       if (requestRef.current) {
-        cancelAnimationFrame(requestRef.current);
+        cancelAnimationFrame(requestRef.current)
       }
-    };
-  }, [callback]);
+    }
+  }, [callback])
 }
 ```
 
@@ -199,29 +210,25 @@ Key considerations when using rAF:
 Not every animated component needs to load immediately. Components that are below the fold or triggered by user interaction can be lazy loaded to improve initial page performance:
 
 ```tsx
-import { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react"
 
 const ParticlesBackground = lazy(
   () => import("@/components/eldoraui/particles")
-);
-const CobeGlobe = lazy(
-  () => import("@/components/eldoraui/cobe-globe")
-);
+)
+const CobeGlobe = lazy(() => import("@/components/eldoraui/cobe-globe"))
 
 function LandingPage() {
   return (
     <div>
       <HeroSection /> {/* Loads immediately */}
-
       <Suspense fallback={<div className="h-96" />}>
         <ParticlesBackground /> {/* Loads when React is idle */}
       </Suspense>
-
       <Suspense fallback={<div className="h-96" />}>
         <CobeGlobe /> {/* Loads when React is idle */}
       </Suspense>
     </div>
-  );
+  )
 }
 ```
 
@@ -229,29 +236,25 @@ For components that should only animate when visible, combine lazy loading with 
 
 ```tsx
 function LazyAnimated({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+          setIsVisible(true)
+          observer.disconnect()
         }
       },
       { threshold: 0.1 }
-    );
+    )
 
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
 
-  return (
-    <div ref={ref}>
-      {isVisible ? children : <div className="h-48" />}
-    </div>
-  );
+  return <div ref={ref}>{isVisible ? children : <div className="h-48" />}</div>
 }
 ```
 
@@ -268,7 +271,7 @@ function AnimatedButton() {
     <button className="transform transition-all duration-200 hover:scale-105 active:scale-95">
       Click Me
     </button>
-  );
+  )
 }
 ```
 

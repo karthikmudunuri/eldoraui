@@ -55,26 +55,31 @@ The shift to component-based architectures (React, Vue, Svelte) has created a na
 Design engineers tend to gravitate toward tools that minimize friction between idea and implementation. Here is a representative toolkit:
 
 **Design and Prototyping:**
+
 - Figma for high-level layout exploration
 - The browser as the primary prototyping environment
 - Storybook for component development in isolation
 
 **Frontend Framework:**
+
 - Next.js or Remix for application structure
 - React for component authoring
 - TypeScript for type safety and better DX
 
 **Styling:**
+
 - Tailwind CSS for rapid iteration
 - CSS Modules or styled-components for scoped styles
 - CSS custom properties for theming
 
 **Animation:**
+
 - Framer Motion for declarative React animations
 - CSS animations for simple, performant transitions
 - GSAP for complex timeline-based sequences
 
 **Component Libraries:**
+
 - EldoraUI for pre-built animated components
 - Radix UI for accessible primitives
 - Shadcn UI for unstyled, customizable components
@@ -88,8 +93,8 @@ EldoraUI was built by and for design engineers. Every decision in the library re
 Most component libraries are deliberately unstyled or minimally styled, leaving all visual decisions to the consumer. EldoraUI takes a different approach. Components like `shimmer-button`, `animated-gradient-text`, and `sparkles-text` ship with carefully crafted visual defaults:
 
 ```tsx
-import { ShimmerButton } from "@/components/eldoraui/shimmer-button";
-import { AnimatedGradientText } from "@/components/eldoraui/animated-gradient-text";
+import { AnimatedGradientText } from "@/components/eldoraui/animated-gradient-text"
+import { ShimmerButton } from "@/components/eldoraui/shimmer-button"
 
 export function HeroSection() {
   return (
@@ -97,12 +102,10 @@ export function HeroSection() {
       <AnimatedGradientText>
         Introducing our latest feature
       </AnimatedGradientText>
-      <h1 className="text-5xl font-bold">
-        Ship faster, look better
-      </h1>
+      <h1 className="text-5xl font-bold">Ship faster, look better</h1>
       <ShimmerButton>Get Started</ShimmerButton>
     </div>
-  );
+  )
 }
 ```
 
@@ -113,20 +116,18 @@ This code produces a polished hero section in seconds, not hours. The shimmer ef
 In most libraries, animation is an afterthought, something you bolt on with a separate library. In EldoraUI, animation is integral. Components like `blur-fade`, `word-pull-up`, `letter-pullup`, and `staggered-fade-in` exist because design engineers know that how something appears is just as important as what appears:
 
 ```tsx
-import { BlurFade } from "@/components/eldoraui/blur-fade";
+import { BlurFade } from "@/components/eldoraui/blur-fade"
 
 export function FeatureList({ features }: { features: string[] }) {
   return (
     <div className="space-y-4">
       {features.map((feature, i) => (
         <BlurFade key={feature} delay={0.1 * i} inView>
-          <div className="p-4 rounded-lg border">
-            {feature}
-          </div>
+          <div className="rounded-lg border p-4">{feature}</div>
         </BlurFade>
       ))}
     </div>
-  );
+  )
 }
 ```
 
@@ -148,10 +149,10 @@ This model respects the design engineer's need for control. Pre-packaged npm lib
 Design engineering is about composition, combining smaller elements into cohesive experiences. EldoraUI components are designed to work together:
 
 ```tsx
-import { BentoGrid, BentoCard } from "@/components/eldoraui/bento-grid";
-import { Globe } from "@/components/eldoraui/globe";
-import { Particles } from "@/components/eldoraui/particles";
-import { NumberTicker } from "@/components/eldoraui/number-ticker";
+import { BentoCard, BentoGrid } from "@/components/eldoraui/bento-grid"
+import { Globe } from "@/components/eldoraui/globe"
+import { NumberTicker } from "@/components/eldoraui/number-ticker"
+import { Particles } from "@/components/eldoraui/particles"
 
 export function FeaturesSection() {
   return (
@@ -172,7 +173,7 @@ export function FeaturesSection() {
         background={<Particles />}
       />
     </BentoGrid>
-  );
+  )
 }
 ```
 

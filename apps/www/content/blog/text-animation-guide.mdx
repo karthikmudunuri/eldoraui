@@ -34,10 +34,7 @@ npx shadcn@latest add @eldoraui/blur-in-text
 ```tsx
 import { BlurIn } from "@/components/eldoraui/blur-in-text"
 
-<BlurIn
-  text="Welcome to the future"
-  className="text-5xl font-bold"
-/>
+;<BlurIn text="Welcome to the future" className="text-5xl font-bold" />
 ```
 
 **Best used for:** Hero headlines, page titles, modal headers. Any situation where a single piece of text needs to arrive with gravitas.
@@ -73,8 +70,8 @@ You can control the timing with two props:
 <FadeText
   text="Fine-tuned timing"
   direction="up"
-  staggerDelay={0.3}   // Delay between staggered animations (up/down)
-  wordDelay={0.1}      // Delay between word animations (in direction)
+  staggerDelay={0.3} // Delay between staggered animations (up/down)
+  wordDelay={0.1} // Delay between word animations (in direction)
 />
 ```
 
@@ -93,7 +90,7 @@ npx shadcn@latest add @eldoraui/word-pull-up-text
 ```tsx
 import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
 
-<WordPullUpText
+;<WordPullUpText
   text="Design engineering at its finest"
   className="text-4xl font-bold text-blue-600"
 />
@@ -114,9 +111,9 @@ npx shadcn@latest add @eldoraui/letter-pull-up-text
 ```tsx
 import { LetterPullUpText } from "@/components/eldoraui/letter-pull-up-text"
 
-<LetterPullUpText
+;<LetterPullUpText
   text="Pixel Perfect"
-  className="text-3xl font-mono text-blue-600"
+  className="font-mono text-3xl text-blue-600"
 />
 ```
 
@@ -137,7 +134,7 @@ npx shadcn@latest add @eldoraui/gradual-spacing-text
 ```tsx
 import { GradualSpacingText } from "@/components/eldoraui/gradual-spacing-text"
 
-<GradualSpacingText
+;<GradualSpacingText
   text="Loading complete"
   className="text-2xl font-semibold text-blue-600"
 />
@@ -158,7 +155,7 @@ npx shadcn@latest add @eldoraui/wavy-text
 ```tsx
 import { WavyText } from "@/components/eldoraui/wavy-text"
 
-<WavyText text="Hello World" className="text-4xl text-blue-600" />
+;<WavyText text="Hello World" className="text-4xl text-blue-600" />
 ```
 
 The wave propagates through the characters continuously, creating an engaging ambient animation. This works well for elements that need to maintain visual interest over time.
@@ -176,7 +173,7 @@ npx shadcn@latest add @eldoraui/seperate-away-text
 ```tsx
 import { SeparateAwayText } from "@/components/eldoraui/seperate-away-text"
 
-<SeparateAwayText
+;<SeparateAwayText
   textLeft="Break"
   textRight="Free"
   className="text-5xl font-bold text-blue-600"
@@ -198,7 +195,7 @@ npx shadcn@latest add @eldoraui/multi-direction-slide-text
 ```tsx
 import { MultiDirectionSlideText } from "@/components/eldoraui/multi-direction-slide-text"
 
-<MultiDirectionSlideText
+;<MultiDirectionSlideText
   textLeft="Design"
   textRight="Engineering"
   className="text-4xl font-bold text-blue-600"
@@ -218,7 +215,7 @@ npx shadcn@latest add @eldoraui/scale-letter-text
 ```tsx
 import ScaleLetterText from "@/components/eldoraui/scale-letter-text"
 
-<ScaleLetterText
+;<ScaleLetterText
   text="Hover over me"
   className="text-center text-4xl font-bold"
 />
@@ -272,7 +269,7 @@ export function SectionHeader() {
       <FadeText
         text="Forty-plus components, zero configuration, infinite possibilities"
         direction="up"
-        className="text-lg text-muted-foreground"
+        className="text-muted-foreground text-lg"
       />
     </div>
   )
@@ -283,17 +280,17 @@ This creates a three-layer hierarchy: the eyebrow label pulls up letter by lette
 
 ## Quick Reference
 
-| Component | Motion | Best For | Length |
-|-----------|--------|----------|--------|
-| BlurIn | Blur to sharp | Hero headlines | 3-10 words |
-| FadeText | Fade/slide per word | Subtitles, descriptions | 5-20 words |
-| WordPullUpText | Words rise up | Section headings | 3-8 words |
-| LetterPullUpText | Letters rise up | Short headlines | 1-4 words |
-| GradualSpacingText | Character reveal | Taglines, status text | 2-6 words |
-| WavyText | Continuous wave | Ambient accents | 1-4 words |
-| SeparateAwayText | Vertical split | Dramatic reveals | 2 words |
-| MultiDirectionSlideText | Horizontal slide-in | Two-part titles | 2 words |
-| ScaleLetterText | Hover scale 3D | Interactive headings | 2-5 words |
-| DockText | Dock magnification | Navigation, playful UI | 2-5 words |
+| Component               | Motion              | Best For                | Length     |
+| ----------------------- | ------------------- | ----------------------- | ---------- |
+| BlurIn                  | Blur to sharp       | Hero headlines          | 3-10 words |
+| FadeText                | Fade/slide per word | Subtitles, descriptions | 5-20 words |
+| WordPullUpText          | Words rise up       | Section headings        | 3-8 words  |
+| LetterPullUpText        | Letters rise up     | Short headlines         | 1-4 words  |
+| GradualSpacingText      | Character reveal    | Taglines, status text   | 2-6 words  |
+| WavyText                | Continuous wave     | Ambient accents         | 1-4 words  |
+| SeparateAwayText        | Vertical split      | Dramatic reveals        | 2 words    |
+| MultiDirectionSlideText | Horizontal slide-in | Two-part titles         | 2 words    |
+| ScaleLetterText         | Hover scale 3D      | Interactive headings    | 2-5 words  |
+| DockText                | Dock magnification  | Navigation, playful UI  | 2-5 words  |
 
 Every component in this guide is available at [eldoraui.site](https://eldoraui.site) with live previews and full documentation.

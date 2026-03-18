@@ -91,9 +91,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center gap-6 py-24">
       <h1 className="text-5xl font-bold">Ship faster, look better</h1>
-      <AnimatedShinyButton url="/docs">
-        Get Started
-      </AnimatedShinyButton>
+      <AnimatedShinyButton url="/docs">Get Started</AnimatedShinyButton>
     </section>
   )
 }
@@ -122,7 +120,7 @@ When you use a WordPullUpText component, you get animation timing that has alrea
 ```tsx
 import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
 
-<WordPullUpText
+;<WordPullUpText
   text="Design engineering at its finest"
   className="text-4xl font-bold text-blue-600"
 />

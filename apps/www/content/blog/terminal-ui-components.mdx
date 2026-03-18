@@ -31,7 +31,7 @@ EldoraUI's terminal component provides a realistic terminal window with customiz
 Here is a basic example:
 
 ```tsx
-import { Terminal } from "@/components/eldoraui/terminal";
+import { Terminal } from "@/components/eldoraui/terminal"
 
 export function BasicTerminal() {
   return (
@@ -45,7 +45,7 @@ export function BasicTerminal() {
         </span>
       </div>
     </Terminal>
-  );
+  )
 }
 ```
 
@@ -56,8 +56,8 @@ This gives you a clean terminal window with the standard macOS-style traffic lig
 Static terminal output is fine for documentation, but for landing pages and demos, animated typing brings the interface to life. You can combine the terminal component with EldoraUI's `typing-animation` component to simulate real-time command entry:
 
 ```tsx
-import { Terminal } from "@/components/eldoraui/terminal";
-import { TypingAnimation } from "@/components/eldoraui/typing-animation";
+import { Terminal } from "@/components/eldoraui/terminal"
+import { TypingAnimation } from "@/components/eldoraui/typing-animation"
 
 export function AnimatedTerminal() {
   return (
@@ -68,12 +68,12 @@ export function AnimatedTerminal() {
           <TypingAnimation
             text="npx eldoraui add shimmer-button"
             duration={80}
-            className="text-zinc-100 font-mono"
+            className="font-mono text-zinc-100"
           />
         </div>
       </div>
     </Terminal>
-  );
+  )
 }
 ```
 
@@ -84,42 +84,38 @@ The `duration` prop controls how fast each character appears. For landing pages,
 One of the most practical applications is creating documentation that shows command usage alongside output. Here is how you might document a CLI tool's commands:
 
 ```tsx
-import { Terminal } from "@/components/eldoraui/terminal";
+import { Terminal } from "@/components/eldoraui/terminal"
 
 export function CLIDocumentation() {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-semibold mb-2">Installation</h3>
+        <h3 className="mb-2 text-lg font-semibold">Installation</h3>
         <Terminal>
           <div className="space-y-1">
             <p className="text-green-400">$ npm install -g your-cli-tool</p>
-            <p className="text-zinc-400">
-              + your-cli-tool@2.1.0
-            </p>
-            <p className="text-zinc-400">
-              added 1 package in 1.4s
-            </p>
+            <p className="text-zinc-400">+ your-cli-tool@2.1.0</p>
+            <p className="text-zinc-400">added 1 package in 1.4s</p>
           </div>
         </Terminal>
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold mb-2">Initialize a Project</h3>
+        <h3 className="mb-2 text-lg font-semibold">Initialize a Project</h3>
         <Terminal>
           <div className="space-y-1">
             <p className="text-green-400">$ your-cli init my-project</p>
             <p className="text-blue-400">
               ? Select a template: (Use arrow keys)
             </p>
-            <p className="text-zinc-100">  Default starter</p>
+            <p className="text-zinc-100"> Default starter</p>
             <p className="text-cyan-400">{"> TypeScript starter"}</p>
-            <p className="text-zinc-100">  Minimal</p>
+            <p className="text-zinc-100"> Minimal</p>
           </div>
         </Terminal>
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -130,9 +126,9 @@ This pattern is particularly effective because it shows users exactly what they 
 EldoraUI's terminal component is built with Tailwind CSS, making customization straightforward. You can adjust the background color, border radius, padding, and text styles to match your brand:
 
 ```tsx
-<Terminal className="bg-zinc-950 border border-zinc-800 rounded-xl shadow-2xl">
+<Terminal className="rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl">
   <div className="p-2">
-    <span className="text-emerald-400 font-mono text-sm">
+    <span className="font-mono text-sm text-emerald-400">
       $ your-command --flag value
     </span>
   </div>
@@ -151,26 +147,27 @@ For a more branded look, consider these customization strategies:
 For the most impressive landing pages, you can create an interactive terminal that responds to user input. While the EldoraUI terminal component itself is presentational, you can combine it with React state to simulate interactivity:
 
 ```tsx
-import { useState } from "react";
-import { Terminal } from "@/components/eldoraui/terminal";
+import { useState } from "react"
+
+import { Terminal } from "@/components/eldoraui/terminal"
 
 const COMMANDS: Record<string, string> = {
   help: "Available commands: help, version, demo",
   version: "v2.1.0",
   demo: "Running demo... Done!",
-};
+}
 
 export function InteractiveTerminal() {
-  const [history, setHistory] = useState<Array<{ cmd: string; output: string }>>(
-    []
-  );
-  const [input, setInput] = useState("");
+  const [history, setHistory] = useState<
+    Array<{ cmd: string; output: string }>
+  >([])
+  const [input, setInput] = useState("")
 
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const output = COMMANDS[input] || `Command not found: ${input}`;
-    setHistory((prev) => [...prev, { cmd: input, output }]);
-    setInput("");
+    e.preventDefault()
+    const output = COMMANDS[input] || `Command not found: ${input}`
+    setHistory((prev) => [...prev, { cmd: input, output }])
+    setInput("")
   }
 
   return (
@@ -187,13 +184,13 @@ export function InteractiveTerminal() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="bg-transparent text-zinc-100 outline-none flex-1"
+            className="flex-1 bg-transparent text-zinc-100 outline-none"
             autoFocus
           />
         </form>
       </div>
     </Terminal>
-  );
+  )
 }
 ```
 
@@ -209,8 +206,8 @@ The terminal component works beautifully alongside other EldoraUI components. Co
 - **Terminal + Noise**: Add a subtle noise texture overlay for a retro CRT effect
 
 ```tsx
-import { BlurFade } from "@/components/eldoraui/blur-fade";
-import { Terminal } from "@/components/eldoraui/terminal";
+import { BlurFade } from "@/components/eldoraui/blur-fade"
+import { Terminal } from "@/components/eldoraui/terminal"
 
 export function HeroTerminal() {
   return (
@@ -223,7 +220,7 @@ export function HeroTerminal() {
         </div>
       </Terminal>
     </BlurFade>
-  );
+  )
 }
 ```
 

@@ -47,11 +47,11 @@ Start with a clean page layout. Create your landing page file:
 
 ```tsx
 // app/page.tsx
-import { HeroSection } from "@/components/landing/hero";
-import { FeaturesSection } from "@/components/landing/features";
-import { TestimonialsSection } from "@/components/landing/testimonials";
-import { CTASection } from "@/components/landing/cta";
-import { FooterSection } from "@/components/landing/footer";
+import { CTASection } from "@/components/landing/cta"
+import { FeaturesSection } from "@/components/landing/features"
+import { FooterSection } from "@/components/landing/footer"
+import { HeroSection } from "@/components/landing/hero"
+import { TestimonialsSection } from "@/components/landing/testimonials"
 
 export default function LandingPage() {
   return (
@@ -62,7 +62,7 @@ export default function LandingPage() {
       <CTASection />
       <FooterSection />
     </main>
-  );
+  )
 }
 ```
 
@@ -72,16 +72,17 @@ The hero is the first thing visitors see. We want animated text, a clear headlin
 
 ```tsx
 // components/landing/hero.tsx
-import { AnimatedGradientText } from "@/components/eldoraui/animated-gradient-text";
-import { ShimmerButton } from "@/components/eldoraui/shimmer-button";
-import { BlurFade } from "@/components/eldoraui/blur-fade";
-import { Particles } from "@/components/eldoraui/particles";
-import { TextAnimate } from "@/components/eldoraui/text-animate";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react"
+
+import { AnimatedGradientText } from "@/components/eldoraui/animated-gradient-text"
+import { BlurFade } from "@/components/eldoraui/blur-fade"
+import { Particles } from "@/components/eldoraui/particles"
+import { ShimmerButton } from "@/components/eldoraui/shimmer-button"
+import { TextAnimate } from "@/components/eldoraui/text-animate"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Background particles */}
       <Particles
         className="absolute inset-0"
@@ -90,14 +91,14 @@ export function HeroSection() {
         staticity={30}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         {/* Announcement badge */}
         <BlurFade delay={0.1} inView>
-          <div className="flex justify-center mb-6">
+          <div className="mb-6 flex justify-center">
             <AnimatedGradientText>
               <span className="text-sm">
                 Announcing our Series A
-                <ChevronRight className="inline ml-1 h-3 w-3" />
+                <ChevronRight className="ml-1 inline h-3 w-3" />
               </span>
             </AnimatedGradientText>
           </div>
@@ -108,34 +109,34 @@ export function HeroSection() {
           <TextAnimate
             text="The Modern Platform for Building SaaS"
             type="pullUp"
-            className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+            className="text-5xl font-bold tracking-tight text-zinc-900 md:text-7xl dark:text-zinc-50"
           />
         </BlurFade>
 
         {/* Subtitle */}
         <BlurFade delay={0.4} inView>
-          <p className="mt-6 text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Ship faster with built-in authentication, billing, analytics,
-            and everything else you need to launch your product.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-600 md:text-xl dark:text-zinc-400">
+            Ship faster with built-in authentication, billing, analytics, and
+            everything else you need to launch your product.
           </p>
         </BlurFade>
 
         {/* CTA buttons */}
         <BlurFade delay={0.6} inView>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <ShimmerButton className="px-8 py-3">
               <span className="text-sm font-medium text-white">
                 Start Building Free
               </span>
             </ShimmerButton>
-            <button className="px-8 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
+            <button className="rounded-lg border border-zinc-200 px-8 py-3 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900">
               View Documentation
             </button>
           </div>
         </BlurFade>
       </div>
     </section>
-  );
+  )
 }
 ```
 
@@ -147,17 +148,11 @@ Bento grids have become the standard for showcasing features. They let you vary 
 
 ```tsx
 // components/landing/features.tsx
-import { BentoGrid, BentoCard } from "@/components/eldoraui/bento-grid";
-import { BlurFade } from "@/components/eldoraui/blur-fade";
-import { NumberTicker } from "@/components/eldoraui/number-ticker";
-import {
-  Zap,
-  Shield,
-  BarChart3,
-  Users,
-  Globe,
-  Code,
-} from "lucide-react";
+import { BarChart3, Code, Globe, Shield, Users, Zap } from "lucide-react"
+
+import { BentoCard, BentoGrid } from "@/components/eldoraui/bento-grid"
+import { BlurFade } from "@/components/eldoraui/blur-fade"
+import { NumberTicker } from "@/components/eldoraui/number-ticker"
 
 const features = [
   {
@@ -169,7 +164,8 @@ const features = [
   {
     Icon: Shield,
     name: "Secure by Default",
-    description: "SOC 2 compliant with built-in encryption at rest and in transit.",
+    description:
+      "SOC 2 compliant with built-in encryption at rest and in transit.",
     className: "col-span-3 md:col-span-2",
   },
   {
@@ -184,20 +180,20 @@ const features = [
     description: "Built-in roles, permissions, and audit logs.",
     className: "col-span-3 md:col-span-1",
   },
-];
+]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
         <BlurFade delay={0.1} inView>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold text-zinc-900 md:text-5xl dark:text-zinc-50">
               Everything you need to ship
             </h2>
             <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-              Stop stitching together dozens of services.
-              One platform, everything included.
+              Stop stitching together dozens of services. One platform,
+              everything included.
             </p>
           </div>
         </BlurFade>
@@ -219,7 +215,7 @@ export function FeaturesSection() {
 
         {/* Stats row */}
         <BlurFade delay={0.6} inView>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="mt-16 grid grid-cols-2 gap-8 text-center md:grid-cols-4">
             <div>
               <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
                 <NumberTicker value={10000} />+
@@ -234,7 +230,8 @@ export function FeaturesSection() {
             </div>
             <div>
               <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
-                <NumberTicker value={50} />ms
+                <NumberTicker value={50} />
+                ms
               </div>
               <p className="mt-1 text-sm text-zinc-500">Avg Response</p>
             </div>
@@ -248,7 +245,7 @@ export function FeaturesSection() {
         </BlurFade>
       </div>
     </section>
-  );
+  )
 }
 ```
 
@@ -260,8 +257,8 @@ Social proof is critical for SaaS conversions. We will use EldoraUI's `AnimatedL
 
 ```tsx
 // components/landing/testimonials.tsx
-import { AnimatedList } from "@/components/eldoraui/animated-list";
-import { BlurFade } from "@/components/eldoraui/blur-fade";
+import { AnimatedList } from "@/components/eldoraui/animated-list"
+import { BlurFade } from "@/components/eldoraui/blur-fade"
 
 const testimonials = [
   {
@@ -288,25 +285,25 @@ const testimonials = [
     text: "Best developer experience I have seen in 15 years of building SaaS products.",
     avatar: "/avatars/james.jpg",
   },
-];
+]
 
 function TestimonialCard({
   name,
   role,
   text,
 }: {
-  name: string;
-  role: string;
-  text: string;
-  avatar: string;
+  name: string
+  role: string
+  text: string
+  avatar: string
 }) {
   return (
-    <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
-      <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
+    <div className="rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+      <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         &ldquo;{text}&rdquo;
       </p>
       <div className="mt-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500" />
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500" />
         <div>
           <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
             {name}
@@ -315,18 +312,18 @@ function TestimonialCard({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-zinc-50 px-6 py-24 dark:bg-zinc-900/50">
+      <div className="mx-auto max-w-4xl">
         <BlurFade delay={0.1} inView>
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-zinc-900 dark:text-zinc-50 mb-4">
+          <h2 className="mb-4 text-center text-3xl font-bold text-zinc-900 md:text-5xl dark:text-zinc-50">
             Loved by developers
           </h2>
-          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-16">
+          <p className="mb-16 text-center text-zinc-600 dark:text-zinc-400">
             Join thousands of teams building with our platform.
           </p>
         </BlurFade>
@@ -340,12 +337,12 @@ export function TestimonialsSection() {
             </AnimatedList>
 
             {/* Fade overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-50 dark:from-zinc-900/50 to-transparent pointer-events-none" />
+            <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-24 bg-gradient-to-t from-zinc-50 to-transparent dark:from-zinc-900/50" />
           </div>
         </BlurFade>
       </div>
     </section>
-  );
+  )
 }
 ```
 
@@ -357,31 +354,31 @@ The CTA section should be visually distinct and compelling. We will use a `Pulsa
 
 ```tsx
 // components/landing/cta.tsx
-import { PulsatingButton } from "@/components/eldoraui/pulsating-button";
-import { BlurFade } from "@/components/eldoraui/blur-fade";
+import { BlurFade } from "@/components/eldoraui/blur-fade"
+import { PulsatingButton } from "@/components/eldoraui/pulsating-button"
 
 export function CTASection() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="px-6 py-24">
+      <div className="mx-auto max-w-3xl text-center">
         <BlurFade delay={0.1} inView>
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-3xl font-bold text-zinc-900 md:text-5xl dark:text-zinc-50">
             Ready to ship your next big idea?
           </h2>
           <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-            Start building for free. No credit card required.
-            Scale when you are ready.
+            Start building for free. No credit card required. Scale when you are
+            ready.
           </p>
         </BlurFade>
 
         <BlurFade delay={0.3} inView>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <PulsatingButton className="px-10 py-4 text-base">
               Get Started Free
             </PulsatingButton>
             <a
               href="#"
-              className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
             >
               Talk to Sales →
             </a>
@@ -390,13 +387,12 @@ export function CTASection() {
 
         <BlurFade delay={0.5} inView>
           <p className="mt-6 text-xs text-zinc-400">
-            Free tier includes 10,000 API calls/month.
-            No credit card required.
+            Free tier includes 10,000 API calls/month. No credit card required.
           </p>
         </BlurFade>
       </div>
     </section>
-  );
+  )
 }
 ```
 
@@ -408,61 +404,154 @@ For a modern touch, we will use EldoraUI's dock component for the footer's main 
 
 ```tsx
 // components/landing/footer.tsx
-import { Dock, DockIcon } from "@/components/eldoraui/dock";
-import {
-  Github,
-  Twitter,
-  Mail,
-  FileText,
-  BookOpen,
-} from "lucide-react";
+import { BookOpen, FileText, Github, Mail, Twitter } from "lucide-react"
+
+import { Dock, DockIcon } from "@/components/eldoraui/dock"
 
 export function FooterSection() {
   return (
-    <footer className="py-16 px-6 border-t border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-6xl mx-auto">
+    <footer className="border-t border-zinc-200 px-6 py-16 dark:border-zinc-800">
+      <div className="mx-auto max-w-6xl">
         {/* Footer links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+            <h4 className="mb-4 font-semibold text-zinc-900 dark:text-zinc-100">
               Product
             </h4>
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Features</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Pricing</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Changelog</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Roadmap</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Changelog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Roadmap
+                </a>
+              </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+            <h4 className="mb-4 font-semibold text-zinc-900 dark:text-zinc-100">
               Resources
             </h4>
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Documentation</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">API Reference</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Guides</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Blog</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  API Reference
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+            <h4 className="mb-4 font-semibold text-zinc-900 dark:text-zinc-100">
               Company
             </h4>
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">About</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Careers</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Contact</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+            <h4 className="mb-4 font-semibold text-zinc-900 dark:text-zinc-100">
               Legal
             </h4>
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Privacy</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Terms</a></li>
-              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Security</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Terms
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-zinc-900 dark:hover:text-zinc-100"
+                >
+                  Security
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -502,7 +591,7 @@ export function FooterSection() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 ```
 
@@ -514,11 +603,11 @@ With all five sections complete, your landing page file simply composes them tog
 
 ```tsx
 // app/page.tsx
-import { HeroSection } from "@/components/landing/hero";
-import { FeaturesSection } from "@/components/landing/features";
-import { TestimonialsSection } from "@/components/landing/testimonials";
-import { CTASection } from "@/components/landing/cta";
-import { FooterSection } from "@/components/landing/footer";
+import { CTASection } from "@/components/landing/cta"
+import { FeaturesSection } from "@/components/landing/features"
+import { FooterSection } from "@/components/landing/footer"
+import { HeroSection } from "@/components/landing/hero"
+import { TestimonialsSection } from "@/components/landing/testimonials"
 
 export default function LandingPage() {
   return (
@@ -529,7 +618,7 @@ export default function LandingPage() {
       <CTASection />
       <FooterSection />
     </main>
-  );
+  )
 }
 ```
 

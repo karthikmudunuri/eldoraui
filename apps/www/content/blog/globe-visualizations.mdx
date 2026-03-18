@@ -123,9 +123,9 @@ The Cobe component exposes extensive visual controls. Here is a breakdown of eve
 ```tsx
 <Cobe
   variant="default"
-  baseColor="#1e293b"     // Globe land mass color
-  markerColor="#3b82f6"   // Default marker dot color
-  glowColor="#3b82f6"     // Atmospheric glow color
+  baseColor="#1e293b" // Globe land mass color
+  markerColor="#3b82f6" // Default marker dot color
+  glowColor="#3b82f6" // Atmospheric glow color
 />
 ```
 
@@ -149,9 +149,9 @@ The `glowColor` creates an atmospheric halo around the globe. Matching it to you
 ```tsx
 <Cobe
   variant="default"
-  diffuse={3}             // Diffuse light intensity
-  dark={1.1}              // Dark mode intensity
-  mapBrightness={1.8}     // Map brightness multiplier
+  diffuse={3} // Diffuse light intensity
+  dark={1.1} // Dark mode intensity
+  mapBrightness={1.8} // Map brightness multiplier
   mapBaseBrightness={0.05} // Base map brightness
 />
 ```
@@ -182,12 +182,12 @@ The `mapSamples` prop controls how many sample points are used to render the map
 
 ```tsx
 <Cobe
-  phi={0}        // Horizontal rotation angle
-  theta={0.2}    // Vertical tilt angle
-  scale={1.0}    // Globe size
-  offsetX={0}    // Horizontal position offset
-  offsetY={0}    // Vertical position offset
-  opacity={0.7}  // Globe opacity
+  phi={0} // Horizontal rotation angle
+  theta={0.2} // Vertical tilt angle
+  scale={1.0} // Globe size
+  offsetX={0} // Horizontal position offset
+  offsetY={0} // Vertical position offset
+  opacity={0.7} // Globe opacity
 />
 ```
 
@@ -211,8 +211,8 @@ The `phi` and `theta` props control the initial viewing angle. Use these to show
 Place the globe behind text content for a dramatic hero section:
 
 ```tsx
-import { Cobe } from "@/components/eldoraui/cobe-globe"
 import { BlurIn } from "@/components/eldoraui/blur-in-text"
+import { Cobe } from "@/components/eldoraui/cobe-globe"
 
 export function GlobeHero() {
   return (
@@ -284,7 +284,7 @@ import { Cobe } from "@/components/eldoraui/cobe-globe"
 export function GlobalMetricsWidget() {
   return (
     <div className="rounded-lg border p-4">
-      <h3 className="mb-2 text-sm font-medium text-muted-foreground">
+      <h3 className="text-muted-foreground mb-2 text-sm font-medium">
         Global Traffic
       </h3>
       <div className="flex items-center gap-4">
@@ -297,7 +297,7 @@ export function GlobalMetricsWidget() {
         />
         <div>
           <p className="text-2xl font-bold">2.4M</p>
-          <p className="text-sm text-muted-foreground">requests / day</p>
+          <p className="text-muted-foreground text-sm">requests / day</p>
         </div>
       </div>
     </div>
@@ -319,8 +319,11 @@ The globe requires a canvas element and WebGL context, which do not exist on the
 import dynamic from "next/dynamic"
 
 const Cobe = dynamic(
-  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
-  { ssr: false, loading: () => <div className="h-[600px] w-full bg-muted rounded-full" /> }
+  () => import("@/components/eldoraui/cobe-globe").then((mod) => mod.Cobe),
+  {
+    ssr: false,
+    loading: () => <div className="bg-muted h-[600px] w-full rounded-full" />,
+  }
 )
 ```
 
@@ -331,11 +334,11 @@ The `loading` prop provides a placeholder while the component loads client-side.
 If your globe is below the fold, lazy-load it to avoid blocking initial page render:
 
 ```tsx
-import { useInView } from "react-intersection-observer"
 import dynamic from "next/dynamic"
+import { useInView } from "react-intersection-observer"
 
 const Cobe = dynamic(
-  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
+  () => import("@/components/eldoraui/cobe-globe").then((mod) => mod.Cobe),
   { ssr: false }
 )
 
@@ -364,6 +367,7 @@ WebGL performance varies significantly across mobile devices. Consider these str
 "use client"
 
 import { useEffect, useState } from "react"
+
 import { Cobe } from "@/components/eldoraui/cobe-globe"
 
 export function ResponsiveGlobe() {

@@ -29,7 +29,7 @@ npx shadcn@latest add @eldoraui/card-flip-hover
 ```tsx
 import { CardFlipHover } from "@/components/eldoraui/card-flip-hover"
 
-<CardFlipHover imageUrl="https://example.com/product-screenshot.jpg" />
+;<CardFlipHover imageUrl="https://example.com/product-screenshot.jpg" />
 ```
 
 That single line gives you a card with a 3D flip animation on hover. The image displays on both sides of the card by default.
@@ -87,7 +87,7 @@ npx shadcn@latest add @eldoraui/grid
 ```tsx
 import { Grid } from "@/components/eldoraui/grid"
 
-<Grid columns={3} rows={2} height="h-48" showPlusIcons={true} />
+;<Grid columns={3} rows={2} height="h-48" showPlusIcons={true} />
 ```
 
 This creates a 3x2 grid with decorative plus signs at the corners and intersections. The plus icons add a technical, blueprint-like aesthetic that works well for developer tools and SaaS products.
@@ -102,12 +102,14 @@ import { Grid } from "@/components/eldoraui/grid"
 const features = [
   {
     title: "Lightning Fast",
-    description: "Components render in under 16ms for buttery smooth 60fps animations.",
+    description:
+      "Components render in under 16ms for buttery smooth 60fps animations.",
     icon: "zap",
   },
   {
     title: "Fully Typed",
-    description: "Complete TypeScript support with exported types for every component.",
+    description:
+      "Complete TypeScript support with exported types for every component.",
     icon: "code",
   },
   {
@@ -122,7 +124,8 @@ const features = [
   },
   {
     title: "Dark Mode",
-    description: "Every component supports light and dark themes automatically.",
+    description:
+      "Every component supports light and dark themes automatically.",
     icon: "moon",
   },
   {
@@ -138,12 +141,10 @@ export function FeatureGrid() {
       {features.map((feature, index) => (
         <div
           key={index}
-          className="flex flex-col gap-3 p-8 transition-colors hover:bg-muted/50"
+          className="hover:bg-muted/50 flex flex-col gap-3 p-8 transition-colors"
         >
           <h3 className="text-lg font-semibold">{feature.title}</h3>
-          <p className="text-sm text-muted-foreground">
-            {feature.description}
-          </p>
+          <p className="text-muted-foreground text-sm">{feature.description}</p>
         </div>
       ))}
     </Grid>
@@ -162,26 +163,32 @@ export function AsymmetricLayout() {
       <Grid columns={2} rows={1} height="h-64" showPlusIcons={true}>
         <div className="p-8">
           <h2 className="text-2xl font-bold">Primary Feature</h2>
-          <p className="mt-2 text-muted-foreground">
+          <p className="text-muted-foreground mt-2">
             The main thing you want users to see first.
           </p>
         </div>
-        <div className="p-8 bg-muted/30">
+        <div className="bg-muted/30 p-8">
           <img src="/feature-image.png" alt="Feature" className="rounded" />
         </div>
       </Grid>
       <Grid columns={3} rows={1} height="h-48" showPlusIcons={false}>
         <div className="p-6">
           <h3 className="font-semibold">Secondary A</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Supporting detail</p>
+          <p className="text-muted-foreground mt-1 text-sm">
+            Supporting detail
+          </p>
         </div>
         <div className="p-6">
           <h3 className="font-semibold">Secondary B</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Supporting detail</p>
+          <p className="text-muted-foreground mt-1 text-sm">
+            Supporting detail
+          </p>
         </div>
         <div className="p-6">
           <h3 className="font-semibold">Secondary C</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Supporting detail</p>
+          <p className="text-muted-foreground mt-1 text-sm">
+            Supporting detail
+          </p>
         </div>
       </Grid>
     </div>
@@ -196,9 +203,9 @@ The first row uses a 2-column grid with taller cells for the primary feature. Th
 Cards become even more engaging when paired with EldoraUI's text animation components. Here is a pattern that uses animated section headers with an interactive card grid:
 
 ```tsx
+import { FadeText } from "@/components/eldoraui/fade-text"
 import { Grid } from "@/components/eldoraui/grid"
 import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
-import { FadeText } from "@/components/eldoraui/fade-text"
 
 export function AnimatedFeatureSection() {
   return (
@@ -211,7 +218,7 @@ export function AnimatedFeatureSection() {
         <FadeText
           text="Every component is crafted with motion, polish, and attention to detail"
           direction="up"
-          className="max-w-xl text-center text-muted-foreground"
+          className="text-muted-foreground max-w-xl text-center"
         />
       </div>
       <Grid columns={9} rows={2} height="h-24" showPlusIcons={true} />
@@ -255,9 +262,9 @@ Cards often contain images or dynamic content. A card that flips to reveal a loa
 Here is a complete example combining multiple card patterns into a cohesive section:
 
 ```tsx
-import { Grid } from "@/components/eldoraui/grid"
-import { CardFlipHover } from "@/components/eldoraui/card-flip-hover"
 import { BlurIn } from "@/components/eldoraui/blur-in-text"
+import { CardFlipHover } from "@/components/eldoraui/card-flip-hover"
+import { Grid } from "@/components/eldoraui/grid"
 
 export function ShowcaseSection() {
   const projects = [

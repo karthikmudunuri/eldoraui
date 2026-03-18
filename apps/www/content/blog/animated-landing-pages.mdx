@@ -34,9 +34,9 @@ npx shadcn@latest add @eldoraui/cobe-globe
 The hero section is where first impressions are made. We want the headline to animate in with weight and presence, the subtitle to follow with a softer reveal, and the call-to-action to draw attention with a shimmer effect.
 
 ```tsx
+import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
 import { BlurIn } from "@/components/eldoraui/blur-in-text"
 import { FadeText } from "@/components/eldoraui/fade-text"
-import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
 
 export function HeroSection() {
   return (
@@ -48,12 +48,10 @@ export function HeroSection() {
       <FadeText
         text="Animated React components for design engineers who refuse to ship boring UIs"
         direction="up"
-        className="max-w-2xl text-center text-lg text-muted-foreground md:text-xl"
+        className="text-muted-foreground max-w-2xl text-center text-lg md:text-xl"
       />
       <div className="flex gap-4 pt-4">
-        <AnimatedShinyButton url="/docs">
-          Get Started
-        </AnimatedShinyButton>
+        <AnimatedShinyButton url="/docs">Get Started</AnimatedShinyButton>
       </div>
     </section>
   )
@@ -68,11 +66,7 @@ One principle that separates amateur animation from professional animation is st
 
 ```tsx
 <div className="animate-delay-200">
-  <FadeText
-    text="Your subtitle text"
-    direction="up"
-    staggerDelay={0.15}
-  />
+  <FadeText text="Your subtitle text" direction="up" staggerDelay={0.15} />
 </div>
 ```
 
@@ -97,15 +91,15 @@ export function FeaturesSection() {
         <div className="flex flex-col gap-4 p-8">
           <h3 className="text-xl font-semibold">Copy & Paste</h3>
           <p className="text-muted-foreground">
-            Every component is source code you own. No runtime dependencies,
-            no version conflicts.
+            Every component is source code you own. No runtime dependencies, no
+            version conflicts.
           </p>
         </div>
         <div className="flex flex-col gap-4 p-8">
           <h3 className="text-xl font-semibold">40+ Components</h3>
           <p className="text-muted-foreground">
-            From text animations to 3D globes, device mockups to
-            background effects.
+            From text animations to 3D globes, device mockups to background
+            effects.
           </p>
         </div>
         <div className="flex flex-col gap-4 p-8">
@@ -169,7 +163,8 @@ const testimonials = [
     author: "Engineering Lead, Series B Startup",
   },
   {
-    quote: "The animation quality is on par with what our motion designer produces.",
+    quote:
+      "The animation quality is on par with what our motion designer produces.",
     author: "Design Engineer, Fortune 500",
   },
   {
@@ -183,14 +178,17 @@ export function TestimonialsSection() {
     <section className="px-4 py-24">
       <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
         {testimonials.map((item, index) => (
-          <div key={index} className="flex flex-col gap-4 rounded-lg border p-6">
+          <div
+            key={index}
+            className="flex flex-col gap-4 rounded-lg border p-6"
+          >
             <FadeText
               text={item.quote}
               direction="in"
               wordDelay={0.05}
               className="text-lg italic"
             />
-            <p className="text-sm text-muted-foreground">{item.author}</p>
+            <p className="text-muted-foreground text-sm">{item.author}</p>
           </div>
         ))}
       </div>
@@ -206,8 +204,8 @@ Using `direction="in"` with a smaller `wordDelay` creates a rapid word-by-word r
 Close the page with a strong call-to-action. Combine BlurIn for the headline with a shimmer button for maximum conversion potential:
 
 ```tsx
-import { BlurIn } from "@/components/eldoraui/blur-in-text"
 import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
 
 export function CTASection() {
   return (
@@ -238,7 +236,7 @@ Animated landing pages can cause performance issues if you are not careful. Here
 import dynamic from "next/dynamic"
 
 const Cobe = dynamic(
-  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
+  () => import("@/components/eldoraui/cobe-globe").then((mod) => mod.Cobe),
   { ssr: false }
 )
 ```

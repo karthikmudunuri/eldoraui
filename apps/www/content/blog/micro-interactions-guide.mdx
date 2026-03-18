@@ -33,15 +33,15 @@ The ripple effect, popularized by Material Design, creates a visual echo at the 
 EldoraUI's `ripple` component adds this effect to any clickable element:
 
 ```tsx
-import { Ripple } from "@/components/eldoraui/ripple";
+import { Ripple } from "@/components/eldoraui/ripple"
 
 export function RippleDemo() {
   return (
-    <div className="relative overflow-hidden rounded-lg bg-zinc-900 p-12 flex items-center justify-center">
-      <p className="text-zinc-400 text-sm z-10">Click anywhere in this area</p>
+    <div className="relative flex items-center justify-center overflow-hidden rounded-lg bg-zinc-900 p-12">
+      <p className="z-10 text-sm text-zinc-400">Click anywhere in this area</p>
       <Ripple />
     </div>
-  );
+  )
 }
 ```
 
@@ -59,19 +59,15 @@ Keep the ripple subtle. A low-opacity ripple that fades quickly feels natural. A
 When you need a button to draw attention without being obnoxious, a gentle pulse animation is ideal. It creates a breathing rhythm that signals interactivity:
 
 ```tsx
-import { PulsatingButton } from "@/components/eldoraui/pulsating-button";
+import { PulsatingButton } from "@/components/eldoraui/pulsating-button"
 
 export function CTAExample() {
   return (
     <div className="flex flex-col items-center gap-4">
-      <p className="text-zinc-600 dark:text-zinc-400">
-        Ready to get started?
-      </p>
-      <PulsatingButton>
-        Start Free Trial
-      </PulsatingButton>
+      <p className="text-zinc-600 dark:text-zinc-400">Ready to get started?</p>
+      <PulsatingButton>Start Free Trial</PulsatingButton>
     </div>
-  );
+  )
 }
 ```
 
@@ -89,7 +85,7 @@ Use this pattern sparingly. One pulsating element per viewport is the maximum. I
 Static numbers are boring. Numbers that count up from zero are captivating. The `NumberTicker` component transforms any numeric display into a dynamic reveal:
 
 ```tsx
-import { NumberTicker } from "@/components/eldoraui/number-ticker";
+import { NumberTicker } from "@/components/eldoraui/number-ticker"
 
 export function StatsSection() {
   return (
@@ -98,23 +94,23 @@ export function StatsSection() {
         <div className="text-5xl font-bold">
           <NumberTicker value={2847} />
         </div>
-        <p className="text-sm text-zinc-500 mt-2">Active Users</p>
+        <p className="mt-2 text-sm text-zinc-500">Active Users</p>
       </div>
       <div>
         <div className="text-5xl font-bold">
           <NumberTicker value={99.9} decimalPlaces={1} />
           <span>%</span>
         </div>
-        <p className="text-sm text-zinc-500 mt-2">Uptime</p>
+        <p className="mt-2 text-sm text-zinc-500">Uptime</p>
       </div>
       <div>
         <div className="text-5xl font-bold">
           $<NumberTicker value={1.2} decimalPlaces={1} />M
         </div>
-        <p className="text-sm text-zinc-500 mt-2">Revenue Processed</p>
+        <p className="mt-2 text-sm text-zinc-500">Revenue Processed</p>
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -132,7 +128,7 @@ Pair the number ticker with an Intersection Observer (EldoraUI's `blur-fade` wit
 Sometimes you need to draw attention to a specific word, label, or element. The `SparklesText` component adds a shimmering particle effect that makes text feel special:
 
 ```tsx
-import { SparklesText } from "@/components/eldoraui/sparkles-text";
+import { SparklesText } from "@/components/eldoraui/sparkles-text"
 
 export function PricingHighlight() {
   return (
@@ -140,11 +136,11 @@ export function PricingHighlight() {
       <h2 className="text-3xl font-bold">
         Our most <SparklesText text="popular" /> plan
       </h2>
-      <p className="text-zinc-500 mt-2">
+      <p className="mt-2 text-zinc-500">
         Everything you need to grow your business.
       </p>
     </div>
-  );
+  )
 }
 ```
 
@@ -162,12 +158,12 @@ A word of caution: sparkles are visually loud. Use them on one element per secti
 Badges communicate status, but static badges can be easily overlooked. EldoraUI's `AnimatedBadge` adds a subtle entrance animation that catches the eye:
 
 ```tsx
-import { AnimatedBadge } from "@/components/eldoraui/animated-badge";
+import { AnimatedBadge } from "@/components/eldoraui/animated-badge"
 
 export function FeatureCard() {
   return (
     <div className="rounded-xl border p-6">
-      <div className="flex items-center gap-2 mb-3">
+      <div className="mb-3 flex items-center gap-2">
         <h3 className="font-semibold">AI-Powered Search</h3>
         <AnimatedBadge>New</AnimatedBadge>
       </div>
@@ -175,7 +171,7 @@ export function FeatureCard() {
         Natural language search across your entire workspace.
       </p>
     </div>
-  );
+  )
 }
 ```
 
@@ -191,25 +187,21 @@ Animated badges are effective because they combine two attention signals: the ba
 For actions you want to feel premium or important, the `ShimmerButton` adds a light sweep animation that suggests quality and importance:
 
 ```tsx
-import { ShimmerButton } from "@/components/eldoraui/shimmer-button";
+import { ShimmerButton } from "@/components/eldoraui/shimmer-button"
 
 export function UpgradePrompt() {
   return (
-    <div className="bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-2xl p-8 text-center">
-      <h3 className="text-xl font-bold text-white mb-2">
-        Unlock Pro Features
-      </h3>
-      <p className="text-zinc-400 text-sm mb-6">
-        Get access to advanced analytics, priority support,
-        and unlimited exports.
+    <div className="rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 p-8 text-center">
+      <h3 className="mb-2 text-xl font-bold text-white">Unlock Pro Features</h3>
+      <p className="mb-6 text-sm text-zinc-400">
+        Get access to advanced analytics, priority support, and unlimited
+        exports.
       </p>
       <ShimmerButton className="mx-auto">
-        <span className="text-sm font-medium text-white">
-          Upgrade to Pro
-        </span>
+        <span className="text-sm font-medium text-white">Upgrade to Pro</span>
       </ShimmerButton>
     </div>
-  );
+  )
 }
 ```
 
@@ -225,7 +217,7 @@ The shimmer effect is a diagonal light gradient that sweeps across the button su
 The `AnimatedSubscribeButton` demonstrates how micro-interactions can communicate state changes. It transitions smoothly between "Subscribe" and "Subscribed" states:
 
 ```tsx
-import { AnimatedSubscribeButton } from "@/components/eldoraui/animated-subscribe-button";
+import { AnimatedSubscribeButton } from "@/components/eldoraui/animated-subscribe-button"
 
 export function NewsletterSignup() {
   return (
@@ -239,7 +231,7 @@ export function NewsletterSignup() {
         changeText="Subscribed!"
       />
     </div>
-  );
+  )
 }
 ```
 
@@ -288,17 +280,17 @@ In React, you can check this preference with a hook:
 
 ```tsx
 function usePrefersReducedMotion() {
-  const [prefersReduced, setPrefersReduced] = useState(false);
+  const [prefersReduced, setPrefersReduced] = useState(false)
 
   useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReduced(query.matches);
-    const handler = (e: MediaQueryListEvent) => setPrefersReduced(e.matches);
-    query.addEventListener("change", handler);
-    return () => query.removeEventListener("change", handler);
-  }, []);
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)")
+    setPrefersReduced(query.matches)
+    const handler = (e: MediaQueryListEvent) => setPrefersReduced(e.matches)
+    query.addEventListener("change", handler)
+    return () => query.removeEventListener("change", handler)
+  }, [])
 
-  return prefersReduced;
+  return prefersReduced
 }
 ```
 
@@ -315,15 +307,15 @@ A janky animation is worse than no animation. Every micro-interaction should:
 
 Rather than adding micro-interactions ad hoc, build a system. Define which interaction patterns your app uses and apply them consistently:
 
-| User Action | Micro-Interaction | EldoraUI Component |
-|---|---|---|
-| Click/Tap | Ripple effect | `Ripple` |
-| Primary CTA | Pulse or shimmer | `PulsatingButton`, `ShimmerButton` |
-| Data reveal | Count-up animation | `NumberTicker`, `CountUp` |
-| New indicator | Animated badge | `AnimatedBadge` |
-| Emphasis | Sparkle effect | `SparklesText` |
-| State change | Button transition | `AnimatedSubscribeButton` |
-| Scroll reveal | Fade and blur | `BlurFade` |
+| User Action   | Micro-Interaction  | EldoraUI Component                 |
+| ------------- | ------------------ | ---------------------------------- |
+| Click/Tap     | Ripple effect      | `Ripple`                           |
+| Primary CTA   | Pulse or shimmer   | `PulsatingButton`, `ShimmerButton` |
+| Data reveal   | Count-up animation | `NumberTicker`, `CountUp`          |
+| New indicator | Animated badge     | `AnimatedBadge`                    |
+| Emphasis      | Sparkle effect     | `SparklesText`                     |
+| State change  | Button transition  | `AnimatedSubscribeButton`          |
+| Scroll reveal | Fade and blur      | `BlurFade`                         |
 
 Consistency matters more than creativity. Users should be able to predict how elements will behave based on their experience with other parts of your app.
 
