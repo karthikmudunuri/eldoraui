@@ -23,6 +23,6 @@ The generated baseline enables GitHub, Context7, Exa, Memory, Playwright, and Se
 
 - `.claude/commands/feature-development.md`
 - `.claude/commands/add-eldoraui-ecc-bundle.md`
-- `.claude/commands/update-readme-badge-or-section.md`
+- `.claude/commands/add-or-update-eldoraui-command-md.md`
 
 Use these workflow files as reusable task scaffolds when the detected repository workflows recur.
