@@ -14,9 +14,9 @@ Standard feature implementation workflow
 
 ## Common Files
 
-- `apps/www/components/sections/*`
-- `apps/www/components/*`
 - `apps/www/config/*`
+- `apps/www/content/docs/components/*`
+- `apps/www/registry/*`
 - `**/*.test.*`
 - `**/api/**`
 
