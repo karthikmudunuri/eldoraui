@@ -10,11 +10,12 @@ Use this workflow when working on **add-or-update-eldoraui-command-docs** in `el
 
 ## Goal
 
-Adds or updates documentation for eldoraui-related commands in the .claude/commands directory.
+Adds or updates documentation for Eldoraui-related commands.
 
 ## Common Files
 
-- `.claude/commands/*.md`
+- `.claude/commands/add-or-update-eldoraui-command-docs.md`
+- `.claude/commands/add-or-update-eldoraui-command-md.md`
 
 ## Suggested Sequence
 
@@ -25,7 +26,8 @@ Adds or updates documentation for eldoraui-related commands in the .claude/comma
 
 ## Typical Commit Signals
 
-- Add or update a .claude/commands/*.md file for the specific command (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
+- Add or update .claude/commands/add-or-update-eldoraui-command-docs.md
+- Optionally add or update related command markdown files (e.g., add-or-update-eldoraui-command-md.md)
 
 ## Notes
 
