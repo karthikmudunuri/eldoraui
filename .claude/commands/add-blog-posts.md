@@ -10,7 +10,7 @@ Use this workflow when working on **add-blog-posts** in `eldoraui`.
 
 ## Goal
 
-Adds new blog posts to the website content.
+Adds new blog posts to the site, often in bulk.
 
 ## Common Files
 
@@ -25,8 +25,8 @@ Adds new blog posts to the website content.
 
 ## Typical Commit Signals
 
-- Add new .mdx files to apps/www/content/blog/
-- Optionally, format all blog posts with Prettier
+- Create new .mdx files in apps/www/content/blog/
+- Optionally, format blog posts with prettier
 
 ## Notes
 
