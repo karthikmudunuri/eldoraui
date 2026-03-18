@@ -1,5 +1,5 @@
 # Instincts generated from https://github.com/karthikmudunuri/eldoraui
-# Generated: 2026-03-18T20:04:23.268Z
+# Generated: 2026-03-18T20:05:09.581Z
 # Version: 2.0
 
 ---
@@ -15,7 +15,7 @@ source_repo: https://github.com/karthikmudunuri/eldoraui
 
 ## Action
 
-Use conventional commit format with prefixes: feat, fix, chore, docs
+Use conventional commit format with prefixes: feat, fix, docs, chore
 
 ## Evidence
 
@@ -40,7 +40,7 @@ Write moderate-length commit messages (~50 characters)
 
 ## Evidence
 
-- Average commit message length: 52 chars
+- Average commit message length: 53 chars
 - Based on 200 commits
 
 ---
@@ -145,7 +145,7 @@ Follow the feature-development workflow:
 
 - Workflow detected from commit patterns
 - Frequency: ~30x per month
-- Files: .claude/commands/*
+- Files: 
 
 ---
 id: eldoraui-workflow-add-eldoraui-ecc-bundle
@@ -163,40 +163,40 @@ source_repo: https://github.com/karthikmudunuri/eldoraui
 Follow the add-eldoraui-ecc-bundle workflow:
 1. Add or update .claude/commands/add-eldoraui-ecc-bundle.md
 2. Add or update .claude/commands/feature-development.md
-3. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-4. Add or update .codex/agents/docs-researcher.toml
-5. Add or update .codex/agents/reviewer.toml
-6. Add or update .codex/agents/explorer.toml
-7. Add or update .codex/AGENTS.md
-8. Add or update .codex/config.toml
-9. Add or update .claude/identity.json
-10. Add or update .agents/skills/eldoraui/agents/openai.yaml
-11. Add or update .agents/skills/eldoraui/SKILL.md
-12. Add or update .claude/skills/eldoraui/SKILL.md
-13. Add or update .claude/ecc-tools.json
+3. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
+4. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+5. Add or update .codex/agents/docs-researcher.toml
+6. Add or update .codex/agents/reviewer.toml
+7. Add or update .codex/agents/explorer.toml
+8. Add or update .codex/AGENTS.md
+9. Add or update .codex/config.toml
+10. Add or update .claude/identity.json
+11. Add or update .agents/skills/eldoraui/agents/openai.yaml
+12. Add or update .agents/skills/eldoraui/SKILL.md
+13. Add or update .claude/skills/eldoraui/SKILL.md
+14. Add or update .claude/ecc-tools.json
 
 ## Evidence
 
 - Workflow detected from commit patterns
 - Frequency: ~4x per month
-- Files: .claude/commands/add-eldoraui-ecc-bundle.md, .claude/commands/feature-development.md, .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+- Files: .claude/commands/add-eldoraui-ecc-bundle.md, .claude/commands/feature-development.md, .claude/commands/add-or-update-eldoraui-command-docs.md
 
 ---
-id: eldoraui-workflow-add-or-update-eldoraui-command-docs
-trigger: "when doing add or update eldoraui command docs"
+id: eldoraui-workflow-update-eldoraui-command-docs
+trigger: "when doing update eldoraui command docs"
 confidence: 0.6
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Add Or Update Eldoraui Command Docs
+# Eldoraui Workflow Update Eldoraui Command Docs
 
 ## Action
 
-Follow the add-or-update-eldoraui-command-docs workflow:
-1. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md
-2. Optionally add or update related command markdown files (e.g., add-or-update-eldoraui-command-md.md)
+Follow the update-eldoraui-command-docs workflow:
+1. Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
 
 ## Evidence
 
@@ -205,46 +205,47 @@ Follow the add-or-update-eldoraui-command-docs workflow:
 - Files: .claude/commands/add-or-update-eldoraui-command-docs.md, .claude/commands/add-or-update-eldoraui-command-md.md
 
 ---
-id: eldoraui-workflow-update-readme-or-project-metadata
-trigger: "when doing update readme or project metadata"
-confidence: 0.6
+id: eldoraui-workflow-update-eldoraui-instincts
+trigger: "when doing update eldoraui instincts"
+confidence: 0.65
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Update Readme Or Project Metadata
+# Eldoraui Workflow Update Eldoraui Instincts
 
 ## Action
 
-Follow the update-readme-or-project-metadata workflow:
-1. Add or update .claude/commands/update-readme-badge-or-section.md or .claude/commands/update-readme-or-project-metadata.md
+Follow the update-eldoraui-instincts workflow:
+1. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 
 ## Evidence
 
 - Workflow detected from commit patterns
-- Frequency: ~2x per month
-- Files: .claude/commands/update-readme-badge-or-section.md, .claude/commands/update-readme-or-project-metadata.md
+- Frequency: ~3x per month
+- Files: .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 
 ---
-id: eldoraui-workflow-add-new-component-with-demo-and-docs
-trigger: "when doing add new component with demo and docs"
-confidence: 0.6
+id: eldoraui-workflow-update-eldoraui-skill-md
+trigger: "when doing update eldoraui skill md"
+confidence: 0.65
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Add New Component With Demo And Docs
+# Eldoraui Workflow Update Eldoraui Skill Md
 
 ## Action
 
-Follow the add-new-component-with-demo-and-docs workflow:
-1. Add .claude/commands/add-new-component-with-demo-and-docs.md
+Follow the update-eldoraui-skill-md workflow:
+1. Add or update .agents/skills/eldoraui/SKILL.md
+2. Add or update .claude/skills/eldoraui/SKILL.md
 
 ## Evidence
 
 - Workflow detected from commit patterns
-- Frequency: ~2x per month
-- Files: .claude/commands/add-new-component-with-demo-and-docs.md
+- Frequency: ~3x per month
+- Files: .agents/skills/eldoraui/SKILL.md, .claude/skills/eldoraui/SKILL.md
 
