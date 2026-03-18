@@ -1,5 +1,5 @@
 # Instincts generated from https://github.com/karthikmudunuri/eldoraui
-# Generated: 2026-03-18T20:01:06.049Z
+# Generated: 2026-03-18T20:01:48.869Z
 # Version: 2.0
 
 ---
@@ -19,9 +19,9 @@ Use conventional commit format with prefixes: feat, fix, chore, docs
 
 ## Evidence
 
-- 175 commits analyzed
+- 189 commits analyzed
 - Detected conventional commit pattern
-- Examples: feat: add eldoraui ECC bundle (.claude/commands/update-component-or-docs.md), fix: build error
+- Examples: feat: add eldoraui ECC bundle (.claude/commands/update-readme-or-project-metadata.md), fix: build error
 
 ---
 id: eldoraui-commit-length
@@ -40,8 +40,8 @@ Keep commit messages concise (under 50 characters)
 
 ## Evidence
 
-- Average commit message length: 45 chars
-- Based on 175 commits
+- Average commit message length: 47 chars
+- Based on 189 commits
 
 ---
 id: eldoraui-naming-files
@@ -144,52 +144,54 @@ Follow the feature-development workflow:
 ## Evidence
 
 - Workflow detected from commit patterns
-- Frequency: ~20x per month
-- Files: apps/www/config/*, apps/www/content/docs/components/*, apps/www/registry/*
+- Frequency: ~26x per month
+- Files: apps/www/content/blog/*, .claude/commands/*
 
 ---
-id: eldoraui-workflow-add-new-component-with-demo-and-docs
-trigger: "when doing add new component with demo and docs"
-confidence: 0.6
+id: eldoraui-workflow-add-eldoraui-ecc-bundle
+trigger: "when doing add eldoraui ecc bundle"
+confidence: 0.65
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Add New Component With Demo And Docs
+# Eldoraui Workflow Add Eldoraui Ecc Bundle
 
 ## Action
 
-Follow the add-new-component-with-demo-and-docs workflow:
-1. Create or update implementation file for the new component under apps/www/registry/eldoraui/ or apps/www/registry/blocks/
-2. Add or update a demo/example file under apps/www/registry/example/
-3. Add or update documentation markdown under apps/www/content/docs/components/
-4. Update registry and index files (apps/www/registry.json, apps/www/public/registry.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts)
-5. Update config/docs.ts and possibly config/site.ts
-6. Update or add public assets (apps/www/public/r/*.json, apps/www/public/blocks/*, etc.)
+Follow the add-eldoraui-ecc-bundle workflow:
+1. Add or update files in .claude/commands/ (e.g., add-new-component-with-demo-and-docs.md, update-readme-or-project-metadata.md, feature-development.md, update-component-or-docs.md)
+2. Add or update files in .claude/homunculus/instincts/inherited/ (e.g., eldoraui-instincts.yaml)
+3. Add or update files in .codex/agents/ (e.g., docs-researcher.toml, reviewer.toml, explorer.toml)
+4. Add or update .codex/AGENTS.md and .codex/config.toml
+5. Add or update .claude/identity.json
+6. Add or update .agents/skills/eldoraui/ (e.g., agents/openai.yaml, SKILL.md)
+7. Add or update .claude/skills/eldoraui/SKILL.md
+8. Add or update .claude/ecc-tools.json
 
 ## Evidence
 
 - Workflow detected from commit patterns
-- Frequency: ~2x per month
-- Files: apps/www/registry/eldoraui/*.tsx, apps/www/registry/blocks/*/components/*.tsx, apps/www/registry/example/*.tsx
+- Frequency: ~3x per month
+- Files: .claude/commands/*.md, .claude/homunculus/instincts/inherited/*.yaml, .codex/agents/*.toml
 
 ---
-id: eldoraui-workflow-update-readme-or-project-metadata
-trigger: "when doing update readme or project metadata"
+id: eldoraui-workflow-update-readme-badge-or-section
+trigger: "when doing update readme badge or section"
 confidence: 0.55
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Update Readme Or Project Metadata
+# Eldoraui Workflow Update Readme Badge Or Section
 
 ## Action
 
-Follow the update-readme-or-project-metadata workflow:
-1. Edit README.md to add or update badges, support sections, or other metadata.
-2. Commit the changes.
+Follow the update-readme-badge-or-section workflow:
+1. Edit README.md to add or update a badge
+2. Edit README.md to add or update a support section
 
 ## Evidence
 
@@ -198,53 +200,26 @@ Follow the update-readme-or-project-metadata workflow:
 - Files: README.md
 
 ---
-id: eldoraui-workflow-add-or-update-ecc-bundle-commands-and-skills
-trigger: "when doing add or update ecc bundle commands and skills"
-confidence: 0.55
-domain: workflow
-source: repo-analysis
-source_repo: https://github.com/karthikmudunuri/eldoraui
----
-
-# Eldoraui Workflow Add Or Update Ecc Bundle Commands And Skills
-
-## Action
-
-Follow the add-or-update-ecc-bundle-commands-and-skills workflow:
-1. Add or update markdown files for commands under .claude/commands/
-2. Add or update skill definitions under .claude/skills/eldoraui/ or .agents/skills/eldoraui/
-3. Add or update agent configuration files under .codex/agents/
-4. Update supporting metadata/configuration files (.claude/ecc-tools.json, .claude/identity.json, .codex/AGENTS.md, etc.)
-
-## Evidence
-
-- Workflow detected from commit patterns
-- Frequency: ~1x per month
-- Files: .claude/commands/*.md, .claude/skills/eldoraui/SKILL.md, .agents/skills/eldoraui/SKILL.md
-
----
-id: eldoraui-workflow-fix-or-update-existing-component-or-demo
-trigger: "when doing fix or update existing component or demo"
+id: eldoraui-workflow-fix-ui-component-or-config
+trigger: "when doing fix ui component or config"
 confidence: 0.6
 domain: workflow
 source: repo-analysis
 source_repo: https://github.com/karthikmudunuri/eldoraui
 ---
 
-# Eldoraui Workflow Fix Or Update Existing Component Or Demo
+# Eldoraui Workflow Fix Ui Component Or Config
 
 ## Action
 
-Follow the fix-or-update-existing-component-or-demo workflow:
-1. Edit implementation files for components or demos (apps/www/registry/eldoraui/, apps/www/registry/blocks/, apps/www/registry/example/).
-2. Update related documentation if needed (apps/www/content/docs/components/).
-3. Update registry and public asset files if necessary.
-4. Update config files (config/docs.ts, config/site.ts) if needed.
-5. Commit the changes.
+Follow the fix-ui-component-or-config workflow:
+1. Edit one or more component files (e.g., site-banner.tsx, analytics.tsx, block-image.tsx, block-viewer.tsx)
+2. Edit related config or content files if necessary (e.g., site.ts, registry/blocks/*, content/docs/*)
+3. Commit with a descriptive fix message
 
 ## Evidence
 
 - Workflow detected from commit patterns
 - Frequency: ~2x per month
-- Files: apps/www/registry/eldoraui/*.tsx, apps/www/registry/blocks/*/components/*.tsx, apps/www/registry/example/*.tsx
+- Files: apps/www/components/*.tsx, apps/www/config/*.ts, apps/www/registry/blocks/*/components/*.tsx
 
