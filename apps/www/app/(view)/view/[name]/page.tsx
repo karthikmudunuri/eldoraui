@@ -3,13 +3,13 @@ import { type Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { siteConfig } from "@/config/site"
-import { Index } from "@/registry/__index__"
 import {
   getDemoItem,
   getRegistryComponent,
   getRegistryItem,
 } from "@/lib/registry"
 import { absoluteUrl } from "@/lib/utils"
+import { Index } from "@/registry/__index__"
 
 import { ComponentPreview } from "./component-preview"
 
@@ -110,7 +110,8 @@ export default async function BlockPage({
   const demoName = `${name}-demo`
   const demoItem = Index[demoName]
   const Component =
-    demoItem && typeof (demoItem as { component?: unknown }).component !== "undefined"
+    demoItem &&
+    typeof (demoItem as { component?: unknown }).component !== "undefined"
       ? getRegistryComponent(demoName)
       : getRegistryComponent(name)
 

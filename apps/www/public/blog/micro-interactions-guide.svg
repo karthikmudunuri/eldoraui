@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridLarge" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cyan gradient background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#gridLarge)"/>
+
+  <!-- Center glow -->
+  <ellipse cx="600" cy="300" rx="500" ry="280" fill="url(#glow)"/>
+
+  <!-- Title text with shadow -->
+    <text x="600" y="248" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="rgba(0,0,0,0.1)" transform="translate(2,2)" letter-spacing="-0.02em">Micro-Interactions</text>
+    <text x="600" y="300" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="rgba(0,0,0,0.1)" transform="translate(2,2)" letter-spacing="-0.02em">That Make Your UI</text>
+    <text x="600" y="352" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="rgba(0,0,0,0.1)" transform="translate(2,2)" letter-spacing="-0.02em">Feel Alive</text>
+    <text x="600" y="248" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="#0a0a0a" letter-spacing="-0.02em">Micro-Interactions</text>
+    <text x="600" y="300" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="#0a0a0a" letter-spacing="-0.02em">That Make Your UI</text>
+    <text x="600" y="352" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="700" fill="#0a0a0a" letter-spacing="-0.02em">Feel Alive</text>
+
+  <!-- EldoraUI branding -->
+  <text x="600" y="434" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="500" fill="rgba(0,0,0,0.5)" letter-spacing="0.1em">ELDORAUI</text>
+
+  <!-- Border -->
+  <rect x="16" y="16" width="1168" height="598" rx="8" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+</svg>

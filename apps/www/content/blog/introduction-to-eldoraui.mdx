@@ -1,0 +1,135 @@
+---
+title: "What is EldoraUI? A Modern Component Library for Design Engineers"
+description: "Discover EldoraUI, a React/Next.js component library built for design engineers. Learn about its philosophy, key features, and how it differs from other UI libraries."
+publishedOn: "2026-03-19"
+tags: ["introduction", "getting-started", "components"]
+author: "Karthik Mudunuri"
+image: "/blog/introduction-to-eldoraui.svg"
+featured: true
+---
+
+# What is EldoraUI? A Modern Component Library for Design Engineers
+
+There is a growing role in the tech industry that sits at the intersection of design and engineering. Design engineers are professionals who do not just build interfaces -- they craft experiences. They care about motion, polish, and the small details that turn a functional page into something memorable. EldoraUI was built specifically for them.
+
+## The Problem with Existing Component Libraries
+
+If you have built production React applications, you have almost certainly used a component library. Material UI, Chakra UI, and shadcn/ui are all excellent tools, each solving different problems. But when you need animated, visually rich components -- the kind you see on award-winning marketing sites and product landing pages -- these libraries often fall short.
+
+**Material UI** gives you Google's Material Design system. It is comprehensive and well-documented, but it is opinionated about aesthetics. Customizing animations beyond simple transitions requires fighting the framework.
+
+**Chakra UI** provides great utility-based styling and accessibility. However, its animation story is limited to basic transitions and fade effects. Building a globe visualization or a shimmer button means starting from scratch.
+
+**shadcn/ui** changed the game by giving developers copy-pasteable components that they own. EldoraUI builds on this same philosophy but focuses on a different category of components entirely: animated, interactive, and visually sophisticated UI elements.
+
+## What EldoraUI Brings to the Table
+
+EldoraUI is a collection of over 40 animated React components designed for Next.js applications. Every component is built with Framer Motion (or specialized libraries where appropriate) and ships as source code you can copy into your project.
+
+Here is what makes it different:
+
+### 1. Animation-First Design
+
+Every component in EldoraUI exists because it adds motion and visual interest. This is not a form library or a data table collection. These are the components you reach for when building hero sections, landing pages, interactive dashboards, and marketing sites.
+
+The library includes text animations (word pull-up, letter pull-up, blur-in, gradual spacing, wavy text), interactive elements (card-flip-hover, animated-shiny-button), 3D visualizations (cobe-globe), layout components (grid, bento-grid), and background effects (particles, meteors, noise).
+
+### 2. shadcn-Compatible Installation
+
+EldoraUI uses the same installation pattern as shadcn/ui. If you have a shadcn project set up, adding an EldoraUI component is a single command:
+
+```bash
+npx shadcn@latest add @eldoraui/cobe-globe
+```
+
+This adds the component source code directly to your project. No runtime dependency on EldoraUI. No version conflicts. You own the code.
+
+### 3. Copy-Paste Architecture
+
+Every component lives at `components/eldoraui/<component-name>.tsx` in your project. You can read every line, modify anything, and never worry about upstream breaking changes. This is particularly important for animated components where you almost always need to tweak timing, easing, or trigger behavior.
+
+### 4. Built for Next.js
+
+Components are designed to work seamlessly with Next.js App Router. Server components, client components, and proper hydration handling are all considered. The globe component, for example, handles canvas rendering in a way that works with server-side rendering.
+
+## Core Component Categories
+
+EldoraUI organizes its 40+ components into several categories:
+
+**Text Animations** -- These are among the most frequently used components. WordPullUpText, LetterPullUpText, BlurIn, FadeText, GradualSpacingText, WavyText, SeparateAwayText, and MultiDirectionSlideText each provide a distinct way to reveal text on screen.
+
+**Interactive Elements** -- Components like AnimatedShinyButton, CardFlipHover, and AnimatedBadge add tactile, responsive interactions. These are the components that make users want to hover over things.
+
+**3D and Visualization** -- The Cobe globe component is a standout here, providing an interactive 3D earth with customizable markers, multiple interaction variants, and full color control.
+
+**Layout and Structure** -- Grid, BentoGrid, and PhotonBeam help structure your page with visual sophistication. The Grid component supports decorative plus icons and flexible column/row configuration.
+
+**Device Mockups** -- Safari, MacbookPro, iPad, and iPhone17Pro components let you showcase your product inside realistic device frames. Perfect for landing pages and case studies.
+
+**Background Effects** -- Particles, meteors, noise, and hacker-background create atmospheric depth behind your content.
+
+## Getting Started
+
+Setting up EldoraUI requires an existing Next.js project with shadcn/ui initialized. If you do not have one yet:
+
+```bash
+npx shadcn@latest init
+```
+
+Once your project is ready, install any component:
+
+```bash
+npx shadcn@latest add @eldoraui/animated-shiny-button
+```
+
+Then use it in your code:
+
+```tsx
+import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
+
+export default function Hero() {
+  return (
+    <section className="flex flex-col items-center gap-6 py-24">
+      <h1 className="text-5xl font-bold">Ship faster, look better</h1>
+      <AnimatedShinyButton url="/docs">Get Started</AnimatedShinyButton>
+    </section>
+  )
+}
+```
+
+That is all it takes. The button renders with a cyan shimmer effect, automatic dark mode support, and hover animations -- all without writing a single line of animation code.
+
+## When Should You Use EldoraUI?
+
+EldoraUI is the right choice when you are building:
+
+- **Marketing and landing pages** where first impressions matter and you need polished animations
+- **Product showcases** where device mockups and interactive demos help tell the story
+- **Portfolio sites** where visual sophistication demonstrates your skill
+- **SaaS dashboards** where subtle animations improve perceived performance and user delight
+- **Startup websites** where you need to look premium without hiring a dedicated motion designer
+
+It is not a replacement for your form library, your data grid, or your design system primitives. It is the layer you add on top to make everything feel alive.
+
+## The Design Engineering Philosophy
+
+The term "design engineer" describes someone who can both design and implement polished interfaces. EldoraUI embodies this philosophy by providing components that would typically require a motion designer and a frontend engineer to collaborate on.
+
+When you use a WordPullUpText component, you get animation timing that has already been tuned. The spring physics, stagger delays, and easing curves have been refined. You are inheriting design decisions, not just code.
+
+```tsx
+import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
+
+;<WordPullUpText
+  text="Design engineering at its finest"
+  className="text-4xl font-bold text-blue-600"
+/>
+```
+
+But because you own the source code, you can always adjust these decisions to match your brand and your taste.
+
+## What is Next
+
+EldoraUI is actively maintained and growing. New components are added regularly, and the library continues to push the boundaries of what is possible with React animation libraries. Check out the [full documentation](https://eldoraui.site) to explore every component, or browse the [GitHub repository](https://github.com/karthikmudunuri/eldoraui) to see the source code.
+
+In upcoming blog posts, we will dive deeper into specific component categories -- from building complete animated landing pages to mastering text animations and adding 3D globe visualizations to your Next.js applications.
