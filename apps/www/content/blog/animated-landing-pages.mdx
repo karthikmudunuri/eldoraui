@@ -1,0 +1,270 @@
+---
+title: "Building Stunning Animated Landing Pages with EldoraUI"
+description: "Learn how to combine EldoraUI's animation components to build modern, eye-catching landing pages with blur-fade, staggered animations, gradient text, and shimmer buttons."
+publishedOn: "2026-03-19"
+tags: ["animations", "landing-pages", "tutorial"]
+author: "Karthik Mudunuri"
+image: ""
+featured: false
+---
+
+# Building Stunning Animated Landing Pages with EldoraUI
+
+The best landing pages share a common trait: they feel alive. Elements fade in as you scroll, text reveals itself with purpose, and buttons shimmer to draw your eye. These animations are not decorative -- they guide attention, communicate hierarchy, and create emotional resonance.
+
+Building this kind of page used to require deep knowledge of CSS animations, JavaScript animation libraries, and careful performance tuning. With EldoraUI, you can assemble a polished animated landing page from composable components in an afternoon.
+
+This tutorial walks through building a complete landing page section by section, combining multiple EldoraUI components.
+
+## Setting Up Your Project
+
+Make sure you have a Next.js project with shadcn/ui initialized. Then install the components we will use:
+
+```bash
+npx shadcn@latest add @eldoraui/fade-text
+npx shadcn@latest add @eldoraui/blur-in-text
+npx shadcn@latest add @eldoraui/animated-shiny-button
+npx shadcn@latest add @eldoraui/word-pull-up-text
+npx shadcn@latest add @eldoraui/grid
+npx shadcn@latest add @eldoraui/cobe-globe
+```
+
+## Section 1: The Hero
+
+The hero section is where first impressions are made. We want the headline to animate in with weight and presence, the subtitle to follow with a softer reveal, and the call-to-action to draw attention with a shimmer effect.
+
+```tsx
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+import { FadeText } from "@/components/eldoraui/fade-text"
+import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
+
+export function HeroSection() {
+  return (
+    <section className="flex flex-col items-center justify-center gap-8 px-4 py-32">
+      <BlurIn
+        text="Build interfaces that feel alive"
+        className="text-center text-5xl font-bold tracking-tight md:text-7xl"
+      />
+      <FadeText
+        text="Animated React components for design engineers who refuse to ship boring UIs"
+        direction="up"
+        className="max-w-2xl text-center text-lg text-muted-foreground md:text-xl"
+      />
+      <div className="flex gap-4 pt-4">
+        <AnimatedShinyButton url="/docs">
+          Get Started
+        </AnimatedShinyButton>
+      </div>
+    </section>
+  )
+}
+```
+
+The `BlurIn` component renders the headline by transitioning from blurred and invisible to sharp and visible. It creates a cinematic reveal effect. The `FadeText` component with `direction="up"` slides the subtitle upward with a spring transition, arriving just after the headline. Finally, the `AnimatedShinyButton` sits at the bottom with its continuous cyan shimmer, silently saying "click me."
+
+### Timing Matters
+
+One principle that separates amateur animation from professional animation is stagger timing. Elements should not all appear simultaneously. The hero above naturally staggers because each component has its own entrance animation, but you can fine-tune this further with CSS delays or wrapper components:
+
+```tsx
+<div className="animate-delay-200">
+  <FadeText
+    text="Your subtitle text"
+    direction="up"
+    staggerDelay={0.15}
+  />
+</div>
+```
+
+The `staggerDelay` prop on FadeText controls the delay between staggered word animations within the component itself, giving you granular control over the reveal cadence.
+
+## Section 2: Feature Grid with Animated Headers
+
+After the hero, you typically need to communicate your product's key features. The Grid component from EldoraUI provides a structured layout with optional decorative plus icons at the corners, adding a subtle technical aesthetic.
+
+```tsx
+import { Grid } from "@/components/eldoraui/grid"
+import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
+
+export function FeaturesSection() {
+  return (
+    <section className="px-4 py-24">
+      <WordPullUpText
+        text="Everything you need to ship fast"
+        className="mb-16 text-center text-4xl font-bold"
+      />
+      <Grid columns={3} rows={1} height="h-auto" showPlusIcons={true}>
+        <div className="flex flex-col gap-4 p-8">
+          <h3 className="text-xl font-semibold">Copy & Paste</h3>
+          <p className="text-muted-foreground">
+            Every component is source code you own. No runtime dependencies,
+            no version conflicts.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 p-8">
+          <h3 className="text-xl font-semibold">40+ Components</h3>
+          <p className="text-muted-foreground">
+            From text animations to 3D globes, device mockups to
+            background effects.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 p-8">
+          <h3 className="text-xl font-semibold">Next.js Ready</h3>
+          <p className="text-muted-foreground">
+            Built for App Router with proper server and client component
+            handling.
+          </p>
+        </div>
+      </Grid>
+    </section>
+  )
+}
+```
+
+The `WordPullUpText` component on the section heading provides a satisfying pull-up animation where each word rises from below, creating a cascading reveal. This naturally draws the user's eye to the section header before they scan the feature cards.
+
+## Section 3: Interactive Globe Hero
+
+For SaaS products with a global story to tell, nothing beats an interactive 3D globe. The Cobe globe component supports multiple interaction variants, from auto-rotation to drag-to-rotate to location-based navigation.
+
+```tsx
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+import { FadeText } from "@/components/eldoraui/fade-text"
+
+export function GlobalPresenceSection() {
+  return (
+    <section className="relative flex flex-col items-center px-4 py-24">
+      <FadeText
+        text="Trusted by teams across the globe"
+        direction="in"
+        className="mb-8 text-center text-3xl font-bold"
+      />
+      <div className="h-[500px] w-full max-w-2xl">
+        <Cobe
+          variant="auto-rotation"
+          className="h-full w-full"
+          markerColor="#3b82f6"
+          baseColor="#1e293b"
+          glowColor="#3b82f6"
+          opacity={0.9}
+        />
+      </div>
+    </section>
+  )
+}
+```
+
+The `auto-rotation` variant keeps the globe spinning continuously, which works well for a background-style element. If you want users to interact with it, switch to `variant="default"` for drag support combined with auto-rotation.
+
+## Section 4: Social Proof with Fade Animations
+
+Testimonials and social proof sections benefit from subtle entrance animations. The FadeText component with different directions creates visual variety:
+
+```tsx
+import { FadeText } from "@/components/eldoraui/fade-text"
+
+const testimonials = [
+  {
+    quote: "EldoraUI cut our landing page development time in half.",
+    author: "Engineering Lead, Series B Startup",
+  },
+  {
+    quote: "The animation quality is on par with what our motion designer produces.",
+    author: "Design Engineer, Fortune 500",
+  },
+  {
+    quote: "Finally, a component library that understands polish matters.",
+    author: "Founder, Design Agency",
+  },
+]
+
+export function TestimonialsSection() {
+  return (
+    <section className="px-4 py-24">
+      <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+        {testimonials.map((item, index) => (
+          <div key={index} className="flex flex-col gap-4 rounded-lg border p-6">
+            <FadeText
+              text={item.quote}
+              direction="in"
+              wordDelay={0.05}
+              className="text-lg italic"
+            />
+            <p className="text-sm text-muted-foreground">{item.author}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+```
+
+Using `direction="in"` with a smaller `wordDelay` creates a rapid word-by-word reveal that feels like the text is being typed. This is more engaging than a simple fade and draws the reader through the quote.
+
+## Section 5: The Final CTA
+
+Close the page with a strong call-to-action. Combine BlurIn for the headline with a shimmer button for maximum conversion potential:
+
+```tsx
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+import { AnimatedShinyButton } from "@/components/eldoraui/animated-shiny-button"
+
+export function CTASection() {
+  return (
+    <section className="flex flex-col items-center gap-8 px-4 py-32">
+      <BlurIn
+        text="Ready to build something beautiful?"
+        className="text-center text-4xl font-bold md:text-5xl"
+      />
+      <AnimatedShinyButton url="/docs" className="text-lg">
+        Start Building Today
+      </AnimatedShinyButton>
+    </section>
+  )
+}
+```
+
+## Performance Considerations
+
+Animated landing pages can cause performance issues if you are not careful. Here are the key things to keep in mind:
+
+1. **Framer Motion tree shaking** -- EldoraUI components use Framer Motion under the hood. Make sure you are not importing the entire library elsewhere. Each EldoraUI component imports only what it needs.
+
+2. **Viewport-triggered animations** -- Most EldoraUI text animation components trigger when they enter the viewport using Intersection Observer. This means off-screen components are not burning CPU cycles.
+
+3. **The globe is heavy** -- The Cobe globe uses a WebGL canvas. On mobile devices or low-powered machines, consider lazy-loading it or providing a static fallback. Wrap it in a dynamic import with `ssr: false`:
+
+```tsx
+import dynamic from "next/dynamic"
+
+const Cobe = dynamic(
+  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
+  { ssr: false }
+)
+```
+
+4. **Reduce motion** -- Respect the `prefers-reduced-motion` media query. Framer Motion handles this automatically for most animations, but test your page with this setting enabled.
+
+## Putting It All Together
+
+Assemble your sections in a single page component:
+
+```tsx
+export default function LandingPage() {
+  return (
+    <main>
+      <HeroSection />
+      <FeaturesSection />
+      <GlobalPresenceSection />
+      <TestimonialsSection />
+      <CTASection />
+    </main>
+  )
+}
+```
+
+Each section handles its own animation timing, so they compose naturally. As users scroll down the page, each section springs to life independently.
+
+The result is a landing page that feels handcrafted and premium, built entirely from reusable components. No custom animation code. No fighting with keyframes. Just composable, animated React components that work together seamlessly.
+
+Explore the full component library at [eldoraui.site](https://eldoraui.site) and find more components to add to your pages.

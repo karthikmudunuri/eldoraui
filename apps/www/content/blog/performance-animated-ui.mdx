@@ -1,0 +1,303 @@
+---
+title: "Performance Best Practices for Animated UI Components"
+description: "Keep your React animations buttery smooth with these performance techniques - CSS transforms, GPU acceleration, reducing re-renders, and lazy loading strategies used in EldoraUI."
+publishedOn: "2026-03-19"
+tags: ["performance", "animations", "best-practices"]
+author: "Karthik Mudunuri"
+image: ""
+featured: false
+---
+
+# Performance Best Practices for Animated UI Components
+
+Animations can make or break a user experience. When they are smooth, they feel invisible, guiding users through interactions with a sense of fluidity and polish. When they stutter or jank, they actively degrade the experience, making a site feel broken and untrustworthy.
+
+Building a library like [EldoraUI](https://eldoraui.site) with 40+ animated components forced us to develop a deep understanding of what makes animations performant in React. In this post, we share the techniques and principles that keep EldoraUI components running at 60fps, and how you can apply them to your own projects.
+
+## Understanding the Rendering Pipeline
+
+Before diving into specific techniques, it helps to understand what the browser does when something changes on screen. The rendering pipeline consists of five stages:
+
+1. **JavaScript** - Your code runs, triggering DOM changes
+2. **Style** - The browser recalculates which CSS rules apply
+3. **Layout** - The browser calculates element positions and sizes
+4. **Paint** - The browser fills in pixels for each element
+5. **Composite** - The browser draws layers to the screen
+
+The key insight is this: **the fewer stages you trigger, the faster the update**. Animations that only trigger compositing are dramatically cheaper than those that trigger layout.
+
+## CSS Transforms vs. Layout Properties
+
+This is the single most impactful optimization you can make. The difference between animating `transform` and animating `top`/`left`/`width`/`height` is enormous.
+
+**Expensive (triggers layout):**
+```css
+/* Avoid: Animating layout properties */
+@keyframes slideIn {
+  from { left: -100px; }
+  to { left: 0; }
+}
+
+.element {
+  animation: slideIn 0.3s ease-out;
+}
+```
+
+**Performant (compositing only):**
+```css
+/* Prefer: Animating transform */
+@keyframes slideIn {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(0); }
+}
+
+.element {
+  animation: slideIn 0.3s ease-out;
+}
+```
+
+In EldoraUI, every animation that involves movement uses `transform: translate()` rather than positional properties. Components like `blur-fade`, `multi-direction-slide`, and `separate-away` all rely exclusively on transforms for their motion.
+
+The same principle applies to scaling (use `transform: scale()` instead of animating `width`/`height`) and rotation (use `transform: rotate()` instead of calculating new positions).
+
+## GPU Acceleration and the `will-change` Property
+
+Modern browsers can offload certain operations to the GPU, which is optimized for the kind of parallel computation that rendering requires. Properties like `transform` and `opacity` are automatically GPU-accelerated in most browsers, but you can explicitly promote elements to their own compositing layer:
+
+```css
+.animated-element {
+  will-change: transform, opacity;
+}
+```
+
+However, use `will-change` judiciously. Each promoted layer consumes GPU memory. Promoting too many elements can actually degrade performance:
+
+```tsx
+// Good: Apply will-change only to actively animated elements
+function AnimatedCard({ isAnimating }: { isAnimating: boolean }) {
+  return (
+    <div
+      className="transition-transform duration-300"
+      style={{ willChange: isAnimating ? "transform" : "auto" }}
+    >
+      {/* content */}
+    </div>
+  );
+}
+```
+
+In EldoraUI, components like `orbiting-circles` and `meteors` use `will-change` because they involve continuous animations. But static components that only animate on interaction (like `shimmer-button` or `pulsating-button`) apply it conditionally or rely on the browser's automatic promotion.
+
+## Reducing Re-renders in React
+
+React's rendering model can work against animation performance if you are not careful. Every state update triggers a re-render, and if your animated component re-renders unnecessarily, you will see jank.
+
+### Isolate Animated State
+
+Keep animation state isolated from the rest of your component tree:
+
+```tsx
+// Bad: Animation state in parent causes children to re-render
+function Page() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handler = () => setScrollProgress(window.scrollY / document.body.scrollHeight);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  return (
+    <div>
+      <ProgressBar progress={scrollProgress} />
+      <ExpensiveContent /> {/* Re-renders on every scroll! */}
+    </div>
+  );
+}
+
+// Good: Isolated animation component
+function Page() {
+  return (
+    <div>
+      <ScrollProgress /> {/* Self-contained, no parent re-renders */}
+      <ExpensiveContent />
+    </div>
+  );
+}
+```
+
+EldoraUI's `scroll-progress` component follows this exact pattern. It manages its own scroll listener and state internally, preventing unnecessary re-renders of sibling components.
+
+### Use Refs for High-Frequency Updates
+
+For animations that update on every frame, bypass React's state system entirely:
+
+```tsx
+function SmoothCounter({ target }: { target: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    let current = 0;
+    const step = target / 60; // Complete in ~1 second at 60fps
+
+    function animate() {
+      current = Math.min(current + step, target);
+      if (ref.current) {
+        ref.current.textContent = Math.round(current).toString();
+      }
+      if (current < target) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }, [target]);
+
+  return <span ref={ref}>0</span>;
+}
+```
+
+This approach updates the DOM directly through the ref, skipping React's reconciliation entirely. EldoraUI's `number-ticker` and `count-up` components use similar techniques to achieve smooth counting animations without triggering React re-renders on every frame.
+
+## requestAnimationFrame: The Right Way
+
+When you need JavaScript-driven animations, always use `requestAnimationFrame` (rAF) rather than `setTimeout` or `setInterval`. The browser synchronizes rAF callbacks with the display's refresh rate, giving you the smoothest possible updates:
+
+```tsx
+function useAnimationFrame(callback: (deltaTime: number) => void) {
+  const requestRef = useRef<number>();
+  const previousTimeRef = useRef<number>();
+
+  useEffect(() => {
+    function animate(time: number) {
+      if (previousTimeRef.current !== undefined) {
+        const deltaTime = time - previousTimeRef.current;
+        callback(deltaTime);
+      }
+      previousTimeRef.current = time;
+      requestRef.current = requestAnimationFrame(animate);
+    }
+
+    requestRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
+  }, [callback]);
+}
+```
+
+Key considerations when using rAF:
+
+- **Always cancel on cleanup** - Failing to cancel leads to memory leaks and errors when components unmount
+- **Use delta time** - Do not assume 60fps. Use the time difference between frames to calculate animation progress
+- **Batch DOM reads and writes** - Read all needed values first, then write. Interleaving reads and writes causes forced synchronous layouts
+
+## Lazy Loading Animated Components
+
+Not every animated component needs to load immediately. Components that are below the fold or triggered by user interaction can be lazy loaded to improve initial page performance:
+
+```tsx
+import { lazy, Suspense } from "react";
+
+const ParticlesBackground = lazy(
+  () => import("@/components/eldoraui/particles")
+);
+const CobeGlobe = lazy(
+  () => import("@/components/eldoraui/cobe-globe")
+);
+
+function LandingPage() {
+  return (
+    <div>
+      <HeroSection /> {/* Loads immediately */}
+
+      <Suspense fallback={<div className="h-96" />}>
+        <ParticlesBackground /> {/* Loads when React is idle */}
+      </Suspense>
+
+      <Suspense fallback={<div className="h-96" />}>
+        <CobeGlobe /> {/* Loads when React is idle */}
+      </Suspense>
+    </div>
+  );
+}
+```
+
+For components that should only animate when visible, combine lazy loading with Intersection Observer:
+
+```tsx
+function LazyAnimated({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref}>
+      {isVisible ? children : <div className="h-48" />}
+    </div>
+  );
+}
+```
+
+EldoraUI's `blur-fade` component has a built-in `inView` prop that leverages Intersection Observer, so components only animate when they scroll into the viewport.
+
+## CSS-First Animation Strategy
+
+Whenever possible, prefer CSS animations over JavaScript-driven ones. CSS animations run on the compositor thread, separate from the main thread where your JavaScript executes. This means they can stay smooth even when the main thread is busy:
+
+```tsx
+// Prefer CSS transitions for simple state changes
+function AnimatedButton() {
+  return (
+    <button className="transform transition-all duration-200 hover:scale-105 active:scale-95">
+      Click Me
+    </button>
+  );
+}
+```
+
+EldoraUI uses CSS animations for components like `shimmer-button` (the shimmer effect is a CSS gradient animation), `shine-border` (rotating gradient border), and `pulsating-button` (scale pulse). JavaScript is only used when the animation requires dynamic values or complex sequencing.
+
+## Measuring Animation Performance
+
+You cannot optimize what you do not measure. Use these tools to identify animation bottlenecks:
+
+1. **Chrome DevTools Performance panel** - Record a profile while animations run. Look for long frames (red bars) and investigate what caused them.
+2. **CSS Paint Flashing** - Enable "Paint flashing" in Chrome DevTools rendering tab. Green flashes show areas being repainted. Ideally, only your animated elements should flash.
+3. **Layers panel** - See which elements have been promoted to their own compositing layers and how much GPU memory they consume.
+4. **`performance.now()`** - Measure specific code paths in your animation logic to find bottlenecks.
+
+## A Quick Checklist
+
+Before shipping any animated component, run through this checklist:
+
+- [ ] Animations use `transform` and `opacity` instead of layout properties
+- [ ] `will-change` is applied only to elements that need it
+- [ ] Animation state is isolated from the rest of the component tree
+- [ ] High-frequency updates use refs instead of React state
+- [ ] `requestAnimationFrame` callbacks are properly cleaned up
+- [ ] Below-the-fold animations are lazy loaded
+- [ ] CSS animations are preferred over JavaScript where possible
+- [ ] Performance has been profiled with Chrome DevTools
+
+## Conclusion
+
+Performant animations require intentional decisions at every level: CSS property choices, React rendering patterns, loading strategies, and measurement practices. The techniques outlined here are not theoretical. They are the same patterns used throughout EldoraUI to keep 40+ animated components running smoothly across devices.
+
+The next time you add an animation to your React application, start by asking: "Can this be done with just `transform` and `opacity`?" More often than not, the answer is yes, and that single decision will get you 90% of the way to a smooth 60fps experience.

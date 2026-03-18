@@ -1,0 +1,299 @@
+---
+title: "The Complete Guide to Text Animations in React"
+description: "A deep dive into EldoraUI's text animation components including word pull-up, letter pull-up, blur-in, wavy text, gradual spacing, and more. Learn when and how to use each one."
+publishedOn: "2026-03-19"
+tags: ["text-animations", "react", "guide"]
+author: "Karthik Mudunuri"
+image: ""
+featured: false
+---
+
+# The Complete Guide to Text Animations in React
+
+Text is the most fundamental element of any interface, and how text appears on screen sets the tone for the entire experience. A headline that snaps into view feels different from one that gradually fades in from a blur. A tagline where each letter pulls up individually communicates precision. Text that waves creates playfulness.
+
+EldoraUI provides over a dozen text animation components, each with distinct motion characteristics. This guide covers every text animation in the library, explains when to use each one, and shows you how to combine them effectively.
+
+## The Text Animation Spectrum
+
+Before diving into individual components, it helps to understand the spectrum of text animations available:
+
+- **Subtle** -- BlurIn, FadeText: Gentle reveals that do not distract from the content
+- **Rhythmic** -- WordPullUpText, LetterPullUpText, GradualSpacingText: Sequential animations that create a cadence
+- **Dramatic** -- SeparateAwayText, MultiDirectionSlideText: Bold movements that demand attention
+- **Playful** -- WavyText, ScaleLetterText, DockText: Interactive or looping animations that add personality
+
+## BlurIn: The Cinematic Reveal
+
+BlurIn is the most versatile text animation for hero sections. The text starts blurred and invisible, then sharpens into focus. It feels cinematic -- like a camera pulling focus.
+
+```bash
+npx shadcn@latest add @eldoraui/blur-in-text
+```
+
+```tsx
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+
+<BlurIn
+  text="Welcome to the future"
+  className="text-5xl font-bold"
+/>
+```
+
+**Best used for:** Hero headlines, page titles, modal headers. Any situation where a single piece of text needs to arrive with gravitas.
+
+**When to avoid:** Body text, navigation items, or anywhere the user needs to read quickly. The blur effect adds latency to readability.
+
+## FadeText: The Swiss Army Knife
+
+FadeText supports three animation directions and customizable timing, making it the most flexible text animation component in the library. It works at the word level, revealing text progressively.
+
+```bash
+npx shadcn@latest add @eldoraui/fade-text
+```
+
+```tsx
+import { FadeText } from "@/components/eldoraui/fade-text"
+
+// Fade in word by word
+<FadeText text="Building the next generation" direction="in" />
+
+// Slide up with spring physics
+<FadeText text="Rising from below" direction="up" />
+
+// Descend from above
+<FadeText text="Dropping into place" direction="down" />
+```
+
+The `direction="in"` variant animates each word individually with opacity. The `"up"` and `"down"` variants move the entire text block with spring-based transitions.
+
+You can control the timing with two props:
+
+```tsx
+<FadeText
+  text="Fine-tuned timing"
+  direction="up"
+  staggerDelay={0.3}   // Delay between staggered animations (up/down)
+  wordDelay={0.1}      // Delay between word animations (in direction)
+/>
+```
+
+**Best used for:** Subtitles, descriptions, section introductions, testimonial quotes. Works in almost any context.
+
+**When to avoid:** Very long paragraphs. Word-by-word animation on a 200-word block would be painful to watch.
+
+## WordPullUpText: The Cascading Reveal
+
+WordPullUpText animates each word by pulling it upward from below with staggered timing. The words start below their final position and rise into place one after another.
+
+```bash
+npx shadcn@latest add @eldoraui/word-pull-up-text
+```
+
+```tsx
+import { WordPullUpText } from "@/components/eldoraui/word-pull-up-text"
+
+<WordPullUpText
+  text="Design engineering at its finest"
+  className="text-4xl font-bold text-blue-600"
+/>
+```
+
+The staggered timing creates a satisfying cascade effect where each word follows the previous one. This is more dynamic than FadeText's "up" direction because each word animates independently rather than the entire block moving together.
+
+**Best used for:** Section headings, feature titles, any short-to-medium text (3-8 words) where you want rhythmic emphasis.
+
+## LetterPullUpText: Precision Animation
+
+LetterPullUpText works like WordPullUpText but operates at the character level. Each individual letter pulls up from below, creating a more detailed and precise-feeling animation.
+
+```bash
+npx shadcn@latest add @eldoraui/letter-pull-up-text
+```
+
+```tsx
+import { LetterPullUpText } from "@/components/eldoraui/letter-pull-up-text"
+
+<LetterPullUpText
+  text="Pixel Perfect"
+  className="text-3xl font-mono text-blue-600"
+/>
+```
+
+Because every character animates independently, this component works best with shorter text. A two-word headline looks sharp. A full sentence would take too long to fully reveal.
+
+**Best used for:** Short headlines (1-3 words), brand names, emphasis text. Pairs well with monospace fonts for a technical aesthetic.
+
+**When to avoid:** Anything longer than about 4-5 words. The letter-level stagger becomes tedious.
+
+## GradualSpacingText: The Typewriter's Cousin
+
+GradualSpacingText reveals characters one by one with a gradual spacing effect. Characters appear sequentially with spacing that adjusts as each new character arrives.
+
+```bash
+npx shadcn@latest add @eldoraui/gradual-spacing-text
+```
+
+```tsx
+import { GradualSpacingText } from "@/components/eldoraui/gradual-spacing-text"
+
+<GradualSpacingText
+  text="Loading complete"
+  className="text-2xl font-semibold text-blue-600"
+/>
+```
+
+This animation has a mechanical, computed feel to it. Characters reveal in sequence while the spacing between them adjusts, creating a sense of precision.
+
+**Best used for:** Status messages, taglines, loading states, technical-themed interfaces.
+
+## WavyText: Continuous Motion
+
+WavyText creates a looping wave effect where each character moves up and down in sequence. Unlike the previous components, this animation does not just play once -- it continues moving.
+
+```bash
+npx shadcn@latest add @eldoraui/wavy-text
+```
+
+```tsx
+import { WavyText } from "@/components/eldoraui/wavy-text"
+
+<WavyText text="Hello World" className="text-4xl text-blue-600" />
+```
+
+The wave propagates through the characters continuously, creating an engaging ambient animation. This works well for elements that need to maintain visual interest over time.
+
+**Best used for:** Hero accents, brand names in playful contexts, loading indicators, interactive elements. Use sparingly -- continuous motion can be distracting.
+
+## SeparateAwayText: The Dramatic Split
+
+SeparateAwayText takes two text elements and separates them vertically -- one moves up, the other moves down. This creates a dramatic reveal effect.
+
+```bash
+npx shadcn@latest add @eldoraui/seperate-away-text
+```
+
+```tsx
+import { SeparateAwayText } from "@/components/eldoraui/seperate-away-text"
+
+<SeparateAwayText
+  textLeft="Break"
+  textRight="Free"
+  className="text-5xl font-bold text-blue-600"
+/>
+```
+
+The two text elements start together and move apart vertically. This is one of the more dramatic animations in the library and should be used intentionally.
+
+**Best used for:** Hero sections with contrasting concepts, transition moments, before/after comparisons. Works best with exactly two short words or phrases.
+
+## MultiDirectionSlideText: Cross-Axis Motion
+
+MultiDirectionSlideText slides two text elements from opposite horizontal directions -- one from the left, one from the right -- meeting in the center.
+
+```bash
+npx shadcn@latest add @eldoraui/multi-direction-slide-text
+```
+
+```tsx
+import { MultiDirectionSlideText } from "@/components/eldoraui/multi-direction-slide-text"
+
+<MultiDirectionSlideText
+  textLeft="Design"
+  textRight="Engineering"
+  className="text-4xl font-bold text-blue-600"
+/>
+```
+
+**Best used for:** Pairing two complementary concepts, section headers with two-part titles, landing page hero elements.
+
+## ScaleLetterText: Interactive Hover
+
+ScaleLetterText adds 3D scaling effects to individual letters that respond to hover. Each letter scales up when the mouse approaches it.
+
+```bash
+npx shadcn@latest add @eldoraui/scale-letter-text
+```
+
+```tsx
+import ScaleLetterText from "@/components/eldoraui/scale-letter-text"
+
+<ScaleLetterText
+  text="Hover over me"
+  className="text-center text-4xl font-bold"
+/>
+```
+
+**Best used for:** Interactive headings, navigation items, brand names where you want users to engage with the text itself.
+
+## DockText: The macOS Dock Effect
+
+DockText applies a dock-like magnification effect where letters scale based on mouse proximity, similar to the macOS dock.
+
+```bash
+npx shadcn@latest add @eldoraui/dock-text
+```
+
+```tsx
+import DockText from "@/components/eldoraui/dock-text"
+
+// Scale from bottom (default)
+<DockText text="Dock Effect" />
+
+// Scale from top
+<DockText text="Dock Effect" down={true} />
+
+// Custom size
+<DockText text="Dock Effect" className="text-4xl" />
+```
+
+**Best used for:** Navigation labels, interactive titles, playful UI elements. This is a continuously interactive component, so it works best where users are expected to hover.
+
+## Combining Text Animations
+
+The real power of these components emerges when you combine them in a single view. Here is a pattern for a section header with cascading animation hierarchy:
+
+```tsx
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+import { FadeText } from "@/components/eldoraui/fade-text"
+import { LetterPullUpText } from "@/components/eldoraui/letter-pull-up-text"
+
+export function SectionHeader() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <LetterPullUpText
+        text="FEATURES"
+        className="text-sm font-semibold tracking-widest text-blue-600"
+      />
+      <BlurIn
+        text="Everything you need to build beautiful interfaces"
+        className="max-w-2xl text-center text-4xl font-bold"
+      />
+      <FadeText
+        text="Forty-plus components, zero configuration, infinite possibilities"
+        direction="up"
+        className="text-lg text-muted-foreground"
+      />
+    </div>
+  )
+}
+```
+
+This creates a three-layer hierarchy: the eyebrow label pulls up letter by letter, the main heading blurs in with weight, and the subtitle fades up softly. Each animation type communicates the relative importance of its content.
+
+## Quick Reference
+
+| Component | Motion | Best For | Length |
+|-----------|--------|----------|--------|
+| BlurIn | Blur to sharp | Hero headlines | 3-10 words |
+| FadeText | Fade/slide per word | Subtitles, descriptions | 5-20 words |
+| WordPullUpText | Words rise up | Section headings | 3-8 words |
+| LetterPullUpText | Letters rise up | Short headlines | 1-4 words |
+| GradualSpacingText | Character reveal | Taglines, status text | 2-6 words |
+| WavyText | Continuous wave | Ambient accents | 1-4 words |
+| SeparateAwayText | Vertical split | Dramatic reveals | 2 words |
+| MultiDirectionSlideText | Horizontal slide-in | Two-part titles | 2 words |
+| ScaleLetterText | Hover scale 3D | Interactive headings | 2-5 words |
+| DockText | Dock magnification | Navigation, playful UI | 2-5 words |
+
+Every component in this guide is available at [eldoraui.site](https://eldoraui.site) with live previews and full documentation.

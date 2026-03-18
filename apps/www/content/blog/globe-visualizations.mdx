@@ -1,0 +1,405 @@
+---
+title: "Adding 3D Globe Visualizations to Your Next.js App"
+description: "Learn how to use EldoraUI's Cobe globe component for interactive 3D visualizations, connection maps, hero sections, and more. Includes customization and performance tips."
+publishedOn: "2026-03-19"
+tags: ["3d", "globe", "visualization", "nextjs"]
+author: "Karthik Mudunuri"
+image: ""
+featured: false
+---
+
+# Adding 3D Globe Visualizations to Your Next.js App
+
+Few UI elements communicate "global" as effectively as a rotating 3D globe. Whether you are showing your company's worldwide presence, visualizing network connections, or simply creating a memorable hero section, a globe instantly elevates the perceived quality of your application.
+
+Building a 3D globe from scratch requires WebGL knowledge, understanding of map projections, and careful performance optimization. EldoraUI's Cobe globe component wraps all of this complexity into a single React component with six interaction variants and full visual customization.
+
+This guide covers everything from basic usage to advanced customization, performance optimization, and real-world implementation patterns.
+
+## Getting Started with the Cobe Globe
+
+The Cobe globe component is built on the [cobe](https://github.com/shuding/cobe) library, which renders an interactive WebGL globe using a single canvas element. It is lightweight (around 5KB gzipped) and performs well even on mobile devices.
+
+### Installation
+
+```bash
+npx shadcn@latest add @eldoraui/cobe-globe
+```
+
+### Basic Usage
+
+```tsx
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+
+export default function GlobeSection() {
+  return (
+    <div className="h-[600px] w-full">
+      <Cobe variant="default" className="h-full w-full" />
+    </div>
+  )
+}
+```
+
+This renders an interactive globe with auto-rotation and drag support. The globe comes pre-configured with 13 colorful location markers spanning cities from San Francisco to Djibouti.
+
+## Understanding the Six Variants
+
+The Cobe component supports six distinct interaction modes, each suited to different use cases.
+
+### 1. Default: Interactive Auto-Rotation
+
+```tsx
+<Cobe variant="default" />
+```
+
+Combines continuous auto-rotation with drag interaction. When the user grabs and drags the globe, it responds to their input. When they release, the auto-rotation resumes. This is the best general-purpose variant -- it keeps the globe moving to attract attention while allowing curious users to explore.
+
+**Use case:** Hero sections, about pages, general-purpose globe displays.
+
+### 2. Draggable: User-Controlled
+
+```tsx
+<Cobe variant="draggable" />
+```
+
+Pure drag interaction with no auto-rotation. The globe stays still until the user interacts with it. This variant is appropriate when the globe is a tool rather than a decoration -- when users need to find specific locations.
+
+**Use case:** Interactive maps, location pickers, data exploration tools.
+
+### 3. Auto-Draggable: Smart Rotation
+
+```tsx
+<Cobe variant="auto-draggable" />
+```
+
+Auto-rotates until the user drags, then responds to drag input. After the user releases, the globe stays where they left it (unlike the "default" variant which resumes auto-rotation). This creates a respectful interaction -- the globe moves to catch your eye, but stops when you engage with it.
+
+**Use case:** Dashboard widgets, interactive sections where you want attention-grabbing but user-respecting behavior.
+
+### 4. Auto-Rotation: Hands Off
+
+```tsx
+<Cobe variant="auto-rotation" />
+```
+
+Pure auto-rotation with no user interaction. The globe spins continuously. This is the lightest variant in terms of event handling and the best choice when the globe is purely decorative.
+
+**Use case:** Background elements, hero sections where you do not want users getting sidetracked interacting with the globe, loading screens.
+
+### 5. Rotate to Location: Guided Navigation
+
+```tsx
+<Cobe
+  variant="rotate-to-location"
+  locations={[
+    { name: "San Francisco", lat: 37.7749, long: -122.4194 },
+    { name: "London", lat: 51.5074, long: -0.1278 },
+    { name: "Tokyo", lat: 35.6895, long: 139.6917 },
+    { name: "Sydney", lat: -33.8688, long: 151.2093 },
+  ]}
+/>
+```
+
+Renders clickable location buttons alongside the globe. When a user clicks a location, the globe smoothly rotates to center that location. This is the most interactive variant and communicates specific geographic data effectively.
+
+**Use case:** Office locations page, customer success stories by region, global team directories.
+
+### 6. Scaled: Wide Layout
+
+```tsx
+<Cobe variant="scaled" />
+```
+
+Renders a horizontally-oriented globe optimized for wide layouts and banners. The globe is scaled and positioned to fill a wider container, making it suitable for full-width sections.
+
+**Use case:** Full-width banner sections, hero backgrounds, wide dashboard headers.
+
+## Visual Customization
+
+The Cobe component exposes extensive visual controls. Here is a breakdown of every customization option with practical guidance.
+
+### Colors
+
+```tsx
+<Cobe
+  variant="default"
+  baseColor="#1e293b"     // Globe land mass color
+  markerColor="#3b82f6"   // Default marker dot color
+  glowColor="#3b82f6"     // Atmospheric glow color
+/>
+```
+
+The `baseColor` sets the color of the globe's land masses. For dark themes, try dark slate (`#1e293b`) or dark gray (`#18181b`). For light themes, white (`#ffffff`) or light gray (`#f1f5f9`) works well.
+
+The `glowColor` creates an atmospheric halo around the globe. Matching it to your brand's primary color creates a cohesive look:
+
+```tsx
+// Blue brand
+<Cobe baseColor="#1e293b" glowColor="#3b82f6" markerColor="#3b82f6" />
+
+// Green brand
+<Cobe baseColor="#14532d" glowColor="#22c55e" markerColor="#22c55e" />
+
+// Purple brand
+<Cobe baseColor="#1e1b4b" glowColor="#8b5cf6" markerColor="#8b5cf6" />
+```
+
+### Lighting
+
+```tsx
+<Cobe
+  variant="default"
+  diffuse={3}             // Diffuse light intensity
+  dark={1.1}              // Dark mode intensity
+  mapBrightness={1.8}     // Map brightness multiplier
+  mapBaseBrightness={0.05} // Base map brightness
+/>
+```
+
+Increasing `diffuse` creates a softer, more evenly lit globe. Decreasing it creates more dramatic lighting with stronger shadows. The `dark` prop controls how dark the unlit side of the globe appears -- higher values create more contrast.
+
+For a subtle, background-style globe, reduce brightness:
+
+```tsx
+<Cobe mapBrightness={0.8} mapBaseBrightness={0.02} opacity={0.5} />
+```
+
+For a bright, attention-grabbing hero globe, increase it:
+
+```tsx
+<Cobe mapBrightness={2.5} mapBaseBrightness={0.1} opacity={1} />
+```
+
+### Detail Level
+
+```tsx
+<Cobe mapSamples={16000} />
+```
+
+The `mapSamples` prop controls how many sample points are used to render the map. Higher values produce more detailed coastlines and borders. The default of 16000 is a good balance. For performance-sensitive contexts, reduce to 8000. For high-resolution hero displays, increase to 24000 or 32000.
+
+### Position and Scale
+
+```tsx
+<Cobe
+  phi={0}        // Horizontal rotation angle
+  theta={0.2}    // Vertical tilt angle
+  scale={1.0}    // Globe size
+  offsetX={0}    // Horizontal position offset
+  offsetY={0}    // Vertical position offset
+  opacity={0.7}  // Globe opacity
+/>
+```
+
+The `phi` and `theta` props control the initial viewing angle. Use these to show a specific region when the globe first renders:
+
+```tsx
+// Start focused on North America
+<Cobe phi={1.5} theta={0.3} />
+
+// Start focused on Europe
+<Cobe phi={-0.3} theta={0.4} />
+
+// Start focused on Asia
+<Cobe phi={-1.8} theta={0.3} />
+```
+
+## Real-World Implementation Patterns
+
+### Pattern 1: Hero Section with Globe Background
+
+Place the globe behind text content for a dramatic hero section:
+
+```tsx
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+import { BlurIn } from "@/components/eldoraui/blur-in-text"
+
+export function GlobeHero() {
+  return (
+    <section className="relative flex items-center justify-center overflow-hidden py-32">
+      {/* Globe in background */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30">
+        <Cobe
+          variant="auto-rotation"
+          className="h-[800px] w-[800px]"
+          mapBrightness={1.2}
+          dark={1.5}
+        />
+      </div>
+      {/* Content in foreground */}
+      <div className="relative z-10 flex flex-col items-center gap-6">
+        <BlurIn
+          text="Infrastructure for the global internet"
+          className="max-w-3xl text-center text-5xl font-bold"
+        />
+      </div>
+    </section>
+  )
+}
+```
+
+The key is setting the globe container to `opacity-30` (or similar) so it does not compete with the text. The `auto-rotation` variant ensures the globe moves without requiring user interaction.
+
+### Pattern 2: Office Locations Page
+
+The `rotate-to-location` variant is perfect for showing office or team locations:
+
+```tsx
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+
+const offices = [
+  { name: "San Francisco HQ", lat: 37.7749, long: -122.4194 },
+  { name: "London Office", lat: 51.5074, long: -0.1278 },
+  { name: "Singapore Office", lat: 1.3521, long: 103.8198 },
+  { name: "Sao Paulo Office", lat: -23.5505, long: -46.6333 },
+]
+
+export function OfficeLocations() {
+  return (
+    <section className="px-4 py-24">
+      <h2 className="mb-12 text-center text-3xl font-bold">Our Offices</h2>
+      <div className="mx-auto max-w-3xl">
+        <Cobe
+          variant="rotate-to-location"
+          locations={offices}
+          className="h-[500px] w-full"
+          markerColor="#f97316"
+          markerSize={0.08}
+        />
+      </div>
+    </section>
+  )
+}
+```
+
+Users can click location buttons to rotate the globe to each office, creating an engaging way to explore your global presence.
+
+### Pattern 3: Dashboard Widget
+
+For a compact dashboard widget showing global metrics:
+
+```tsx
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+
+export function GlobalMetricsWidget() {
+  return (
+    <div className="rounded-lg border p-4">
+      <h3 className="mb-2 text-sm font-medium text-muted-foreground">
+        Global Traffic
+      </h3>
+      <div className="flex items-center gap-4">
+        <Cobe
+          variant="auto-rotation"
+          className="h-24 w-24"
+          mapSamples={8000}
+          mapBrightness={1.2}
+          markerSize={0.03}
+        />
+        <div>
+          <p className="text-2xl font-bold">2.4M</p>
+          <p className="text-sm text-muted-foreground">requests / day</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+```
+
+Note the reduced `mapSamples` for the small display size. At 96x96 pixels, 8000 samples are more than enough detail.
+
+## Performance Optimization
+
+The Cobe globe uses WebGL, which means it runs on the GPU. This is generally fast, but there are situations where performance can degrade.
+
+### Server-Side Rendering
+
+The globe requires a canvas element and WebGL context, which do not exist on the server. Use dynamic imports with SSR disabled:
+
+```tsx
+import dynamic from "next/dynamic"
+
+const Cobe = dynamic(
+  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
+  { ssr: false, loading: () => <div className="h-[600px] w-full bg-muted rounded-full" /> }
+)
+```
+
+The `loading` prop provides a placeholder while the component loads client-side.
+
+### Lazy Loading
+
+If your globe is below the fold, lazy-load it to avoid blocking initial page render:
+
+```tsx
+import { useInView } from "react-intersection-observer"
+import dynamic from "next/dynamic"
+
+const Cobe = dynamic(
+  () => import("@/components/eldoraui/cobe-globe").then(mod => mod.Cobe),
+  { ssr: false }
+)
+
+export function LazyGlobe() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+
+  return (
+    <div ref={ref} className="h-[600px] w-full">
+      {inView && <Cobe variant="auto-rotation" className="h-full w-full" />}
+    </div>
+  )
+}
+```
+
+This ensures the WebGL context is only created when the globe scrolls into view.
+
+### Mobile Considerations
+
+WebGL performance varies significantly across mobile devices. Consider these strategies:
+
+1. **Reduce map samples** on mobile: Use `mapSamples={8000}` instead of 16000
+2. **Disable interaction** on mobile: Use `variant="auto-rotation"` to avoid touch event conflicts with page scrolling
+3. **Provide a fallback**: On very low-powered devices, consider showing a static globe image instead
+
+```tsx
+"use client"
+
+import { useEffect, useState } from "react"
+import { Cobe } from "@/components/eldoraui/cobe-globe"
+
+export function ResponsiveGlobe() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
+
+  return (
+    <Cobe
+      variant={isMobile ? "auto-rotation" : "default"}
+      mapSamples={isMobile ? 8000 : 16000}
+      className="h-[500px] w-full"
+    />
+  )
+}
+```
+
+### Multiple Globes
+
+Avoid rendering more than one globe on the same page. Each globe creates its own WebGL context and animation loop. Two globes on the same page doubles the GPU workload. If you need multiple globe views, consider a tabbed interface where only one globe renders at a time.
+
+## Accessibility Considerations
+
+3D visualizations present inherent accessibility challenges. Here are some practical steps:
+
+1. **Provide text alternatives**: Always include a text description of what the globe represents, either as visible text or an `aria-label` on the container
+2. **Do not rely on the globe alone**: If the globe shows office locations, also list them in text format elsewhere on the page
+3. **Respect reduced motion**: Consider hiding or replacing the globe for users who prefer reduced motion
+4. **Keyboard support**: The draggable variants require mouse input. Ensure location information is accessible via keyboard through alternative navigation
+
+## Wrapping Up
+
+The Cobe globe component transforms a complex 3D visualization into a simple React component call. Six variants cover the spectrum from fully interactive to purely decorative. Visual customization through props gives you full control over colors, lighting, and positioning without touching WebGL code.
+
+The key to using globe visualizations effectively is purpose. A globe in your hero section says "we think globally." A globe with clickable locations says "we are here, everywhere." A globe in a dashboard says "this data is worldwide." Choose the variant and customization that serves your specific message.
+
+Explore all globe variants with live demos at [eldoraui.site](https://eldoraui.site).

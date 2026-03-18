@@ -1,0 +1,550 @@
+---
+title: "Build a Complete SaaS Landing Page in 30 Minutes with EldoraUI"
+description: "A step-by-step tutorial for building a polished SaaS landing page using EldoraUI components - animated hero, bento grid features, testimonials, CTAs, and more."
+publishedOn: "2026-03-19"
+tags: ["tutorial", "saas", "landing-page"]
+author: "Karthik Mudunuri"
+image: ""
+featured: false
+---
+
+# Build a Complete SaaS Landing Page in 30 Minutes with EldoraUI
+
+A great landing page can make or break a SaaS product launch. You need something that loads fast, looks polished, and communicates your value proposition clearly. But building one from scratch takes days, not minutes.
+
+In this tutorial, we will build a complete SaaS landing page using [EldoraUI](https://eldoraui.site) components. By the end, you will have a page with an animated hero section, a bento grid feature showcase, a testimonial section, a call-to-action, and a footer. All in about 30 minutes.
+
+## Prerequisites
+
+Before starting, make sure you have:
+
+- A Next.js project set up (App Router recommended)
+- Tailwind CSS configured
+- EldoraUI components installed via the CLI
+
+```bash
+npx eldoraui init
+```
+
+Then add the components we will use:
+
+```bash
+npx eldoraui add animated-gradient-text
+npx eldoraui add shimmer-button
+npx eldoraui add blur-fade
+npx eldoraui add bento-grid
+npx eldoraui add animated-list
+npx eldoraui add number-ticker
+npx eldoraui add particles
+npx eldoraui add dock
+npx eldoraui add text-animate
+npx eldoraui add pulsating-button
+```
+
+## Step 1: Page Layout and Structure
+
+Start with a clean page layout. Create your landing page file:
+
+```tsx
+// app/page.tsx
+import { HeroSection } from "@/components/landing/hero";
+import { FeaturesSection } from "@/components/landing/features";
+import { TestimonialsSection } from "@/components/landing/testimonials";
+import { CTASection } from "@/components/landing/cta";
+import { FooterSection } from "@/components/landing/footer";
+
+export default function LandingPage() {
+  return (
+    <main className="min-h-screen bg-white dark:bg-zinc-950">
+      <HeroSection />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <CTASection />
+      <FooterSection />
+    </main>
+  );
+}
+```
+
+## Step 2: The Hero Section
+
+The hero is the first thing visitors see. We want animated text, a clear headline, a subtitle, and a compelling CTA button. We will also add a subtle particle background for depth.
+
+```tsx
+// components/landing/hero.tsx
+import { AnimatedGradientText } from "@/components/eldoraui/animated-gradient-text";
+import { ShimmerButton } from "@/components/eldoraui/shimmer-button";
+import { BlurFade } from "@/components/eldoraui/blur-fade";
+import { Particles } from "@/components/eldoraui/particles";
+import { TextAnimate } from "@/components/eldoraui/text-animate";
+import { ChevronRight } from "lucide-react";
+
+export function HeroSection() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background particles */}
+      <Particles
+        className="absolute inset-0"
+        quantity={80}
+        color="#6366f1"
+        staticity={30}
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        {/* Announcement badge */}
+        <BlurFade delay={0.1} inView>
+          <div className="flex justify-center mb-6">
+            <AnimatedGradientText>
+              <span className="text-sm">
+                Announcing our Series A
+                <ChevronRight className="inline ml-1 h-3 w-3" />
+              </span>
+            </AnimatedGradientText>
+          </div>
+        </BlurFade>
+
+        {/* Main headline */}
+        <BlurFade delay={0.2} inView>
+          <TextAnimate
+            text="The Modern Platform for Building SaaS"
+            type="pullUp"
+            className="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+          />
+        </BlurFade>
+
+        {/* Subtitle */}
+        <BlurFade delay={0.4} inView>
+          <p className="mt-6 text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Ship faster with built-in authentication, billing, analytics,
+            and everything else you need to launch your product.
+          </p>
+        </BlurFade>
+
+        {/* CTA buttons */}
+        <BlurFade delay={0.6} inView>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <ShimmerButton className="px-8 py-3">
+              <span className="text-sm font-medium text-white">
+                Start Building Free
+              </span>
+            </ShimmerButton>
+            <button className="px-8 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
+              View Documentation
+            </button>
+          </div>
+        </BlurFade>
+      </div>
+    </section>
+  );
+}
+```
+
+The staggered `BlurFade` delays create a cascading reveal effect. The particles add subtle movement to the background without distracting from the content. The `AnimatedGradientText` badge draws attention to your announcement.
+
+## Step 3: The Features Section with Bento Grid
+
+Bento grids have become the standard for showcasing features. They let you vary the visual weight of each feature and incorporate rich backgrounds:
+
+```tsx
+// components/landing/features.tsx
+import { BentoGrid, BentoCard } from "@/components/eldoraui/bento-grid";
+import { BlurFade } from "@/components/eldoraui/blur-fade";
+import { NumberTicker } from "@/components/eldoraui/number-ticker";
+import {
+  Zap,
+  Shield,
+  BarChart3,
+  Users,
+  Globe,
+  Code,
+} from "lucide-react";
+
+const features = [
+  {
+    Icon: Zap,
+    name: "Lightning Fast",
+    description: "Sub-100ms API responses powered by edge computing.",
+    className: "col-span-3 md:col-span-1",
+  },
+  {
+    Icon: Shield,
+    name: "Secure by Default",
+    description: "SOC 2 compliant with built-in encryption at rest and in transit.",
+    className: "col-span-3 md:col-span-2",
+  },
+  {
+    Icon: BarChart3,
+    name: "Real-Time Analytics",
+    description: "Track every metric that matters with zero configuration.",
+    className: "col-span-3 md:col-span-2",
+  },
+  {
+    Icon: Users,
+    name: "Team Collaboration",
+    description: "Built-in roles, permissions, and audit logs.",
+    className: "col-span-3 md:col-span-1",
+  },
+];
+
+export function FeaturesSection() {
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <BlurFade delay={0.1} inView>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50">
+              Everything you need to ship
+            </h2>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+              Stop stitching together dozens of services.
+              One platform, everything included.
+            </p>
+          </div>
+        </BlurFade>
+
+        <BentoGrid>
+          {features.map((feature, i) => (
+            <BlurFade key={feature.name} delay={0.1 * (i + 1)} inView>
+              <BentoCard
+                Icon={feature.Icon}
+                name={feature.name}
+                description={feature.description}
+                className={feature.className}
+                href="#"
+                cta="Learn more"
+              />
+            </BlurFade>
+          ))}
+        </BentoGrid>
+
+        {/* Stats row */}
+        <BlurFade delay={0.6} inView>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+                <NumberTicker value={10000} />+
+              </div>
+              <p className="mt-1 text-sm text-zinc-500">Developers</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+                <NumberTicker value={99.9} decimalPlaces={1} />%
+              </div>
+              <p className="mt-1 text-sm text-zinc-500">Uptime</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+                <NumberTicker value={50} />ms
+              </div>
+              <p className="mt-1 text-sm text-zinc-500">Avg Response</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+                <NumberTicker value={40} />+
+              </div>
+              <p className="mt-1 text-sm text-zinc-500">Integrations</p>
+            </div>
+          </div>
+        </BlurFade>
+      </div>
+    </section>
+  );
+}
+```
+
+The `NumberTicker` component makes the stats section feel dynamic. Numbers count up when they scroll into view, which is far more engaging than static text.
+
+## Step 4: Testimonials with Animated List
+
+Social proof is critical for SaaS conversions. We will use EldoraUI's `AnimatedList` to create a dynamic testimonial feed:
+
+```tsx
+// components/landing/testimonials.tsx
+import { AnimatedList } from "@/components/eldoraui/animated-list";
+import { BlurFade } from "@/components/eldoraui/blur-fade";
+
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    role: "CTO at TechFlow",
+    text: "We migrated our entire auth system in a weekend. The DX is incredible.",
+    avatar: "/avatars/sarah.jpg",
+  },
+  {
+    name: "Marcus Rodriguez",
+    role: "Founder at Launchpad",
+    text: "Cut our development time by 60%. We launched 3 months ahead of schedule.",
+    avatar: "/avatars/marcus.jpg",
+  },
+  {
+    name: "Aisha Patel",
+    role: "Lead Engineer at ScaleUp",
+    text: "The analytics dashboard alone saved us from building a custom solution.",
+    avatar: "/avatars/aisha.jpg",
+  },
+  {
+    name: "James Wright",
+    role: "VP Engineering at CloudBase",
+    text: "Best developer experience I have seen in 15 years of building SaaS products.",
+    avatar: "/avatars/james.jpg",
+  },
+];
+
+function TestimonialCard({
+  name,
+  role,
+  text,
+}: {
+  name: string;
+  role: string;
+  text: string;
+  avatar: string;
+}) {
+  return (
+    <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+      <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
+        &ldquo;{text}&rdquo;
+      </p>
+      <div className="mt-4 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500" />
+        <div>
+          <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            {name}
+          </p>
+          <p className="text-xs text-zinc-500">{role}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function TestimonialsSection() {
+  return (
+    <section className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+      <div className="max-w-4xl mx-auto">
+        <BlurFade delay={0.1} inView>
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-zinc-900 dark:text-zinc-50 mb-4">
+            Loved by developers
+          </h2>
+          <p className="text-center text-zinc-600 dark:text-zinc-400 mb-16">
+            Join thousands of teams building with our platform.
+          </p>
+        </BlurFade>
+
+        <BlurFade delay={0.3} inView>
+          <div className="relative max-h-[500px] overflow-hidden">
+            <AnimatedList delay={2000}>
+              {testimonials.map((t) => (
+                <TestimonialCard key={t.name} {...t} />
+              ))}
+            </AnimatedList>
+
+            {/* Fade overlay at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-50 dark:from-zinc-900/50 to-transparent pointer-events-none" />
+          </div>
+        </BlurFade>
+      </div>
+    </section>
+  );
+}
+```
+
+The `AnimatedList` automatically cycles through testimonials with smooth enter/exit animations, keeping the section dynamic without requiring user interaction.
+
+## Step 5: Call to Action
+
+The CTA section should be visually distinct and compelling. We will use a `PulsatingButton` to draw attention:
+
+```tsx
+// components/landing/cta.tsx
+import { PulsatingButton } from "@/components/eldoraui/pulsating-button";
+import { BlurFade } from "@/components/eldoraui/blur-fade";
+
+export function CTASection() {
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <BlurFade delay={0.1} inView>
+          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50">
+            Ready to ship your next big idea?
+          </h2>
+          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+            Start building for free. No credit card required.
+            Scale when you are ready.
+          </p>
+        </BlurFade>
+
+        <BlurFade delay={0.3} inView>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <PulsatingButton className="px-10 py-4 text-base">
+              Get Started Free
+            </PulsatingButton>
+            <a
+              href="#"
+              className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              Talk to Sales →
+            </a>
+          </div>
+        </BlurFade>
+
+        <BlurFade delay={0.5} inView>
+          <p className="mt-6 text-xs text-zinc-400">
+            Free tier includes 10,000 API calls/month.
+            No credit card required.
+          </p>
+        </BlurFade>
+      </div>
+    </section>
+  );
+}
+```
+
+The `PulsatingButton` has a subtle pulse animation that draws the eye without being aggressive. It signals to users that this is the primary action on the page.
+
+## Step 6: Footer with Dock Navigation
+
+For a modern touch, we will use EldoraUI's dock component for the footer's main navigation links:
+
+```tsx
+// components/landing/footer.tsx
+import { Dock, DockIcon } from "@/components/eldoraui/dock";
+import {
+  Github,
+  Twitter,
+  Mail,
+  FileText,
+  BookOpen,
+} from "lucide-react";
+
+export function FooterSection() {
+  return (
+    <footer className="py-16 px-6 border-t border-zinc-200 dark:border-zinc-800">
+      <div className="max-w-6xl mx-auto">
+        {/* Footer links grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Product
+            </h4>
+            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Features</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Pricing</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Changelog</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Roadmap</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Resources
+            </h4>
+            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Documentation</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">API Reference</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Guides</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Company
+            </h4>
+            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">About</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Careers</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Privacy</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Terms</a></li>
+              <li><a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">Security</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Social dock */}
+        <div className="flex flex-col items-center gap-6">
+          <Dock>
+            <DockIcon>
+              <a href="#" aria-label="GitHub">
+                <Github className="h-5 w-5" />
+              </a>
+            </DockIcon>
+            <DockIcon>
+              <a href="#" aria-label="Twitter">
+                <Twitter className="h-5 w-5" />
+              </a>
+            </DockIcon>
+            <DockIcon>
+              <a href="#" aria-label="Email">
+                <Mail className="h-5 w-5" />
+              </a>
+            </DockIcon>
+            <DockIcon>
+              <a href="#" aria-label="Documentation">
+                <BookOpen className="h-5 w-5" />
+              </a>
+            </DockIcon>
+            <DockIcon>
+              <a href="#" aria-label="Blog">
+                <FileText className="h-5 w-5" />
+              </a>
+            </DockIcon>
+          </Dock>
+          <p className="text-xs text-zinc-400">
+            &copy; 2026 YourSaaS. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+
+The dock component adds an interactive, macOS-style magnification effect to the social links. It is a small detail that adds delight and signals polish.
+
+## Putting It All Together
+
+With all five sections complete, your landing page file simply composes them together:
+
+```tsx
+// app/page.tsx
+import { HeroSection } from "@/components/landing/hero";
+import { FeaturesSection } from "@/components/landing/features";
+import { TestimonialsSection } from "@/components/landing/testimonials";
+import { CTASection } from "@/components/landing/cta";
+import { FooterSection } from "@/components/landing/footer";
+
+export default function LandingPage() {
+  return (
+    <main className="min-h-screen bg-white dark:bg-zinc-950">
+      <HeroSection />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <CTASection />
+      <FooterSection />
+    </main>
+  );
+}
+```
+
+## Tips for Customization
+
+Here are a few ways to make this template your own:
+
+1. **Change the color palette** - Replace `indigo` and `purple` references with your brand colors throughout the Tailwind classes
+2. **Add a navigation bar** - Use a sticky header with blur backdrop for a modern feel
+3. **Include a pricing section** - Use the bento grid layout with three pricing tiers
+4. **Add social proof logos** - Place a row of customer logos between the hero and features sections using the `marquee` component for a scrolling effect
+5. **Dark mode** - All the code above includes `dark:` variants, so dark mode works out of the box
+
+## Final Thoughts
+
+Building a landing page does not have to be a multi-day project. With EldoraUI's pre-built animated components, you can focus on your content and messaging while the UI handles itself. The components are designed to work together, so you spend less time wrestling with CSS and more time crafting a compelling narrative for your product.
+
+The full source code for this tutorial is available on [GitHub](https://github.com/karthikmudunuri/eldoraui). Try it out, customize it to match your brand, and ship your next landing page in record time.
