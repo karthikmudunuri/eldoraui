@@ -40,7 +40,7 @@ Follow these commit message conventions based on 8 analyzed commits.
 
 ### Message Guidelines
 
-- Average message length: ~48 characters
+- Average message length: ~50 characters
 - Keep first line concise and descriptive
 - Use imperative mood ("Add feature" not "Added feature")
 
@@ -48,7 +48,7 @@ Follow these commit message conventions based on 8 analyzed commits.
 *Commit message example*
 
 ```text
-feat: add eldoraui ECC bundle (.claude/commands/update-readme-badge-or-section.md)
+feat: add eldoraui ECC bundle (.claude/commands/add-or-update-eldoraui-command-md.md)
 ```
 
 *Commit message example*
@@ -186,31 +186,26 @@ feat: add eldoraui ECC bundle (.codex/agents/reviewer.toml)
 
 ### Add Eldoraui Ecc Bundle
 
-Adds a new ECC (Eldoraui Component Collection) bundle, which includes configuration, agent definitions, skills, commands, and documentation files for the eldoraui system.
+Adds or updates the eldoraui ECC bundle, which includes commands, skills, agent configs, instincts, and documentation.
 
-**Frequency**: ~3 times per month
+**Frequency**: ~4 times per month
 
 **Steps**:
-1. Add or update .claude/commands/*.md files (such as add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+1. Add or update .claude/commands/*.md files related to eldoraui commands (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
 2. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-3. Add or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
-4. Add or update .codex/AGENTS.md and .codex/config.toml
-5. Add or update .claude/identity.json
-6. Add or update .agents/skills/eldoraui/agents/openai.yaml
-7. Add or update .agents/skills/eldoraui/SKILL.md
-8. Add or update .claude/skills/eldoraui/SKILL.md
-9. Add or update .claude/ecc-tools.json
+3. Add or update .codex/agents/*.toml files (docs-researcher.toml, reviewer.toml, explorer.toml)
+4. Add or update .codex/AGENTS.md
+5. Add or update .codex/config.toml
+6. Add or update .claude/identity.json
+7. Add or update .agents/skills/eldoraui/agents/openai.yaml
+8. Add or update .agents/skills/eldoraui/SKILL.md
+9. Add or update .claude/skills/eldoraui/SKILL.md
+10. Add or update .claude/ecc-tools.json
 
 **Files typically involved**:
-- `.claude/commands/add-new-component-with-demo-and-docs.md`
-- `.claude/commands/feature-development.md`
-- `.claude/commands/update-readme-or-project-metadata.md`
-- `.claude/commands/update-component-or-docs.md`
-- `.claude/commands/update-readme-badge-or-section.md`
+- `.claude/commands/*.md`
 - `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
-- `.codex/agents/docs-researcher.toml`
-- `.codex/agents/reviewer.toml`
-- `.codex/agents/explorer.toml`
+- `.codex/agents/*.toml`
 - `.codex/AGENTS.md`
 - `.codex/config.toml`
 - `.claude/identity.json`
@@ -221,10 +216,11 @@ Adds a new ECC (Eldoraui Component Collection) bundle, which includes configurat
 
 **Example commit sequence**:
 ```
-Add or update .claude/commands/*.md files (such as add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+Add or update .claude/commands/*.md files related to eldoraui commands (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
 Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-Add or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
-Add or update .codex/AGENTS.md and .codex/config.toml
+Add or update .codex/agents/*.toml files (docs-researcher.toml, reviewer.toml, explorer.toml)
+Add or update .codex/AGENTS.md
+Add or update .codex/config.toml
 Add or update .claude/identity.json
 Add or update .agents/skills/eldoraui/agents/openai.yaml
 Add or update .agents/skills/eldoraui/SKILL.md
@@ -232,58 +228,69 @@ Add or update .claude/skills/eldoraui/SKILL.md
 Add or update .claude/ecc-tools.json
 ```
 
-### Add Or Update Eldoraui Command Md
+### Add Or Update Eldoraui Command Docs
 
-Adds or updates command documentation Markdown files for eldoraui, describing workflows or features.
+Adds or updates documentation for eldoraui-related commands in the .claude/commands directory.
 
-**Frequency**: ~2 times per month
+**Frequency**: ~3 times per month
 
 **Steps**:
-1. Create or update .claude/commands/*.md file(s) relevant to the workflow (e.g., add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+1. Add or update a .claude/commands/*.md file for the specific command (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
 
 **Files typically involved**:
-- `.claude/commands/add-new-component-with-demo-and-docs.md`
-- `.claude/commands/feature-development.md`
-- `.claude/commands/update-readme-or-project-metadata.md`
-- `.claude/commands/update-component-or-docs.md`
-- `.claude/commands/update-readme-badge-or-section.md`
+- `.claude/commands/*.md`
 
 **Example commit sequence**:
 ```
-Create or update .claude/commands/*.md file(s) relevant to the workflow (e.g., add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+Add or update a .claude/commands/*.md file for the specific command (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
 ```
 
-### Add Or Update Codex Agents
+### Update Eldoraui Instincts
 
-Adds or updates agent configuration files in the .codex/agents directory, defining agent behaviors for eldoraui.
+Adds or updates the eldoraui instincts YAML file, which likely defines behavioral patterns or configuration for the agent.
 
-**Frequency**: ~2 times per month
+**Frequency**: ~3 times per month
 
 **Steps**:
-1. Create or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
-2. Update .codex/AGENTS.md to document the available agents
+1. Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 
 **Files typically involved**:
-- `.codex/agents/docs-researcher.toml`
-- `.codex/agents/reviewer.toml`
-- `.codex/agents/explorer.toml`
+- `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
+
+**Example commit sequence**:
+```
+Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+```
+
+### Update Codex Agents And Docs
+
+Adds or updates agent configuration files and documentation in the .codex directory.
+
+**Frequency**: ~3 times per month
+
+**Steps**:
+1. Add or update .codex/agents/*.toml files (docs-researcher.toml, reviewer.toml, explorer.toml)
+2. Add or update .codex/AGENTS.md
+
+**Files typically involved**:
+- `.codex/agents/*.toml`
 - `.codex/AGENTS.md`
 
 **Example commit sequence**:
 ```
-Create or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
-Update .codex/AGENTS.md to document the available agents
+Add or update .codex/agents/*.toml files (docs-researcher.toml, reviewer.toml, explorer.toml)
+Add or update .codex/AGENTS.md
 ```
 
-### Add Or Update Eldoraui Skill Md
+### Update Eldoraui Skill Docs
 
-Adds or updates SKILL.md documentation files for eldoraui skills in both .agents and .claude directories.
+Adds or updates SKILL.md documentation for eldoraui skills in both .agents and .claude directories.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Create or update .agents/skills/eldoraui/SKILL.md
-2. Create or update .claude/skills/eldoraui/SKILL.md
+1. Add or update .agents/skills/eldoraui/SKILL.md
+2. Add or update .claude/skills/eldoraui/SKILL.md
 
 **Files typically involved**:
 - `.agents/skills/eldoraui/SKILL.md`
@@ -291,25 +298,8 @@ Adds or updates SKILL.md documentation files for eldoraui skills in both .agents
 
 **Example commit sequence**:
 ```
-Create or update .agents/skills/eldoraui/SKILL.md
-Create or update .claude/skills/eldoraui/SKILL.md
-```
-
-### Add Or Update Eldoraui Instincts
-
-Adds or updates the eldoraui instincts YAML file, which may define behavioral patterns or defaults.
-
-**Frequency**: ~2 times per month
-
-**Steps**:
-1. Create or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-
-**Files typically involved**:
-- `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
-
-**Example commit sequence**:
-```
-Create or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+Add or update .agents/skills/eldoraui/SKILL.md
+Add or update .claude/skills/eldoraui/SKILL.md
 ```
 
 
