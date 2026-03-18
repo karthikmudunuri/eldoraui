@@ -65,7 +65,7 @@ export interface Stargazer {
  * - Optimized for Server Components & API routes
  */
 export async function fetchStargazers(
-  limit: number = 1500,
+  limit: number = 1500
 ): Promise<Stargazer[]> {
   const stargazers: Stargazer[] = []
   let page = 1
@@ -84,7 +84,7 @@ export async function fetchStargazers(
         next: {
           revalidate: 3600, // cache for 1 hour
         },
-      },
+      }
     )
 
     if (!res.ok) {
