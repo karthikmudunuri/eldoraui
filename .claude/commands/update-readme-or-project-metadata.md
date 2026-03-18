@@ -10,12 +10,11 @@ Use this workflow when working on **update-readme-or-project-metadata** in `eldo
 
 ## Goal
 
-Updates project-level documentation or metadata such as README, LICENSE, or badges.
+Updates the README file or project metadata, such as badges or support sections.
 
 ## Common Files
 
 - `README.md`
-- `LICENSE.md`
 
 ## Suggested Sequence
 
@@ -26,8 +25,8 @@ Updates project-level documentation or metadata such as README, LICENSE, or badg
 
 ## Typical Commit Signals
 
-- Edit README.md to update badges, instructions, or project description
-- Optionally update LICENSE.md for copyright or legal changes
+- Edit README.md to add or update badges, support sections, or other metadata.
+- Commit the changes.
 
 ## Notes
 
