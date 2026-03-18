@@ -14,7 +14,7 @@ Standard feature implementation workflow
 
 ## Common Files
 
-- `.claude/commands/*`
+- Inspect the files touched by the related commits before editing.
 
 ## Suggested Sequence
 
