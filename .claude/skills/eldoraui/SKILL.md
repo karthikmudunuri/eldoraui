@@ -40,7 +40,7 @@ Follow these commit message conventions based on 8 analyzed commits.
 
 ### Message Guidelines
 
-- Average message length: ~41 characters
+- Average message length: ~43 characters
 - Keep first line concise and descriptive
 - Use imperative mood ("Add feature" not "Added feature")
 
@@ -48,13 +48,13 @@ Follow these commit message conventions based on 8 analyzed commits.
 *Commit message example*
 
 ```text
-style: format blog posts with prettier
+feat: add eldoraui ECC bundle (.claude/commands/add-blog-posts.md)
 ```
 
 *Commit message example*
 
 ```text
-feat: add 10 blog posts to increase component library value
+style: format blog posts with prettier
 ```
 
 *Commit message example*
@@ -78,19 +78,19 @@ chore: update installation commands
 *Commit message example*
 
 ```text
-Update Vercel OSS Program badge in README
+feat: add eldoraui ECC bundle (.claude/commands/add-new-component-with-demo-and-docs.md)
 ```
 
 *Commit message example*
 
 ```text
-Add Vercel support section to README
+feat: add eldoraui ECC bundle (.claude/commands/feature-development.md)
 ```
 
 *Commit message example*
 
 ```text
-fix: open graph error
+feat: add eldoraui ECC bundle (.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml)
 ```
 
 ## Architecture
@@ -167,7 +167,7 @@ These workflows were detected from analyzing commit patterns.
 
 Standard feature implementation workflow
 
-**Frequency**: ~10 times per month
+**Frequency**: ~16 times per month
 
 **Steps**:
 1. Add feature implementation
@@ -175,129 +175,102 @@ Standard feature implementation workflow
 3. Update documentation
 
 **Files typically involved**:
-- `apps/www/components/sections/*`
-- `apps/www/components/*`
 - `apps/www/config/*`
+- `apps/www/content/docs/components/*`
+- `apps/www/registry/*`
 - `**/*.test.*`
 - `**/api/**`
 
 **Example commit sequence**:
 ```
-feat: add live button components
-feat: add animated shiny button component with demo
-chore: update copyright information and discord link in README
+feat: add animated list component
+fix: update installation command for animated list component
+docs: update AGENTS.md
 ```
 
 ### Add New Component With Demo And Docs
 
-Adds a new UI component to the library, including implementation, demo, documentation, and registry integration.
+Adds a new UI component to the library, including implementation, demo, documentation, and registry updates.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Implement component in apps/www/registry/eldoraui/{component-name}.tsx
-2. Create demo(s) in apps/www/registry/example/{component-name}-demo.tsx
+1. Implement the new component in apps/www/registry/eldoraui/{component-name}.tsx
+2. Create demo(s) for the component in apps/www/registry/example/{component-name}-demo.tsx (and possibly numbered variants)
 3. Add documentation in apps/www/content/docs/components/{component-name}.mdx
-4. Update registry files: apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts, apps/www/registry/__index__.tsx
-5. Update apps/www/config/docs.ts to register the component
-6. Add or update JSON metadata in apps/www/public/r/{component-name}.json and related demo JSONs
-7. Update public registry files: apps/www/public/registry.json, apps/www/registry.json
-8. Update apps/www/public/llms.txt and apps/www/public/llms-full.txt
+4. Update registry files: apps/www/registry.json, apps/www/public/registry.json, apps/www/public/r/{component-name}.json, apps/www/public/r/{component-name}-demo.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts
+5. Update apps/www/config/docs.ts to register the new component
+6. Update apps/www/public/llms-full.txt and apps/www/public/llms.txt
 
 **Files typically involved**:
 - `apps/www/registry/eldoraui/*.tsx`
-- `apps/www/registry/example/*.tsx`
+- `apps/www/registry/example/*-demo*.tsx`
 - `apps/www/content/docs/components/*.mdx`
+- `apps/www/config/docs.ts`
+- `apps/www/registry.json`
+- `apps/www/public/registry.json`
+- `apps/www/public/r/*.json`
+- `apps/www/registry/__index__.tsx`
 - `apps/www/registry/registry-examples.ts`
 - `apps/www/registry/registry-ui.ts`
-- `apps/www/registry/__index__.tsx`
-- `apps/www/config/docs.ts`
-- `apps/www/public/r/*.json`
-- `apps/www/public/registry.json`
-- `apps/www/registry.json`
-- `apps/www/public/llms.txt`
 - `apps/www/public/llms-full.txt`
+- `apps/www/public/llms.txt`
 
 **Example commit sequence**:
 ```
-Implement component in apps/www/registry/eldoraui/{component-name}.tsx
-Create demo(s) in apps/www/registry/example/{component-name}-demo.tsx
+Implement the new component in apps/www/registry/eldoraui/{component-name}.tsx
+Create demo(s) for the component in apps/www/registry/example/{component-name}-demo.tsx (and possibly numbered variants)
 Add documentation in apps/www/content/docs/components/{component-name}.mdx
-Update registry files: apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts, apps/www/registry/__index__.tsx
-Update apps/www/config/docs.ts to register the component
-Add or update JSON metadata in apps/www/public/r/{component-name}.json and related demo JSONs
-Update public registry files: apps/www/public/registry.json, apps/www/registry.json
-Update apps/www/public/llms.txt and apps/www/public/llms-full.txt
+Update registry files: apps/www/registry.json, apps/www/public/registry.json, apps/www/public/r/{component-name}.json, apps/www/public/r/{component-name}-demo.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts
+Update apps/www/config/docs.ts to register the new component
+Update apps/www/public/llms-full.txt and apps/www/public/llms.txt
 ```
 
 ### Add Blog Posts
 
-Adds new blog posts to the website content.
+Adds new blog posts to the site, often in bulk.
 
 **Frequency**: ~1 times per month
 
 **Steps**:
-1. Add new .mdx files to apps/www/content/blog/
-2. Optionally, format all blog posts with Prettier
+1. Create new .mdx files in apps/www/content/blog/
+2. Optionally, format blog posts with prettier
 
 **Files typically involved**:
 - `apps/www/content/blog/*.mdx`
 
 **Example commit sequence**:
 ```
-Add new .mdx files to apps/www/content/blog/
-Optionally, format all blog posts with Prettier
+Create new .mdx files in apps/www/content/blog/
+Optionally, format blog posts with prettier
 ```
 
-### Update Readme Or Project Metadata
+### Update Readme Or Badges
 
-Updates the README or project metadata such as badges, copyright, or support info.
-
-**Frequency**: ~2 times per month
-
-**Steps**:
-1. Edit README.md
-2. Optionally edit LICENSE.md
-
-**Files typically involved**:
-- `README.md`
-- `LICENSE.md`
-
-**Example commit sequence**:
-```
-Edit README.md
-Optionally edit LICENSE.md
-```
-
-### Update Or Fix Component Documentation
-
-Makes small updates or fixes to documentation for existing components.
-
-**Frequency**: ~2 times per month
-
-**Steps**:
-1. Edit one or more apps/www/content/docs/components/*.mdx files
-2. Optionally update apps/www/config/docs.ts
-
-**Files typically involved**:
-- `apps/www/content/docs/components/*.mdx`
-- `apps/www/config/docs.ts`
-
-**Example commit sequence**:
-```
-Edit one or more apps/www/content/docs/components/*.mdx files
-Optionally update apps/www/config/docs.ts
-```
-
-### Update Dependencies And Lockfile
-
-Updates dependencies in package.json and synchronizes the lockfile, often for security patches.
+Updates the README file, often to add or update badges or support sections.
 
 **Frequency**: ~1 times per month
 
 **Steps**:
-1. Edit apps/www/package.json
-2. Edit pnpm-lock.yaml
+1. Edit README.md to add or update badges, support sections, or other documentation
+
+**Files typically involved**:
+- `README.md`
+
+**Example commit sequence**:
+```
+Edit README.md to add or update badges, support sections, or other documentation
+```
+
+### Dependency Or Security Update
+
+Updates dependencies to fix vulnerabilities or upgrade packages.
+
+**Frequency**: ~1 times per month
+
+**Steps**:
+1. Update apps/www/package.json
+2. Update pnpm-lock.yaml
 
 **Files typically involved**:
 - `apps/www/package.json`
@@ -305,31 +278,50 @@ Updates dependencies in package.json and synchronizes the lockfile, often for se
 
 **Example commit sequence**:
 ```
-Edit apps/www/package.json
-Edit pnpm-lock.yaml
+Update apps/www/package.json
+Update pnpm-lock.yaml
+```
+
+### Add Legal Or Policy Docs
+
+Adds or updates legal documentation such as privacy policy or terms and conditions.
+
+**Frequency**: ~1 times per month
+
+**Steps**:
+1. Create or update .mdx files in apps/www/content/docs/ (privacy-policy.mdx, terms-and-conditions.mdx)
+
+**Files typically involved**:
+- `apps/www/content/docs/privacy-policy.mdx`
+- `apps/www/content/docs/terms-and-conditions.mdx`
+
+**Example commit sequence**:
+```
+Create or update .mdx files in apps/www/content/docs/ (privacy-policy.mdx, terms-and-conditions.mdx)
 ```
 
 ### Fix Build Or Bug
 
-Fixes build errors or bugs, often by editing one or a few files related to the error.
+Fixes build errors or bugs, often by updating one or more implementation files.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Edit the file(s) causing the error (often in apps/www/app/, apps/www/components/, or registry files)
-2. Commit with a message indicating a fix
+1. Edit relevant implementation files (e.g., .tsx, .ts, .mdx, config files) to fix the error
 
 **Files typically involved**:
 - `apps/www/app/**/*.tsx`
 - `apps/www/components/**/*.tsx`
-- `apps/www/registry/**/*.tsx`
 - `apps/www/config/**/*.ts`
-- `apps/www/content/docs/**/*.mdx`
+- `apps/www/content/docs/components/*.mdx`
+- `apps/www/registry/**/*.tsx`
+- `apps/www/public/r/*.json`
+- `apps/www/public/registry.json`
+- `apps/www/registry.json`
 
 **Example commit sequence**:
 ```
-Edit the file(s) causing the error (often in apps/www/app/, apps/www/components/, or registry files)
-Commit with a message indicating a fix
+Edit relevant implementation files (e.g., .tsx, .ts, .mdx, config files) to fix the error
 ```
 
 
