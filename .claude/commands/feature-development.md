@@ -14,7 +14,6 @@ Standard feature implementation workflow
 
 ## Common Files
 
-- `apps/www/content/blog/*`
 - `.claude/commands/*`
 
 ## Suggested Sequence
