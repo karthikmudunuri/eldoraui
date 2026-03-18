@@ -10,7 +10,7 @@ Use this workflow when working on **add-new-component-with-demo-and-docs** in `e
 
 ## Goal
 
-Adds a new UI component to the library, including its implementation, documentation, demo, and registry integration.
+Adds a new UI component to the library, including implementation, documentation, demo, and registry updates.
 
 ## Common Files
 
@@ -18,8 +18,8 @@ Adds a new UI component to the library, including its implementation, documentat
 - `apps/www/registry/example/*.tsx`
 - `apps/www/content/docs/components/*.mdx`
 - `apps/www/registry/__index__.tsx`
-- `apps/www/registry/registry-ui.ts`
 - `apps/www/registry/registry-examples.ts`
+- `apps/www/registry/registry-ui.ts`
 
 ## Suggested Sequence
 
@@ -30,11 +30,11 @@ Adds a new UI component to the library, including its implementation, documentat
 
 ## Typical Commit Signals
 
-- Implement the component in apps/www/registry/eldoraui/{component-name}.tsx
-- Create a demo in apps/www/registry/example/{component-name}-demo.tsx
-- Add documentation in apps/www/content/docs/components/{component-name}.mdx
-- Update the registry index in apps/www/registry/__index__.tsx
-- Update the registry UI in apps/www/registry/registry-ui.ts
+- Implement the component in apps/www/registry/eldoraui/{component}.tsx
+- Create demo(s) in apps/www/registry/example/{component-demo}.tsx
+- Add documentation in apps/www/content/docs/components/{component}.mdx
+- Update registry index in apps/www/registry/__index__.tsx
+- Update registry-examples and registry-ui as needed
 
 ## Notes
 
