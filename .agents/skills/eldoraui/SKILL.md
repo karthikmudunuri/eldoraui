@@ -40,7 +40,7 @@ Follow these commit message conventions based on 8 analyzed commits.
 
 ### Message Guidelines
 
-- Average message length: ~44 characters
+- Average message length: ~45 characters
 - Keep first line concise and descriptive
 - Use imperative mood ("Add feature" not "Added feature")
 
@@ -48,7 +48,7 @@ Follow these commit message conventions based on 8 analyzed commits.
 *Commit message example*
 
 ```text
-feat: add eldoraui ECC bundle (.claude/commands/update-readme-or-project-metadata.md)
+feat: add eldoraui ECC bundle (.claude/commands/update-component-or-docs.md)
 ```
 
 *Commit message example*
@@ -167,7 +167,7 @@ These workflows were detected from analyzing commit patterns.
 
 Standard feature implementation workflow
 
-**Frequency**: ~16 times per month
+**Frequency**: ~20 times per month
 
 **Steps**:
 1. Add feature implementation
@@ -183,138 +183,130 @@ Standard feature implementation workflow
 
 **Example commit sequence**:
 ```
-feat: add animated list component
-fix: update installation command for animated list component
-docs: update AGENTS.md
+Add "Holographic Card" component
+Change framer-motion for motion
+Change framer-motion for motion
 ```
 
 ### Add New Component With Demo And Docs
 
-Adds a new UI component to the library, including implementation, documentation, demo, and registry updates.
+Adds a new UI component to the library, including its implementation, documentation, demo/example, and registry/config updates.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Implement the component in apps/www/registry/eldoraui/{component}.tsx
-2. Create demo(s) in apps/www/registry/example/{component-demo}.tsx
-3. Add documentation in apps/www/content/docs/components/{component}.mdx
-4. Update registry index in apps/www/registry/__index__.tsx
-5. Update registry-examples and registry-ui as needed
-6. Update apps/www/config/docs.ts to register the component
-7. Add JSON metadata in apps/www/public/r/{component}.json and/or apps/www/public/r/{component-demo}.json
-8. Update apps/www/public/registry.json and apps/www/registry.json
+1. Create or update implementation file for the new component under apps/www/registry/eldoraui/ or apps/www/registry/blocks/
+2. Add or update a demo/example file under apps/www/registry/example/
+3. Add or update documentation markdown under apps/www/content/docs/components/
+4. Update registry and index files (apps/www/registry.json, apps/www/public/registry.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts)
+5. Update config/docs.ts and possibly config/site.ts
+6. Update or add public assets (apps/www/public/r/*.json, apps/www/public/blocks/*, etc.)
 
 **Files typically involved**:
 - `apps/www/registry/eldoraui/*.tsx`
+- `apps/www/registry/blocks/*/components/*.tsx`
 - `apps/www/registry/example/*.tsx`
 - `apps/www/content/docs/components/*.mdx`
+- `apps/www/registry.json`
+- `apps/www/public/registry.json`
 - `apps/www/registry/__index__.tsx`
 - `apps/www/registry/registry-examples.ts`
 - `apps/www/registry/registry-ui.ts`
 - `apps/www/config/docs.ts`
 - `apps/www/public/r/*.json`
-- `apps/www/public/registry.json`
-- `apps/www/registry.json`
 
 **Example commit sequence**:
 ```
-Implement the component in apps/www/registry/eldoraui/{component}.tsx
-Create demo(s) in apps/www/registry/example/{component-demo}.tsx
-Add documentation in apps/www/content/docs/components/{component}.mdx
-Update registry index in apps/www/registry/__index__.tsx
-Update registry-examples and registry-ui as needed
-Update apps/www/config/docs.ts to register the component
-Add JSON metadata in apps/www/public/r/{component}.json and/or apps/www/public/r/{component-demo}.json
-Update apps/www/public/registry.json and apps/www/registry.json
+Create or update implementation file for the new component under apps/www/registry/eldoraui/ or apps/www/registry/blocks/
+Add or update a demo/example file under apps/www/registry/example/
+Add or update documentation markdown under apps/www/content/docs/components/
+Update registry and index files (apps/www/registry.json, apps/www/public/registry.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts)
+Update config/docs.ts and possibly config/site.ts
+Update or add public assets (apps/www/public/r/*.json, apps/www/public/blocks/*, etc.)
 ```
 
-### Update Component Or Docs
+### Update Readme Or Project Metadata
 
-Updates an existing component, its documentation, or related registry/config files.
+Updates the README file or project metadata, such as badges or support sections.
+
+**Frequency**: ~1 times per month
+
+**Steps**:
+1. Edit README.md to add or update badges, support sections, or other metadata.
+2. Commit the changes.
+
+**Files typically involved**:
+- `README.md`
+
+**Example commit sequence**:
+```
+Edit README.md to add or update badges, support sections, or other metadata.
+Commit the changes.
+```
+
+### Add Or Update Ecc Bundle Commands And Skills
+
+Adds or updates ECC (Eldora Command Center) bundle files, including commands, skills, and agent configurations.
+
+**Frequency**: ~1 times per month
+
+**Steps**:
+1. Add or update markdown files for commands under .claude/commands/
+2. Add or update skill definitions under .claude/skills/eldoraui/ or .agents/skills/eldoraui/
+3. Add or update agent configuration files under .codex/agents/
+4. Update supporting metadata/configuration files (.claude/ecc-tools.json, .claude/identity.json, .codex/AGENTS.md, etc.)
+
+**Files typically involved**:
+- `.claude/commands/*.md`
+- `.claude/skills/eldoraui/SKILL.md`
+- `.agents/skills/eldoraui/SKILL.md`
+- `.codex/agents/*.toml`
+- `.codex/AGENTS.md`
+- `.claude/ecc-tools.json`
+- `.claude/identity.json`
+- `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
+
+**Example commit sequence**:
+```
+Add or update markdown files for commands under .claude/commands/
+Add or update skill definitions under .claude/skills/eldoraui/ or .agents/skills/eldoraui/
+Add or update agent configuration files under .codex/agents/
+Update supporting metadata/configuration files (.claude/ecc-tools.json, .claude/identity.json, .codex/AGENTS.md, etc.)
+```
+
+### Fix Or Update Existing Component Or Demo
+
+Fixes bugs or updates in existing components, demos, or documentation, often in response to errors or quality improvements.
 
 **Frequency**: ~2 times per month
 
 **Steps**:
-1. Edit component implementation in apps/www/registry/eldoraui/{component}.tsx or related files
-2. Update documentation in apps/www/content/docs/components/{component}.mdx
-3. Update registry or config files as needed (e.g., apps/www/config/docs.ts, apps/www/registry/__index__.tsx)
-4. Update JSON metadata if necessary
+1. Edit implementation files for components or demos (apps/www/registry/eldoraui/, apps/www/registry/blocks/, apps/www/registry/example/).
+2. Update related documentation if needed (apps/www/content/docs/components/).
+3. Update registry and public asset files if necessary.
+4. Update config files (config/docs.ts, config/site.ts) if needed.
+5. Commit the changes.
 
 **Files typically involved**:
 - `apps/www/registry/eldoraui/*.tsx`
+- `apps/www/registry/blocks/*/components/*.tsx`
+- `apps/www/registry/example/*.tsx`
 - `apps/www/content/docs/components/*.mdx`
-- `apps/www/config/docs.ts`
+- `apps/www/registry.json`
+- `apps/www/public/registry.json`
 - `apps/www/registry/__index__.tsx`
+- `apps/www/registry/registry-examples.ts`
+- `apps/www/registry/registry-ui.ts`
+- `apps/www/config/docs.ts`
 - `apps/www/public/r/*.json`
 
 **Example commit sequence**:
 ```
-Edit component implementation in apps/www/registry/eldoraui/{component}.tsx or related files
-Update documentation in apps/www/content/docs/components/{component}.mdx
-Update registry or config files as needed (e.g., apps/www/config/docs.ts, apps/www/registry/__index__.tsx)
-Update JSON metadata if necessary
-```
-
-### Add Multiple Content Items
-
-Bulk adds new content items such as blog posts or documentation files.
-
-**Frequency**: ~1 times per month
-
-**Steps**:
-1. Add multiple new files under apps/www/content/blog/*.mdx or apps/www/content/docs/*.mdx
-2. Commit all new content files in a single commit
-
-**Files typically involved**:
-- `apps/www/content/blog/*.mdx`
-- `apps/www/content/docs/*.mdx`
-
-**Example commit sequence**:
-```
-Add multiple new files under apps/www/content/blog/*.mdx or apps/www/content/docs/*.mdx
-Commit all new content files in a single commit
-```
-
-### Dependency Or Security Update
-
-Updates dependencies or patches security vulnerabilities, often in package.json and lock files.
-
-**Frequency**: ~1 times per month
-
-**Steps**:
-1. Update apps/www/package.json
-2. Update pnpm-lock.yaml
-3. Commit changes
-
-**Files typically involved**:
-- `apps/www/package.json`
-- `pnpm-lock.yaml`
-
-**Example commit sequence**:
-```
-Update apps/www/package.json
-Update pnpm-lock.yaml
-Commit changes
-```
-
-### Add Or Update Readme Or Project Metadata
-
-Updates or adds project-level documentation or metadata files, such as README.md or AGENTS.md.
-
-**Frequency**: ~1 times per month
-
-**Steps**:
-1. Edit README.md or AGENTS.md or similar project-level docs
-2. Commit changes
-
-**Files typically involved**:
-- `README.md`
-- `AGENTS.md`
-
-**Example commit sequence**:
-```
-Edit README.md or AGENTS.md or similar project-level docs
-Commit changes
+Edit implementation files for components or demos (apps/www/registry/eldoraui/, apps/www/registry/blocks/, apps/www/registry/example/).
+Update related documentation if needed (apps/www/content/docs/components/).
+Update registry and public asset files if necessary.
+Update config files (config/docs.ts, config/site.ts) if needed.
+Commit the changes.
 ```
 
 
