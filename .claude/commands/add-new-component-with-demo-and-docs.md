@@ -10,16 +10,16 @@ Use this workflow when working on **add-new-component-with-demo-and-docs** in `e
 
 ## Goal
 
-Adds a new UI component to the library, including implementation, documentation, demo, and registry updates.
+Adds a new UI component to the library, including its implementation, documentation, demo/example, and registry/config updates.
 
 ## Common Files
 
 - `apps/www/registry/eldoraui/*.tsx`
+- `apps/www/registry/blocks/*/components/*.tsx`
 - `apps/www/registry/example/*.tsx`
 - `apps/www/content/docs/components/*.mdx`
-- `apps/www/registry/__index__.tsx`
-- `apps/www/registry/registry-examples.ts`
-- `apps/www/registry/registry-ui.ts`
+- `apps/www/registry.json`
+- `apps/www/public/registry.json`
 
 ## Suggested Sequence
 
@@ -30,11 +30,11 @@ Adds a new UI component to the library, including implementation, documentation,
 
 ## Typical Commit Signals
 
-- Implement the component in apps/www/registry/eldoraui/{component}.tsx
-- Create demo(s) in apps/www/registry/example/{component-demo}.tsx
-- Add documentation in apps/www/content/docs/components/{component}.mdx
-- Update registry index in apps/www/registry/__index__.tsx
-- Update registry-examples and registry-ui as needed
+- Create or update implementation file for the new component under apps/www/registry/eldoraui/ or apps/www/registry/blocks/
+- Add or update a demo/example file under apps/www/registry/example/
+- Add or update documentation markdown under apps/www/content/docs/components/
+- Update registry and index files (apps/www/registry.json, apps/www/public/registry.json, apps/www/registry/__index__.tsx, apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts)
+- Update config/docs.ts and possibly config/site.ts
 
 ## Notes
 
