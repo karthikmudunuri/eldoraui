@@ -10,17 +10,17 @@
     UI Library for Design Engineers
 </p>
 
-## Supported by Vercel oss
-
-<a href="https://vercel.com/oss">
-  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
-</a>
-
 <div align="center">
   <a href="https://github.com/karthikmudunuri/eldoraui/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/karthikmudunuri/eldoraui"></a>
   <a href="https://github.com/karthikmudunuri/eldoraui/blob/main/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
   
 </div>
+
+## Supported by Vercel oss
+
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
+</a>
 
 ## Documentation
 
