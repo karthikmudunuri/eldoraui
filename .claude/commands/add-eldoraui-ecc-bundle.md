@@ -10,16 +10,16 @@ Use this workflow when working on **add-eldoraui-ecc-bundle** in `eldoraui`.
 
 ## Goal
 
-Adds or updates a set of configuration, command, skill, and agent files related to the eldoraui ECC bundle across multiple subdirectories.
+Adds a new ECC (Eldoraui Component Collection) bundle, which includes configuration, agent definitions, skills, commands, and documentation files for the eldoraui system.
 
 ## Common Files
 
-- `.claude/commands/*.md`
-- `.claude/homunculus/instincts/inherited/*.yaml`
-- `.codex/agents/*.toml`
-- `.codex/AGENTS.md`
-- `.codex/config.toml`
-- `.claude/identity.json`
+- `.claude/commands/add-new-component-with-demo-and-docs.md`
+- `.claude/commands/feature-development.md`
+- `.claude/commands/update-readme-or-project-metadata.md`
+- `.claude/commands/update-component-or-docs.md`
+- `.claude/commands/update-readme-badge-or-section.md`
+- `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
 
 ## Suggested Sequence
 
@@ -30,9 +30,9 @@ Adds or updates a set of configuration, command, skill, and agent files related 
 
 ## Typical Commit Signals
 
-- Add or update files in .claude/commands/ (e.g., add-new-component-with-demo-and-docs.md, update-readme-or-project-metadata.md, feature-development.md, update-component-or-docs.md)
-- Add or update files in .claude/homunculus/instincts/inherited/ (e.g., eldoraui-instincts.yaml)
-- Add or update files in .codex/agents/ (e.g., docs-researcher.toml, reviewer.toml, explorer.toml)
+- Add or update .claude/commands/*.md files (such as add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+- Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
+- Add or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
 - Add or update .codex/AGENTS.md and .codex/config.toml
 - Add or update .claude/identity.json
 
