@@ -10,16 +10,16 @@ Use this workflow when working on **add-eldoraui-ecc-bundle** in `eldoraui`.
 
 ## Goal
 
-Adds a new ECC (Eldoraui Component Collection) bundle, which includes configuration, agent definitions, skills, commands, and documentation files for the eldoraui system.
+Adds or updates the eldoraui ECC bundle, which includes commands, skills, agent configs, instincts, and documentation.
 
 ## Common Files
 
-- `.claude/commands/add-new-component-with-demo-and-docs.md`
-- `.claude/commands/feature-development.md`
-- `.claude/commands/update-readme-or-project-metadata.md`
-- `.claude/commands/update-component-or-docs.md`
-- `.claude/commands/update-readme-badge-or-section.md`
+- `.claude/commands/*.md`
 - `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
+- `.codex/agents/*.toml`
+- `.codex/AGENTS.md`
+- `.codex/config.toml`
+- `.claude/identity.json`
 
 ## Suggested Sequence
 
@@ -30,11 +30,11 @@ Adds a new ECC (Eldoraui Component Collection) bundle, which includes configurat
 
 ## Typical Commit Signals
 
-- Add or update .claude/commands/*.md files (such as add-new-component-with-demo-and-docs.md, feature-development.md, update-readme-or-project-metadata.md, update-component-or-docs.md, update-readme-badge-or-section.md)
+- Add or update .claude/commands/*.md files related to eldoraui commands (e.g., add-eldoraui-ecc-bundle.md, feature-development.md, add-or-update-eldoraui-command-md.md, update-readme-badge-or-section.md, update-readme-or-project-metadata.md, add-new-component-with-demo-and-docs.md, update-component-or-docs.md)
 - Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
-- Add or update .codex/agents/*.toml files (such as docs-researcher.toml, reviewer.toml, explorer.toml)
-- Add or update .codex/AGENTS.md and .codex/config.toml
-- Add or update .claude/identity.json
+- Add or update .codex/agents/*.toml files (docs-researcher.toml, reviewer.toml, explorer.toml)
+- Add or update .codex/AGENTS.md
+- Add or update .codex/config.toml
 
 ## Notes
 
