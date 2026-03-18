@@ -10,16 +10,16 @@ Use this workflow when working on **add-eldoraui-ecc-bundle** in `eldoraui`.
 
 ## Goal
 
-Adds or updates the Eldoraui ECC bundle, including commands, skills, agent configs, instincts, and documentation.
+Adds or updates the eldoraui ECC bundle, including commands, skills, agent configs, and documentation across multiple directories.
 
 ## Common Files
 
 - `.claude/commands/add-eldoraui-ecc-bundle.md`
 - `.claude/commands/feature-development.md`
+- `.claude/commands/add-or-update-eldoraui-command-docs.md`
+- `.claude/commands/add-or-update-eldoraui-command-md.md`
 - `.claude/homunculus/instincts/inherited/eldoraui-instincts.yaml`
 - `.codex/agents/docs-researcher.toml`
-- `.codex/agents/reviewer.toml`
-- `.codex/agents/explorer.toml`
 
 ## Suggested Sequence
 
@@ -32,9 +32,9 @@ Adds or updates the Eldoraui ECC bundle, including commands, skills, agent confi
 
 - Add or update .claude/commands/add-eldoraui-ecc-bundle.md
 - Add or update .claude/commands/feature-development.md
+- Add or update .claude/commands/add-or-update-eldoraui-command-docs.md or .claude/commands/add-or-update-eldoraui-command-md.md
 - Add or update .claude/homunculus/instincts/inherited/eldoraui-instincts.yaml
 - Add or update .codex/agents/docs-researcher.toml
-- Add or update .codex/agents/reviewer.toml
 
 ## Notes
 
