@@ -1,0 +1,293 @@
+# Instincts generated from https://github.com/karthikmudunuri/eldoraui
+# Generated: 2026-03-18T20:04:35.352Z
+# Version: 2.0
+
+---
+id: eldoraui-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, chore, docs
+
+## Evidence
+
+- 148 commits analyzed
+- Detected conventional commit pattern
+- Examples: style: format blog posts with prettier, feat: add 10 blog posts to increase component library value
+
+---
+id: eldoraui-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Commit Length
+
+## Action
+
+Keep commit messages concise (under 50 characters)
+
+## Evidence
+
+- Average commit message length: 41 chars
+- Based on 148 commits
+
+---
+id: eldoraui-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: eldoraui-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: eldoraui-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: eldoraui-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: eldoraui-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: apps/www/components/sections/*, apps/www/components/*, apps/www/config/*
+
+---
+id: eldoraui-workflow-add-new-component-with-demo-and-docs
+trigger: "when doing add new component with demo and docs"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Add New Component With Demo And Docs
+
+## Action
+
+Follow the add-new-component-with-demo-and-docs workflow:
+1. Implement component in apps/www/registry/eldoraui/{component-name}.tsx
+2. Create demo(s) in apps/www/registry/example/{component-name}-demo.tsx
+3. Add documentation in apps/www/content/docs/components/{component-name}.mdx
+4. Update registry files: apps/www/registry/registry-examples.ts, apps/www/registry/registry-ui.ts, apps/www/registry/__index__.tsx
+5. Update apps/www/config/docs.ts to register the component
+6. Add or update JSON metadata in apps/www/public/r/{component-name}.json and related demo JSONs
+7. Update public registry files: apps/www/public/registry.json, apps/www/registry.json
+8. Update apps/www/public/llms.txt and apps/www/public/llms-full.txt
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: apps/www/registry/eldoraui/*.tsx, apps/www/registry/example/*.tsx, apps/www/content/docs/components/*.mdx
+
+---
+id: eldoraui-workflow-add-blog-posts
+trigger: "when doing add blog posts"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Add Blog Posts
+
+## Action
+
+Follow the add-blog-posts workflow:
+1. Add new .mdx files to apps/www/content/blog/
+2. Optionally, format all blog posts with Prettier
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: apps/www/content/blog/*.mdx
+
+---
+id: eldoraui-workflow-update-readme-or-project-metadata
+trigger: "when doing update readme or project metadata"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Update Readme Or Project Metadata
+
+## Action
+
+Follow the update-readme-or-project-metadata workflow:
+1. Edit README.md
+2. Optionally edit LICENSE.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md, LICENSE.md
+
+---
+id: eldoraui-workflow-update-or-fix-component-documentation
+trigger: "when doing update or fix component documentation"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Update Or Fix Component Documentation
+
+## Action
+
+Follow the update-or-fix-component-documentation workflow:
+1. Edit one or more apps/www/content/docs/components/*.mdx files
+2. Optionally update apps/www/config/docs.ts
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: apps/www/content/docs/components/*.mdx, apps/www/config/docs.ts
+
+---
+id: eldoraui-workflow-update-dependencies-and-lockfile
+trigger: "when doing update dependencies and lockfile"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Update Dependencies And Lockfile
+
+## Action
+
+Follow the update-dependencies-and-lockfile workflow:
+1. Edit apps/www/package.json
+2. Edit pnpm-lock.yaml
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: apps/www/package.json, pnpm-lock.yaml
+
+---
+id: eldoraui-workflow-fix-build-or-bug
+trigger: "when doing fix build or bug"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/karthikmudunuri/eldoraui
+---
+
+# Eldoraui Workflow Fix Build Or Bug
+
+## Action
+
+Follow the fix-build-or-bug workflow:
+1. Edit the file(s) causing the error (often in apps/www/app/, apps/www/components/, or registry files)
+2. Commit with a message indicating a fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: apps/www/app/**/*.tsx, apps/www/components/**/*.tsx, apps/www/registry/**/*.tsx
+
