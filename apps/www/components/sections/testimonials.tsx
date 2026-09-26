@@ -18,7 +18,6 @@ const allTweets = [
   "https://x.com/dotHTML5/status/1828371962755711106",
   "https://x.com/prod42net/status/1824045911162470433",
   "https://x.com/0xKaiBi/status/1817794180447621617",
-  "https://x.com/mckaywrigley/status/1831185841051590857",
   "https://x.com/akhdigital/status/1816926458863820880",
   "https://x.com/miantiao_me/status/1816325000426607083",
   "https://x.com/prod42net/status/1815624153707229558",
